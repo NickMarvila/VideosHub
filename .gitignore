@@ -38,6 +38,9 @@ apps/render/out/
 *.mov
 
 # Render frames e saídas geradas por projetos
+_var/
+*/_var/
+*/*/_var/
 render/quadros/
 videos/*/render/
 videos/*/cenas/*.mp4

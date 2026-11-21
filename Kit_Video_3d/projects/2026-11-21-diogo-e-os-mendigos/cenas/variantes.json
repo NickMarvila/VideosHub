@@ -1,0 +1,4949 @@
+{
+ "base": {
+  "versao": 1,
+  "titulo": "Diogo e os mendigos",
+  "formato": {
+   "largura": 1080,
+   "altura": 1920,
+   "fps": 30
+  },
+  "duracao": 66.2,
+  "audio": "narracao.wav",
+  "palavras": "palavras.json",
+  "legendas": {
+   "ativo": true,
+   "palavrasPorBloco": 1,
+   "corDestaque": "#ffd60a"
+  },
+  "ambiente": {
+   "horario": "dia",
+   "fundo": "cidade",
+   "chao": "concreto",
+   "nuvens": true
+  }
+ },
+ "cenas": [
+  {
+   "id": "c01",
+   "inicio": 0.0,
+   "fim": 3.0,
+   "frases": [
+    "f01",
+    "f02"
+   ],
+   "resumo": "Apresentação do Diogo",
+   "variantes": [
+    {
+     "id": "c01-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c1",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 0,
+          "ate": 3.0,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -3,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 0,
+          "ate": 1.2,
+          "para": [
+           0,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 1.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "wave",
+          "de": 1.3,
+          "ate": 3.0,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 0,
+       "elevacao": 8,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "poeira",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.1,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.5,
+        "de": 0,
+        "ate": 1.2
+       }
+      ],
+      "textos": [
+       {
+        "texto": "A TEORIA DO DIOGO",
+        "de": 0.1,
+        "ate": 2.9,
+        "estilo": "titulo"
+       }
+      ]
+     }
+    },
+    {
+     "id": "c01-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c1",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e76f51"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 0,
+          "ate": 3.0,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "wave",
+          "de": 0,
+          "ate": 1.5,
+          "expressao": "happy"
+         },
+         {
+          "clip": "point",
+          "de": 1.6,
+          "ate": 3.0,
+          "expressao": "neutral"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 10,
+       "elevacao": 6,
+       "aproxima": 1.1
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 15,
+        "dispersao": 0.5,
+        "de": 0.5,
+        "ate": 2.5
+       }
+      ],
+      "textos": [
+       {
+        "texto": "ESSE É O DIOGO",
+        "de": 0.1,
+        "ate": 2.9,
+        "estilo": "titulo"
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c02",
+   "inicio": 3.0,
+   "fim": 6.5,
+   "frases": [
+    "f03"
+   ],
+   "resumo": "Mendigo não pode tomar banho",
+   "variantes": [
+    {
+     "id": "c02-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c2",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#3d6fb6"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 3.0,
+          "ate": 6.5,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 3.0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "point",
+          "de": 3.0,
+          "ate": 4.8,
+          "expressao": "neutral"
+         },
+         {
+          "clip": "shrug",
+          "de": 4.9,
+          "ate": 6.5,
+          "expressao": "worried"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -10,
+       "elevacao": 7,
+       "aproxima": 0.95
+      },
+      "elementos": [
+       {
+        "tipo": "icone",
+        "icone": "x",
+        "ancora": "diogo",
+        "alturaRel": 1.25,
+        "dx": 0.25,
+        "tamanho": 0.16,
+        "pulsa": true,
+        "de": 3.5,
+        "ate": 6.5
+       }
+      ],
+      "fluxos": [
+       {
+        "material": "ar",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.6,
+        "de": 3.5,
+        "ate": 6.0
+       }
+      ]
+     }
+    },
+    {
+     "id": "c02-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c2",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#f4a261"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 3.0,
+          "ate": 6.5,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -1,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 3.0,
+          "ate": 4.5,
+          "para": [
+           1,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 4.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 4.6,
+          "ate": 6.5,
+          "expressao": "neutral"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "geral",
+       "angulo": 5,
+       "elevacao": 8,
+       "aproxima": 0.85
+      },
+      "fluxos": [
+       {
+        "material": "poeira",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.1,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.5,
+        "de": 3.0,
+        "ate": 4.5
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "etiqueta",
+        "texto": "REGRA DO DIOGO",
+        "pos": [
+         0.5,
+         0.2
+        ],
+        "ponto": "#ffd60a",
+        "de": 3.3,
+        "ate": 6.4
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c03",
+   "inicio": 6.5,
+   "fim": 11.2,
+   "frases": [
+    "f04",
+    "f05",
+    "f06"
+   ],
+   "resumo": "Porque morre!",
+   "variantes": [
+    {
+     "id": "c03-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c3",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e63946"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 6.5,
+          "ate": 11.2,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 6.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "surprised",
+          "de": 6.5,
+          "ate": 9.0,
+          "expressao": "surprised"
+         },
+         {
+          "clip": "talk",
+          "de": 9.1,
+          "ate": 11.2,
+          "expressao": "worried"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 12,
+       "elevacao": 6,
+       "aproxima": 1.2
+      },
+      "fluxos": [
+       {
+        "material": "fogo",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.2,
+          0
+         ]
+        },
+        "taxa": 15,
+        "dispersao": 0.3,
+        "de": 7.5,
+        "ate": 9.5
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "icone",
+        "icone": "alerta",
+        "ancora": "diogo",
+        "alturaRel": 1.3,
+        "dx": -0.25,
+        "tamanho": 0.17,
+        "pulsa": true,
+        "de": 7.5,
+        "ate": 11.0
+       }
+      ],
+      "textos": [
+       {
+        "texto": "PORQUE MORRE?!",
+        "de": 7.5,
+        "ate": 11.0,
+        "estilo": "destaque"
+       }
+      ]
+     }
+    },
+    {
+     "id": "c03-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c3",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 6.5,
+          "ate": 11.2,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 6.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 6.5,
+          "ate": 9.0,
+          "expressao": "worried"
+         },
+         {
+          "clip": "shrug",
+          "de": 9.1,
+          "ate": 11.2,
+          "expressao": "neutral"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -8,
+       "elevacao": 7,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "fumaca",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.8,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.8,
+        "de": 7.5,
+        "ate": 10.5
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "icone",
+        "icone": "alerta",
+        "ancora": "diogo",
+        "alturaRel": 1.25,
+        "dx": 0.25,
+        "tamanho": 0.16,
+        "de": 7.5,
+        "ate": 11.0
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c04",
+   "inicio": 11.2,
+   "fim": 18.3,
+   "frases": [
+    "f07",
+    "f08"
+   ],
+   "resumo": "Corpo desacostuma",
+   "variantes": [
+    {
+     "id": "c04-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c4",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#457b9d"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 11.2,
+          "ate": 18.3,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -2,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 11.2,
+          "ate": 14.5,
+          "para": [
+           1.5,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 14.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 14.6,
+          "ate": 18.3,
+          "expressao": "thinking"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 10,
+       "elevacao": 7,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "poeira",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.1,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.5,
+        "de": 11.2,
+        "ate": 14.5
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "etiqueta",
+        "texto": "ANOS SEM BANHO...",
+        "pos": [
+         0.5,
+         0.22
+        ],
+        "ponto": "#ffd60a",
+        "de": 14.5,
+        "ate": 18.0
+       }
+      ]
+     }
+    },
+    {
+     "id": "c04-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c4",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e76f51"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 11.2,
+          "ate": 18.3,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 11.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "think",
+          "de": 11.2,
+          "ate": 15.0,
+          "expressao": "thinking"
+         },
+         {
+          "clip": "point",
+          "de": 15.1,
+          "ate": 18.3,
+          "expressao": "neutral"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "geral",
+       "angulo": -5,
+       "elevacao": 9,
+       "aproxima": 0.8
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.7,
+        "de": 12.0,
+        "ate": 17.5
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c05",
+   "inicio": 18.3,
+   "fim": 22.7,
+   "frases": [
+    "f09",
+    "f10"
+   ],
+   "resumo": "Gota de água e arrasta pra cima",
+   "variantes": [
+    {
+     "id": "c05-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c5",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2b2d42"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 18.3,
+          "ate": 22.7,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 18.3,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "surprised",
+          "de": 18.3,
+          "ate": 20.7,
+          "expressao": "surprised"
+         },
+         {
+          "clip": "point",
+          "de": 20.8,
+          "ate": 22.7,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 0,
+       "elevacao": 6,
+       "aproxima": 1.25
+      },
+      "fluxos": [
+       {
+        "material": "agua",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          2.8,
+          0
+         ]
+        },
+        "taxa": 45,
+        "dispersao": 0.5,
+        "de": 18.5,
+        "ate": 21.0
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "seta",
+        "direcao": "cima",
+        "ancora": "diogo",
+        "alturaRel": 1.35,
+        "dx": 0.25,
+        "tamanho": 0.18,
+        "de": 20.8,
+        "ate": 22.6
+       }
+      ],
+      "textos": [
+       {
+        "texto": "ARRASTA PRA CIMA 💀",
+        "de": 20.8,
+        "ate": 22.6,
+        "estilo": "destaque"
+       }
+      ]
+     }
+    },
+    {
+     "id": "c05-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c5",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#f4a261"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 18.3,
+          "ate": 22.7,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 18.3,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "surprised",
+          "de": 18.3,
+          "ate": 20.7,
+          "expressao": "surprised"
+         },
+         {
+          "clip": "cheer",
+          "de": 20.8,
+          "ate": 22.7,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -8,
+       "elevacao": 6,
+       "aproxima": 1.0
+      },
+      "fluxos": [
+       {
+        "material": "agua",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          2.5,
+          0
+         ]
+        },
+        "taxa": 35,
+        "dispersao": 0.6,
+        "de": 18.5,
+        "ate": 21.5
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c06",
+   "inicio": 22.7,
+   "fim": 27.6,
+   "frases": [
+    "f11",
+    "f12"
+   ],
+   "resumo": "É ciência!",
+   "variantes": [
+    {
+     "id": "c06-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c6",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#3d6fb6"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 22.7,
+          "ate": 27.6,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 22.7,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "think",
+          "de": 22.7,
+          "ate": 25.3,
+          "expressao": "thinking"
+         },
+         {
+          "clip": "cheer",
+          "de": 25.4,
+          "ate": 27.6,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 8,
+       "elevacao": 7,
+       "aproxima": 0.95
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.4,
+          0
+         ]
+        },
+        "taxa": 30,
+        "dispersao": 0.8,
+        "de": 25.4,
+        "ate": 27.6
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "icone",
+        "icone": "relogio",
+        "ancora": "diogo",
+        "alturaRel": 1.25,
+        "dx": 0.25,
+        "tamanho": 0.16,
+        "pulsa": true,
+        "de": 25.5,
+        "ate": 27.5
+       }
+      ]
+     }
+    },
+    {
+     "id": "c06-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c6",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 22.7,
+          "ate": 27.6,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -1.5,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 22.7,
+          "ate": 25.0,
+          "para": [
+           1.0,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 25.0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 25.1,
+          "ate": 27.6,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "geral",
+       "angulo": -10,
+       "elevacao": 8,
+       "aproxima": 0.85
+      },
+      "fluxos": [
+       {
+        "material": "poeira",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.1,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.5,
+        "de": 22.7,
+        "ate": 25.0
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c07",
+   "inicio": 27.6,
+   "fim": 32.2,
+   "frases": [
+    "f13",
+    "f14"
+   ],
+   "resumo": "Diogo quer ser político",
+   "variantes": [
+    {
+     "id": "c07-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c7",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e63946"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 27.6,
+          "ate": 32.2,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 27.6,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "shrug",
+          "de": 27.6,
+          "ate": 29.8,
+          "expressao": "sad"
+         },
+         {
+          "clip": "wave",
+          "de": 29.9,
+          "ate": 32.2,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -12,
+       "elevacao": 8,
+       "aproxima": 0.95
+      },
+      "fluxos": [
+       {
+        "material": "fagulha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.8,
+        "de": 29.9,
+        "ate": 32.2
+       }
+      ]
+     }
+    },
+    {
+     "id": "c07-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c7",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#457b9d"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 27.6,
+          "ate": 32.2,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 27.6,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "wave",
+          "de": 27.6,
+          "ate": 30.0,
+          "expressao": "happy"
+         },
+         {
+          "clip": "point",
+          "de": 30.1,
+          "ate": 32.2,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 0,
+       "elevacao": 5,
+       "aproxima": 1.15
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.6,
+        "de": 28.5,
+        "ate": 31.5
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c08",
+   "inicio": 32.2,
+   "fim": 37.1,
+   "frases": [
+    "f15",
+    "f16"
+   ],
+   "resumo": "Chuva toda sexta-feira",
+   "variantes": [
+    {
+     "id": "c08-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c8",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 32.2,
+          "ate": 37.1,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 32.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 32.2,
+          "ate": 34.6,
+          "expressao": "neutral"
+         },
+         {
+          "clip": "point",
+          "de": 34.7,
+          "ate": 37.1,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 5,
+       "elevacao": 10,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "agua",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          3.2,
+          0
+         ]
+        },
+        "taxa": 55,
+        "dispersao": 1.4,
+        "de": 34.8,
+        "ate": 37.1
+       }
+      ],
+      "textos": [
+       {
+        "texto": "CHUVA TODA SEXTA 🌧️",
+        "de": 34.8,
+        "ate": 37.0,
+        "estilo": "destaque"
+       }
+      ]
+     }
+    },
+    {
+     "id": "c08-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c8",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e76f51"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 32.2,
+          "ate": 37.1,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -1,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 32.2,
+          "ate": 34.5,
+          "para": [
+           1,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 34.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 34.6,
+          "ate": 37.1,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "geral",
+       "angulo": 0,
+       "elevacao": 8,
+       "aproxima": 0.8
+      },
+      "fluxos": [
+       {
+        "material": "agua",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          3.2,
+          0
+         ]
+        },
+        "taxa": 45,
+        "dispersao": 1.2,
+        "de": 34.8,
+        "ate": 37.1
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c09",
+   "inicio": 37.1,
+   "fim": 40.8,
+   "frases": [
+    "f17",
+    "f18"
+   ],
+   "resumo": "No sábado problema resolvido",
+   "variantes": [
+    {
+     "id": "c09-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c9",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#3d6fb6"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 37.1,
+          "ate": 40.8,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 37.1,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "think",
+          "de": 37.1,
+          "ate": 38.3,
+          "expressao": "thinking"
+         },
+         {
+          "clip": "shrug",
+          "de": 38.4,
+          "ate": 40.8,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": -6,
+       "elevacao": 6,
+       "aproxima": 1.15
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.3,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.6,
+        "de": 38.5,
+        "ate": 40.8
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "icone",
+        "icone": "v",
+        "ancora": "diogo",
+        "alturaRel": 1.25,
+        "dx": 0.25,
+        "tamanho": 0.16,
+        "de": 38.5,
+        "ate": 40.7
+       }
+      ]
+     }
+    },
+    {
+     "id": "c09-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c9",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#f4a261"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 37.1,
+          "ate": 40.8,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 37.1,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "cheer",
+          "de": 37.1,
+          "ate": 40.8,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 0,
+       "elevacao": 7,
+       "aproxima": 0.95
+      },
+      "fluxos": [
+       {
+        "material": "fagulha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 30,
+        "dispersao": 0.8,
+        "de": 38.5,
+        "ate": 40.8
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c10",
+   "inicio": 40.8,
+   "fim": 45.8,
+   "frases": [
+    "f19"
+   ],
+   "resumo": "Mendigos se escondam na sexta",
+   "variantes": [
+    {
+     "id": "c10-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c10",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2b2d42"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 40.8,
+          "ate": 45.8,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         2,
+         0,
+         8
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 40.8,
+          "ate": 43.5,
+          "para": [
+           -0.5,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 43.5,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "point",
+          "de": 43.6,
+          "ate": 45.8,
+          "expressao": "worried"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -8,
+       "elevacao": 8,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "poeira",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          0.1,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.5,
+        "de": 40.8,
+        "ate": 43.5
+       }
+      ],
+      "elementos": [
+       {
+        "tipo": "etiqueta",
+        "texto": "ALERTA DE SEXTA 🚿",
+        "pos": [
+         0.5,
+         0.2
+        ],
+        "ponto": "#ffd60a",
+        "de": 41.5,
+        "ate": 45.5
+       }
+      ]
+     }
+    },
+    {
+     "id": "c10-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c10",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e63946"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 40.8,
+          "ate": 45.8,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 40.8,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 40.8,
+          "ate": 43.5,
+          "expressao": "worried"
+         },
+         {
+          "clip": "point",
+          "de": 43.6,
+          "ate": 45.8,
+          "expressao": "worried"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 5,
+       "elevacao": 6,
+       "aproxima": 1.15
+      },
+      "fluxos": [
+       {
+        "material": "fumaca",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          2.0,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.7,
+        "de": 42.0,
+        "ate": 45.5
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c11",
+   "inicio": 45.8,
+   "fim": 49.2,
+   "frases": [
+    "f20"
+   ],
+   "resumo": "Ou o Diogo dá banho em vocês",
+   "variantes": [
+    {
+     "id": "c11-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c11",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#457b9d"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 45.8,
+          "ate": 49.2,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 45.8,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "point",
+          "de": 45.8,
+          "ate": 47.5,
+          "expressao": "angry"
+         },
+         {
+          "clip": "cheer",
+          "de": 47.6,
+          "ate": 49.2,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 10,
+       "elevacao": 6,
+       "aproxima": 1.2
+      },
+      "fluxos": [
+       {
+        "material": "agua",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          2.5,
+          0
+         ]
+        },
+        "taxa": 35,
+        "dispersao": 0.8,
+        "de": 46.0,
+        "ate": 49.0
+       }
+      ]
+     }
+    },
+    {
+     "id": "c11-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c11",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 45.8,
+          "ate": 49.2,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 45.8,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 45.8,
+          "ate": 49.2,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -8,
+       "elevacao": 7,
+       "aproxima": 0.95
+      },
+      "fluxos": [
+       {
+        "material": "bolha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.6,
+        "de": 46.5,
+        "ate": 49.0
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c12",
+   "inicio": 49.2,
+   "fim": 53.2,
+   "frases": [
+    "f21"
+   ],
+   "resumo": "Com sabonete, xampu e condicionador",
+   "variantes": [
+    {
+     "id": "c12-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c12",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e76f51"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 49.2,
+          "ate": 53.2,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 49.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 49.2,
+          "ate": 51.5,
+          "expressao": "happy"
+         },
+         {
+          "clip": "cheer",
+          "de": 51.6,
+          "ate": 53.2,
+          "expressao": "laugh"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 8,
+       "elevacao": 7,
+       "aproxima": 1.0
+      },
+      "fluxos": [
+       {
+        "material": "bolha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 40,
+        "dispersao": 1.0,
+        "de": 49.5,
+        "ate": 53.0
+       }
+      ]
+     }
+    },
+    {
+     "id": "c12-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c12",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#3d6fb6"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 49.2,
+          "ate": 53.2,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 49.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "cheer",
+          "de": 49.2,
+          "ate": 53.2,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 0,
+       "elevacao": 5,
+       "aproxima": 1.15
+      },
+      "fluxos": [
+       {
+        "material": "bolha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 35,
+        "dispersao": 0.8,
+        "de": 49.5,
+        "ate": 53.0
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c13",
+   "inicio": 53.2,
+   "fim": 60.0,
+   "frases": [
+    "f22",
+    "f23"
+   ],
+   "resumo": "O único político que ameaça com higiene",
+   "variantes": [
+    {
+     "id": "c13-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c13",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 53.2,
+          "ate": 60.0,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         -1.5,
+         0,
+         8
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 53.2,
+          "ate": 56.0,
+          "para": [
+           1.0,
+           8
+          ],
+          "clip": "walk"
+         }
+        ],
+        "viraPara": [
+         {
+          "em": 56.0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "wave",
+          "de": 56.1,
+          "ate": 60.0,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": -8,
+       "elevacao": 8,
+       "aproxima": 0.9
+      },
+      "fluxos": [
+       {
+        "material": "fagulha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.8,
+        "de": 56.5,
+        "ate": 60.0
+       }
+      ]
+     }
+    },
+    {
+     "id": "c13-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c13",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#e76f51"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 53.2,
+          "ate": 60.0,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 53.2,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "shrug",
+          "de": 53.2,
+          "ate": 56.5,
+          "expressao": "laugh"
+         },
+         {
+          "clip": "wave",
+          "de": 56.6,
+          "ate": 60.0,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 6,
+       "elevacao": 6,
+       "aproxima": 1.1
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.2,
+          0
+         ]
+        },
+        "taxa": 20,
+        "dispersao": 0.6,
+        "de": 54.0,
+        "ate": 59.0
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  },
+  {
+   "id": "c14",
+   "inicio": 60.0,
+   "fim": 66.2,
+   "frases": [
+    "f24",
+    "f25"
+   ],
+   "resumo": "Pergunta final para comentar",
+   "variantes": [
+    {
+     "id": "c14-a",
+     "descricao": "Plano principal dinâmico",
+     "recomendada": true,
+     "cena": {
+      "transicao": "flash",
+      "objetos": [
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "casa",
+        "asset": "casa_simples",
+        "variante": "amarela",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         -4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "lixeira",
+        "asset": "lixeira",
+        "variante": "azul",
+        "pos": [
+         3.5,
+         0,
+         7
+        ]
+       },
+       {
+        "id": "arv",
+        "asset": "arvore_redonda",
+        "pos": [
+         7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 3
+        }
+       },
+       {
+        "id": "c14",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#457b9d"
+        },
+        "pos": [
+         -22,
+         0,
+         16
+        ],
+        "giro": 90,
+        "movimentos": [
+         {
+          "de": 60.0,
+          "ate": 66.2,
+          "para": [
+           22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 60.0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "point",
+          "de": 60.0,
+          "ate": 63.0,
+          "expressao": "neutral"
+         },
+         {
+          "clip": "shrug",
+          "de": 63.1,
+          "ate": 66.2,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "medio",
+       "angulo": 0,
+       "elevacao": 8,
+       "aproxima": 1.0
+      },
+      "fluxos": [
+       {
+        "material": "fagulha",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.8,
+          0
+         ]
+        },
+        "taxa": 35,
+        "dispersao": 1.0,
+        "de": 61.5,
+        "ate": 66.0
+       }
+      ],
+      "textos": [
+       {
+        "texto": "TOMAVA BANHO OU SE ESCONDIA?",
+        "de": 60.5,
+        "ate": 66.0,
+        "estilo": "pergunta"
+       }
+      ]
+     }
+    },
+    {
+     "id": "c14-b",
+     "descricao": "Ângulo alternativo",
+     "recomendada": false,
+     "cena": {
+      "objetos": [
+       {
+        "id": "sobrado1",
+        "asset": "sobrado",
+        "variante": "cinza",
+        "pos": [
+         -11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "loja",
+        "asset": "loja",
+        "variante": "mercado",
+        "pos": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sobrado2",
+        "asset": "sobrado",
+        "variante": "salmao",
+        "pos": [
+         11,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "poste",
+        "asset": "poste_luz",
+        "pos": [
+         4.5,
+         0,
+         9
+        ]
+       },
+       {
+        "id": "arv1",
+        "asset": "arvore_redonda",
+        "pos": [
+         -7,
+         0,
+         6
+        ],
+        "params": {
+         "seed": 2
+        }
+       },
+       {
+        "id": "c14",
+        "asset": "carro_sedan",
+        "params": {
+         "color": "#2a9d8f"
+        },
+        "pos": [
+         22,
+         0,
+         16
+        ],
+        "giro": -90,
+        "movimentos": [
+         {
+          "de": 60.0,
+          "ate": 66.2,
+          "para": [
+           -22,
+           16
+          ]
+         }
+        ]
+       }
+      ],
+      "personagens": [
+       {
+        "id": "diogo",
+        "preset": "homem",
+        "overrides": {
+         "skin": "#e0ac69",
+         "top": {
+          "color": "#1d3557"
+         },
+         "bottom": {
+          "color": "#457b9d",
+          "type": "pants"
+         },
+         "hair": {
+          "style": "curly",
+          "color": "#222222"
+         },
+         "face": {
+          "glasses": true
+         }
+        },
+        "pos": [
+         0,
+         0,
+         8
+        ],
+        "giro": 0,
+        "viraPara": [
+         {
+          "em": 60.0,
+          "alvo": "camera"
+         }
+        ],
+        "acoes": [
+         {
+          "clip": "talk",
+          "de": 60.0,
+          "ate": 63.0,
+          "expressao": "happy"
+         },
+         {
+          "clip": "cheer",
+          "de": 63.1,
+          "ate": 66.2,
+          "expressao": "happy"
+         }
+        ]
+       }
+      ],
+      "camera": {
+       "tipo": "enquadrar",
+       "alvo": "diogo",
+       "plano": "close",
+       "angulo": 0,
+       "elevacao": 5,
+       "aproxima": 1.15
+      },
+      "fluxos": [
+       {
+        "material": "luz",
+        "origem": {
+         "ancora": "diogo",
+         "desloca": [
+          0,
+          1.5,
+          0
+         ]
+        },
+        "taxa": 25,
+        "dispersao": 0.8,
+        "de": 61.0,
+        "ate": 66.0
+       }
+      ],
+      "textos": [
+       {
+        "texto": "O QUE VOCÊ FARIA?",
+        "de": 60.5,
+        "ate": 66.0,
+        "estilo": "pergunta"
+       }
+      ]
+     }
+    }
+   ],
+   "escolhida": null,
+   "ajustes": []
+  }
+ ]
+}

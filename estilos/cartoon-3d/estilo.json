@@ -1,0 +1,14 @@
+{
+  "slug": "cartoon-3d",
+  "nome": "Cartoon 3D · Bean-Head Story",
+  "nota": 5,
+  "motor": "cartoon3d",
+  "descricao": "Personagens 2D flat 'bean-head' em mundo 3D colorido com traços de tinta, texturas pintadas, profundidade de campo, trilha sonora e efeitos sonoros sincronizados.",
+  "pronto": true,
+  "origem": "vendor/claude-animated-shorts",
+  "legenda": {
+    "cor": "#FFFFFF",
+    "destaque": "#FFD60A",
+    "porVez": 3
+  }
+}

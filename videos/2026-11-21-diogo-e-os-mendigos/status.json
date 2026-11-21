@@ -12,7 +12,8 @@
     "velocidade": 0.82
   },
   "etapa": "cenas",
-  "estado": "erro",
+  "estado": "aguardando_aprovacao",
+  "capaEm": 35.0,
   "fluxo": 2,
   "portoes": {
     "roteiro": {
@@ -120,7 +121,11 @@
     },
     {
       "em": "2026-11-21T21:54:56.650Z",
-      "evento": "erro na IA"
+      "evento": "erro na IA (Claude bateu cota de 5h)"
+    },
+    {
+      "em": "2026-11-21T23:14:00.000Z",
+      "evento": "IA (Gemini): 14 cenas 3D com 2 variantes cada geradas e validadas"
     }
   ],
   "criadoEm": "2026-11-21T21:14:50.694Z",
