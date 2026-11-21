@@ -1,0 +1,46 @@
+{
+  "id": "2026-11-21-tales-e-o-dinheiro-2d",
+  "titulo": "Tales e o dinheiro (2D)",
+  "ideia": "A mesma história do Tales e o dinheiro, no estilo 2D flat, para comparar com a versão 3D.",
+  "duracaoAlvo": 45,
+  "estilo": "2d-flat-noturno",
+  "personagens": [
+    "tales",
+    "zeca"
+  ],
+  "pasta": "videos/2026-11-21-tales-e-o-dinheiro-2d",
+  "voz": {
+    "perfil": "2f02b91b",
+    "motor": "omnivoice",
+    "velocidade": 0.82
+  },
+  "capaEm": 24.5,
+  "etapa": "final",
+  "estado": "aguardando_aprovacao",
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-21T19:40:03.528807+00:00",
+      "evento": "exemplo do estilo 2D (mesma narração da versão 3D)"
+    }
+  ],
+  "criadoEm": "2026-11-21T19:40:03.528807+00:00"
+}

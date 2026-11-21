@@ -1,0 +1,21 @@
+{
+  "id": "2026-11-21-exemplo",
+  "titulo": "Título do vídeo",
+  "ideia": "o que o criador pediu",
+  "duracaoAlvo": 45,
+  "estilo": "3d-cidade",
+  "personagens": [],
+  "pasta": "Kit_Video_3d/projects/2026-11-21-exemplo",
+  "voz": { "perfil": "2f02b91b", "motor": "omnivoice", "velocidade": 0.82 },
+  "etapa": "roteiro",
+  "estado": "aguardando_ia",
+  "portoes": {
+    "roteiro":  { "aprovado": false, "ajustes": [] },
+    "narracao": { "aprovado": false, "ajustes": [] },
+    "cenas":    { "aprovado": false, "ajustes": [] },
+    "final":    { "aprovado": false, "ajustes": [] }
+  },
+  "agenda": null,
+  "historico": [],
+  "criadoEm": "2026-11-21T00:00:00Z"
+}

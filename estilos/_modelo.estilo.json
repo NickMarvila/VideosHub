@@ -1,0 +1,12 @@
+{
+  "slug": "obra-ensolarada",
+  "nome": "Obra ensolarada",
+  "nota": 0,
+  "cenario_prompt": "3D render, stylized, Pixar-like lighting, bright sunny day, {cena}, soft shadows, vertical composition",
+  "cenario_negativo": "text, watermark, people, characters",
+  "paleta": ["#FFB000", "#1E3A8A", "#F5F5F5"],
+  "legenda": { "fonte": "Montserrat ExtraBold", "cor": "#FFFFFF", "destaque": "#FFB000", "palavras_por_vez": 3 },
+  "transicao": "zoom-punch",
+  "musica": "",
+  "movimento_camera": "parallax-lento"
+}

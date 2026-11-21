@@ -1,0 +1,15 @@
+{
+  "nomeCanal": "Histórias do Tales",
+  "idioma": "pt-BR",
+  "nicho": "storytime de humor: histórias do dia a dia de personagens fixos",
+  "tom": "contador de histórias, calmo e bem-humorado, levemente irônico",
+  "estiloNarracao": "narrador único em terceira pessoa, ritmo calmo, pausas para a piada",
+  "elenco": { "guia": "homem", "curiosos": ["mulher", "velhinho"] },
+  "estiloVisual": { "horario": "dia", "chao": "concreto", "regra": "o Tales sempre com a mesma roupa; cidade colorida" },
+  "mecanismoUnico": "o mesmo personagem (Tales) em situações do cotidiano que todo mundo reconhece",
+  "abertura": "apresenta o Tales com uma provocação na tela no instante 0",
+  "fechamento": "o bordão 'ai ai, esse Tales' + pergunta fácil para marcar um amigo",
+  "capa": "Tales em close com expressão exagerada e o objeto da história",
+  "postagem": { "hashtagsFixas": ["#shorts"], "videoRelacionado": "", "linkFixo": "" },
+  "duracaoPadraoSegundos": 45
+}

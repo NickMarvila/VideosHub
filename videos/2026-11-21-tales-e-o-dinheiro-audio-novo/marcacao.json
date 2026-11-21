@@ -1,0 +1,80 @@
+[
+ {
+  "texto": "Esse é o Tales.",
+  "energia": "normal",
+  "pausa": 0.3,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+  "energia": "normal",
+  "pausa": 0.35,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+  "energia": "normal",
+  "pausa": 0.5,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "E isso acontece direto!",
+  "energia": "animada",
+  "pausa": 0.4,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro...",
+  "energia": "calma",
+  "pausa": 0.5,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+  "energia": "normal",
+  "pausa": 0.6,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "E no dia seguinte?",
+  "energia": "calma",
+  "pausa": 0.7,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "Aparece com um smartwatch de mil reais!",
+  "energia": "animada",
+  "pausa": 0.6,
+  "efeito": "risada"
+ },
+ {
+  "texto": "Aaai, ai...",
+  "energia": "calma",
+  "pausa": 0.3,
+  "efeito": "suspiro"
+ },
+ {
+  "texto": "Esse Tales.",
+  "energia": "calma",
+  "pausa": 0.4,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "Não pode sobrar um dinheirinho, que já quer gastar.",
+  "energia": "normal",
+  "pausa": 0.6,
+  "efeito": "risada"
+ },
+ {
+  "texto": "E aí, você também conhece um Tales?",
+  "energia": "animada",
+  "pausa": 0.35,
+  "efeito": "nenhum"
+ },
+ {
+  "texto": "Marca ele aqui nos comentários.",
+  "energia": "normal",
+  "pausa": 0,
+  "efeito": "nenhum"
+ }
+]

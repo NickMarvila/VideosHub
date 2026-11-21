@@ -1,0 +1,52 @@
+{
+  "slug": "tales",
+  "nome": "Tales",
+  "papel": "protagonista das histórias de dinheiro",
+  "personalidade": "trabalha numa rede de supermercado, dirige uma Paratí (escrever 'Paratí' na narração), não pode sobrar um dinheirinho que já quer gastar; reclama que está sem dinheiro e logo depois compra algo caro",
+  "bordao": "Aaai, ai... Esse Tales.",
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#d9a27a",
+      "top": {
+        "color": "#d62828"
+      },
+      "bottom": {
+        "color": "#2b2d42",
+        "type": "pants"
+      },
+      "hair": {
+        "style": "short",
+        "color": "#3b2a1a"
+      },
+      "face": {
+        "mustache": true
+      },
+      "hat": {
+        "type": "none"
+      }
+    },
+    "carro": {
+      "asset": "carro_hatch",
+      "params": {
+        "color": "#b8bec6"
+      },
+      "obs": "a Paratí (o kit não tem perua)"
+    }
+  },
+  "rig2d": {
+    "pele": "#D9A27A",
+    "camisa": "#D62828",
+    "calca": "#2B2D42",
+    "sapato": "#3B2A1A",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "nenhum",
+      "cor": "#000000"
+    },
+    "cabelo": "#3B2A1A",
+    "barba": false,
+    "bigode": true,
+    "detalhe": "nenhum"
+  }
+}

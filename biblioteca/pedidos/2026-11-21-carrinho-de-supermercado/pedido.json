@@ -1,0 +1,37 @@
+{
+  "id": "2026-11-21-carrinho-de-supermercado",
+  "tipo": "objeto",
+  "nome": "carrinho de supermercado",
+  "slug": "carrinho_de_supermercado",
+  "descricao": "Carrinho de supermercado de metal, com rodinhas e alça vermelha, pode estar vazio ou com algumas compras.",
+  "referencia": null,
+  "permissao": false,
+  "estado": "aguardando_escolha",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico prateado, alça vermelha, cesto aramado vazio (no 3D, 'compras' 0 a 6 enche o cesto)"
+    },
+    {
+      "n": 2,
+      "descricao": "Metal cinza-quente com alça vermelho-escuro, já cheio de compras coloridas saindo da borda"
+    },
+    {
+      "n": 3,
+      "descricao": "Carrinho maior de aço escuro, cesto fundo, para-choques e cubos das rodas vermelhos, cadeirinha amarela e sacola de papel"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-21T20:20:12.926Z",
+  "usoIA": [
+    {
+      "em": "2026-11-21T20:23:25.646Z",
+      "custoUSD": 0.8720988,
+      "turnos": 19,
+      "segundos": 190,
+      "tokensEntrada": 666955,
+      "tokensSaida": 18439
+    }
+  ],
+  "erro": null
+}

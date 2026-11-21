@@ -1,0 +1,177 @@
+[
+ {
+  "n": 1,
+  "id": "f01",
+  "texto": "Esse é o Diogo.",
+  "inicio": 0.0,
+  "fim": 1.13
+ },
+ {
+  "n": 2,
+  "id": "f02",
+  "texto": "E o Diogo tem uma teoria.",
+  "inicio": 1.33,
+  "fim": 2.79
+ },
+ {
+  "n": 3,
+  "id": "f03",
+  "texto": "Segundo ele... mendigo não pode tomar banho.",
+  "inicio": 3.29,
+  "fim": 6.25
+ },
+ {
+  "n": 4,
+  "id": "f04",
+  "texto": "Por quê?",
+  "inicio": 6.75,
+  "fim": 7.34
+ },
+ {
+  "n": 5,
+  "id": "f05",
+  "texto": "Porque morre.",
+  "inicio": 7.64,
+  "fim": 9.61
+ },
+ {
+  "n": 6,
+  "id": "f06",
+  "texto": "É sério.",
+  "inicio": 10.31,
+  "fim": 11.09
+ },
+ {
+  "n": 7,
+  "id": "f07",
+  "texto": "Ele explicou com toda a calma do mundo.",
+  "inicio": 11.29,
+  "fim": 14.02
+ },
+ {
+  "n": 8,
+  "id": "f08",
+  "texto": "Se o cara passa anos sem tomar banho... o corpo desacostuma.",
+  "inicio": 14.32,
+  "fim": 18.19
+ },
+ {
+  "n": 9,
+  "id": "f09",
+  "texto": "Aí cai uma gota de água... e pronto.",
+  "inicio": 18.49,
+  "fim": 20.68
+ },
+ {
+  "n": 10,
+  "id": "f10",
+  "texto": "Arrasta pra cima.",
+  "inicio": 20.88,
+  "fim": 22.35
+ },
+ {
+  "n": 11,
+  "id": "f11",
+  "texto": "Perguntaram pra ele de onde tirou isso.",
+  "inicio": 22.95,
+  "fim": 25.24
+ },
+ {
+  "n": 12,
+  "id": "f12",
+  "texto": "Ele disse que era ciência.",
+  "inicio": 25.54,
+  "fim": 27.25
+ },
+ {
+  "n": 13,
+  "id": "f13",
+  "texto": "Mas calma... que piora.",
+  "inicio": 27.85,
+  "fim": 29.52
+ },
+ {
+  "n": 14,
+  "id": "f14",
+  "texto": "Porque o Diogo quer ser político.",
+  "inicio": 30.02,
+  "fim": 32.08
+ },
+ {
+  "n": 15,
+  "id": "f15",
+  "texto": "E já tem até plano de governo.",
+  "inicio": 32.38,
+  "fim": 34.33
+ },
+ {
+  "n": 16,
+  "id": "f16",
+  "texto": "Toda sexta-feira... ele vai mandar chover.",
+  "inicio": 34.83,
+  "fim": 36.89
+ },
+ {
+  "n": 17,
+  "id": "f17",
+  "texto": "E no sábado?",
+  "inicio": 37.29,
+  "fim": 38.14
+ },
+ {
+  "n": 18,
+  "id": "f18",
+  "texto": "Segundo ele... problema resolvido.",
+  "inicio": 38.44,
+  "fim": 40.44
+ },
+ {
+  "n": 19,
+  "id": "f19",
+  "texto": "Então, se o Diogo for eleito... mendigos, se escondam na sexta-feira.",
+  "inicio": 41.14,
+  "fim": 45.49
+ },
+ {
+  "n": 20,
+  "id": "f20",
+  "texto": "Ou o Diogo vai dar banho em vocês.",
+  "inicio": 45.99,
+  "fim": 48.86
+ },
+ {
+  "n": 21,
+  "id": "f21",
+  "texto": "Com sabonete, xampu... e até condicionador.",
+  "inicio": 49.46,
+  "fim": 52.67
+ },
+ {
+  "n": 22,
+  "id": "f22",
+  "texto": "Aaai, ai... Esse Diogo.",
+  "inicio": 53.47,
+  "fim": 55.7
+ },
+ {
+  "n": 23,
+  "id": "f23",
+  "texto": "O único político que ameaça o povo... com higiene.",
+  "inicio": 56.0,
+  "fim": 59.8
+ },
+ {
+  "n": 24,
+  "id": "f24",
+  "texto": "E você?",
+  "inicio": 60.41,
+  "fim": 61.15
+ },
+ {
+  "n": 25,
+  "id": "f25",
+  "texto": "Se fosse mendigo... encarava o banho do Diogo ou se escondia na sexta?",
+  "inicio": 61.35,
+  "fim": 65.65
+ }
+]

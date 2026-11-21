@@ -1,0 +1,156 @@
+{
+  "id": "2026-11-21-diogo-e-os-mendigos",
+  "titulo": "Diogo e os mendigos",
+  "ideia": "Porque os mendigos nao podem tomar banho?\n\nem resumo, o Diogo disse que se um mendigo que a muito tempo nao toma banho, ele nao pode tomar dunada senao vai acabar morrendo.\no plano de governo do diogo é fazer chover toda sexta feira pros mendigos ja nao existirem no sabado, ja que assim que tomarem o banho de chuva eles vao de arrasta pra cima(morrer)\neai se vc fosse mendigo, iria tomar banho?",
+  "duracaoAlvo": 60,
+  "estilo": "3d-cidade",
+  "personagens": [],
+  "pasta": "Kit_Video_3d/projects/2026-11-21-diogo-e-os-mendigos",
+  "voz": {
+    "perfil": "2f02b91b",
+    "motor": "omnivoice",
+    "velocidade": 0.82
+  },
+  "etapa": "cenas",
+  "estado": "erro",
+  "fluxo": 2,
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-21T21:28:47.273Z"
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": [
+        {
+          "em": "2026-11-21T21:37:18.012Z",
+          "texto": "do quadro 19 em diante tem que reajustar, a piada é justamente nao fazer sentido dar banho morrer, entao vamos ironizar. 19- caso o diogo for eleito, mendigos se escondam na sexta feira, ou o diogo vai dar banho em voces",
+          "resolvido": true
+        }
+      ],
+      "aprovadoEm": "2026-11-21T21:54:27.764Z"
+    },
+    "cenas": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-21T21:14:50.694Z",
+      "evento": "pedido criado no painel"
+    },
+    {
+      "em": "2026-11-21T21:14:50.738Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T21:40:00.000Z",
+      "evento": "IA: roteiro escrito (sinopse, narração de ~143 palavras e marcação de 25 frases)"
+    },
+    {
+      "em": "2026-11-21T21:28:47.273Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-21T21:28:47.284Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-21T21:33:10.832Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-21T21:33:43.067Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-21T21:34:03.231Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-21T21:37:18.012Z",
+      "evento": "ajuste pedido (narracao)"
+    },
+    {
+      "em": "2026-11-21T21:37:18.026Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T21:45:00.000Z",
+      "evento": "IA: final reescrito em ironia (f19, f20, f21, f23, f25): se escondam na sexta ou o Diogo dá banho em vocês"
+    },
+    {
+      "em": "2026-11-21T21:47:01.252Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-21T21:47:22.993Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-21T21:49:31.589Z",
+      "evento": "regravando 4 frase(s)"
+    },
+    {
+      "em": "2026-11-21T21:50:22.224Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-21T21:51:41.465Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-21T21:52:02.282Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-21T21:54:27.765Z",
+      "evento": "narração aprovada"
+    },
+    {
+      "em": "2026-11-21T21:54:27.778Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T21:54:56.650Z",
+      "evento": "erro na IA"
+    }
+  ],
+  "criadoEm": "2026-11-21T21:14:50.694Z",
+  "usoIA": [
+    {
+      "em": "2026-11-21T21:16:28.182Z",
+      "etapa": "roteiro",
+      "custoUSD": 0.5237184,
+      "turnos": 15,
+      "segundos": 96,
+      "tokensEntrada": 443345,
+      "tokensSaida": 7720
+    },
+    {
+      "em": "2026-11-21T21:38:12.915Z",
+      "etapa": "narracao",
+      "custoUSD": 0.5280284,
+      "turnos": 16,
+      "segundos": 54,
+      "tokensEntrada": 437640,
+      "tokensSaida": 5080
+    },
+    {
+      "em": "2026-11-21T21:54:56.650Z",
+      "etapa": "cenas",
+      "custoUSD": 0.3497606,
+      "turnos": 12,
+      "segundos": 28,
+      "tokensEntrada": 239444,
+      "tokensSaida": 1781
+    }
+  ]
+}

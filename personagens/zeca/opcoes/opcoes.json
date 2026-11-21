@@ -1,0 +1,22 @@
+{
+  "prompt": "Full body character design of Zeca: Pedreiro baiano bem-humorado, boné laranja, camiseta azul. Style: cartoon 2D, contorno grosso, cores chapadas, 2D flat cartoon illustration, bold clean outlines, flat cel shading, vibrant colors, friendly expressive face, standing front view, neutral pose, arms relaxed, whole body visible from head to feet, centered, isolated on a plain pure white background, character sheet reference, mascot quality",
+  "negativo": "photorealistic, 3d render, realistic skin, background scenery, text, watermark, logo, multiple characters, cropped, extra limbs, deformed hands, blurry",
+  "opcoes": [
+    {
+      "arquivo": "opcao_1_seed614382245_01.png",
+      "seed": 614382245
+    },
+    {
+      "arquivo": "opcao_2_seed278794172_01.png",
+      "seed": 278794172
+    },
+    {
+      "arquivo": "opcao_3_seed561827012_01.png",
+      "seed": 561827012
+    },
+    {
+      "arquivo": "opcao_4_seed1639189446_01.png",
+      "seed": 1639189446
+    }
+  ]
+}

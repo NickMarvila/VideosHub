@@ -1,0 +1,55 @@
+{
+  "id": "2026-11-21-tales-e-o-dinheiro",
+  "titulo": "Tales e o dinheiro",
+  "ideia": "O Tales não pode sobrar um dinheirinho que já quer gastar: reclama que a Paratí está sem freio e no dia seguinte aparece com um smartwatch de mil reais.",
+  "duracaoAlvo": 45,
+  "estilo": "3d-cidade",
+  "personagens": [
+    "tales"
+  ],
+  "pasta": "Kit_Video_3d/projects/tales-e-o-dinheiro",
+  "voz": {
+    "perfil": "2f02b91b",
+    "motor": "omnivoice",
+    "velocidade": 0.82
+  },
+  "etapa": "final",
+  "estado": "aguardando_aprovacao",
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": [
+        {
+          "em": "2026-11-21T18:02:28.119727+00:00",
+          "texto": "Voz com mais emoção (pedido do criador). Pendente: escolher outra voz.",
+          "resolvido": true
+        }
+      ]
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-21T18:02:28.119727+00:00",
+      "evento": "importado do teste do Kit 3D"
+    },
+    {
+      "em": "2026-11-21T18:20:57.973194+00:00",
+      "evento": "voz com emoção ([laughter]/[sigh]), cenas reajustadas e vídeo renderizado de novo (versão 1 guardada em versao1/)"
+    }
+  ],
+  "criadoEm": "2026-11-21T18:02:28.119727+00:00",
+  "capaEm": 25
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "zeca",
+  "nome": "Zeca",
+  "descricao": "Pedreiro baiano bem-humorado, boné laranja, camiseta azul",
+  "personalidade": "otimista, exagerado, fala rápido",
+  "estilo_arte": "cartoon 2D, contorno grosso, cores chapadas",
+  "referencia": null,
+  "poses": [
+    "neutro",
+    "apontando",
+    "bracos_abertos",
+    "pensando",
+    "andando"
+  ],
+  "expressoes": [
+    "feliz",
+    "surpreso",
+    "bravo",
+    "triste",
+    "duvida"
+  ],
+  "bocas": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "X"
+  ],
+  "voz": {
+    "motor": "voxcpm2",
+    "voz_id": "9788cb76",
+    "amostra": "voz/amostra.wav",
+    "seed": 42,
+    "velocidade": 1.0,
+    "idioma": "pt",
+    "descricao": "homem brasileiro de uns 35 anos, voz grave e calorosa, sotaque baiano, animado e bem-humorado",
+    "licenca": "Apache-2.0 (VoxCPM2)"
+  },
+  "aprovado_em": null,
+  "rig2d": {
+    "pele": "#E9D8B8",
+    "camisa": "#3C6FA8",
+    "calca": "#2D3B57",
+    "sapato": "#5A3B26",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "bone",
+      "cor": "#E07B2E"
+    },
+    "barba": true,
+    "detalhe": "cinto_ferramentas",
+    "corDetalhe": "#6B4A2B"
+  },
+  "kit3d": {
+    "preset": "servente",
+    "overrides": {
+      "skin": "#e9d8b8",
+      "top": {
+        "color": "#3c6fa8"
+      },
+      "bottom": {
+        "color": "#2d3b57",
+        "type": "pants"
+      },
+      "hat": {
+        "type": "cap",
+        "color": "#e07b2e"
+      },
+      "face": {
+        "beard": true
+      }
+    }
+  }
+}

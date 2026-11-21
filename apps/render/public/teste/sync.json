@@ -1,0 +1,327 @@
+{
+ "texto": "Gente, olha isso! Acharam uma piscina dentro de uma caçamba de entulho. E não é que ficou bonita? Bora mergulhar!",
+ "palavras": [
+  {
+   "palavra": "Gente,",
+   "inicio": 0.0,
+   "fim": 0.24
+  },
+  {
+   "palavra": "olha",
+   "inicio": 0.24,
+   "fim": 0.5
+  },
+  {
+   "palavra": "isso!",
+   "inicio": 0.5,
+   "fim": 0.8
+  },
+  {
+   "palavra": "Acharam",
+   "inicio": 1.2,
+   "fim": 1.64
+  },
+  {
+   "palavra": "uma",
+   "inicio": 1.64,
+   "fim": 1.68
+  },
+  {
+   "palavra": "piscina",
+   "inicio": 1.68,
+   "fim": 2.2
+  },
+  {
+   "palavra": "dentro",
+   "inicio": 2.2,
+   "fim": 2.48
+  },
+  {
+   "palavra": "de",
+   "inicio": 2.48,
+   "fim": 2.66
+  },
+  {
+   "palavra": "uma",
+   "inicio": 2.66,
+   "fim": 2.74
+  },
+  {
+   "palavra": "caçamba",
+   "inicio": 2.74,
+   "fim": 3.18
+  },
+  {
+   "palavra": "de",
+   "inicio": 3.18,
+   "fim": 3.34
+  },
+  {
+   "palavra": "entulho.",
+   "inicio": 3.34,
+   "fim": 3.7
+  },
+  {
+   "palavra": "E",
+   "inicio": 3.76,
+   "fim": 4.0
+  },
+  {
+   "palavra": "não",
+   "inicio": 4.0,
+   "fim": 4.08
+  },
+  {
+   "palavra": "é",
+   "inicio": 4.08,
+   "fim": 4.16
+  },
+  {
+   "palavra": "que",
+   "inicio": 4.16,
+   "fim": 4.22
+  },
+  {
+   "palavra": "ficou",
+   "inicio": 4.22,
+   "fim": 4.42
+  },
+  {
+   "palavra": "bonita?",
+   "inicio": 4.42,
+   "fim": 4.8
+  },
+  {
+   "palavra": "Bora",
+   "inicio": 4.86,
+   "fim": 5.16
+  },
+  {
+   "palavra": "mergulhar!",
+   "inicio": 5.16,
+   "fim": 5.64
+  }
+ ],
+ "bocas": [
+  {
+   "inicio": 0.0,
+   "fim": 0.1,
+   "boca": "B"
+  },
+  {
+   "inicio": 0.1,
+   "fim": 0.17,
+   "boca": "C"
+  },
+  {
+   "inicio": 0.17,
+   "fim": 0.24,
+   "boca": "B"
+  },
+  {
+   "inicio": 0.24,
+   "fim": 0.38,
+   "boca": "F"
+  },
+  {
+   "inicio": 0.38,
+   "fim": 0.45,
+   "boca": "E"
+  },
+  {
+   "inicio": 0.45,
+   "fim": 0.66,
+   "boca": "C"
+  },
+  {
+   "inicio": 0.66,
+   "fim": 1.01,
+   "boca": "B"
+  },
+  {
+   "inicio": 1.01,
+   "fim": 1.23,
+   "boca": "X"
+  },
+  {
+   "inicio": 1.23,
+   "fim": 1.46,
+   "boca": "B"
+  },
+  {
+   "inicio": 1.46,
+   "fim": 1.6,
+   "boca": "D"
+  },
+  {
+   "inicio": 1.6,
+   "fim": 1.67,
+   "boca": "F"
+  },
+  {
+   "inicio": 1.67,
+   "fim": 1.75,
+   "boca": "A"
+  },
+  {
+   "inicio": 1.75,
+   "fim": 2.04,
+   "boca": "B"
+  },
+  {
+   "inicio": 2.04,
+   "fim": 2.18,
+   "boca": "C"
+  },
+  {
+   "inicio": 2.18,
+   "fim": 2.26,
+   "boca": "A"
+  },
+  {
+   "inicio": 2.26,
+   "fim": 2.49,
+   "boca": "B"
+  },
+  {
+   "inicio": 2.49,
+   "fim": 2.57,
+   "boca": "A"
+  },
+  {
+   "inicio": 2.57,
+   "fim": 2.62,
+   "boca": "G"
+  },
+  {
+   "inicio": 2.62,
+   "fim": 2.67,
+   "boca": "B"
+  },
+  {
+   "inicio": 2.67,
+   "fim": 2.81,
+   "boca": "F"
+  },
+  {
+   "inicio": 2.81,
+   "fim": 2.95,
+   "boca": "C"
+  },
+  {
+   "inicio": 2.95,
+   "fim": 3.09,
+   "boca": "B"
+  },
+  {
+   "inicio": 3.09,
+   "fim": 3.17,
+   "boca": "A"
+  },
+  {
+   "inicio": 3.17,
+   "fim": 3.78,
+   "boca": "F"
+  },
+  {
+   "inicio": 3.78,
+   "fim": 3.96,
+   "boca": "X"
+  },
+  {
+   "inicio": 3.96,
+   "fim": 4.01,
+   "boca": "B"
+  },
+  {
+   "inicio": 4.01,
+   "fim": 4.2,
+   "boca": "C"
+  },
+  {
+   "inicio": 4.2,
+   "fim": 4.27,
+   "boca": "B"
+  },
+  {
+   "inicio": 4.27,
+   "fim": 4.41,
+   "boca": "E"
+  },
+  {
+   "inicio": 4.41,
+   "fim": 4.49,
+   "boca": "A"
+  },
+  {
+   "inicio": 4.49,
+   "fim": 4.56,
+   "boca": "F"
+  },
+  {
+   "inicio": 4.56,
+   "fim": 4.62,
+   "boca": "B"
+  },
+  {
+   "inicio": 4.62,
+   "fim": 4.7,
+   "boca": "A"
+  },
+  {
+   "inicio": 4.7,
+   "fim": 4.86,
+   "boca": "C"
+  },
+  {
+   "inicio": 4.86,
+   "fim": 4.98,
+   "boca": "B"
+  },
+  {
+   "inicio": 4.98,
+   "fim": 5.06,
+   "boca": "A"
+  },
+  {
+   "inicio": 5.06,
+   "fim": 5.25,
+   "boca": "C"
+  },
+  {
+   "inicio": 5.25,
+   "fim": 5.33,
+   "boca": "A"
+  },
+  {
+   "inicio": 5.33,
+   "fim": 5.4,
+   "boca": "B"
+  },
+  {
+   "inicio": 5.4,
+   "fim": 5.47,
+   "boca": "F"
+  },
+  {
+   "inicio": 5.47,
+   "fim": 5.54,
+   "boca": "B"
+  },
+  {
+   "inicio": 5.54,
+   "fim": 5.75,
+   "boca": "C"
+  },
+  {
+   "inicio": 5.75,
+   "fim": 5.82,
+   "boca": "B"
+  },
+  {
+   "inicio": 5.82,
+   "fim": 5.84,
+   "boca": "X"
+  }
+ ]
+}

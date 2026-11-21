@@ -1,0 +1,477 @@
+[
+ {
+  "palavra": "Esse",
+  "inicio": 0.34,
+  "fim": 0.84
+ },
+ {
+  "palavra": "é",
+  "inicio": 0.84,
+  "fim": 0.94
+ },
+ {
+  "palavra": "o",
+  "inicio": 0.94,
+  "fim": 1.0
+ },
+ {
+  "palavra": "Tales.",
+  "inicio": 1.0,
+  "fim": 1.42
+ },
+ {
+  "palavra": "O",
+  "inicio": 1.66,
+  "fim": 1.94
+ },
+ {
+  "palavra": "Tales",
+  "inicio": 1.94,
+  "fim": 2.3
+ },
+ {
+  "palavra": "trabalha",
+  "inicio": 2.3,
+  "fim": 2.88
+ },
+ {
+  "palavra": "numa",
+  "inicio": 2.88,
+  "fim": 3.0
+ },
+ {
+  "palavra": "rede",
+  "inicio": 3.0,
+  "fim": 3.4
+ },
+ {
+  "palavra": "de",
+  "inicio": 3.4,
+  "fim": 3.66
+ },
+ {
+  "palavra": "supermercado,",
+  "inicio": 3.66,
+  "fim": 4.46
+ },
+ {
+  "palavra": "e",
+  "inicio": 4.46,
+  "fim": 4.8
+ },
+ {
+  "palavra": "dirige",
+  "inicio": 4.8,
+  "fim": 5.84
+ },
+ {
+  "palavra": "uma",
+  "inicio": 5.84,
+  "fim": 5.96
+ },
+ {
+  "palavra": "Paratí.",
+  "inicio": 5.96,
+  "fim": 6.52
+ },
+ {
+  "palavra": "O",
+  "inicio": 6.6,
+  "fim": 6.8
+ },
+ {
+  "palavra": "Tales",
+  "inicio": 6.8,
+  "fim": 7.14
+ },
+ {
+  "palavra": "tem",
+  "inicio": 7.14,
+  "fim": 7.36
+ },
+ {
+  "palavra": "um",
+  "inicio": 7.36,
+  "fim": 7.5
+ },
+ {
+  "palavra": "sério",
+  "inicio": 7.5,
+  "fim": 7.78
+ },
+ {
+  "palavra": "problema",
+  "inicio": 7.78,
+  "fim": 7.98
+ },
+ {
+  "palavra": "com",
+  "inicio": 7.98,
+  "fim": 8.28
+ },
+ {
+  "palavra": "dinheiro:",
+  "inicio": 8.28,
+  "fim": 8.66
+ },
+ {
+  "palavra": "não",
+  "inicio": 8.98,
+  "fim": 9.46
+ },
+ {
+  "palavra": "pode",
+  "inicio": 9.46,
+  "fim": 9.72
+ },
+ {
+  "palavra": "sobrar",
+  "inicio": 9.72,
+  "fim": 10.06
+ },
+ {
+  "palavra": "um",
+  "inicio": 10.06,
+  "fim": 10.14
+ },
+ {
+  "palavra": "dinheirinho,",
+  "inicio": 10.14,
+  "fim": 10.56
+ },
+ {
+  "palavra": "que",
+  "inicio": 10.56,
+  "fim": 10.68
+ },
+ {
+  "palavra": "ele",
+  "inicio": 10.68,
+  "fim": 10.78
+ },
+ {
+  "palavra": "já",
+  "inicio": 10.78,
+  "fim": 10.9
+ },
+ {
+  "palavra": "quer",
+  "inicio": 10.9,
+  "fim": 11.04
+ },
+ {
+  "palavra": "gastar.",
+  "inicio": 11.04,
+  "fim": 11.52
+ },
+ {
+  "palavra": "E",
+  "inicio": 11.52,
+  "fim": 12.82
+ },
+ {
+  "palavra": "isso",
+  "inicio": 12.82,
+  "fim": 13.32
+ },
+ {
+  "palavra": "acontece",
+  "inicio": 13.32,
+  "fim": 13.64
+ },
+ {
+  "palavra": "direto.",
+  "inicio": 13.64,
+  "fim": 14.4
+ },
+ {
+  "palavra": "Ele",
+  "inicio": 14.46,
+  "fim": 15.44
+ },
+ {
+  "palavra": "passa",
+  "inicio": 15.44,
+  "fim": 15.78
+ },
+ {
+  "palavra": "a",
+  "inicio": 15.78,
+  "fim": 15.92
+ },
+ {
+  "palavra": "semana",
+  "inicio": 15.92,
+  "fim": 16.18
+ },
+ {
+  "palavra": "inteira",
+  "inicio": 16.18,
+  "fim": 16.76
+ },
+ {
+  "palavra": "reclamando",
+  "inicio": 16.76,
+  "fim": 17.54
+ },
+ {
+  "palavra": "que",
+  "inicio": 17.54,
+  "fim": 17.76
+ },
+ {
+  "palavra": "tá",
+  "inicio": 17.76,
+  "fim": 17.92
+ },
+ {
+  "palavra": "sem",
+  "inicio": 17.92,
+  "fim": 18.12
+ },
+ {
+  "palavra": "dinheiro.",
+  "inicio": 18.12,
+  "fim": 18.46
+ },
+ {
+  "palavra": "Que",
+  "inicio": 18.62,
+  "fim": 18.72
+ },
+ {
+  "palavra": "a",
+  "inicio": 18.72,
+  "fim": 18.8
+ },
+ {
+  "palavra": "Paratí",
+  "inicio": 18.8,
+  "fim": 19.24
+ },
+ {
+  "palavra": "tá",
+  "inicio": 19.24,
+  "fim": 19.44
+ },
+ {
+  "palavra": "sem",
+  "inicio": 19.44,
+  "fim": 19.62
+ },
+ {
+  "palavra": "freio,",
+  "inicio": 19.62,
+  "fim": 20.08
+ },
+ {
+  "palavra": "mas",
+  "inicio": 20.08,
+  "fim": 20.2
+ },
+ {
+  "palavra": "não",
+  "inicio": 20.2,
+  "fim": 20.36
+ },
+ {
+  "palavra": "tem",
+  "inicio": 20.36,
+  "fim": 20.54
+ },
+ {
+  "palavra": "dinheiro",
+  "inicio": 20.54,
+  "fim": 20.78
+ },
+ {
+  "palavra": "pra",
+  "inicio": 20.78,
+  "fim": 20.94
+ },
+ {
+  "palavra": "arrumar.",
+  "inicio": 20.94,
+  "fim": 21.3
+ },
+ {
+  "palavra": "E",
+  "inicio": 21.3,
+  "fim": 21.7
+ },
+ {
+  "palavra": "no",
+  "inicio": 21.7,
+  "fim": 21.84
+ },
+ {
+  "palavra": "dia",
+  "inicio": 21.84,
+  "fim": 22.0
+ },
+ {
+  "palavra": "seguinte?",
+  "inicio": 22.0,
+  "fim": 22.36
+ },
+ {
+  "palavra": "Aparece",
+  "inicio": 22.36,
+  "fim": 23.44
+ },
+ {
+  "palavra": "com",
+  "inicio": 23.44,
+  "fim": 23.9
+ },
+ {
+  "palavra": "um",
+  "inicio": 23.9,
+  "fim": 23.98
+ },
+ {
+  "palavra": "smartwatch",
+  "inicio": 23.98,
+  "fim": 24.46
+ },
+ {
+  "palavra": "de",
+  "inicio": 24.46,
+  "fim": 24.74
+ },
+ {
+  "palavra": "mil",
+  "inicio": 24.74,
+  "fim": 24.9
+ },
+ {
+  "palavra": "reais.",
+  "inicio": 24.9,
+  "fim": 25.16
+ },
+ {
+  "palavra": "Aaai,",
+  "inicio": 25.96,
+  "fim": 26.48
+ },
+ {
+  "palavra": "ai...",
+  "inicio": 26.74,
+  "fim": 27.04
+ },
+ {
+  "palavra": "Esse",
+  "inicio": 27.08,
+  "fim": 27.6
+ },
+ {
+  "palavra": "Tales.",
+  "inicio": 27.6,
+  "fim": 28.1
+ },
+ {
+  "palavra": "Não",
+  "inicio": 28.1,
+  "fim": 28.64
+ },
+ {
+  "palavra": "pode",
+  "inicio": 28.64,
+  "fim": 30.02
+ },
+ {
+  "palavra": "sobrar",
+  "inicio": 30.02,
+  "fim": 30.34
+ },
+ {
+  "palavra": "um",
+  "inicio": 30.34,
+  "fim": 30.44
+ },
+ {
+  "palavra": "dinheirinho,",
+  "inicio": 30.44,
+  "fim": 31.0
+ },
+ {
+  "palavra": "que",
+  "inicio": 31.0,
+  "fim": 31.14
+ },
+ {
+  "palavra": "já",
+  "inicio": 31.14,
+  "fim": 31.22
+ },
+ {
+  "palavra": "quer",
+  "inicio": 31.22,
+  "fim": 31.38
+ },
+ {
+  "palavra": "gastar.",
+  "inicio": 31.38,
+  "fim": 31.56
+ },
+ {
+  "palavra": "E",
+  "inicio": 31.56,
+  "fim": 32.48
+ },
+ {
+  "palavra": "aí,",
+  "inicio": 32.48,
+  "fim": 32.7
+ },
+ {
+  "palavra": "você",
+  "inicio": 32.82,
+  "fim": 33.52
+ },
+ {
+  "palavra": "também",
+  "inicio": 33.52,
+  "fim": 33.76
+ },
+ {
+  "palavra": "conhece",
+  "inicio": 33.76,
+  "fim": 34.1
+ },
+ {
+  "palavra": "um",
+  "inicio": 34.1,
+  "fim": 34.16
+ },
+ {
+  "palavra": "Tales?",
+  "inicio": 34.16,
+  "fim": 34.56
+ },
+ {
+  "palavra": "Marca",
+  "inicio": 35.44,
+  "fim": 35.96
+ },
+ {
+  "palavra": "ele",
+  "inicio": 35.96,
+  "fim": 36.04
+ },
+ {
+  "palavra": "aqui",
+  "inicio": 36.04,
+  "fim": 36.22
+ },
+ {
+  "palavra": "nos",
+  "inicio": 36.22,
+  "fim": 36.36
+ },
+ {
+  "palavra": "comentários.",
+  "inicio": 36.36,
+  "fim": 36.64
+ }
+]

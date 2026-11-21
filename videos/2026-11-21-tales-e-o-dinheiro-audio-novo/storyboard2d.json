@@ -1,0 +1,638 @@
+{
+ "titulo": "Tales e o dinheiro (2D)",
+ "duracao": 44.44,
+ "audio": "narracao.wav",
+ "legenda": {
+  "cor": "#FFFFFF",
+  "destaque": "#FF9F1C",
+  "porVez": 3,
+  "y": 1580
+ },
+ "personagens": {},
+ "cenas": [
+  {
+   "cenario": "rua_dia",
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       0,
+       120
+      ],
+      [
+       1.6,
+       540
+      ]
+     ],
+     "entra": "nenhum",
+     "poses": [
+      [
+       0,
+       "neutro"
+      ],
+      [
+       1.7,
+       "apontando"
+      ]
+     ],
+     "expressoes": [
+      [
+       0,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": 800,
+     "y": 1560,
+     "escala": 0.8
+    }
+   ],
+   "textos": [
+    {
+     "texto": "ESSE É O TALES",
+     "estilo": "titulo"
+    }
+   ],
+   "inicio": 0,
+   "fim": 3.26
+  },
+  {
+   "cenario": "sala",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": 540,
+     "poses": [
+      [
+       3.4,
+       "neutro"
+      ],
+      [
+       3.8,
+       "segurando"
+      ]
+     ],
+     "expressoes": [
+      [
+       3.4,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "moeda",
+     "x": 760,
+     "y": 980,
+     "escala": 0.6,
+     "aparece": 3.79
+    }
+   ],
+   "textos": [
+    {
+     "texto": "REDE DE SUPERMERCADO",
+     "estilo": "carimbo"
+    }
+   ],
+   "zoom": [
+    1.15,
+    1.3
+   ],
+   "foco": [
+    540,
+    950
+   ],
+   "inicio": 3.26,
+   "fim": 4.68
+  },
+  {
+   "cenario": "estrada",
+   "transicao": "flash",
+   "zoom": [
+    1,
+    1.08
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": [
+      [
+       5,
+       -320
+      ],
+      [
+       6.4,
+       560
+      ]
+     ],
+     "y": 1480,
+     "escala": 1.15,
+     "movendo": true
+    }
+   ],
+   "textos": [
+    {
+     "texto": "E A PARATÍ",
+     "estilo": "destaque",
+     "de": 5.21
+    }
+   ],
+   "inicio": 4.68,
+   "fim": 8.39
+  },
+  {
+   "cenario": "rua_dia",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       8.4,
+       540
+      ],
+      [
+       10.7,
+       540
+      ],
+      [
+       11.6,
+       980
+      ]
+     ],
+     "poses": [
+      [
+       8.4,
+       "pensando"
+      ],
+      [
+       9.8,
+       "comemorando"
+      ]
+     ],
+     "expressoes": [
+      [
+       8.4,
+       "duvida"
+      ],
+      [
+       9.8,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "dinheiro",
+     "x": 790,
+     "y": 760,
+     "escala": 0.9,
+     "aparece": 8.96
+    },
+    {
+     "tipo": "pensamento",
+     "texto": "GASTAR!",
+     "x": 380,
+     "y": 520,
+     "aparece": 10.44
+    }
+   ],
+   "textos": [
+    {
+     "texto": "SOBROU? GASTOU!",
+     "estilo": "destaque",
+     "de": 10.9
+    }
+   ],
+   "inicio": 8.39,
+   "fim": 12.08
+  },
+  {
+   "cenario": "rua_noite",
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       11.7,
+       140
+      ],
+      [
+       14.2,
+       900
+      ]
+     ],
+     "expressoes": [
+      [
+       11.7,
+       "neutro"
+      ]
+     ]
+    }
+   ],
+   "textos": [
+    {
+     "texto": "SEG · TER · QUA · QUI...",
+     "estilo": "carimbo"
+    }
+   ],
+   "inicio": 12.08,
+   "fim": 14.59
+  },
+  {
+   "cenario": "sala",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": 540,
+     "poses": [
+      [
+       14.3,
+       "maos_na_cintura"
+      ],
+      [
+       15.6,
+       "bracos_abertos"
+      ],
+      [
+       17,
+       "neutro"
+      ]
+     ],
+     "expressoes": [
+      [
+       14.3,
+       "bravo"
+      ],
+      [
+       17,
+       "triste"
+      ]
+     ],
+     "fala": [
+      [
+       14.3,
+       18.1
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "balao",
+     "texto": "TÔ SEM DINHEIRO!",
+     "x": 540,
+     "y": 520,
+     "aparece": 15.1
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "x": 850,
+     "y": 860,
+     "escala": 0.7,
+     "aparece": 16.82
+    }
+   ],
+   "inicio": 14.59,
+   "fim": 19.51
+  },
+  {
+   "cenario": "estrada",
+   "transicao": "flash",
+   "tremor": [
+    20.1,
+    20.7
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": [
+      [
+       18.2,
+       -320
+      ],
+      [
+       20.6,
+       1450
+      ]
+     ],
+     "y": 1480,
+     "escala": 1.1,
+     "movendo": true,
+     "quebrado": true
+    },
+    {
+     "tipo": "icone",
+     "icone": "!",
+     "x": 540,
+     "y": 760,
+     "escala": 0.8,
+     "aparece": 20.31
+    }
+   ],
+   "textos": [
+    {
+     "texto": "SEM FREIO!",
+     "estilo": "destaque",
+     "de": 20.05
+    }
+   ],
+   "inicio": 19.51,
+   "fim": 24.08
+  },
+  {
+   "cenario": "rua_dia",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       21.3,
+       1000
+      ],
+      [
+       22.9,
+       560
+      ]
+     ],
+     "expressoes": [
+      [
+       21.3,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "textos": [
+    {
+     "texto": "NO DIA SEGUINTE...",
+     "estilo": "carimbo"
+    }
+   ],
+   "inicio": 24.08,
+   "fim": 27.38
+  },
+  {
+   "cenario": "rua_dia",
+   "zoom": [
+    1.12,
+    1.28
+   ],
+   "foco": [
+    540,
+    900
+   ],
+   "atores": [
+    {
+     "id": "tales",
+     "x": 540,
+     "entra": "nenhum",
+     "poses": [
+      [
+       23,
+       "comemorando"
+      ]
+     ],
+     "expressoes": [
+      [
+       23,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "relogio",
+     "x": 790,
+     "y": 760,
+     "escala": 1.1,
+     "aparece": 27.69,
+     "giro": [
+      [
+       27.69,
+       -12
+      ],
+      [
+       30.04,
+       8
+      ]
+     ]
+    }
+   ],
+   "textos": [
+    {
+     "texto": "SMARTWATCH DE R$ 1.000",
+     "estilo": "destaque",
+     "de": 27.85
+    }
+   ],
+   "inicio": 27.38,
+   "fim": 30.07
+  },
+  {
+   "cenario": "mercado",
+   "transicao": "deslize",
+   "atores": [
+    {
+     "id": "zeca",
+     "x": 300,
+     "poses": [
+      [
+       26.5,
+       "maos_na_cintura"
+      ]
+     ],
+     "expressoes": [
+      [
+       26.5,
+       "duvida"
+      ],
+      [
+       28.5,
+       "triste"
+      ]
+     ]
+    },
+    {
+     "id": "tales",
+     "x": 800,
+     "altura": 720,
+     "poses": [
+      [
+       26.5,
+       "comemorando"
+      ]
+     ],
+     "expressoes": [
+      [
+       26.5,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "pensamento",
+     "texto": "ESSE TALES...",
+     "x": 330,
+     "y": 470,
+     "aparece": 33.02
+    }
+   ],
+   "inicio": 30.07,
+   "fim": 34.41
+  },
+  {
+   "cenario": "rua_dia",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       30.6,
+       120
+      ],
+      [
+       32.6,
+       860
+      ]
+     ],
+     "expressoes": [
+      [
+       30.6,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "dinheiro",
+     "x": [
+      [
+       31,
+       300
+      ],
+      [
+       33.6,
+       1250
+      ]
+     ],
+     "y": [
+      [
+       31,
+       900
+      ],
+      [
+       33.6,
+       520
+      ]
+     ],
+     "giro": [
+      [
+       34.92,
+       0
+      ],
+      [
+       37.55,
+       200
+      ]
+     ],
+     "escala": 0.8,
+     "aparece": 34.92
+    },
+    {
+     "tipo": "moeda",
+     "x": [
+      [
+       31.4,
+       200
+      ],
+      [
+       34.4,
+       1200
+      ]
+     ],
+     "y": [
+      [
+       31.4,
+       1100
+      ],
+      [
+       34.4,
+       760
+      ]
+     ],
+     "escala": 0.6,
+     "aparece": 35.32
+    }
+   ],
+   "textos": [
+    {
+     "texto": "NÃO PODE SOBRAR!",
+     "estilo": "destaque",
+     "de": 34.61
+    }
+   ],
+   "inicio": 34.41,
+   "fim": 38.81
+  },
+  {
+   "cenario": "rua_dia",
+   "transicao": "flash",
+   "atores": [
+    {
+     "id": "tales",
+     "x": 540,
+     "poses": [
+      [
+       34.9,
+       "apontando"
+      ],
+      [
+       37.3,
+       "comemorando"
+      ]
+     ],
+     "expressoes": [
+      [
+       34.9,
+       "feliz"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": 800,
+     "y": 1560,
+     "escala": 0.8
+    }
+   ],
+   "textos": [
+    {
+     "texto": "VOCÊ CONHECE UM TALES?",
+     "estilo": "pergunta",
+     "de": 39.03
+    }
+   ],
+   "inicio": 38.81,
+   "fim": 44.44
+  }
+ ]
+}

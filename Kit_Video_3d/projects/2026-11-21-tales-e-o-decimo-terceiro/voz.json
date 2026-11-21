@@ -1,0 +1,13 @@
+{
+  "provedor": "voicestudio-omnivoice",
+  "audio": "narracao.wav",
+  "duracao": 29.42,
+  "palavras": 77,
+  "frases": 18,
+  "voz": "2f02b91b",
+  "velocidade": 0.82,
+  "coberturaTempos": 0.961,
+  "ouvidoPeloWhisper": "Esse é o Thales, vive dizendo que tá sem dinheiro, hoje caiu o décimo terceiro, sabe quanto tempo durou? Uma hora, ele comprou dez shapes de skate e encheu a Paraty, só que tinha um detalhe, o pneu já tava careca, na primeira lombada, pô, pneu no chão e shape pra todo lado, ai, ai, esse Thales, não pode sobrar um dinheirinho que já quer gastar e você? Gastava o décimo terceiro no pneu no skate?",
+  "tempoSintese": 17.3,
+  "geradoEm": "2026-11-21T18:42:09.671144+00:00"
+}

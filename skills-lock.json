@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "skills": {
+    "comfyui-api": {
+      "source": "MCKRUZ/ComfyUI-Expert",
+      "commit": "dee27dc3d69b609c0006a8a12e71aadfc475ae95",
+      "sourceType": "github",
+      "skillPath": "skills/comfyui-api/SKILL.md",
+      "computedHash": "850a09497b81423004f58e3f0a4813651fa667c34a22a5d57f8ea504680a4e11"
+    },
+    "comfyui-workflow-builder": {
+      "source": "MCKRUZ/ComfyUI-Expert",
+      "commit": "dee27dc3d69b609c0006a8a12e71aadfc475ae95",
+      "sourceType": "github",
+      "skillPath": "skills/comfyui-workflow-builder/SKILL.md",
+      "computedHash": "7e752594df248c18497722daadd0145b74dce6d618936a76dcf1b8e6da5f719e"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "commit": "57217cf86ba38148a57af9e90d14a4c049558330",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "7bc223e2aafbdbf6e50ea243ba6ef67fe432bb069ab439fea0390795dac0bf7f"
+    },
+    "grilling": {
+      "source": "mattpocock/skills",
+      "commit": "abeeaf95660ba9e8b7c753eb38f441ca707a8823",
+      "sourceType": "github",
+      "skillPath": "skills/productivity/grilling/SKILL.md",
+      "computedHash": "485451958784497cd4c4dbea13cb5bbb579da58fac0d0e45f3bcb310fab68ac7"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "commit": "6f55706d1069e512430582ad86e4e57dc07afe1b",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-best-practices/SKILL.md",
+      "computedHash": "3a00c916c1a0ee0ccb64b27b08049508d712d65c04ee1bd84d96709854c488e4"
+    },
+    "voicestudio": {
+      "source": "debpalash/VoiceStudio",
+      "commit": "d535c6b26a9822c79adf71e2094e44664a92b5d5",
+      "sourceType": "github",
+      "skillPath": "skills/voicestudio/SKILL.md",
+      "computedHash": "6be5d454355930839c1b2636f64199ce4087dc8e0243da74bd1fc5b90918932a"
+    },
+    "voicestudio-maintainer": {
+      "source": "debpalash/VoiceStudio",
+      "commit": "d535c6b26a9822c79adf71e2094e44664a92b5d5",
+      "sourceType": "github",
+      "skillPath": "skills/voicestudio-maintainer/SKILL.md",
+      "computedHash": "b92c4f96f2c4d30fe8f2c994215d8da83e21f3a52b520404276733f8e1c27f19"
+    }
+  }
+}

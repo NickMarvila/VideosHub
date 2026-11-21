@@ -1,0 +1,15 @@
+{
+  "slug": "3d-cidade",
+  "nome": "3D low-poly · cidade colorida",
+  "nota": 5,
+  "motor": "kit3d",
+  "descricao": "Bonecos 3D low-poly numa cidade alegre (Kit_Video_3d). Legenda amarela palavra a palavra.",
+  "pronto": true,
+  "kit": {
+    "fundo": "cidade",
+    "chao": "concreto",
+    "horario": "dia",
+    "legendaCor": "#ffd60a"
+  },
+  "exemplo": "videos/2026-11-21-tales-e-o-dinheiro"
+}

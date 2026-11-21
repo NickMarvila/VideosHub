@@ -1,0 +1,766 @@
+{
+  "geradoEm": "2026-11-21T20:50:37.663Z",
+  "itens": [
+    {
+      "tipo": "personagem",
+      "id": "construtor",
+      "label": "construtor",
+      "descricao": "Protagonista / narrador. Mestre de obras: explica o passo a passo da construção.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "engenheiro",
+      "label": "engenheiro",
+      "descricao": "Especialista técnico. Entra para explicar cálculo, projeto e normas. Já vem com prancheta na mão esquerda.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "engenheira",
+      "label": "engenheira",
+      "descricao": "Especialista técnica / supervisora de obra. Voz de autoridade amigável.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "servente",
+      "label": "servente",
+      "descricao": "Ajudante de obra. Faz o trabalho braçal (cava, carrega, empurra). Já vem com pá na mão direita.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "homem",
+      "label": "homem",
+      "descricao": "Morador / pessoa comum (dono da casa, passante, curioso fazendo a pergunta do vídeo).",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "mulher",
+      "label": "mulher",
+      "descricao": "Moradora / pessoa comum (vizinha, mãe, passageira).",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "velhinho",
+      "label": "velhinho",
+      "descricao": "Idoso curioso ou sábio. Bom para perguntas (\"como isso se sustenta?\") e humor.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "velhinha",
+      "label": "velhinha",
+      "descricao": "Idosa curiosa ou sábia. Boa para reações e comentários simpáticos.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "crianca",
+      "label": "crianca",
+      "descricao": "Criança curiosa (menino). Faz as perguntas ingênuas que puxam a explicação.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "menina",
+      "label": "menina",
+      "descricao": "Criança curiosa (menina). Faz perguntas e reage com surpresa.",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "personagem",
+      "id": "motorista",
+      "label": "motorista",
+      "descricao": "Motorista (carro, ônibus, caminhão, metrô). Use com a animação sit (params: { arms: \"wheel\" }).",
+      "categoria": "personagens"
+    },
+    {
+      "tipo": "cenario",
+      "id": "casa_simples",
+      "label": "Casa simples",
+      "descricao": "Casa térrea de telhado de duas águas, porta central, duas janelas na frente e chaminé. 6 × 7 m.",
+      "categoria": "casas",
+      "tamanho": {
+        "x": 6.8,
+        "y": 5.2,
+        "z": 8.3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "casa_colonial",
+      "label": "Casa colonial",
+      "descricao": "Casa grande de telhado de quatro águas com varanda de colunas, portas duplas e janelas com venezianas. 9 × 7 m (+2 m de varanda).",
+      "categoria": "casas",
+      "tamanho": {
+        "x": 10,
+        "y": 5.3,
+        "z": 9.8
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "sobrado",
+      "label": "Sobrado",
+      "descricao": "Casa de dois andares com garagem, porta de entrada, sacada sobre a garagem e telhado de duas águas. 6,5 × 8 m, 5,6 m de parede.",
+      "categoria": "casas",
+      "tamanho": {
+        "x": 7.3,
+        "y": 7.8,
+        "z": 9.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "casa_moderna",
+      "label": "Casa moderna",
+      "descricao": "Casa de linhas retas: dois volumes, laje plana, janelas grandes e garagem. 9 × 7 m, 6 m de altura.",
+      "categoria": "casas",
+      "tamanho": {
+        "x": 9.5,
+        "y": 6.3,
+        "z": 7.7
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "predio_apartamentos",
+      "label": "Prédio de apartamentos",
+      "descricao": "Prédio residencial com térreo de entrada, janelas e sacadas em cada andar, platibanda e caixa d'água. 14 × 10 m; cada andar 3 m.",
+      "categoria": "predios",
+      "tamanho": {
+        "x": 14.3,
+        "y": 20.4,
+        "z": 11.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "arranha_ceu",
+      "label": "Arranha-céu",
+      "descricao": "Torre de escritórios com fachada de vidro, faixas de laje a cada andar, base (pódio), coroa e antena. 16 × 16 m; cada andar 4 m.",
+      "categoria": "predios",
+      "tamanho": {
+        "x": 22.1,
+        "y": 71.8,
+        "z": 22.2
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "loja",
+      "label": "Loja",
+      "descricao": "Loja de rua com vitrine grande, porta de vidro, toldo listrado e letreiro. 8 × 8 m, 4 m de altura.",
+      "categoria": "predios",
+      "tamanho": {
+        "x": 8.4,
+        "y": 4.3,
+        "z": 9.6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "galpao",
+      "label": "Galpão / fábrica",
+      "descricao": "Galpão industrial de telhado metálico, portão de enrolar, janelas altas e chaminé. 24 × 14 m, 6 m de parede.",
+      "categoria": "predios",
+      "tamanho": {
+        "x": 25,
+        "y": 15.5,
+        "z": 15
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "ponte_viga",
+      "label": "Ponte de vigas",
+      "descricao": "Ponte de concreto sobre um rio: tabuleiro com pista, guarda-corpo, dois pilares com travessa e encontros nas pontas. Vão de 24 m ao longo de X, 8 m de largura.",
+      "categoria": "predios",
+      "tamanho": {
+        "x": 40.5,
+        "y": 5.6,
+        "z": 14
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "arvore_redonda",
+      "label": "Árvore de copa redonda",
+      "descricao": "Árvore clássica de tronco marrom e copa arredondada de várias bolas. Altura padrão 5 m.",
+      "categoria": "arvores",
+      "tamanho": {
+        "x": 3.8,
+        "y": 4.4,
+        "z": 3.2
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "arvore_frutifera",
+      "label": "Árvore frutífera",
+      "descricao": "Árvore de copa redonda com frutas (bolinhas coloridas), tipo laranjeira ou macieira. 4 m.",
+      "categoria": "arvores",
+      "tamanho": {
+        "x": 3.7,
+        "y": 4.1,
+        "z": 2.8
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "arvore_pinheiro",
+      "label": "Pinheiro",
+      "descricao": "Árvore em forma de cone, feita de camadas empilhadas. Altura padrão 6 m.",
+      "categoria": "arvores",
+      "tamanho": {
+        "x": 3,
+        "y": 6.2,
+        "z": 3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "palmeira",
+      "label": "Palmeira",
+      "descricao": "Palmeira de tronco levemente curvo em gomos e folhas compridas. 7 m.",
+      "categoria": "arvores",
+      "tamanho": {
+        "x": 4.5,
+        "y": 7.8,
+        "z": 4.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "arbusto",
+      "label": "Arbusto",
+      "descricao": "Moita baixa de bolas verdes, para cercas vivas e jardins. 1,2 m.",
+      "categoria": "arvores",
+      "tamanho": {
+        "x": 1.8,
+        "y": 1.5,
+        "z": 1.6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "rua_reta",
+      "label": "Rua reta",
+      "descricao": "Trecho de rua com asfalto, faixa central, meio-fio e calçadas dos dois lados. Corre ao longo de Z.",
+      "categoria": "ruas",
+      "tamanho": {
+        "x": 11.7,
+        "y": 0.2,
+        "z": 20
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "cruzamento",
+      "label": "Cruzamento",
+      "descricao": "Encontro de duas ruas em cruz, com faixas de pedestre nas quatro pontas e quarteirões de calçada nos cantos. 7 m de pista, braços de 8 m.",
+      "categoria": "ruas",
+      "tamanho": {
+        "x": 27,
+        "y": 0.2,
+        "z": 27
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "chao",
+      "label": "Chão (terreno)",
+      "descricao": "Placa de chão quadrada com manchas de cor: grama, terra, areia, concreto ou asfalto.",
+      "categoria": "ruas",
+      "tamanho": {
+        "x": 20,
+        "y": 0.3,
+        "z": 20
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "campo_futebol",
+      "label": "Campo de futebol",
+      "descricao": "Gramado listrado com linhas brancas (área, círculo central) e duas traves. 40 × 26 m (reduzido).",
+      "categoria": "ruas",
+      "tamanho": {
+        "x": 30,
+        "y": 2.8,
+        "z": 44
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "carro_sedan",
+      "label": "Carro sedã",
+      "descricao": "Carro de passeio com porta-malas. 1,8 × 4,4 m. Rodas giram com rollWheels().",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.1,
+        "y": 1.5,
+        "z": 4.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "carro_hatch",
+      "label": "Carro hatch",
+      "descricao": "Carro compacto de traseira alta. 1,8 × 3,8 m.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.1,
+        "y": 1.5,
+        "z": 3.9
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "onibus",
+      "label": "Ônibus",
+      "descricao": "Ônibus urbano com janelões, letreiro e portas. 2,5 × 10 m, 3,1 m de altura.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.6,
+        "y": 3.3,
+        "z": 10.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "caminhao_cacamba",
+      "label": "Caminhão caçamba",
+      "descricao": "Caminhão basculante para terra e entulho. setProgress(0..1) levanta a caçamba. 2,5 × 10 m.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.6,
+        "y": 2.9,
+        "z": 9.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "betoneira",
+      "label": "Caminhão betoneira",
+      "descricao": "Caminhão de concreto com tambor listrado que gira (updateScenery(obj, t)). 2,5 × 9 m.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.6,
+        "y": 4.4,
+        "z": 9.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "rolo_compressor",
+      "label": "Rolo compressor",
+      "descricao": "Máquina de compactar asfalto e solo, com dois tambores de aço e cabine aberta. 1,9 × 3,6 m. Os tambores giram com rollWheels().",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 1.7,
+        "y": 3.1,
+        "z": 4.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "vibroacabadora",
+      "label": "Vibroacabadora",
+      "descricao": "Máquina que espalha o asfalto quente em camada uniforme: caçamba na frente (recebe a massa do caminhão), esteiras e a régua alisadora atrás. 2,9 × 6 m.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 3.4,
+        "y": 3.2,
+        "z": 6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "espargidor",
+      "label": "Caminhão espargidor",
+      "descricao": "Caminhão-tanque que espalha o ligante asfáltico líquido (imprimação e pintura de ligação). setProgress(1) liga o jato e deixa a faixa escura atrás. 2,6 × 10 m.",
+      "categoria": "veiculos",
+      "tamanho": {
+        "x": 2.9,
+        "y": 3.3,
+        "z": 17.3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "cone",
+      "label": "Cone de trânsito",
+      "descricao": "Cone laranja com faixa branca e base quadrada. 0,6 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.4,
+        "y": 0.7,
+        "z": 0.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "barreira",
+      "label": "Barreira de obra",
+      "descricao": "Cavalete com tábuas listradas vermelho/branco para isolar uma área. 2 × 1 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 2,
+        "y": 1.1,
+        "z": 0.7
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "pilha_tijolos",
+      "label": "Pilha de tijolos",
+      "descricao": "Pilha de tijolos sobre um pallet de madeira. 1,2 × 0,8 m, 0,8 m de altura.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 1.2,
+        "y": 0.8,
+        "z": 0.9
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "saco_cimento",
+      "label": "Sacos de cimento",
+      "descricao": "Pilha de sacos de cimento com etiqueta azul. 0,6 m de lado.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 1.3,
+        "y": 0.4,
+        "z": 0.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "carrinho_mao",
+      "label": "Carrinho de mão",
+      "descricao": "Carrinho de obra com caçamba, uma roda e dois cabos. 0,7 × 1,5 m. A roda gira com rollWheels().",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.7,
+        "y": 0.7,
+        "z": 2.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "escada",
+      "label": "Escada de mão",
+      "descricao": "Escada de madeira inclinada (encostada). 2,4 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.6,
+        "y": 2.4,
+        "z": 0.7
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "poste_luz",
+      "label": "Poste de luz",
+      "descricao": "Poste de rua com braço e lâmpada acesa. 6 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.3,
+        "y": 6,
+        "z": 1.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "semaforo",
+      "label": "Semáforo",
+      "descricao": "Semáforo de poste com três luzes; escolha qual está acesa.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.4,
+        "y": 3.9,
+        "z": 0.5
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "placa_pare",
+      "label": "Placa PARE",
+      "descricao": "Placa octogonal vermelha em poste. 2,4 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 1.2,
+        "y": 2.9,
+        "z": 0.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "banco",
+      "label": "Banco de praça",
+      "descricao": "Banco de madeira com pés de ferro. 1,6 × 0,6 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 1.6,
+        "y": 1,
+        "z": 0.6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "cerca",
+      "label": "Cerca de madeira",
+      "descricao": "Trecho de cerca de madeira com mourões e duas travas. 4 m (ajustável).",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 4.1,
+        "y": 1,
+        "z": 0.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "muro",
+      "label": "Muro",
+      "descricao": "Trecho de muro de alvenaria com capeamento. 4 m de comprimento, 2,2 m de altura.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 4.1,
+        "y": 2.3,
+        "z": 0.3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "hidrante",
+      "label": "Hidrante",
+      "descricao": "Hidrante vermelho de calçada. 0,7 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.4,
+        "y": 0.8,
+        "z": 0.3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "lixeira",
+      "label": "Lixeira",
+      "descricao": "Lixeira de rua com tampa. 0,9 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.6,
+        "y": 0.9,
+        "z": 0.7
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "caixa_madeira",
+      "label": "Caixote de madeira",
+      "descricao": "Caixote de madeira com travessas em X. 0,8 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.9,
+        "y": 0.8,
+        "z": 0.9
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "bueiro",
+      "label": "Bueiro (boca de lobo)",
+      "descricao": "Grade de escoamento de água da chuva, ao nível do asfalto junto ao meio-fio. 0,9 × 0,5 m.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.9,
+        "y": 0.1,
+        "z": 0.6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "casa_obra",
+      "label": "Casa em obra",
+      "descricao": "Casa sendo construída: setProgress(p) mostra fundação (0–0.12), pilares (–0.25), paredes de tijolo (–0.55), laje (–0.65), madeiramento (–0.82) e telhas (–1). 6 × 7 m.",
+      "categoria": "obra",
+      "tamanho": {
+        "x": 6.8,
+        "y": 5,
+        "z": 7.9
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "predio_estrutura",
+      "label": "Estrutura de prédio",
+      "descricao": "Esqueleto de concreto (pilares e lajes) subindo andar por andar: setProgress(p) constrói de 0 a todos os andares. 15 × 10 m, andares de 3,2 m.",
+      "categoria": "obra",
+      "tamanho": {
+        "x": 16.2,
+        "y": 26.4,
+        "z": 11.2
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "rua_camadas",
+      "label": "Corte da pavimentação",
+      "descricao": "Bloco em corte mostrando as camadas de uma rua: solo compactado, sub-base de brita, base, asfalto base e capa de rolamento (+ faixa). setProgress(p) empilha as camadas. 8 × 8 m, 1,35 m de altura.",
+      "categoria": "obra",
+      "tamanho": {
+        "x": 8,
+        "y": 1.4,
+        "z": 8
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "corte_terreno",
+      "label": "Corte do terreno",
+      "descricao": "Bloco de solo em corte com grama, terra, argila e rocha — para explicar fundações e muros de arrimo. setProgress(p) revela as camadas de baixo para cima. 8 × 6 m, 2,4 m de altura.",
+      "categoria": "obra",
+      "tamanho": {
+        "x": 8,
+        "y": 2.4,
+        "z": 6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "guindaste",
+      "label": "Guindaste de obra",
+      "descricao": "Guindaste de torre com lança, contrapeso, cabo e gancho. setProgress(p) gira a lança uma volta. Torre de 22 m.",
+      "categoria": "obra",
+      "tamanho": {
+        "x": 21,
+        "y": 26.9,
+        "z": 4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "forma",
+      "label": "Forma livre",
+      "descricao": "Peça básica para montar qualquer coisa (tanque, bloco, pilar, bola, lâmpada, quadro...). Empilhe várias para criar máquinas, diagramas e cenários novos. Combine com \"anim\", \"opacidade\" e \"fluxos\".",
+      "categoria": "formas",
+      "tamanho": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "tubo",
+      "label": "Tubo / cano",
+      "descricao": "Tubulação por pontos [x,y,z] (cano, fio, mangueira, veia). Use junto de um fluxo com \"caminho\" igual aos pontos para mostrar o que passa dentro, e \"opacidade\" 0.35 para enxergar o fluxo.",
+      "categoria": "formas",
+      "tamanho": {
+        "x": 3.3,
+        "y": 2.3,
+        "z": 0.3
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "engrenagem",
+      "label": "Engrenagem",
+      "descricao": "Engrenagem que gira sozinha (eixo para a câmera, +Z). Use duas lado a lado com velocidades opostas e \"fase\" diferente para mostrar transmissão. update(t).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 2.4,
+        "y": 2.4,
+        "z": 0.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "helice",
+      "label": "Hélice / ventilador",
+      "descricao": "Hélice, pá de ventilador ou turbina que gira sozinha (eixo +Z). update(t).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 2.5,
+        "y": 2.4,
+        "z": 0.4
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "esteira",
+      "label": "Esteira transportadora",
+      "descricao": "Esteira com material andando sobre ela (pedra, areia, grão, carvão...). Pode ser inclinada. update(t).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 6.4,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "monte",
+      "label": "Monte de material",
+      "descricao": "Pilha de pedra, areia, terra, grão, carvão ou asfalto. setProgress(0..1) faz o monte CRESCER (combine com um fluxo caindo em cima).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 3.2,
+        "y": 1,
+        "z": 3.1
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "tanque",
+      "label": "Tanque / silo transparente",
+      "descricao": "Reservatório (água, leite, grão, combustível) com casca transparente e o conteúdo visível. setProgress(0..1) muda o NÍVEL (encher/esvaziar).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 2.6,
+        "y": 3.1,
+        "z": 2.6
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "misturador",
+      "label": "Misturador / tambor",
+      "descricao": "Tanque aberto com pás girando e o conteúdo sendo misturado (massa, tinta, concreto, comida). Visto de cima fica bonito. update(t).",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 2.8,
+        "y": 2.3,
+        "z": 2.8
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "escavadeira",
+      "label": "Escavadeira",
+      "descricao": "Escavadeira que cava, gira e despeja em ciclo (update). Para mostrar terraplenagem, mineração, obra. Cava na frente (+Z) e despeja à esquerda (-X, uns 5 m); ponha um \"monte\" lá. Use \"fase\" = -(início da cena) para o ciclo começar com a cena.",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 3.6,
+        "y": 3.9,
+        "z": 10.2
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "fabrica_processo",
+      "label": "Fábrica de processamento",
+      "descricao": "Linha de processamento animada: 3 silos de matéria-prima, esteira subindo até um tambor rotativo aquecido (com chama), chaminé soltando fumaça e torre com bica de descarga. Serve para usinas, fábricas de cimento, de ração, de plástico etc. update(t). 22 × 14 m. Caminhão no ponto [9.5, 0, 3.6] (giro 0) recebe a carga.",
+      "categoria": "maquinas",
+      "tamanho": {
+        "x": 25.2,
+        "y": 22,
+        "z": 15
+      }
+    }
+  ]
+}

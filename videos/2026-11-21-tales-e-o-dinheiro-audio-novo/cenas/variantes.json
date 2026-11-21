@@ -1,0 +1,1805 @@
+{
+ "base": {
+  "titulo": "Tales e o dinheiro (2D)",
+  "duracao": 44.44,
+  "audio": "narracao.wav",
+  "legenda": {
+   "cor": "#FFFFFF",
+   "destaque": "#FF9F1C",
+   "porVez": 3,
+   "y": 1580
+  },
+  "personagens": {}
+ },
+ "cenas": [
+  {
+   "id": "c01",
+   "inicio": 0,
+   "fim": 3.26,
+   "frases": [
+    "f01",
+    "f02"
+   ],
+   "resumo": "Esse é o tales",
+   "variantes": [
+    {
+     "id": "c01-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          0,
+          120
+         ],
+         [
+          1.6,
+          540
+         ]
+        ],
+        "entra": "nenhum",
+        "poses": [
+         [
+          0,
+          "neutro"
+         ],
+         [
+          1.7,
+          "apontando"
+         ]
+        ],
+        "expressoes": [
+         [
+          0,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": 800,
+        "y": 1560,
+        "escala": 0.8
+       }
+      ],
+      "textos": [
+       {
+        "texto": "ESSE É O TALES",
+        "estilo": "titulo"
+       }
+      ]
+     },
+     "hash": "b74ffa002d",
+     "clipe": "cenas/clipes/c01-a.mp4",
+     "poster": "cenas/clipes/c01-a.png"
+    },
+    {
+     "id": "c01-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          0,
+          120
+         ],
+         [
+          1.6,
+          540
+         ]
+        ],
+        "entra": "nenhum",
+        "poses": [
+         [
+          0,
+          "neutro"
+         ],
+         [
+          1.7,
+          "apontando"
+         ]
+        ],
+        "expressoes": [
+         [
+          0,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": 800,
+        "y": 1560,
+        "escala": 0.8
+       }
+      ],
+      "textos": [
+       {
+        "texto": "ESSE É O TALES",
+        "estilo": "titulo"
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ],
+      "transicao": "flash"
+     },
+     "hash": "6b72232111",
+     "clipe": "cenas/clipes/c01-b.mp4",
+     "poster": "cenas/clipes/c01-b.png"
+    }
+   ],
+   "escolhida": "c01-a",
+   "ajustes": []
+  },
+  {
+   "id": "c02",
+   "inicio": 3.26,
+   "fim": 4.68,
+   "frases": [
+    "f02"
+   ],
+   "resumo": "Rede de supermercado",
+   "variantes": [
+    {
+     "id": "c02-a",
+     "descricao": "Plano aberto em mercado.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "mercado",
+      "transicao": "deslize",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          3.4,
+          "neutro"
+         ],
+         [
+          3.8,
+          "segurando"
+         ]
+        ],
+        "expressoes": [
+         [
+          3.4,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "moeda",
+        "x": 760,
+        "y": 980,
+        "escala": 0.6,
+        "aparece": 3.79
+       }
+      ],
+      "textos": [
+       {
+        "texto": "REDE DE SUPERMERCADO",
+        "estilo": "carimbo"
+       }
+      ]
+     },
+     "hash": "00e083754e",
+     "clipe": "cenas/clipes/c02-a.mp4",
+     "poster": "cenas/clipes/c02-a.png"
+    },
+    {
+     "id": "c02-b",
+     "descricao": "Close (zoom) em sala, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "sala",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          3.4,
+          "neutro"
+         ],
+         [
+          3.8,
+          "segurando"
+         ]
+        ],
+        "expressoes": [
+         [
+          3.4,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "moeda",
+        "x": 760,
+        "y": 980,
+        "escala": 0.6,
+        "aparece": 3.79
+       }
+      ],
+      "textos": [
+       {
+        "texto": "REDE DE SUPERMERCADO",
+        "estilo": "carimbo"
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "4e5c9cfb19",
+     "clipe": "cenas/clipes/c02-b.mp4",
+     "poster": "cenas/clipes/c02-b.png"
+    }
+   ],
+   "escolhida": "c02-b",
+   "ajustes": []
+  },
+  {
+   "id": "c03",
+   "inicio": 4.68,
+   "fim": 8.39,
+   "frases": [
+    "f02",
+    "f03"
+   ],
+   "resumo": "E a paratí",
+   "variantes": [
+    {
+     "id": "c03-a",
+     "descricao": "Plano aberto em estrada.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "estrada",
+      "transicao": "flash",
+      "zoom": [
+       1,
+       1.08
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": [
+         [
+          5,
+          -320
+         ],
+         [
+          6.4,
+          560
+         ]
+        ],
+        "y": 1480,
+        "escala": 1.15,
+        "movendo": true
+       }
+      ],
+      "textos": [
+       {
+        "texto": "E A PARATÍ",
+        "estilo": "destaque",
+        "de": 5.21
+       }
+      ]
+     },
+     "hash": "e8b94105b6",
+     "clipe": "cenas/clipes/c03-a.mp4",
+     "poster": "cenas/clipes/c03-a.png"
+    },
+    {
+     "id": "c03-b",
+     "descricao": "Close (zoom) em estrada, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "estrada",
+      "transicao": "flash",
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": [
+         [
+          5,
+          -320
+         ],
+         [
+          6.4,
+          560
+         ]
+        ],
+        "y": 1480,
+        "escala": 1.15,
+        "movendo": true
+       }
+      ],
+      "textos": [
+       {
+        "texto": "E A PARATÍ",
+        "estilo": "destaque",
+        "de": 5.21
+       }
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "3ebbe2c236",
+     "clipe": "cenas/clipes/c03-b.mp4",
+     "poster": "cenas/clipes/c03-b.png"
+    }
+   ],
+   "escolhida": "c03-a",
+   "ajustes": []
+  },
+  {
+   "id": "c04",
+   "inicio": 8.39,
+   "fim": 12.08,
+   "frases": [
+    "f03"
+   ],
+   "resumo": "Sobrou? gastou!",
+   "variantes": [
+    {
+     "id": "c04-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          8.4,
+          540
+         ],
+         [
+          10.7,
+          540
+         ],
+         [
+          11.6,
+          980
+         ]
+        ],
+        "poses": [
+         [
+          8.4,
+          "pensando"
+         ],
+         [
+          9.8,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          8.4,
+          "duvida"
+         ],
+         [
+          9.8,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "dinheiro",
+        "x": 790,
+        "y": 760,
+        "escala": 0.9,
+        "aparece": 8.96
+       },
+       {
+        "tipo": "pensamento",
+        "texto": "GASTAR!",
+        "x": 380,
+        "y": 520,
+        "aparece": 10.44
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SOBROU? GASTOU!",
+        "estilo": "destaque",
+        "de": 10.9
+       }
+      ]
+     },
+     "hash": "22fe0d6e4d",
+     "clipe": "cenas/clipes/c04-a.mp4",
+     "poster": "cenas/clipes/c04-a.png"
+    },
+    {
+     "id": "c04-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          8.4,
+          540
+         ],
+         [
+          10.7,
+          540
+         ],
+         [
+          11.6,
+          980
+         ]
+        ],
+        "poses": [
+         [
+          8.4,
+          "pensando"
+         ],
+         [
+          9.8,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          8.4,
+          "duvida"
+         ],
+         [
+          9.8,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "dinheiro",
+        "x": 790,
+        "y": 760,
+        "escala": 0.9,
+        "aparece": 8.96
+       },
+       {
+        "tipo": "pensamento",
+        "texto": "GASTAR!",
+        "x": 380,
+        "y": 520,
+        "aparece": 10.44
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SOBROU? GASTOU!",
+        "estilo": "destaque",
+        "de": 10.9
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "b0dc7ab9b4",
+     "clipe": "cenas/clipes/c04-b.mp4",
+     "poster": "cenas/clipes/c04-b.png"
+    }
+   ],
+   "escolhida": "c04-a",
+   "ajustes": []
+  },
+  {
+   "id": "c05",
+   "inicio": 12.08,
+   "fim": 14.59,
+   "frases": [
+    "f04"
+   ],
+   "resumo": "Seg · ter · qua · qui...",
+   "variantes": [
+    {
+     "id": "c05-a",
+     "descricao": "Plano aberto em rua noite.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          11.7,
+          140
+         ],
+         [
+          14.2,
+          900
+         ]
+        ],
+        "expressoes": [
+         [
+          11.7,
+          "neutro"
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SEG · TER · QUA · QUI...",
+        "estilo": "carimbo"
+       }
+      ]
+     },
+     "hash": "30cee876c2",
+     "clipe": "cenas/clipes/c05-a.mp4",
+     "poster": "cenas/clipes/c05-a.png"
+    },
+    {
+     "id": "c05-b",
+     "descricao": "Close (zoom) em rua dia, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_dia",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          11.7,
+          140
+         ],
+         [
+          14.2,
+          900
+         ]
+        ],
+        "expressoes": [
+         [
+          11.7,
+          "neutro"
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SEG · TER · QUA · QUI...",
+        "estilo": "carimbo"
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ],
+      "transicao": "flash"
+     },
+     "hash": "bd1d96d024",
+     "clipe": "cenas/clipes/c05-b.mp4",
+     "poster": "cenas/clipes/c05-b.png"
+    },
+    {
+     "id": "c05-c",
+     "descricao": "Plano aberto na sala: Tales anda de um lado para o outro, pensativo e preocupado, e surge o pensamento 'CADÊ O DINHEIRO?'",
+     "recomendada": true,
+     "cena": {
+      "cenario": "sala",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          12.1,
+          300
+         ],
+         [
+          12.9,
+          780
+         ],
+         [
+          13.7,
+          300
+         ],
+         [
+          14.5,
+          780
+         ]
+        ],
+        "entra": "nenhum",
+        "poses": [
+         [
+          12.1,
+          "pensando"
+         ],
+         [
+          13.7,
+          "maos_na_cintura"
+         ]
+        ],
+        "expressoes": [
+         [
+          12.1,
+          "duvida"
+         ],
+         [
+          13.3,
+          "triste"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "pensamento",
+        "texto": "CADÊ O DINHEIRO?",
+        "x": 540,
+        "y": 470,
+        "aparece": 12.5
+       }
+      ],
+      "textos": [
+       {
+        "texto": "TODA NOITE...",
+        "estilo": "carimbo"
+       }
+      ]
+     },
+     "hash": "b2388f7b76",
+     "clipe": "cenas/clipes/c05-c.mp4",
+     "poster": "cenas/clipes/c05-c.png"
+    },
+    {
+     "id": "c05-d",
+     "descricao": "Close em preto e branco na sala: Tales vai e volta, coça a cabeça, o pensamento 'CADÊ O DINHEIRO?' aparece e um '?' pula do lado.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "sala",
+      "transicao": "corte",
+      "pretoEBranco": true,
+      "zoom": [
+       1.12,
+       1.28
+      ],
+      "foco": [
+       540,
+       900
+      ],
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          12.1,
+          420
+         ],
+         [
+          13.1,
+          660
+         ],
+         [
+          14.1,
+          420
+         ],
+         [
+          14.5,
+          520
+         ]
+        ],
+        "entra": "nenhum",
+        "poses": [
+         [
+          12.1,
+          "maos_na_cintura"
+         ],
+         [
+          13.2,
+          "pensando"
+         ]
+        ],
+        "expressoes": [
+         [
+          12.1,
+          "triste"
+         ],
+         [
+          13.2,
+          "surpreso"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "pensamento",
+        "texto": "CADÊ O DINHEIRO?",
+        "x": 540,
+        "y": 520,
+        "aparece": 12.4
+       },
+       {
+        "tipo": "icone",
+        "icone": "?",
+        "x": 840,
+        "y": 820,
+        "escala": 0.7,
+        "aparece": 13.4
+       }
+      ],
+      "textos": [
+       {
+        "texto": "TODA NOITE...",
+        "estilo": "carimbo"
+       }
+      ]
+     },
+     "hash": "8349d12a30",
+     "clipe": "cenas/clipes/c05-d.mp4",
+     "poster": "cenas/clipes/c05-d.png"
+    }
+   ],
+   "escolhida": "c05-a",
+   "ajustes": [
+    {
+     "em": "2026-11-21T20:13:08.866Z",
+     "texto": "Mostrar o Tales em casa à noite, andando de um lado para o outro, preocupado, com um balão de pensamento 'CADÊ O DINHEIRO?'",
+     "resolvido": true
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "inicio": 14.59,
+   "fim": 19.51,
+   "frases": [
+    "f05"
+   ],
+   "resumo": "Cena 6",
+   "variantes": [
+    {
+     "id": "c06-a",
+     "descricao": "Plano aberto em sala.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "sala",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          14.3,
+          "maos_na_cintura"
+         ],
+         [
+          15.6,
+          "bracos_abertos"
+         ],
+         [
+          17,
+          "neutro"
+         ]
+        ],
+        "expressoes": [
+         [
+          14.3,
+          "bravo"
+         ],
+         [
+          17,
+          "triste"
+         ]
+        ],
+        "fala": [
+         [
+          14.3,
+          18.1
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "balao",
+        "texto": "TÔ SEM DINHEIRO!",
+        "x": 540,
+        "y": 520,
+        "aparece": 15.1
+       },
+       {
+        "tipo": "icone",
+        "icone": "x",
+        "x": 850,
+        "y": 860,
+        "escala": 0.7,
+        "aparece": 16.82
+       }
+      ]
+     },
+     "hash": "ee5e4731fe",
+     "clipe": "cenas/clipes/c06-a.mp4",
+     "poster": "cenas/clipes/c06-a.png"
+    },
+    {
+     "id": "c06-b",
+     "descricao": "Close (zoom) em mercado, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "mercado",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          14.3,
+          "maos_na_cintura"
+         ],
+         [
+          15.6,
+          "bracos_abertos"
+         ],
+         [
+          17,
+          "neutro"
+         ]
+        ],
+        "expressoes": [
+         [
+          14.3,
+          "bravo"
+         ],
+         [
+          17,
+          "triste"
+         ]
+        ],
+        "fala": [
+         [
+          14.3,
+          18.1
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "balao",
+        "texto": "TÔ SEM DINHEIRO!",
+        "x": 540,
+        "y": 520,
+        "aparece": 15.1
+       },
+       {
+        "tipo": "icone",
+        "icone": "x",
+        "x": 850,
+        "y": 860,
+        "escala": 0.7,
+        "aparece": 16.82
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "927078762e",
+     "clipe": "cenas/clipes/c06-b.mp4",
+     "poster": "cenas/clipes/c06-b.png"
+    }
+   ],
+   "escolhida": "c06-a",
+   "ajustes": []
+  },
+  {
+   "id": "c07",
+   "inicio": 19.51,
+   "fim": 24.08,
+   "frases": [
+    "f06"
+   ],
+   "resumo": "Sem freio!",
+   "variantes": [
+    {
+     "id": "c07-a",
+     "descricao": "Plano aberto em estrada.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "estrada",
+      "transicao": "flash",
+      "tremor": [
+       20.1,
+       20.7
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": [
+         [
+          18.2,
+          -320
+         ],
+         [
+          20.6,
+          1450
+         ]
+        ],
+        "y": 1480,
+        "escala": 1.1,
+        "movendo": true,
+        "quebrado": true
+       },
+       {
+        "tipo": "icone",
+        "icone": "!",
+        "x": 540,
+        "y": 760,
+        "escala": 0.8,
+        "aparece": 20.31
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SEM FREIO!",
+        "estilo": "destaque",
+        "de": 20.05
+       }
+      ]
+     },
+     "hash": "a382a4d954",
+     "clipe": "cenas/clipes/c07-a.mp4",
+     "poster": "cenas/clipes/c07-a.png"
+    },
+    {
+     "id": "c07-b",
+     "descricao": "Close (zoom) em estrada, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "estrada",
+      "transicao": "flash",
+      "tremor": [
+       20.1,
+       20.7
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": [
+         [
+          18.2,
+          -320
+         ],
+         [
+          20.6,
+          1450
+         ]
+        ],
+        "y": 1480,
+        "escala": 1.1,
+        "movendo": true,
+        "quebrado": true
+       },
+       {
+        "tipo": "icone",
+        "icone": "!",
+        "x": 540,
+        "y": 760,
+        "escala": 0.8,
+        "aparece": 20.31
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SEM FREIO!",
+        "estilo": "destaque",
+        "de": 20.05
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "be57e8e27d",
+     "clipe": "cenas/clipes/c07-b.mp4",
+     "poster": "cenas/clipes/c07-b.png"
+    }
+   ],
+   "escolhida": "c07-a",
+   "ajustes": []
+  },
+  {
+   "id": "c08",
+   "inicio": 24.08,
+   "fim": 27.38,
+   "frases": [
+    "f07",
+    "f08"
+   ],
+   "resumo": "No dia seguinte...",
+   "variantes": [
+    {
+     "id": "c08-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          21.3,
+          1000
+         ],
+         [
+          22.9,
+          560
+         ]
+        ],
+        "expressoes": [
+         [
+          21.3,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "NO DIA SEGUINTE...",
+        "estilo": "carimbo"
+       }
+      ]
+     },
+     "hash": "2103539d34",
+     "clipe": "cenas/clipes/c08-a.mp4",
+     "poster": "cenas/clipes/c08-a.png"
+    },
+    {
+     "id": "c08-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          21.3,
+          1000
+         ],
+         [
+          22.9,
+          560
+         ]
+        ],
+        "expressoes": [
+         [
+          21.3,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "NO DIA SEGUINTE...",
+        "estilo": "carimbo"
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "af089e959d",
+     "clipe": "cenas/clipes/c08-b.mp4",
+     "poster": "cenas/clipes/c08-b.png"
+    }
+   ],
+   "escolhida": "c08-a",
+   "ajustes": []
+  },
+  {
+   "id": "c09",
+   "inicio": 27.38,
+   "fim": 30.07,
+   "frases": [
+    "f08"
+   ],
+   "resumo": "Smartwatch de r$ 1.000",
+   "variantes": [
+    {
+     "id": "c09-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "zoom": [
+       1.12,
+       1.28
+      ],
+      "foco": [
+       540,
+       900
+      ],
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "entra": "nenhum",
+        "poses": [
+         [
+          23,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          23,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "relogio",
+        "x": 790,
+        "y": 760,
+        "escala": 1.1,
+        "aparece": 27.69,
+        "giro": [
+         [
+          27.69,
+          -12
+         ],
+         [
+          30.04,
+          8
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SMARTWATCH DE R$ 1.000",
+        "estilo": "destaque",
+        "de": 27.85
+       }
+      ]
+     },
+     "hash": "d6a98bf2e7",
+     "clipe": "cenas/clipes/c09-a.mp4",
+     "poster": "cenas/clipes/c09-a.png"
+    },
+    {
+     "id": "c09-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ],
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "entra": "nenhum",
+        "poses": [
+         [
+          23,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          23,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "relogio",
+        "x": 790,
+        "y": 760,
+        "escala": 1.1,
+        "aparece": 27.69,
+        "giro": [
+         [
+          27.69,
+          -12
+         ],
+         [
+          30.04,
+          8
+         ]
+        ]
+       }
+      ],
+      "textos": [
+       {
+        "texto": "SMARTWATCH DE R$ 1.000",
+        "estilo": "destaque",
+        "de": 27.85
+       }
+      ],
+      "transicao": "flash"
+     },
+     "hash": "120896f8a5",
+     "clipe": "cenas/clipes/c09-b.mp4",
+     "poster": "cenas/clipes/c09-b.png"
+    }
+   ],
+   "escolhida": "c09-a",
+   "ajustes": []
+  },
+  {
+   "id": "c10",
+   "inicio": 30.07,
+   "fim": 34.41,
+   "frases": [
+    "f09",
+    "f10"
+   ],
+   "resumo": "Cena 10",
+   "variantes": [
+    {
+     "id": "c10-a",
+     "descricao": "Plano aberto em mercado.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "mercado",
+      "transicao": "deslize",
+      "atores": [
+       {
+        "id": "zeca",
+        "x": 300,
+        "poses": [
+         [
+          26.5,
+          "maos_na_cintura"
+         ]
+        ],
+        "expressoes": [
+         [
+          26.5,
+          "duvida"
+         ],
+         [
+          28.5,
+          "triste"
+         ]
+        ]
+       },
+       {
+        "id": "tales",
+        "x": 800,
+        "altura": 720,
+        "poses": [
+         [
+          26.5,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          26.5,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "pensamento",
+        "texto": "ESSE TALES...",
+        "x": 330,
+        "y": 470,
+        "aparece": 33.02
+       }
+      ]
+     },
+     "hash": "66b96d0b8a",
+     "clipe": "cenas/clipes/c10-a.mp4",
+     "poster": "cenas/clipes/c10-a.png"
+    },
+    {
+     "id": "c10-b",
+     "descricao": "Close (zoom) em sala, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "sala",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "zeca",
+        "x": 300,
+        "poses": [
+         [
+          26.5,
+          "maos_na_cintura"
+         ]
+        ],
+        "expressoes": [
+         [
+          26.5,
+          "duvida"
+         ],
+         [
+          28.5,
+          "triste"
+         ]
+        ]
+       },
+       {
+        "id": "tales",
+        "x": 800,
+        "altura": 720,
+        "poses": [
+         [
+          26.5,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          26.5,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "pensamento",
+        "texto": "ESSE TALES...",
+        "x": 330,
+        "y": 470,
+        "aparece": 33.02
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "b6a579dcb7",
+     "clipe": "cenas/clipes/c10-b.mp4",
+     "poster": "cenas/clipes/c10-b.png"
+    }
+   ],
+   "escolhida": "c10-a",
+   "ajustes": []
+  },
+  {
+   "id": "c11",
+   "inicio": 34.41,
+   "fim": 38.81,
+   "frases": [
+    "f11"
+   ],
+   "resumo": "Não pode sobrar!",
+   "variantes": [
+    {
+     "id": "c11-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          30.6,
+          120
+         ],
+         [
+          32.6,
+          860
+         ]
+        ],
+        "expressoes": [
+         [
+          30.6,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "dinheiro",
+        "x": [
+         [
+          31,
+          300
+         ],
+         [
+          33.6,
+          1250
+         ]
+        ],
+        "y": [
+         [
+          31,
+          900
+         ],
+         [
+          33.6,
+          520
+         ]
+        ],
+        "giro": [
+         [
+          34.92,
+          0
+         ],
+         [
+          37.55,
+          200
+         ]
+        ],
+        "escala": 0.8,
+        "aparece": 34.92
+       },
+       {
+        "tipo": "moeda",
+        "x": [
+         [
+          31.4,
+          200
+         ],
+         [
+          34.4,
+          1200
+         ]
+        ],
+        "y": [
+         [
+          31.4,
+          1100
+         ],
+         [
+          34.4,
+          760
+         ]
+        ],
+        "escala": 0.6,
+        "aparece": 35.32
+       }
+      ],
+      "textos": [
+       {
+        "texto": "NÃO PODE SOBRAR!",
+        "estilo": "destaque",
+        "de": 34.61
+       }
+      ]
+     },
+     "hash": "db46856607",
+     "clipe": "cenas/clipes/c11-a.mp4",
+     "poster": "cenas/clipes/c11-a.png"
+    },
+    {
+     "id": "c11-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": [
+         [
+          30.6,
+          120
+         ],
+         [
+          32.6,
+          860
+         ]
+        ],
+        "expressoes": [
+         [
+          30.6,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "dinheiro",
+        "x": [
+         [
+          31,
+          300
+         ],
+         [
+          33.6,
+          1250
+         ]
+        ],
+        "y": [
+         [
+          31,
+          900
+         ],
+         [
+          33.6,
+          520
+         ]
+        ],
+        "giro": [
+         [
+          34.92,
+          0
+         ],
+         [
+          37.55,
+          200
+         ]
+        ],
+        "escala": 0.8,
+        "aparece": 34.92
+       },
+       {
+        "tipo": "moeda",
+        "x": [
+         [
+          31.4,
+          200
+         ],
+         [
+          34.4,
+          1200
+         ]
+        ],
+        "y": [
+         [
+          31.4,
+          1100
+         ],
+         [
+          34.4,
+          760
+         ]
+        ],
+        "escala": 0.6,
+        "aparece": 35.32
+       }
+      ],
+      "textos": [
+       {
+        "texto": "NÃO PODE SOBRAR!",
+        "estilo": "destaque",
+        "de": 34.61
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "f6d45ffc45",
+     "clipe": "cenas/clipes/c11-b.mp4",
+     "poster": "cenas/clipes/c11-b.png"
+    }
+   ],
+   "escolhida": "c11-a",
+   "ajustes": []
+  },
+  {
+   "id": "c12",
+   "inicio": 38.81,
+   "fim": 44.44,
+   "frases": [
+    "f12",
+    "f13"
+   ],
+   "resumo": "Você conhece um tales?",
+   "variantes": [
+    {
+     "id": "c12-a",
+     "descricao": "Plano aberto em rua dia.",
+     "recomendada": true,
+     "cena": {
+      "cenario": "rua_dia",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          34.9,
+          "apontando"
+         ],
+         [
+          37.3,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          34.9,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": 800,
+        "y": 1560,
+        "escala": 0.8
+       }
+      ],
+      "textos": [
+       {
+        "texto": "VOCÊ CONHECE UM TALES?",
+        "estilo": "pergunta",
+        "de": 39.03
+       }
+      ]
+     },
+     "hash": "2651950eff",
+     "clipe": "cenas/clipes/c12-a.mp4",
+     "poster": "cenas/clipes/c12-a.png"
+    },
+    {
+     "id": "c12-b",
+     "descricao": "Close (zoom) em rua noite, entrando com flash.",
+     "recomendada": false,
+     "cena": {
+      "cenario": "rua_noite",
+      "transicao": "flash",
+      "atores": [
+       {
+        "id": "tales",
+        "x": 540,
+        "poses": [
+         [
+          34.9,
+          "apontando"
+         ],
+         [
+          37.3,
+          "comemorando"
+         ]
+        ],
+        "expressoes": [
+         [
+          34.9,
+          "feliz"
+         ]
+        ]
+       }
+      ],
+      "objetos": [
+       {
+        "tipo": "parati",
+        "x": 800,
+        "y": 1560,
+        "escala": 0.8
+       }
+      ],
+      "textos": [
+       {
+        "texto": "VOCÊ CONHECE UM TALES?",
+        "estilo": "pergunta",
+        "de": 39.03
+       }
+      ],
+      "zoom": [
+       1.15,
+       1.3
+      ],
+      "foco": [
+       540,
+       950
+      ]
+     },
+     "hash": "025bd9b37f",
+     "clipe": "cenas/clipes/c12-b.mp4",
+     "poster": "cenas/clipes/c12-b.png"
+    }
+   ],
+   "escolhida": "c12-a",
+   "ajustes": []
+  }
+ ]
+}

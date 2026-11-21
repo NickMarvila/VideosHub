@@ -1,0 +1,742 @@
+[
+ {
+  "palavra": "Esse",
+  "inicio": 0.0,
+  "fim": 0.16
+ },
+ {
+  "palavra": "é",
+  "inicio": 0.16,
+  "fim": 0.34
+ },
+ {
+  "palavra": "o",
+  "inicio": 0.34,
+  "fim": 0.44
+ },
+ {
+  "palavra": "Diogo.",
+  "inicio": 0.44,
+  "fim": 0.82
+ },
+ {
+  "palavra": "E",
+  "inicio": 0.98,
+  "fim": 1.36
+ },
+ {
+  "palavra": "o",
+  "inicio": 1.36,
+  "fim": 1.46
+ },
+ {
+  "palavra": "Diogo",
+  "inicio": 1.46,
+  "fim": 1.7
+ },
+ {
+  "palavra": "tem",
+  "inicio": 1.7,
+  "fim": 1.88
+ },
+ {
+  "palavra": "uma",
+  "inicio": 1.88,
+  "fim": 2.02
+ },
+ {
+  "palavra": "teoria.",
+  "inicio": 2.02,
+  "fim": 2.44
+ },
+ {
+  "palavra": "Segundo",
+  "inicio": 3.46,
+  "fim": 3.94
+ },
+ {
+  "palavra": "ele...",
+  "inicio": 3.94,
+  "fim": 4.26
+ },
+ {
+  "palavra": "mendigo",
+  "inicio": 4.4,
+  "fim": 5.06
+ },
+ {
+  "palavra": "não",
+  "inicio": 5.06,
+  "fim": 5.16
+ },
+ {
+  "palavra": "pode",
+  "inicio": 5.16,
+  "fim": 5.36
+ },
+ {
+  "palavra": "tomar",
+  "inicio": 5.36,
+  "fim": 5.6
+ },
+ {
+  "palavra": "banho.",
+  "inicio": 5.6,
+  "fim": 6.1
+ },
+ {
+  "palavra": "Por",
+  "inicio": 6.32,
+  "fim": 6.8
+ },
+ {
+  "palavra": "quê?",
+  "inicio": 6.8,
+  "fim": 7.04
+ },
+ {
+  "palavra": "Porque",
+  "inicio": 7.28,
+  "fim": 7.76
+ },
+ {
+  "palavra": "morre.",
+  "inicio": 7.76,
+  "fim": 8.4
+ },
+ {
+  "palavra": "É",
+  "inicio": 9.92,
+  "fim": 10.4
+ },
+ {
+  "palavra": "sério.",
+  "inicio": 10.4,
+  "fim": 10.88
+ },
+ {
+  "palavra": "Ele",
+  "inicio": 11.56,
+  "fim": 12.04
+ },
+ {
+  "palavra": "explicou",
+  "inicio": 12.04,
+  "fim": 12.52
+ },
+ {
+  "palavra": "com",
+  "inicio": 12.52,
+  "fim": 12.64
+ },
+ {
+  "palavra": "toda",
+  "inicio": 12.64,
+  "fim": 12.84
+ },
+ {
+  "palavra": "a",
+  "inicio": 12.84,
+  "fim": 12.96
+ },
+ {
+  "palavra": "calma",
+  "inicio": 12.96,
+  "fim": 13.28
+ },
+ {
+  "palavra": "do",
+  "inicio": 13.28,
+  "fim": 13.38
+ },
+ {
+  "palavra": "mundo.",
+  "inicio": 13.38,
+  "fim": 13.66
+ },
+ {
+  "palavra": "Se",
+  "inicio": 13.92,
+  "fim": 14.4
+ },
+ {
+  "palavra": "o",
+  "inicio": 14.4,
+  "fim": 14.58
+ },
+ {
+  "palavra": "cara",
+  "inicio": 14.58,
+  "fim": 14.78
+ },
+ {
+  "palavra": "passa",
+  "inicio": 14.78,
+  "fim": 15.22
+ },
+ {
+  "palavra": "anos",
+  "inicio": 15.22,
+  "fim": 15.54
+ },
+ {
+  "palavra": "sem",
+  "inicio": 15.54,
+  "fim": 15.72
+ },
+ {
+  "palavra": "tomar",
+  "inicio": 15.72,
+  "fim": 15.98
+ },
+ {
+  "palavra": "banho...",
+  "inicio": 15.98,
+  "fim": 16.48
+ },
+ {
+  "palavra": "o",
+  "inicio": 16.5,
+  "fim": 16.74
+ },
+ {
+  "palavra": "corpo",
+  "inicio": 16.74,
+  "fim": 17.04
+ },
+ {
+  "palavra": "desacostuma.",
+  "inicio": 17.04,
+  "fim": 17.94
+ },
+ {
+  "palavra": "Aí",
+  "inicio": 18.32,
+  "fim": 18.8
+ },
+ {
+  "palavra": "cai",
+  "inicio": 18.8,
+  "fim": 19.02
+ },
+ {
+  "palavra": "uma",
+  "inicio": 19.02,
+  "fim": 19.18
+ },
+ {
+  "palavra": "gota",
+  "inicio": 19.18,
+  "fim": 19.58
+ },
+ {
+  "palavra": "de",
+  "inicio": 19.58,
+  "fim": 19.7
+ },
+ {
+  "palavra": "água...",
+  "inicio": 19.7,
+  "fim": 19.92
+ },
+ {
+  "palavra": "e",
+  "inicio": 19.92,
+  "fim": 20.04
+ },
+ {
+  "palavra": "pronto.",
+  "inicio": 20.04,
+  "fim": 20.26
+ },
+ {
+  "palavra": "Arrasta",
+  "inicio": 21.14,
+  "fim": 21.62
+ },
+ {
+  "palavra": "pra",
+  "inicio": 21.62,
+  "fim": 21.72
+ },
+ {
+  "palavra": "cima.",
+  "inicio": 21.72,
+  "fim": 22.02
+ },
+ {
+  "palavra": "Perguntaram",
+  "inicio": 22.92,
+  "fim": 23.4
+ },
+ {
+  "palavra": "pra",
+  "inicio": 23.4,
+  "fim": 23.56
+ },
+ {
+  "palavra": "ele",
+  "inicio": 23.56,
+  "fim": 23.84
+ },
+ {
+  "palavra": "de",
+  "inicio": 23.84,
+  "fim": 24.0
+ },
+ {
+  "palavra": "onde",
+  "inicio": 24.0,
+  "fim": 24.16
+ },
+ {
+  "palavra": "tirou",
+  "inicio": 24.16,
+  "fim": 24.54
+ },
+ {
+  "palavra": "isso.",
+  "inicio": 24.54,
+  "fim": 24.84
+ },
+ {
+  "palavra": "Ele",
+  "inicio": 25.16,
+  "fim": 25.64
+ },
+ {
+  "palavra": "disse",
+  "inicio": 25.64,
+  "fim": 25.9
+ },
+ {
+  "palavra": "que",
+  "inicio": 25.9,
+  "fim": 26.06
+ },
+ {
+  "palavra": "era",
+  "inicio": 26.06,
+  "fim": 26.2
+ },
+ {
+  "palavra": "ciência.",
+  "inicio": 26.2,
+  "fim": 26.9
+ },
+ {
+  "palavra": "Mas",
+  "inicio": 27.56,
+  "fim": 28.04
+ },
+ {
+  "palavra": "calma...",
+  "inicio": 28.04,
+  "fim": 28.52
+ },
+ {
+  "palavra": "que",
+  "inicio": 28.54,
+  "fim": 28.72
+ },
+ {
+  "palavra": "piora.",
+  "inicio": 28.72,
+  "fim": 29.36
+ },
+ {
+  "palavra": "Porque",
+  "inicio": 30.0,
+  "fim": 30.42
+ },
+ {
+  "palavra": "o",
+  "inicio": 30.42,
+  "fim": 30.58
+ },
+ {
+  "palavra": "Diogo",
+  "inicio": 30.58,
+  "fim": 30.78
+ },
+ {
+  "palavra": "quer",
+  "inicio": 30.78,
+  "fim": 31.0
+ },
+ {
+  "palavra": "ser",
+  "inicio": 31.0,
+  "fim": 31.18
+ },
+ {
+  "palavra": "político.",
+  "inicio": 31.18,
+  "fim": 31.56
+ },
+ {
+  "palavra": "E",
+  "inicio": 31.56,
+  "fim": 32.26
+ },
+ {
+  "palavra": "já",
+  "inicio": 32.26,
+  "fim": 32.54
+ },
+ {
+  "palavra": "tem",
+  "inicio": 32.54,
+  "fim": 32.84
+ },
+ {
+  "palavra": "até",
+  "inicio": 32.84,
+  "fim": 33.04
+ },
+ {
+  "palavra": "plano",
+  "inicio": 33.04,
+  "fim": 33.4
+ },
+ {
+  "palavra": "de",
+  "inicio": 33.4,
+  "fim": 33.62
+ },
+ {
+  "palavra": "governo.",
+  "inicio": 33.62,
+  "fim": 33.88
+ },
+ {
+  "palavra": "Toda",
+  "inicio": 34.46,
+  "fim": 35.04
+ },
+ {
+  "palavra": "sexta-feira...",
+  "inicio": 35.04,
+  "fim": 35.4
+ },
+ {
+  "palavra": "ele",
+  "inicio": 35.62,
+  "fim": 35.76
+ },
+ {
+  "palavra": "vai",
+  "inicio": 35.76,
+  "fim": 35.9
+ },
+ {
+  "palavra": "mandar",
+  "inicio": 35.9,
+  "fim": 36.16
+ },
+ {
+  "palavra": "chover.",
+  "inicio": 36.16,
+  "fim": 36.6
+ },
+ {
+  "palavra": "E",
+  "inicio": 36.74,
+  "fim": 37.32
+ },
+ {
+  "palavra": "no",
+  "inicio": 37.32,
+  "fim": 37.42
+ },
+ {
+  "palavra": "sábado?",
+  "inicio": 37.42,
+  "fim": 37.96
+ },
+ {
+  "palavra": "Segundo",
+  "inicio": 37.96,
+  "fim": 38.68
+ },
+ {
+  "palavra": "ele...",
+  "inicio": 38.68,
+  "fim": 39.02
+ },
+ {
+  "palavra": "problema",
+  "inicio": 39.14,
+  "fim": 39.54
+ },
+ {
+  "palavra": "resolvido.",
+  "inicio": 39.54,
+  "fim": 40.1
+ },
+ {
+  "palavra": "Então,",
+  "inicio": 40.78,
+  "fim": 41.36
+ },
+ {
+  "palavra": "se",
+  "inicio": 41.44,
+  "fim": 41.7
+ },
+ {
+  "palavra": "o",
+  "inicio": 41.7,
+  "fim": 41.82
+ },
+ {
+  "palavra": "Diogo",
+  "inicio": 41.82,
+  "fim": 42.1
+ },
+ {
+  "palavra": "for",
+  "inicio": 42.1,
+  "fim": 42.32
+ },
+ {
+  "palavra": "eleito...",
+  "inicio": 42.32,
+  "fim": 42.92
+ },
+ {
+  "palavra": "mendigos,",
+  "inicio": 42.96,
+  "fim": 43.94
+ },
+ {
+  "palavra": "se",
+  "inicio": 43.94,
+  "fim": 44.1
+ },
+ {
+  "palavra": "escondam",
+  "inicio": 44.1,
+  "fim": 44.56
+ },
+ {
+  "palavra": "na",
+  "inicio": 44.56,
+  "fim": 44.66
+ },
+ {
+  "palavra": "sexta-feira.",
+  "inicio": 44.66,
+  "fim": 45.02
+ },
+ {
+  "palavra": "Ou",
+  "inicio": 45.72,
+  "fim": 46.3
+ },
+ {
+  "palavra": "o",
+  "inicio": 46.3,
+  "fim": 46.44
+ },
+ {
+  "palavra": "Diogo",
+  "inicio": 46.44,
+  "fim": 46.66
+ },
+ {
+  "palavra": "vai",
+  "inicio": 46.66,
+  "fim": 46.86
+ },
+ {
+  "palavra": "dar",
+  "inicio": 46.86,
+  "fim": 47.02
+ },
+ {
+  "palavra": "banho",
+  "inicio": 47.02,
+  "fim": 47.28
+ },
+ {
+  "palavra": "em",
+  "inicio": 47.28,
+  "fim": 47.38
+ },
+ {
+  "palavra": "vocês.",
+  "inicio": 47.38,
+  "fim": 47.76
+ },
+ {
+  "palavra": "Com",
+  "inicio": 49.18,
+  "fim": 49.76
+ },
+ {
+  "palavra": "sabonete,",
+  "inicio": 49.76,
+  "fim": 50.34
+ },
+ {
+  "palavra": "xampu...",
+  "inicio": 50.38,
+  "fim": 50.68
+ },
+ {
+  "palavra": "e",
+  "inicio": 50.68,
+  "fim": 51.36
+ },
+ {
+  "palavra": "até",
+  "inicio": 51.36,
+  "fim": 51.58
+ },
+ {
+  "palavra": "condicionador.",
+  "inicio": 51.58,
+  "fim": 52.32
+ },
+ {
+  "palavra": "Aaai,",
+  "inicio": 53.42,
+  "fim": 54.0
+ },
+ {
+  "palavra": "ai...",
+  "inicio": 54.0,
+  "fim": 54.24
+ },
+ {
+  "palavra": "Esse",
+  "inicio": 54.24,
+  "fim": 54.78
+ },
+ {
+  "palavra": "Diogo.",
+  "inicio": 54.78,
+  "fim": 55.32
+ },
+ {
+  "palavra": "O",
+  "inicio": 55.46,
+  "fim": 56.22
+ },
+ {
+  "palavra": "único",
+  "inicio": 56.22,
+  "fim": 56.5
+ },
+ {
+  "palavra": "político",
+  "inicio": 56.5,
+  "fim": 56.88
+ },
+ {
+  "palavra": "que",
+  "inicio": 56.88,
+  "fim": 57.3
+ },
+ {
+  "palavra": "ameaça",
+  "inicio": 57.3,
+  "fim": 57.68
+ },
+ {
+  "palavra": "o",
+  "inicio": 57.68,
+  "fim": 57.78
+ },
+ {
+  "palavra": "povo...",
+  "inicio": 57.78,
+  "fim": 58.06
+ },
+ {
+  "palavra": "com",
+  "inicio": 58.06,
+  "fim": 58.3
+ },
+ {
+  "palavra": "higiene.",
+  "inicio": 58.3,
+  "fim": 58.86
+ },
+ {
+  "palavra": "E",
+  "inicio": 60.0,
+  "fim": 60.44
+ },
+ {
+  "palavra": "você?",
+  "inicio": 60.44,
+  "fim": 60.78
+ },
+ {
+  "palavra": "Se",
+  "inicio": 60.94,
+  "fim": 61.42
+ },
+ {
+  "palavra": "fosse",
+  "inicio": 61.42,
+  "fim": 61.66
+ },
+ {
+  "palavra": "mendigo...",
+  "inicio": 61.66,
+  "fim": 62.28
+ },
+ {
+  "palavra": "encarava",
+  "inicio": 62.36,
+  "fim": 63.24
+ },
+ {
+  "palavra": "o",
+  "inicio": 63.24,
+  "fim": 63.36
+ },
+ {
+  "palavra": "banho",
+  "inicio": 63.36,
+  "fim": 63.62
+ },
+ {
+  "palavra": "do",
+  "inicio": 63.62,
+  "fim": 63.7
+ },
+ {
+  "palavra": "Diogo",
+  "inicio": 63.7,
+  "fim": 64.04
+ },
+ {
+  "palavra": "ou",
+  "inicio": 64.04,
+  "fim": 64.18
+ },
+ {
+  "palavra": "se",
+  "inicio": 64.18,
+  "fim": 64.26
+ },
+ {
+  "palavra": "escondia",
+  "inicio": 64.26,
+  "fim": 64.76
+ },
+ {
+  "palavra": "na",
+  "inicio": 64.76,
+  "fim": 64.88
+ },
+ {
+  "palavra": "sexta?",
+  "inicio": 64.88,
+  "fim": 65.32
+ }
+]

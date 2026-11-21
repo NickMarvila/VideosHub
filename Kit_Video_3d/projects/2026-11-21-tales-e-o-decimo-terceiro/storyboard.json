@@ -1,0 +1,353 @@
+{
+ "versao": 1,
+ "titulo": "Tales e o décimo terceiro",
+ "formato": { "largura": 1080, "altura": 1920, "fps": 30 },
+ "duracao": 29.92,
+ "audio": "narracao.wav",
+ "palavras": "palavras.json",
+ "legendas": { "ativo": true, "palavrasPorBloco": 1, "corDestaque": "#ffd60a" },
+ "ambiente": { "horario": "dia", "fundo": "cidade", "chao": "concreto", "nuvens": true },
+ "cenas": [
+  {
+   "inicio": 0, "fim": 2.87,
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [6, 0, 11], "giro": 90 },
+    { "id": "carro_a", "asset": "carro_sedan", "params": { "color": "#3d6fb6" }, "pos": [-22, 0, 17], "giro": 90, "movimentos": [{ "de": 0, "ate": 2.87, "para": [22, 17] }] }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [-3, 0, 8], "giro": 90,
+      "movimentos": [{ "de": 0, "ate": 0.75, "para": [-1.5, 8], "clip": "walk" }],
+      "viraPara": [{ "em": 0.75, "alvo": "camera" }],
+      "acoes": [{ "clip": "wave", "de": 0.8, "ate": 1.4, "expressao": "happy" }, { "clip": "shrug", "de": 1.5, "ate": 2.87, "expressao": "sad" }] }
+   ],
+   "camera": { "tipo": "enquadrar", "alvo": "tales", "plano": "medio", "angulo": 0, "elevacao": 8, "aproxima": 0.85 },
+   "elementos": [
+    { "tipo": "icone", "icone": "dinheiro", "ancora": "tales", "alturaRel": 1.25, "dx": 0.17, "tamanho": 0.14, "de": 1.6, "ate": 2.87 },
+    { "tipo": "icone", "icone": "x", "ancora": "tales", "alturaRel": 1.25, "dx": 0.17, "tamanho": 0.15, "de": 2.0, "ate": 2.87 }
+   ],
+   "textos": [{ "texto": "O 13º DO TALES DUROU 1 HORA", "de": 0.05, "ate": 2.8, "estilo": "titulo" }]
+  },
+  {
+   "inicio": 2.87, "fim": 5.0, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [6, 0, 11], "giro": 90 },
+    { "id": "carro_b", "asset": "carro_sedan", "params": { "color": "#f2c94c" }, "pos": [22, 0, 17], "giro": -90, "movimentos": [{ "de": 2.87, "ate": 5.0, "para": [-22, 17] }] }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [-1.5, 0, 8], "giro": 0,
+      "viraPara": [{ "em": 2.87, "alvo": "camera" }],
+      "acoes": [{ "clip": "cheer", "de": 3.0, "ate": 5.0, "expressao": "laugh" }] }
+   ],
+   "camera": { "tipo": "enquadrar", "alvo": "tales", "plano": "medio", "angulo": 10, "elevacao": 6, "aproxima": 0.95 },
+   "fluxos": [{ "material": "luz", "origem": { "ancora": "tales", "desloca": [0, 1.2, 0] }, "taxa": 40, "dispersao": 0.8, "de": 3.1, "ate": 5.0 }],
+   "elementos": [{ "tipo": "icone", "icone": "dinheiro", "ancora": "tales", "alturaRel": 1.0, "dx": -0.3, "tamanho": 0.17, "pulsa": true, "de": 3.2, "ate": 5.0 }],
+   "textos": [{ "texto": "CAIU O 13º!", "de": 3.4, "ate": 5.0, "estilo": "destaque" }]
+  },
+  {
+   "inicio": 5.0, "fim": 7.57,
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [6, 0, 11], "giro": 90 },
+    { "id": "carro_c", "asset": "carro_sedan", "params": { "color": "#4f9d5a" }, "pos": [-22, 0, 17], "giro": 90, "movimentos": [{ "de": 5.0, "ate": 7.57, "para": [22, 17] }] }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [-1.5, 0, 8], "giro": 0,
+      "viraPara": [{ "em": 5.0, "alvo": "camera" }],
+      "acoes": [{ "clip": "think", "de": 5.0, "ate": 6.6, "expressao": "thinking" }, { "clip": "surprised", "de": 6.6, "ate": 7.57, "expressao": "surprised" }] }
+   ],
+   "camera": { "tipo": "enquadrar", "alvo": "tales", "plano": "medio", "angulo": -15, "elevacao": 5, "aproxima": 0.9 },
+   "elementos": [
+    { "tipo": "icone", "icone": "relogio", "ancora": "tales", "alturaRel": 1.3, "dx": -0.2, "tamanho": 0.17, "pulsa": true, "de": 5.3, "ate": 7.57 },
+    { "tipo": "etiqueta", "texto": "60 MINUTOS", "pos": [0.5, 0.2], "ponto": "#ffd60a", "de": 6.65, "ate": 7.57 }
+   ]
+  },
+  {
+   "inicio": 7.57, "fim": 11.42, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [6, 0, 11], "giro": 90 },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [5.94, 1.52, 10.72], "giro": 90, "aparece": 9.4 },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [5.94, 1.52, 11.28], "giro": 90, "aparece": 9.57 },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [6, 1.57, 10.72], "giro": 90, "aparece": 9.74 },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [6, 1.57, 11.28], "giro": 90, "aparece": 9.91 },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [6.06, 1.62, 10.72], "giro": 90, "aparece": 10.08 },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [6.06, 1.62, 11.28], "giro": 90, "aparece": 10.25 },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [5.94, 1.67, 10.72], "giro": 90, "aparece": 10.42 },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [5.94, 1.67, 11.28], "giro": 90, "aparece": 10.59 },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [6, 1.72, 10.72], "giro": 90, "aparece": 10.76 },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [6, 1.72, 11.28], "giro": 90, "aparece": 10.93 }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [0, 0, 5.4], "giro": 0,
+      "movimentos": [{ "de": 7.65, "ate": 9.4, "para": [4.6, 9.3], "clip": "carry" }],
+      "viraPara": [{ "em": 9.5, "alvo": "camera" }],
+      "acoes": [{ "clip": "carry", "de": 7.65, "ate": 9.4, "params": { "walking": 1 } }, { "clip": "cheer", "de": 10.0, "ate": 11.42, "expressao": "happy" }] }
+   ],
+   "camera": { "tipo": "travelling", "de": { "pos": [2.5, 4, 19], "olha": [2.5, 1, 8.5] }, "para": { "pos": [4.5, 4, 19], "olha": [4.8, 1.2, 10] } },
+   "fluxos": [{ "material": "luz", "origem": { "ancora": "parati", "desloca": [0, 1.9, 0] }, "taxa": 18, "dispersao": 0.8, "de": 9.4, "ate": 11.42 }]
+  },
+  {
+   "inicio": 11.42, "fim": 14.37, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [6, 0, 11], "giro": 90 },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [5.94, 1.52, 10.72], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [5.94, 1.52, 11.28], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [6, 1.57, 10.72], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [6, 1.57, 11.28], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [6.06, 1.62, 10.72], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [6.06, 1.62, 11.28], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [5.94, 1.67, 10.72], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [5.94, 1.67, 11.28], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [6, 1.72, 10.72], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [6, 1.72, 11.28], "giro": 90, "anim": { "oscila": { "eixo": "y", "amp": 0.02, "freq": 2 } } }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [8.3, 0, 12.8], "giro": 0,
+      "viraPara": [{ "em": 11.42, "alvo": [7.0, 11.9] }],
+      "acoes": [{ "clip": "crouch", "de": 11.5, "ate": 14.37, "expressao": "worried" }] }
+   ],
+   "camera": { "tipo": "fixa", "pos": [7.6, 1.1, 17], "olha": [7.6, 0.5, 12], "fov": 40 },
+   "fluxos": [{ "material": "ar", "origem": { "ancora": "parati", "desloca": [-0.9, 0.3, 1.3] }, "taxa": 14, "de": 12.9, "ate": 14.37 }],
+   "elementos": [{ "tipo": "icone", "icone": "alerta", "pos": [0.3, 0.3], "tamanho": 0.16, "pulsa": true, "de": 12.9, "ate": 14.37 }]
+  },
+  {
+   "inicio": 14.37, "fim": 16.35, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [-10, 0, 11], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3, 11] }] },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [-10.06, 1.52, 10.72], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [2.94, 10.72] }] },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [-10.06, 1.52, 11.28], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [2.94, 11.28] }] },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [-10, 1.57, 10.72], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3, 10.72] }] },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [-10, 1.57, 11.28], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3, 11.28] }] },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [-9.94, 1.62, 10.72], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3.06, 10.72] }] },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [-9.94, 1.62, 11.28], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3.06, 11.28] }] },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [-10.06, 1.67, 10.72], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [2.94, 10.72] }] },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [-10.06, 1.67, 11.28], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [2.94, 11.28] }] },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [-10, 1.72, 10.72], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3, 10.72] }] },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [-10, 1.72, 11.28], "giro": 90, "movimentos": [{ "de": 14.4, "ate": 15.82, "para": [3, 11.28] }] }
+   ],
+   "personagens": [],
+   "camera": { "tipo": "travelling", "de": { "pos": [-6, 2.8, 23], "olha": [-5, 0.8, 11] }, "para": { "pos": [2.5, 2.6, 22], "olha": [2.6, 0.8, 11] } },
+   "fluxos": [
+    { "material": "fumaca", "origem": { "ancora": "parati", "desloca": [0, 0.3, -2.1] }, "taxa": 14, "de": 14.4, "ate": 15.82 },
+    { "material": "fumaca", "origem": { "ancora": "parati", "desloca": [-0.9, 0.3, 1.3] }, "taxa": 70, "dispersao": 0.5, "de": 15.82, "ate": 16.35 },
+    { "material": "poeira", "origem": { "ancora": "parati", "desloca": [-0.9, 0.3, 1.3] }, "taxa": 60, "dispersao": 0.6, "de": 15.82, "ate": 16.3 }
+   ],
+   "efeitos": [{ "tipo": "tremor", "de": 15.82, "ate": 16.3, "intensidade": 0.8 }],
+   "elementos": [{ "tipo": "icone", "icone": "raio", "pos": [0.62, 0.36], "tamanho": 0.2, "de": 15.82, "ate": 16.35 }]
+  },
+  {
+   "inicio": 16.35, "fim": 18.06,
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [3, 0, 11], "giro": 90, "anim": { "giro": [[16.35, 0], [16.7, -5]], "eixo": "x" } },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [2.94, 1.52, 10.72], "giro": 90 },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [2.94, 1.52, 11.28], "giro": 90 },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [3, 1.57, 10.72], "giro": 90 },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [3, 1.57, 11.28], "giro": 90 },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [3.06, 1.62, 10.72], "giro": 90 },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [3.06, 1.62, 11.28], "giro": 90 },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [2.94, 1.67, 10.72], "giro": 90 },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [2.94, 1.67, 11.28], "giro": 90 },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [3, 1.72, 10.72], "giro": 90 },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [3, 1.72, 11.28], "giro": 90 }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [5.5, 0, 13.2], "giro": 0,
+      "viraPara": [{ "em": 16.35, "alvo": "parati" }],
+      "acoes": [{ "clip": "surprised", "de": 16.4, "ate": 18.06, "expressao": "surprised" }] }
+   ],
+   "camera": { "tipo": "fixa", "pos": [5.6, 1.4, 18.2], "olha": [4.8, 0.7, 12], "fov": 40 },
+   "fluxos": [{ "material": "fumaca", "origem": { "ancora": "parati", "desloca": [-0.9, 0.3, 1.3] }, "taxa": 6, "tamanho": 0.4, "de": 16.35, "ate": 18.06 }],
+   "efeitos": [{ "tipo": "pretoebranco", "de": 16.4, "ate": 18.06, "zoom": 1.08 }],
+   "elementos": [{ "tipo": "icone", "icone": "x", "pos": [0.3, 0.32], "tamanho": 0.16, "de": 16.6, "ate": 18.06 }]
+  },
+  {
+   "inicio": 18.06, "fim": 20.07, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [3, 0, 11], "giro": 90 },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [2.78, 0.02, 11.6], "giro": 30, "aparece": 18.1, "movimentos": [{ "de": 18.1, "ate": 18.65, "para": [1.5, 13.6] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [2.91, 0.02, 11.6], "giro": 120, "aparece": 18.18, "movimentos": [{ "de": 18.18, "ate": 18.73, "para": [2.4, 14.2] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [3.39, 0.02, 11.6], "giro": 70, "aparece": 18.26, "movimentos": [{ "de": 18.26, "ate": 18.81, "para": [5.6, 13.4] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [2.52, 0.02, 11.6], "giro": 160, "aparece": 18.34, "movimentos": [{ "de": 18.34, "ate": 18.89, "para": [-0.2, 12.2] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [3.63, 0.02, 11.6], "giro": 15, "aparece": 18.42, "movimentos": [{ "de": 18.42, "ate": 18.97, "para": [7.2, 14.6] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [2.64, 0.02, 11.6], "giro": 95, "aparece": 18.5, "movimentos": [{ "de": 18.5, "ate": 19.05, "para": [0.6, 15.2] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [3.27, 0.02, 11.6], "giro": 140, "aparece": 18.58, "movimentos": [{ "de": 18.58, "ate": 19.13, "para": [4.8, 15.8] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [3.78, 0.02, 11.6], "giro": 50, "aparece": 18.66, "movimentos": [{ "de": 18.66, "ate": 19.21, "para": [8.2, 12.6] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [2.91, 0.02, 11.6], "giro": 10, "aparece": 18.74, "movimentos": [{ "de": 18.74, "ate": 19.29, "para": [2.4, 16.4] }], "anim": { "gira": 540, "eixo": "y" } },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [3.54, 0.02, 11.6], "giro": 105, "aparece": 18.82, "movimentos": [{ "de": 18.82, "ate": 19.37, "para": [6.6, 16.6] }], "anim": { "gira": 540, "eixo": "y" } }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [4, 0, 14.4], "giro": 0,
+      "viraPara": [{ "em": 18.06, "alvo": "camera" }],
+      "acoes": [{ "clip": "shrug", "de": 18.9, "ate": 20.07, "expressao": "sad" }] }
+   ],
+   "camera": { "tipo": "fixa", "pos": [4, 7, 21.5], "olha": [4, 0.4, 14], "fov": 42 },
+   "fluxos": [{ "material": "poeira", "origem": [3, 0.05, 12.2], "taxa": 12, "dispersao": 1.2, "tamanho": 0.5, "de": 18.1, "ate": 18.7 }]
+  },
+  {
+   "inicio": 20.07, "fim": 22.48,
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [3, 0, 11], "giro": 90 },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "carro_d", "asset": "carro_sedan", "params": { "color": "#d9473a" }, "pos": [-22, 0, 19], "giro": 90, "movimentos": [{ "de": 20.07, "ate": 22.48, "para": [22, 19] }] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [1.5, 0.02, 13.6], "giro": 30 },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [2.4, 0.02, 14.2], "giro": 120 },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [5.6, 0.02, 13.4], "giro": 70 },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [-0.2, 0.02, 12.2], "giro": 160 },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [7.2, 0.02, 14.6], "giro": 15 },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [0.6, 0.02, 15.2], "giro": 95 },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [4.8, 0.02, 15.8], "giro": 140 },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [8.2, 0.02, 12.6], "giro": 50 },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [2.4, 0.02, 16.4], "giro": 10 },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [6.6, 0.02, 16.6], "giro": 105 }
+   ],
+   "personagens": [
+    { "id": "velho", "preset": "velhinho", "pos": [7, 0, 16.5], "giro": -30,
+      "viraPara": [{ "em": 20.07, "alvo": "camera" }],
+      "acoes": [{ "clip": "shake_head", "de": 20.2, "ate": 22.48, "expressao": "sleepy" }] },
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [4, 0, 14.4], "giro": 20,
+      "acoes": [{ "clip": "sit", "de": 20.07, "ate": 22.48, "expressao": "sad", "params": { "seatHeight": 0.0 } }] }
+   ],
+   "camera": { "tipo": "fixa", "pos": [5.5, 2.4, 24], "olha": [5.5, 0.8, 15], "fov": 50 }
+  },
+  {
+   "inicio": 22.48, "fim": 25.36, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [3, 0, 11], "giro": 90 },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [1.5, 0.02, 13.6], "giro": 30 },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [2.4, 0.02, 14.2], "giro": 120 },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [5.6, 0.02, 13.4], "giro": 70 },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [-0.2, 0.02, 12.2], "giro": 160 },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [7.2, 0.02, 14.6], "giro": 15 },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [0.6, 0.02, 15.2], "giro": 95 },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [4.8, 0.02, 15.8], "giro": 140 },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [8.2, 0.02, 12.6], "giro": 50 },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [2.4, 0.02, 16.4], "giro": 10 },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [6.6, 0.02, 16.6], "giro": 105 }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [4, 0, 14.4], "giro": 0,
+      "movimentos": [{ "de": 22.6, "ate": 25.0, "para": [0.5, 5.6], "clip": "run" }] }
+   ],
+   "camera": { "tipo": "enquadrar", "alvo": "mercado", "plano": "geral", "angulo": 15, "elevacao": 16, "deriva": 10 },
+   "fluxos": [
+    { "material": "luz", "origem": { "ancora": "tales", "desloca": [0.3, 0.9, 0] }, "taxa": 20, "de": 22.6, "ate": 25.0 },
+    { "material": "poeira", "origem": { "ancora": "tales", "desloca": [0, 0.05, 0] }, "taxa": 16, "de": 22.6, "ate": 25.0 }
+   ],
+   "textos": [{ "texto": "13º: R$ 0,00", "de": 22.7, "ate": 25.3, "estilo": "destaque" }]
+  },
+  {
+   "inicio": 25.36, "fim": 29.92, "transicao": "flash",
+   "objetos": [
+    { "id": "mercado", "asset": "loja", "variante": "mercado", "pos": [0, 0, 0] },
+    { "id": "sobrado", "asset": "sobrado", "variante": "salmao", "pos": [-11, 0, 0] },
+    { "id": "casa", "asset": "casa_simples", "variante": "azul", "pos": [11, 0, 0] },
+    { "id": "arv1", "asset": "arvore_redonda", "pos": [-6, 0, 5.5], "params": { "seed": 2 } },
+    { "id": "arv2", "asset": "arvore_redonda", "pos": [7, 0, 5.8], "params": { "seed": 5 } },
+    { "id": "poste", "asset": "poste_luz", "pos": [-4.5, 0, 9] },
+    { "id": "lixeira", "asset": "lixeira", "variante": "azul", "pos": [3.2, 0, 5.6] },
+    { "id": "parati", "asset": "carro_hatch", "params": { "color": "#b8bec6" }, "pos": [3, 0, 11], "giro": 90 },
+    { "id": "lombada", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.7, 0.12, 2.6], "cor": "#f2c94c" }, "pos": [4.3, 0, 11] },
+    { "id": "carro_e", "asset": "carro_sedan", "params": { "color": "#3d6fb6" }, "pos": [22, 0, 19], "giro": -90, "movimentos": [{ "de": 25.36, "ate": 29.92, "para": [-22, 19] }] },
+    { "id": "shape0", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff595e" }, "pos": [1.5, 0.02, 13.6], "giro": 30 },
+    { "id": "shape1", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ffca3a" }, "pos": [2.4, 0.02, 14.2], "giro": 120 },
+    { "id": "shape2", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#8ac926" }, "pos": [5.6, 0.02, 13.4], "giro": 70 },
+    { "id": "shape3", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#1982c4" }, "pos": [-0.2, 0.02, 12.2], "giro": 160 },
+    { "id": "shape4", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#6a4c93" }, "pos": [7.2, 0.02, 14.6], "giro": 15 },
+    { "id": "shape5", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ff924c" }, "pos": [0.6, 0.02, 15.2], "giro": 95 },
+    { "id": "shape6", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#f15bb5" }, "pos": [4.8, 0.02, 15.8], "giro": 140 },
+    { "id": "shape7", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#00bbf9" }, "pos": [8.2, 0.02, 12.6], "giro": 50 },
+    { "id": "shape8", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#c5ca30" }, "pos": [2.4, 0.02, 16.4], "giro": 10 },
+    { "id": "shape9", "asset": "forma", "params": { "tipo": "caixa", "tamanho": [0.22, 0.04, 0.8], "cor": "#ef476f" }, "pos": [6.6, 0.02, 16.6], "giro": 105 }
+   ],
+   "personagens": [
+    { "id": "tales", "preset": "homem", "overrides": { "skin": "#d9a27a", "top": { "color": "#d62828" }, "bottom": { "color": "#2b2d42", "type": "pants" }, "hair": { "style": "short", "color": "#3b2a1a" }, "face": { "mustache": true }, "hat": { "type": "none" } },
+      "pos": [4, 0, 14.4], "giro": 0,
+      "viraPara": [{ "em": 25.36, "alvo": "camera" }],
+      "acoes": [{ "clip": "talk", "de": 25.36, "ate": 28.0, "expressao": "happy" }, { "clip": "wave", "de": 28.0, "ate": 29.92, "expressao": "laugh" }] }
+   ],
+   "camera": { "tipo": "enquadrar", "alvo": "tales", "plano": "medio", "angulo": 0, "elevacao": 8, "aproxima": 0.85 },
+   "textos": [{ "texto": "PNEU OU SKATE?", "de": 25.45, "ate": 29.92, "estilo": "pergunta" }]
+  }
+ ]
+}

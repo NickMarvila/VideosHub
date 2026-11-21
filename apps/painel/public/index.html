@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideosHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="#/" aria-label="VideosHub, início"><span class="marca-claquete" aria-hidden="true"></span><span>Videos<b>Hub</b></span></a>
+    <nav aria-label="Seções">
+      <a href="#/" data-rota="videos">Vídeos</a>
+      <a href="#/novo" data-rota="novo">Novo vídeo</a>
+      <a href="#/biblioteca" data-rota="biblioteca">Biblioteca</a>
+      <a href="#/cardapio" data-rota="cardapio">Cardápio</a>
+      <a href="#/agenda" data-rota="agenda">Agenda</a>
+    </nav>
+    <a class="fila" id="fila" href="#/" hidden></a>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

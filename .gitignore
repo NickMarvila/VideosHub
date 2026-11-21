@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+
+# Remotion & Caches
+.remotion/
+*/.remotion/
+*/*/.remotion/
+.cache/
+*/.cache/
+*/*/.cache/
+
+# Python & Virtual Environments
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.venvs/
+venv/
+env/
+.voz/
+
+# Build & Dist
+dist/
+build/
+out/
+apps/render/out/
+
+# Generated Heavy Media (renders, takes de áudio, WAVs, MP4s gerados)
+*.mp4
+*.wav
+*.mp3
+*.webm
+*.avi
+*.mov
+
+# Render frames e saídas geradas por projetos
+render/quadros/
+videos/*/render/
+videos/*/cenas/*.mp4
+videos/*/cenas/*.png
+videos/*/audio/*.wav
+Kit_Video_3d/projects/*/render/
+biblioteca/miniaturas/
+biblioteca/pedidos/*/opcoes/
+testes/
+
+# Logs de tarefas locais
+*.log
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

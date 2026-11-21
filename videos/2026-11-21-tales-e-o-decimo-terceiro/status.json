@@ -1,0 +1,115 @@
+{
+  "id": "2026-11-21-tales-e-o-decimo-terceiro",
+  "titulo": "Tales e o décimo terceiro",
+  "ideia": "O Tales recebe o décimo terceiro e no mesmo dia compra uma caixa de som gigante para a Paratí, mas esquece que o pneu está careca.",
+  "duracaoAlvo": 30,
+  "estilo": "3d-cidade",
+  "personagens": [
+    "tales"
+  ],
+  "pasta": "Kit_Video_3d/projects/2026-11-21-tales-e-o-decimo-terceiro",
+  "voz": {
+    "perfil": "2f02b91b",
+    "motor": "omnivoice",
+    "velocidade": 0.82
+  },
+  "etapa": "agenda",
+  "estado": "aguardando_agenda",
+  "capaEm": 19.6,
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": [
+        {
+          "em": "2026-11-21T18:13:04.614Z",
+          "texto": "## Bordão final\n\"Aaai, ai... Esse Tales. Não pode sobrar um dinheirinho que já quer gastar\"\n\ntroque o item por shapes de skate \"empurrando uma caixa de som do tamanho de uma geladeira\"",
+          "resolvido": true
+        }
+      ],
+      "aprovadoEm": "2026-11-21T18:41:52.191Z"
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-21T18:57:55.853Z"
+    },
+    "cenas": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-21T19:19:12.624Z"
+    },
+    "final": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-21T19:21:04.194Z"
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-21T18:06:09.350Z",
+      "evento": "pedido criado no painel"
+    },
+    {
+      "em": "2026-11-21T18:06:11.400Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T18:20:00.000Z",
+      "evento": "IA: roteiro escrito (sinopse + narração de ~72 palavras, 8 cenas)"
+    },
+    {
+      "em": "2026-11-21T18:13:04.614Z",
+      "evento": "ajuste pedido (roteiro)"
+    },
+    {
+      "em": "2026-11-21T18:13:04.615Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T18:25:00.000Z",
+      "evento": "IA: caixa de som trocada por shapes de skate e bordão final ampliado"
+    },
+    {
+      "em": "2026-11-21T18:41:52.191Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-21T18:41:52.192Z",
+      "evento": "gerando narração"
+    },
+    {
+      "em": "2026-11-21T18:42:09.684Z",
+      "evento": "narração pronta"
+    },
+    {
+      "em": "2026-11-21T18:57:55.853Z",
+      "evento": "narração aprovada"
+    },
+    {
+      "em": "2026-11-21T18:57:55.854Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-21T19:40:00.000Z",
+      "evento": "IA: storyboard com 11 cenas (shapes no teto, lombada, pneu estourando, shapes espalhados), quadros conferidos, postagem e capa em 19,6 s"
+    },
+    {
+      "em": "2026-11-21T19:19:12.624Z",
+      "evento": "cenas aprovadas"
+    },
+    {
+      "em": "2026-11-21T19:19:12.633Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-21T19:20:06.852Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-21T19:21:04.194Z",
+      "evento": "vídeo final aprovado"
+    }
+  ],
+  "criadoEm": "2026-11-21T18:06:09.350Z"
+}

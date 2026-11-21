@@ -1,0 +1,634 @@
+{
+ "voz": {
+  "perfil": "2f02b91b",
+  "motor": "omnivoice",
+  "velocidade": 0.82
+ },
+ "frases": [
+  {
+   "id": "f01",
+   "texto": "Esse é o Tales.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f01-t1",
+     "arquivo": "audio/takes/f01-t1.wav",
+     "seed": 1101,
+     "duracao": 1.026,
+     "config": {
+      "texto": "Esse é o Tales.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:02:49.279484+00:00"
+    },
+    {
+     "id": "f01-t2",
+     "arquivo": "audio/takes/f01-t2.wav",
+     "seed": 1102,
+     "duracao": 1.243,
+     "config": {
+      "texto": "Esse é o Tales.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:02:52.595357+00:00"
+    },
+    {
+     "id": "f01-t3",
+     "arquivo": "audio/takes/f01-t3.wav",
+     "seed": 1103,
+     "duracao": 1.102,
+     "config": {
+      "texto": "Esse é o Tales.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:02:55.871039+00:00"
+    }
+   ],
+   "escolhido": "f01-t1"
+  },
+  {
+   "id": "f02",
+   "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+   "energia": "normal",
+   "pausa": 0.35,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f02-t1",
+     "arquivo": "audio/takes/f02-t1.wav",
+     "seed": 1201,
+     "duracao": 4.237,
+     "config": {
+      "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:02:59.716891+00:00"
+    },
+    {
+     "id": "f02-t2",
+     "arquivo": "audio/takes/f02-t2.wav",
+     "seed": 1202,
+     "duracao": 3.816,
+     "config": {
+      "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:03.479465+00:00"
+    },
+    {
+     "id": "f02-t3",
+     "arquivo": "audio/takes/f02-t3.wav",
+     "seed": 1203,
+     "duracao": 4.093,
+     "config": {
+      "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:07.256039+00:00"
+    }
+   ],
+   "escolhido": "f02-t1"
+  },
+  {
+   "id": "f03",
+   "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+   "energia": "normal",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f03-t1",
+     "arquivo": "audio/takes/f03-t1.wav",
+     "seed": 1301,
+     "duracao": 6.169,
+     "config": {
+      "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:11.394678+00:00"
+    },
+    {
+     "id": "f03-t2",
+     "arquivo": "audio/takes/f03-t2.wav",
+     "seed": 1302,
+     "duracao": 6.407,
+     "config": {
+      "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:15.578499+00:00"
+    },
+    {
+     "id": "f03-t3",
+     "arquivo": "audio/takes/f03-t3.wav",
+     "seed": 1303,
+     "duracao": 6.13,
+     "config": {
+      "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:19.678040+00:00"
+    }
+   ],
+   "escolhido": "f03-t1"
+  },
+  {
+   "id": "f04",
+   "texto": "E isso acontece direto!",
+   "energia": "animada",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f04-t1",
+     "arquivo": "audio/takes/f04-t1.wav",
+     "seed": 1401,
+     "duracao": 1.607,
+     "config": {
+      "texto": "E isso acontece direto!",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:03:22.996461+00:00"
+    },
+    {
+     "id": "f04-t2",
+     "arquivo": "audio/takes/f04-t2.wav",
+     "seed": 1402,
+     "duracao": 1.831,
+     "config": {
+      "texto": "E isso acontece direto!",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:03:26.317755+00:00"
+    },
+    {
+     "id": "f04-t3",
+     "arquivo": "audio/takes/f04-t3.wav",
+     "seed": 1403,
+     "duracao": 1.848,
+     "config": {
+      "texto": "E isso acontece direto!",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:03:29.608864+00:00"
+    }
+   ],
+   "escolhido": "f04-t1"
+  },
+  {
+   "id": "f05",
+   "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro...",
+   "energia": "calma",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f05-t1",
+     "arquivo": "audio/takes/f05-t1.wav",
+     "seed": 1501,
+     "duracao": 4.425,
+     "config": {
+      "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:03:33.304508+00:00"
+    },
+    {
+     "id": "f05-t2",
+     "arquivo": "audio/takes/f05-t2.wav",
+     "seed": 1502,
+     "duracao": 4.329,
+     "config": {
+      "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:03:37.000778+00:00"
+    },
+    {
+     "id": "f05-t3",
+     "arquivo": "audio/takes/f05-t3.wav",
+     "seed": 1503,
+     "duracao": 4.384,
+     "config": {
+      "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:03:40.671849+00:00"
+    }
+   ],
+   "escolhido": "f05-t1"
+  },
+  {
+   "id": "f06",
+   "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+   "energia": "normal",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f06-t1",
+     "arquivo": "audio/takes/f06-t1.wav",
+     "seed": 1601,
+     "duracao": 3.968,
+     "config": {
+      "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:44.309833+00:00"
+    },
+    {
+     "id": "f06-t2",
+     "arquivo": "audio/takes/f06-t2.wav",
+     "seed": 1602,
+     "duracao": 3.477,
+     "config": {
+      "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:47.949209+00:00"
+    },
+    {
+     "id": "f06-t3",
+     "arquivo": "audio/takes/f06-t3.wav",
+     "seed": 1603,
+     "duracao": 3.684,
+     "config": {
+      "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:03:51.609402+00:00"
+    }
+   ],
+   "escolhido": "f06-t1"
+  },
+  {
+   "id": "f07",
+   "texto": "E no dia seguinte?",
+   "energia": "animada",
+   "pausa": 1,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f07-t1",
+     "arquivo": "audio/takes/f07-t1.wav",
+     "seed": 1701,
+     "duracao": 1.151,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:03:54.858615+00:00"
+    },
+    {
+     "id": "f07-t2",
+     "arquivo": "audio/takes/f07-t2.wav",
+     "seed": 1702,
+     "duracao": 1.938,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:03:58.157678+00:00"
+    },
+    {
+     "id": "f07-t3",
+     "arquivo": "audio/takes/f07-t3.wav",
+     "seed": 1703,
+     "duracao": 1.064,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:01.392291+00:00"
+    },
+    {
+     "id": "f07-t4",
+     "arquivo": "audio/takes/f07-t4.wav",
+     "seed": 1704,
+     "duracao": 1.198,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:06:59.684921+00:00"
+    },
+    {
+     "id": "f07-t5",
+     "arquivo": "audio/takes/f07-t5.wav",
+     "seed": 1705,
+     "duracao": 1.639,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:07:03.002312+00:00"
+    },
+    {
+     "id": "f07-t6",
+     "arquivo": "audio/takes/f07-t6.wav",
+     "seed": 1706,
+     "duracao": 1.016,
+     "config": {
+      "texto": "E no dia seguinte?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:07:06.256361+00:00"
+    }
+   ],
+   "escolhido": "f07-t5"
+  },
+  {
+   "id": "f08",
+   "texto": "Aparece com um smartwatch de mil reais!",
+   "energia": "animada",
+   "pausa": 0.6,
+   "efeito": "risada",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f08-t1",
+     "arquivo": "audio/takes/f08-t1.wav",
+     "seed": 1801,
+     "duracao": 3.347,
+     "config": {
+      "texto": "Aparece com um smartwatch de mil reais! [laughter]",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:04.953085+00:00"
+    },
+    {
+     "id": "f08-t2",
+     "arquivo": "audio/takes/f08-t2.wav",
+     "seed": 1802,
+     "duracao": 3.31,
+     "config": {
+      "texto": "Aparece com um smartwatch de mil reais! [laughter]",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:08.559362+00:00"
+    },
+    {
+     "id": "f08-t3",
+     "arquivo": "audio/takes/f08-t3.wav",
+     "seed": 1803,
+     "duracao": 3.316,
+     "config": {
+      "texto": "Aparece com um smartwatch de mil reais! [laughter]",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:12.088688+00:00"
+    }
+   ],
+   "escolhido": "f08-t1"
+  },
+  {
+   "id": "f09",
+   "texto": "Aaai, ai...",
+   "energia": "calma",
+   "pausa": 0.3,
+   "efeito": "suspiro",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f09-t1",
+     "arquivo": "audio/takes/f09-t1.wav",
+     "seed": 1901,
+     "duracao": 2.062,
+     "config": {
+      "texto": "[sigh] Aaai, ai...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:15.506775+00:00"
+    },
+    {
+     "id": "f09-t2",
+     "arquivo": "audio/takes/f09-t2.wav",
+     "seed": 1902,
+     "duracao": 1.96,
+     "config": {
+      "texto": "[sigh] Aaai, ai...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:18.893582+00:00"
+    },
+    {
+     "id": "f09-t3",
+     "arquivo": "audio/takes/f09-t3.wav",
+     "seed": 1903,
+     "duracao": 1.733,
+     "config": {
+      "texto": "[sigh] Aaai, ai...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:22.275931+00:00"
+    }
+   ],
+   "escolhido": "f09-t1"
+  },
+  {
+   "id": "f10",
+   "texto": "Esse Tales.",
+   "energia": "calma",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f10-t1",
+     "arquivo": "audio/takes/f10-t1.wav",
+     "seed": 2001,
+     "duracao": 1.378,
+     "config": {
+      "texto": "Esse Tales...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:25.579134+00:00"
+    },
+    {
+     "id": "f10-t2",
+     "arquivo": "audio/takes/f10-t2.wav",
+     "seed": 2002,
+     "duracao": 1.129,
+     "config": {
+      "texto": "Esse Tales...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:28.836691+00:00"
+    },
+    {
+     "id": "f10-t3",
+     "arquivo": "audio/takes/f10-t3.wav",
+     "seed": 2003,
+     "duracao": 1.454,
+     "config": {
+      "texto": "Esse Tales...",
+      "vel": 0.754
+     },
+     "em": "2026-11-21T20:04:32.124800+00:00"
+    }
+   ],
+   "escolhido": "f10-t1"
+  },
+  {
+   "id": "f11",
+   "texto": "Não pode sobrar um dinheirinho, que já quer gastar.",
+   "energia": "normal",
+   "pausa": 0.6,
+   "efeito": "risada",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f11-t1",
+     "arquivo": "audio/takes/f11-t1.wav",
+     "seed": 2101,
+     "duracao": 4.005,
+     "config": {
+      "texto": "Não pode sobrar um dinheirinho, que já quer gastar. [laughter]",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:04:35.828115+00:00"
+    },
+    {
+     "id": "f11-t2",
+     "arquivo": "audio/takes/f11-t2.wav",
+     "seed": 2102,
+     "duracao": 3.809,
+     "config": {
+      "texto": "Não pode sobrar um dinheirinho, que já quer gastar. [laughter]",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:04:39.536363+00:00"
+    },
+    {
+     "id": "f11-t3",
+     "arquivo": "audio/takes/f11-t3.wav",
+     "seed": 2103,
+     "duracao": 4.322,
+     "config": {
+      "texto": "Não pode sobrar um dinheirinho, que já quer gastar. [laughter]",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:04:43.234705+00:00"
+    }
+   ],
+   "escolhido": "f11-t1"
+  },
+  {
+   "id": "f12",
+   "texto": "E aí, você também conhece um Tales?",
+   "energia": "animada",
+   "pausa": 0.35,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f12-t1",
+     "arquivo": "audio/takes/f12-t1.wav",
+     "seed": 2201,
+     "duracao": 2.068,
+     "config": {
+      "texto": "E aí, você também conhece um Tales?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:46.623408+00:00"
+    },
+    {
+     "id": "f12-t2",
+     "arquivo": "audio/takes/f12-t2.wav",
+     "seed": 2202,
+     "duracao": 2.187,
+     "config": {
+      "texto": "E aí, você também conhece um Tales?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:50.021574+00:00"
+    },
+    {
+     "id": "f12-t3",
+     "arquivo": "audio/takes/f12-t3.wav",
+     "seed": 2203,
+     "duracao": 2.049,
+     "config": {
+      "texto": "E aí, você também conhece um Tales?",
+      "vel": 0.886
+     },
+     "em": "2026-11-21T20:04:53.442476+00:00"
+    }
+   ],
+   "escolhido": "f12-t1"
+  },
+  {
+   "id": "f13",
+   "texto": "Marca ele aqui nos comentários.",
+   "energia": "normal",
+   "pausa": 0,
+   "efeito": "nenhum",
+   "velocidade": 0.82,
+   "takes": [
+    {
+     "id": "f13-t1",
+     "arquivo": "audio/takes/f13-t1.wav",
+     "seed": 2301,
+     "duracao": 2.01,
+     "config": {
+      "texto": "Marca ele aqui nos comentários.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:04:56.894491+00:00"
+    },
+    {
+     "id": "f13-t2",
+     "arquivo": "audio/takes/f13-t2.wav",
+     "seed": 2302,
+     "duracao": 2.044,
+     "config": {
+      "texto": "Marca ele aqui nos comentários.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:05:00.356671+00:00"
+    },
+    {
+     "id": "f13-t3",
+     "arquivo": "audio/takes/f13-t3.wav",
+     "seed": 2303,
+     "duracao": 2.229,
+     "config": {
+      "texto": "Marca ele aqui nos comentários.",
+      "vel": 0.82
+     },
+     "em": "2026-11-21T20:05:03.763400+00:00"
+    }
+   ],
+   "escolhido": "f13-t1"
+  }
+ ],
+ "montagem": {
+  "atual": true,
+  "em": "2026-11-21T20:07:35.790922+00:00",
+  "duracao": 43.84,
+  "escolhas": {
+   "f01": "f01-t1",
+   "f02": "f02-t1",
+   "f03": "f03-t1",
+   "f04": "f04-t1",
+   "f05": "f05-t1",
+   "f06": "f06-t1",
+   "f07": "f07-t5",
+   "f08": "f08-t1",
+   "f09": "f09-t1",
+   "f10": "f10-t1",
+   "f11": "f11-t1",
+   "f12": "f12-t1",
+   "f13": "f13-t1"
+  }
+ }
+}

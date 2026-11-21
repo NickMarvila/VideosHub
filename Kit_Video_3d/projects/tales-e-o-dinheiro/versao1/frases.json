@@ -1,0 +1,80 @@
+[
+ {
+  "n": 1,
+  "texto": "Esse é o Tales.",
+  "inicio": 0.34,
+  "fim": 1.42
+ },
+ {
+  "n": 2,
+  "texto": "O Tales trabalha numa rede de supermercado, e dirige uma Paratí.",
+  "inicio": 1.66,
+  "fim": 6.52
+ },
+ {
+  "n": 3,
+  "texto": "O Tales tem um sério problema com dinheiro: não pode sobrar um dinheirinho, que ele já quer gastar.",
+  "inicio": 6.6,
+  "fim": 11.52
+ },
+ {
+  "n": 4,
+  "texto": "E isso acontece direto.",
+  "inicio": 11.52,
+  "fim": 14.4
+ },
+ {
+  "n": 5,
+  "texto": "Ele passa a semana inteira reclamando que tá sem dinheiro.",
+  "inicio": 14.46,
+  "fim": 18.46
+ },
+ {
+  "n": 6,
+  "texto": "Que a Paratí tá sem freio, mas não tem dinheiro pra arrumar.",
+  "inicio": 18.62,
+  "fim": 21.3
+ },
+ {
+  "n": 7,
+  "texto": "E no dia seguinte?",
+  "inicio": 21.3,
+  "fim": 22.36
+ },
+ {
+  "n": 8,
+  "texto": "Aparece com um smartwatch de mil reais.",
+  "inicio": 22.36,
+  "fim": 25.16
+ },
+ {
+  "n": 9,
+  "texto": "Aaai, ai...",
+  "inicio": 25.96,
+  "fim": 27.04
+ },
+ {
+  "n": 10,
+  "texto": "Esse Tales.",
+  "inicio": 27.08,
+  "fim": 28.1
+ },
+ {
+  "n": 11,
+  "texto": "Não pode sobrar um dinheirinho, que já quer gastar.",
+  "inicio": 28.1,
+  "fim": 31.56
+ },
+ {
+  "n": 12,
+  "texto": "E aí, você também conhece um Tales?",
+  "inicio": 31.56,
+  "fim": 34.56
+ },
+ {
+  "n": 13,
+  "texto": "Marca ele aqui nos comentários.",
+  "inicio": 35.44,
+  "fim": 36.64
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "slug": "zeca",
+  "nome": "Zeca",
+  "descricao": "Pedreiro baiano bem-humorado, boné laranja, camiseta azul",
+  "personalidade": "otimista, exagerado, fala rápido",
+  "estilo_arte": "cartoon 2D, contorno grosso, cores chapadas",
+  "referencia": "referencia.png",
+  "poses": ["neutro", "apontando", "bracos_abertos", "pensando", "andando"],
+  "expressoes": ["feliz", "surpreso", "bravo", "triste", "duvida"],
+  "bocas": ["A", "B", "C", "D", "E", "F", "G", "H", "X"],
+  "voz": { "motor": "", "voz_id": "", "amostra": "voz/amostra.wav", "velocidade": 1.0 },
+  "aprovado_em": null
+}

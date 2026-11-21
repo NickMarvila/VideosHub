@@ -1,0 +1,11 @@
+{
+  "provedor": "voicestudio-omnivoice",
+  "audio": "narracao.wav",
+  "duracao": 37.43,
+  "palavras": 95,
+  "frases": 13,
+  "voz": "2f02b91b Narrador Contador",
+  "velocidade": 0.82,
+  "coberturaTempos": 0.968,
+  "geradoEm": "2026-11-21T17:45:45.240Z"
+}

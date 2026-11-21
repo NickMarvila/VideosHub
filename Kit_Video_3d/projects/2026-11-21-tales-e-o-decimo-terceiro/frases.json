@@ -1,0 +1,110 @@
+[
+ {
+  "n": 1,
+  "texto": "Esse é o Tales.",
+  "inicio": 0.0,
+  "fim": 0.68
+ },
+ {
+  "n": 2,
+  "texto": "Vive dizendo que tá sem dinheiro.",
+  "inicio": 0.82,
+  "fim": 2.74
+ },
+ {
+  "n": 3,
+  "texto": "Hoje caiu o décimo terceiro.",
+  "inicio": 3.0,
+  "fim": 5.0
+ },
+ {
+  "n": 4,
+  "texto": "Sabe quanto tempo durou?",
+  "inicio": 5.0,
+  "fim": 6.54
+ },
+ {
+  "n": 5,
+  "texto": "Uma hora.",
+  "inicio": 6.62,
+  "fim": 7.5
+ },
+ {
+  "n": 6,
+  "texto": "Ele comprou dez shapes de skate...",
+  "inicio": 7.64,
+  "fim": 9.74
+ },
+ {
+  "n": 7,
+  "texto": "e encheu a Paratí.",
+  "inicio": 9.74,
+  "fim": 11.32
+ },
+ {
+  "n": 8,
+  "texto": "Só que tinha um detalhe...",
+  "inicio": 11.52,
+  "fim": 12.94
+ },
+ {
+  "n": 9,
+  "texto": "o pneu já tava careca.",
+  "inicio": 12.94,
+  "fim": 14.36
+ },
+ {
+  "n": 10,
+  "texto": "Na primeira lombada...",
+  "inicio": 14.38,
+  "fim": 15.7
+ },
+ {
+  "n": 11,
+  "texto": "pou!",
+  "inicio": 15.82,
+  "fim": 16.3
+ },
+ {
+  "n": 12,
+  "texto": "Pneu no chão...",
+  "inicio": 16.4,
+  "fim": 18.06
+ },
+ {
+  "n": 13,
+  "texto": "e shape pra todo lado.",
+  "inicio": 18.06,
+  "fim": 19.96
+ },
+ {
+  "n": 14,
+  "texto": "Aaai, ai...",
+  "inicio": 20.18,
+  "fim": 21.24
+ },
+ {
+  "n": 15,
+  "texto": "Esse Tales.",
+  "inicio": 21.3,
+  "fim": 22.42
+ },
+ {
+  "n": 16,
+  "texto": "Não pode sobrar um dinheirinho que já quer gastar.",
+  "inicio": 22.54,
+  "fim": 25.36
+ },
+ {
+  "n": 17,
+  "texto": "E você?",
+  "inicio": 25.36,
+  "fim": 25.64
+ },
+ {
+  "n": 18,
+  "texto": "Gastava o décimo terceiro no pneu ou no skate?",
+  "inicio": 26.32,
+  "fim": 28.96
+ }
+]
