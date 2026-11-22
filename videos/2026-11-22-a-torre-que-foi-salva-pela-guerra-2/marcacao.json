@@ -1,0 +1,22 @@
+[
+  { "texto": "E se uma guerra salvasse um prédio de cair?", "energia": "animada", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Aconteceu. Em Pisa.", "energia": "normal", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Mil cento e setenta e oito.", "energia": "calma", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "Os pedreiros sobem o terceiro andar.", "energia": "normal", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "E o chão começa a afundar de um lado.", "energia": "animada", "pausa": 0.4, "efeito": "nenhum" },
+  { "texto": "E aí piorou: Pisa entrou em guerra contra Gênova.", "energia": "animada", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "A obra parou.", "energia": "normal", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "Por quase cem anos.", "energia": "calma", "pausa": 0.4, "efeito": "nenhum" },
+  { "texto": "Nem reforma de vizinho demora tanto.", "energia": "animada", "pausa": 0.4, "efeito": "risada" },
+  { "texto": "Pensa comigo.", "energia": "calma", "pausa": 0.6, "efeito": "nenhum" },
+  { "texto": "O chão de Pisa é barro mole, encharcado de água.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Com o peso, a água sai devagar... e o barro firma.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "É como sentar num pufe: primeiro afunda, depois segura.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "A guerra deu esse tempo.", "energia": "normal", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "Sem ela, a torre teria caído.", "energia": "animada", "pausa": 0.6, "efeito": "nenhum" },
+  { "texto": "Oitocentos anos depois, ela ainda tombava.", "energia": "calma", "pausa": 0.3, "efeito": "suspiro" },
+  { "texto": "Sabe o que os engenheiros fizeram?", "energia": "calma", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Não colocaram concreto...", "energia": "calma", "pausa": 0.8, "efeito": "nenhum" },
+  { "texto": "Tiraram terra.", "energia": "animada", "pausa": 0.6, "efeito": "risada" },
+  { "texto": "E você? Deixava a torre torta ou endireitava?", "energia": "normal", "pausa": 0, "efeito": "nenhum" }
+]

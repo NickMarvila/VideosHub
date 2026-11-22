@@ -1,0 +1,13 @@
+{
+  "provedor": "voicestudio-voxcpm2",
+  "audio": "narracao.wav",
+  "duracao": 46.333,
+  "palavras": 124,
+  "frases": 18,
+  "voz": "9d15747e",
+  "velocidade": 1,
+  "modo": "frase-a-frase",
+  "coberturaTempos": 0.944,
+  "ouvidoPeloWhisper": "Uma guerra salvou a torre mais famosa da Itália. De cair, pisa 1.178, três andares prontos. E a torre já estava afundando de um lado. Só que aí veio a guerra contra a Gênova, e a obra parou. Por quase cem anos. O mato cresceu tanto que achou que a torre era dele. Hum, pensa comigo. O chão de pisa é barro mole, cheio de água. É como uma esponja molhada embaixo de um peso. Com o tempo, a água sai e ela fica firme. sem essa pausa. A torre teria caído. Ai, oitocentos anos depois, ela ainda ameaçava cair. E sabe o que os engenheiros fizeram pra endireitar? Não colocaram nada. Tiraram terra. E você? Preferia a torre reta ou torta?",
+  "geradoEm": "2026-11-22T20:54:49.669485+00:00"
+}

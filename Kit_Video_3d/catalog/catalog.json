@@ -2613,6 +2613,40 @@
       "stages": null
     },
     {
+      "id": "pufe",
+      "category": "objetos",
+      "label": "Pufe redondo",
+      "description": "Pufe redondo de tecido laranja, fofo, com almofada estufada, debrum e botão no meio. Ø 0,66 m, 0,6 m de altura. setProgress(obj, 0..1) afunda o meio (1 = alguém sentado, assento em y ≈ 0,5).",
+      "sizeM": {
+        "x": 0.7,
+        "y": 0.6,
+        "z": 0.7
+      },
+      "meshes": 5,
+      "params": {
+        "color": {
+          "default": "#f28c28",
+          "description": "cor do tecido"
+        },
+        "trim": {
+          "default": "#c4621a",
+          "description": "cor do debrum, base e botão"
+        },
+        "afundado": {
+          "default": 0,
+          "description": "quanto já começa afundado (0 a 1)"
+        }
+      },
+      "variants": [
+        "sentado",
+        "mostarda"
+      ],
+      "setProgress": true,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
       "id": "tanque_de_guerra",
       "category": "objetos",
       "label": "Tanque de guerra",

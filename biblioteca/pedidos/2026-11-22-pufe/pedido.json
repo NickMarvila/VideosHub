@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-22-pufe",
+  "tipo": "objeto",
+  "nome": "pufe",
+  "slug": "pufe",
+  "descricao": "Pufe redondo de tecido laranja, fofo, que afunda no meio quando alguém senta, ~0,6 m de altura",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: cilindro laranja com almofada estufada, debrum e botão no meio; o meio afunda e os lados estufam (setProgress)"
+    },
+    {
+      "n": 2,
+      "descricao": "Abóbora de gomos: bojudo, laranja-queimado, 8 gomos costurados e alça lateral; achata e esparrama inteiro ao sentar"
+    },
+    {
+      "n": 3,
+      "descricao": "Tricô listrado: laranja-claro com faixa creme e nós de trança no meio; o tampo fofo afunda"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-22T19:48:49.532Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra-2",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T19:51:15.697Z",
+      "custoUSD": 0.7669314000000002,
+      "turnos": 23,
+      "segundos": 145,
+      "tokensEntrada": 842139,
+      "tokensSaida": 13169,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T19:51:32.218Z"
+}

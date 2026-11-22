@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { twoTone } from "./ponte/shade";
 import type { Pen } from "./ponte/toon";
 
-export const OBJETOS_3D = ["parati", "caixa_som", "banco", "poste", "cone", "mesa", "caixote", "pneu", "caminhao", "metralhadora", "tanque_de_guerra", "plantacao_de_trigo"] as const;
+export const OBJETOS_3D = ["parati", "caixa_som", "banco", "poste", "cone", "mesa", "caixote", "pneu", "caminhao", "metralhadora", "tanque_de_guerra", "plantacao_de_trigo", "torre_de_pisa", "esponja_molhada", "terra_retirada"] as const;
 export const OBJETOS_2D = ["dinheiro", "moeda", "relogio", "celular", "balao", "pensamento", "icone", "seta"] as const;
 
 const mats = new Map<string, THREE.Material>();
@@ -38,9 +38,71 @@ function metralhadora(g: THREE.Group, base: 0 | 1) {
   caixa(g, "#7a5232", 0.3, 0.13, 0.12, -0.45, topo + 0.03, 0);         // coronha
 }
 
-/** monta a peça 3D; devolve o grupo e as rodas (para girar quando o objeto anda) */
-export function construir3D(tipo: string, cor?: string): { g: THREE.Group; rodas: THREE.Object3D[] } {
+/** cilindro (ou tronco de cone) com a base apoiada em y */
+const cilB = (g: THREE.Object3D, cor: string, rTopo: number, rBase: number, h: number, x: number, y: number, z: number, seg = 16) => {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(rTopo, rBase, h, seg), mat(cor)); m.position.set(x, y + h / 2, z); m.castShadow = true; m.receiveShadow = true; g.add(m); return m;
+};
+const bola = (g: THREE.Object3D, cor: string, r: number, x: number, y: number, z: number, esc: [number, number, number] = [1, 1, 1]) => {
+  const m = new THREE.Mesh(new THREE.SphereGeometry(r, 12, 8), mat(cor)); m.position.set(x, y, z); m.scale.set(...esc); m.castShadow = true; g.add(m); return m;
+};
+
+/** Torre de Pisa (porte da peça do kit 3D): 8 andares (base, 6 galerias, campanário), ~12 m, tomba para +x.
+ *  atualizar(etapa 0..1, inclinacao em graus, t): etapa 3/8 = obra com 3 andares; 1 = completa. */
+function torreDePisa(g: THREE.Group) {
+  const marmore = "#f1e8d0", miolo = "#d8c9a3", R = 1.8, hG = 1.25;
+  const torre = new THREE.Group(); g.add(torre);
+  const andares: THREE.Group[] = [];
+  const novo = (y: number) => { const a = new THREE.Group(); a.position.y = y; torre.add(a); andares.push(a); return a; };
+  const colunata = (a: THREE.Group, h: number, n: number, r: number) => {
+    for (let i = 0; i < n; i++) {
+      const t = (i / n) * Math.PI * 2, tm = ((i + 0.5) / n) * Math.PI * 2, corda = 2 * r * Math.sin(Math.PI / n);
+      cilB(a, marmore, 0.09, 0.1, h - 0.32, Math.cos(t) * r, 0.12, Math.sin(t) * r, 6);
+      const arco = new THREE.Mesh(new THREE.BoxGeometry(corda * 0.95, 0.2, 0.16), mat(marmore));
+      arco.position.set(Math.cos(tm) * r, h - 0.2, Math.sin(tm) * r); arco.rotation.y = -tm + Math.PI / 2; a.add(arco);
+    }
+    cilB(a, marmore, R + 0.12, R + 0.12, 0.12, 0, 0, 0, 20);         // piso da galeria
+    cilB(a, marmore, R + 0.16, R + 0.16, 0.14, 0, h - 0.14, 0, 20);  // cornija
+  };
+  const b = novo(0);                                                  // base com arcos cegos
+  cilB(b, marmore, R + 0.15, R + 0.25, 0.3, 0, 0, 0, 20);
+  cilB(b, miolo, R - 0.05, R - 0.05, 2.0, 0, 0.3, 0, 20);
+  for (let i = 0; i < 10; i++) { const t = (i / 10) * Math.PI * 2; cilB(b, marmore, 0.12, 0.13, 1.7, Math.cos(t) * R, 0.3, Math.sin(t) * R, 6); }
+  cilB(b, marmore, R + 0.18, R + 0.18, 0.16, 0, 2.0, 0, 20);
+  for (let k = 0; k < 6; k++) { const a = novo(2.16 + k * hG); cilB(a, miolo, R - 0.45, R - 0.45, hG, 0, 0, 0, 16); colunata(a, hG, 14, R); }
+  const c = novo(2.16 + 6 * hG);                                      // campanário com telhadinho e sino
+  cilB(c, miolo, 1.0, 1.0, 1.35, 0, 0, 0, 14); colunata(c, 1.35, 10, 1.25);
+  cilB(c, "#c96f4a", 0.2, 1.3, 0.55, 0, 1.35, 0, 14);
+  const sino = new THREE.Group(); sino.position.set(0, 0.95, 1.0); c.add(sino);
+  cilB(sino, "#b98a3a", 0.12, 0.3, 0.42, 0, -0.42, 0, 10);
+  return (etapa: number, inclinacao: number, t: number) => {
+    torre.rotation.z = -THREE.MathUtils.degToRad(inclinacao);
+    const n = etapa * andares.length;
+    andares.forEach((a, i) => { const k = Math.min(1, Math.max(0, n - i)); a.visible = k > 0.001; a.scale.y = Math.max(0.001, k); });
+    sino.rotation.z = Math.sin(t * 3) * 0.25;
+  };
+}
+
+/** monta a peça 3D; devolve o grupo, as rodas (para girar quando o objeto anda) e, se houver, o atualizar(etapa, inclinacao, t) */
+export function construir3D(tipo: string, cor?: string): { g: THREE.Group; rodas: THREE.Object3D[]; atualizar?: (etapa: number, inclinacao: number, t: number) => void } {
   const g = new THREE.Group(), rodas: THREE.Object3D[] = [];
+  if (tipo === "torre_de_pisa") return { g, rodas, atualizar: torreDePisa(g) };
+  if (tipo === "esponja_molhada") { // esponja amarela com face verde, gotas azuis e poça (0,5 × 0,32 m)
+    cilB(g, "#7fc3ee", 0.32, 0.32, 0.01, 0, 0, 0, 16);
+    caixa(g, cor ?? "#f7d046", 0.5, 0.17, 0.32, 0, 0.01, 0);
+    caixa(g, "#3fa34d", 0.5, 0.05, 0.32, 0, 0.18, 0);
+    for (const [x, z] of [[-0.27, 0.12], [0.27, -0.06], [0.1, 0.2], [-0.12, 0.2]]) bola(g, "#4fa3e0", 0.022, x, 0.04, z, [1, 1.4, 1]);
+    return { g, rodas };
+  }
+  if (tipo === "terra_retirada") { // monte de terra marrom com pá fincada (~1,4 m de base)
+    const terra = cor ?? "#8a5a36";
+    bola(g, terra, 0.7, 0, 0.05, 0, [1.0, 0.42, 0.8]); bola(g, terra, 0.48, -0.08, 0.3, 0.02, [1.0, 0.6, 0.85]); bola(g, terra, 0.3, 0.05, 0.5, 0, [1.0, 0.65, 0.9]);
+    for (const [x, z, r] of [[0.62, 0.35, 0.09], [-0.6, 0.4, 0.07], [0.45, -0.45, 0.08], [-0.2, 0.6, 0.06], [0.75, -0.05, 0.06]]) bola(g, "#6b4327", r, x, r * 0.6, z, [1, 0.7, 1]);
+    const s = new THREE.Group(); s.position.set(0.08, 0.62, 0.02); s.rotation.set(0.12, 0, -0.28); g.add(s);
+    caixa(s as THREE.Group, "#8c939b", 0.24, 0.3, 0.035, 0, -0.41, 0);
+    cilB(s, "#a87a4a", 0.028, 0.028, 0.78, 0, 0.12, 0, 8);
+    caixa(s as THREE.Group, "#5a3b26", 0.16, 0.05, 0.05, 0, 0.86, 0);
+    return { g, rodas };
+  }
   if (tipo === "parati") { // perua compacta com bagageiro, frente para +x
     const c = cor ?? "#b8bec6";
     caixa(g, c, 4.3, 0.75, 1.7, 0, 0.35, 0);

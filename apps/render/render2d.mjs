@@ -89,7 +89,7 @@ function validarCartoon({ sb }) {
     if (!c.camera?.length) erros.push(`${n}: sem chaves de câmera`);
     for (const k of c.camera || []) if (!Array.isArray(k.pos) || !Array.isArray(k.olha)) erros.push(`${n}: chave de câmera sem pos/olha`);
     if ((c.cenario || 'vila') === 'vila') for (const k of c.camera || []) if (Math.abs(k.pos[2]) > 7.5 && Math.abs(k.pos[1]) < 12) avisos.push(`${n}: câmera em z=${k.pos[2]} fica na calçada/casas; as casas no caminho somem, mas prefira |z| < 7`);
-    const OBJ_C = ['parati', 'caixa_som', 'banco', 'poste', 'cone', 'mesa', 'caixote', 'pneu', 'caminhao', 'metralhadora', 'tanque_de_guerra', 'plantacao_de_trigo','dinheiro', 'moeda', 'relogio', 'celular', 'balao', 'pensamento', 'icone', 'seta'];
+    const OBJ_C = ['parati', 'caixa_som', 'banco', 'poste', 'cone', 'mesa', 'caixote', 'pneu', 'caminhao', 'metralhadora', 'tanque_de_guerra', 'plantacao_de_trigo', 'torre_de_pisa', 'esponja_molhada', 'terra_retirada', 'dinheiro', 'moeda', 'relogio', 'celular', 'balao', 'pensamento', 'icone', 'seta'];
     const ACOES_C = ['parado', 'acena', 'senta', 'cai', 'comemora', 'maos_cabeca', 'abre', 'maos_cintura', 'aponta', 'pensa', 'segura', 'decepcao', 'pulo', 'tremer'];
     for (const o of c.objetos || []) if (!OBJ_C.includes(o.tipo)) erros.push(`${n}: objeto "${o.tipo}" não existe (${OBJ_C.join(', ')})`);
     for (const a of c.atores || []) for (const [, ac] of a.acoes || []) if (!ACOES_C.includes(ac)) erros.push(`${n}: ação "${ac}" não existe (${ACOES_C.join(', ')})`);

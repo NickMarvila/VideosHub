@@ -4,6 +4,7 @@ import './carrinho_de_supermercado.js';
 import './esponja_molhada.js';
 import './metralhadora.js';
 import './plantacao_de_trigo.js';
+import './pufe.js';
 import './tanque_de_guerra.js';
 import './terra_retirada.js';
 import './torre_de_pisa.js';

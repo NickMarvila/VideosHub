@@ -1,0 +1,622 @@
+[
+ {
+  "palavra": "Uma",
+  "inicio": 0.0,
+  "fim": 0.12
+ },
+ {
+  "palavra": "guerra",
+  "inicio": 0.12,
+  "fim": 0.48
+ },
+ {
+  "palavra": "salvou",
+  "inicio": 0.48,
+  "fim": 0.96
+ },
+ {
+  "palavra": "a",
+  "inicio": 0.96,
+  "fim": 1.02
+ },
+ {
+  "palavra": "torre",
+  "inicio": 1.02,
+  "fim": 1.32
+ },
+ {
+  "palavra": "mais",
+  "inicio": 1.32,
+  "fim": 1.44
+ },
+ {
+  "palavra": "famosa",
+  "inicio": 1.44,
+  "fim": 1.9
+ },
+ {
+  "palavra": "da",
+  "inicio": 1.9,
+  "fim": 2.02
+ },
+ {
+  "palavra": "Itália.",
+  "inicio": 2.02,
+  "fim": 2.5
+ },
+ {
+  "palavra": "De",
+  "inicio": 2.56,
+  "fim": 2.9
+ },
+ {
+  "palavra": "cair.",
+  "inicio": 2.9,
+  "fim": 3.38
+ },
+ {
+  "palavra": "Pisa,",
+  "inicio": 3.4,
+  "fim": 4.1
+ },
+ {
+  "palavra": "mil",
+  "inicio": 4.1,
+  "fim": 4.38
+ },
+ {
+  "palavra": "cento",
+  "inicio": 4.1,
+  "fim": 4.38
+ },
+ {
+  "palavra": "e",
+  "inicio": 4.38,
+  "fim": 5.74
+ },
+ {
+  "palavra": "setenta",
+  "inicio": 4.38,
+  "fim": 5.74
+ },
+ {
+  "palavra": "e",
+  "inicio": 4.38,
+  "fim": 5.74
+ },
+ {
+  "palavra": "oito.",
+  "inicio": 4.38,
+  "fim": 5.74
+ },
+ {
+  "palavra": "Três",
+  "inicio": 5.92,
+  "fim": 6.4
+ },
+ {
+  "palavra": "andares",
+  "inicio": 6.4,
+  "fim": 6.82
+ },
+ {
+  "palavra": "prontos.",
+  "inicio": 6.82,
+  "fim": 7.42
+ },
+ {
+  "palavra": "E",
+  "inicio": 7.42,
+  "fim": 7.88
+ },
+ {
+  "palavra": "a",
+  "inicio": 7.88,
+  "fim": 7.98
+ },
+ {
+  "palavra": "torre",
+  "inicio": 7.98,
+  "fim": 8.34
+ },
+ {
+  "palavra": "já",
+  "inicio": 8.34,
+  "fim": 8.44
+ },
+ {
+  "palavra": "estava",
+  "inicio": 8.44,
+  "fim": 8.78
+ },
+ {
+  "palavra": "afundando",
+  "inicio": 8.78,
+  "fim": 9.34
+ },
+ {
+  "palavra": "de",
+  "inicio": 9.34,
+  "fim": 9.48
+ },
+ {
+  "palavra": "um",
+  "inicio": 9.48,
+  "fim": 9.56
+ },
+ {
+  "palavra": "lado.",
+  "inicio": 9.56,
+  "fim": 9.8
+ },
+ {
+  "palavra": "Só",
+  "inicio": 10.06,
+  "fim": 10.58
+ },
+ {
+  "palavra": "que",
+  "inicio": 10.58,
+  "fim": 10.76
+ },
+ {
+  "palavra": "aí",
+  "inicio": 10.76,
+  "fim": 10.9
+ },
+ {
+  "palavra": "veio",
+  "inicio": 10.9,
+  "fim": 11.12
+ },
+ {
+  "palavra": "a",
+  "inicio": 11.12,
+  "fim": 11.26
+ },
+ {
+  "palavra": "guerra",
+  "inicio": 11.26,
+  "fim": 11.56
+ },
+ {
+  "palavra": "contra",
+  "inicio": 11.56,
+  "fim": 11.86
+ },
+ {
+  "palavra": "Gênova...",
+  "inicio": 11.98,
+  "fim": 12.28
+ },
+ {
+  "palavra": "e",
+  "inicio": 12.4,
+  "fim": 12.66
+ },
+ {
+  "palavra": "a",
+  "inicio": 12.66,
+  "fim": 12.72
+ },
+ {
+  "palavra": "obra",
+  "inicio": 12.72,
+  "fim": 12.98
+ },
+ {
+  "palavra": "parou.",
+  "inicio": 12.98,
+  "fim": 13.38
+ },
+ {
+  "palavra": "Por",
+  "inicio": 13.42,
+  "fim": 13.84
+ },
+ {
+  "palavra": "quase",
+  "inicio": 13.84,
+  "fim": 14.18
+ },
+ {
+  "palavra": "cem",
+  "inicio": 14.18,
+  "fim": 14.56
+ },
+ {
+  "palavra": "anos.",
+  "inicio": 14.56,
+  "fim": 14.82
+ },
+ {
+  "palavra": "O",
+  "inicio": 15.04,
+  "fim": 15.52
+ },
+ {
+  "palavra": "mato",
+  "inicio": 15.52,
+  "fim": 15.82
+ },
+ {
+  "palavra": "cresceu",
+  "inicio": 15.82,
+  "fim": 16.16
+ },
+ {
+  "palavra": "tanto",
+  "inicio": 16.16,
+  "fim": 16.42
+ },
+ {
+  "palavra": "que",
+  "inicio": 16.42,
+  "fim": 16.72
+ },
+ {
+  "palavra": "achou",
+  "inicio": 16.72,
+  "fim": 17.02
+ },
+ {
+  "palavra": "que",
+  "inicio": 17.02,
+  "fim": 17.12
+ },
+ {
+  "palavra": "a",
+  "inicio": 17.12,
+  "fim": 17.2
+ },
+ {
+  "palavra": "torre",
+  "inicio": 17.2,
+  "fim": 17.54
+ },
+ {
+  "palavra": "era",
+  "inicio": 17.54,
+  "fim": 17.68
+ },
+ {
+  "palavra": "dele.",
+  "inicio": 17.68,
+  "fim": 17.92
+ },
+ {
+  "palavra": "Pensa",
+  "inicio": 18.9,
+  "fim": 19.72
+ },
+ {
+  "palavra": "comigo.",
+  "inicio": 19.72,
+  "fim": 19.96
+ },
+ {
+  "palavra": "O",
+  "inicio": 20.48,
+  "fim": 21.04
+ },
+ {
+  "palavra": "chão",
+  "inicio": 21.04,
+  "fim": 21.34
+ },
+ {
+  "palavra": "de",
+  "inicio": 21.34,
+  "fim": 21.48
+ },
+ {
+  "palavra": "Pisa",
+  "inicio": 21.48,
+  "fim": 21.88
+ },
+ {
+  "palavra": "é",
+  "inicio": 21.88,
+  "fim": 21.96
+ },
+ {
+  "palavra": "barro",
+  "inicio": 21.96,
+  "fim": 22.36
+ },
+ {
+  "palavra": "mole,",
+  "inicio": 22.36,
+  "fim": 22.58
+ },
+ {
+  "palavra": "cheio",
+  "inicio": 22.74,
+  "fim": 23.2
+ },
+ {
+  "palavra": "de",
+  "inicio": 23.2,
+  "fim": 23.36
+ },
+ {
+  "palavra": "água.",
+  "inicio": 23.36,
+  "fim": 23.62
+ },
+ {
+  "palavra": "É",
+  "inicio": 23.72,
+  "fim": 24.12
+ },
+ {
+  "palavra": "como",
+  "inicio": 24.12,
+  "fim": 24.32
+ },
+ {
+  "palavra": "uma",
+  "inicio": 24.32,
+  "fim": 24.52
+ },
+ {
+  "palavra": "esponja",
+  "inicio": 24.52,
+  "fim": 25.02
+ },
+ {
+  "palavra": "molhada",
+  "inicio": 25.02,
+  "fim": 25.36
+ },
+ {
+  "palavra": "embaixo",
+  "inicio": 25.36,
+  "fim": 25.64
+ },
+ {
+  "palavra": "de",
+  "inicio": 25.64,
+  "fim": 25.96
+ },
+ {
+  "palavra": "um",
+  "inicio": 25.96,
+  "fim": 26.02
+ },
+ {
+  "palavra": "peso.",
+  "inicio": 26.02,
+  "fim": 26.26
+ },
+ {
+  "palavra": "Com",
+  "inicio": 26.52,
+  "fim": 26.92
+ },
+ {
+  "palavra": "o",
+  "inicio": 26.92,
+  "fim": 27.04
+ },
+ {
+  "palavra": "tempo,",
+  "inicio": 27.04,
+  "fim": 27.48
+ },
+ {
+  "palavra": "a",
+  "inicio": 27.56,
+  "fim": 27.72
+ },
+ {
+  "palavra": "água",
+  "inicio": 27.72,
+  "fim": 28.0
+ },
+ {
+  "palavra": "sai...",
+  "inicio": 28.0,
+  "fim": 28.32
+ },
+ {
+  "palavra": "e",
+  "inicio": 28.32,
+  "fim": 28.72
+ },
+ {
+  "palavra": "ela",
+  "inicio": 28.72,
+  "fim": 28.88
+ },
+ {
+  "palavra": "fica",
+  "inicio": 28.88,
+  "fim": 29.14
+ },
+ {
+  "palavra": "firme.",
+  "inicio": 29.14,
+  "fim": 29.64
+ },
+ {
+  "palavra": "Sem",
+  "inicio": 30.0,
+  "fim": 30.3
+ },
+ {
+  "palavra": "essa",
+  "inicio": 30.3,
+  "fim": 30.54
+ },
+ {
+  "palavra": "pausa,",
+  "inicio": 30.54,
+  "fim": 31.02
+ },
+ {
+  "palavra": "a",
+  "inicio": 31.1,
+  "fim": 31.46
+ },
+ {
+  "palavra": "torre",
+  "inicio": 31.46,
+  "fim": 31.86
+ },
+ {
+  "palavra": "teria",
+  "inicio": 31.86,
+  "fim": 32.0
+ },
+ {
+  "palavra": "caído.",
+  "inicio": 32.0,
+  "fim": 32.64
+ },
+ {
+  "palavra": "Oitocentos",
+  "inicio": 33.48,
+  "fim": 34.12
+ },
+ {
+  "palavra": "anos",
+  "inicio": 34.12,
+  "fim": 34.32
+ },
+ {
+  "palavra": "depois,",
+  "inicio": 34.32,
+  "fim": 34.72
+ },
+ {
+  "palavra": "ela",
+  "inicio": 34.9,
+  "fim": 35.26
+ },
+ {
+  "palavra": "ainda",
+  "inicio": 35.26,
+  "fim": 35.7
+ },
+ {
+  "palavra": "ameaçava",
+  "inicio": 35.7,
+  "fim": 36.24
+ },
+ {
+  "palavra": "cair.",
+  "inicio": 36.24,
+  "fim": 36.6
+ },
+ {
+  "palavra": "E",
+  "inicio": 36.74,
+  "fim": 37.1
+ },
+ {
+  "palavra": "sabe",
+  "inicio": 37.1,
+  "fim": 37.36
+ },
+ {
+  "palavra": "o",
+  "inicio": 37.36,
+  "fim": 37.52
+ },
+ {
+  "palavra": "que",
+  "inicio": 37.52,
+  "fim": 37.58
+ },
+ {
+  "palavra": "os",
+  "inicio": 37.58,
+  "fim": 37.66
+ },
+ {
+  "palavra": "engenheiros",
+  "inicio": 37.66,
+  "fim": 38.14
+ },
+ {
+  "palavra": "fizeram",
+  "inicio": 38.14,
+  "fim": 38.62
+ },
+ {
+  "palavra": "para",
+  "inicio": 38.62,
+  "fim": 38.74
+ },
+ {
+  "palavra": "endireitar?",
+  "inicio": 38.74,
+  "fim": 39.24
+ },
+ {
+  "palavra": "Não",
+  "inicio": 39.8,
+  "fim": 40.1
+ },
+ {
+  "palavra": "colocaram",
+  "inicio": 40.1,
+  "fim": 40.7
+ },
+ {
+  "palavra": "nada...",
+  "inicio": 40.7,
+  "fim": 40.92
+ },
+ {
+  "palavra": "Tiraram",
+  "inicio": 41.36,
+  "fim": 41.96
+ },
+ {
+  "palavra": "terra.",
+  "inicio": 41.96,
+  "fim": 42.24
+ },
+ {
+  "palavra": "E",
+  "inicio": 42.64,
+  "fim": 43.24
+ },
+ {
+  "palavra": "você?",
+  "inicio": 43.24,
+  "fim": 43.58
+ },
+ {
+  "palavra": "Preferia",
+  "inicio": 44.08,
+  "fim": 44.68
+ },
+ {
+  "palavra": "a",
+  "inicio": 44.68,
+  "fim": 44.73
+ },
+ {
+  "palavra": "torre",
+  "inicio": 44.72,
+  "fim": 45.02
+ },
+ {
+  "palavra": "reta",
+  "inicio": 45.02,
+  "fim": 45.42
+ },
+ {
+  "palavra": "ou",
+  "inicio": 45.42,
+  "fim": 45.68
+ },
+ {
+  "palavra": "torta?",
+  "inicio": 45.68,
+  "fim": 46.12
+ }
+]

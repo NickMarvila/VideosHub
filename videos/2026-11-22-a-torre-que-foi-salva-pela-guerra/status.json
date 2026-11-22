@@ -13,25 +13,42 @@
     "motor": "voxcpm2",
     "velocidade": 1
   },
-  "etapa": "roteiro",
-  "estado": "aguardando_aprovacao",
+  "etapa": "final",
+  "estado": "erro",
+  "capaEm": 42.3,
   "fluxo": 2,
   "portoes": {
     "roteiro": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T20:48:38.645Z"
     },
     "narracao": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T20:54:52.275Z"
     },
     "cenas": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [
+        {
+          "em": "2026-11-22T21:14:01.968Z",
+          "texto": "[c06] o piso é pra ser terra ou barro, no video ficou com piso de pedra",
+          "cena": "c06",
+          "resolvido": true
+        }
+      ],
+      "aprovadoEm": "2026-11-22T21:18:51.626Z"
     },
     "final": {
       "aprovado": false,
-      "ajustes": []
+      "ajustes": [
+        {
+          "em": "2026-11-22T21:25:02.411Z",
+          "texto": "quero a legenda no video, nao foi feito ainda",
+          "resolvido": false
+        }
+      ]
     }
   },
   "agenda": null,
@@ -59,6 +76,90 @@
     {
       "em": "2026-11-22T17:59:00.791Z",
       "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-22T20:48:38.646Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-22T20:48:38.658Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-22T20:51:08.822Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T20:52:17.231Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-22T20:52:40.632Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T20:53:39.705Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-22T20:54:15.072Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T20:54:52.278Z",
+      "evento": "narração aprovada"
+    },
+    {
+      "em": "2026-11-22T20:54:52.302Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T21:30:00.000Z",
+      "evento": "IA: 12 cenas com 2 variantes (Cartoon 3D), torre/esponja/terra portadas para o motor Cartoon, trilha para na virada, postagem e capa em 42,3 s"
+    },
+    {
+      "em": "2026-11-22T21:14:01.968Z",
+      "evento": "ajuste pedido na cena c06"
+    },
+    {
+      "em": "2026-11-22T21:14:01.983Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T21:25:00.000Z",
+      "evento": "IA: c06 ganhou 2 variantes novas (c06-c e c06-d) no cenário campo, sobre a trilha de terra em vez do paralelepípedo"
+    },
+    {
+      "em": "2026-11-22T21:18:51.627Z",
+      "evento": "cenas aprovadas"
+    },
+    {
+      "em": "2026-11-22T21:18:51.637Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-22T21:21:30.135Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-22T21:24:15.583Z",
+      "evento": "legenda desligada"
+    },
+    {
+      "em": "2026-11-22T21:24:15.881Z",
+      "evento": "legenda ligada"
+    },
+    {
+      "em": "2026-11-22T21:25:02.411Z",
+      "evento": "ajuste pedido (final)"
+    },
+    {
+      "em": "2026-11-22T21:25:02.423Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T21:25:07.344Z",
+      "evento": "erro na IA"
     }
   ],
   "criadoEm": "2026-11-22T17:17:19.077Z",
@@ -71,6 +172,37 @@
       "segundos": 122,
       "tokensEntrada": 488795,
       "tokensSaida": 9926
+    },
+    {
+      "em": "2026-11-22T21:06:13.305Z",
+      "etapa": "cenas",
+      "custoUSD": 3.3251762000000005,
+      "turnos": 78,
+      "segundos": 679,
+      "tokensEntrada": 3654175,
+      "tokensSaida": 68473,
+      "motor": "claude"
+    },
+    {
+      "em": "2026-11-22T21:15:34.576Z",
+      "etapa": "cenas",
+      "custoUSD": 0.6407387999999999,
+      "turnos": 19,
+      "segundos": 91,
+      "tokensEntrada": 784375,
+      "tokensSaida": 7281,
+      "motor": "claude"
+    },
+    {
+      "em": "2026-11-22T21:25:07.344Z",
+      "etapa": "final",
+      "custoUSD": 0.15639319999999998,
+      "turnos": 2,
+      "segundos": 3,
+      "tokensEntrada": 35842,
+      "tokensSaida": 100,
+      "motor": "claude"
     }
-  ]
+  ],
+  "legenda": true
 }

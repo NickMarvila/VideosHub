@@ -60,6 +60,7 @@ function detalhes(v) {
       audioFrases: audioFrasesDe(v),
       variantes: variantesDe(v),
       assets: assetsDe(v),
+      ganchos: lerJSON(path.join(pasta, 'ganchos.json')),
       marcacao: lerJSON(path.join(pasta, 'marcacao.json')),
       audio: existe('narracao.wav') ? `${rel('narracao.wav')}?v=${versao('narracao.wav')}` : null,
       previa: existe('render/previa.mp4') ? `${rel('render/previa.mp4')}?v=${versao('render/previa.mp4')}` : null,
@@ -170,7 +171,25 @@ const configIA = () => ({ motor: 'claude', trocarSozinho: true, modeloGemini: 'g
 const NOME_IA = { claude: 'Claude', gemini: 'Gemini' };
 // sinais de que o plano acabou (limite de uso/cota), nos dois motores
 const FIM_DO_PLANO = /usage limit|limit reached|hit your limit|rate.?limit|quota|resource.?exhausted|429|limite de uso/i;
-function comandoIA(motor, skill, arg, permitidas) {
+// ---------- qual modelo do Claude faz cada tarefa (o painel decide sozinho) ----------
+// Sem isso o Claude Code usa o modelo padrão da conta (Opus) em tudo, e uma etapa de cenas chegou a gastar
+// US$ 3,33 do plano. Regra: Sonnet escreve e monta; Haiku faz mudanças pequenas e mecânicas; Opus só desenha
+// assets (SVG + 3D, onde a qualidade visual depende do modelo) ou entra quando a tentativa anterior falhou
+// ou o criador já pediu 3 ajustes na mesma etapa sem ficar satisfeito.
+const MODELOS = { opus: 'Opus', sonnet: 'Sonnet', haiku: 'Haiku' };
+function modeloPara(skill, v) {
+  if (skill === 'biblioteca') return { modelo: 'opus', motivo: 'desenhar assets 2D e 3D pede o modelo mais forte' };
+  if (skill === 'ideias') return { modelo: 'sonnet', motivo: 'escrever e conferir fatos' };
+  const etapa = v.etapa;
+  const ajustes = v.portoes?.[etapa]?.ajustes || [];
+  const abertos = ajustes.filter((a) => !a.resolvido);
+  if (v.estado === 'erro' || v.orfao) return { modelo: 'opus', motivo: 'a tentativa anterior falhou' };
+  if (ajustes.length >= 3) return { modelo: 'opus', motivo: `${ajustes.length}º ajuste nesta etapa` };
+  if (etapa === 'narracao') return { modelo: 'haiku', motivo: 'ajuste pequeno no texto das frases' };
+  if (etapa === 'roteiro' && abertos.length && abertos.every((a) => /^Ganchos:/i.test(a.texto))) return { modelo: 'sonnet', motivo: 'só 3 ganchos novos' };
+  return { modelo: 'sonnet', motivo: etapa === 'cenas' ? 'montar as cenas' : etapa === 'roteiro' ? 'escrever o roteiro' : 'ajuste' };
+}
+function comandoIA(motor, skill, arg, permitidas, modelo) {
   if (motor === 'gemini') {
     // o Gemini não tem "/skill": ele lê o SKILL.md da skill e segue
     const prompt = `Você é a IA do VideosHub e está rodando sem ninguém para responder perguntas. `
@@ -179,23 +198,24 @@ function comandoIA(motor, skill, arg, permitidas) {
       + `WebSearch = google_web_search, WebFetch = web_fetch, Bash = run_shell_command. Não pergunte nada: faça o trabalho até o fim e termine com um resumo de uma linha.`;
     return ['node', [GEMINI_JS, '-m', configIA().modeloGemini, '-p', prompt, '--output-format', 'stream-json', '--skip-trust', '--approval-mode', 'auto_edit', '--policy', path.join(RAIZ, 'config', 'gemini-politica.toml')]];
   }
-  return ['claude', ['-p', `/${skill} ${arg}`, '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]];
+  return ['claude', ['-p', `/${skill} ${arg}`, ...(modelo ? ['--model', modelo] : []), '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]];
 }
 // Roda uma skill na IA escolhida. Se o plano do Claude acabar e "trocar sozinho" estiver ligado, refaz no Gemini.
-function rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, motor = configIA().motor) {
-  const job = rodar(alvo, 'ia', [comandoIA(motor, skill, arg, permitidas)], (ok, j) => {
+function rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, motor = configIA().motor, escolha = modeloPara(skill, alvo)) {
+  const job = rodar(alvo, 'ia', [comandoIA(motor, skill, arg, permitidas, escolha.modelo)], (ok, j) => {
     const cfg = configIA();
     const acabou = !ok && FIM_DO_PLANO.test(`${j.resumo || ''}\n${j.log || ''}`);
     if (acabou && cfg.trocarSozinho && motor === 'claude' && comandoExiste('gemini') && geminiPronto()) {
-      const novo = rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, 'gemini');
+      const novo = rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, 'gemini', escolha);
       novo.atividade.push({ em: agora(), texto: 'O plano do Claude acabou: recomeçando no Gemini' });
       return;
     }
     if (acabou) j.resumo = j.erroPlano = `O ${motor === 'gemini' ? 'limite diário da chave do Gemini' : 'plano do Claude'} acabou. ${motor === 'claude' ? 'Troque a IA para Gemini no topo do painel e tente de novo.' : 'Ele renova em algumas horas; enquanto isso, volte para o Claude.'}`;
-    if (j.uso) j.uso.motor = motor;
+    if (j.uso) { j.uso.motor = motor; if (motor === 'claude') j.uso.modelo = escolha.modelo; }
     aoTerminar?.(ok, j);
   }, chave, unidades);
   job.motorIA = motor;
+  if (motor === 'claude') job.atividade.push({ em: agora(), texto: `Modelo: ${MODELOS[escolha.modelo]} (${escolha.motivo})` });
   return job;
 }
 // o gemini do npm é um .cmd no Windows (o spawn sem shell não roda): chamamos o gemini.js dele pelo node
@@ -764,6 +784,57 @@ function pedirAjuste(v, texto) {
   salvarVideo({ ...v, etapa, estado: 'aguardando_ia' }, `ajuste pedido (${etapa})`);
   ACOES.ia(lerVideo(v.id));
 }
+// ---------- gancho: o criador escolhe entre as 3 opções da IA (ou escreve o seu) ----------
+// ganchos.json: { aplicado: {gancho, porta}, escolhido: n | "proprio", opcoes: [{n, receita, gancho, porta, porque, recomendado}] }
+// "aplicado" é o que está hoje no começo da narração; trocar o gancho troca esse começo em narracao.txt,
+// as primeiras frases da marcacao.json e a linha "Receita do gancho" da sinopse.
+const frasesDe = (t) => String(t || '').trim().split(/(?<=[.!?…])\s+/).map((x) => x.trim()).filter(Boolean);
+function escolherGancho(v, { n, texto }) {
+  if (v.etapa !== 'roteiro') throw new Error('O gancho só pode ser trocado na etapa do roteiro.');
+  const pasta = path.join(RAIZ, v.pasta);
+  const arqG = path.join(pasta, 'ganchos.json');
+  const g = lerJSON(arqG);
+  if (!g?.opcoes?.length) throw new Error('Este roteiro ainda não tem opções de gancho.');
+  let novo, receita;
+  if (n === 'proprio') {
+    if (!texto?.trim()) throw new Error('Escreva o seu gancho.');
+    novo = { gancho: texto.trim().replace(/\s+/g, ' '), porta: '' };
+    receita = 'próprio (escrito pelo criador)';
+  } else {
+    const o = g.opcoes.find((x) => String(x.n) === String(n));
+    if (!o) throw new Error('Opção de gancho não encontrada.');
+    novo = { gancho: o.gancho.trim(), porta: (o.porta || '').trim() };
+    receita = o.receita;
+  }
+  const antigo = g.aplicado || {};
+  const antigas = [...frasesDe(antigo.gancho), ...frasesDe(antigo.porta)];
+  if (!antigas.length) throw new Error('Não sei qual é o gancho atual da narração. Peça um ajuste do roteiro.');
+  // narracao.txt: casa as palavras do gancho antigo ignorando a pontuação (a energia troca "." por "!")
+  const arqN = path.join(pasta, 'narracao.txt');
+  const narr = lerTexto(arqN) || '';
+  const palavras = antigas.join(' ').match(/[\p{L}\p{N}]+/gu) || [];
+  const re = new RegExp(`^\\s*${palavras.join('[^\\p{L}\\p{N}]+')}[^\\p{L}\\p{N}\\[]*`, 'iu');
+  if (!re.test(narr)) throw new Error('A narração foi editada e o gancho não está mais no começo. Peça um ajuste do roteiro.');
+  const novoTexto = [novo.gancho, novo.porta].filter(Boolean).join(' ');
+  fs.writeFileSync(arqN, narr.replace(re, `${novoTexto} `).replace(/\s+$/, '') + '\n', 'utf8');
+  // marcacao.json: troca as primeiras entradas que eram o gancho antigo
+  const arqM = path.join(pasta, 'marcacao.json');
+  const m = lerJSON(arqM);
+  if (Array.isArray(m)) {
+    const norm = (t) => (String(t).match(/[\p{L}\p{N}]+/gu) || []).join(' ').toLowerCase();
+    let k = 0; while (k < antigas.length && m[k] && norm(m[k].texto) === norm(antigas[k])) k++;
+    const molde = m[0] || {};
+    const entra = frasesDe(novoTexto).map((t, i, l) => ({ texto: t, energia: i === 0 ? molde.energia || 'animada' : 'normal',
+      pausa: i === l.length - 1 ? Math.max(0.4, m[k - 1]?.pausa ?? 0.5) : 0.2, efeito: 'nenhum' }));
+    m.splice(0, k, ...entra);
+    gravarJSON(arqM, m);
+  }
+  const arqS = path.join(pasta, 'sinopse.md');
+  const sin = lerTexto(arqS);
+  if (sin && /^Receita do gancho:.*$/m.test(sin)) fs.writeFileSync(arqS, sin.replace(/^Receita do gancho:.*$/m, `Receita do gancho: ${receita} ("${novoTexto}")`), 'utf8');
+  gravarJSON(arqG, { ...g, aplicado: novo, escolhido: n === 'proprio' ? 'proprio' : Number(n), ...(n === 'proprio' ? { proprio: novo.gancho } : {}), escolhidoPor: 'criador' });
+  salvarVideo(lerVideo(v.id), `gancho escolhido: ${novoTexto}`);
+}
 function slug(t) {
   return t.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
 }
@@ -941,6 +1012,7 @@ const servidor = http.createServer(async (req, res) => {
             salvarVideo({ ...v, voz: nova }, nova.nome ? `voz trocada para ${nova.nome}` : 'voz alterada');
           }
           else if (acao === 'assets') decidirAsset(v, corpo);
+          else if (acao === 'gancho') escolherGancho(v, corpo);
           else if (acao === 'frases') salvarFrases(v, corpo);
           else if (acao === 'gravar') ACOES.gravar(v, corpo.ids);
           else if (acao === 'montar') ACOES.montar(v);

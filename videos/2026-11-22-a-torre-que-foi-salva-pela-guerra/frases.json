@@ -1,0 +1,128 @@
+[
+ {
+  "n": 1,
+  "id": "f01",
+  "texto": "Uma guerra salvou a torre mais famosa da Itália.",
+  "inicio": 0.0,
+  "fim": 2.6
+ },
+ {
+  "n": 2,
+  "id": "f02",
+  "texto": "De cair.",
+  "inicio": 2.8,
+  "fim": 3.46
+ },
+ {
+  "n": 3,
+  "id": "f03",
+  "texto": "Pisa, mil cento e setenta e oito.",
+  "inicio": 3.96,
+  "fim": 6.1
+ },
+ {
+  "n": 4,
+  "id": "f04",
+  "texto": "Três andares prontos.",
+  "inicio": 6.3,
+  "fim": 7.56
+ },
+ {
+  "n": 5,
+  "id": "f05",
+  "texto": "E a torre já estava afundando de um lado.",
+  "inicio": 7.86,
+  "fim": 10.07
+ },
+ {
+  "n": 6,
+  "id": "f06",
+  "texto": "Só que aí veio a guerra contra Gênova... e a obra parou.",
+  "inicio": 10.47,
+  "fim": 13.48
+ },
+ {
+  "n": 7,
+  "id": "f07",
+  "texto": "Por quase cem anos.",
+  "inicio": 13.78,
+  "fim": 15.18
+ },
+ {
+  "n": 8,
+  "id": "f08",
+  "texto": "O mato cresceu tanto que achou que a torre era dele.",
+  "inicio": 15.48,
+  "fim": 19.15
+ },
+ {
+  "n": 9,
+  "id": "f09",
+  "texto": "Pensa comigo.",
+  "inicio": 19.55,
+  "fim": 20.41
+ },
+ {
+  "n": 10,
+  "id": "f10",
+  "texto": "O chão de Pisa é barro mole, cheio de água.",
+  "inicio": 21.01,
+  "fim": 23.79
+ },
+ {
+  "n": 11,
+  "id": "f11",
+  "texto": "É como uma esponja molhada embaixo de um peso.",
+  "inicio": 24.09,
+  "fim": 26.57
+ },
+ {
+  "n": 12,
+  "id": "f12",
+  "texto": "Com o tempo, a água sai... e ela fica firme.",
+  "inicio": 26.87,
+  "fim": 29.79
+ },
+ {
+  "n": 13,
+  "id": "f13",
+  "texto": "Sem essa pausa, a torre teria caído.",
+  "inicio": 30.09,
+  "fim": 32.78
+ },
+ {
+  "n": 14,
+  "id": "f14",
+  "texto": "Oitocentos anos depois, ela ainda ameaçava cair.",
+  "inicio": 33.28,
+  "fim": 36.78
+ },
+ {
+  "n": 15,
+  "id": "f15",
+  "texto": "E sabe o que os engenheiros fizeram para endireitar?",
+  "inicio": 37.08,
+  "fim": 39.5
+ },
+ {
+  "n": 16,
+  "id": "f16",
+  "texto": "Não colocaram nada...",
+  "inicio": 40.0,
+  "fim": 41.01
+ },
+ {
+  "n": 17,
+  "id": "f17",
+  "texto": "Tiraram terra.",
+  "inicio": 41.71,
+  "fim": 42.6
+ },
+ {
+  "n": 18,
+  "id": "f18",
+  "texto": "E você? Preferia a torre reta ou torta?",
+  "inicio": 43.2,
+  "fim": 46.34
+ }
+]

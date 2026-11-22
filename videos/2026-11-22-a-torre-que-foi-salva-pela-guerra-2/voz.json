@@ -1,0 +1,13 @@
+{
+  "provedor": "voicestudio-voxcpm2",
+  "audio": "narracao.wav",
+  "duracao": 51.382,
+  "palavras": 123,
+  "frases": 20,
+  "voz": "9d15747e",
+  "velocidade": 1,
+  "modo": "frase-a-frase",
+  "coberturaTempos": 0.984,
+  "ouvidoPeloWhisper": "E se uma guerra salvasse um prédio de cair? Aconteceu, em Pisa. Pumbe os cento e setenta e oito. Os pedreiros sobem o terceiro andar. E o chão começa a afundar de um lado. E aí piorou. Pisa entrou em guerra contra a Gênova. A obra parou, por quase cem anos. Nem reforma de vizinho demora tanto. Pensa comigo. O chão de Pisa é barro mole, encharcado de água. Com o peso, a água sai devagar e o barro firma. É como sentar num pufe. Primeiro afunda, depois segura. A guerra deu esse tempo. Sem ela, a torre teria caído. Ai, 800 anos depois, ela ainda tombava. Sabe o que os engenheiros fizeram? Não colocaram concreto. Tiraram terra. E você deixava a torre torta ou endireitava.",
+  "geradoEm": "2026-11-22T19:54:07.645932+00:00"
+}

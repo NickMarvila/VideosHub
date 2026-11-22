@@ -1,0 +1,1436 @@
+{
+ "titulo": "A Torre Que Foi Salva Pela Guerra",
+ "duracao": 46.83,
+ "audio": "narracao.wav",
+ "elenco": {},
+ "cenas": [
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 0,
+     "pos": [
+      -5,
+      5,
+      18
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 42
+    },
+    {
+     "t": 2.6,
+     "pos": [
+      -3,
+      4,
+      16
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 44
+    },
+    {
+     "t": 3.4,
+     "pos": [
+      -2.6,
+      3.8,
+      15
+     ],
+     "olha": [
+      0,
+      5.3,
+      -3
+     ],
+     "fov": 44,
+     "roll": 3
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "soldado_medieval",
+     "x": -1.4,
+     "z": 2,
+     "expressoes": [
+      [
+       0,
+       "sorriso"
+      ],
+      [
+       2.7,
+       "choque"
+      ]
+     ],
+     "acoes": [
+      [
+       0.3,
+       "aponta"
+      ],
+      [
+       2.75,
+       "tremer"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 1,
+     "inclinacao": [
+      [
+       0,
+       4
+      ],
+      [
+       2.75,
+       4
+      ],
+      [
+       3.1,
+       7
+      ],
+      [
+       3.6,
+       4.5
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "explosao",
+     "de": 2.8,
+     "ate": 3.3,
+     "pos": [
+      -1.4,
+      2.7,
+      2
+     ],
+     "tamanho": 0.8
+    }
+   ],
+   "inicio": 0,
+   "fim": 3.7
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 3.7,
+     "pos": [
+      0,
+      18,
+      12
+     ],
+     "olha": [
+      0,
+      0,
+      -2
+     ],
+     "fov": 40
+    },
+    {
+     "t": 7.4,
+     "pos": [
+      0.8,
+      7,
+      10
+     ],
+     "olha": [
+      0,
+      1.5,
+      -2
+     ],
+     "fov": 40
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "pedreiro_medieval",
+     "x": -0.6,
+     "z": 1.6,
+     "expressoes": [
+      [
+       3.7,
+       "sorriso"
+      ],
+      [
+       6.4,
+       "riso"
+      ]
+     ],
+     "acoes": [
+      [
+       4.2,
+       "segura"
+      ],
+      [
+       6.3,
+       "acena"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": [
+      [
+       3.7,
+       0.1
+      ],
+      [
+       7.3,
+       0.375
+      ]
+     ],
+     "inclinacao": 0
+    },
+    {
+     "tipo": "caixote",
+     "x": 1.2,
+     "z": 1.2
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "poeira",
+     "de": 4,
+     "ate": 7,
+     "pos": [
+      0,
+      0.4,
+      -1.8
+     ],
+     "tamanho": 1.4
+    }
+   ],
+   "inicio": 3.7,
+   "fim": 7.7
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 7.7,
+     "pos": [
+      1.2,
+      2.2,
+      8
+     ],
+     "olha": [
+      -0.2,
+      2,
+      -2
+     ],
+     "fov": 40
+    },
+    {
+     "t": 10.2,
+     "pos": [
+      1,
+      2,
+      6.8
+     ],
+     "olha": [
+      -0.2,
+      2,
+      -2
+     ],
+     "fov": 40,
+     "roll": 3
+    }
+   ],
+   "foco": {
+    "desfoque": 10,
+    "alvo": "pedreiro_medieval"
+   },
+   "atores": [
+    {
+     "id": "pedreiro_medieval",
+     "x": -0.3,
+     "z": 1.8,
+     "expressoes": [
+      [
+       7.7,
+       "sorrisao"
+      ],
+      [
+       8.9,
+       "choque"
+      ]
+     ],
+     "acoes": [
+      [
+       8.95,
+       "aponta"
+      ]
+     ],
+     "olhar": [
+      [
+       7.7,
+       0
+      ],
+      [
+       8.9,
+       0.8
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 0.375,
+     "inclinacao": [
+      [
+       7.7,
+       0
+      ],
+      [
+       8.8,
+       0
+      ],
+      [
+       10.1,
+       3.5
+      ]
+     ]
+    },
+    {
+     "tipo": "icone",
+     "icone": "!",
+     "x": 0.4,
+     "y": 3,
+     "z": 1.8,
+     "escala": 0.6,
+     "aparece": 9
+    }
+   ],
+   "inicio": 7.7,
+   "fim": 10.3
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 10.3,
+     "pos": [
+      0,
+      2,
+      7
+     ],
+     "olha": [
+      0,
+      1.6,
+      0
+     ],
+     "fov": 40
+    },
+    {
+     "t": 13.5,
+     "pos": [
+      0.3,
+      1.8,
+      5.8
+     ],
+     "olha": [
+      0,
+      1.6,
+      0
+     ],
+     "fov": 40
+    }
+   ],
+   "foco": {
+    "desfoque": 10,
+    "alvo": "soldado_medieval"
+   },
+   "atores": [
+    {
+     "id": "soldado_medieval",
+     "x": [
+      [
+       10.3,
+       -2.6
+      ],
+      [
+       11.6,
+       -0.6
+      ]
+     ],
+     "z": 0.6,
+     "expressoes": [
+      [
+       10.3,
+       "serio"
+      ],
+      [
+       11.6,
+       "choque"
+      ]
+     ],
+     "acoes": [
+      [
+       11.7,
+       "aponta"
+      ]
+     ]
+    },
+    {
+     "id": "pedreiro_medieval",
+     "x": 0.8,
+     "z": -0.4,
+     "expressoes": [
+      [
+       10.3,
+       "sorriso"
+      ],
+      [
+       11.8,
+       "choque"
+      ],
+      [
+       12.6,
+       "decepcao"
+      ]
+     ],
+     "acoes": [
+      [
+       12.6,
+       "abre"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 0.375,
+     "inclinacao": 3.5
+    },
+    {
+     "tipo": "balao",
+     "texto": "GUERRA!",
+     "x": -0.6,
+     "y": 2.9,
+     "z": 0.6,
+     "aparece": 11.4,
+     "some": 13.6
+    }
+   ],
+   "inicio": 10.3,
+   "fim": 13.6
+  },
+  {
+   "cenario": "praca",
+   "luz": "fim_de_tarde",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 13.6,
+     "pos": [
+      -6,
+      3.5,
+      10
+     ],
+     "olha": [
+      0,
+      2,
+      -3
+     ],
+     "fov": 42
+    },
+    {
+     "t": 19.3,
+     "pos": [
+      4,
+      2.6,
+      8
+     ],
+     "olha": [
+      0,
+      2,
+      -3
+     ],
+     "fov": 42
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 0.375,
+     "inclinacao": 3.5
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": -2.6,
+     "z": -2.2,
+     "escala": 1.7,
+     "cor": "#6fa13a",
+     "aparece": 13.9
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": 2.5,
+     "z": -2,
+     "escala": 2,
+     "cor": "#6fa13a",
+     "aparece": 14.35
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": -1.4,
+     "z": -1.4,
+     "escala": 2.3,
+     "cor": "#6fa13a",
+     "aparece": 14.8
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": 1.3,
+     "z": -1.3,
+     "escala": 1.7,
+     "cor": "#6fa13a",
+     "aparece": 15.25
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": 0.1,
+     "z": -1.1,
+     "escala": 2,
+     "cor": "#6fa13a",
+     "aparece": 15.7
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": -3,
+     "z": -4.6,
+     "escala": 2.3,
+     "cor": "#6fa13a",
+     "aparece": 16.15
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": 3.1,
+     "z": -4.3,
+     "escala": 1.7,
+     "cor": "#6fa13a",
+     "aparece": 16.6
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": -2.2,
+     "z": -6,
+     "escala": 2,
+     "cor": "#6fa13a",
+     "aparece": 17.05
+    },
+    {
+     "tipo": "plantacao_de_trigo",
+     "x": 2.2,
+     "z": -6.2,
+     "escala": 2.3,
+     "cor": "#6fa13a",
+     "aparece": 17.5
+    },
+    {
+     "tipo": "balao",
+     "texto": "É MINHA!",
+     "x": 0.6,
+     "y": 2.4,
+     "z": -1,
+     "escala": 0.9,
+     "aparece": 17.6
+    },
+    {
+     "tipo": "icone",
+     "icone": "coracao",
+     "x": -1.4,
+     "y": 1.8,
+     "z": -1.3,
+     "escala": 0.5,
+     "aparece": 18.2
+    }
+   ],
+   "inicio": 13.6,
+   "fim": 19.4
+  },
+  {
+   "cenario": "campo",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 19.4,
+     "pos": [
+      4.4,
+      1.8,
+      0.3
+     ],
+     "olha": [
+      0,
+      1.6,
+      0
+     ],
+     "fov": 40
+    },
+    {
+     "t": 20.6,
+     "pos": [
+      3.1,
+      1.8,
+      0.2
+     ],
+     "olha": [
+      0,
+      1.7,
+      0
+     ],
+     "fov": 38
+    },
+    {
+     "t": 23.9,
+     "pos": [
+      4.6,
+      1.5,
+      0.5
+     ],
+     "olha": [
+      0,
+      0.9,
+      0
+     ],
+     "fov": 40
+    }
+   ],
+   "foco": {
+    "desfoque": 12,
+    "alvo": "pedreiro_medieval"
+   },
+   "atores": [
+    {
+     "id": "pedreiro_medieval",
+     "x": 0,
+     "z": 0,
+     "expressoes": [
+      [
+       19.4,
+       "serio"
+      ],
+      [
+       21,
+       "sorriso_fechado"
+      ]
+     ],
+     "acoes": [
+      [
+       19.5,
+       "pensa"
+      ],
+      [
+       21,
+       "aponta"
+      ]
+     ],
+     "olhar": [
+      [
+       19.4,
+       0
+      ],
+      [
+       21,
+       0.6
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": -8,
+     "z": 0,
+     "giro": 90,
+     "etapa": 0.375,
+     "inclinacao": 3.5
+    },
+    {
+     "tipo": "seta",
+     "x": 0.3,
+     "y": 1,
+     "z": 0.6,
+     "giro": -90,
+     "escala": 0.5,
+     "aparece": 21
+    },
+    {
+     "tipo": "balao",
+     "texto": "BARRO MOLE",
+     "x": 0.3,
+     "y": 2.5,
+     "z": 0.6,
+     "escala": 0.7,
+     "aparece": 22
+    }
+   ],
+   "inicio": 19.4,
+   "fim": 24
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 24,
+     "pos": [
+      0.2,
+      1.7,
+      4
+     ],
+     "olha": [
+      0.2,
+      1.1,
+      0
+     ],
+     "fov": 46
+    },
+    {
+     "t": 29.8,
+     "pos": [
+      0.2,
+      1.65,
+      3.9
+     ],
+     "olha": [
+      0.2,
+      1.1,
+      0
+     ],
+     "fov": 46
+    }
+   ],
+   "foco": {
+    "desfoque": 12,
+    "alvo": [
+     0.85,
+     1,
+     0
+    ]
+   },
+   "atores": [
+    {
+     "id": "pedreiro_medieval",
+     "x": -0.35,
+     "z": 0.5,
+     "expressoes": [
+      [
+       24,
+       "sorriso_fechado"
+      ],
+      [
+       27,
+       "serio"
+      ],
+      [
+       28.6,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       24.2,
+       "aponta"
+      ],
+      [
+       28.6,
+       "comemora"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "mesa",
+     "x": 0.85,
+     "z": 0
+    },
+    {
+     "tipo": "esponja_molhada",
+     "x": 0.85,
+     "y": 0.82,
+     "z": 0,
+     "escala": 1.1,
+     "aparece": 24.1
+    },
+    {
+     "tipo": "caixote",
+     "x": 0.85,
+     "y": [
+      [
+       25.2,
+       1.6
+      ],
+      [
+       25.8,
+       1.1
+      ],
+      [
+       29.5,
+       1.04
+      ]
+     ],
+     "z": 0,
+     "escala": 0.35,
+     "aparece": 25.2
+    },
+    {
+     "tipo": "balao",
+     "texto": "FIRME!",
+     "x": 1,
+     "y": 1.9,
+     "z": 0,
+     "escala": 0.5,
+     "aparece": 28.6
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "poeira",
+     "de": 25.8,
+     "ate": 26.6,
+     "pos": [
+      0.85,
+      1,
+      0.1
+     ],
+     "tamanho": 0.5
+    }
+   ],
+   "inicio": 24,
+   "fim": 29.9
+  },
+  {
+   "cenario": "praca",
+   "luz": "fim_de_tarde",
+   "camera": [
+    {
+     "t": 29.9,
+     "pos": [
+      -3,
+      3,
+      13
+     ],
+     "olha": [
+      0,
+      3,
+      -3
+     ],
+     "fov": 44
+    },
+    {
+     "t": 32.9,
+     "pos": [
+      -2,
+      2.6,
+      11
+     ],
+     "olha": [
+      0.8,
+      2.6,
+      -3
+     ],
+     "fov": 44,
+     "roll": -4
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "pedreiro_medieval",
+     "x": -1,
+     "z": 2,
+     "expressoes": [
+      [
+       29.9,
+       "nervoso"
+      ],
+      [
+       31.6,
+       "choque"
+      ]
+     ],
+     "acoes": [
+      [
+       31.6,
+       "maos_cabeca"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 0.375,
+     "inclinacao": [
+      [
+       29.9,
+       3.5
+      ],
+      [
+       30.8,
+       6
+      ],
+      [
+       31.6,
+       40
+      ]
+     ]
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "x": 0,
+     "y": 3.4,
+     "z": 2,
+     "escala": 0.7,
+     "aparece": 31.8
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "explosao",
+     "de": 31.5,
+     "ate": 32.3,
+     "pos": [
+      4,
+      1,
+      -3
+     ],
+     "tamanho": 2
+    },
+    {
+     "tipo": "poeira",
+     "de": 31.5,
+     "ate": 32.9,
+     "pos": [
+      4,
+      0.4,
+      -3
+     ],
+     "tamanho": 2.2
+    }
+   ],
+   "inicio": 29.9,
+   "fim": 33
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 33,
+     "pos": [
+      -4,
+      4,
+      17
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 42
+    },
+    {
+     "t": 36.8,
+     "pos": [
+      -2.5,
+      3.5,
+      15.5
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 44
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "engenheiro_moderno",
+     "x": [
+      [
+       33,
+       1.8
+      ],
+      [
+       35,
+       0.2
+      ]
+     ],
+     "z": 2,
+     "expressoes": [
+      [
+       33,
+       "serio"
+      ],
+      [
+       35,
+       "nervoso"
+      ]
+     ],
+     "acoes": [
+      [
+       35.1,
+       "aponta"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 1,
+     "inclinacao": [
+      [
+       33,
+       5.5
+      ],
+      [
+       35.5,
+       5.5
+      ],
+      [
+       36,
+       6.2
+      ],
+      [
+       36.6,
+       5.5
+      ]
+     ]
+    },
+    {
+     "tipo": "cone",
+     "x": -2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "cone",
+     "x": 2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "cone",
+     "x": -3.6,
+     "z": -3.4
+    },
+    {
+     "tipo": "cone",
+     "x": 3.8,
+     "z": -3.2
+    }
+   ],
+   "inicio": 33,
+   "fim": 36.9
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 36.9,
+     "pos": [
+      4,
+      2.5,
+      11
+     ],
+     "olha": [
+      0,
+      3,
+      -2
+     ],
+     "fov": 42
+    },
+    {
+     "t": 39.9,
+     "pos": [
+      2.5,
+      2.2,
+      9
+     ],
+     "olha": [
+      0,
+      2.6,
+      -2
+     ],
+     "fov": 42
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "engenheiro_moderno",
+     "x": [
+      [
+       36.9,
+       3
+      ],
+      [
+       38.6,
+       0.8
+      ]
+     ],
+     "z": 1.5,
+     "expressoes": [
+      [
+       36.9,
+       "serio"
+      ],
+      [
+       38.6,
+       "nervoso"
+      ]
+     ],
+     "acoes": [
+      [
+       38.7,
+       "pensa"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 1,
+     "inclinacao": 5.5
+    },
+    {
+     "tipo": "cone",
+     "x": -2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "cone",
+     "x": 2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "cone",
+     "x": -3.6,
+     "z": -3.4
+    },
+    {
+     "tipo": "cone",
+     "x": 3.8,
+     "z": -3.2
+    },
+    {
+     "tipo": "pensamento",
+     "texto": "E AGORA?",
+     "x": 1.4,
+     "y": 3,
+     "z": 1.5,
+     "escala": 0.7,
+     "aparece": 38.7
+    }
+   ],
+   "inicio": 36.9,
+   "fim": 40
+  },
+  {
+   "cenario": "praca",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 40,
+     "pos": [
+      -1,
+      4,
+      16
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 44
+    },
+    {
+     "t": 41.6,
+     "pos": [
+      -1,
+      4,
+      15.6
+     ],
+     "olha": [
+      0,
+      5.5,
+      -3
+     ],
+     "fov": 44
+    },
+    {
+     "t": 42.9,
+     "pos": [
+      0,
+      4.2,
+      17.5
+     ],
+     "olha": [
+      0.3,
+      6,
+      -3
+     ],
+     "fov": 46,
+     "roll": 4
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "engenheiro_moderno",
+     "x": -1.2,
+     "z": 1.6,
+     "expressoes": [
+      [
+       40,
+       "sorriso_fechado"
+      ],
+      [
+       41.7,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       40.1,
+       "abre"
+      ],
+      [
+       41.8,
+       "comemora"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 1,
+     "inclinacao": [
+      [
+       40,
+       5.5
+      ],
+      [
+       41.8,
+       5.5
+      ],
+      [
+       42.8,
+       4
+      ]
+     ]
+    },
+    {
+     "tipo": "cone",
+     "x": -2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "cone",
+     "x": 2.6,
+     "z": -1.3
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "x": -0.4,
+     "y": 3.1,
+     "z": 1.6,
+     "escala": 0.5,
+     "aparece": 40.1,
+     "some": 41.6
+    },
+    {
+     "tipo": "terra_retirada",
+     "x": 0.6,
+     "z": 1.2,
+     "escala": 1.3,
+     "aparece": 41.65
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "poeira",
+     "de": 41.65,
+     "ate": 42.4,
+     "pos": [
+      0.6,
+      0.4,
+      1.2
+     ],
+     "tamanho": 1
+    }
+   ],
+   "inicio": 40,
+   "fim": 43
+  },
+  {
+   "cenario": "praca",
+   "luz": "fim_de_tarde",
+   "camera": [
+    {
+     "t": 43,
+     "pos": [
+      0.3,
+      1.8,
+      4.4
+     ],
+     "olha": [
+      0,
+      1.8,
+      1.2
+     ],
+     "fov": 40
+    },
+    {
+     "t": 46.7,
+     "pos": [
+      0.2,
+      1.8,
+      3.4
+     ],
+     "olha": [
+      0,
+      1.9,
+      1.2
+     ],
+     "fov": 38
+    }
+   ],
+   "foco": {
+    "desfoque": 14,
+    "alvo": "engenheiro_moderno"
+   },
+   "atores": [
+    {
+     "id": "engenheiro_moderno",
+     "x": 0,
+     "z": 1.2,
+     "expressoes": [
+      [
+       43,
+       "serio"
+      ],
+      [
+       44.4,
+       "sorriso_fechado"
+      ],
+      [
+       45.8,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       43.2,
+       "pensa"
+      ],
+      [
+       45.8,
+       "abre"
+      ]
+     ],
+     "olhar": [
+      [
+       43,
+       -0.7
+      ],
+      [
+       44,
+       0.7
+      ],
+      [
+       45,
+       0
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "torre_de_pisa",
+     "x": 0,
+     "z": -4,
+     "etapa": 1,
+     "inclinacao": 4
+    },
+    {
+     "tipo": "pensamento",
+     "texto": "RETA OU TORTA?",
+     "x": 0.6,
+     "y": 2.9,
+     "z": 1.2,
+     "escala": 0.6,
+     "aparece": 44.2
+    }
+   ],
+   "inicio": 43,
+   "fim": 46.83
+  }
+ ],
+ "legenda": {
+  "ativo": false
+ }
+}

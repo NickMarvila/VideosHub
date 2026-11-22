@@ -1,0 +1,10 @@
+{
+  "musica": {
+    "clima": "marcha",
+    "paraEm": 41.6,
+    "bpm": 104
+  },
+  "nivelMusica": -14,
+  "nivelEfeitos": -6,
+  "efeitos": []
+}

@@ -359,8 +359,8 @@ function blocoAudio(v) {
       <div class="takes">${f.takes.length ? f.takes.map((t, k) => `
         <span class="take ${t.id === f.escolhido ? 'escolhido' : ''} ${t.config.texto === f.takes.at(-1).config.texto && Math.abs(t.config.vel - f.takes.at(-1).config.vel) < 0.001 ? '' : 'antigo'}">
           <button class="tocar" data-tocar="${t.url}" aria-label="Ouvir take ${k + 1}">▶</button>
-          <button class="usar" data-usar="${t.id}" ${rodando ? 'disabled' : ''}>Take ${k + 1} · ${t.duracao.toFixed(1)}s</button></span>`).join('') : '<span class="dica" style="margin:0">sem takes ainda</span>'}
-        ${!rodando ? `<button class="regravar" data-regravar="${f.id}">${f.precisaGravar ? 'Gravar com a nova marcação' : '+3 takes'}</button>` : ''}
+          <button class="usar" data-usar="${t.id}" ${rodando ? 'disabled' : ''}>Take ${k + 1}${t.leitura && t.leitura !== 'como marcado' ? ` · ${esc(t.leitura)}` : ''} · ${t.duracao.toFixed(1)}s</button></span>`).join('') : '<span class="dica" style="margin:0">sem takes ainda</span>'}
+        ${!rodando ? `<button class="regravar" data-regravar="${f.id}">${f.precisaGravar ? 'Gravar com a nova marcação' : '+3 leituras'}</button>` : ''}
       </div>
     </div>`).join('');
   return `<div class="bloco audio-editor">
@@ -402,7 +402,7 @@ function ligarAudio(id) {
   });
   $$('textarea.frase-texto', ed).forEach((t) => { t.style.height = 'auto'; t.style.height = `${t.scrollHeight}px`; t.oninput = () => { t.style.height = 'auto'; t.style.height = `${t.scrollHeight}px`; }; });
   $$('[data-regravar]', ed).forEach((b) => { b.onclick = async () => {
-    try { await esperarSalvar(); await api(`/api/videos/${id}/gravar`, { ids: [b.dataset.regravar] }); aviso('Gravando 3 takes novos', true); } catch (e) { aviso(e.message); }
+    try { await esperarSalvar(); await api(`/api/videos/${id}/gravar`, { ids: [b.dataset.regravar] }); aviso('Gravando 3 leituras: como marcado, mais lenta e mais viva', true); } catch (e) { aviso(e.message); }
     assinatura = ''; rodarCiclo();
   }; });
   $$('[data-acao-audio]', ed).forEach((b) => { b.onclick = async () => {
@@ -430,69 +430,249 @@ async function esperarSalvar() {
 }
 
 
-// ---------- escolha de variantes de cena ----------
+// ---------- mesa de corte: escolha das variantes de cena ----------
+// Uma cena por vez, grande. A tira de cima é o vídeo inteiro: a largura de cada quadro é a duração da cena.
+// "Assistir o corte" toca as variantes escolhidas em sequência; parar leva você à cena que estava tocando.
+let mv = null; // { id, d, rodando, i, corte }
+const focoCena = {}; // id do vídeo -> cena em foco (sobrevive aos redesenhos)
+const varianteNoCorte = (c) => c.variantes.find((x) => x.id === c.escolhida);
+const semMovimento = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const textoFalta = (n) => `Escolha ${n === 1 ? 'a cena que falta' : `as ${n} cenas que faltam`} para poder aprovar.`;
+
 function blocoVariantes(v) {
   const d = v.arquivos.variantes;
   if (!d) return `<div class="bloco"><h2>Cenas</h2><p class="vazio">As variantes aparecem aqui quando a IA terminar de montar as cenas.</p></div>`;
-  const rodando = v.job?.rodando;
-  const escolhidas = d.cenas.filter((c) => c.escolhida).length;
-  const frasesTxt = (c) => (c.frasesTexto || []).join(' ');
-  return `<div class="bloco variantes">
-    <div class="audio-topo"><div class="bloco-titulo" style="margin:0">Cenas · ${escolhidas} de ${d.cenas.length} escolhidas</div>
-      ${escolhidas < d.cenas.length && !rodando ? '<button class="maquina" data-var-acao="recomendadas">Escolher as recomendadas nas que faltam</button>' : ''}</div>
-    <div class="trilho-escolha" aria-hidden="true">${d.cenas.map((c) => `<i class="${c.escolhida ? 'on' : ''}"></i>`).join('')}</div>
-    ${d.cenas.map((c, i) => {
-      const abertos = (c.ajustes || []).filter((a) => !a.resolvido);
-      return `<section class="cena-escolha" data-cena="${c.id}">
-        <header><span class="frase-n">${String(i + 1).padStart(2, '0')}</span>
-          <div><b>${esc(c.resumo || `Cena ${i + 1}`)}</b><small>${relogio(c.inicio)}–${relogio(c.fim)} · ${(c.fim - c.inicio).toFixed(1)}s ${frasesTxt(c) ? `· “${esc(frasesTxt(c))}”` : ''}</small></div>
-          ${c.escolhida ? '<span class="selo pronto">Escolhida</span>' : '<span class="selo vez">Escolha</span>'}</header>
-        <div class="opcoes">${c.variantes.map((x) => `
-          <article class="opcao ${c.escolhida === x.id ? 'on' : ''}">
-            <div class="opcao-midia" data-clipe="${x.clipeUrl || ''}">
-              ${x.posterUrl ? `<img src="${x.posterUrl}" alt="" loading="lazy">` : '<div class="gerando">gerando clipe…</div>'}
-              ${x.clipeUrl ? '<button class="play" aria-label="Assistir com som">▶</button>' : ''}
-            </div>
-            <div class="opcao-info">
-              ${x.recomendada ? '<span class="recomendada">★ recomendada</span>' : ''}
-              <p>${esc(x.descricao || '')}</p>
-              ${x.erro ? `<p class="dica" style="color:var(--erro);margin:0">Clipe não gerado: ${esc(x.erro)}. Escolha pela imagem ou peça variantes novas.</p>` : ''}
-              <button class="${c.escolhida === x.id ? 'aprovar' : ''}" data-escolher="${x.id}" ${rodando && !x.clipeUrl ? 'disabled' : ''}>${c.escolhida === x.id ? '✓ Escolhida' : 'Usar esta'}</button>
-            </div>
-          </article>`).join('')}</div>
-        ${abertos.length ? `<p class="dica">Pedido em andamento: “${esc(abertos.at(-1).texto)}”. A IA está fazendo variantes novas desta cena.</p>`
-          : `<details class="pedir"><summary>Nenhuma serve? Pedir variantes novas desta cena</summary>
-            <textarea data-ajuste-cena placeholder="Ex.: mostrar o Tales de perto, surpreso, com a Paratí soltando fumaça atrás"></textarea>
-            <div class="acoes"><button data-pedir-cena>Pedir 2 variantes novas</button></div></details>`}
-      </section>`;
-    }).join('')}
-  </div>`;
+  const pend = d.cenas.findIndex((c) => !c.escolhida);
+  mv = { id: v.id, d, rodando: !!v.job?.rodando, i: Math.min(focoCena[v.id] ?? Math.max(0, pend), d.cenas.length - 1), corte: null };
+  const total = d.cenas.at(-1)?.fim || 0;
+  return `<section class="moviola" data-moviola aria-label="Mesa de corte">
+    <header class="mv-topo">
+      <div><h2 class="mv-titulo">Mesa de corte</h2><p class="mv-conta" data-mv-conta></p></div>
+      <div class="mv-botoes">
+        <button class="mv-auto" data-var-acao="recomendadas" hidden>Usar as recomendadas nas que faltam</button>
+        <button class="mv-assistir" data-mv-corte>▶ Assistir o corte <span>${relogio(total)}</span></button>
+      </div>
+    </header>
+    <div class="mv-trilha" data-mv-trilha><ol class="mv-linha" data-mv-linha aria-label="Cenas em ordem"></ol><i class="mv-cabeca" data-mv-cabeca hidden></i></div>
+    <div class="mv-palco" data-mv-palco></div>
+    <div class="mv-sessao" data-mv-sessao hidden>
+      <div class="mv-tela-corte"><video playsinline></video><video playsinline hidden></video></div>
+      <div class="mv-sessao-pe"><span data-mv-sessao-txt></span><button data-mv-parar>■ Parar e ajustar esta cena</button></div>
+    </div>
+    <p class="mv-teclas" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd> troca de cena · <kbd>1</kbd><kbd>2</kbd> escolhe · <kbd>espaço</kbd> liga o som · <kbd>C</kbd> assiste o corte</p>
+  </section>`;
 }
-function ligarVariantes(id) {
-  const box = $('.variantes'); if (!box) return;
-  $$('.opcao-midia', box).forEach((m) => {
-    const abrir = () => {
-      if (!m.dataset.clipe) return;
-      $$('.opcao-midia video').forEach((x) => { const pai = x.parentElement; x.remove(); pai.classList.remove('tocando'); });
-      const vid = document.createElement('video'); vid.src = m.dataset.clipe; vid.controls = true; vid.autoplay = true; vid.playsInline = true;
-      m.classList.add('tocando'); m.append(vid);
-    };
-    m.onclick = (e) => { if (e.target.tagName !== 'VIDEO') abrir(); };
+
+function quadroLinha(c, k) {
+  const x = varianteNoCorte(c);
+  const cls = [x ? '' : 'pendente', k === mv.i ? 'foco' : '', mv.corte?.k === k ? 'tocando' : ''].join(' ');
+  return `<li style="flex:${Math.max(0.3, c.fim - c.inicio).toFixed(2)} 1 0"><button class="mv-quadro ${cls}" data-mv-ir="${k}"
+    aria-label="Cena ${k + 1}: ${esc(c.resumo || '')}${x ? '' : ' (falta escolher)'}" ${k === mv.i ? 'aria-current="true"' : ''}
+    ${x?.posterUrl ? `style="background-image:url('${x.posterUrl}')"` : ''}><span>${k + 1}</span></button></li>`;
+}
+
+// Atualiza tudo o que depende das escolhas, sem redesenhar a tela (os clipes continuam tocando).
+function marcarEscolhas() {
+  const box = $('[data-moviola]'); if (!box || !mv) return;
+  const { d } = mv;
+  const feitas = d.cenas.filter((c) => c.escolhida).length;
+  const faltam = d.cenas.length - feitas;
+  $('[data-mv-conta]', box).textContent = faltam ? `${feitas} de ${d.cenas.length} cenas escolhidas · ${faltam === 1 ? 'falta 1' : `faltam ${faltam}`}` : `Todas as ${d.cenas.length} cenas escolhidas`;
+  $('[data-mv-linha]', box).innerHTML = d.cenas.map(quadroLinha).join('');
+  $('[data-var-acao]', box).hidden = !faltam || mv.rodando;
+  const c = d.cenas[mv.i];
+  $$('[data-variante]', box).forEach((a) => {
+    const on = c.escolhida === a.dataset.variante;
+    a.classList.toggle('on', on);
+    const b = $('[data-escolher]', a);
+    b.classList.toggle('aprovar', on);
+    b.firstChild.textContent = on ? '✓ Escolhida ' : 'Usar esta ';
   });
-  $$('[data-escolher]', box).forEach((b) => { b.onclick = async () => {
-    try { await api(`/api/videos/${id}/escolher`, { cena: b.closest('[data-cena]').dataset.cena, variante: b.dataset.escolher }); } catch (e) { aviso(e.message); }
-    assinatura = ''; rodarCiclo();
-  }; });
-  $$('[data-var-acao="recomendadas"]', box).forEach((b) => { b.onclick = async () => {
-    try { await api(`/api/videos/${id}/recomendadas`, {}); aviso('Recomendadas escolhidas', true); } catch (e) { aviso(e.message); }
-    assinatura = ''; rodarCiclo();
-  }; });
-  $$('[data-pedir-cena]', box).forEach((b) => { b.onclick = async () => {
-    const sec = b.closest('[data-cena]');
-    try { b.disabled = true; await api(`/api/videos/${id}/ajuste-cena`, { cena: sec.dataset.cena, texto: $('[data-ajuste-cena]', sec).value }); aviso('Pedido enviado para a IA', true); } catch (e) { aviso(e.message); b.disabled = false; }
-    assinatura = ''; rodarCiclo();
-  }; });
+  const ap = $('[data-trava-cenas]');
+  if (ap) { ap.disabled = faltam > 0; const dica = $('[data-decisao-dica]'); if (dica) dica.textContent = faltam ? textoFalta(faltam) : dica.dataset.depois; }
 }
+
+function desenharPalco() {
+  const box = $('[data-moviola]'); if (!box || !mv) return;
+  const { d, i, rodando } = mv;
+  const c = d.cenas[i];
+  const abertos = (c.ajustes || []).filter((a) => !a.resolvido);
+  const fala = (c.frasesTexto || []).join(' ');
+  $('[data-mv-palco]', box).innerHTML = `
+    <div class="mv-cab">
+      <button class="mv-passo" data-mv-passo="-1" ${i === 0 ? 'disabled' : ''} aria-label="Cena anterior">←</button>
+      <div><small>Cena ${i + 1} de ${d.cenas.length} · ${relogio(c.inicio)}–${relogio(c.fim)} · ${(c.fim - c.inicio).toFixed(1)} s</small>
+        <h3>${esc(c.resumo || `Cena ${i + 1}`)}</h3></div>
+      <button class="mv-passo" data-mv-passo="1" ${i === d.cenas.length - 1 ? 'disabled' : ''} aria-label="Próxima cena">→</button>
+    </div>
+    ${fala ? `<p class="mv-fala">“${esc(fala)}”</p>` : ''}
+    <div class="mv-opcoes" style="--n:${c.variantes.length}">${c.variantes.map((x, k) => `
+      <article class="mv-opcao" data-variante="${x.id}">
+        <div class="mv-tela" data-mv-tela="${k}" title="${x.clipeUrl ? 'Clique para ouvir com som' : ''}">
+          ${x.clipeUrl ? `<video src="${x.clipeUrl}" ${x.posterUrl ? `poster="${x.posterUrl}"` : ''} muted loop playsinline preload="auto"></video>`
+            : x.posterUrl ? `<img src="${x.posterUrl}" alt="">` : '<div class="gerando">gerando clipe…</div>'}
+          <span class="mv-letra">${k + 1}</span><span class="mv-som" aria-hidden="true"><i class="pulso"></i>com som</span>
+        </div>
+        <div class="mv-info">
+          ${x.recomendada ? '<span class="recomendada">★ recomendada</span>' : ''}
+          <p>${esc(x.descricao || '')}</p>
+          ${x.erro ? `<p class="mv-erro">Clipe não gerado: ${esc(x.erro)}. Escolha pela imagem ou peça variantes novas.</p>` : ''}
+          <button data-escolher="${x.id}" ${rodando && !x.clipeUrl ? 'disabled' : ''}>Usar esta <kbd>${k + 1}</kbd></button>
+        </div>
+      </article>`).join('')}</div>
+    ${abertos.length ? `<p class="mv-pedido"><i class="pulso"></i>Pedido em andamento: “${esc(abertos.at(-1).texto)}”. A IA está fazendo variantes novas desta cena.</p>`
+      : `<details class="pedir mv-pedir"><summary>Nenhuma serve? Pedir variantes novas desta cena</summary>
+        <textarea data-ajuste-cena placeholder="Ex.: mostrar o Tales de perto, surpreso, com a Paratí soltando fumaça atrás"></textarea>
+        <div class="acoes"><button class="vez" data-pedir-cena>Pedir 2 variantes novas</button></div></details>`}`;
+  marcarEscolhas();
+  if (!semMovimento()) $$('[data-mv-palco] video', box).forEach((x) => { x.currentTime = 0; x.play().catch(() => {}); });
+}
+
+function irPara(k) {
+  if (!mv) return;
+  k = Math.max(0, Math.min(mv.d.cenas.length - 1, k));
+  if (mv.corte) { tocarTrecho(k); return; }
+  mv.i = k; focoCena[mv.id] = k;
+  desenharPalco();
+  $('.mv-quadro.foco')?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+}
+
+// Os clipes da cena tocam juntos e mudos; o clique dá o som a um deles (todos recomeçam juntos).
+function somEm(k) {
+  const opcoes = $$('[data-mv-palco] .mv-opcao');
+  const alvo = opcoes[k]; const vid = alvo && $('video', alvo); if (!vid) return;
+  const jaTinha = !vid.muted && !vid.paused;
+  tocador.pause();
+  opcoes.forEach((o) => { o.classList.remove('com-som'); const x = $('video', o); if (x) x.muted = true; });
+  if (jaTinha) { if (semMovimento()) vid.pause(); return; }
+  opcoes.forEach((o) => { const x = $('video', o); if (x) { x.currentTime = 0; if (!semMovimento() || x === vid) x.play().catch(() => {}); } });
+  vid.muted = false; alvo.classList.add('com-som');
+}
+
+async function escolher(varId) {
+  const c = mv.d.cenas[mv.i];
+  const antes = c.escolhida;
+  if (antes === varId) return;
+  c.escolhida = varId; marcarEscolhas();
+  try { await api(`/api/videos/${mv.id}/escolher`, { cena: c.id, variante: varId }); }
+  catch (e) { c.escolhida = antes; marcarEscolhas(); aviso(e.message); return; }
+  const depois = mv.d.cenas.findIndex((x, k) => k > mv.i && !x.escolhida);
+  const prox = depois >= 0 ? depois : mv.d.cenas.findIndex((x) => !x.escolhida);
+  if (prox >= 0) setTimeout(() => { if (mv && !mv.corte) irPara(prox); }, 420);
+  else if (!antes) aviso('Todas as cenas escolhidas: assista o corte e aprove', true);
+}
+
+// ---- assistir o corte (duas telas alternadas para não ter buraco entre os clipes) ----
+function clipeDoCorte(c) { return (varianteNoCorte(c) || c.variantes.find((x) => x.recomendada) || c.variantes[0])?.clipeUrl; }
+function assistirCorte(desde = mv.i) {
+  const box = $('[data-moviola]');
+  const lista = mv.d.cenas.map(clipeDoCorte);
+  if (!lista.some(Boolean)) { aviso('Os clipes ainda não estão prontos.'); return; }
+  tocador.pause();
+  $$('[data-mv-palco] video', box).forEach((x) => x.pause());
+  mv.corte = { k: desde, lista, telas: $$('[data-mv-sessao] video', box) };
+  box.classList.add('assistindo');
+  $('[data-mv-palco]', box).hidden = true;
+  $('[data-mv-sessao]', box).hidden = false;
+  $('[data-mv-cabeca]', box).hidden = false;
+  $('[data-mv-corte]', box).firstChild.textContent = '■ Parar ';
+  tocarTrecho(desde);
+  box.scrollIntoView({ block: 'start', behavior: semMovimento() ? 'auto' : 'smooth' });
+  const agulha = () => {
+    const cs = mv?.corte; if (!cs) return;
+    const tela = cs.telas.find((t) => !t.hidden); const li = $$('[data-mv-linha] li')[cs.k];
+    const cena = mv.d.cenas[cs.k];
+    if (tela && li) $('[data-mv-cabeca]').style.left = `${li.offsetLeft + li.offsetWidth * Math.min(1, tela.currentTime / Math.max(0.1, cena.fim - cena.inicio))}px`;
+    cs.raf = requestAnimationFrame(agulha);
+  };
+  agulha();
+}
+function tocarTrecho(k) {
+  const cs = mv?.corte; if (!cs) return;
+  while (k < cs.lista.length && !cs.lista[k]) k++;
+  if (k >= cs.lista.length) { pararCorte(cs.lista.length - 1); return; }
+  cs.k = k;
+  const atual = cs.telas.find((t) => t.dataset.url === cs.lista[k]) || cs.telas[0];
+  const outra = cs.telas.find((t) => t !== atual);
+  if (atual.dataset.url !== cs.lista[k]) { atual.src = cs.lista[k]; atual.dataset.url = cs.lista[k]; }
+  atual.currentTime = 0; atual.muted = false; atual.hidden = false;
+  outra.pause(); outra.hidden = true;
+  atual.onended = () => tocarTrecho(k + 1);
+  atual.play().catch(() => {});
+  const n = cs.lista.findIndex((u, j) => j > k && u);
+  if (n >= 0 && outra.dataset.url !== cs.lista[n]) { outra.src = cs.lista[n]; outra.dataset.url = cs.lista[n]; outra.load(); }
+  const c = mv.d.cenas[k];
+  $('[data-mv-sessao-txt]').textContent = `Cena ${k + 1} de ${mv.d.cenas.length} · ${c.resumo || ''}`;
+  $$('.mv-quadro').forEach((q, j) => q.classList.toggle('tocando', j === k));
+  $$('.mv-quadro')[k]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+}
+function pararCorte(ir) {
+  const cs = mv?.corte; if (!cs) return;
+  cancelAnimationFrame(cs.raf);
+  cs.telas.forEach((t) => t.pause());
+  mv.corte = null;
+  const box = $('[data-moviola]'); if (!box) return;
+  box.classList.remove('assistindo');
+  $('[data-mv-sessao]', box).hidden = true;
+  $('[data-mv-palco]', box).hidden = false;
+  $('[data-mv-cabeca]', box).hidden = true;
+  $('[data-mv-corte]', box).firstChild.textContent = '▶ Assistir o corte ';
+  irPara(ir ?? cs.k);
+}
+const alternarCorte = () => (mv.corte ? pararCorte() : assistirCorte());
+
+function ligarVariantes(id) {
+  const box = $('[data-moviola]'); if (!box || !mv) return;
+  desenharPalco();
+  box.onclick = async (e) => {
+    const t = e.target;
+    const ir = t.closest('[data-mv-ir]'); if (ir) { irPara(Number(ir.dataset.mvIr)); return; }
+    const passo = t.closest('[data-mv-passo]'); if (passo) { irPara(mv.i + Number(passo.dataset.mvPasso)); return; }
+    const tela = t.closest('[data-mv-tela]'); if (tela) { somEm(Number(tela.dataset.mvTela)); return; }
+    const esc_ = t.closest('[data-escolher]'); if (esc_) { escolher(esc_.dataset.escolher); return; }
+    if (t.closest('[data-mv-corte]')) { alternarCorte(); return; }
+    if (t.closest('[data-mv-parar]')) { pararCorte(); return; }
+    if (t.closest('[data-var-acao="recomendadas"]')) {
+      try {
+        await api(`/api/videos/${id}/recomendadas`, {});
+        for (const c of mv.d.cenas) if (!c.escolhida) c.escolhida = (c.variantes.find((x) => x.recomendada) || c.variantes[0]).id;
+        marcarEscolhas(); aviso('Recomendadas escolhidas', true);
+      } catch (er) { aviso(er.message); }
+      return;
+    }
+    const pedir = t.closest('[data-pedir-cena]');
+    if (pedir) {
+      try { pedir.disabled = true; await api(`/api/videos/${id}/ajuste-cena`, { cena: mv.d.cenas[mv.i].id, texto: $('[data-ajuste-cena]', box).value }); aviso('Pedido enviado para a IA', true); }
+      catch (er) { aviso(er.message); pedir.disabled = false; }
+      assinatura = ''; rodarCiclo();
+    }
+  };
+}
+// Escolhas feitas em outro lugar (outra aba, a IA) entram sem redesenhar.
+function sincronizarVariantes(v) {
+  if (!mv || mv.id !== v.id || !v.arquivos.variantes) return;
+  mv.rodando = !!v.job?.rodando;
+  let mudou = false;
+  v.arquivos.variantes.cenas.forEach((c, k) => { const m = mv.d.cenas[k]; if (m && m.id === c.id && m.escolhida !== c.escolhida) { m.escolhida = c.escolhida; mudou = true; } });
+  if (mudou) marcarEscolhas();
+}
+document.addEventListener('keydown', (e) => {
+  if (!mv || !$('[data-moviola]') || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.target.closest?.('input, textarea, select, [contenteditable]') || $('.zoom')) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); irPara((mv.corte ? mv.corte.k : mv.i) + (e.key === 'ArrowRight' ? 1 : -1)); }
+  else if (/^[1-9]$/.test(e.key) && !mv.corte) {
+    const x = mv.d.cenas[mv.i].variantes[Number(e.key) - 1];
+    const b = x && $(`[data-escolher="${x.id}"]`);
+    if (b && !b.disabled) escolher(x.id);
+  } else if (e.key === ' ' && !e.target.closest?.('button, a, summary')) {
+    e.preventDefault();
+    if (mv.corte) { const t = mv.corte.telas.find((x) => !x.hidden); if (t) t.paused ? t.play() : t.pause(); return; }
+    const opcoes = $$('[data-mv-palco] .mv-opcao');
+    const comSom = opcoes.findIndex((o) => o.classList.contains('com-som'));
+    somEm(comSom >= 0 ? comSom : Math.max(0, opcoes.findIndex((o) => o.classList.contains('on'))));
+  } else if (e.key === 'Escape' && mv.corte) pararCorte();
+  else if (e.key === 'c' || e.key === 'C') alternarCorte();
+});
 
 
 // ---------- trilha sonora (etapa do vídeo final) ----------
@@ -642,6 +822,53 @@ function ligarAssets(id) {
     assinatura = ''; rodarCiclo();
   }; });
 }
+// ---------- gancho: a primeira frase do vídeo, escolhida pelo criador ----------
+const PEDIDO_GANCHOS = 'Ganchos: escreva 3 opções de gancho em ganchos.json (receitas diferentes, a recomendada já aplicada na narração). Não mude o resto do roteiro.';
+function blocoGanchos(v) {
+  if (v.etapa !== 'roteiro') return '';
+  const g = v.arquivos.ganchos;
+  const pode = v.estado === 'aguardando_aprovacao' && !v.job?.rodando;
+  if (!g?.opcoes?.length) {
+    return pode ? `<div class="bloco vez ganchos"><h2>Gancho</h2>
+      <p style="margin:0">Este roteiro veio com um gancho só. Peça 3 opções para escolher a primeira frase do vídeo.</p>
+      <div class="acoes"><button class="maquina" data-gancho-pedir="${esc(PEDIDO_GANCHOS)}">Pedir 3 opções de gancho</button></div></div>` : '';
+  }
+  const proprio = g.escolhido === 'proprio';
+  const outras = g.opcoes.map((o) => `“${o.gancho}”`).join(' / ');
+  return `<div class="bloco ganchos">
+    <div class="audio-topo"><h2 style="margin:0">Gancho · a primeira frase do vídeo</h2>
+      ${pode ? `<button class="discreto-claro" data-gancho-pedir="${esc(`Ganchos: escreva 3 opções novas em ganchos.json, diferentes destas: ${outras}. Aplique a recomendada na narração. Não mude o resto do roteiro.`)}">Pedir outras 3</button>` : ''}</div>
+    <p class="dica" style="margin:6px 0 14px">${g.escolhidoPor === 'criador' ? 'Escolhido por você.' : 'A IA já colocou a recomendada na narração. Troque se outra prender mais.'} A troca muda o começo da narração e da marcação.</p>
+    <div class="ganchos-opcoes">${g.opcoes.map((o) => { const on = !proprio && String(g.escolhido ?? (g.opcoes.find((x) => x.recomendado) || g.opcoes[0]).n) === String(o.n);
+      return `<article class="gancho ${on ? 'on' : ''}">
+        <span class="gancho-receita">${esc(o.receita || '')}${o.recomendado ? ' · <b>★ recomendado</b>' : ''}</span>
+        <p class="gancho-frase">${esc(o.gancho)}</p>
+        ${o.porta ? `<p class="gancho-porta">${esc(o.porta)}</p>` : ''}
+        ${o.porque ? `<p class="gancho-porque">${esc(o.porque)}</p>` : ''}
+        ${on ? '<span class="selo pronto">✓ Abre o vídeo</span>' : pode ? `<button class="vez" data-gancho="${o.n}">Usar este gancho</button>` : ''}
+      </article>`; }).join('')}</div>
+    ${proprio ? `<p class="gancho-meu"><span class="selo pronto">✓ Abre o vídeo</span> o seu: “${esc(g.aplicado?.gancho)}”</p>` : ''}
+    ${pode ? `<details class="pedir"><summary>Escrever o meu gancho</summary>
+      <textarea data-gancho-texto placeholder="Ex.: A torre mais famosa da Itália só está de pé por causa de uma guerra.">${proprio ? esc(g.aplicado?.gancho) : ''}</textarea>
+      <p class="dica" style="margin:4px 0 0">Até 12 palavras funciona melhor. Pode ter duas frases (o gancho e a confirmação).</p>
+      <div class="acoes"><button class="vez" data-gancho="proprio">Usar o meu gancho</button></div></details>` : ''}
+  </div>`;
+}
+function ligarGanchos(id) {
+  $$('[data-gancho]').forEach((b) => { b.onclick = async () => {
+    try {
+      b.disabled = true;
+      await api(`/api/videos/${id}/gancho`, { n: b.dataset.gancho, texto: $('[data-gancho-texto]')?.value });
+      aviso('Gancho trocado na narração', true);
+    } catch (e) { aviso(e.message); b.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  }; });
+  $$('[data-gancho-pedir]').forEach((b) => { b.onclick = async () => {
+    try { b.disabled = true; await api(`/api/videos/${id}/ajuste`, { texto: b.dataset.ganchoPedir }); aviso('Pedido enviado: a IA vai escrever 3 ganchos', true); }
+    catch (e) { aviso(e.message); b.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  }; });
+}
 function blocoEtapa(v) {
   const a = v.arquivos;
   const rodando = v.job?.rodando;
@@ -655,6 +882,7 @@ function blocoEtapa(v) {
   }
   html += blocoAssets(v);
   if (v.etapa === 'roteiro') {
+    html += blocoGanchos(v);
     html += `<div class="bloco"><h2>Sinopse</h2><div class="md">${md(a.sinopse)}</div></div>
       <div class="bloco"><h2>Narração</h2><p class="texto">${esc((a.narracao || '—').replace(/\[(laughter|sigh)\]\s*/g, ''))}</p></div>${marcacaoTabela(a.marcacao)}`;
   } else if (v.etapa === 'narracao' && v.fluxo === 2) {
@@ -669,7 +897,7 @@ function blocoEtapa(v) {
         <select id="vel" style="width:auto">${[0.78, 0.82, 0.86, 0.9, 1].map((x) => `<option ${x === v.voz?.velocidade ? 'selected' : ''}>${x}</option>`).join('')}</select>
         <button data-acao="regerarVoz">Gerar a voz de novo</button><span class="dica" style="margin:0">~${duracao(v.previsoes.narracao)}</span></div>` : ''}</div>`;
   } else if (v.etapa === 'cenas' && v.fluxo === 2) {
-    html += blocoVariantes(v);
+    // a mesa de corte é desenhada em largura total, acima das colunas (telaVideo)
   } else if (v.etapa === 'cenas') {
     html += `<div class="bloco"><h2>Quadros das cenas</h2>
       ${a.quadros.length ? `<div class="quadros">${a.quadros.map((q) => `<img src="${q}" alt="" data-zoom loading="lazy">`).join('')}</div>` : '<p class="vazio">Os quadros aparecem aqui quando a IA terminar as cenas.</p>'}
@@ -694,16 +922,31 @@ function blocoEtapa(v) {
         <p class="dica">A fila guarda os horários. O envio automático para as plataformas ainda precisa das contas conectadas.</p></div>`;
     }
   }
-  const montagemVelha = (v.etapa === 'narracao' && v.fluxo === 2 && !a.audioFrases?.montagem?.atual)
-    || (v.etapa === 'cenas' && v.fluxo === 2 && (a.variantes?.cenas || []).some((c) => !c.escolhida));
-  if (esperando) {
-    html += `<div class="bloco vez"><h2>Sua decisão</h2>
-      <div class="acoes" style="margin-top:0"><button class="aprovar" data-acao="aprovar" ${montagemVelha ? `disabled title="${v.etapa === 'cenas' ? 'Escolha uma variante em todas as cenas' : 'Monte o áudio antes de aprovar'}"` : ''}>Aprovar ${esc(nomeEtapa.toLowerCase())}</button>
-      <span class="dica" style="margin:0">${{ roteiro: `Depois: a voz é gerada (~${duracao(v.previsoes.narracao)}).`, narracao: `Depois: a IA monta as cenas (~${duracao(v.previsoes.cenas)}).`, cenas: `Depois: o vídeo é renderizado (~${duracao(v.previsoes.final)}).`, final: 'Depois: você escolhe quando postar.' }[v.etapa] || ''}</span></div>
-      <label for="ajuste">Ou peça um ajuste</label><textarea id="ajuste" placeholder="O que mudar? A IA refaz esta etapa e devolve para você."></textarea>
-      <div class="acoes"><button data-acao="ajuste">Pedir ajuste</button></div></div>`;
-  }
   return html;
+}
+// Barra fixa no rodapé: aprovar ou pedir ajuste sem rolar até o fim da página.
+function blocoDecisao(v) {
+  if (v.estado !== 'aguardando_aprovacao' || v.job?.rodando) return '';
+  const a = v.arquivos;
+  const nomeEtapa = (ETAPAS.find(([e]) => e === v.etapa)?.[1] || '').toLowerCase();
+  const mesa = v.etapa === 'cenas' && v.fluxo === 2;
+  const faltaMontar = v.etapa === 'narracao' && v.fluxo === 2 && v.voz?.modo !== 'gravacao' && !a.audioFrases?.montagem?.atual;
+  const faltamCenas = mesa ? (a.variantes?.cenas || []).filter((c) => !c.escolhida).length : 0;
+  const depois = { roteiro: `Depois: a voz é gerada (~${duracao(v.previsoes.narracao)}).`, narracao: `Depois: a IA monta as cenas (~${duracao(v.previsoes.cenas)}).`, cenas: `Depois: o vídeo é renderizado (~${duracao(v.previsoes.final)}).`, final: 'Depois: você escolhe quando postar.' }[v.etapa] || '';
+  const dica = faltaMontar ? 'Monte o áudio para poder aprovar.' : faltamCenas ? textoFalta(faltamCenas) : depois;
+  return `<div class="decisao" role="region" aria-label="Sua decisão">
+    <div class="decisao-linha">
+      <span class="decisao-rotulo">Sua vez</span>
+      <button class="aprovar" data-acao="aprovar" ${mesa ? 'data-trava-cenas' : ''} ${faltaMontar || faltamCenas ? 'disabled' : ''}>Aprovar ${esc(nomeEtapa)}</button>
+      <span class="decisao-dica" data-decisao-dica data-depois="${esc(depois)}">${esc(dica)}</span>
+      <button class="decisao-abrir" data-abrir-ajuste aria-expanded="false" aria-controls="decisao-ajuste">Pedir ajuste</button>
+    </div>
+    <div class="decisao-ajuste" id="decisao-ajuste" hidden>
+      <label for="ajuste">O que mudar? A IA refaz ${esc(nomeEtapa)} e devolve para você.</label>
+      <textarea id="ajuste" placeholder="Ex.: a cena 4 está escura demais; o Tales devia entrar correndo"></textarea>
+      <div class="acoes"><button class="vez" data-acao="ajuste">Enviar pedido de ajuste</button></div>
+    </div>
+  </div>`;
 }
 function lateral(v) {
   const ajustes = Object.entries(v.portoes).flatMap(([e, p]) => (p.ajustes || []).map((a) => ({ ...a, etapa: e }))).reverse();
@@ -713,18 +956,21 @@ function lateral(v) {
       <p class="dica">Voz ${esc(v.voz?.perfil)} · velocidade ${v.voz?.velocidade}</p></div>
     ${ajustes.length ? `<div class="bloco"><h2>Ajustes pedidos</h2><ul class="ajustes">${ajustes.map((a) => `<li class="${a.resolvido ? '' : 'aberto'}"><small>${esc(a.etapa)} · ${a.resolvido ? 'feito' : 'em aberto'}</small>${esc(a.texto)}</li>`).join('')}</ul></div>` : ''}
     ${uso.length ? `<div class="bloco"><h2>Uso da IA</h2><div class="uso" style="margin:0"><span><b>${uso.length}</b> ${uso.length === 1 ? 'rodada' : 'rodadas'}</span><span><b>${duracao(uso.reduce((s, u) => s + (u.segundos || 0), 0))}</b> trabalhando</span><span>equivale a <b>US$ ${custo.toFixed(2)}</b> do plano</span></div>
-      <p class="dica">Na assinatura não há cobrança por vídeo: esse valor só mostra quanto do limite do plano foi usado.</p></div>` : ''}`;
+      <ul class="ajustes" style="margin-top:12px">${uso.map((u) => `<li><small>${esc(u.etapa || '')} · ${esc(u.motor === 'gemini' ? 'Gemini' : { opus: 'Opus', sonnet: 'Sonnet', haiku: 'Haiku' }[u.modelo] || 'Claude (modelo padrão)')}</small>
+        US$ ${(u.custoUSD || 0).toFixed(2)} · ${u.turnos ?? '—'} turnos · ${duracao(u.segundos || 0)}</li>`).join('')}</ul>
+      <p class="dica">Na assinatura não há cobrança por vídeo: esse valor só mostra quanto do limite do plano foi usado. O painel escolhe o modelo de cada tarefa: Sonnet para escrever e montar, Haiku para mudanças pequenas, Opus para desenhar assets ou quando algo falhou.</p></div>` : ''}`;
 }
 async function telaVideo(id) {
   if (!VOZES) await carregarVozes();
   const v = await api(`/api/videos/${id}`);
-  const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.agenda, (v.usoIA || []).length,
+  const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.arquivos.narracao, JSON.stringify(v.arquivos.ganchos), v.agenda, (v.usoIA || []).length,
     Object.values(v.portoes).map((p) => (p.ajustes || []).length),
     (v.arquivos.audioFrases?.frases || []).map((f) => [f.id, f.texto, f.energia, f.efeito, f.velocidade, f.pausa, f.escolhido, f.takes.length, f.precisaGravar]), v.arquivos.audioFrases?.montagem?.atual,
-    (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.escolhida, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length]),
+    (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length]),
     JSON.stringify(v.arquivos.trilha), v.arquivos.trilhaRelatorio?.lufsAntes, v.arquivos.qa?.lufs, v.legenda, v.voz?.modo, v.voz?.catalogo, v.arquivos.vozInfo?.geradoEm,
     (v.arquivos.assets?.itens || []).map((i) => [i.id, i.situacao, i.job?.rodando])]);
   if (sig === assinatura && $('.claquete')) {
+    sincronizarVariantes(v); // a escolha de cena não redesenha a tela
     atualizarBarra($('.bloco.maquina [data-job]'), v.job);
     const lista = $('[data-atividade]');
     if (lista && v.job?.atividade) {
@@ -735,11 +981,16 @@ async function telaVideo(id) {
     if (quadroAgora && v.job?.rodando) quadroAgora.textContent = `faltam ~${relogio(v.job.restante)}`;
   } else {
     const etapaMudou = assinatura && JSON.parse(assinatura)[0] !== v.etapa;
+    const primeira = !$('.claquete');
     assinatura = sig;
     const pos = window.scrollY;
-    app.innerHTML = `<div class="${etapaMudou ? '' : 'entra'}"><p style="margin:0 0 14px"><a href="#/" style="color:var(--tinta-2);font-weight:600;text-decoration:none">← Vídeos</a></p>
+    const mesa = v.etapa === 'cenas' && v.fluxo === 2;
+    app.innerHTML = `<div class="${primeira ? 'entra' : ''}"><p style="margin:0 0 14px"><a href="#/" style="color:var(--tinta-2);font-weight:600;text-decoration:none">← Vídeos</a></p>
       ${claquete(v, etapaMudou || !$('.claquete'))}${filme(v)}
-      <div class="dois"><div>${blocoTarefa(v)}${blocoEtapa(v)}</div><div>${lateral(v)}</div></div></div>`;
+      ${mesa ? `${blocoTarefa(v)}${blocoVariantes(v)}` : ''}
+      <div class="dois"><div>${mesa ? '' : blocoTarefa(v)}${blocoEtapa(v)}</div><div>${lateral(v)}</div></div>
+      ${blocoDecisao(v)}</div>`;
+    if (!mesa) mv = null;
     window.scrollTo(0, pos);
     ligarAcoes(id);
     ligarAudio(id);
@@ -747,6 +998,7 @@ async function telaVideo(id) {
     ligarTrilha(id);
     ligarQuemNarra(id);
     ligarAssets(id);
+    ligarGanchos(id);
     if (esperandoMontagem === id && !v.job?.rodando && v.arquivos.audioFrases?.montagem?.atual) { esperandoMontagem = null; tocar(v.arquivos.audio, $('.montagem')); }
   }
   recebidoEm = Date.now();
@@ -756,6 +1008,12 @@ function ligarAcoes(id) {
   $$('[data-zoom]').forEach((img) => { img.onclick = () => {
     const z = document.createElement('div'); z.className = 'zoom'; z.innerHTML = `<img src="${img.src}" alt="">`; z.onclick = () => z.remove(); document.body.append(z);
   }; });
+  const abrir = $('[data-abrir-ajuste]');
+  if (abrir) abrir.onclick = () => {
+    const box = $('#decisao-ajuste'); box.hidden = !box.hidden;
+    abrir.setAttribute('aria-expanded', String(!box.hidden));
+    if (!box.hidden) $('#ajuste').focus();
+  };
   $$('[data-acao]').forEach((b) => { b.onclick = async () => {
     const acao = b.dataset.acao;
     const msgs = { aprovar: 'Aprovado', ajuste: 'Ajuste enviado para a IA', regerarVoz: 'Gerando a voz de novo', agendar: 'Agendado', ia: 'A IA começou', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando', narrar: 'Gerando a narração' };
@@ -910,7 +1168,7 @@ seletorIA();
 
 // ---------- ciclo de atualização ----------
 function ocupado() { // não redesenha enquanto o criador digita
-  return document.activeElement?.matches('textarea, input, select') || Object.keys(pendentes).length > 0 || [...document.querySelectorAll('.opcao-midia video')].some((x) => !x.paused);
+  return document.activeElement?.matches('textarea, input, select') || Object.keys(pendentes).length > 0 || !!mv?.corte || $$('[data-moviola] video').some((x) => !x.paused && !x.muted);
 }
 async function rodarCiclo() {
   clearTimeout(ciclo);
@@ -928,6 +1186,7 @@ async function rodarCiclo() {
 async function rotear() {
   clearTimeout(ciclo);
   assinatura = ''; bibAssinatura = ''; ideiasAssinatura = ''; vozesAssinatura = '';
+  if (mv?.corte) pararCorte(); mv = null;
   const h = location.hash.replace(/^#/, '') || '/';
   const rota = h.startsWith('/v/') ? 'videos' : h.slice(1) || 'videos';
   $$('nav a').forEach((a) => a.classList.toggle('ativo', a.dataset.rota === rota));

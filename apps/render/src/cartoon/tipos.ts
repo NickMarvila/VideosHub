@@ -25,6 +25,8 @@ export type ObjetoCartoon = {
   giro?: number | Chave<number>[];           // graus (3D: em volta do eixo vertical; 2D: inclinação da figurinha)
   escala?: number; aparece?: number; some?: number;
   movendo?: boolean;                         // parati: rodas giram e o carro aponta para onde anda
+  etapa?: number | Chave<number>[];          // torre_de_pisa: 0..1 (3/8 = obra com 3 andares; 1 = completa)
+  inclinacao?: number | Chave<number>[];     // torre_de_pisa: graus, tomba para +x (padrão 4)
   texto?: string; icone?: string; cor?: string;
 };
 export type CenaCartoon = {

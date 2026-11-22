@@ -155,7 +155,7 @@ h1 { font: 800 clamp(28px, 4vw, 40px)/1.05 var(--f-titulo); letter-spacing: -1.2
 /* ---------- blocos ---------- */
 .dois { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; align-items: start; }
 @media (max-width: 920px) { .dois { grid-template-columns: 1fr; } }
-.bloco { background: var(--folha); border-radius: var(--raio); box-shadow: var(--sombra); padding: 20px; margin-bottom: 16px; }
+.bloco { background: var(--folha); border-radius: var(--raio); box-shadow: var(--sombra); padding: 20px; margin-bottom: 16px; overflow-wrap: anywhere; }
 .bloco > h2, .bloco-titulo { font: 700 12px/1 var(--f-tempo); letter-spacing: 1.4px; text-transform: uppercase; color: var(--tinta-2); margin: 0 0 14px; }
 .bloco.vez { border-left: 4px solid var(--lampada); }
 .bloco.maquina { border-left: 4px solid var(--maquina); }
@@ -279,30 +279,131 @@ table.marcacao td { font-size: 14px; padding: 8px 6px; }
 .energia.animada { color: #a6560a; background: var(--lampada-fundo); }
 @media (max-width: 640px) { .frase-controles, .takes { margin-left: 0; } }
 
-/* ---------- variantes de cena ---------- */
-.trilho-escolha { display: flex; gap: 3px; margin: 12px 0 6px; }
-.trilho-escolha i { flex: 1; height: 5px; border-radius: 2px; background: var(--linha); transition: background .3s; }
-.trilho-escolha i.on { background: var(--pronto); }
-.cena-escolha { border-top: 1px solid var(--linha); padding: 18px 0 8px; }
-.cena-escolha header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
-.cena-escolha header > div { flex: 1; }
-.cena-escolha header b { font: 700 16px/1.25 var(--f-titulo); display: block; }
-.cena-escolha header small { display: block; color: var(--tinta-2); font-size: 13px; margin-top: 3px; }
-.opcoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
-.opcao { display: grid; grid-template-columns: 118px 1fr; gap: 12px; padding: 10px; border-radius: 12px; border: 2px solid var(--linha); background: #fff; transition: border-color .2s, box-shadow .2s; }
-.opcao.on { border-color: var(--pronto); box-shadow: 0 0 0 4px var(--pronto-fundo); }
-.opcao-midia { position: relative; aspect-ratio: 9/16; border-radius: 8px; overflow: hidden; background: var(--filme); cursor: pointer; }
-.opcao-midia img, .opcao-midia video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.opcao-midia video { position: absolute; inset: 0; }
-.opcao-midia .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; padding: 0; background: rgba(23,27,31,.72); color: #fff; font-size: 16px; }
-.opcao-midia.tocando .play { display: none; }
-.opcao-midia .gerando { color: rgba(238,241,236,.6); font: 500 11px/1.3 var(--f-tempo); padding: 10px; text-align: center; margin-top: 70%; }
-.opcao-info { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.opcao-info p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--tinta); flex: 1; }
-.opcao-info button { align-self: flex-start; padding: 9px 14px; font-size: 13px; }
 .recomendada { font: 700 11px/1 var(--f-tempo); letter-spacing: .5px; color: #a6560a; text-transform: uppercase; }
 details.pedir { margin-top: 10px; }
 details.pedir textarea { margin-top: 8px; min-height: 64px; }
+
+/* ---------- gancho: as opções são lidas como a primeira frase do vídeo, em letra de título ---------- */
+.ganchos-opcoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.gancho { display: flex; flex-direction: column; gap: 8px; padding: 14px 14px 12px; border-radius: 12px; border: 2px solid var(--linha); background: #fff; transition: border-color .2s, box-shadow .2s; }
+.gancho.on { border-color: var(--pronto); box-shadow: 0 0 0 4px var(--pronto-fundo); }
+.gancho-receita { font: 600 11px/1.3 var(--f-tempo); letter-spacing: .4px; text-transform: uppercase; color: var(--tinta-2); }
+.gancho-receita b { color: #a6560a; font-weight: 700; }
+.gancho-frase { margin: 0; font: 700 19px/1.22 var(--f-titulo); letter-spacing: -.3px; color: var(--tinta); }
+.gancho-porta { margin: -2px 0 0; font: 600 15px/1.3 var(--f-titulo); color: var(--tinta-2); }
+.gancho-porque { margin: 0; font-size: 13px; line-height: 1.45; color: var(--tinta-2); flex: 1; }
+.gancho button, .gancho .selo { align-self: flex-start; }
+.gancho button { padding: 9px 14px; font-size: 13.5px; }
+.gancho-meu { margin: 12px 0 0; font: 600 15px/1.4 var(--f-titulo); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+button.discreto-claro { background: none; border: 1px solid var(--linha); padding: 8px 12px; font-size: 13px; color: var(--tinta-2); }
+button.discreto-claro:hover { background: rgba(19,33,43,.05); color: var(--tinta); }
+
+/* ---------- mesa de corte (escolha das cenas) ----------
+   Parede cinza neutra, como numa sala de corte: o cinza médio não puxa a cor dos clipes.
+   A tira de cima é o vídeo inteiro (largura = duração); a agulha âmbar corre por ela quando o corte toca. */
+.moviola {
+  --sala: #45494d; --sala-2: #3a3e42; --sala-txt: rgba(238,241,236,.72); --escolhida: #74d39b;
+  background: var(--sala); color: var(--giz); border-radius: 18px; padding: 18px 20px 14px; margin: 0 0 22px;
+  box-shadow: 0 28px 50px -34px rgba(0,0,0,.65); scroll-margin-top: 76px;
+}
+.mv-topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 20px; flex-wrap: wrap; margin-bottom: 14px; }
+.mv-titulo { font: 800 24px/1 var(--f-titulo); letter-spacing: -.6px; margin: 0; color: #fff; }
+.mv-conta { margin: 7px 0 0; font: 500 12.5px/1.3 var(--f-tempo); color: var(--sala-txt); }
+.mv-botoes { display: flex; gap: 8px; flex-wrap: wrap; }
+.moviola button { background: rgba(238,241,236,.1); color: var(--giz); }
+.moviola button:hover:not(:disabled) { background: rgba(238,241,236,.18); }
+.moviola button.vez, .moviola .mv-assistir { background: var(--lampada); color: #fff; }
+.moviola button.vez:hover, .moviola .mv-assistir:hover { background: var(--lampada); filter: brightness(1.08); }
+.moviola button.aprovar, .moviola button.aprovar:hover { background: var(--pronto); color: #fff; font-size: 14px; padding: 12px 18px; }
+.mv-assistir span { font: 500 12px/1 var(--f-tempo); opacity: .8; margin-left: 4px; }
+.moviola.assistindo .mv-assistir { background: var(--giz); color: var(--filme); }
+.moviola kbd { font: 600 10.5px/1 var(--f-tempo); padding: 2px 5px; margin-left: 6px; border-radius: 4px; border: 1px solid currentColor; opacity: .6; }
+
+/* a tira: perfurações em cima e embaixo, quadros proporcionais à duração */
+.mv-trilha {
+  --furo: radial-gradient(circle, var(--sala) 0 3px, transparent 3.5px);
+  position: relative; overflow-x: auto; scrollbar-width: thin; border-radius: 10px; padding: 18px 6px;
+  background: var(--furo) 0 4px / 14px 10px repeat-x, var(--furo) 0 calc(100% - 4px) / 14px 10px repeat-x, var(--filme);
+}
+.mv-linha { list-style: none; margin: 0; padding: 0; display: flex; gap: 3px; min-width: 100%; }
+.mv-linha li { display: flex; min-width: 30px; }
+.mv-quadro {
+  flex: 1; height: 80px; padding: 0; border-radius: 3px; position: relative; overflow: hidden;
+  border: 2px solid transparent; transition: border-color .15s, filter .15s;
+}
+.moviola .mv-quadro { background: #2a3138 0 0 / auto 100% repeat-x; } /* o pôster se repete como fotogramas */
+.moviola .mv-quadro.pendente { background-image: repeating-linear-gradient(-45deg, rgba(224,122,16,.5) 0 6px, transparent 6px 12px); }
+.moviola .mv-quadro:hover { filter: brightness(1.15); background-color: #2a3138; }
+.mv-quadro span { position: absolute; left: 3px; top: 3px; font: 700 10.5px/1 var(--f-tempo); padding: 3px 4px; border-radius: 3px; background: rgba(23,27,31,.78); color: var(--giz); }
+.mv-quadro.foco { border-color: var(--lampada); }
+.mv-quadro.foco span { background: var(--lampada); color: #fff; }
+.mv-quadro.tocando { border-color: #fff; }
+.mv-cabeca { position: absolute; top: 10px; bottom: 10px; left: 0; width: 2px; margin-left: 5px; background: var(--lampada); box-shadow: 0 0 10px rgba(224,122,16,.9); pointer-events: none; }
+.mv-cabeca::before { content: ""; position: absolute; top: -7px; left: -5px; border: 6px solid transparent; border-top-color: var(--lampada); }
+
+/* o palco: uma cena por vez */
+.mv-palco, .mv-sessao { margin-top: 18px; }
+.mv-cab { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; }
+.mv-cab small { font: 500 12px/1.3 var(--f-tempo); color: var(--sala-txt); }
+.mv-cab h3 { font: 700 21px/1.15 var(--f-titulo); letter-spacing: -.3px; margin: 3px 0 0; color: #fff; }
+.moviola .mv-passo { width: 42px; height: 42px; padding: 0; border-radius: 50%; font-size: 18px; }
+.mv-fala { margin: 12px 0 0 56px; max-width: 68ch; font-size: 15.5px; line-height: 1.5; color: rgba(238,241,236,.9); }
+.mv-opcoes { display: grid; grid-template-columns: repeat(var(--n, 2), minmax(0, 240px)); gap: 22px; margin: 18px 0 0 56px; }
+.mv-opcao { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.mv-tela {
+  position: relative; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden; background: var(--filme); cursor: pointer;
+  outline: 3px solid transparent; outline-offset: 3px; transition: outline-color .2s;
+}
+.mv-tela video, .mv-tela img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mv-tela .gerando { color: var(--sala-txt); font: 500 11.5px/1.3 var(--f-tempo); display: grid; place-items: center; height: 100%; }
+.mv-opcao.on .mv-tela { outline-color: var(--escolhida); }
+.mv-letra { position: absolute; top: 8px; left: 8px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; font: 700 13px/1 var(--f-tempo); background: rgba(23,27,31,.78); }
+.mv-opcao.on .mv-letra { background: var(--pronto); }
+.mv-som { position: absolute; right: 8px; bottom: 8px; display: none; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 99px; font: 700 11px/1 var(--f-tempo); background: var(--lampada); color: #fff; }
+.mv-opcao.com-som .mv-som { display: inline-flex; }
+.mv-opcao.com-som .mv-tela { outline-color: var(--lampada); }
+.mv-info { display: flex; flex-direction: column; gap: 8px; }
+.mv-info p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--sala-txt); }
+.mv-info button { align-self: flex-start; padding: 10px 14px; font-size: 13.5px; }
+.moviola .recomendada { color: #f5ad5c; }
+.mv-erro { color: #ffb4ab !important; }
+.mv-pedido { display: flex; align-items: center; gap: 8px; margin: 18px 0 0 56px; font-size: 13.5px; color: var(--sala-txt); }
+.mv-pedir { margin: 18px 0 0 56px; max-width: 560px; }
+.moviola details summary { color: var(--sala-txt); }
+.moviola details summary:hover { color: var(--giz); }
+.moviola textarea { background: var(--sala-2); color: var(--giz); border-color: rgba(238,241,236,.2); }
+.moviola textarea::placeholder { color: rgba(238,241,236,.45); }
+.mv-teclas { margin: 16px 0 0; font: 500 11.5px/1.6 var(--f-tempo); color: rgba(238,241,236,.5); }
+.mv-teclas kbd { margin: 0 2px; }
+
+/* assistindo o corte */
+.mv-tela-corte { position: relative; height: min(58vh, 600px); aspect-ratio: 9/16; margin: 0 auto; border-radius: 14px; overflow: hidden; background: #000; }
+.mv-tela-corte video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.mv-sessao-pe { display: flex; justify-content: center; align-items: center; gap: 10px 16px; flex-wrap: wrap; margin-top: 14px; font: 500 13px/1.3 var(--f-tempo); color: var(--sala-txt); }
+
+@media (max-width: 720px) {
+  .moviola { padding: 14px 12px 12px; border-radius: 14px; }
+  .mv-fala, .mv-opcoes, .mv-pedido, .mv-pedir { margin-left: 0; }
+  .mv-opcoes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .mv-quadro { height: 64px; }
+  .mv-teclas { display: none; }
+}
+
+/* ---------- barra de decisão (fica no rodapé enquanto você rola) ---------- */
+.decisao {
+  position: sticky; bottom: 14px; z-index: 6; margin-top: 22px; padding: 10px 12px 10px 18px;
+  background: var(--tinta); color: var(--giz); border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(19,33,43,.7);
+}
+.decisao-linha { display: flex; align-items: center; gap: 10px 16px; flex-wrap: wrap; }
+.decisao-rotulo { font: 700 11px/1 var(--f-tempo); letter-spacing: 1.4px; text-transform: uppercase; color: var(--lampada); }
+.decisao button.aprovar:disabled { background: rgba(238,241,236,.14); color: rgba(238,241,236,.6); opacity: 1; }
+.decisao-dica { flex: 1; min-width: 180px; font-size: 13.5px; color: rgba(238,241,236,.75); }
+.decisao .decisao-abrir { background: rgba(238,241,236,.1); color: var(--giz); }
+.decisao .decisao-abrir:hover { background: rgba(238,241,236,.18); }
+.decisao-abrir[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--lampada); }
+.decisao-ajuste { padding: 4px 0 6px; }
+.decisao-ajuste label { color: rgba(238,241,236,.75); }
+.decisao-ajuste textarea { min-height: 72px; }
 
 /* ---------- biblioteca ---------- */
 .grade-assets { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }

@@ -30,6 +30,26 @@ ENERGIAS = {  # aproximação: o OmniVoice não tem controle direto de emoção
     "normal": {"vel": 1.0},
     "animada": {"vel": 1.08},
 }
+# Cada take de uma rodada é uma LEITURA diferente. Só a seed não basta: com voz clonada (perfil fixo) ela quase
+# não muda a entonação, e os 3 takes saíam iguais ao ouvido. Velocidade, pontuação final e guidance mudam a
+# leitura sem trocar a voz (instrução em texto foi evitada de propósito: pode puxar o timbre para outra voz).
+LEITURAS = [
+    {"nome": "como marcado"},
+    {"nome": "mais lenta", "vel": 0.9, "fim": "...", "guidance": 1.6},
+    {"nome": "mais viva", "vel": 1.1, "fim": "!", "guidance": 2.6},
+]
+
+
+def aplicar_leitura(texto, leitura):
+    """troca a pontuação final (perguntas ficam como estão: a entonação de pergunta é a frase)"""
+    fim = leitura.get("fim")
+    m = re.match(r"^(.*?)(\s*\[laughter\])?$", texto.rstrip(), re.S)  # a risada fica depois da pontuação
+    corpo, tag = m.group(1), m.group(2) or ""
+    if not fim or corpo.endswith("?"):
+        return texto
+    return re.sub(r"[.!…]+$", "", corpo) + fim + tag
+
+
 PAUSA_PADRAO = {".": 0.35, "!": 0.35, "?": 0.55, "…": 0.6, "...": 0.6}
 
 
@@ -136,9 +156,16 @@ def preparar(pasta):
     return d
 
 
-def aparar(entrada, saida):
+# Motores que ignoram o "speed" da API (medido em 2026-11-22: VoxCPM2 no VoiceStudio dá a mesma duração em 0.85,
+# 1.0 e 1.2). Neles a velocidade é aplicada depois, com atempo (muda o ritmo sem mudar o tom da voz).
+VELOCIDADE_NO_FFMPEG = {"voxcpm2"}
+
+
+def aparar(entrada, saida, tempo=1.0):
     filtro = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
               "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.08,areverse")
+    if abs(tempo - 1) > 0.005:
+        filtro += f",atempo={max(0.5, min(2.0, tempo)):.3f}"
     ffmpeg("-i", str(entrada), "-af", filtro, "-ar", "48000", "-ac", "1", str(saida))
 
 
@@ -162,15 +189,20 @@ def gravar(pasta, ids=None):
         for k in range(takes):
             n = base + k + 1
             seed = 1000 + int(f["id"][1:]) * 100 + n
+            leitura = LEITURAS[k % len(LEITURAS)] if takes > 1 else LEITURAS[0]
+            texto = aplicar_leitura(cfg["texto"], leitura)
             bruto = pasta / "audio" / "takes" / f"{f['id']}-t{n}.bruto.wav"
             final = pasta / "audio" / "takes" / f"{f['id']}-t{n}.wav"
             print(f"gravando frase {f['id']} take {n} ({feitos + 1}/{total})", flush=True)
-            gerar_fala(aplicar_pronuncia(cfg["texto"], voz.get("pronuncia")), str(bruto), motor=voz["motor"], voz=voz["perfil"],
-                       velocidade=cfg["vel"], seed=seed, instrucao=voz.get("instrucao"))
-            aparar(bruto, final)
+            vel = round(cfg["vel"] * leitura.get("vel", 1), 3)
+            no_ffmpeg = voz["motor"] in VELOCIDADE_NO_FFMPEG
+            gerar_fala(aplicar_pronuncia(texto, voz.get("pronuncia")), str(bruto), motor=voz["motor"], voz=voz["perfil"],
+                       velocidade=1.0 if no_ffmpeg else vel, seed=seed, instrucao=voz.get("instrucao"),
+                       guidance=leitura.get("guidance") if voz["motor"] == "voxcpm2" else None)
+            aparar(bruto, final, vel if no_ffmpeg else 1.0)
             bruto.unlink(missing_ok=True)
             novos.append({"id": f"{f['id']}-t{n}", "arquivo": f"audio/takes/{final.name}", "seed": seed,
-                          "duracao": duracao(final), "config": cfg, "em": agora()})
+                          "duracao": duracao(final), "config": cfg, "leitura": leitura["nome"], "em": agora()})
             feitos += 1
             print(f"Quadro {feitos}/{total}  ({round(feitos / total * 100)}%)  frase {f['id']} take {n}", flush=True)
         f["takes"].extend(novos)

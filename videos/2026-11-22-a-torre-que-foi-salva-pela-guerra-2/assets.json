@@ -1,0 +1,78 @@
+{
+  "itens": [
+    {
+      "id": "torre_de_pisa",
+      "nome": "Torre de Pisa",
+      "tipo": "objeto",
+      "descricao": "Torre cilíndrica de mármore branco-creme com arcadas em cada andar, inclinada ~4 graus, ~12 m; em obra com 3 andares e completa",
+      "momento": "todo o vídeo",
+      "existe": true,
+      "usa": "torre_de_pisa"
+    },
+    {
+      "id": "pedreiro_medieval",
+      "nome": "pedreiro medieval",
+      "tipo": "personagem",
+      "descricao": "Pedreiro medieval de túnica marrom, avental de couro, gorro de pano e martelo",
+      "momento": "f04-f05: pedreiros sobem o terceiro andar e o chão afunda",
+      "existe": true,
+      "usa": "pedreiro_medieval"
+    },
+    {
+      "id": "soldado_medieval",
+      "nome": "soldado medieval",
+      "tipo": "personagem",
+      "descricao": "Soldado medieval com elmo, cota de malha cinza, túnica vermelha e branca e lança",
+      "momento": "f06: guerra contra Gênova",
+      "existe": true,
+      "usa": "soldado_medieval"
+    },
+    {
+      "id": "mato",
+      "nome": "mato na obra parada",
+      "tipo": "objeto",
+      "descricao": "Touceiras de capim alto em volta da base da torre parada",
+      "momento": "f07-f09: a obra parada por quase cem anos",
+      "existe": true,
+      "usa": "plantacao_de_trigo"
+    },
+    {
+      "id": "pufe",
+      "nome": "pufe",
+      "tipo": "objeto",
+      "descricao": "Pufe redondo de tecido laranja, fofo, que afunda no meio quando alguém senta, ~0,6 m de altura",
+      "momento": "f13: Pensa comigo, a comparação do pufe",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-pufe",
+      "decisao": "auto"
+    },
+    {
+      "id": "engenheiro_moderno",
+      "nome": "engenheiro moderno",
+      "tipo": "personagem",
+      "descricao": "Engenheiro de capacete amarelo, colete laranja refletivo e prancheta",
+      "momento": "f17-f19: os engenheiros endireitam a torre",
+      "existe": true,
+      "usa": "engenheiro_moderno"
+    },
+    {
+      "id": "terra_retirada",
+      "nome": "terra retirada",
+      "tipo": "objeto",
+      "descricao": "Monte de terra marrom com uma pá fincada, ~1 m",
+      "momento": "f19: tiraram terra",
+      "existe": true,
+      "usa": "terra_retirada"
+    },
+    {
+      "id": "praca_pisa",
+      "nome": "praça de Pisa",
+      "tipo": "cenario",
+      "descricao": "Praça aberta onde fica a torre",
+      "momento": "todo o vídeo",
+      "existe": true,
+      "usa": "praca"
+    }
+  ]
+}

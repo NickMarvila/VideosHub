@@ -79,7 +79,7 @@ export class Mundo {
   private nuvemMaps: Record<"day" | "golden", THREE.Texture[]>;
   private cenarios = new Map<string, THREE.Group>();
   private solCache = new Map<number, THREE.Vector3>();
-  private pecas = new Map<string, { g: THREE.Group; rodas: THREE.Object3D[] }>();
+  private pecas = new Map<string, ReturnType<typeof construir3D>>();
 
   constructor() {
     const R = this.root;
@@ -304,6 +304,7 @@ export class Mundo {
         }
         pc.g.rotation.set(0, giro, 0);
         pc.g.scale.setScalar(esc);
+        pc.atualizar?.(valor(o.etapa as never, t, 1), valor(o.inclinacao as never, t, 4), t);
       } else {
         const fx = this.efeito(fi++);
         fx.r = this.pool.req(`obj|${o.tipo}|${o.texto ?? ""}|${o.icone ?? ""}|${o.cor ?? ""}`, 512, 512, 1, desenhar2D(o));

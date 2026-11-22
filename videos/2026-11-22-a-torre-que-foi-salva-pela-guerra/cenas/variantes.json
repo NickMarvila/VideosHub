@@ -1,0 +1,3441 @@
+{
+  "base": {
+    "titulo": "A Torre Que Foi Salva Pela Guerra",
+    "duracao": 46.83,
+    "audio": "narracao.wav",
+    "elenco": {}
+  },
+  "cenas": [
+    {
+      "id": "c01",
+      "inicio": 0,
+      "fim": 3.7,
+      "frases": [
+        "f01",
+        "f02"
+      ],
+      "resumo": "Gancho: a torre inclinada balança na frente de um soldado medieval",
+      "variantes": [
+        {
+          "id": "c01-a",
+          "recomendada": true,
+          "descricao": "Geral se aproximando: a torre inteira na praça e um soldado medieval na frente; em \"De cair\" a torre pende mais, volta, e o soldado leva um susto",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 0,
+                "pos": [
+                  -5,
+                  5,
+                  18
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 42
+              },
+              {
+                "t": 2.6,
+                "pos": [
+                  -3,
+                  4,
+                  16
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 44
+              },
+              {
+                "t": 3.4,
+                "pos": [
+                  -2.6,
+                  3.8,
+                  15
+                ],
+                "olha": [
+                  0,
+                  5.3,
+                  -3
+                ],
+                "fov": 44,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "soldado_medieval",
+                "x": -1.4,
+                "z": 2,
+                "expressoes": [
+                  [
+                    0,
+                    "sorriso"
+                  ],
+                  [
+                    2.7,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    0.3,
+                    "aponta"
+                  ],
+                  [
+                    2.75,
+                    "tremer"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2.75,
+                    4
+                  ],
+                  [
+                    3.1,
+                    7
+                  ],
+                  [
+                    3.6,
+                    4.5
+                  ]
+                ]
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "explosao",
+                "de": 2.8,
+                "ate": 3.3,
+                "pos": [
+                  -1.4,
+                  2.7,
+                  2
+                ],
+                "tamanho": 0.8
+              }
+            ]
+          },
+          "hash": "278218bdb8",
+          "clipe": "cenas/clipes/c01-a.mp4",
+          "poster": "cenas/clipes/c01-a.png"
+        },
+        {
+          "id": "c01-b",
+          "recomendada": false,
+          "descricao": "Close no soldado sorrindo e a câmera sobe revelando a torre enorme atrás; em \"De cair\" ela pende e ele fica nervoso",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 0,
+                "pos": [
+                  0.2,
+                  1.8,
+                  4.6
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1.5
+                ],
+                "fov": 38
+              },
+              {
+                "t": 1.4,
+                "pos": [
+                  0.2,
+                  1.9,
+                  4.6
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1.5
+                ],
+                "fov": 38
+              },
+              {
+                "t": 2.7,
+                "pos": [
+                  -1.5,
+                  4,
+                  16
+                ],
+                "olha": [
+                  0,
+                  5.8,
+                  -3
+                ],
+                "fov": 44
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "soldado_medieval"
+            },
+            "atores": [
+              {
+                "id": "soldado_medieval",
+                "x": 0,
+                "z": 1.5,
+                "expressoes": [
+                  [
+                    0,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    1,
+                    "sorrisao"
+                  ],
+                  [
+                    2.75,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    0.4,
+                    "acena"
+                  ],
+                  [
+                    2.8,
+                    "maos_cintura"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    2.75,
+                    4
+                  ],
+                  [
+                    3.1,
+                    7
+                  ],
+                  [
+                    3.6,
+                    4.5
+                  ]
+                ]
+              },
+              {
+                "tipo": "icone",
+                "icone": "!",
+                "x": 0.9,
+                "y": 3,
+                "z": 1.5,
+                "escala": 0.6,
+                "aparece": 2.8
+              }
+            ]
+          },
+          "hash": "eda27d6c75",
+          "clipe": "cenas/clipes/c01-b.mp4",
+          "poster": "cenas/clipes/c01-b.png"
+        }
+      ],
+      "escolhida": "c01-a",
+      "ajustes": []
+    },
+    {
+      "id": "c02",
+      "inicio": 3.7,
+      "fim": 7.7,
+      "frases": [
+        "f03",
+        "f04"
+      ],
+      "resumo": "Pisa, 1178: o pedreiro ergue os três primeiros andares",
+      "variantes": [
+        {
+          "id": "c02-a",
+          "recomendada": true,
+          "descricao": "Clarão e volta no tempo: a torre sobe andar por andar atrás do pedreiro, que trabalha e comemora no \"três andares prontos\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 3.7,
+                "pos": [
+                  0.5,
+                  2.6,
+                  11
+                ],
+                "olha": [
+                  -0.5,
+                  2.2,
+                  -2
+                ],
+                "fov": 40
+              },
+              {
+                "t": 7.4,
+                "pos": [
+                  0.6,
+                  2.2,
+                  8.5
+                ],
+                "olha": [
+                  -0.4,
+                  2,
+                  -2
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 6,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": [
+                  [
+                    3.7,
+                    -1.8
+                  ],
+                  [
+                    5.2,
+                    -1
+                  ]
+                ],
+                "z": 1.2,
+                "expressoes": [
+                  [
+                    3.7,
+                    "sorriso"
+                  ],
+                  [
+                    6.3,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    5.3,
+                    "segura"
+                  ],
+                  [
+                    6.4,
+                    "comemora"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": [
+                  [
+                    3.7,
+                    0.1
+                  ],
+                  [
+                    7.3,
+                    0.375
+                  ]
+                ],
+                "inclinacao": 0
+              },
+              {
+                "tipo": "caixote",
+                "x": 1.6,
+                "z": 0.8
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 4,
+                "ate": 7,
+                "pos": [
+                  0,
+                  0.4,
+                  -1.8
+                ],
+                "tamanho": 1.4
+              }
+            ]
+          },
+          "hash": "00f62aeb4f",
+          "clipe": "cenas/clipes/c02-a.mp4",
+          "poster": "cenas/clipes/c02-a.png"
+        },
+        {
+          "id": "c02-b",
+          "recomendada": false,
+          "descricao": "Vista aérea descendo: lá de cima a obra cresce em anéis e o pedreiro acena para a câmera",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 3.7,
+                "pos": [
+                  0,
+                  18,
+                  12
+                ],
+                "olha": [
+                  0,
+                  0,
+                  -2
+                ],
+                "fov": 40
+              },
+              {
+                "t": 7.4,
+                "pos": [
+                  0.8,
+                  7,
+                  10
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  -2
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": -0.6,
+                "z": 1.6,
+                "expressoes": [
+                  [
+                    3.7,
+                    "sorriso"
+                  ],
+                  [
+                    6.4,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    4.2,
+                    "segura"
+                  ],
+                  [
+                    6.3,
+                    "acena"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": [
+                  [
+                    3.7,
+                    0.1
+                  ],
+                  [
+                    7.3,
+                    0.375
+                  ]
+                ],
+                "inclinacao": 0
+              },
+              {
+                "tipo": "caixote",
+                "x": 1.2,
+                "z": 1.2
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 4,
+                "ate": 7,
+                "pos": [
+                  0,
+                  0.4,
+                  -1.8
+                ],
+                "tamanho": 1.4
+              }
+            ]
+          },
+          "hash": "39e1605b28",
+          "clipe": "cenas/clipes/c02-b.mp4",
+          "poster": "cenas/clipes/c02-b.png"
+        }
+      ],
+      "escolhida": "c02-b",
+      "ajustes": []
+    },
+    {
+      "id": "c03",
+      "inicio": 7.7,
+      "fim": 10.3,
+      "frases": [
+        "f05"
+      ],
+      "resumo": "A obra de três andares começa a afundar de um lado",
+      "variantes": [
+        {
+          "id": "c03-a",
+          "recomendada": true,
+          "descricao": "Plano médio: o pedreiro sorri e, quando a obra entorta atrás dele, fica em choque e aponta",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 7.7,
+                "pos": [
+                  1.2,
+                  2.2,
+                  8
+                ],
+                "olha": [
+                  -0.2,
+                  2,
+                  -2
+                ],
+                "fov": 40
+              },
+              {
+                "t": 10.2,
+                "pos": [
+                  1,
+                  2,
+                  6.8
+                ],
+                "olha": [
+                  -0.2,
+                  2,
+                  -2
+                ],
+                "fov": 40,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": -0.3,
+                "z": 1.8,
+                "expressoes": [
+                  [
+                    7.7,
+                    "sorrisao"
+                  ],
+                  [
+                    8.9,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    8.95,
+                    "aponta"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    7.7,
+                    0
+                  ],
+                  [
+                    8.9,
+                    0.8
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": [
+                  [
+                    7.7,
+                    0
+                  ],
+                  [
+                    8.8,
+                    0
+                  ],
+                  [
+                    10.1,
+                    3.5
+                  ]
+                ]
+              },
+              {
+                "tipo": "icone",
+                "icone": "!",
+                "x": 0.4,
+                "y": 3,
+                "z": 1.8,
+                "escala": 0.6,
+                "aparece": 9
+              }
+            ]
+          },
+          "hash": "37cd87a98a",
+          "clipe": "cenas/clipes/c03-a.mp4",
+          "poster": "cenas/clipes/c03-a.png"
+        },
+        {
+          "id": "c03-b",
+          "recomendada": false,
+          "descricao": "Câmera rente ao chão olhando a base: a obra afunda para o lado, uma seta mostra o lado que desce e o pedreiro treme",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 7.7,
+                "pos": [
+                  3.5,
+                  0.6,
+                  6
+                ],
+                "olha": [
+                  1,
+                  1.6,
+                  -4
+                ],
+                "fov": 44
+              },
+              {
+                "t": 10.2,
+                "pos": [
+                  3,
+                  0.5,
+                  4.8
+                ],
+                "olha": [
+                  1,
+                  1.6,
+                  -4
+                ],
+                "fov": 44
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 2.2,
+                "z": 0.8,
+                "expressoes": [
+                  [
+                    7.7,
+                    "neutro"
+                  ],
+                  [
+                    8.9,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    9,
+                    "tremer"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": [
+                  [
+                    7.7,
+                    0
+                  ],
+                  [
+                    8.8,
+                    0
+                  ],
+                  [
+                    10.1,
+                    3.5
+                  ]
+                ]
+              },
+              {
+                "tipo": "seta",
+                "x": 2.4,
+                "y": 1.8,
+                "z": -2,
+                "giro": -90,
+                "escala": 0.8,
+                "aparece": 9
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 9,
+                "ate": 10.2,
+                "pos": [
+                  1.8,
+                  0.3,
+                  -2.4
+                ],
+                "tamanho": 1.2
+              }
+            ]
+          },
+          "hash": "219e51d34c",
+          "clipe": "cenas/clipes/c03-b.mp4",
+          "poster": "cenas/clipes/c03-b.png"
+        }
+      ],
+      "escolhida": "c03-a",
+      "ajustes": []
+    },
+    {
+      "id": "c04",
+      "inicio": 10.3,
+      "fim": 13.6,
+      "frases": [
+        "f06"
+      ],
+      "resumo": "Chega a guerra contra Gênova e a obra para",
+      "variantes": [
+        {
+          "id": "c04-a",
+          "recomendada": true,
+          "descricao": "O soldado entra correndo com o aviso da guerra, o pedreiro abre os braços e larga a obra",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 10.3,
+                "pos": [
+                  0,
+                  2,
+                  7
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  0
+                ],
+                "fov": 40
+              },
+              {
+                "t": 13.5,
+                "pos": [
+                  0.3,
+                  1.8,
+                  5.8
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  0
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "soldado_medieval"
+            },
+            "atores": [
+              {
+                "id": "soldado_medieval",
+                "x": [
+                  [
+                    10.3,
+                    -2.6
+                  ],
+                  [
+                    11.6,
+                    -0.6
+                  ]
+                ],
+                "z": 0.6,
+                "expressoes": [
+                  [
+                    10.3,
+                    "serio"
+                  ],
+                  [
+                    11.6,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    11.7,
+                    "aponta"
+                  ]
+                ]
+              },
+              {
+                "id": "pedreiro_medieval",
+                "x": 0.8,
+                "z": -0.4,
+                "expressoes": [
+                  [
+                    10.3,
+                    "sorriso"
+                  ],
+                  [
+                    11.8,
+                    "choque"
+                  ],
+                  [
+                    12.6,
+                    "decepcao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.6,
+                    "abre"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "balao",
+                "texto": "GUERRA!",
+                "x": -0.6,
+                "y": 2.9,
+                "z": 0.6,
+                "aparece": 11.4,
+                "some": 13.6
+              }
+            ]
+          },
+          "hash": "b1d024f2b7",
+          "clipe": "cenas/clipes/c04-a.mp4",
+          "poster": "cenas/clipes/c04-a.png"
+        },
+        {
+          "id": "c04-b",
+          "recomendada": false,
+          "descricao": "Close no soldado gritando \"GÊNOVA!\" com uma explosão de desenho; ao fundo o pedreiro vai embora andando",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 10.3,
+                "pos": [
+                  0,
+                  1.8,
+                  3.4
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  0.8
+                ],
+                "fov": 38
+              },
+              {
+                "t": 13.5,
+                "pos": [
+                  0.4,
+                  1.9,
+                  4.6
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  0.8
+                ],
+                "fov": 40,
+                "roll": -4
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "soldado_medieval"
+            },
+            "atores": [
+              {
+                "id": "soldado_medieval",
+                "x": 0,
+                "z": 0.8,
+                "expressoes": [
+                  [
+                    10.3,
+                    "serio"
+                  ],
+                  [
+                    11.4,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    11.4,
+                    "maos_cintura"
+                  ]
+                ]
+              },
+              {
+                "id": "pedreiro_medieval",
+                "x": [
+                  [
+                    11.8,
+                    1.2
+                  ],
+                  [
+                    13.5,
+                    4.5
+                  ]
+                ],
+                "z": -3,
+                "expressoes": [
+                  [
+                    10.3,
+                    "decepcao"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "balao",
+                "texto": "GÊNOVA!",
+                "x": 0.7,
+                "y": 2.8,
+                "z": 0.8,
+                "escala": 0.8,
+                "aparece": 11.2
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "explosao",
+                "de": 11.2,
+                "ate": 11.8,
+                "pos": [
+                  -0.6,
+                  2.6,
+                  0.8
+                ],
+                "tamanho": 0.9
+              }
+            ]
+          },
+          "hash": "8113ae86ae",
+          "clipe": "cenas/clipes/c04-b.mp4",
+          "poster": "cenas/clipes/c04-b.png"
+        }
+      ],
+      "escolhida": "c04-a",
+      "ajustes": []
+    },
+    {
+      "id": "c05",
+      "inicio": 13.6,
+      "fim": 19.4,
+      "frases": [
+        "f07",
+        "f08"
+      ],
+      "resumo": "A obra parada por quase cem anos e o mato tomando conta",
+      "variantes": [
+        {
+          "id": "c05-a",
+          "recomendada": true,
+          "descricao": "Fim de tarde, câmera girando devagar: o mato brota em volta da obra abandonada e no fim um balão do mato diz \"É MINHA!\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 13.6,
+                "pos": [
+                  -6,
+                  3.5,
+                  10
+                ],
+                "olha": [
+                  0,
+                  2,
+                  -3
+                ],
+                "fov": 42
+              },
+              {
+                "t": 19.3,
+                "pos": [
+                  4,
+                  2.6,
+                  8
+                ],
+                "olha": [
+                  0,
+                  2,
+                  -3
+                ],
+                "fov": 42
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2.6,
+                "z": -2.2,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 13.9
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.5,
+                "z": -2,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 14.35
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.4,
+                "z": -1.4,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 14.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.3,
+                "z": -1.3,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 15.25
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.1,
+                "z": -1.1,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 15.7
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -3,
+                "z": -4.6,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 16.15
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3.1,
+                "z": -4.3,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 16.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2.2,
+                "z": -6,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 17.05
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.2,
+                "z": -6.2,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 17.5
+              },
+              {
+                "tipo": "balao",
+                "texto": "É MINHA!",
+                "x": 0.6,
+                "y": 2.4,
+                "z": -1,
+                "escala": 0.9,
+                "aparece": 17.6
+              },
+              {
+                "tipo": "icone",
+                "icone": "coracao",
+                "x": -1.4,
+                "y": 1.8,
+                "z": -1.3,
+                "escala": 0.5,
+                "aparece": 18.2
+              }
+            ]
+          },
+          "hash": "e0b493617c",
+          "clipe": "cenas/clipes/c05-a.mp4",
+          "poster": "cenas/clipes/c05-a.png"
+        },
+        {
+          "id": "c05-b",
+          "recomendada": false,
+          "descricao": "O pedreiro sentado esperando, entediado, enquanto o mato cresce em volta dele; balão \"CEM ANOS...\" e depois a câmera abre na obra tomada pelo mato",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 13.6,
+                "pos": [
+                  0.5,
+                  1.6,
+                  5
+                ],
+                "olha": [
+                  0,
+                  1.2,
+                  0.4
+                ],
+                "fov": 40
+              },
+              {
+                "t": 16.8,
+                "pos": [
+                  0.6,
+                  1.7,
+                  5.4
+                ],
+                "olha": [
+                  0,
+                  1.2,
+                  0.4
+                ],
+                "fov": 40
+              },
+              {
+                "t": 19.3,
+                "pos": [
+                  1,
+                  3,
+                  10
+                ],
+                "olha": [
+                  0,
+                  2.2,
+                  -2
+                ],
+                "fov": 42
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 0.3,
+                "z": 0.4,
+                "expressoes": [
+                  [
+                    13.6,
+                    "decepcao"
+                  ],
+                  [
+                    15.6,
+                    "assobio"
+                  ],
+                  [
+                    17.8,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    13.6,
+                    "senta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2.6,
+                "z": -2.2,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 14.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.5,
+                "z": -2,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 14.85
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.4,
+                "z": -1.4,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 15.3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.3,
+                "z": -1.3,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 15.75
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.1,
+                "z": -1.1,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 16.2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -3,
+                "z": -4.6,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 16.65
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3.1,
+                "z": -4.3,
+                "escala": 1.7,
+                "cor": "#6fa13a",
+                "aparece": 17.1
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2.2,
+                "z": -6,
+                "escala": 2,
+                "cor": "#6fa13a",
+                "aparece": 17.55
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.2,
+                "z": -6.2,
+                "escala": 2.3,
+                "cor": "#6fa13a",
+                "aparece": 18
+              },
+              {
+                "tipo": "balao",
+                "texto": "CEM ANOS...",
+                "x": -0.5,
+                "y": 2.3,
+                "z": 0.4,
+                "escala": 0.7,
+                "aparece": 13.9,
+                "some": 15.4
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "notas",
+                "de": 15.6,
+                "ate": 17.6,
+                "pos": [
+                  0.7,
+                  2,
+                  0.4
+                ],
+                "tamanho": 0.6
+              }
+            ]
+          },
+          "hash": "993a4262df",
+          "clipe": "cenas/clipes/c05-b.mp4",
+          "poster": "cenas/clipes/c05-b.png"
+        }
+      ],
+      "escolhida": "c05-a",
+      "ajustes": []
+    },
+    {
+      "id": "c06",
+      "inicio": 19.4,
+      "fim": 24,
+      "frases": [
+        "f09",
+        "f10"
+      ],
+      "resumo": "\"Pensa comigo\": o chão de Pisa é barro mole cheio de água",
+      "variantes": [
+        {
+          "id": "c06-a",
+          "recomendada": false,
+          "descricao": "Aproxima no pedreiro de mão no queixo em \"Pensa comigo\"; depois ele aponta para o chão, a seta desce e o balão diz \"BARRO MOLE\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 19.4,
+                "pos": [
+                  0.3,
+                  1.8,
+                  4.2
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  0.5
+                ],
+                "fov": 40
+              },
+              {
+                "t": 20.6,
+                "pos": [
+                  0.2,
+                  1.8,
+                  3
+                ],
+                "olha": [
+                  0,
+                  1.7,
+                  0.5
+                ],
+                "fov": 38
+              },
+              {
+                "t": 23.9,
+                "pos": [
+                  0.8,
+                  1.7,
+                  4.4
+                ],
+                "olha": [
+                  0.3,
+                  1.2,
+                  0.5
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 0,
+                "z": 0.5,
+                "expressoes": [
+                  [
+                    19.4,
+                    "serio"
+                  ],
+                  [
+                    21,
+                    "sorriso_fechado"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    19.5,
+                    "pensa"
+                  ],
+                  [
+                    21,
+                    "aponta"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    19.4,
+                    0
+                  ],
+                  [
+                    21,
+                    0.6
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "seta",
+                "x": 0.9,
+                "y": 1.2,
+                "z": 0.5,
+                "giro": -90,
+                "escala": 0.5,
+                "aparece": 21
+              },
+              {
+                "tipo": "balao",
+                "texto": "BARRO MOLE",
+                "x": 0.9,
+                "y": 2.5,
+                "z": 0.5,
+                "escala": 0.7,
+                "aparece": 22
+              }
+            ]
+          },
+          "hash": "dcaa01ead3",
+          "clipe": "cenas/clipes/c06-a.mp4",
+          "poster": "cenas/clipes/c06-a.png"
+        },
+        {
+          "id": "c06-b",
+          "recomendada": false,
+          "descricao": "Câmera baixa na base da torre: em \"Pensa comigo\" o pedreiro pensa ao lado, depois aponta para o chão com o pensamento \"BARRO + ÁGUA\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 19.4,
+                "pos": [
+                  2,
+                  0.8,
+                  7
+                ],
+                "olha": [
+                  0.3,
+                  1.4,
+                  -2
+                ],
+                "fov": 42
+              },
+              {
+                "t": 23.9,
+                "pos": [
+                  1.2,
+                  0.7,
+                  5.4
+                ],
+                "olha": [
+                  0.3,
+                  1.2,
+                  -2
+                ],
+                "fov": 42,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 6,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 0.6,
+                "z": 1.8,
+                "expressoes": [
+                  [
+                    19.4,
+                    "serio"
+                  ],
+                  [
+                    21.2,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    19.5,
+                    "pensa"
+                  ],
+                  [
+                    21.2,
+                    "aponta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "pensamento",
+                "texto": "BARRO + ÁGUA",
+                "x": 1,
+                "y": 3,
+                "z": 1.8,
+                "escala": 0.8,
+                "aparece": 21.2
+              },
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "x": 1.2,
+                "y": 2.6,
+                "z": 1.8,
+                "escala": 0.4,
+                "aparece": 19.6,
+                "some": 21.2
+              }
+            ]
+          },
+          "hash": "1cedb1ffc2",
+          "clipe": "cenas/clipes/c06-b.mp4",
+          "poster": "cenas/clipes/c06-b.png"
+        },
+        {
+          "id": "c06-c",
+          "recomendada": true,
+          "descricao": "Chão de terra: câmera ao longo da trilha de barro, aproxima no pedreiro pensando em \"Pensa comigo\"; depois ele aponta para o chão, a seta desce e o balão diz \"BARRO MOLE\", com a torre torta ao fundo",
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 19.4,
+                "pos": [
+                  4.4,
+                  1.8,
+                  0.3
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  0
+                ],
+                "fov": 40
+              },
+              {
+                "t": 20.6,
+                "pos": [
+                  3.1,
+                  1.8,
+                  0.2
+                ],
+                "olha": [
+                  0,
+                  1.7,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 23.9,
+                "pos": [
+                  4.6,
+                  1.5,
+                  0.5
+                ],
+                "olha": [
+                  0,
+                  0.9,
+                  0
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    19.4,
+                    "serio"
+                  ],
+                  [
+                    21,
+                    "sorriso_fechado"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    19.5,
+                    "pensa"
+                  ],
+                  [
+                    21,
+                    "aponta"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    19.4,
+                    0
+                  ],
+                  [
+                    21,
+                    0.6
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": -8,
+                "z": 0,
+                "giro": 90,
+                "etapa": 0.375,
+                "inclinacao": 3.5
+              },
+              {
+                "tipo": "seta",
+                "x": 0.3,
+                "y": 1,
+                "z": 0.6,
+                "giro": -90,
+                "escala": 0.5,
+                "aparece": 21
+              },
+              {
+                "tipo": "balao",
+                "texto": "BARRO MOLE",
+                "x": 0.3,
+                "y": 2.5,
+                "z": 0.6,
+                "escala": 0.7,
+                "aparece": 22
+              }
+            ]
+          },
+          "hash": "e98d7541ac",
+          "clipe": "cenas/clipes/c06-c.mp4",
+          "poster": "cenas/clipes/c06-c.png"
+        },
+        {
+          "id": "c06-d",
+          "recomendada": false,
+          "descricao": "Plano alto olhando o chão de terra: o pedreiro pensa em \"Pensa comigo\", depois aponta para o barro aos pés dele com o pensamento \"BARRO + ÁGUA\"",
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 19.4,
+                "pos": [
+                  3.2,
+                  2.6,
+                  0
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ],
+                "fov": 40
+              },
+              {
+                "t": 21,
+                "pos": [
+                  3.4,
+                  4.2,
+                  0
+                ],
+                "olha": [
+                  0,
+                  0.4,
+                  0
+                ],
+                "fov": 44
+              },
+              {
+                "t": 23.9,
+                "pos": [
+                  3,
+                  4.6,
+                  0.2
+                ],
+                "olha": [
+                  0,
+                  0.2,
+                  0
+                ],
+                "fov": 44,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    19.4,
+                    "serio"
+                  ],
+                  [
+                    21.2,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    19.5,
+                    "pensa"
+                  ],
+                  [
+                    21.2,
+                    "aponta"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    19.4,
+                    0
+                  ],
+                  [
+                    21.2,
+                    0.5
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "x": 0.2,
+                "y": 2.4,
+                "z": 0.5,
+                "escala": 0.4,
+                "aparece": 19.6,
+                "some": 21.2
+              },
+              {
+                "tipo": "pensamento",
+                "texto": "BARRO + ÁGUA",
+                "x": 0.3,
+                "y": 2.6,
+                "z": 0.6,
+                "escala": 0.7,
+                "aparece": 21.2
+              },
+              {
+                "tipo": "seta",
+                "x": 0.6,
+                "y": 0.8,
+                "z": 0.7,
+                "giro": -90,
+                "escala": 0.45,
+                "aparece": 21.4
+              }
+            ]
+          },
+          "hash": "7de1491d54",
+          "clipe": "cenas/clipes/c06-d.mp4",
+          "poster": "cenas/clipes/c06-d.png"
+        }
+      ],
+      "escolhida": "c06-c",
+      "ajustes": [
+        {
+          "em": "2026-11-22T21:14:01.966Z",
+          "texto": "o piso é pra ser terra ou barro, no video ficou com piso de pedra",
+          "resolvido": true
+        }
+      ]
+    },
+    {
+      "id": "c07",
+      "inicio": 24,
+      "fim": 29.9,
+      "frases": [
+        "f11",
+        "f12"
+      ],
+      "resumo": "A comparação: esponja molhada embaixo de um peso, que com o tempo fica firme",
+      "variantes": [
+        {
+          "id": "c07-a",
+          "recomendada": true,
+          "descricao": "Close numa mesa: a esponja molhada recebe um caixote em cima, que afunda um pouco; o pedreiro aponta e no fim comemora com o balão \"FIRME!\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 24,
+                "pos": [
+                  0.2,
+                  1.7,
+                  4
+                ],
+                "olha": [
+                  0.2,
+                  1.1,
+                  0
+                ],
+                "fov": 46
+              },
+              {
+                "t": 29.8,
+                "pos": [
+                  0.2,
+                  1.65,
+                  3.9
+                ],
+                "olha": [
+                  0.2,
+                  1.1,
+                  0
+                ],
+                "fov": 46
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": [
+                0.85,
+                1,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": -0.35,
+                "z": 0.5,
+                "expressoes": [
+                  [
+                    24,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    27,
+                    "serio"
+                  ],
+                  [
+                    28.6,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    24.2,
+                    "aponta"
+                  ],
+                  [
+                    28.6,
+                    "comemora"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "mesa",
+                "x": 0.85,
+                "z": 0
+              },
+              {
+                "tipo": "esponja_molhada",
+                "x": 0.85,
+                "y": 0.82,
+                "z": 0,
+                "escala": 1.1,
+                "aparece": 24.1
+              },
+              {
+                "tipo": "caixote",
+                "x": 0.85,
+                "y": [
+                  [
+                    25.2,
+                    1.6
+                  ],
+                  [
+                    25.8,
+                    1.1
+                  ],
+                  [
+                    29.5,
+                    1.04
+                  ]
+                ],
+                "z": 0,
+                "escala": 0.35,
+                "aparece": 25.2
+              },
+              {
+                "tipo": "balao",
+                "texto": "FIRME!",
+                "x": 1,
+                "y": 1.9,
+                "z": 0,
+                "escala": 0.5,
+                "aparece": 28.6
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 25.8,
+                "ate": 26.6,
+                "pos": [
+                  0.85,
+                  1,
+                  0.1
+                ],
+                "tamanho": 0.5
+              }
+            ]
+          },
+          "hash": "51021d6fcc",
+          "clipe": "cenas/clipes/c07-a.mp4",
+          "poster": "cenas/clipes/c07-a.png"
+        },
+        {
+          "id": "c07-b",
+          "recomendada": false,
+          "descricao": "Geral com uma esponja gigante no chão da praça: o caixote cai em cima, o pedreiro pensa e depois sobe nela e pula para mostrar que ficou firme",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 24,
+                "pos": [
+                  -1,
+                  2.4,
+                  7
+                ],
+                "olha": [
+                  0,
+                  1,
+                  0
+                ],
+                "fov": 40
+              },
+              {
+                "t": 29.8,
+                "pos": [
+                  1,
+                  2.2,
+                  6.5
+                ],
+                "olha": [
+                  0,
+                  1,
+                  0
+                ],
+                "fov": 40
+              }
+            ],
+            "foco": {
+              "desfoque": 6,
+              "alvo": [
+                0.5,
+                1,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": [
+                  [
+                    24,
+                    -0.8
+                  ],
+                  [
+                    28.4,
+                    -0.8
+                  ],
+                  [
+                    28.9,
+                    0.5
+                  ]
+                ],
+                "z": 0,
+                "y": [
+                  [
+                    28.4,
+                    0
+                  ],
+                  [
+                    28.9,
+                    1.1
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    24,
+                    "sorriso"
+                  ],
+                  [
+                    26.9,
+                    "serio"
+                  ],
+                  [
+                    28.9,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    24.2,
+                    "aponta"
+                  ],
+                  [
+                    26.9,
+                    "pensa"
+                  ],
+                  [
+                    29,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "esponja_molhada",
+                "x": 0.5,
+                "z": 0,
+                "escala": 3.2
+              },
+              {
+                "tipo": "caixote",
+                "x": 0.5,
+                "y": [
+                  [
+                    25.2,
+                    3.2
+                  ],
+                  [
+                    25.8,
+                    1.1
+                  ],
+                  [
+                    28.3,
+                    0.95
+                  ]
+                ],
+                "z": 0,
+                "escala": 1,
+                "aparece": 25.2,
+                "some": 28.4
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 25.8,
+                "ate": 26.6,
+                "pos": [
+                  0.5,
+                  0.6,
+                  0.5
+                ],
+                "tamanho": 1.2
+              },
+              {
+                "tipo": "estrelas",
+                "de": 29,
+                "ate": 29.9,
+                "pos": [
+                  0.5,
+                  3.6,
+                  0
+                ],
+                "tamanho": 0.7
+              }
+            ]
+          },
+          "hash": "810f398d4e",
+          "clipe": "cenas/clipes/c07-b.mp4",
+          "poster": "cenas/clipes/c07-b.png"
+        }
+      ],
+      "escolhida": "c07-a",
+      "ajustes": []
+    },
+    {
+      "id": "c08",
+      "inicio": 29.9,
+      "fim": 33,
+      "frases": [
+        "f13"
+      ],
+      "resumo": "Sem a pausa, a torre teria caído",
+      "variantes": [
+        {
+          "id": "c08-a",
+          "recomendada": true,
+          "descricao": "Fim de tarde dramático: a obra tomba de vez, explosão na queda e o pedreiro em choque com um X na tela",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 29.9,
+                "pos": [
+                  -3,
+                  3,
+                  13
+                ],
+                "olha": [
+                  0,
+                  3,
+                  -3
+                ],
+                "fov": 44
+              },
+              {
+                "t": 32.9,
+                "pos": [
+                  -2,
+                  2.6,
+                  11
+                ],
+                "olha": [
+                  0.8,
+                  2.6,
+                  -3
+                ],
+                "fov": 44,
+                "roll": -4
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": -1,
+                "z": 2,
+                "expressoes": [
+                  [
+                    29.9,
+                    "nervoso"
+                  ],
+                  [
+                    31.6,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    31.6,
+                    "maos_cabeca"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": [
+                  [
+                    29.9,
+                    3.5
+                  ],
+                  [
+                    30.8,
+                    6
+                  ],
+                  [
+                    31.6,
+                    40
+                  ]
+                ]
+              },
+              {
+                "tipo": "icone",
+                "icone": "x",
+                "x": 0,
+                "y": 3.4,
+                "z": 2,
+                "escala": 0.7,
+                "aparece": 31.8
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "explosao",
+                "de": 31.5,
+                "ate": 32.3,
+                "pos": [
+                  4,
+                  1,
+                  -3
+                ],
+                "tamanho": 2
+              },
+              {
+                "tipo": "poeira",
+                "de": 31.5,
+                "ate": 32.9,
+                "pos": [
+                  4,
+                  0.4,
+                  -3
+                ],
+                "tamanho": 2.2
+              }
+            ]
+          },
+          "hash": "37d57cbf6e",
+          "clipe": "cenas/clipes/c08-a.mp4",
+          "poster": "cenas/clipes/c08-a.png"
+        },
+        {
+          "id": "c08-b",
+          "recomendada": false,
+          "descricao": "Close no pedreiro imaginando, com o pensamento \"E SE...?\": atrás a obra começa a tombar, ele treme e fica aliviado quando ela volta",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 29.9,
+                "pos": [
+                  0.4,
+                  2,
+                  5.5
+                ],
+                "olha": [
+                  0,
+                  2.2,
+                  0
+                ],
+                "fov": 40
+              },
+              {
+                "t": 32.9,
+                "pos": [
+                  0.6,
+                  2.3,
+                  6.8
+                ],
+                "olha": [
+                  0,
+                  2.8,
+                  -1
+                ],
+                "fov": 42,
+                "roll": 4
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "pedreiro_medieval"
+            },
+            "atores": [
+              {
+                "id": "pedreiro_medieval",
+                "x": -0.4,
+                "z": 0.6,
+                "expressoes": [
+                  [
+                    29.9,
+                    "nervoso"
+                  ],
+                  [
+                    31.2,
+                    "choque"
+                  ],
+                  [
+                    32.4,
+                    "alivio"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    31.2,
+                    "tremer"
+                  ],
+                  [
+                    32.4,
+                    "parado"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 0.375,
+                "inclinacao": [
+                  [
+                    29.9,
+                    3.5
+                  ],
+                  [
+                    31.8,
+                    14
+                  ],
+                  [
+                    32.4,
+                    3.5
+                  ]
+                ]
+              },
+              {
+                "tipo": "pensamento",
+                "texto": "E SE...?",
+                "x": 0.4,
+                "y": 3,
+                "z": 0.6,
+                "escala": 0.6,
+                "aparece": 30
+              }
+            ]
+          },
+          "hash": "f78348d911",
+          "clipe": "cenas/clipes/c08-b.mp4",
+          "poster": "cenas/clipes/c08-b.png"
+        }
+      ],
+      "escolhida": "c08-a",
+      "ajustes": []
+    },
+    {
+      "id": "c09",
+      "inicio": 33,
+      "fim": 36.9,
+      "frases": [
+        "f14"
+      ],
+      "resumo": "Oitocentos anos depois, a torre completa ainda ameaçava cair",
+      "variantes": [
+        {
+          "id": "c09-a",
+          "recomendada": true,
+          "descricao": "Clarão para os dias de hoje: a torre completa, bem mais torta, cercada de cones; o engenheiro chega preocupado e aponta",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 33,
+                "pos": [
+                  -4,
+                  4,
+                  17
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 42
+              },
+              {
+                "t": 36.8,
+                "pos": [
+                  -2.5,
+                  3.5,
+                  15.5
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 44
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": [
+                  [
+                    33,
+                    1.8
+                  ],
+                  [
+                    35,
+                    0.2
+                  ]
+                ],
+                "z": 2,
+                "expressoes": [
+                  [
+                    33,
+                    "serio"
+                  ],
+                  [
+                    35,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    35.1,
+                    "aponta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": [
+                  [
+                    33,
+                    5.5
+                  ],
+                  [
+                    35.5,
+                    5.5
+                  ],
+                  [
+                    36,
+                    6.2
+                  ],
+                  [
+                    36.6,
+                    5.5
+                  ]
+                ]
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": -3.6,
+                "z": -3.4
+              },
+              {
+                "tipo": "cone",
+                "x": 3.8,
+                "z": -3.2
+              }
+            ]
+          },
+          "hash": "d6df7ed33c",
+          "clipe": "cenas/clipes/c09-a.mp4",
+          "poster": "cenas/clipes/c09-a.png"
+        },
+        {
+          "id": "c09-b",
+          "recomendada": false,
+          "descricao": "Clarão: close no engenheiro preocupado e a câmera sobe pela torre torta até o sino, com um alerta lá em cima",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 33,
+                "pos": [
+                  0.3,
+                  1.8,
+                  5.5
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1.8
+                ],
+                "fov": 38
+              },
+              {
+                "t": 34.6,
+                "pos": [
+                  0.3,
+                  1.8,
+                  5.5
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1.8
+                ],
+                "fov": 38
+              },
+              {
+                "t": 36.8,
+                "pos": [
+                  -1,
+                  4,
+                  14
+                ],
+                "olha": [
+                  0.4,
+                  8,
+                  -3
+                ],
+                "fov": 46
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "engenheiro_moderno"
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": 0,
+                "z": 1.8,
+                "expressoes": [
+                  [
+                    33,
+                    "serio"
+                  ],
+                  [
+                    34.4,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    33.2,
+                    "segura"
+                  ],
+                  [
+                    34.4,
+                    "pensa"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    33,
+                    0
+                  ],
+                  [
+                    34.4,
+                    0.5
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": 5.5
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": -3.6,
+                "z": -3.4
+              },
+              {
+                "tipo": "cone",
+                "x": 3.8,
+                "z": -3.2
+              },
+              {
+                "tipo": "icone",
+                "icone": "!",
+                "x": 2.2,
+                "y": 8,
+                "z": -1,
+                "aparece": 35.6
+              }
+            ]
+          },
+          "hash": "ce0d3d5f9a",
+          "clipe": "cenas/clipes/c09-b.mp4",
+          "poster": "cenas/clipes/c09-b.png"
+        }
+      ],
+      "escolhida": "c09-a",
+      "ajustes": []
+    },
+    {
+      "id": "c10",
+      "inicio": 36.9,
+      "fim": 40,
+      "frases": [
+        "f15"
+      ],
+      "resumo": "O que os engenheiros fizeram para endireitar?",
+      "variantes": [
+        {
+          "id": "c10-a",
+          "recomendada": true,
+          "descricao": "Close no engenheiro de mão no queixo; um \"?\" aparece e ele abre os braços como quem pergunta",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 36.9,
+                "pos": [
+                  0.4,
+                  1.8,
+                  4.2
+                ],
+                "olha": [
+                  0,
+                  1.7,
+                  1
+                ],
+                "fov": 40
+              },
+              {
+                "t": 39.9,
+                "pos": [
+                  0.2,
+                  1.8,
+                  3.2
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1
+                ],
+                "fov": 38
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "engenheiro_moderno"
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": 0,
+                "z": 1,
+                "expressoes": [
+                  [
+                    36.9,
+                    "serio"
+                  ],
+                  [
+                    38.4,
+                    "sorriso_fechado"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    37,
+                    "pensa"
+                  ],
+                  [
+                    38.6,
+                    "abre"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": 5.5
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "x": 0.7,
+                "y": 2.8,
+                "z": 1,
+                "escala": 0.5,
+                "aparece": 37.6
+              }
+            ]
+          },
+          "hash": "8e42cfc0d9",
+          "clipe": "cenas/clipes/c10-a.mp4",
+          "poster": "cenas/clipes/c10-a.png"
+        },
+        {
+          "id": "c10-b",
+          "recomendada": false,
+          "descricao": "Geral: o engenheiro anda até a base da torre, para e pensa, com o pensamento \"E AGORA?\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 36.9,
+                "pos": [
+                  4,
+                  2.5,
+                  11
+                ],
+                "olha": [
+                  0,
+                  3,
+                  -2
+                ],
+                "fov": 42
+              },
+              {
+                "t": 39.9,
+                "pos": [
+                  2.5,
+                  2.2,
+                  9
+                ],
+                "olha": [
+                  0,
+                  2.6,
+                  -2
+                ],
+                "fov": 42
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": [
+                  [
+                    36.9,
+                    3
+                  ],
+                  [
+                    38.6,
+                    0.8
+                  ]
+                ],
+                "z": 1.5,
+                "expressoes": [
+                  [
+                    36.9,
+                    "serio"
+                  ],
+                  [
+                    38.6,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    38.7,
+                    "pensa"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": 5.5
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": -3.6,
+                "z": -3.4
+              },
+              {
+                "tipo": "cone",
+                "x": 3.8,
+                "z": -3.2
+              },
+              {
+                "tipo": "pensamento",
+                "texto": "E AGORA?",
+                "x": 1.4,
+                "y": 3,
+                "z": 1.5,
+                "escala": 0.7,
+                "aparece": 38.7
+              }
+            ]
+          },
+          "hash": "18827b2df1",
+          "clipe": "cenas/clipes/c10-b.mp4",
+          "poster": "cenas/clipes/c10-b.png"
+        }
+      ],
+      "escolhida": "c10-b",
+      "ajustes": []
+    },
+    {
+      "id": "c11",
+      "inicio": 40,
+      "fim": 43,
+      "frases": [
+        "f16",
+        "f17"
+      ],
+      "resumo": "Virada: não colocaram nada, tiraram terra, e a torre volta um pouquinho",
+      "variantes": [
+        {
+          "id": "c11-a",
+          "recomendada": true,
+          "descricao": "O engenheiro abre os braços com um X (\"nada\"), aí surge o monte de terra com a pá, a torre volta um pouco e a câmera avança com giro",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 40,
+                "pos": [
+                  -1,
+                  4,
+                  16
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 44
+              },
+              {
+                "t": 41.6,
+                "pos": [
+                  -1,
+                  4,
+                  15.6
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 44
+              },
+              {
+                "t": 42.9,
+                "pos": [
+                  0,
+                  4.2,
+                  17.5
+                ],
+                "olha": [
+                  0.3,
+                  6,
+                  -3
+                ],
+                "fov": 46,
+                "roll": 4
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": -1.2,
+                "z": 1.6,
+                "expressoes": [
+                  [
+                    40,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    41.7,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    40.1,
+                    "abre"
+                  ],
+                  [
+                    41.8,
+                    "comemora"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": [
+                  [
+                    40,
+                    5.5
+                  ],
+                  [
+                    41.8,
+                    5.5
+                  ],
+                  [
+                    42.8,
+                    4
+                  ]
+                ]
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "icone",
+                "icone": "x",
+                "x": -0.4,
+                "y": 3.1,
+                "z": 1.6,
+                "escala": 0.5,
+                "aparece": 40.1,
+                "some": 41.6
+              },
+              {
+                "tipo": "terra_retirada",
+                "x": 0.6,
+                "z": 1.2,
+                "escala": 1.3,
+                "aparece": 41.65
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 41.65,
+                "ate": 42.4,
+                "pos": [
+                  0.6,
+                  0.4,
+                  1.2
+                ],
+                "tamanho": 1
+              }
+            ]
+          },
+          "hash": "59e389d6b7",
+          "clipe": "cenas/clipes/c11-a.mp4",
+          "poster": "cenas/clipes/c11-a.png"
+        },
+        {
+          "id": "c11-b",
+          "recomendada": false,
+          "descricao": "Câmera baixa na base: o monte de terra pula para fora com estrelas e a câmera sobe pela torre enquanto ela se endireita um pouco",
+          "cena": {
+            "cenario": "praca",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 40,
+                "pos": [
+                  -2.5,
+                  0.9,
+                  5.5
+                ],
+                "olha": [
+                  -1.6,
+                  0.9,
+                  0.6
+                ],
+                "fov": 40
+              },
+              {
+                "t": 41.6,
+                "pos": [
+                  -2.5,
+                  0.9,
+                  5
+                ],
+                "olha": [
+                  -1.6,
+                  0.9,
+                  0.6
+                ],
+                "fov": 40
+              },
+              {
+                "t": 42.9,
+                "pos": [
+                  -2,
+                  3,
+                  13
+                ],
+                "olha": [
+                  0,
+                  6,
+                  -3
+                ],
+                "fov": 46,
+                "roll": -4
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": -2.2,
+                "z": 1.4,
+                "expressoes": [
+                  [
+                    40,
+                    "decepcao"
+                  ],
+                  [
+                    41.7,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    40.1,
+                    "abre"
+                  ],
+                  [
+                    41.8,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": [
+                  [
+                    40,
+                    5.5
+                  ],
+                  [
+                    41.8,
+                    5.5
+                  ],
+                  [
+                    42.8,
+                    4
+                  ]
+                ]
+              },
+              {
+                "tipo": "cone",
+                "x": -2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "cone",
+                "x": 2.6,
+                "z": -1.3
+              },
+              {
+                "tipo": "terra_retirada",
+                "x": -0.8,
+                "z": 0.6,
+                "escala": 1.2,
+                "aparece": 41.65
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "estrelas",
+                "de": 41.7,
+                "ate": 42.6,
+                "pos": [
+                  -0.8,
+                  1.6,
+                  0.6
+                ],
+                "tamanho": 0.8
+              }
+            ]
+          },
+          "hash": "734a349efc",
+          "clipe": "cenas/clipes/c11-b.mp4",
+          "poster": "cenas/clipes/c11-b.png"
+        }
+      ],
+      "escolhida": "c11-a",
+      "ajustes": []
+    },
+    {
+      "id": "c12",
+      "inicio": 43,
+      "fim": 46.83,
+      "frases": [
+        "f18"
+      ],
+      "resumo": "Pergunta final: reta ou torta?",
+      "variantes": [
+        {
+          "id": "c12-a",
+          "recomendada": true,
+          "descricao": "Fim de tarde: a torre ainda torta, o engenheiro acena na frente e aparece o balão \"RETA OU TORTA?\"",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 43,
+                "pos": [
+                  -3,
+                  4,
+                  18
+                ],
+                "olha": [
+                  0,
+                  5.8,
+                  -3
+                ],
+                "fov": 44
+              },
+              {
+                "t": 46.7,
+                "pos": [
+                  -2,
+                  3.6,
+                  16
+                ],
+                "olha": [
+                  0,
+                  5.5,
+                  -3
+                ],
+                "fov": 44
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": -1.4,
+                "z": 2,
+                "expressoes": [
+                  [
+                    43,
+                    "sorriso"
+                  ],
+                  [
+                    44.6,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    43.2,
+                    "acena"
+                  ],
+                  [
+                    44.8,
+                    "aponta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": 4
+              },
+              {
+                "tipo": "terra_retirada",
+                "x": 0.6,
+                "z": 1.2,
+                "escala": 1.3
+              },
+              {
+                "tipo": "balao",
+                "texto": "RETA OU TORTA?",
+                "x": -0.2,
+                "y": 3.4,
+                "z": 2,
+                "escala": 0.9,
+                "aparece": 44.4
+              }
+            ]
+          },
+          "hash": "d98a16b286",
+          "clipe": "cenas/clipes/c12-a.mp4",
+          "poster": "cenas/clipes/c12-a.png"
+        },
+        {
+          "id": "c12-b",
+          "recomendada": false,
+          "descricao": "Close no engenheiro olhando de um lado para o outro, com o pensamento \"RETA OU TORTA?\", e termina sorrindo de braços abertos",
+          "cena": {
+            "cenario": "praca",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 43,
+                "pos": [
+                  0.3,
+                  1.8,
+                  4.4
+                ],
+                "olha": [
+                  0,
+                  1.8,
+                  1.2
+                ],
+                "fov": 40
+              },
+              {
+                "t": 46.7,
+                "pos": [
+                  0.2,
+                  1.8,
+                  3.4
+                ],
+                "olha": [
+                  0,
+                  1.9,
+                  1.2
+                ],
+                "fov": 38
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "engenheiro_moderno"
+            },
+            "atores": [
+              {
+                "id": "engenheiro_moderno",
+                "x": 0,
+                "z": 1.2,
+                "expressoes": [
+                  [
+                    43,
+                    "serio"
+                  ],
+                  [
+                    44.4,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    45.8,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    43.2,
+                    "pensa"
+                  ],
+                  [
+                    45.8,
+                    "abre"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    43,
+                    -0.7
+                  ],
+                  [
+                    44,
+                    0.7
+                  ],
+                  [
+                    45,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "torre_de_pisa",
+                "x": 0,
+                "z": -4,
+                "etapa": 1,
+                "inclinacao": 4
+              },
+              {
+                "tipo": "pensamento",
+                "texto": "RETA OU TORTA?",
+                "x": 0.6,
+                "y": 2.9,
+                "z": 1.2,
+                "escala": 0.6,
+                "aparece": 44.2
+              }
+            ]
+          },
+          "hash": "f8177c382a",
+          "clipe": "cenas/clipes/c12-b.mp4",
+          "poster": "cenas/clipes/c12-b.png"
+        }
+      ],
+      "escolhida": "c12-b",
+      "ajustes": []
+    }
+  ]
+}

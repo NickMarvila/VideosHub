@@ -1,0 +1,522 @@
+{
+ "voz": {
+  "perfil": "9d15747e",
+  "motor": "voxcpm2",
+  "velocidade": 1,
+  "catalogo": "cinema",
+  "nome": "Narrador de Cinema"
+ },
+ "frases": [
+  {
+   "id": "f01",
+   "texto": "Uma guerra salvou a torre mais famosa da Itália.",
+   "energia": "animada",
+   "pausa": 0.2,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f01-t1",
+     "arquivo": "audio/takes/f01-t1.wav",
+     "seed": 1101,
+     "duracao": 2.604,
+     "config": {
+      "texto": "Uma guerra salvou a torre mais famosa da Itália!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:48:47.777717+00:00"
+    }
+   ],
+   "escolhido": "f01-t1"
+  },
+  {
+   "id": "f02",
+   "texto": "De cair.",
+   "energia": "normal",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f02-t1",
+     "arquivo": "audio/takes/f02-t1.wav",
+     "seed": 1201,
+     "duracao": 0.656,
+     "config": {
+      "texto": "De cair.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:48:51.946784+00:00"
+    }
+   ],
+   "escolhido": "f02-t1"
+  },
+  {
+   "id": "f03",
+   "texto": "Pisa, mil cento e setenta e oito.",
+   "energia": "calma",
+   "pausa": 0.2,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f03-t1",
+     "arquivo": "audio/takes/f03-t1.wav",
+     "seed": 1301,
+     "duracao": 2.137,
+     "config": {
+      "texto": "Pisa, mil cento e setenta e oito...",
+      "vel": 0.92,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:48:58.677947+00:00"
+    }
+   ],
+   "escolhido": "f03-t1"
+  },
+  {
+   "id": "f04",
+   "texto": "Três andares prontos.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f04-t1",
+     "arquivo": "audio/takes/f04-t1.wav",
+     "seed": 1401,
+     "duracao": 1.258,
+     "config": {
+      "texto": "Três andares prontos.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:03.894344+00:00"
+    }
+   ],
+   "escolhido": "f04-t1"
+  },
+  {
+   "id": "f05",
+   "texto": "E a torre já estava afundando de um lado.",
+   "energia": "animada",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f05-t1",
+     "arquivo": "audio/takes/f05-t1.wav",
+     "seed": 1501,
+     "duracao": 2.218,
+     "config": {
+      "texto": "E a torre já estava afundando de um lado!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:10.707673+00:00"
+    }
+   ],
+   "escolhido": "f05-t1"
+  },
+  {
+   "id": "f06",
+   "texto": "Só que aí veio a guerra contra Gênova... e a obra parou.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f06-t1",
+     "arquivo": "audio/takes/f06-t1.wav",
+     "seed": 1601,
+     "duracao": 3.009,
+     "config": {
+      "texto": "Só que aí veio a guerra contra Gênova... e a obra parou.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:19.423585+00:00"
+    }
+   ],
+   "escolhido": "f06-t1"
+  },
+  {
+   "id": "f07",
+   "texto": "Por quase cem anos.",
+   "energia": "calma",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f07-t1",
+     "arquivo": "audio/takes/f07-t1.wav",
+     "seed": 1701,
+     "duracao": 1.397,
+     "config": {
+      "texto": "Por quase cem anos...",
+      "vel": 0.92,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:25.300170+00:00"
+    }
+   ],
+   "escolhido": "f07-t1"
+  },
+  {
+   "id": "f08",
+   "texto": "O mato cresceu tanto que achou que a torre era dele.",
+   "energia": "animada",
+   "pausa": 0.4,
+   "efeito": "risada",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f08-t1",
+     "arquivo": "audio/takes/f08-t1.wav",
+     "seed": 1801,
+     "duracao": 3.675,
+     "config": {
+      "texto": "O mato cresceu tanto que achou que a torre era dele! [laughter]",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:35.304225+00:00"
+    }
+   ],
+   "escolhido": "f08-t1"
+  },
+  {
+   "id": "f09",
+   "texto": "Pensa comigo.",
+   "energia": "calma",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f09-t1",
+     "arquivo": "audio/takes/f09-t1.wav",
+     "seed": 1901,
+     "duracao": 0.853,
+     "config": {
+      "texto": "Pensa comigo...",
+      "vel": 0.92,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:40.159366+00:00"
+    }
+   ],
+   "escolhido": "f09-t1"
+  },
+  {
+   "id": "f10",
+   "texto": "O chão de Pisa é barro mole, cheio de água.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f10-t1",
+     "arquivo": "audio/takes/f10-t1.wav",
+     "seed": 2001,
+     "duracao": 2.78,
+     "config": {
+      "texto": "O chão de Pisa é barro mole, cheio de água.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:48.627099+00:00"
+    }
+   ],
+   "escolhido": "f10-t1"
+  },
+  {
+   "id": "f11",
+   "texto": "É como uma esponja molhada embaixo de um peso.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f11-t1",
+     "arquivo": "audio/takes/f11-t1.wav",
+     "seed": 2101,
+     "duracao": 2.479,
+     "config": {
+      "texto": "É como uma esponja molhada embaixo de um peso.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:49:56.455313+00:00"
+    }
+   ],
+   "escolhido": "f11-t1"
+  },
+  {
+   "id": "f12",
+   "texto": "Com o tempo, a água sai... e ela fica firme.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f12-t1",
+     "arquivo": "audio/takes/f12-t1.wav",
+     "seed": 2201,
+     "duracao": 2.927,
+     "config": {
+      "texto": "Com o tempo, a água sai... e ela fica firme.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:05.631919+00:00"
+    }
+   ],
+   "escolhido": "f12-t1"
+  },
+  {
+   "id": "f13",
+   "texto": "Sem essa pausa, a torre teria caído.",
+   "energia": "animada",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f13-t1",
+     "arquivo": "audio/takes/f13-t1.wav",
+     "seed": 2301,
+     "duracao": 2.687,
+     "config": {
+      "texto": "Sem essa pausa, a torre teria caído!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:14.105312+00:00"
+    }
+   ],
+   "escolhido": "f13-t1"
+  },
+  {
+   "id": "f14",
+   "texto": "Oitocentos anos depois, ela ainda ameaçava cair.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "suspiro",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f14-t1",
+     "arquivo": "audio/takes/f14-t1.wav",
+     "seed": 2401,
+     "duracao": 3.498,
+     "config": {
+      "texto": "[sigh] Oitocentos anos depois, ela ainda ameaçava cair.",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:24.782212+00:00"
+    }
+   ],
+   "escolhido": "f14-t1"
+  },
+  {
+   "id": "f15",
+   "texto": "E sabe o que os engenheiros fizeram para endireitar?",
+   "energia": "calma",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f15-t1",
+     "arquivo": "audio/takes/f15-t1.wav",
+     "seed": 2501,
+     "duracao": 2.423,
+     "config": {
+      "texto": "E sabe o que os engenheiros fizeram para endireitar?",
+      "vel": 0.92,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:32.599562+00:00"
+    }
+   ],
+   "escolhido": "f15-t1"
+  },
+  {
+   "id": "f16",
+   "texto": "Não colocaram nada...",
+   "energia": "calma",
+   "pausa": 0.7,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f16-t1",
+     "arquivo": "audio/takes/f16-t1.wav",
+     "seed": 2601,
+     "duracao": 1.005,
+     "config": {
+      "texto": "Não colocaram nada...",
+      "vel": 0.92,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:37.486746+00:00"
+    }
+   ],
+   "escolhido": "f16-t1"
+  },
+  {
+   "id": "f17",
+   "texto": "Tiraram terra.",
+   "energia": "animada",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f17-t1",
+     "arquivo": "audio/takes/f17-t1.wav",
+     "seed": 2701,
+     "duracao": 2.212,
+     "config": {
+      "texto": "Tiraram terra! [laughter]",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:44.274817+00:00"
+    },
+    {
+     "id": "f17-t2",
+     "arquivo": "audio/takes/f17-t2.wav",
+     "seed": 2702,
+     "duracao": 0.893,
+     "config": {
+      "texto": "Tiraram terra!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:52:22.896328+00:00"
+    },
+    {
+     "id": "f17-t3",
+     "arquivo": "audio/takes/f17-t3.wav",
+     "seed": 2703,
+     "duracao": 0.916,
+     "config": {
+      "texto": "Tiraram terra!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:52:27.387617+00:00"
+    },
+    {
+     "id": "f17-t4",
+     "arquivo": "audio/takes/f17-t4.wav",
+     "seed": 2704,
+     "duracao": 0.892,
+     "config": {
+      "texto": "Tiraram terra!",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:52:31.808576+00:00"
+    }
+   ],
+   "escolhido": "f17-t2"
+  },
+  {
+   "id": "f18",
+   "texto": "E você? Preferia a torre reta ou torta?",
+   "energia": "animada",
+   "pausa": 0,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f18-t1",
+     "arquivo": "audio/takes/f18-t1.wav",
+     "seed": 2801,
+     "duracao": 3.136,
+     "config": {
+      "texto": "E você? Preferia a torre reta ou torta?",
+      "vel": 1,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:50:53.196178+00:00"
+    },
+    {
+     "id": "f18-t2",
+     "arquivo": "audio/takes/f18-t2.wav",
+     "seed": 2802,
+     "duracao": 3.232,
+     "config": {
+      "texto": "E você? Preferia a torre reta ou torta?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:53:49.338003+00:00"
+    },
+    {
+     "id": "f18-t3",
+     "arquivo": "audio/takes/f18-t3.wav",
+     "seed": 2803,
+     "duracao": 2.961,
+     "config": {
+      "texto": "E você? Preferia a torre reta ou torta?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:53:57.605917+00:00"
+    },
+    {
+     "id": "f18-t4",
+     "arquivo": "audio/takes/f18-t4.wav",
+     "seed": 2804,
+     "duracao": 2.948,
+     "config": {
+      "texto": "E você? Preferia a torre reta ou torta?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "em": "2026-11-22T20:54:06.222925+00:00"
+    }
+   ],
+   "escolhido": "f18-t1"
+  }
+ ],
+ "montagem": {
+  "atual": true,
+  "em": "2026-11-22T20:54:49.669485+00:00",
+  "duracao": 46.333,
+  "escolhas": {
+   "f01": "f01-t1",
+   "f02": "f02-t1",
+   "f03": "f03-t1",
+   "f04": "f04-t1",
+   "f05": "f05-t1",
+   "f06": "f06-t1",
+   "f07": "f07-t1",
+   "f08": "f08-t1",
+   "f09": "f09-t1",
+   "f10": "f10-t1",
+   "f11": "f11-t1",
+   "f12": "f12-t1",
+   "f13": "f13-t1",
+   "f14": "f14-t1",
+   "f15": "f15-t1",
+   "f16": "f16-t1",
+   "f17": "f17-t2",
+   "f18": "f18-t1"
+  }
+ }
+}

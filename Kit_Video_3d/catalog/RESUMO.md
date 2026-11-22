@@ -114,6 +114,7 @@ Expressões: neutral, happy, laugh, sad, angry, surprised, worried, thinking, sl
 - `esponja_molhada` 0.6×0.6×0.4 m variantes: seca, rosa | params: color="#f7d046", scrub="#3fa34d", drops=4: Esponja de cozinha amarela encharcada, com face verde de esfregar, gotas azuis pingando e poça embaixo
 - `metralhadora` 1×1.3×0.9 m variantes: verde, enferrujada | params: color="#3a3f45", magazine="#2a2e33", wood="#8a5a33", tripod="#4b5057": Metralhadora antiga de tripé, cartoon: cano grosso cinza-escuro com aletas de resfriamento, carregador redondo (prato) em cima, coronha de madeira
 - `plantacao_de_trigo` 0.5×0.6×0.9 m variantes: rala, cheia, baixa | params: color="#e3b23c", espiga="#f2c94c", folha="#c9952e", hastes=14, altura=0.8, seed=1: Touceira de trigo dourado maduro: ~14 hastes com espigas cheias, folhas na base
+- `pufe` 0.7×0.7×0.6 m variantes: sentado, mostarda | params: color="#f28c28", trim="#c4621a", afundado=0 | ETAPAS (etapa): Pufe redondo de tecido laranja, fofo, com almofada estufada, debrum e botão no meio
 - `tanque_de_guerra` 1.4×2.1×1.6 m variantes: deserto, inverno | params: color="#6B7A3A", escuro="#4E5A2A", esteira="#2E3034", antena=1 | rodas giram ao mover: Tanque cartoon verde-oliva arredondado: esteiras com 5 rodas por lado, torre em cúpula com escotilha e antena, canhão curto
 - `terra_retirada` 1.5×1.2×1.8 m variantes: sem_pa, escura | params: color="#8a5a36", dark="#6b4327", pa=true: Monte de terra marrom recém-cavada com uma pá de cabo de madeira fincada no topo, um pouco inclinada
 

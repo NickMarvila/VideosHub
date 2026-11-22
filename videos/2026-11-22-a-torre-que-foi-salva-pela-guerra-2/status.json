@@ -1,0 +1,86 @@
+{
+  "id": "2026-11-22-a-torre-que-foi-salva-pela-guerra-2",
+  "titulo": "A Torre Que Foi Salva Pela Guerra",
+  "ideia": "A Torre Que Foi Salva Pela Guerra. Gancho: A torre mais famosa da Itália começou a entortar quando tinha só três andares. E uma guerra salvou ela de cair. Virada: Oitocentos anos depois, para endireitar a torre, os engenheiros não colocaram nada. Tiraram terra. Momentos visuais: os pedreiros medievais erguendo os andares e o chão afundando de um lado, a obra parada por quase cem anos com o mato crescendo, e os engenheiros modernos cavando por baixo enquanto a torre volta um pouquinho. (fato documentado (obra iniciada em 1173, inclinação a partir de cerca de 1178; as guerras com Gênova pararam a obra e deram tempo ao solo; estabilização de 1993 a 2001 com retirada de solo); fontes: https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean https://discovermagazine.com/planet-earth/the-leaning-tower-of-pisa-wasnt-supposed-to-lean https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa)",
+  "duracaoAlvo": 45,
+  "estilo": "cartoon-3d",
+  "personagens": [],
+  "pasta": "videos/2026-11-22-a-torre-que-foi-salva-pela-guerra-2",
+  "voz": {
+    "catalogo": "cinema",
+    "nome": "Narrador de Cinema",
+    "perfil": "9d15747e",
+    "motor": "voxcpm2",
+    "velocidade": 1
+  },
+  "etapa": "narracao",
+  "estado": "processando",
+  "fluxo": 2,
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T19:50:24.953Z"
+    },
+    "narracao": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-22T19:45:53.166Z",
+      "evento": "pedido criado no painel"
+    },
+    {
+      "em": "2026-11-22T19:45:53.198Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T20:05:00.000Z",
+      "evento": "IA: roteiro v2 (gancho G1, Pensa comigo do pufe, virada 'não colocaram concreto... tiraram terra'), marcação de 20 frases e 8 assets (só o pufe é novo)"
+    },
+    {
+      "em": "2026-11-22T19:48:49.546Z",
+      "evento": "assets: auto (pufe)"
+    },
+    {
+      "em": "2026-11-22T19:50:24.953Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-22T19:50:24.985Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-22T19:54:07.661Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T20:46:45.906Z",
+      "evento": "regravando 1 frase(s)"
+    }
+  ],
+  "criadoEm": "2026-11-22T19:45:53.166Z",
+  "usoIA": [
+    {
+      "em": "2026-11-22T19:47:59.430Z",
+      "etapa": "roteiro",
+      "custoUSD": 0.8270000000000002,
+      "turnos": 15,
+      "segundos": 124,
+      "tokensEntrada": 636766,
+      "tokensSaida": 11600,
+      "motor": "claude"
+    }
+  ]
+}

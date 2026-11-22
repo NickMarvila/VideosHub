@@ -46,6 +46,20 @@ Termine com uma pergunta fácil para comentar.
 4. **"Pensa comigo" (obrigatório, exatamente 1 por vídeo, entre 40 e 70 % do texto):** a explicação do mecanismo real começa **sempre** com "Pensa comigo", o nome do canal virando bordão. Depois vêm de 1 a 3 frases com uma comparação do dia a dia. Na `marcacao.json`, "Pensa comigo." é uma frase própria, `calma`, com pausa de 0,5 a 0,7. Nas cenas, esse momento tem cara própria: aproxima, alguém aponta e a comparação aparece na tela.
 5. **Virada:** curta e irônica, as **últimas palavras** antes da pergunta final.
 - Em `sinopse.md`, escreva as linhas **"Receita do gancho: G1 · E se… que virou real"** e **"Pensa comigo: {a comparação usada}"**.
+- **3 opções de gancho (obrigatório em todo roteiro):** o criador escolhe a primeira frase no painel. Escreva `<status.pasta>/ganchos.json`:
+  ```json
+  { "aplicado": { "gancho": "Uma guerra salvou a torre mais famosa da Itália.", "porta": "De cair." },
+    "escolhido": 1,
+    "opcoes": [
+      { "n": 1, "receita": "G3 · Fato absurdo seco", "gancho": "Uma guerra salvou a torre mais famosa da Itália.", "porta": "De cair.", "porque": "o contraste guerra × salvar prende antes de dizer qual torre", "recomendado": true },
+      { "n": 2, "receita": "G1 · E se… que virou real", "gancho": "E se uma guerra salvasse um prédio de cair?", "porta": "Aconteceu. Em Pisa.", "porque": "…" },
+      { "n": 3, "receita": "G4 · Número que não cabe", "gancho": "Uma obra parou por quase cem anos. E isso salvou a torre.", "porta": "", "porque": "…" } ] }
+  ```
+  - **3 receitas diferentes** (G1 a G9), cada gancho com até 12 palavras, verdadeiro e pago no vídeo. `porta` é a frase que fecha a porta (pode ser `""` se o gancho já tem duas frases).
+  - A opção `recomendado` é a que você usou: `aplicado` tem que ser **exatamente** o começo de `narracao.txt` e as primeiras entradas de `marcacao.json` (gancho e porta como frases próprias). O painel troca esse começo quando o criador escolhe outra opção ou escreve o próprio gancho.
+  - `porque`: uma linha dizendo o que prende naquele gancho, para o criador decidir.
+  - **Ajuste que começa com "Ganchos:"** pede só opções novas: reescreva `ganchos.json` com 3 opções diferentes das anteriores, aplique a recomendada no começo de `narracao.txt` e `marcacao.json` (atualize `aplicado`, `escolhido` e a linha "Receita do gancho" da sinopse) e não mexa no resto do roteiro.
+  - Em qualquer outro ajuste do roteiro, mantenha `ganchos.json` coerente: se mudar o começo da narração, atualize `aplicado`.
 - **Nunca descreva o que a imagem já mostra.** Português falado, frases de 8 a 15 palavras e números por extenso.
 - **Fatos:** se a história for apresentada como real, confira os fatos principais na web (WebSearch) e anote as fontes em `sinopse.md`. Lenda é tratada como lenda ("diz a lenda que...").
 - Se a ideia veio de `/ideias`, use o gancho e a virada dela como ponto de partida.
@@ -108,6 +122,11 @@ Se o item tem `pedido` mas ainda não tem `usa`, leia `biblioteca/pedidos/<pedid
 - `"kit3d"` (3D low-poly): siga **3D**.
 
 **Cartoon 3D (`motor: cartoon`)**: é o modelo da skill cartoon-audio-short. Leia `apps/render/STORYBOARD_CARTOON.md` uma vez por sessão. É igual ao 2D, mas o arquivo é `storyboard_cartoon.json` (ou o `cena` de cada variante, no fluxo 2), e os comandos levam `--cartoon`: `node apps/render/render2d.mjs <status.pasta> --cartoon --validar` e `... --cartoon --quadros`. Sem legenda. A trilha de marcha para na virada: grave `trilha.json` → `musica.paraEm` no segundo da virada.
+
+**Objeto que o estilo ainda não tem (padrão, vale para todo vídeo):** a lista de objetos do guia (`STORYBOARD_CARTOON.md` ou `STORYBOARD2D.md`) é a fonte da verdade. Não leia o código do motor para descobrir o que existe.
+- Se um item do `assets.json` existe só no kit 3D (`Kit_Video_3d/assets/scenery/hub/<slug>.js`) e não está no guia do cartoon, implemente-o **uma vez**: entrada em `OBJETOS_3D` e no `criar` de `apps/render/src/cartoon/objetos.ts` (copie as medidas e cores do módulo do kit; params novos vão em `apps/render/src/cartoon/tipos.ts`). Leia só esses dois arquivos e o módulo do kit, nada mais do motor.
+- **Na mesma rodada, documente no guia:** acrescente o objeto à lista de "Peças 3D" do `STORYBOARD_CARTOON.md` (ou à lista de objetos do `STORYBOARD2D.md`) com tamanho em metros, para onde fica a frente e os campos que ele aceita, no mesmo formato das outras. Assim o próximo vídeo usa sem abrir código.
+- Se o objeto não existe em lugar nenhum, não invente no motor: ele deveria ter vindo da Biblioteca (`assets.json` → "na hora" ou "3 opções"). Represente com o que existe e diga isso no resumo.
 
 **2D (`motor: remotion`)**: leia `apps/render/STORYBOARD2D.md` uma vez por sessão.
 1. Use `frases.json` para alinhar as cenas e escreva `plano-animacao.md`, com uma linha por frase: cenário, quem age, o que se move e o que aparece.
