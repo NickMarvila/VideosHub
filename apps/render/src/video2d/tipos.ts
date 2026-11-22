@@ -57,7 +57,7 @@ export type Storyboard2D = {
   titulo?: string;
   duracao: number;
   audio?: string;
-  legenda?: { cor?: string; destaque?: string; porVez?: number; y?: number };
+  legenda?: { cor?: string; destaque?: string; porVez?: number; y?: number; ativo?: boolean };
   personagens: Record<string, Visual>;
   cenas: Cena[];
   /** assets da biblioteca (assets2d/): SVG por slug, preenchido pelo render */

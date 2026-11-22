@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-22-major-meredith",
+  "tipo": "personagem",
+  "nome": "major Meredith",
+  "slug": "major_meredith",
+  "descricao": "Oficial do exército australiano de 1932: farda cáqui, chapéu de aba virada de um lado, bigode, ar confiante que vira cansado",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: farda cáqui média, bigode castanho, corpo robusto, botões dourados e cinto de couro (a mais fiel)"
+    },
+    {
+      "n": 2,
+      "descricao": "Veterano: cáqui-oliva escuro, cabelo e bigode grisalhos, lenço vermelho no pescoço e faixa no 3D"
+    },
+    {
+      "n": 3,
+      "descricao": "Jovem: cáqui-areia claro, bigode ruivo, olhos verdes, botas pretas e faixa verde no chapéu, corpo comum"
+    }
+  ],
+  "recomendada": 1,
+  "historico": [
+    {
+      "em": "2026-11-22T16:00:00.000Z",
+      "evento": "IA: 3 opções criadas com o chapéu aba_virada do rig 2D (acrescentado pelo pedido do soldado). No kit 3D e no motor cartoon ainda não existe chapéu de aba virada, então usei um boné cáqui"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.390Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:45:34.324Z",
+      "custoUSD": 0.8835166,
+      "turnos": 25,
+      "segundos": 169,
+      "tokensEntrada": 1252946,
+      "tokensSaida": 11374
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:46:06.420Z"
+}

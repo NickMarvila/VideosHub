@@ -58,10 +58,15 @@ function detalhes(v) {
       vozInfo: lerJSON(path.join(pasta, 'voz.json')),
       audioFrases: audioFrasesDe(v),
       variantes: variantesDe(v),
+      assets: assetsDe(v),
       marcacao: lerJSON(path.join(pasta, 'marcacao.json')),
       audio: existe('narracao.wav') ? `${rel('narracao.wav')}?v=${versao('narracao.wav')}` : null,
       previa: existe('render/previa.mp4') ? `${rel('render/previa.mp4')}?v=${versao('render/previa.mp4')}` : null,
-      video: existe('render/video.mp4') ? `${rel('render/video.mp4')}?v=${versao('render/video.mp4')}` : null,
+      video: existe('render/final.mp4') ? `${rel('render/final.mp4')}?v=${versao('render/final.mp4')}` : existe('render/video.mp4') ? `${rel('render/video.mp4')}?v=${versao('render/video.mp4')}` : null,
+      trilha: lerJSON(path.join(pasta, 'trilha.json')),
+      trilhaRelatorio: lerJSON(path.join(pasta, 'trilha', 'relatorio.json')),
+      qa: lerJSON(path.join(pasta, 'render', 'qa.json')),
+      qaFolha: existe('render/qa_folha.jpg') ? `${rel('render/qa_folha.jpg')}?v=${versao('render/qa_folha.jpg')}` : null,
       capa: existe('render/capa.png') ? `${rel('render/capa.png')}?v=${versao('render/capa.png')}` : null,
       quadros,
     },
@@ -76,8 +81,11 @@ const ARQ_TEMPOS = path.join(VIDEOS, '_tempos.json');
 // segundos = fixo + porUnidade × unidades (valores iniciais medidos na RTX 5060 Ti; depois o hub aprende)
 const PADRAO = {
   narrar: { fixo: 4, porUnidade: 0.26, unidade: 'palavra' },
-  gravar: { fixo: 14, porUnidade: 4, unidade: 'take' },
+  gravar: { fixo: 14, porUnidade: 4, unidade: 'take' }, // OmniVoice
+  'gravar-voxcpm2': { fixo: 14, porUnidade: 20, unidade: 'take' }, // ~20 s por take (10 passos)
+  'gravar-voicebox': { fixo: 20, porUnidade: 60, unidade: 'take' },
   montar: { fixo: 8, porUnidade: 0, unidade: '' },
+  trilha: { fixo: 14, porUnidade: 0.2, unidade: 's de vídeo' },
   midia2d: { fixo: 15, porUnidade: 3, unidade: 'variante' },
   midia3d: { fixo: 5, porUnidade: 16, unidade: 'variante' },
   quadros: { fixo: 8, porUnidade: 2.5, unidade: 'cena' },
@@ -86,11 +94,18 @@ const PADRAO = {
   quadros2d: { fixo: 14, porUnidade: 1, unidade: 'cena' },
   previa2d: { fixo: 12, porUnidade: 0.4, unidade: 's de vídeo' },
   render2d: { fixo: 18, porUnidade: 0.6, unidade: 's de vídeo' },
+  'render-cartoon': { fixo: 40, porUnidade: 6, unidade: 's de vídeo' },
+  'quadros-cartoon': { fixo: 40, porUnidade: 6, unidade: 'cena' },
+  'previa-cartoon': { fixo: 40, porUnidade: 2, unidade: 's de vídeo' },
+  'midia-cartoon': { fixo: 40, porUnidade: 20, unidade: 'variante' },
   'ia-roteiro': { fixo: 300, porUnidade: 0, unidade: '' },
   'ia-biblioteca': { fixo: 360, porUnidade: 0, unidade: '' },
   'opcoes-biblioteca': { fixo: 45, porUnidade: 0, unidade: '' },
   'publicar-biblioteca': { fixo: 30, porUnidade: 0, unidade: '' },
   'vitrine-kit': { fixo: 50, porUnidade: 0, unidade: '' },
+  vozpropria: { fixo: 12, porUnidade: 0, unidade: '' },
+  apresentar: { fixo: 10, porUnidade: 25, unidade: 'voz' },
+  'ia-ideias': { fixo: 240, porUnidade: 0, unidade: '' },
   'ia-cenas': { fixo: 900, porUnidade: 0, unidade: '' },
   'ia-ajuste': { fixo: 420, porUnidade: 0, unidade: '' },
 };
@@ -98,17 +113,19 @@ function unidadesDe(tipo, v) {
   const pasta = path.join(RAIZ, v.pasta || '');
   if (tipo === 'gravar') {
     const af = audioFrasesDe(v);
-    if (!af) return 3 * (((lerJSON(path.join(pasta, 'marcacao.json')) || []).length) || ((lerTexto(path.join(pasta, 'narracao.txt')) || '').split(/(?<=[.!?…])\s+/).filter(Boolean).length) || 12);
-    return 3 * Math.max(1, af.frases.filter((f) => f.precisaGravar).length);
+    if (!af) return (((lerJSON(path.join(pasta, 'marcacao.json')) || []).length) || ((lerTexto(path.join(pasta, 'narracao.txt')) || '').split(/(?<=[.!?…])\s+/).filter(Boolean).length) || 12);
+    return Math.max(1, af.frases.filter((f) => f.precisaGravar).length); // 1a gravação: 1 take por frase
   }
   if (tipo === 'narrar') return (lerTexto(path.join(pasta, 'narracao.txt')) || '').split(/\s+/).filter(Boolean).length || 100;
-  const sb = lerJSON(path.join(pasta, 'storyboard.json')) || lerJSON(path.join(pasta, 'storyboard2d.json'));
+  const sb = lerJSON(path.join(pasta, 'storyboard.json')) || lerJSON(path.join(pasta, 'storyboard2d.json')) || lerJSON(path.join(pasta, 'storyboard_cartoon.json'));
   if (tipo === 'quadros') return sb?.cenas?.length || 10;
   if (tipo === 'previa' || tipo === 'render') return sb?.duracao || lerJSON(path.join(pasta, 'voz.json'))?.duracao || v.duracaoAlvo || 45;
   return 1;
 }
 const chaveIA = (v) => (v.etapa === 'roteiro' && !v.portoes?.roteiro?.ajustes?.some((a) => !a.resolvido) ? 'ia-roteiro'
   : v.etapa === 'cenas' && !v.portoes?.cenas?.ajustes?.some((a) => !a.resolvido) ? 'ia-cenas' : 'ia-ajuste');
+// cada motor de voz tem seu ritmo: o VoxCPM2 leva ~12x mais por take que o OmniVoice
+const chaveGravar = (v) => (!v.voz?.motor || v.voz.motor === 'omnivoice' ? 'gravar' : `gravar-${v.voz.motor}`);
 function estimar(chave, unidades) {
   const base = PADRAO[chave] || { fixo: 60, porUnidade: 0 };
   const medidas = (lerJSON(ARQ_TEMPOS, {})[chave] || []).slice(-8);
@@ -128,7 +145,7 @@ function previsoes(v) { // tempo de máquina de cada etapa que ainda falta
   const ia = (k) => estimar(k, 1);
   return {
     roteiro: ia('ia-roteiro'),
-    narracao: v.fluxo === 2 ? estimar('gravar', unidadesDe('gravar', v)) + estimar('montar', 1) : estimar('narrar', unidadesDe('narrar', v)),
+    narracao: v.fluxo === 2 ? estimar(chaveGravar(v), unidadesDe('gravar', v)) + estimar('montar', 1) : estimar('narrar', unidadesDe('narrar', v)),
     cenas: ia('ia-cenas') + (v.fluxo === 2 ? estimar(eh2D(v) ? 'midia2d' : 'midia3d', 2 * Math.max(6, Math.round((v.duracaoAlvo || 45) / 3.5))) : estimar(eh2D(v) ? 'quadros2d' : 'quadros', unidadesDe('quadros', v))),
     final: estimar(eh2D(v) ? 'render2d' : 'render', unidadesDe('render', v)) + 6,
   };
@@ -164,12 +181,23 @@ function lerEventoIA(job, linha) {
 function fase(job) { // o que está acontecendo agora, em palavras
   const l = job.logPasso || '';
   if (job.tipo === 'narrar') return job.passo === 1 ? 'Reajustando o tempo das cenas' : /marcando/.test(l) ? 'Marcando o tempo de cada palavra' : 'Gerando a voz do narrador';
-  if (job.tipo === 'gravar') { const m = [...l.matchAll(/frase f(\d+) take (\d+)/g)].at(-1); return job.passo === 0 ? 'Preparando as frases' : job.passo === 2 ? 'Montando o áudio e marcando as palavras' : m ? `Gravando a frase ${Number(m[1])}, take ${m[2]}` : 'Gravando os takes'; }
+  if (job.tipo === 'gravar') {
+    if (job.passo === 0) return 'Preparando as frases';
+    if (job.passo === 2) return 'Montando o áudio e marcando as palavras';
+    // "gravando frase f08 take 3 (24/39)" sai antes de cada take; "Quadro 23/39 ..." sai quando ele termina
+    const agoraG = [...l.matchAll(/gravando frase f(\d+) take (\d+) \((\d+)\/(\d+)\)/g)].at(-1);
+    if (agoraG) return `Gravando a frase ${Number(agoraG[1])}, take ${agoraG[2]} · take ${agoraG[3]} de ${agoraG[4]}`;
+    const feito = [...l.matchAll(/Quadro (\d+)\/(\d+)/g)].at(-1);
+    return feito ? `Gravando o take ${Math.min(Number(feito[1]) + 1, Number(feito[2]))} de ${feito[2]}` : 'Gravando os takes';
+  }
   if (job.tipo === 'montar') return 'Montando o áudio e marcando as palavras';
+  if (job.tipo === 'apresentar') { const u = l.trim().split('\n').at(-1) || ''; const e = u.match(/esperando o (\w+) abrir/); const m = [...l.matchAll(/\[(\d+)\/(\d+)\] gravando a apresentação de (.+)/g)].at(-1); return e ? `Esperando o ${e[1]} abrir` : m ? `Gravando a apresentação de ${m[3].trim()} (${m[1]}/${m[2]})` : 'Preparando as vozes'; }
+  if (job.tipo === 'vozpropria') return /marcando/.test(l) ? 'Marcando o tempo de cada palavra' : 'Preparando a sua gravação';
   if (job.tipo === 'opcoes') return /3D/.test(l) ? 'Desenhando as opções em 3D' : 'Desenhando as opções em 2D';
   if (job.tipo === 'publicar') return 'Publicando na biblioteca e gerando as miniaturas';
   if (job.tipo === 'variantes') { const m = [...l.matchAll(/(c\d+-[a-z])\.(mp4|png)|\)\s+(c\d+-[a-z])/g)].at(-1); return m ? `Gerando os clipes · ${m[1] || m[3]}` : 'Preparando os clipes das variantes'; }
-  if (job.tipo === 'render') return job.passos === 3 && job.passo === 0 ? 'Montando as cenas escolhidas' : job.passo === job.passos - 1 ? 'Gerando a capa' : 'Renderizando o vídeo';
+  if (job.tipo === 'trilha') return job.passo === 0 ? 'Compondo a trilha e mixando abaixo da voz' : 'Juntando ao vídeo e checando a qualidade';
+  if (job.nomes?.[job.passo]) return job.nomes[job.passo];
   if (job.tipo === 'previa') return 'Renderizando a prévia';
   if (job.tipo === 'quadros') return job.passo === 0 ? 'Validando o storyboard' : 'Gerando os quadros das cenas';
   if (job.tipo === 'ia') return job.atividade.at(-1)?.texto || 'A IA está começando';
@@ -180,17 +208,30 @@ function situacao(job) { // progresso 0–1, segundos restantes, fase
   const decorrido = (Date.now() - Date.parse(job.inicio)) / 1000;
   let prog = null;
   const q = [...(job.logPasso || '').matchAll(/Quadro (\d+)\/(\d+)/g)].at(-1);
+  let restanteReal = null; // tempo que falta pelo ritmo desta própria tarefa
   if (q && job.tipo !== 'narrar' && !(job.tipo === 'gravar' && job.passo === 2)) { // render do kit informa quadro a quadro
-    const frac = Number(q[1]) / Number(q[2]);
-    const peso = job.tipo === 'render' && job.passos === 3 ? [0.02, 0.91, 0.07] : job.tipo === 'render' ? [0.93, 0.07] : job.tipo === 'quadros' ? [0.1, 0.9] : job.tipo === 'gravar' ? [0.02, 0.88, 0.1] : [1];
+    const feitos = Number(q[1]), total = Number(q[2]);
+    let frac = feitos / total;
+    if (job.tipo === 'gravar' && job.ultimoQuadro && feitos) { // take leva ~1 min: anda a barra dentro do take também
+      const porTake = (job.ultimoQuadro - job.inicioPasso) / feitos;
+      const parcial = Math.min(0.95, (Date.now() - job.ultimoQuadro) / porTake);
+      frac = (feitos + parcial) / total;
+      restanteReal = (porTake * (total - feitos - parcial)) / 1000 + 15; // + montagem
+    }
+    const peso = job.pesos ? job.pesos : job.tipo === 'render' ? [0.93, 0.07] : job.tipo === 'quadros' ? [0.1, 0.9] : job.tipo === 'gravar' ? [0.01, 0.97, 0.02] : [1];
     prog = peso.slice(0, job.passo).reduce((a, b) => a + b, 0) + (peso[job.passo] ?? 0) * frac;
+  }
+  if (prog === null && job.pesos) { // passos sem contador: metade do peso do passo atual, sem voltar para trás
+    const antes = job.pesos.slice(0, job.passo).reduce((x, y) => x + y, 0);
+    prog = antes + job.pesos[job.passo] * 0.5;
   }
   if (prog === null) prog = Math.min(0.96, decorrido / Math.max(5, job.estimativa));
   if (!job.rodando) prog = job.ok ? 1 : prog;
-  const restante = job.rodando ? Math.max(1, prog > 0.08 && q ? decorrido / prog - decorrido : job.estimativa - decorrido) : 0;
+  const restante = job.rodando ? Math.max(1, restanteReal ?? (prog > 0.08 && q ? decorrido / prog - decorrido : job.estimativa - decorrido)) : 0;
   const { log, logPasso, ...resto } = job;
+  // com contador real (takes, quadros) a conta acima já é a verdade: só é "atrasado" quando não há contador
   return { ...resto, log: log.slice(-3000), progresso: +prog.toFixed(3), decorrido: Math.round(decorrido),
-    restante: Math.round(restante), atrasado: job.rodando && decorrido > job.estimativa * 1.15, fase: job.rodando ? fase(job) : null };
+    restante: Math.round(restante), atrasado: job.rodando && !q && decorrido > job.estimativa * 1.15, fase: job.rodando ? fase(job) : null };
 }
 
 function rodar(v, tipo, passos, aoTerminar, chave = tipo, unidadesFixas) {
@@ -198,7 +239,9 @@ function rodar(v, tipo, passos, aoTerminar, chave = tipo, unidadesFixas) {
   if (JOBS.get(id)?.rodando) throw new Error('Já tem uma tarefa rodando para este vídeo. Espere ela terminar.');
   const unidades = unidadesFixas ?? unidadesDe(tipo, v);
   const job = { tipo, chave, inicio: agora(), rodando: true, ok: null, log: '', logPasso: '', passo: 0, passos: passos.length,
-    estimativa: estimar(chave, unidades), unidades, atividade: [], resumo: null, uso: null };
+    estimativa: estimar(chave, unidades), unidades, atividade: [], resumo: null, uso: null,
+    nomes: passos.some((x) => x[3]) ? passos.map((x) => x[3] || null) : null,
+    pesos: passos.some((x) => x[4]) ? (() => { const w = passos.map((x) => x[4] || 0.01); const t = w.reduce((a, b) => a + b, 0); return w.map((x) => x / t); })() : null };
   JOBS.set(id, job);
   const logArq = path.join(v.logDir || path.join(VIDEOS, id), `${tipo}.log`);
   fs.writeFileSync(logArq, '');
@@ -210,7 +253,7 @@ function rodar(v, tipo, passos, aoTerminar, chave = tipo, unidadesFixas) {
   };
   const proximo = (i) => {
     if (i >= passos.length) return terminar(true);
-    job.passo = i; job.logPasso = '';
+    job.passo = i; job.logPasso = ''; job.inicioPasso = Date.now(); job.ultimoQuadro = null;
     const [cmd, args, cwd] = passos[i];
     const p = spawn(cmd, args, { cwd: cwd || RAIZ, env, shell: false, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });
     let resto = '';
@@ -222,6 +265,7 @@ function rodar(v, tipo, passos, aoTerminar, chave = tipo, unidadesFixas) {
         for (const l of linhas) lerEventoIA(job, l);
         return;
       }
+      if (/Quadro \d+\/\d+/.test(s)) job.ultimoQuadro = Date.now();
       job.log = (job.log + s).slice(-8000); job.logPasso = (job.logPasso + s).slice(-4000);
     };
     p.stdout.on('data', anota); p.stderr.on('data', (d) => { const s = d.toString(); job.log = (job.log + s).slice(-8000); fs.appendFileSync(logArq, s); });
@@ -236,8 +280,9 @@ function rodar(v, tipo, passos, aoTerminar, chave = tipo, unidadesFixas) {
   return job;
 }
 const motorDe = (v) => lerJSON(path.join(ESTILOS, v.estilo || '', 'estilo.json'))?.motor || 'kit3d';
-const eh2D = (v) => motorDe(v) === 'remotion';
-const R2D = (v, ...extra) => ['node', ['apps/render/render2d.mjs', v.pasta, ...extra]];
+const ehCartoon = (v) => motorDe(v) === 'cartoon';
+const eh2D = (v) => ['remotion', 'cartoon'].includes(motorDe(v)); // os dois rodam no Remotion, em videos/<id>
+const R2D = (v, ...extra) => ['node', ['apps/render/render2d.mjs', v.pasta, ...(ehCartoon(v) ? ['--cartoon'] : []), ...extra]];
 const projetoKit = (v) => path.relative(KIT, path.join(RAIZ, v.pasta)).split(path.sep).join('/');
 
 const ACOES = {
@@ -261,8 +306,19 @@ const ACOES = {
       ['python', ['pipeline/audio_frases.py', 'montar', v.pasta]]];
     const job = rodar(v, 'gravar', passos, (ok) => {
       const a = lerVideo(v.id); salvarVideo({ ...a, estado: ok ? 'aguardando_aprovacao' : 'erro' }, ok ? 'takes gravados' : 'erro ao gravar');
-    }, 'gravar', ids ? ids.length * 3 : undefined);
+    }, chaveGravar(v), ids ? ids.length * 3 : undefined);
     salvarVideo({ ...v, etapa: 'narracao', estado: 'processando' }, ids ? `regravando ${ids.length} frase(s)` : 'gravando os takes');
+    return job;
+  },
+  trilha(v) {
+    return rodar(v, 'trilha', [['python', ['pipeline/trilha.py', v.pasta]], ['python', ['pipeline/finalizar.py', v.pasta]]], null, 'trilha');
+  },
+  vozPropria(v, arquivo) {
+    const job = rodar(v, 'vozpropria', [['python', ['pipeline/voz_propria.py', v.pasta, arquivo]]], (ok) => {
+      const a = lerVideo(v.id);
+      salvarVideo({ ...a, voz: { ...a.voz, modo: ok ? 'gravacao' : a.voz?.modo }, estado: ok ? 'aguardando_aprovacao' : 'erro' }, ok ? 'gravação do criador pronta' : 'erro ao usar a gravação');
+    }, 'vozpropria', 1);
+    salvarVideo({ ...v, etapa: 'narracao', estado: 'processando' }, 'usando a gravação do criador');
     return job;
   },
   montar(v) {
@@ -270,29 +326,37 @@ const ACOES = {
   },
   midia(v) {
     const pend = Math.max(1, variantesPendentes(v));
-    return rodar(v, 'variantes', [['node', ['pipeline/cenas.mjs', 'midia', v.pasta]]], null, eh2D(v) ? 'midia2d' : 'midia3d', pend);
+    return rodar(v, 'variantes', [['node', ['pipeline/cenas.mjs', 'midia', v.pasta]]], null, ehCartoon(v) ? 'midia-cartoon' : eh2D(v) ? 'midia2d' : 'midia3d', pend);
   },
   quadros(v) {
-    if (eh2D(v)) return rodar(v, 'quadros', [R2D(v, '--validar'), R2D(v, '--quadros')], null, 'quadros2d');
+    if (eh2D(v)) return rodar(v, 'quadros', [R2D(v, '--validar'), R2D(v, '--quadros')], null, ehCartoon(v) ? 'quadros-cartoon' : 'quadros2d');
     return rodar(v, 'quadros', [['node', ['tools/validar.mjs', projetoKit(v)], KIT], ['node', ['tools/render.mjs', projetoKit(v), '--quadros'], KIT]]);
   },
   previa(v) {
-    if (eh2D(v)) return rodar(v, 'previa', [R2D(v, '--previa')], null, 'previa2d');
+    if (eh2D(v)) return rodar(v, 'previa', [R2D(v, '--previa')], null, ehCartoon(v) ? 'previa-cartoon' : 'previa2d');
     return rodar(v, 'previa', [['node', ['tools/render.mjs', projetoKit(v), '--previa'], KIT]]);
   },
   render(v) {
     const capa = String(v.capaEm ?? 1.2);
-    const passos = eh2D(v) ? [R2D(v), R2D(v, '--capa', capa)]
-      : [['node', ['tools/render.mjs', projetoKit(v)], KIT], ['node', ['tools/render.mjs', projetoKit(v), '--capa', capa], KIT]];
-    if (v.fluxo === 2 && fs.existsSync(arqVariantes(v))) passos.unshift(['node', ['pipeline/cenas.mjs', 'montar', v.pasta]]);
+    const arqTrilha = path.join(RAIZ, v.pasta, 'trilha.json'); // começa pelo clima padrão do estilo
+    if (!fs.existsSync(arqTrilha)) gravarJSON(arqTrilha, { musica: { clima: lerJSON(path.join(ESTILOS, v.estilo || '', 'estilo.json'))?.trilha?.clima || 'leve' } });
+    // cada passo: [comando, args, pasta, nome que aparece no painel, peso no progresso]
+    const passos = [];
+    if (v.fluxo === 2 && fs.existsSync(arqVariantes(v))) passos.push(['node', ['pipeline/cenas.mjs', 'montar', v.pasta], RAIZ, 'Montando as cenas escolhidas', 0.01]);
+    passos.push(['node', ['pipeline/legenda.mjs', v.pasta, legendaAtiva(v) ? 'sim' : 'nao'], RAIZ, 'Preparando o render', 0.01]);
+    if (eh2D(v)) passos.push([...R2D(v), RAIZ, 'Renderizando o vídeo', 0.8], [...R2D(v, '--capa', capa), RAIZ, 'Gerando a capa', 0.05]);
+    else passos.push(['node', ['tools/render.mjs', projetoKit(v)], KIT, 'Renderizando o vídeo', 0.8], ['node', ['tools/render.mjs', projetoKit(v), '--capa', capa], KIT, 'Gerando a capa', 0.05]);
+    if (v.trilha !== false) passos.push(['python', ['pipeline/trilha.py', v.pasta], RAIZ, 'Compondo a trilha sonora', 0.08]);
+    passos.push(['python', ['pipeline/finalizar.py', v.pasta], RAIZ, 'Juntando o áudio e checando a qualidade', 0.05]);
     const job = rodar(v, 'render', passos,
-      (ok) => { const a = lerVideo(v.id); salvarVideo({ ...a, estado: ok ? 'aguardando_aprovacao' : 'erro' }, ok ? 'vídeo final pronto' : 'erro no render'); }, eh2D(v) ? 'render2d' : 'render');
+      (ok) => { const a = lerVideo(v.id); salvarVideo({ ...a, estado: ok ? 'aguardando_aprovacao' : 'erro' }, ok ? 'vídeo final pronto' : 'erro no render'); }, ehCartoon(v) ? 'render-cartoon' : eh2D(v) ? 'render2d' : 'render');
     salvarVideo({ ...v, etapa: 'final', estado: 'processando' }, 'renderizando o vídeo final');
     return job;
   },
   ia(v) {
     // Chama o Claude Code em modo não interativo com a skill /video (usa a assinatura do criador).
-    const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill',
+    const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'WebSearch', 'WebFetch',
+      'Bash(node pipeline/cenas.mjs validar:*)',
       'Bash(node Kit_Video_3d/tools/validar.mjs:*)', 'Bash(node Kit_Video_3d/tools/render.mjs:*)',
       'Bash(node Kit_Video_3d/tools/novo-projeto.mjs:*)', 'Bash(node apps/render/render2d.mjs:*)'];
     const job = rodar(v, 'ia', [['claude', ['-p', `/video ${v.id}`, '--output-format', 'stream-json', '--verbose',
@@ -330,7 +394,7 @@ function audioFrasesDe(v) {
   if (!d) return null;
   for (const f of d.frases) {
     const cfg = configDe(f, d.voz);
-    f.precisaGravar = !f.takes.some((t) => t.config.texto === cfg.texto && Math.abs(t.config.vel - cfg.vel) < 0.001);
+    f.precisaGravar = !f.takes.some((t) => t.config.texto === cfg.texto && Math.abs(t.config.vel - cfg.vel) < 0.001 && (t.config.voz ?? d.voz.perfil) === d.voz.perfil);
     for (const t of f.takes) t.url = `/midia/${path.posix.join(v.pasta, t.arquivo)}`;
   }
   return d;
@@ -352,6 +416,20 @@ function salvarFrases(v, { frases = [], escolhas = {} }) {
   }
   if (mudouMontagem) d.montagem = { ...d.montagem, atual: false };
   gravarJSON(arq, d);
+}
+
+// ---------- legenda e trilha ----------
+const legendaAtiva = (v) => (v.legenda ?? lerJSON(path.join(ESTILOS, v.estilo || '', 'estilo.json'))?.legenda ?? true) !== false;
+function salvarTrilha(v, corpo) {
+  const arq = path.join(RAIZ, v.pasta, 'trilha.json');
+  const atual = lerJSON(arq) || {};
+  const m = { ...(atual.musica || {}), ...(corpo.musica || {}) };
+  if (m.paraEm === '' || m.paraEm === null) delete m.paraEm; else if (m.paraEm !== undefined) m.paraEm = Number(m.paraEm);
+  if (m.bpm !== undefined) m.bpm = Math.max(60, Math.min(160, Number(m.bpm) || 104));
+  const novo = { ...atual, ...corpo, musica: m };
+  for (const k of ['nivelMusica', 'nivelEfeitos']) if (corpo[k] !== undefined) novo[k] = Math.max(-60, Math.min(0, Number(corpo[k]) || 0)); // dB em relação à voz
+  if (Array.isArray(corpo.efeitos)) novo.efeitos = corpo.efeitos.filter((e) => e && e.tipo && Number.isFinite(Number(e.t))).map((e) => ({ t: Number(e.t), tipo: String(e.tipo), ...(e.ganho !== undefined ? { ganho: Number(e.ganho) } : {}) }));
+  gravarJSON(arq, novo);
 }
 
 // ---------- variantes de cena ----------
@@ -402,13 +480,37 @@ function ajusteCena(v, { cena, texto }) {
 const visualizador = { proc: null, url: null };
 async function abrirVisualizador() {
   const url = 'http://localhost:5173';
-  const vivo = await fetch(url, { signal: AbortSignal.timeout(1500) }).then(() => true).catch(() => false);
+  const vivo = await fetch(url, { signal: AbortSignal.timeout(3000) }).then(() => true).catch(() => false);
   if (!vivo) {
     visualizador.proc = spawn('node', ['tools/serve.mjs'], { cwd: KIT, stdio: 'ignore', windowsHide: true });
     await new Promise((r) => setTimeout(r, 1200));
   }
   visualizador.url = url;
   return { url };
+}
+
+// ---------- 10 ideias de vídeo (skill /ideias) ----------
+const IDEIAS = path.join(RAIZ, 'ideias');
+function pedirIdeias({ tema, duracao, estilo }) {
+  fs.mkdirSync(IDEIAS, { recursive: true });
+  const id = `${agora().slice(0, 19).replace(/[:T]/g, '-')}`;
+  gravarJSON(path.join(IDEIAS, `${id}.json`), { id, tema: String(tema || '').trim(), duracao: Number(duracao) || 45, estilo: estilo || '3d-cidade', estado: 'ia_trabalhando', ideias: [], criadoEm: agora() });
+  const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'WebSearch', 'WebFetch'];
+  rodar({ id: `ideias-${id}`, pasta: 'ideias', logDir: IDEIAS }, 'ia', [['claude', ['-p', `/ideias ${id}`, '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]]],
+    (ok, j) => {
+      const arq = path.join(IDEIAS, `${id}.json`); const d = lerJSON(arq) || {};
+      if (j.uso) d.usoIA = j.uso;
+      if (!d.ideias?.length) { d.estado = 'erro'; d.erro = ok ? 'A IA terminou sem entregar as ideias.' : 'A IA falhou.'; } else d.estado = 'pronto';
+      gravarJSON(arq, d);
+    }, 'ia-ideias', 1);
+  return ultimasIdeias();
+}
+function ultimasIdeias() {
+  if (!fs.existsSync(IDEIAS)) return null;
+  const arqs = fs.readdirSync(IDEIAS).filter((f) => f.endsWith('.json')).sort();
+  if (!arqs.length) return null;
+  const d = lerJSON(path.join(IDEIAS, arqs.at(-1)));
+  return d && { ...d, job: situacao(JOBS.get(`ideias-${d.id}`)) };
 }
 
 // ---------- biblioteca ----------
@@ -462,9 +564,13 @@ function iaBiblioteca(id) {
 function opcoesBiblioteca(id) {
   salvarPedido(id, { estado: 'processando' });
   return rodar(jobPedido(id), 'opcoes', [['node', ['pipeline/biblioteca.mjs', 'opcoes', id]]],
-    (ok) => salvarPedido(id, { estado: ok ? 'aguardando_escolha' : 'erro', erro: ok ? null : 'Falha ao desenhar as opções.' }), 'opcoes-biblioteca', 1);
+    (ok) => {
+      salvarPedido(id, { estado: ok ? 'aguardando_escolha' : 'erro', erro: ok ? null : 'Falha ao desenhar as opções.' });
+      const p = lerJSON(path.join(dirPedido(id), 'pedido.json'));
+      if (ok && p?.auto) escolherOpcao(id, p.recomendada || 1); // "a IA cria na hora": publica a recomendada sem esperar
+    }, 'opcoes-biblioteca', 1);
 }
-function novoPedido({ tipo, nome, descricao, referencia, permissao }) {
+function novoPedido({ tipo, nome, descricao, referencia, permissao, video, estilo, auto }) {
   if (!['personagem', 'objeto', 'cenario'].includes(tipo)) throw new Error('Escolha o tipo: personagem, objeto ou cenário.');
   if (!descricao?.trim()) throw new Error('Descreva o que você quer criar.');
   const base = slug(nome || descricao.split(/[,.;]/)[0]).replace(/-/g, '_').slice(0, 30) || tipo;
@@ -479,7 +585,8 @@ function novoPedido({ tipo, nome, descricao, referencia, permissao }) {
     fs.writeFileSync(path.join(dirPedido(id), arqRef), Buffer.from(m[2], 'base64'));
   }
   gravarJSON(path.join(dirPedido(id), 'pedido.json'), { id, tipo, nome: nome?.trim() || '', slug: base, descricao: descricao.trim(), referencia: arqRef,
-    permissao: !!permissao, estado: 'aguardando_ia', opcoes: [], ajustes: [], criadoEm: agora() });
+    permissao: !!permissao, estado: 'aguardando_ia', opcoes: [], ajustes: [], criadoEm: agora(),
+    ...(video ? { video, estilo: estilo || null } : {}), ...(auto ? { auto: true } : {}) });
   iaBiblioteca(id);
   return pedidoDetalhe(id);
 }
@@ -496,6 +603,52 @@ function ajustePedido(id, texto) {
   iaBiblioteca(id);
 }
 
+// ---------- assets que o vídeo precisa (assets.json, escrito pela IA no roteiro) ----------
+const arqAssets = (v) => path.join(RAIZ, v.pasta || '', 'assets.json');
+function assetsDe(v) {
+  const d = lerJSON(arqAssets(v));
+  if (!Array.isArray(d?.itens)) return null;
+  const itens = d.itens.map((it) => {
+    const p = it.pedido ? lerJSON(path.join(dirPedido(it.pedido), 'pedido.json')) : null;
+    let sit = 'falta';
+    if (it.existe) sit = 'existe';
+    else if (p?.estado === 'concluido') sit = 'pronto';
+    else if (p?.estado === 'erro') sit = 'erro';
+    else if (p?.estado === 'aguardando_escolha' && !p.auto) sit = 'escolher';
+    else if (p) sit = 'criando';
+    else if (it.decisao === 'improvisar') sit = 'improvisar';
+    return { ...it, situacao: sit, slugFinal: p?.estado === 'concluido' ? p.slug : it.usa || null, erro: p?.erro || null,
+      job: p ? situacao(JOBS.get(`bib-${it.pedido}`)) : null };
+  });
+  const conta = (...ss) => itens.filter((i) => ss.includes(i.situacao)).length;
+  return { itens, faltando: conta('falta', 'erro'), criando: conta('criando', 'escolher') };
+}
+function decidirAsset(v, { id, acao }) {
+  const d = lerJSON(arqAssets(v));
+  if (!Array.isArray(d?.itens)) throw new Error('Este vídeo ainda não tem a lista de assets.');
+  if (!['criar', 'auto', 'improvisar', 'desfazer'].includes(acao)) throw new Error('Ação desconhecida.');
+  const vivo = (it) => { const p = it.pedido && lerJSON(path.join(dirPedido(it.pedido), 'pedido.json')); return p && p.estado !== 'erro'; };
+  const alvos = id === '*' ? d.itens.filter((it) => !it.existe && !vivo(it) && (acao === 'improvisar' || it.decisao !== 'improvisar'))
+    : d.itens.filter((it) => it.id === id);
+  if (!alvos.length) throw new Error('Nada para fazer nesses assets.');
+  for (const it of alvos) {
+    if (it.existe) continue;
+    if (acao === 'improvisar') { if (!vivo(it)) { it.decisao = 'improvisar'; it.pedido = null; } continue; }
+    if (acao === 'desfazer') { if (!vivo(it)) { it.decisao = null; it.pedido = null; } continue; }
+    if (vivo(it)) continue;
+    const p = novoPedido({ tipo: it.tipo, nome: it.nome, descricao: it.descricao, video: v.id, estilo: v.estilo, auto: acao === 'auto' });
+    it.pedido = p.id; it.decisao = acao;
+  }
+  gravarJSON(arqAssets(v), d);
+  salvarVideo(lerVideo(v.id), `assets: ${acao} (${id === '*' ? 'todos' : id})`);
+}
+function sincronizarAssets(v) { // grava no assets.json o slug dos assets que ficaram prontos, para a IA das cenas
+  const d = lerJSON(arqAssets(v)); const a = assetsDe(v);
+  if (!d || !a) return;
+  for (const it of d.itens) { const x = a.itens.find((y) => y.id === it.id); if (x?.situacao === 'pronto') { it.existe = true; it.usa = x.slugFinal; } }
+  gravarJSON(arqAssets(v), d);
+}
+
 // ---------- portões ----------
 function aprovar(v) {
   const etapa = v.etapa;
@@ -503,9 +656,12 @@ function aprovar(v) {
   v.portoes[etapa].aprovado = true;
   v.portoes[etapa].aprovadoEm = agora();
   for (const a of v.portoes[etapa].ajustes || []) a.resolvido = true;
+  const as = assetsDe(v);
+  if (etapa === 'roteiro' && as?.faltando) throw new Error(`Faltam ${as.faltando} asset(s) para o roteiro: em cada um, peça para criar ou marque "seguir sem".`);
+  if (etapa === 'narracao' && as?.criando) throw new Error(`Ainda há ${as.criando} asset(s) em criação ou esperando você escolher a opção na Biblioteca.`);
   if (etapa === 'roteiro') { salvarVideo(v, 'roteiro aprovado'); if (v.fluxo === 2) ACOES.gravar(lerVideo(v.id)); else ACOES.narrar(lerVideo(v.id)); return; }
-  if (etapa === 'narracao' && v.fluxo === 2 && !audioFrasesDe(v)?.montagem?.atual) throw new Error('Clique em "Ouvir montagem" antes de aprovar: a montagem está desatualizada.');
-  if (etapa === 'narracao') { salvarVideo({ ...v, etapa: 'cenas', estado: 'aguardando_ia' }, 'narração aprovada'); ACOES.ia(lerVideo(v.id)); return; }
+  if (etapa === 'narracao' && v.fluxo === 2 && v.voz?.modo !== 'gravacao' && !audioFrasesDe(v)?.montagem?.atual) throw new Error('Clique em "Ouvir montagem" antes de aprovar: a montagem está desatualizada.');
+  if (etapa === 'narracao') { sincronizarAssets(v); salvarVideo({ ...v, etapa: 'cenas', estado: 'aguardando_ia' }, 'narração aprovada'); ACOES.ia(lerVideo(v.id)); return; }
   if (etapa === 'cenas' && v.fluxo === 2 && variantesDe(v)?.cenas.some((c) => !c.escolhida)) throw new Error('Escolha uma variante em todas as cenas (ou use "Escolher as recomendadas").');
   if (etapa === 'cenas') { salvarVideo(v, 'cenas aprovadas'); ACOES.render(lerVideo(v.id)); return; }
   if (etapa === 'final') { salvarVideo({ ...v, etapa: 'agenda', estado: 'aguardando_agenda' }, 'vídeo final aprovado'); }
@@ -521,7 +677,62 @@ function pedirAjuste(v, texto) {
 function slug(t) {
   return t.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
 }
-function novoVideo({ ideia, titulo, duracao, estilo }) {
+// ---------- motores de voz: abre o app sozinho quando uma voz dele é escolhida ----------
+const MOTORES = {
+  voicestudio: { nome: 'VoiceStudio', teste: 'http://127.0.0.1:3900/health', exe: path.join(process.env.ProgramFiles || 'C:/Program Files', 'VoiceStudio', 'VoiceStudio.exe'), env: {} },
+  voicebox: { nome: 'Voicebox', teste: 'http://127.0.0.1:17493/profiles', exe: path.join(process.env.LOCALAPPDATA || '', 'Voicebox', 'voicebox.exe'), env: { HF_HUB_OFFLINE: '1' } },
+};
+const appDoMotor = (motor) => (motor === 'voicebox' ? 'voicebox' : 'voicestudio');
+const abrindo = {}; // app -> quando mandou abrir
+async function motorNoAr(app) {
+  try { const r = await fetch(MOTORES[app].teste, { signal: AbortSignal.timeout(3000) }); return r.status < 500; } catch { return false; }
+}
+async function estadoMotores() {
+  const out = {};
+  for (const app of Object.keys(MOTORES)) {
+    const ok = await motorNoAr(app);
+    if (ok) delete abrindo[app];
+    out[app] = { nome: MOTORES[app].nome, estado: ok ? 'pronto' : abrindo[app] && Date.now() - abrindo[app] < 180e3 ? 'abrindo' : 'fechado' };
+  }
+  return out;
+}
+async function abrirMotor(motor) {
+  const app = appDoMotor(motor); const m = MOTORES[app];
+  if (await motorNoAr(app)) return { app, estado: 'pronto' };
+  if (abrindo[app] && Date.now() - abrindo[app] < 180e3) return { app, estado: 'abrindo' };
+  if (!fs.existsSync(m.exe)) throw new Error(`Não achei o ${m.nome} em ${m.exe}.`);
+  const p = spawn(m.exe, [], { detached: true, stdio: 'ignore', env: { ...process.env, ...m.env } });
+  p.on('error', () => delete abrindo[app]);
+  p.unref();
+  abrindo[app] = Date.now();
+  return { app, estado: 'abrindo' };
+}
+
+// ---------- apresentação das vozes (cada voz diz quem é) ----------
+const VOZES_JSON = path.join(RAIZ, 'config', 'vozes.json');
+const midiaV = (rel) => { if (!rel) return null; try { return `/midia/${rel}?v=${Math.round(fs.statSync(path.join(RAIZ, rel)).mtimeMs)}`; } catch { return null; } };
+async function listarVozes() {
+  const job = situacao(JOBS.get('vozes'));
+  return { motores: await estadoMotores(), vozes: (lerJSON(VOZES_JSON) || []).map((x) => ({ ...x, amostraUrl: midiaV(x.amostra), apresentacaoUrl: midiaV(x.apresentacao) })),
+    job, erro: JOBS.get('vozes')?.ok === false ? (JOBS.get('vozes').log || '').split('\n').filter((l) => /ERRO/.test(l)).slice(-3).join(' ') : null };
+}
+async function apresentarVozes({ id, refazer } = {}) {
+  if (id && !(lerJSON(VOZES_JSON) || []).some((x) => x.id === id)) throw new Error('Voz não encontrada no catálogo.');
+  const dir = path.join(RAIZ, 'testes', 'voz', 'apresentacao'); fs.mkdirSync(dir, { recursive: true });
+  const alvo = (lerJSON(VOZES_JSON) || []).filter((x) => id ? x.id === id : (refazer || !midiaV(x.apresentacao)));
+  for (const app of new Set(alvo.map((x) => appDoMotor(x.motor)))) await abrirMotor(app === 'voicebox' ? 'voicebox' : 'voxcpm2');
+  const faltam = alvo.length;
+  rodar({ id: 'vozes', pasta: 'testes/voz', logDir: dir }, 'apresentar',
+    [['python', ['pipeline/apresentar_vozes.py', ...(id ? ['--id', id] : []), ...(refazer ? ['--refazer'] : [])]]], null, 'apresentar', Math.max(1, faltam));
+  return { ok: true };
+}
+function vozPadrao(id) {
+  const lista = lerJSON(path.join(RAIZ, 'config', 'vozes.json')) || [];
+  const c = (id && lista.find((x) => x.id === id)) || lista[0];
+  if (id && c?.id !== id) throw new Error('Voz não encontrada no catálogo.');
+  return c ? { catalogo: c.id, nome: c.nome, perfil: c.perfil, motor: c.motor, velocidade: c.velocidade, instrucao: c.instrucao, seed: c.seed, pronuncia: c.pronuncia } : { perfil: '2f02b91b', motor: 'omnivoice', velocidade: 0.82 };
+}
+function novoVideo({ ideia, titulo, duracao, estilo, voz }) {
   if (!ideia?.trim()) throw new Error('Descreva a ideia do vídeo.');
   const data = agora().slice(0, 10);
   const nome = slug(titulo || ideia.split(/[.,:;!?]/)[0]) || 'video';
@@ -530,11 +741,11 @@ function novoVideo({ ideia, titulo, duracao, estilo }) {
   const est = lerJSON(path.join(ESTILOS, estilo || '3d-cidade', 'estilo.json'));
   if (!est) throw new Error('Estilo não encontrado.');
   if (!est.pronto) throw new Error(`O estilo "${est.nome}" ainda está em construção.`);
-  const pasta = est.motor === 'remotion' ? `videos/${id}` : `Kit_Video_3d/projects/${id}`;
+  const pasta = ['remotion', 'cartoon'].includes(est.motor) ? `videos/${id}` : `Kit_Video_3d/projects/${id}`;
   fs.mkdirSync(path.join(VIDEOS, id), { recursive: true });
   fs.mkdirSync(path.join(RAIZ, pasta), { recursive: true });
   const v = { id, titulo: titulo || ideia.split(/[.,:;!?]/)[0].slice(0, 60), ideia: ideia.trim(), duracaoAlvo: Number(duracao) || 45,
-    estilo: est.slug, personagens: [], pasta, voz: { perfil: '2f02b91b', motor: 'omnivoice', velocidade: 0.82 },
+    estilo: est.slug, personagens: [], pasta, voz: vozPadrao(voz),
     etapa: 'roteiro', estado: 'aguardando_ia', fluxo: 2,
     portoes: Object.fromEntries(ETAPAS.map((e) => [e, { aprovado: false, ajustes: [] }])),
     agenda: null, historico: [], criadoEm: agora() };
@@ -573,7 +784,7 @@ function servirArquivo(req, res, arq) {
 }
 const lerCorpo = (req) => new Promise((ok, falha) => {
   const partes = []; let tam = 0;
-  req.on('data', (c) => { partes.push(c); tam += c.length; if (tam > 12e6) req.destroy(); });
+  req.on('data', (c) => { partes.push(c); tam += c.length; if (tam > 60e6) req.destroy(); });
   req.on('end', () => { try { const d = Buffer.concat(partes).toString('utf8'); ok(d ? JSON.parse(d) : {}); } catch (e) { falha(e); } });
 });
 
@@ -583,7 +794,7 @@ const servidor = http.createServer(async (req, res) => {
   try {
     if (p.startsWith('/midia/')) { // só arquivos dentro de videos/ e Kit_Video_3d/projects/
       const arq = path.resolve(RAIZ, p.slice(7));
-      const permitido = [VIDEOS, path.join(KIT, 'projects'), path.join(RAIZ, 'biblioteca')].some((b) => arq.startsWith(b + path.sep));
+      const permitido = [VIDEOS, path.join(KIT, 'projects'), path.join(RAIZ, 'biblioteca'), path.join(RAIZ, 'testes', 'voz')].some((b) => arq.startsWith(b + path.sep));
       return permitido ? servirArquivo(req, res, arq) : enviar(res, 403, { erro: 'fora das pastas permitidas' });
     }
     if (p.startsWith('/api/')) {
@@ -592,6 +803,11 @@ const servidor = http.createServer(async (req, res) => {
       if (req.method === 'POST' && p === '/api/videos') return enviar(res, 200, novoVideo(await lerCorpo(req)));
       if (req.method === 'GET' && p === '/api/estilos') return enviar(res, 200, listarEstilos());
       if (req.method === 'GET' && p === '/api/biblioteca') return enviar(res, 200, listarBiblioteca());
+      if (req.method === 'GET' && p === '/api/vozes') return enviar(res, 200, await listarVozes());
+      if (req.method === 'POST' && p === '/api/vozes/apresentar') return enviar(res, 200, await apresentarVozes(await lerCorpo(req)));
+      if (req.method === 'POST' && p === '/api/motores/abrir') return enviar(res, 200, await abrirMotor((await lerCorpo(req)).motor));
+      if (req.method === 'POST' && p === '/api/ideias') return enviar(res, 200, pedirIdeias(await lerCorpo(req)));
+      if (req.method === 'GET' && p === '/api/ideias') return enviar(res, 200, ultimasIdeias());
       if (req.method === 'POST' && p === '/api/visualizador') return enviar(res, 200, await abrirVisualizador());
       if (req.method === 'POST' && p === '/api/biblioteca/kit3d') { rodar({ id: 'bib-kit3d', pasta: 'biblioteca', logDir: BIB }, 'vitrine', [['node', ['pipeline/biblioteca.mjs', 'kit3d']]], null, 'vitrine-kit', 1); return enviar(res, 200, { ok: true }); }
       if (req.method === 'POST' && p === '/api/biblioteca/pedidos') return enviar(res, 200, novoPedido(await lerCorpo(req)));
@@ -621,7 +837,18 @@ const servidor = http.createServer(async (req, res) => {
           if (acao === 'aprovar') aprovar(v);
           else if (acao === 'ajuste') pedirAjuste(v, corpo.texto);
           else if (acao === 'agendar') agendar(v, corpo);
-          else if (acao === 'voz') salvarVideo({ ...v, voz: { ...v.voz, ...corpo } }, 'voz alterada');
+          else if (acao === 'voz') {
+            let nova = { ...v.voz, ...corpo };
+            if (corpo.catalogo) { // voz do catálogo (config/vozes.json)
+              const c = (lerJSON(path.join(RAIZ, 'config', 'vozes.json')) || []).find((x) => x.id === corpo.catalogo);
+              if (!c) throw new Error('Voz não encontrada no catálogo.');
+              nova = { catalogo: c.id, nome: c.nome, perfil: c.perfil, motor: c.motor, velocidade: c.velocidade, instrucao: c.instrucao, seed: c.seed, pronuncia: c.pronuncia, modo: 'narrador' };
+              const arqF = path.join(RAIZ, v.pasta, 'audio', 'frases.json'); const af = lerJSON(arqF);
+              if (af) { af.voz = { ...nova }; for (const f of af.frases) f.velocidade = nova.velocidade; af.montagem = { ...af.montagem, atual: false }; gravarJSON(arqF, af); }
+            }
+            salvarVideo({ ...v, voz: nova }, nova.nome ? `voz trocada para ${nova.nome}` : 'voz alterada');
+          }
+          else if (acao === 'assets') decidirAsset(v, corpo);
           else if (acao === 'frases') salvarFrases(v, corpo);
           else if (acao === 'gravar') ACOES.gravar(v, corpo.ids);
           else if (acao === 'montar') ACOES.montar(v);
@@ -629,6 +856,21 @@ const servidor = http.createServer(async (req, res) => {
           else if (acao === 'recomendadas') escolherRecomendadas(v);
           else if (acao === 'ajuste-cena') ajusteCena(v, corpo);
           else if (acao === 'midia') ACOES.midia(v);
+          else if (acao === 'trilha-salvar') salvarTrilha(v, corpo);
+          else if (acao === 'trilha') ACOES.trilha(v);
+          else if (acao === 'voz-propria') {
+            const m = /^data:[\w.+-]+\/[\w.+-]+;base64,(.+)$/.exec(corpo.arquivo || '');
+            const ext = (String(corpo.nome || '').match(/\.(wav|mp3|m4a|ogg|opus|webm|aac|flac)$/i) || [, 'wav'])[1].toLowerCase();
+            if (!m) throw new Error('Envie um arquivo de áudio (wav, mp3, m4a, ogg...).');
+            const rel = `audio/gravacao.${ext}`;
+            fs.mkdirSync(path.join(RAIZ, v.pasta, 'audio'), { recursive: true });
+            fs.writeFileSync(path.join(RAIZ, v.pasta, rel), Buffer.from(m[1], 'base64'));
+            ACOES.vozPropria(v, path.join(v.pasta, rel));
+          } else if (acao === 'voz-narrador') {
+            salvarVideo({ ...v, voz: { ...v.voz, modo: 'narrador' } }, 'voltou para a voz do narrador');
+            if (audioFrasesDe(v)) ACOES.montar(lerVideo(v.id)); // remonta a narração com os takes escolhidos
+          }
+          else if (acao === 'legenda') salvarVideo({ ...v, legenda: !!corpo.ativa }, `legenda ${corpo.ativa ? 'ligada' : 'desligada'}`);
           else if (ACOES[acao]) ACOES[acao](v);
           else return enviar(res, 404, { erro: 'ação desconhecida' });
           return enviar(res, 200, detalhes(lerVideo(v.id)));

@@ -1,0 +1,4956 @@
+{
+  "base": {
+    "titulo": "O Exército Que Perdeu Para Pássaros",
+    "duracao": 46.56,
+    "audio": "narracao.wav",
+    "elenco": {}
+  },
+  "cenas": [
+    {
+      "id": "c01",
+      "inicio": 0,
+      "fim": 5.47,
+      "frases": [
+        "f01"
+      ],
+      "resumo": "O exército marcha para a guerra contra pássaros",
+      "variantes": [
+        {
+          "id": "c01-a",
+          "descricao": "Geral no campo: a tropa marcha pela trilha, toda séria, e em \"pássaros\" um emu entra correndo na frente dela",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 0,
+                "pos": [
+                  -2,
+                  3,
+                  11
+                ],
+                "olha": [
+                  -0.5,
+                  1.3,
+                  0
+                ]
+              },
+              {
+                "t": 3.2,
+                "pos": [
+                  -0.6,
+                  2.4,
+                  9.5
+                ],
+                "olha": [
+                  -0.6,
+                  1.3,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 6,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": [
+                  [
+                    0,
+                    -3.2
+                  ],
+                  [
+                    3.6,
+                    -0.6
+                  ]
+                ],
+                "z": 0,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ],
+                  [
+                    2.8,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    4.3,
+                    "choque"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": [
+                  [
+                    0,
+                    -4.6
+                  ],
+                  [
+                    3.6,
+                    -1.9
+                  ]
+                ],
+                "z": -1.4,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ],
+                  [
+                    4.3,
+                    "choque"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": [
+                  [
+                    0,
+                    -5.2
+                  ],
+                  [
+                    3.6,
+                    -2.5
+                  ]
+                ],
+                "z": -2.4,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ],
+                  [
+                    4.4,
+                    "nervoso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    3.9,
+                    6
+                  ],
+                  [
+                    4.6,
+                    0.6
+                  ]
+                ],
+                "z": 1.6,
+                "expressoes": [
+                  [
+                    0,
+                    "sorrisao"
+                  ]
+                ],
+                "olhar": -1
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3,
+                "z": -3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 4.2,
+                "z": -2.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 5,
+                "z": -3.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3.6,
+                "z": -4.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 5.8,
+                "z": -2.2
+              },
+              {
+                "tipo": "icone",
+                "icone": "!",
+                "x": -0.6,
+                "y": 2.9,
+                "z": 0,
+                "escala": 0.45,
+                "aparece": 4.3
+              }
+            ]
+          },
+          "hash": "18747d1f3d",
+          "clipe": "cenas/clipes/c01-a.mp4",
+          "poster": "cenas/clipes/c01-a.png"
+        },
+        {
+          "id": "c01-b",
+          "descricao": "Close num emu bicando o trigo; a câmera recua e revela a tropa chegando ao fundo, e o emu leva um susto",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 0,
+                "pos": [
+                  0,
+                  1.6,
+                  3.4
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0.8
+                ],
+                "fov": 38
+              },
+              {
+                "t": 3,
+                "pos": [
+                  1.4,
+                  2.6,
+                  9
+                ],
+                "olha": [
+                  -1,
+                  1.2,
+                  -1
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": 0,
+                "z": 0.8,
+                "expressoes": [
+                  [
+                    0,
+                    "sorriso"
+                  ],
+                  [
+                    4.2,
+                    "choque"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    4.1,
+                    -1
+                  ]
+                ]
+              },
+              {
+                "id": "major_meredith",
+                "x": [
+                  [
+                    0,
+                    -6
+                  ],
+                  [
+                    4.5,
+                    -2.4
+                  ]
+                ],
+                "z": -2.2,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": [
+                  [
+                    0,
+                    -7.2
+                  ],
+                  [
+                    4.5,
+                    -3.6
+                  ]
+                ],
+                "z": -3.2,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": [
+                  [
+                    0,
+                    -8.2
+                  ],
+                  [
+                    4.5,
+                    -4.6
+                  ]
+                ],
+                "z": -4,
+                "expressoes": [
+                  [
+                    0,
+                    "serio"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.6,
+                "z": 1.2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -0.6,
+                "z": 1.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.3,
+                "z": 0.2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.1,
+                "z": 0.3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.4,
+                "z": -0.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2,
+                "z": -1.2
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "estrelas",
+                "de": 4.25,
+                "ate": 5.4,
+                "pos": [
+                  0,
+                  2.3,
+                  0.8
+                ],
+                "tamanho": 0.6
+              }
+            ]
+          },
+          "hash": "53b531f488",
+          "clipe": "cenas/clipes/c01-b.mp4",
+          "poster": "cenas/clipes/c01-b.png"
+        }
+      ],
+      "escolhida": "c01-a",
+      "ajustes": []
+    },
+    {
+      "id": "c02",
+      "inicio": 5.47,
+      "fim": 6.9,
+      "frases": [
+        "f02"
+      ],
+      "resumo": "E perdeu",
+      "variantes": [
+        {
+          "id": "c02-a",
+          "descricao": "Close no major: a cara de choque vira decepção e ele cai, enquanto um emu pula de alegria atrás",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 5.47,
+                "pos": [
+                  0,
+                  1.5,
+                  4.4
+                ],
+                "olha": [
+                  0,
+                  1.2,
+                  0
+                ],
+                "fov": 40,
+                "roll": 4
+              },
+              {
+                "t": 6.8,
+                "pos": [
+                  0.2,
+                  1.4,
+                  3.8
+                ],
+                "olha": [
+                  0,
+                  1.1,
+                  0
+                ],
+                "fov": 40,
+                "roll": 4
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.2,
+                "z": 0,
+                "expressoes": [
+                  [
+                    5.47,
+                    "choque"
+                  ],
+                  [
+                    5.85,
+                    "decepcao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    5.5,
+                    "parado"
+                  ],
+                  [
+                    5.8,
+                    "cai"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0.9,
+                "z": -2.6,
+                "expressoes": [
+                  [
+                    5.47,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    5.6,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.8,
+                "z": -3.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.5,
+                "z": -3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.2,
+                "z": -4
+              }
+            ]
+          },
+          "hash": "557e27f0f1",
+          "clipe": "cenas/clipes/c02-a.mp4",
+          "poster": "cenas/clipes/c02-a.png"
+        },
+        {
+          "id": "c02-b",
+          "descricao": "Close no emu comemorando aos pulos, com estrelinhas, e o major desolado, de braços abertos, ao fundo",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 5.47,
+                "pos": [
+                  0,
+                  1.7,
+                  3.6
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  0.6
+                ],
+                "fov": 38
+              },
+              {
+                "t": 6.8,
+                "pos": [
+                  0.3,
+                  1.6,
+                  3.2
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  0.6
+                ],
+                "fov": 38,
+                "roll": -3
+              }
+            ],
+            "foco": {
+              "desfoque": 12,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": 0,
+                "z": 0.6,
+                "expressoes": [
+                  [
+                    5.47,
+                    "sorrisao"
+                  ],
+                  [
+                    5.9,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    5.55,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "major_meredith",
+                "x": 0.4,
+                "z": -2.4,
+                "expressoes": [
+                  [
+                    5.47,
+                    "decepcao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    5.6,
+                    "abre"
+                  ]
+                ]
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "estrelas",
+                "de": 5.6,
+                "ate": 6.9,
+                "pos": [
+                  0,
+                  2.6,
+                  0.6
+                ],
+                "tamanho": 0.8
+              }
+            ]
+          },
+          "hash": "0829cb3c58",
+          "clipe": "cenas/clipes/c02-b.mp4",
+          "poster": "cenas/clipes/c02-b.png"
+        }
+      ],
+      "escolhida": "c02-b",
+      "ajustes": []
+    },
+    {
+      "id": "c03",
+      "inicio": 6.9,
+      "fim": 10.56,
+      "frases": [
+        "f03"
+      ],
+      "resumo": "Vinte mil emus comendo o trigo",
+      "variantes": [
+        {
+          "id": "c03-a",
+          "descricao": "Geral: a lavoura de trigo tomada por um bando de emus comendo; balão \"20 MIL EMUS!\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 6.9,
+                "pos": [
+                  -5,
+                  6.5,
+                  14
+                ],
+                "olha": [
+                  0,
+                  0.6,
+                  -1
+                ]
+              },
+              {
+                "t": 10.4,
+                "pos": [
+                  -2.5,
+                  4.5,
+                  10.5
+                ],
+                "olha": [
+                  0,
+                  0.8,
+                  -1
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": -4,
+                "z": -1,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -2.5,
+                "z": -3,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    8.15,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -1,
+                "z": 0.5,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0.6,
+                "z": -2,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 2,
+                "z": 0,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 3.4,
+                "z": -2.6,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    8.35,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -3,
+                "z": 1.8,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 1.2,
+                "z": 2,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 4.2,
+                "z": 1,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -0.2,
+                "z": -4.2,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    8.55,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 2.6,
+                "z": -4.6,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -4.6,
+                "z": -4,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -5,
+                "z": 0
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -3.5,
+                "z": -2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2,
+                "z": 1
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.8,
+                "z": -1.2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0,
+                "z": -0.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.2,
+                "z": 1.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.4,
+                "z": -1.2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.8,
+                "z": 1
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3,
+                "z": -3.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 4.8,
+                "z": -1.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -0.8,
+                "z": -3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.6,
+                "z": -3.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -3.8,
+                "z": -4.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 5,
+                "z": 2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -5.2,
+                "z": 2.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3.6,
+                "z": 2.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.8,
+                "z": -5.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2.4,
+                "z": -5
+              },
+              {
+                "tipo": "balao",
+                "texto": "20 MIL EMUS!",
+                "x": 0,
+                "y": 3.6,
+                "z": 0,
+                "escala": 1.4,
+                "aparece": 7.1
+              }
+            ]
+          },
+          "hash": "4b23020325",
+          "clipe": "cenas/clipes/c03-a.mp4",
+          "poster": "cenas/clipes/c03-a.png"
+        },
+        {
+          "id": "c03-b",
+          "descricao": "Close em dois emus mastigando o trigo, satisfeitos; balão \"NHAC NHAC!\" na hora do \"comendo\"",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 6.9,
+                "pos": [
+                  -0.3,
+                  1.7,
+                  3.8
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 10.4,
+                "pos": [
+                  0.4,
+                  1.6,
+                  3.2
+                ],
+                "olha": [
+                  0.1,
+                  1.4,
+                  0
+                ],
+                "fov": 38
+              }
+            ],
+            "foco": {
+              "desfoque": 13,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": -0.2,
+                "z": 0,
+                "expressoes": [
+                  [
+                    6.9,
+                    "sorriso"
+                  ],
+                  [
+                    8.1,
+                    "sorrisao"
+                  ]
+                ],
+                "olhar": 0.6
+              },
+              {
+                "id": "emu",
+                "x": 0.6,
+                "z": -2,
+                "expressoes": [
+                  [
+                    6.9,
+                    "riso"
+                  ]
+                ],
+                "olhar": -0.5,
+                "acoes": [
+                  [
+                    9.2,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.5,
+                "z": 0.7
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -0.8,
+                "z": 0.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.9,
+                "z": -0.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.2,
+                "z": -0.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.9,
+                "z": -2.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.2,
+                "z": -2.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.8,
+                "z": -2.2
+              },
+              {
+                "tipo": "balao",
+                "texto": "NHAC NHAC!",
+                "x": -0.6,
+                "y": 2.5,
+                "z": 0,
+                "escala": 0.6,
+                "aparece": 8.05
+              }
+            ]
+          },
+          "hash": "17a75b7a9b",
+          "clipe": "cenas/clipes/c03-b.mp4",
+          "poster": "cenas/clipes/c03-b.png"
+        }
+      ],
+      "escolhida": "c03-b",
+      "ajustes": []
+    },
+    {
+      "id": "c04",
+      "inicio": 10.56,
+      "fim": 14.67,
+      "frases": [
+        "f04"
+      ],
+      "resumo": "O exército manda o major, dois soldados e duas metralhadoras",
+      "variantes": [
+        {
+          "id": "c04-a",
+          "descricao": "A câmera desliza pela tropa perfilada e mostra cada um na hora em que é citado: o major, os dois soldados e as duas metralhadoras",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 10.56,
+                "pos": [
+                  -0.4,
+                  1.7,
+                  5
+                ],
+                "olha": [
+                  -0.4,
+                  1.5,
+                  1.5
+                ]
+              },
+              {
+                "t": 12.2,
+                "pos": [
+                  0.9,
+                  1.8,
+                  6
+                ],
+                "olha": [
+                  1.3,
+                  1.3,
+                  -0.5
+                ]
+              },
+              {
+                "t": 13.4,
+                "pos": [
+                  0.4,
+                  2.4,
+                  9
+                ],
+                "olha": [
+                  0.6,
+                  0.9,
+                  -0.3
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": [
+                0.4,
+                1.4,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.4,
+                "z": 1.5,
+                "expressoes": [
+                  [
+                    10.56,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    13.3,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    11.55,
+                    "maos_cintura"
+                  ],
+                  [
+                    13.3,
+                    "aponta"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": 1,
+                "z": -0.4,
+                "expressoes": [
+                  [
+                    10.56,
+                    "serio"
+                  ],
+                  [
+                    12.4,
+                    "sorriso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.4,
+                    "acena"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": 2,
+                "z": -1.1,
+                "expressoes": [
+                  [
+                    10.56,
+                    "serio"
+                  ],
+                  [
+                    12.6,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.7,
+                    "comemora"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "metralhadora",
+                "x": -1.5,
+                "z": 0.2,
+                "giro": -40,
+                "aparece": 13.3
+              },
+              {
+                "tipo": "metralhadora",
+                "x": 3.1,
+                "z": -1.6,
+                "giro": -140,
+                "aparece": 13.45
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -4,
+                "z": -5
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2,
+                "z": -5.5
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0,
+                "z": -5
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2,
+                "z": -5.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 4,
+                "z": -5
+              }
+            ]
+          },
+          "hash": "dbab3c76e3",
+          "clipe": "cenas/clipes/c04-a.mp4",
+          "poster": "cenas/clipes/c04-a.png"
+        },
+        {
+          "id": "c04-b",
+          "descricao": "Plano heroico, de baixo e inclinado: as duas metralhadoras em primeiro plano apontadas para a câmera e o major estufando o peito no meio dos soldados",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 10.56,
+                "pos": [
+                  0,
+                  0.6,
+                  5
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  0
+                ],
+                "fov": 42,
+                "roll": -4
+              },
+              {
+                "t": 14.5,
+                "pos": [
+                  0,
+                  0.8,
+                  6.6
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  0
+                ],
+                "fov": 42,
+                "roll": -2
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    10.56,
+                    "serio"
+                  ],
+                  [
+                    11.7,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    11.6,
+                    "maos_cintura"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": -1,
+                "z": -1.3,
+                "expressoes": [
+                  [
+                    10.56,
+                    "serio"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.45,
+                    "acena"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": 1,
+                "z": -1.3,
+                "expressoes": [
+                  [
+                    10.56,
+                    "serio"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.5,
+                    "acena"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "metralhadora",
+                "x": -0.75,
+                "z": 2.1,
+                "giro": -65,
+                "aparece": 13.3
+              },
+              {
+                "tipo": "metralhadora",
+                "x": 0.75,
+                "z": 2.1,
+                "giro": -115,
+                "aparece": 13.45
+              }
+            ]
+          },
+          "hash": "a1baa06502",
+          "clipe": "cenas/clipes/c04-b.mp4",
+          "poster": "cenas/clipes/c04-b.png"
+        }
+      ],
+      "escolhida": "c04-b",
+      "ajustes": []
+    },
+    {
+      "id": "c05",
+      "inicio": 14.67,
+      "fim": 16,
+      "frases": [
+        "f05"
+      ],
+      "resumo": "Fácil, né?",
+      "variantes": [
+        {
+          "id": "c05-a",
+          "descricao": "Close no major, confiante, com sorriso de canto, enquanto um emu espia por trás dele",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 14.67,
+                "pos": [
+                  0,
+                  1.75,
+                  2.7
+                ],
+                "olha": [
+                  0,
+                  1.75,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 15.9,
+                "pos": [
+                  0.1,
+                  1.75,
+                  2.3
+                ],
+                "olha": [
+                  0,
+                  1.75,
+                  0
+                ],
+                "fov": 38
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.15,
+                "z": 0,
+                "expressoes": [
+                  [
+                    14.67,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    15.15,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    14.7,
+                    "maos_cintura"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    14.67,
+                    1.6
+                  ],
+                  [
+                    15.2,
+                    0.55
+                  ]
+                ],
+                "z": -2,
+                "expressoes": [
+                  [
+                    14.67,
+                    "sorriso_fechado"
+                  ]
+                ],
+                "olhar": -1
+              }
+            ]
+          },
+          "hash": "a393c1435e",
+          "clipe": "cenas/clipes/c05-a.mp4",
+          "poster": "cenas/clipes/c05-a.png"
+        },
+        {
+          "id": "c05-b",
+          "descricao": "Close no emu, que encara a câmera com cara de quem sabe de alguma coisa",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "camera": [
+              {
+                "t": 14.67,
+                "pos": [
+                  0,
+                  1.65,
+                  3
+                ],
+                "olha": [
+                  0,
+                  1.55,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 15.9,
+                "pos": [
+                  0,
+                  1.6,
+                  2.5
+                ],
+                "olha": [
+                  0,
+                  1.55,
+                  0
+                ],
+                "fov": 38,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    14.67,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    15.2,
+                    "assobio"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    14.67,
+                    -0.8
+                  ],
+                  [
+                    15.1,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.7,
+                "z": 0.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -0.7,
+                "z": 0.3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.3,
+                "z": -1.5
+              }
+            ]
+          },
+          "hash": "868c917f06",
+          "clipe": "cenas/clipes/c05-b.mp4",
+          "poster": "cenas/clipes/c05-b.png"
+        }
+      ],
+      "escolhida": "c05-a",
+      "ajustes": []
+    },
+    {
+      "id": "c06",
+      "inicio": 16,
+      "fim": 20.09,
+      "frases": [
+        "f06"
+      ],
+      "resumo": "Os emus se espalham em grupinhos e correm em zigue-zague",
+      "variantes": [
+        {
+          "id": "c06-a",
+          "descricao": "Geral: o bando se divide em grupinhos e sai correndo em zigue-zague; o major e um soldado, em primeiro plano, ficam tontos de tanto acompanhar",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 16,
+                "pos": [
+                  0,
+                  3.6,
+                  11
+                ],
+                "olha": [
+                  0,
+                  0.9,
+                  -1
+                ]
+              },
+              {
+                "t": 19.9,
+                "pos": [
+                  0,
+                  4.6,
+                  12.5
+                ],
+                "olha": [
+                  0,
+                  0.6,
+                  -1.5
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.7,
+                    0
+                  ],
+                  [
+                    17.5,
+                    -1.5
+                  ],
+                  [
+                    18.3,
+                    -2.2
+                  ],
+                  [
+                    19.1,
+                    -3.8
+                  ],
+                  [
+                    19.9,
+                    -4.5
+                  ]
+                ],
+                "z": [
+                  [
+                    16.7,
+                    -1
+                  ],
+                  [
+                    17.5,
+                    -0.2
+                  ],
+                  [
+                    18.3,
+                    -1.6
+                  ],
+                  [
+                    19.1,
+                    -0.6
+                  ],
+                  [
+                    19.9,
+                    -1.8
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.75,
+                    0.4
+                  ],
+                  [
+                    17.55,
+                    1.6
+                  ],
+                  [
+                    18.35,
+                    2.6
+                  ],
+                  [
+                    19.15,
+                    3.6
+                  ],
+                  [
+                    19.9,
+                    4.8
+                  ]
+                ],
+                "z": [
+                  [
+                    16.75,
+                    -0.6
+                  ],
+                  [
+                    17.55,
+                    -1.8
+                  ],
+                  [
+                    18.35,
+                    -0.6
+                  ],
+                  [
+                    19.15,
+                    -2
+                  ],
+                  [
+                    19.9,
+                    -1
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.8,
+                    -0.3
+                  ],
+                  [
+                    17.6,
+                    -1.2
+                  ],
+                  [
+                    18.4,
+                    0.2
+                  ],
+                  [
+                    19.2,
+                    -0.8
+                  ],
+                  [
+                    19.9,
+                    0.4
+                  ]
+                ],
+                "z": [
+                  [
+                    16.8,
+                    -1.4
+                  ],
+                  [
+                    17.6,
+                    -2.6
+                  ],
+                  [
+                    18.4,
+                    -3.4
+                  ],
+                  [
+                    19.2,
+                    -4.4
+                  ],
+                  [
+                    19.9,
+                    -5.4
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.85,
+                    0.6
+                  ],
+                  [
+                    17.65,
+                    2
+                  ],
+                  [
+                    18.45,
+                    1.4
+                  ],
+                  [
+                    19.25,
+                    3.2
+                  ],
+                  [
+                    19.9,
+                    2.8
+                  ]
+                ],
+                "z": [
+                  [
+                    16.85,
+                    -1.4
+                  ],
+                  [
+                    17.65,
+                    -2.4
+                  ],
+                  [
+                    18.45,
+                    -3.4
+                  ],
+                  [
+                    19.25,
+                    -3.6
+                  ],
+                  [
+                    19.9,
+                    -4.6
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.9,
+                    -0.6
+                  ],
+                  [
+                    17.7,
+                    -2
+                  ],
+                  [
+                    18.5,
+                    -1.6
+                  ],
+                  [
+                    19.3,
+                    -3.2
+                  ],
+                  [
+                    19.9,
+                    -3
+                  ]
+                ],
+                "z": [
+                  [
+                    16.9,
+                    -0.4
+                  ],
+                  [
+                    17.7,
+                    0.2
+                  ],
+                  [
+                    18.5,
+                    1.4
+                  ],
+                  [
+                    19.3,
+                    1.4
+                  ],
+                  [
+                    19.9,
+                    2.4
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.95,
+                    0.2
+                  ],
+                  [
+                    17.75,
+                    1.6
+                  ],
+                  [
+                    18.55,
+                    1.2
+                  ],
+                  [
+                    19.35,
+                    2.8
+                  ],
+                  [
+                    19.9,
+                    2.6
+                  ]
+                ],
+                "z": [
+                  [
+                    16.95,
+                    -0.2
+                  ],
+                  [
+                    17.75,
+                    0.4
+                  ],
+                  [
+                    18.55,
+                    1.6
+                  ],
+                  [
+                    19.35,
+                    1.4
+                  ],
+                  [
+                    19.9,
+                    2.6
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              },
+              {
+                "id": "major_meredith",
+                "x": -1.1,
+                "z": 5.2,
+                "expressoes": [
+                  [
+                    16,
+                    "serio"
+                  ],
+                  [
+                    17.4,
+                    "nervoso"
+                  ],
+                  [
+                    18.9,
+                    "tonto"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    17.8,
+                    -1
+                  ],
+                  [
+                    18.6,
+                    1
+                  ],
+                  [
+                    19.4,
+                    -1
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": 1.1,
+                "z": 5,
+                "expressoes": [
+                  [
+                    16,
+                    "nervoso"
+                  ],
+                  [
+                    19,
+                    "tonto"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    16,
+                    1
+                  ],
+                  [
+                    17.2,
+                    -1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    18.8,
+                    -1
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -6,
+                "z": -6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -3,
+                "z": -6.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0,
+                "z": -6.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 3,
+                "z": -6.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 6,
+                "z": -6
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 16.8,
+                "ate": 18.2,
+                "pos": [
+                  0,
+                  0.3,
+                  -1
+                ],
+                "tamanho": 2
+              },
+              {
+                "tipo": "estrelas",
+                "de": 18.9,
+                "ate": 20.09,
+                "pos": [
+                  -1.1,
+                  2.6,
+                  5.2
+                ],
+                "tamanho": 0.6
+              },
+              {
+                "tipo": "estrelas",
+                "de": 19,
+                "ate": 20.09,
+                "pos": [
+                  1.1,
+                  2.5,
+                  5
+                ],
+                "tamanho": 0.6
+              }
+            ]
+          },
+          "hash": "5c67ea5f5b",
+          "clipe": "cenas/clipes/c06-a.mp4",
+          "poster": "cenas/clipes/c06-a.png"
+        },
+        {
+          "id": "c06-b",
+          "descricao": "Vista aérea: os grupinhos de emus se abrem como fogos de artifício e ziguezagueiam pelo campo, levantando poeira",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 16,
+                "pos": [
+                  0,
+                  15,
+                  9
+                ],
+                "olha": [
+                  0,
+                  0,
+                  -1
+                ]
+              },
+              {
+                "t": 19.9,
+                "pos": [
+                  0,
+                  13,
+                  7.5
+                ],
+                "olha": [
+                  0,
+                  0,
+                  -1.5
+                ],
+                "fov": 40,
+                "roll": 4
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.7,
+                    0
+                  ],
+                  [
+                    17.5,
+                    -1.5
+                  ],
+                  [
+                    18.3,
+                    -2.2
+                  ],
+                  [
+                    19.1,
+                    -3.8
+                  ],
+                  [
+                    19.9,
+                    -4.5
+                  ]
+                ],
+                "z": [
+                  [
+                    16.7,
+                    -1
+                  ],
+                  [
+                    17.5,
+                    -0.2
+                  ],
+                  [
+                    18.3,
+                    -1.6
+                  ],
+                  [
+                    19.1,
+                    -0.6
+                  ],
+                  [
+                    19.9,
+                    -1.8
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.75,
+                    0.4
+                  ],
+                  [
+                    17.55,
+                    1.6
+                  ],
+                  [
+                    18.35,
+                    2.6
+                  ],
+                  [
+                    19.15,
+                    3.6
+                  ],
+                  [
+                    19.9,
+                    4.8
+                  ]
+                ],
+                "z": [
+                  [
+                    16.75,
+                    -0.6
+                  ],
+                  [
+                    17.55,
+                    -1.8
+                  ],
+                  [
+                    18.35,
+                    -0.6
+                  ],
+                  [
+                    19.15,
+                    -2
+                  ],
+                  [
+                    19.9,
+                    -1
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.8,
+                    -0.3
+                  ],
+                  [
+                    17.6,
+                    -1.2
+                  ],
+                  [
+                    18.4,
+                    0.2
+                  ],
+                  [
+                    19.2,
+                    -0.8
+                  ],
+                  [
+                    19.9,
+                    0.4
+                  ]
+                ],
+                "z": [
+                  [
+                    16.8,
+                    -1.4
+                  ],
+                  [
+                    17.6,
+                    -2.6
+                  ],
+                  [
+                    18.4,
+                    -3.4
+                  ],
+                  [
+                    19.2,
+                    -4.4
+                  ],
+                  [
+                    19.9,
+                    -5.4
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.85,
+                    0.6
+                  ],
+                  [
+                    17.65,
+                    2
+                  ],
+                  [
+                    18.45,
+                    1.4
+                  ],
+                  [
+                    19.25,
+                    3.2
+                  ],
+                  [
+                    19.9,
+                    2.8
+                  ]
+                ],
+                "z": [
+                  [
+                    16.85,
+                    -1.4
+                  ],
+                  [
+                    17.65,
+                    -2.4
+                  ],
+                  [
+                    18.45,
+                    -3.4
+                  ],
+                  [
+                    19.25,
+                    -3.6
+                  ],
+                  [
+                    19.9,
+                    -4.6
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.9,
+                    -0.6
+                  ],
+                  [
+                    17.7,
+                    -2
+                  ],
+                  [
+                    18.5,
+                    -1.6
+                  ],
+                  [
+                    19.3,
+                    -3.2
+                  ],
+                  [
+                    19.9,
+                    -3
+                  ]
+                ],
+                "z": [
+                  [
+                    16.9,
+                    -0.4
+                  ],
+                  [
+                    17.7,
+                    0.2
+                  ],
+                  [
+                    18.5,
+                    1.4
+                  ],
+                  [
+                    19.3,
+                    1.4
+                  ],
+                  [
+                    19.9,
+                    2.4
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    16.95,
+                    0.2
+                  ],
+                  [
+                    17.75,
+                    1.6
+                  ],
+                  [
+                    18.55,
+                    1.2
+                  ],
+                  [
+                    19.35,
+                    2.8
+                  ],
+                  [
+                    19.9,
+                    2.6
+                  ]
+                ],
+                "z": [
+                  [
+                    16.95,
+                    -0.2
+                  ],
+                  [
+                    17.75,
+                    0.4
+                  ],
+                  [
+                    18.55,
+                    1.6
+                  ],
+                  [
+                    19.35,
+                    1.4
+                  ],
+                  [
+                    19.9,
+                    2.6
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    16,
+                    "riso"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -4,
+                "z": 0
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -2,
+                "z": -4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2,
+                "z": -4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 4,
+                "z": 0
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0,
+                "z": 2
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -5,
+                "z": -3
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 5,
+                "z": -3
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 16.8,
+                "ate": 18,
+                "pos": [
+                  0,
+                  0.3,
+                  -1
+                ],
+                "tamanho": 2.5
+              },
+              {
+                "tipo": "poeira",
+                "de": 18.2,
+                "ate": 19.4,
+                "pos": [
+                  -3,
+                  0.3,
+                  -2
+                ],
+                "tamanho": 1.6
+              },
+              {
+                "tipo": "poeira",
+                "de": 18.4,
+                "ate": 19.6,
+                "pos": [
+                  3,
+                  0.3,
+                  -2
+                ],
+                "tamanho": 1.6
+              }
+            ]
+          },
+          "hash": "577a1821fd",
+          "clipe": "cenas/clipes/c06-b.mp4",
+          "poster": "cenas/clipes/c06-b.png"
+        }
+      ],
+      "escolhida": "c06-a",
+      "ajustes": []
+    },
+    {
+      "id": "c07",
+      "inicio": 20.09,
+      "fim": 22.82,
+      "frases": [
+        "f07"
+      ],
+      "resumo": "Montam a metralhadora num caminhão",
+      "variantes": [
+        {
+          "id": "c07-a",
+          "descricao": "O caminhão chega quicando pela trilha com a metralhadora presa na carroceria, e o major aponta para ele, todo orgulhoso",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 20.09,
+                "pos": [
+                  2.6,
+                  1.8,
+                  8
+                ],
+                "olha": [
+                  -1.5,
+                  1.1,
+                  0
+                ]
+              },
+              {
+                "t": 22.6,
+                "pos": [
+                  2,
+                  1.8,
+                  6.8
+                ],
+                "olha": [
+                  -0.4,
+                  1.1,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": [
+                -1,
+                1,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": 0.4,
+                "z": 3,
+                "expressoes": [
+                  [
+                    20.09,
+                    "sorriso"
+                  ],
+                  [
+                    21.9,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    21,
+                    "aponta"
+                  ]
+                ],
+                "olhar": -1
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "x": [
+                  [
+                    20.09,
+                    -10
+                  ],
+                  [
+                    21.9,
+                    -1.2
+                  ]
+                ],
+                "z": 0,
+                "movendo": true,
+                "y": [
+                  [
+                    20.09,
+                    0
+                  ],
+                  [
+                    20.3,
+                    0.12
+                  ],
+                  [
+                    20.55,
+                    0
+                  ],
+                  [
+                    20.8,
+                    0.1
+                  ],
+                  [
+                    21.05,
+                    0
+                  ],
+                  [
+                    21.3,
+                    0.12
+                  ],
+                  [
+                    21.55,
+                    0
+                  ],
+                  [
+                    21.8,
+                    0.08
+                  ],
+                  [
+                    22.05,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 21.6,
+                "ate": 22.6,
+                "pos": [
+                  -3.8,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.3
+              }
+            ]
+          },
+          "hash": "53640251bf",
+          "clipe": "cenas/clipes/c07-a.mp4",
+          "poster": "cenas/clipes/c07-a.png"
+        },
+        {
+          "id": "c07-b",
+          "descricao": "Close na carroceria: o soldado, em cima do caminhão, segura a metralhadora presa nele, e a câmera gira em volta",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 20.09,
+                "pos": [
+                  -5.6,
+                  3,
+                  6
+                ],
+                "olha": [
+                  -1.2,
+                  1.5,
+                  0
+                ]
+              },
+              {
+                "t": 22.7,
+                "pos": [
+                  -0.6,
+                  2.9,
+                  6.8
+                ],
+                "olha": [
+                  -1,
+                  1.4,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "soldado"
+            },
+            "atores": [
+              {
+                "id": "soldado",
+                "x": -1.75,
+                "y": 0.82,
+                "z": 0.35,
+                "expressoes": [
+                  [
+                    20.09,
+                    "sorriso"
+                  ],
+                  [
+                    21.9,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    21,
+                    "segura"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "x": 0,
+                "z": 0
+              }
+            ]
+          },
+          "hash": "fac746373d",
+          "clipe": "cenas/clipes/c07-b.mp4",
+          "poster": "cenas/clipes/c07-b.png"
+        }
+      ],
+      "escolhida": "c07-a",
+      "ajustes": []
+    },
+    {
+      "id": "c08",
+      "inicio": 22.82,
+      "fim": 26.84,
+      "frases": [
+        "f08"
+      ],
+      "resumo": "A estrada de terra sacode e ninguém consegue mirar",
+      "variantes": [
+        {
+          "id": "c08-a",
+          "descricao": "A câmera acompanha o caminhão sacudindo na estrada de terra; o soldado na carroceria treme inteiro e o quadro chacoalha junto",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 22.82,
+                "pos": [
+                  -1.2,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  -2.8,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              },
+              {
+                "t": 23.22,
+                "pos": [
+                  -0.32,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  -1.92,
+                  1.4,
+                  0
+                ],
+                "roll": 5
+              },
+              {
+                "t": 23.62,
+                "pos": [
+                  0.56,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  -1.04,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              },
+              {
+                "t": 24.02,
+                "pos": [
+                  1.44,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  -0.16,
+                  1.4,
+                  0
+                ],
+                "roll": 5
+              },
+              {
+                "t": 24.42,
+                "pos": [
+                  2.32,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  0.72,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              },
+              {
+                "t": 24.82,
+                "pos": [
+                  3.2,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  1.6,
+                  1.4,
+                  0
+                ],
+                "roll": 5
+              },
+              {
+                "t": 25.22,
+                "pos": [
+                  4.08,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  2.48,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              },
+              {
+                "t": 25.62,
+                "pos": [
+                  4.96,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  3.36,
+                  1.4,
+                  0
+                ],
+                "roll": 5
+              },
+              {
+                "t": 26.02,
+                "pos": [
+                  5.84,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  4.24,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              },
+              {
+                "t": 26.42,
+                "pos": [
+                  6.72,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  5.12,
+                  1.4,
+                  0
+                ],
+                "roll": 5
+              },
+              {
+                "t": 26.82,
+                "pos": [
+                  7.6,
+                  2.2,
+                  6.6
+                ],
+                "olha": [
+                  6,
+                  1.4,
+                  0
+                ],
+                "roll": -5
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": "soldado"
+            },
+            "atores": [
+              {
+                "id": "soldado",
+                "andar": false,
+                "z": 0.35,
+                "x": [
+                  [
+                    22.82,
+                    -3.75
+                  ],
+                  [
+                    23.22,
+                    -2.87
+                  ],
+                  [
+                    23.62,
+                    -1.99
+                  ],
+                  [
+                    24.02,
+                    -1.11
+                  ],
+                  [
+                    24.42,
+                    -0.23
+                  ],
+                  [
+                    24.82,
+                    0.65
+                  ],
+                  [
+                    25.22,
+                    1.53
+                  ],
+                  [
+                    25.62,
+                    2.41
+                  ],
+                  [
+                    26.02,
+                    3.29
+                  ],
+                  [
+                    26.42,
+                    4.17
+                  ],
+                  [
+                    26.82,
+                    5.05
+                  ]
+                ],
+                "y": [
+                  [
+                    22.82,
+                    0.82
+                  ],
+                  [
+                    23.02,
+                    1.02
+                  ],
+                  [
+                    23.22,
+                    0.82
+                  ],
+                  [
+                    23.42,
+                    0.96
+                  ],
+                  [
+                    23.62,
+                    0.82
+                  ],
+                  [
+                    23.82,
+                    1.02
+                  ],
+                  [
+                    24.02,
+                    0.82
+                  ],
+                  [
+                    24.22,
+                    0.96
+                  ],
+                  [
+                    24.42,
+                    0.82
+                  ],
+                  [
+                    24.62,
+                    1.02
+                  ],
+                  [
+                    24.82,
+                    0.82
+                  ],
+                  [
+                    25.02,
+                    0.96
+                  ],
+                  [
+                    25.22,
+                    0.82
+                  ],
+                  [
+                    25.42,
+                    1.02
+                  ],
+                  [
+                    25.62,
+                    0.82
+                  ],
+                  [
+                    25.82,
+                    0.96
+                  ],
+                  [
+                    26.02,
+                    0.82
+                  ],
+                  [
+                    26.22,
+                    1.02
+                  ],
+                  [
+                    26.42,
+                    0.82
+                  ],
+                  [
+                    26.62,
+                    0.96
+                  ],
+                  [
+                    26.82,
+                    0.82
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    22.82,
+                    "nervoso"
+                  ],
+                  [
+                    24.5,
+                    "tonto"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    22.82,
+                    "tremer"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "z": 0,
+                "movendo": true,
+                "x": [
+                  [
+                    22.82,
+                    -2
+                  ],
+                  [
+                    23.22,
+                    -1.12
+                  ],
+                  [
+                    23.62,
+                    -0.24
+                  ],
+                  [
+                    24.02,
+                    0.64
+                  ],
+                  [
+                    24.42,
+                    1.52
+                  ],
+                  [
+                    24.82,
+                    2.4
+                  ],
+                  [
+                    25.22,
+                    3.28
+                  ],
+                  [
+                    25.62,
+                    4.16
+                  ],
+                  [
+                    26.02,
+                    5.04
+                  ],
+                  [
+                    26.42,
+                    5.92
+                  ],
+                  [
+                    26.82,
+                    6.8
+                  ]
+                ],
+                "y": [
+                  [
+                    22.82,
+                    0
+                  ],
+                  [
+                    23.02,
+                    0.2
+                  ],
+                  [
+                    23.22,
+                    0
+                  ],
+                  [
+                    23.42,
+                    0.14
+                  ],
+                  [
+                    23.62,
+                    0
+                  ],
+                  [
+                    23.82,
+                    0.2
+                  ],
+                  [
+                    24.02,
+                    0
+                  ],
+                  [
+                    24.22,
+                    0.14
+                  ],
+                  [
+                    24.42,
+                    0
+                  ],
+                  [
+                    24.62,
+                    0.2
+                  ],
+                  [
+                    24.82,
+                    0
+                  ],
+                  [
+                    25.02,
+                    0.14
+                  ],
+                  [
+                    25.22,
+                    0
+                  ],
+                  [
+                    25.42,
+                    0.2
+                  ],
+                  [
+                    25.62,
+                    0
+                  ],
+                  [
+                    25.82,
+                    0.14
+                  ],
+                  [
+                    26.02,
+                    0
+                  ],
+                  [
+                    26.22,
+                    0.2
+                  ],
+                  [
+                    26.42,
+                    0
+                  ],
+                  [
+                    26.62,
+                    0.14
+                  ],
+                  [
+                    26.82,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 23.1,
+                "ate": 24.1,
+                "pos": [
+                  -4.98,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.4
+              },
+              {
+                "tipo": "poeira",
+                "de": 24,
+                "ate": 25,
+                "pos": [
+                  -3,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.4
+              },
+              {
+                "tipo": "poeira",
+                "de": 24.9,
+                "ate": 25.9,
+                "pos": [
+                  -1.02,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.4
+              },
+              {
+                "tipo": "poeira",
+                "de": 25.8,
+                "ate": 26.8,
+                "pos": [
+                  0.96,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.4
+              }
+            ]
+          },
+          "hash": "12175786b6",
+          "clipe": "cenas/clipes/c08-a.mp4",
+          "poster": "cenas/clipes/c08-a.png"
+        },
+        {
+          "id": "c08-b",
+          "descricao": "Plano de frente: o caminhão vem na direção da câmera pulando nos buracos, a metralhadora balançando, e um emu corre na frente rindo",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 22.82,
+                "pos": [
+                  5,
+                  1.3,
+                  4
+                ],
+                "olha": [
+                  -5,
+                  1.2,
+                  0
+                ]
+              },
+              {
+                "t": 26.7,
+                "pos": [
+                  5.6,
+                  1.4,
+                  3.6
+                ],
+                "olha": [
+                  0,
+                  1.2,
+                  0
+                ],
+                "fov": 40,
+                "roll": 4
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": [
+                0,
+                1,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "soldado",
+                "andar": false,
+                "z": 0.35,
+                "x": [
+                  [
+                    22.82,
+                    -9.75
+                  ],
+                  [
+                    26.84,
+                    -1.75
+                  ]
+                ],
+                "y": [
+                  [
+                    22.82,
+                    0.82
+                  ],
+                  [
+                    23.07,
+                    1.07
+                  ],
+                  [
+                    23.32,
+                    0.82
+                  ],
+                  [
+                    23.57,
+                    1
+                  ],
+                  [
+                    23.82,
+                    0.82
+                  ],
+                  [
+                    24.07,
+                    1.07
+                  ],
+                  [
+                    24.32,
+                    0.82
+                  ],
+                  [
+                    24.57,
+                    1
+                  ],
+                  [
+                    24.82,
+                    0.82
+                  ],
+                  [
+                    25.07,
+                    1.07
+                  ],
+                  [
+                    25.32,
+                    0.82
+                  ],
+                  [
+                    25.57,
+                    1
+                  ],
+                  [
+                    25.82,
+                    0.82
+                  ],
+                  [
+                    26.07,
+                    1.07
+                  ],
+                  [
+                    26.32,
+                    0.82
+                  ],
+                  [
+                    26.57,
+                    1
+                  ],
+                  [
+                    26.82,
+                    0.82
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    22.82,
+                    "nervoso"
+                  ],
+                  [
+                    25.1,
+                    "tonto"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    22.82,
+                    "tremer"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    22.82,
+                    0.5
+                  ],
+                  [
+                    26.84,
+                    2.6
+                  ]
+                ],
+                "z": 1.6,
+                "expressoes": [
+                  [
+                    22.82,
+                    "riso"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "z": 0,
+                "movendo": true,
+                "x": [
+                  [
+                    22.82,
+                    -8
+                  ],
+                  [
+                    26.84,
+                    0
+                  ]
+                ],
+                "y": [
+                  [
+                    22.82,
+                    0
+                  ],
+                  [
+                    23.07,
+                    0.25
+                  ],
+                  [
+                    23.32,
+                    0
+                  ],
+                  [
+                    23.57,
+                    0.18
+                  ],
+                  [
+                    23.82,
+                    0
+                  ],
+                  [
+                    24.07,
+                    0.25
+                  ],
+                  [
+                    24.32,
+                    0
+                  ],
+                  [
+                    24.57,
+                    0.18
+                  ],
+                  [
+                    24.82,
+                    0
+                  ],
+                  [
+                    25.07,
+                    0.25
+                  ],
+                  [
+                    25.32,
+                    0
+                  ],
+                  [
+                    25.57,
+                    0.18
+                  ],
+                  [
+                    25.82,
+                    0
+                  ],
+                  [
+                    26.07,
+                    0.25
+                  ],
+                  [
+                    26.32,
+                    0
+                  ],
+                  [
+                    26.57,
+                    0.18
+                  ],
+                  [
+                    26.82,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 23.6,
+                "ate": 24.8,
+                "pos": [
+                  -8,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.5
+              },
+              {
+                "tipo": "poeira",
+                "de": 25.2,
+                "ate": 26.6,
+                "pos": [
+                  -5,
+                  0.4,
+                  0
+                ],
+                "tamanho": 1.5
+              }
+            ]
+          },
+          "hash": "225a3fa243",
+          "clipe": "cenas/clipes/c08-b.mp4",
+          "poster": "cenas/clipes/c08-b.png"
+        }
+      ],
+      "escolhida": "c08-a",
+      "ajustes": []
+    },
+    {
+      "id": "c09",
+      "inicio": 26.84,
+      "fim": 31.16,
+      "frases": [
+        "f09"
+      ],
+      "resumo": "Acertam mais poeira do que pássaro",
+      "variantes": [
+        {
+          "id": "c09-a",
+          "descricao": "O soldado dispara a metralhadora de tripé, tremendo, e só levanta poeira em volta do emu, que fica parado assobiando e depois cai na risada",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 26.84,
+                "pos": [
+                  -0.6,
+                  1.8,
+                  7.2
+                ],
+                "olha": [
+                  0.2,
+                  1.2,
+                  -0.5
+                ]
+              },
+              {
+                "t": 31,
+                "pos": [
+                  -0.2,
+                  1.8,
+                  6.6
+                ],
+                "olha": [
+                  0.4,
+                  1.3,
+                  -1
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "soldado",
+                "x": -0.4,
+                "z": 2.6,
+                "expressoes": [
+                  [
+                    26.84,
+                    "serio"
+                  ],
+                  [
+                    27.3,
+                    "nervoso"
+                  ],
+                  [
+                    28.3,
+                    "choque"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    26.9,
+                    "tremer"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0.9,
+                "z": -1.8,
+                "expressoes": [
+                  [
+                    26.84,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    27.4,
+                    "assobio"
+                  ],
+                  [
+                    28.6,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    29,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "metralhadora",
+                "x": 0.15,
+                "z": 2.5,
+                "giro": 80
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.2,
+                "z": -2.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.5,
+                "z": -2.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0,
+                "z": -3.6
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 27.3,
+                "ate": 28.2,
+                "pos": [
+                  0.2,
+                  0.35,
+                  -2.1
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 27.62,
+                "ate": 28.52,
+                "pos": [
+                  1.5,
+                  0.35,
+                  -1.6
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 27.94,
+                "ate": 28.84,
+                "pos": [
+                  0.7,
+                  0.35,
+                  -1.2
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.26,
+                "ate": 29.16,
+                "pos": [
+                  1.7,
+                  0.35,
+                  -2.4
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.58,
+                "ate": 29.48,
+                "pos": [
+                  0,
+                  0.35,
+                  -1.3
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.9,
+                "ate": 29.8,
+                "pos": [
+                  1,
+                  0.35,
+                  -2.6
+                ],
+                "tamanho": 0.9
+              }
+            ]
+          },
+          "hash": "b830b660b8",
+          "clipe": "cenas/clipes/c09-a.mp4",
+          "poster": "cenas/clipes/c09-a.png"
+        },
+        {
+          "id": "c09-b",
+          "descricao": "Close no emu no meio de uma nuvem de poeira, sem um arranhão, com cara de deboche; um X vermelho mostra que erraram",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 26.84,
+                "pos": [
+                  0,
+                  1.7,
+                  3.6
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 31,
+                "pos": [
+                  0.3,
+                  1.6,
+                  3
+                ],
+                "olha": [
+                  0,
+                  1.5,
+                  0
+                ],
+                "fov": 38,
+                "roll": -3
+              }
+            ],
+            "foco": {
+              "desfoque": 13,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    26.84,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    27.5,
+                    "assobio"
+                  ],
+                  [
+                    28.6,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    29.1,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "x",
+                "x": 0.75,
+                "y": 2.6,
+                "z": 0,
+                "escala": 0.4,
+                "aparece": 28.2
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "poeira",
+                "de": 27.4,
+                "ate": 28.3,
+                "pos": [
+                  -0.7,
+                  0.35,
+                  0
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 27.72,
+                "ate": 28.62,
+                "pos": [
+                  0.6,
+                  0.35,
+                  0.5
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.04,
+                "ate": 28.94,
+                "pos": [
+                  -0.2,
+                  0.35,
+                  0.9
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.36,
+                "ate": 29.26,
+                "pos": [
+                  0.8,
+                  0.35,
+                  -0.3
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 28.68,
+                "ate": 29.58,
+                "pos": [
+                  -0.9,
+                  0.35,
+                  0.8
+                ],
+                "tamanho": 0.9
+              },
+              {
+                "tipo": "poeira",
+                "de": 29,
+                "ate": 29.9,
+                "pos": [
+                  0.1,
+                  0.35,
+                  -0.5
+                ],
+                "tamanho": 0.9
+              }
+            ]
+          },
+          "hash": "d3595a4844",
+          "clipe": "cenas/clipes/c09-b.mp4",
+          "poster": "cenas/clipes/c09-b.png"
+        }
+      ],
+      "escolhida": "c09-a",
+      "ajustes": []
+    },
+    {
+      "id": "c10",
+      "inicio": 31.16,
+      "fim": 35.24,
+      "frases": [
+        "f10"
+      ],
+      "resumo": "Quase dez mil balas depois, o exército desiste",
+      "variantes": [
+        {
+          "id": "c10-a",
+          "descricao": "Fim de tarde: o major, ao lado das caixas de munição, põe a mão na testa, decepcionado; balão \"QUASE 10 MIL BALAS\"; o soldado senta, desanimado",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 31.16,
+                "pos": [
+                  0,
+                  1.7,
+                  5.6
+                ],
+                "olha": [
+                  0,
+                  1.3,
+                  0
+                ]
+              },
+              {
+                "t": 35.1,
+                "pos": [
+                  0.3,
+                  1.6,
+                  4.4
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 11,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.3,
+                "z": 0.4,
+                "expressoes": [
+                  [
+                    31.16,
+                    "serio"
+                  ],
+                  [
+                    32.6,
+                    "decepcao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    33.4,
+                    "decepcao"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": 1,
+                "z": -1.4,
+                "expressoes": [
+                  [
+                    31.16,
+                    "decepcao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    33.9,
+                    "senta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caixote",
+                "x": -1.4,
+                "z": -0.6,
+                "cor": "#6f7d4c"
+              },
+              {
+                "tipo": "caixote",
+                "x": -1.4,
+                "y": 0.8,
+                "z": -0.6,
+                "cor": "#6f7d4c",
+                "giro": 15
+              },
+              {
+                "tipo": "metralhadora",
+                "x": 1.9,
+                "z": -0.9,
+                "giro": 200
+              },
+              {
+                "tipo": "balao",
+                "texto": "QUASE 10 MIL BALAS",
+                "x": 0.3,
+                "y": 3.1,
+                "z": 0,
+                "escala": 0.85,
+                "aparece": 31.5
+              }
+            ]
+          },
+          "hash": "b3dc859d45",
+          "clipe": "cenas/clipes/c10-a.mp4",
+          "poster": "cenas/clipes/c10-a.png"
+        },
+        {
+          "id": "c10-b",
+          "descricao": "Geral no pôr do sol: a tropa vai embora pela trilha atrás do caminhão, e os emus pulam de alegria no campo",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 31.16,
+                "pos": [
+                  1.5,
+                  3,
+                  11
+                ],
+                "olha": [
+                  0,
+                  1,
+                  -1
+                ]
+              },
+              {
+                "t": 35.1,
+                "pos": [
+                  2,
+                  2.8,
+                  10
+                ],
+                "olha": [
+                  0,
+                  1.1,
+                  -1
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": [
+                  [
+                    31.16,
+                    0.4
+                  ],
+                  [
+                    35.24,
+                    -2.4
+                  ]
+                ],
+                "z": 1.5,
+                "expressoes": [
+                  [
+                    31.16,
+                    "decepcao"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": [
+                  [
+                    31.16,
+                    1.2
+                  ],
+                  [
+                    35.24,
+                    -1.6
+                  ]
+                ],
+                "z": 2.2,
+                "expressoes": [
+                  [
+                    31.16,
+                    "decepcao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0.5,
+                "z": -3,
+                "expressoes": [
+                  [
+                    31.16,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    33.9,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 1.5,
+                "z": -4.5,
+                "expressoes": [
+                  [
+                    31.16,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    34,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": -0.6,
+                "z": -5,
+                "expressoes": [
+                  [
+                    31.16,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    34.1,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "x": [
+                  [
+                    31.16,
+                    -1
+                  ],
+                  [
+                    35.24,
+                    -6
+                  ]
+                ],
+                "z": 0,
+                "movendo": true
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 1.2,
+                "z": -2.4
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -0.4,
+                "z": -3.8
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 2.4,
+                "z": -3.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": 0.6,
+                "z": -5.6
+              },
+              {
+                "tipo": "plantacao_de_trigo",
+                "x": -1.6,
+                "z": -4.6
+              }
+            ]
+          },
+          "hash": "2b02d506d2",
+          "clipe": "cenas/clipes/c10-b.mp4",
+          "poster": "cenas/clipes/c10-b.png"
+        }
+      ],
+      "escolhida": "c10-b",
+      "ajustes": []
+    },
+    {
+      "id": "c11",
+      "inicio": 35.24,
+      "fim": 37.45,
+      "frases": [
+        "f11"
+      ],
+      "resumo": "E sabe o que o major disse?",
+      "variantes": [
+        {
+          "id": "c11-a",
+          "descricao": "Close no major pensativo, mão no queixo, com o caminhão parado ao fundo no pôr do sol",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 35.24,
+                "pos": [
+                  0,
+                  1.75,
+                  3
+                ],
+                "olha": [
+                  0,
+                  1.75,
+                  0
+                ],
+                "fov": 38
+              },
+              {
+                "t": 37.3,
+                "pos": [
+                  0,
+                  1.75,
+                  2.3
+                ],
+                "olha": [
+                  0,
+                  1.78,
+                  0
+                ],
+                "fov": 38,
+                "roll": 3
+              }
+            ],
+            "foco": {
+              "desfoque": 14,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": 0,
+                "z": 0,
+                "expressoes": [
+                  [
+                    35.24,
+                    "serio"
+                  ],
+                  [
+                    36.3,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    35.3,
+                    "pensa"
+                  ]
+                ],
+                "olhar": [
+                  [
+                    35.24,
+                    0
+                  ],
+                  [
+                    36.2,
+                    0.8
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "caminhao",
+                "x": 1.5,
+                "z": -6,
+                "giro": 20
+              }
+            ]
+          },
+          "hash": "5561366922",
+          "clipe": "cenas/clipes/c11-a.mp4",
+          "poster": "cenas/clipes/c11-a.png"
+        },
+        {
+          "id": "c11-b",
+          "descricao": "Plano médio: o major olha de lado, e o emu chega bem pertinho e encara de volta",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "camera": [
+              {
+                "t": 35.24,
+                "pos": [
+                  0.2,
+                  1.6,
+                  4.8
+                ],
+                "olha": [
+                  0.2,
+                  1.4,
+                  -0.4
+                ]
+              },
+              {
+                "t": 37.3,
+                "pos": [
+                  0.3,
+                  1.6,
+                  4
+                ],
+                "olha": [
+                  0.2,
+                  1.5,
+                  -0.4
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 11,
+              "alvo": "major_meredith"
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.45,
+                "z": 0,
+                "expressoes": [
+                  [
+                    35.24,
+                    "serio"
+                  ],
+                  [
+                    36.4,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    35.3,
+                    "pensa"
+                  ]
+                ],
+                "olhar": 1
+              },
+              {
+                "id": "emu",
+                "x": [
+                  [
+                    35.24,
+                    3
+                  ],
+                  [
+                    36.4,
+                    0.75
+                  ]
+                ],
+                "z": -1,
+                "expressoes": [
+                  [
+                    35.24,
+                    "sorriso_fechado"
+                  ],
+                  [
+                    36.5,
+                    "serio"
+                  ]
+                ],
+                "olhar": -1
+              }
+            ]
+          },
+          "hash": "128a953593",
+          "clipe": "cenas/clipes/c11-b.mp4",
+          "poster": "cenas/clipes/c11-b.png"
+        }
+      ],
+      "escolhida": "c11-a",
+      "ajustes": []
+    },
+    {
+      "id": "c12",
+      "inicio": 37.45,
+      "fim": 42.48,
+      "frases": [
+        "f12"
+      ],
+      "resumo": "Os emus enfrentavam metralhadora como tanques de guerra",
+      "variantes": [
+        {
+          "id": "c12-a",
+          "descricao": "O emu vem marchando de frente, invencível, e em \"tanques\" um tanque de guerra surge atrás dele com uma explosão; a câmera avança inclinada",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "solAz": 140,
+            "camera": [
+              {
+                "t": 37.45,
+                "pos": [
+                  0,
+                  1.3,
+                  6.5
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ]
+              },
+              {
+                "t": 40.4,
+                "pos": [
+                  0.2,
+                  1.4,
+                  4.6
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  -0.5
+                ],
+                "fov": 40,
+                "roll": 5
+              },
+              {
+                "t": 42.3,
+                "pos": [
+                  0.2,
+                  1.5,
+                  4.2
+                ],
+                "olha": [
+                  0,
+                  1.7,
+                  -0.8
+                ],
+                "fov": 40,
+                "roll": 5
+              }
+            ],
+            "foco": {
+              "desfoque": 10,
+              "alvo": "emu"
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": 0,
+                "z": [
+                  [
+                    37.45,
+                    -3
+                  ],
+                  [
+                    40.4,
+                    0.4
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    37.45,
+                    "serio"
+                  ],
+                  [
+                    40.5,
+                    "sorrisao"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "tanque_de_guerra",
+                "x": 0.5,
+                "z": -3.6,
+                "giro": -90,
+                "escala": 1.1,
+                "aparece": 40.5
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "explosao",
+                "de": 40.5,
+                "ate": 41.3,
+                "pos": [
+                  0.5,
+                  1.6,
+                  -3.4
+                ],
+                "tamanho": 2.2
+              }
+            ]
+          },
+          "hash": "e524f27aa6",
+          "clipe": "cenas/clipes/c12-a.mp4",
+          "poster": "cenas/clipes/c12-a.png"
+        },
+        {
+          "id": "c12-b",
+          "descricao": "Câmera baixa e inclinada: uma fila de emus avança lado a lado e, em \"tanques\", dois tanques de guerra aparecem marchando com eles",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "fim_de_tarde",
+            "transicao": "flash",
+            "solAz": 140,
+            "camera": [
+              {
+                "t": 37.45,
+                "pos": [
+                  0,
+                  0.5,
+                  5.5
+                ],
+                "olha": [
+                  0,
+                  1.6,
+                  -2
+                ],
+                "fov": 42,
+                "roll": -5
+              },
+              {
+                "t": 42.3,
+                "pos": [
+                  0,
+                  0.6,
+                  5
+                ],
+                "olha": [
+                  0,
+                  1.7,
+                  -1
+                ],
+                "fov": 42,
+                "roll": -3
+              }
+            ],
+            "foco": {
+              "desfoque": 8,
+              "alvo": [
+                0,
+                1.5,
+                -1.5
+              ]
+            },
+            "atores": [
+              {
+                "id": "emu",
+                "x": -0.9,
+                "z": [
+                  [
+                    37.45,
+                    -5.5
+                  ],
+                  [
+                    42.48,
+                    -1.2
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    37.45,
+                    "serio"
+                  ],
+                  [
+                    40.6,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0,
+                "z": [
+                  [
+                    37.45,
+                    -5.8
+                  ],
+                  [
+                    42.48,
+                    -1.5
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    37.45,
+                    "serio"
+                  ],
+                  [
+                    40.6,
+                    "sorrisao"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 0.9,
+                "z": [
+                  [
+                    37.45,
+                    -6.1
+                  ],
+                  [
+                    42.48,
+                    -1.8
+                  ]
+                ],
+                "expressoes": [
+                  [
+                    37.45,
+                    "serio"
+                  ],
+                  [
+                    40.6,
+                    "sorrisao"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "tanque_de_guerra",
+                "x": -2.6,
+                "z": [
+                  [
+                    37.45,
+                    -7
+                  ],
+                  [
+                    42.48,
+                    -3
+                  ]
+                ],
+                "movendo": true,
+                "aparece": 40.5
+              },
+              {
+                "tipo": "tanque_de_guerra",
+                "x": 2.6,
+                "z": [
+                  [
+                    37.45,
+                    -7.2
+                  ],
+                  [
+                    42.48,
+                    -3.2
+                  ]
+                ],
+                "movendo": true,
+                "aparece": 40.6
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "explosao",
+                "de": 40.5,
+                "ate": 41.3,
+                "pos": [
+                  0,
+                  2,
+                  -4
+                ],
+                "tamanho": 2.4
+              }
+            ]
+          },
+          "hash": "8eeaba155b",
+          "clipe": "cenas/clipes/c12-b.mp4",
+          "poster": "cenas/clipes/c12-b.png"
+        }
+      ],
+      "escolhida": "c12-a",
+      "ajustes": []
+    },
+    {
+      "id": "c13",
+      "inicio": 42.48,
+      "fim": 46.56,
+      "frases": [
+        "f13"
+      ],
+      "resumo": "Quem ganha a revanche?",
+      "variantes": [
+        {
+          "id": "c13-a",
+          "descricao": "Cara a cara: o major, em primeiro plano, encara o emu ao fundo, com um ponto de interrogação entre os dois; cada um comemora quando é citado",
+          "recomendada": true,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 42.48,
+                "pos": [
+                  -1.3,
+                  1.7,
+                  5.2
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ]
+              },
+              {
+                "t": 46.4,
+                "pos": [
+                  1.1,
+                  1.7,
+                  5
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 9,
+              "alvo": [
+                0,
+                1.5,
+                0
+              ]
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -0.5,
+                "z": 1.4,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    44.4,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    42.6,
+                    "maos_cintura"
+                  ],
+                  [
+                    44.4,
+                    "comemora"
+                  ]
+                ],
+                "olhar": 1
+              },
+              {
+                "id": "emu",
+                "x": 0.7,
+                "z": -1.6,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    45.45,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    45.45,
+                    "pulo"
+                  ]
+                ],
+                "olhar": -1
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "x": 0.1,
+                "y": 2.9,
+                "z": 0,
+                "escala": 0.5,
+                "aparece": 42.8
+              }
+            ]
+          },
+          "hash": "bf683c7e83",
+          "clipe": "cenas/clipes/c13-a.mp4",
+          "poster": "cenas/clipes/c13-a.png"
+        },
+        {
+          "id": "c13-b",
+          "descricao": "Placar da revanche: balão \"EXÉRCITO X EMUS\" sobre a tropa e o bando; a tropa pula em \"exército\" e os emus em \"emus\"",
+          "recomendada": false,
+          "cena": {
+            "cenario": "campo",
+            "luz": "dia",
+            "transicao": "flash",
+            "camera": [
+              {
+                "t": 42.48,
+                "pos": [
+                  0,
+                  2.9,
+                  11.5
+                ],
+                "olha": [
+                  0,
+                  1.3,
+                  0
+                ]
+              },
+              {
+                "t": 46.4,
+                "pos": [
+                  0,
+                  2.6,
+                  10
+                ],
+                "olha": [
+                  0,
+                  1.4,
+                  0
+                ]
+              }
+            ],
+            "foco": {
+              "desfoque": 0
+            },
+            "atores": [
+              {
+                "id": "major_meredith",
+                "x": -1.1,
+                "z": 1.2,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    44.4,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    44.4,
+                    "comemora"
+                  ]
+                ]
+              },
+              {
+                "id": "soldado",
+                "x": -1.7,
+                "z": -0.4,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    44.5,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    44.5,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 1.1,
+                "z": 1,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    45.45,
+                    "riso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    45.45,
+                    "pulo"
+                  ]
+                ]
+              },
+              {
+                "id": "emu",
+                "x": 1.8,
+                "z": -0.6,
+                "expressoes": [
+                  [
+                    42.48,
+                    "serio"
+                  ],
+                  [
+                    45.5,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    45.5,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "balao",
+                "texto": "EXÉRCITO X EMUS",
+                "x": 0,
+                "y": 3.4,
+                "z": 0,
+                "escala": 1.1,
+                "aparece": 42.8
+              }
+            ]
+          },
+          "hash": "dbb21a0db2",
+          "clipe": "cenas/clipes/c13-b.mp4",
+          "poster": "cenas/clipes/c13-b.png"
+        }
+      ],
+      "escolhida": "c13-a",
+      "ajustes": []
+    }
+  ]
+}

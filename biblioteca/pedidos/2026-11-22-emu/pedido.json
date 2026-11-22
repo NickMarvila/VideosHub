@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-22-emu",
+  "tipo": "personagem",
+  "nome": "emu",
+  "slug": "emu",
+  "descricao": "Ave grande que não voa, ~1,7 m, corpo redondo de penas marrom-acinzentadas desgrenhadas, pescoço longo azulado, olhos laranja arregalados, pernas compridas e finas; cartoon, usada em bando",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Emu clássico: penas marrom-acinzentadas, pescoço azul-claro, olhos laranja, topete liso e corpo padrão"
+    },
+    {
+      "n": 2,
+      "descricao": "Emu gorducho e desgrenhado: corpo 25% mais largo, penas escuras, pescoço azul forte e topete arrepiado"
+    },
+    {
+      "n": 3,
+      "descricao": "Emu magrelo pernalta: corpo estreito, penas claras, pescoço azul pálido, olhos âmbar e sem topete"
+    }
+  ],
+  "recomendada": 1,
+  "extensaoRig": "Personagem.tsx: campo opcional especie \"emu\" (+ pescoco, corpo, topete) que desenha uma ave no lugar do humano; toon.ts (cartoon-3d): Outfit.species \"emu\" (+ neck, eye, plump, tuft) com emuFront, que anda, pisca, tem expressões e asinhas nas poses comemora/abre/maos_cabeca. O Kit 3D não tem rig de ave: kit3d é só um figurante com as cores do emu.",
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.361Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:48:56.773Z",
+      "custoUSD": 1.8348561999999997,
+      "turnos": 44,
+      "segundos": 372,
+      "tokensEntrada": 2733504,
+      "tokensSaida": 27869
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:49:31.789Z"
+}

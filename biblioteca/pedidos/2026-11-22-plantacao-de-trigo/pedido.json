@@ -1,0 +1,43 @@
+{
+  "id": "2026-11-22-plantacao-de-trigo",
+  "tipo": "objeto",
+  "nome": "plantação de trigo",
+  "slug": "plantacao_de_trigo",
+  "descricao": "Touceiras de trigo dourado, ~0,8 m, para espalhar no campo como lavoura",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "recomendada": 1,
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Touceira dourada cheia (~14 hastes, espigas com barbinhas, folhas na base); parâmetros hastes/altura/seed para variar a lavoura"
+    },
+    {
+      "n": 2,
+      "descricao": "Faixa de lavoura âmbar de fim de tarde: 3 fileiras de 1,2 m sobre sulco de terra, hastes pendendo com o vento"
+    },
+    {
+      "n": 3,
+      "descricao": "Touceira verde-dourada amadurecendo, espigas com barbas compridas em leque e folhas verdes (variante madura)"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.523Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:45:07.932Z",
+      "custoUSD": 0.7368386,
+      "turnos": 19,
+      "segundos": 143,
+      "tokensEntrada": 693394,
+      "tokensSaida": 11997
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:45:48.008Z"
+}

@@ -4,7 +4,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const app = $('#app');
 const ETAPAS = [['roteiro', 'Roteiro'], ['narracao', 'Narração'], ['cenas', 'Cenas'], ['final', 'Vídeo final'], ['agenda', 'Agenda']];
-const NOME_TAREFA = { variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
+const NOME_TAREFA = { vozpropria: 'Preparando a sua gravação', trilha: 'Refazendo a trilha sonora', variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
 let ciclo = null;
 let assinatura = '';
 let rotaAtual = '';
@@ -119,9 +119,89 @@ async function telaVideos() {
   return vs.some((v) => v.job?.rodando || v.estado === 'ia_trabalhando');
 }
 
+
+// ---------- 10 ideias (tela Novo vídeo) ----------
+function blocoIdeias(d) {
+  if (!d) return '';
+  if (d.estado === 'ia_trabalhando' || d.job?.rodando) {
+    return `<div class="bloco maquina"><h2>Pensando em 10 ideias${d.tema ? ` sobre “${esc(d.tema)}”` : ''}</h2>${barra(d.job, true)}
+      ${d.job?.atividade?.length ? `<ol class="atividade">${d.job.atividade.slice(-4).map((a) => `<li><time>${a.em.slice(14, 19)}</time>${esc(a.texto)}</li>`).join('')}</ol>` : ''}
+      <p class="dica">A IA confere na web os fatos de cada ideia apresentada como verdade.</p></div>`;
+  }
+  if (d.estado === 'erro') return `<div class="bloco erro"><h2>Ideias</h2><p>${esc(d.erro || 'Não deu certo.')} Tente de novo.</p></div>`;
+  return `<div class="bloco ideias"><div class="audio-topo"><div class="bloco-titulo" style="margin:0">10 ideias${d.tema ? ` · ${esc(d.tema)}` : ''}</div>
+      <button data-mais-ideias>Me dê mais 10</button></div>
+    <div class="lista-ideias">${(d.ideias || []).map((i) => `<article class="ideia" data-ideia="${i.n}">
+      <span class="frase-n">${String(i.n).padStart(2, '0')}</span>
+      <div><h3>${esc(i.titulo)}</h3><p class="gancho">“${esc(i.gancho)}”</p>${i.receita ? `<p class="dica" style="margin:2px 0 6px"><span class="selo">${esc(i.receita)}</span></p>` : ''}
+        <p><b>Virada:</b> ${esc(i.virada)}</p>${i.pensaComigo ? `<p><b>Pensa comigo:</b> ${esc(i.pensaComigo)}</p>` : ''}<p><b>Anima bem:</b> ${esc(i.porQueAnima)}</p>
+        <p class="dica" style="margin:4px 0 0"><span class="selo ${/lenda|disput/i.test(i.fatoOuLenda) ? 'vez' : /fic/i.test(i.fatoOuLenda) ? '' : 'pronto'}">${esc(i.fatoOuLenda)}</span>
+        ${(i.fontes || []).slice(0, 2).map((f) => ` <a href="${esc(f)}" target="_blank" rel="noopener">fonte</a>`).join('')}</p></div>
+      <button class="vez" data-fazer="${i.n}">Fazer este</button></article>`).join('')}</div></div>`;
+}
+
+// ---------- quem narra (etapa de áudio) ----------
+let VOZES = null;
+async function carregarVozes() { const d = await api('/api/vozes').catch(() => null); VOZES = d?.vozes || []; return d; }
+function cartoesVozes(v) {
+  if (!VOZES?.length) return '';
+  const atual = v.voz?.catalogo || VOZES.find((x) => x.perfil === v.voz?.perfil)?.id;
+  return `<div class="vozes">${VOZES.map((x) => `<article class="voz-cartao ${x.id === atual ? 'on' : ''}" data-voz="${x.id}">
+      <div><b>${esc(x.nome)}</b> ${x.comercial ? '<span class="selo pronto">pode monetizar</span>' : '<span class="selo">uso não comercial</span>'}
+        <p>${esc(x.descricao || '')}</p></div>
+      <div class="acoes" style="margin:0">${x.amostraUrl ? `<button data-amostra="${x.amostraUrl}">▶ Ouvir</button>` : ''}
+        ${x.id === atual ? '<span class="selo pronto">Em uso</span>' : `<button class="vez" data-usar-voz="${x.id}">Usar esta voz</button>`}</div>
+    </article>`).join('')}</div>`;
+}
+function blocoQuemNarra(v) {
+  const gravacao = v.voz?.modo === 'gravacao';
+  const vi = v.arquivos.vozInfo;
+  const rodando = v.job?.rodando;
+  return `<div class="bloco quem-narra">
+    <div class="audio-topo"><div class="bloco-titulo" style="margin:0">Quem narra</div>
+      <div class="segmentado"><button class="${gravacao ? '' : 'on'}" data-narra="narrador" ${rodando ? 'disabled' : ''}>Narrador (IA)</button><button class="${gravacao ? 'on' : ''}" data-narra="gravacao" ${rodando ? 'disabled' : ''}>Minha gravação</button></div></div>
+    <div data-painel-narrador ${gravacao ? 'hidden' : ''}>${cartoesVozes(v)}<p class="dica">Ao trocar de voz, todas as frases ficam marcadas para gravar de novo com a voz nova.</p></div>
+    <div data-painel-gravacao ${gravacao ? '' : 'hidden'}>
+      ${gravacao && v.arquivos.audio ? `<audio controls src="${v.arquivos.audio}" style="margin-top:12px"></audio>
+        <div class="uso"><span><b>${relogio(vi?.duracao || 0)}</b> de áudio</span><span>legenda pelo <b>${vi?.legendaDe === 'whisper' ? 'que você falou' : 'roteiro'}</b></span><span><b>${Math.round((vi?.coberturaTempos || 0) * 100)}%</b> do roteiro reconhecido</span></div>
+        <p class="dica">O Whisper ouviu: “${esc(vi?.ouvidoPeloWhisper || '')}”</p>` : ''}
+      <p class="dica">Grave lendo o roteiro abaixo, com uma voz firme e calorosa e pausas naturais no fim das frases, sem música. Pode ser wav, mp3 ou m4a (o áudio do WhatsApp também serve). A gravação entra <b>sem nenhuma alteração</b>: o vídeo é que se ajusta a ela.</p>
+      <details><summary>Roteiro para ler</summary><p class="texto" style="margin-top:8px">${esc((v.arquivos.narracao || '').replace(/\[(laughter|sigh)\]\s*/g, ''))}</p></details>
+      ${!rodando ? `<div class="acoes"><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg,.opus" data-arquivo-voz style="max-width:340px"><button class="vez" data-enviar-voz>${gravacao ? 'Trocar a gravação' : 'Usar esta gravação'}</button></div>` : ''}
+    </div>
+  </div>`;
+}
+function ligarQuemNarra(id) {
+  const box = $('.quem-narra'); if (!box) return;
+  $$('[data-narra]', box).forEach((b) => { b.onclick = async () => {
+    if (b.dataset.narra === 'gravacao') { $$('[data-narra]', box).forEach((x) => x.classList.toggle('on', x === b)); $('[data-painel-gravacao]', box).hidden = false; $('[data-painel-narrador]', box).hidden = true; return; }
+    try { await api(`/api/videos/${id}/voz-narrador`, {}); aviso('Voltando para a voz do narrador', true); } catch (e) { aviso(e.message); }
+    assinatura = ''; rodarCiclo();
+  }; });
+  $$('[data-amostra]', box).forEach((b) => { b.onclick = () => tocar(b.dataset.amostra, b); });
+  $$('[data-usar-voz]', box).forEach((b) => { b.onclick = async () => {
+    try { b.disabled = true; await api(`/api/videos/${id}/voz`, { catalogo: b.dataset.usarVoz }); abrirMotorDaVoz(VOZES.find((x) => x.id === b.dataset.usarVoz)); aviso('Voz trocada: grave as frases de novo para ouvir', true); } catch (e) { aviso(e.message); b.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  }; });
+  const env = $('[data-enviar-voz]', box);
+  if (env) env.onclick = async () => {
+    const arq = $('[data-arquivo-voz]', box).files[0];
+    if (!arq) { aviso('Escolha o arquivo da sua gravação.'); return; }
+    if (arq.size > 40e6) { aviso('Arquivo grande demais (máx. 40 MB).'); return; }
+    try {
+      env.disabled = true;
+      const dados = await new Promise((ok, falha) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = falha; r.readAsDataURL(arq); });
+      await api(`/api/videos/${id}/voz-propria`, { arquivo: dados, nome: arq.name });
+      aviso('Gravação enviada: marcando o tempo das palavras', true);
+    } catch (e) { aviso(e.message); env.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  };
+}
+
 // ---------- tela: novo vídeo ----------
 async function telaNovo() {
   const estilos = await api('/api/estilos');
+  if (!VOZES) await carregarVozes();
   app.innerHTML = `<div class="entra"><h1>Novo vídeo</h1><p class="sub">Descreva a história. A IA escreve a sinopse e a narração, e você aprova cada etapa.</p>
     <div class="bloco" style="max-width:700px">
       <label for="ideia" style="margin-top:0">Ideia</label>
@@ -131,21 +211,113 @@ async function telaNovo() {
         <div><label for="duracao">Duração</label><select id="duracao">${[30, 45, 60, 90].map((d) => `<option value="${d}" ${d === 45 ? 'selected' : ''}>${d} s</option>`).join('')}</select></div>
         <div><label for="estilo">Estilo</label><select id="estilo">${estilos.map((e) => `<option value="${e.slug}" ${e.pronto ? '' : 'disabled'}>${esc(e.nome)}${e.pronto ? '' : ' (em construção)'}</option>`).join('')}</select></div>
       </div>
+      <label>Voz do narrador</label><input type="hidden" id="voz">
+      <div id="vozes-novo"></div>
       <p class="dica" id="estimativa"></p>
       <div class="acoes"><button class="vez" id="criarIA">Criar e pedir o roteiro à IA</button><button id="criar">Só criar</button></div>
-    </div></div>`;
+    </div>
+    <div class="bloco" style="max-width:700px">
+      <div class="bloco-titulo">Sem ideia? Peça 10</div>
+      <div class="acoes" style="margin-top:0"><input id="tema-ideias" placeholder="Tema opcional: invenções por acidente, leis absurdas, o Tales no trabalho..." style="flex:1;min-width:240px">
+        <button class="maquina" id="pedir-ideias">Me dê 10 ideias</button></div>
+      <p class="dica">A IA mistura épocas e temas, confere os fatos na web e diz o que é fato e o que é lenda. Você escolhe uma e ela vira o pedido.</p>
+    </div>
+    <div id="ideias-area"></div></div>`;
   const prev = await api('/api/previsoes').catch(() => null);
   if (prev) $('#estimativa').textContent = `Tempo de máquina previsto do pedido ao vídeo pronto: ~${duracao(prev.roteiro + prev.narracao + prev.cenas + prev.final)}, sem contar o tempo das suas aprovações.`;
+  vozesAssinatura = ''; await atualizarVozesNovo();
+  const vozEscolhida = () => $('#voz')?.value;
   const criar = async (comIA, botao) => {
     try {
       botao.disabled = true;
-      const v = await api('/api/videos', { ideia: $('#ideia').value, titulo: $('#titulo').value, duracao: $('#duracao').value, estilo: $('#estilo').value });
+      const v = await api('/api/videos', { ideia: $('#ideia').value, titulo: $('#titulo').value, duracao: $('#duracao').value, estilo: $('#estilo').value, voz: vozEscolhida() });
       if (comIA) await api(`/api/videos/${v.id}/ia`, {});
       location.hash = `#/v/${v.id}`;
     } catch (e) { aviso(e.message); botao.disabled = false; }
   };
   $('#criarIA').onclick = (e) => criar(true, e.target);
   $('#criar').onclick = (e) => criar(false, e.target);
+  $('#pedir-ideias').onclick = async (e) => {
+    try { e.target.disabled = true; await api('/api/ideias', { tema: $('#tema-ideias').value, duracao: $('#duracao').value, estilo: $('#estilo').value }); aviso('A IA está pensando em 10 ideias', true); } catch (er) { aviso(er.message); }
+    e.target.disabled = false; ideiasAssinatura = ''; await atualizarIdeias(); rodarCiclo();
+  };
+  await atualizarIdeias();
+}
+// ---------- escolha da voz no Novo vídeo (cada voz se apresenta) ----------
+let vozesAssinatura = '';
+let vozNovo = null;
+function blocoVozesNovo(d) {
+  const vozes = d?.vozes || [];
+  if (!vozes.length) return '<p class="vazio">Nenhuma voz no catálogo (config/vozes.json).</p>';
+  if (!vozes.some((x) => x.id === vozNovo)) vozNovo = vozes[0].id;
+  const rodando = d.job?.rodando;
+  const faltam = vozes.filter((x) => !x.apresentacaoUrl).length;
+  return `${rodando ? barra(d.job, true) : faltam ? `<div class="aviso-vozes"><span>${faltam === vozes.length ? 'As vozes ainda não gravaram a apresentação.' : `${faltam} ${faltam === 1 ? 'voz ainda não gravou' : 'vozes ainda não gravaram'} a apresentação.`} O painel abre o VoiceStudio${vozes.some((x) => !x.apresentacaoUrl && x.motor === 'voicebox') ? ' e o Voicebox' : ''} sozinho.</span>
+      <button class="maquina" data-apresentar>Gravar ${faltam === 1 ? 'a apresentação' : `as ${faltam} apresentações`}</button></div>` : ''}
+    ${d.erro && !rodando ? `<p class="dica" style="color:var(--erro)">Não deu para gravar: ${esc(d.erro)}</p>` : ''}
+    <div class="vozes" role="radiogroup" aria-label="Voz do narrador">${vozes.map((x) => `<article class="voz-cartao escolher ${x.id === vozNovo ? 'on' : ''}" data-escolher-voz="${x.id}" role="radio" aria-checked="${x.id === vozNovo}" tabindex="0">
+      <div><b>${esc(x.nome)}</b> ${x.comercial ? '<span class="selo pronto">pode monetizar</span>' : '<span class="selo">uso não comercial</span>'}
+        <p>${esc(x.descricao || '')}</p></div>
+      <div class="acoes" style="margin:0">${x.apresentacaoUrl ? `<button type="button" data-amostra="${x.apresentacaoUrl}">▶ Ouvir apresentação</button>`
+        : x.amostraUrl ? `<button type="button" data-amostra="${x.amostraUrl}" title="Ainda sem apresentação: toca o teste antigo">▶ Ouvir teste</button>` : ''}
+        ${x.apresentacaoUrl && !rodando ? `<button type="button" class="discreto" data-reapresentar="${x.id}" title="Gravar a apresentação de novo">↻</button>` : ''}
+        ${x.id === vozNovo ? '<span class="selo pronto">Escolhida</span>' : ''}</div>
+    </article>`).join('')}</div>
+    ${seloMotor(d, vozes.find((x) => x.id === vozNovo))}`;
+}
+const appDoMotor = (motor) => (motor === 'voicebox' ? 'voicebox' : 'voicestudio');
+function seloMotor(d, voz) { // mostra se o app da voz escolhida está aberto
+  const m = voz && d?.motores?.[appDoMotor(voz.motor)];
+  if (!m) return '';
+  const txt = { pronto: `${m.nome} aberto e pronto`, abrindo: `Abrindo o ${m.nome}…`, fechado: `${m.nome} fechado: ele abre sozinho quando você escolhe a voz` }[m.estado];
+  return `<p class="dica motor-estado ${m.estado}" style="margin-top:10px"><i></i>${txt}</p>`;
+}
+async function abrirMotorDaVoz(voz) {
+  if (!voz) return;
+  try { const r = await api('/api/motores/abrir', { motor: voz.motor }); if (r.estado === 'abrindo') aviso(`Abrindo o ${appDoMotor(voz.motor) === 'voicebox' ? 'Voicebox' : 'VoiceStudio'}`, true); }
+  catch (e) { aviso(e.message); }
+}
+async function atualizarVozesNovo() {
+  const area = $('#vozes-novo'); if (!area) return false;
+  const d = await carregarVozes();
+  const sig = JSON.stringify([d?.job?.rodando, d?.job?.ok, d?.erro, vozNovo, d?.motores, (d?.vozes || []).map((x) => [x.id, x.apresentacaoUrl, x.amostraUrl])]);
+  if (sig !== vozesAssinatura) {
+    vozesAssinatura = sig;
+    area.innerHTML = blocoVozesNovo(d);
+    $('#voz').value = vozNovo || '';
+    const escolher = async (id) => { vozNovo = id; vozesAssinatura = ''; await abrirMotorDaVoz(VOZES.find((x) => x.id === id)); await atualizarVozesNovo(); rodarCiclo(); };
+    $$('[data-escolher-voz]', area).forEach((c) => {
+      c.onclick = (e) => { if (!e.target.closest('button')) escolher(c.dataset.escolherVoz); };
+      c.onkeydown = (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === c) { e.preventDefault(); escolher(c.dataset.escolherVoz); } };
+    });
+    $$('[data-amostra]', area).forEach((b) => { b.onclick = () => tocar(b.dataset.amostra, b); });
+    const pedir = async (b, corpo) => {
+      try { b.disabled = true; await api('/api/vozes/apresentar', corpo); aviso('Gravando as apresentações das vozes', true); } catch (e) { aviso(e.message); b.disabled = false; }
+      vozesAssinatura = ''; await atualizarVozesNovo(); rodarCiclo();
+    };
+    const ap = $('[data-apresentar]', area); if (ap) ap.onclick = () => pedir(ap, {});
+    $$('[data-reapresentar]', area).forEach((b) => { b.onclick = () => pedir(b, { id: b.dataset.reapresentar, refazer: true }); });
+  } else if (d?.job?.rodando) atualizarBarra($('[data-job]', area), d.job);
+  return !!d?.job?.rodando || Object.values(d?.motores || {}).some((m) => m.estado === 'abrindo');
+}
+let ideiasAssinatura = '';
+async function atualizarIdeias() {
+  const area = $('#ideias-area'); if (!area) return false;
+  const d = await api('/api/ideias').catch(() => null);
+  const sig = JSON.stringify([d?.id, d?.estado, d?.job?.rodando, (d?.ideias || []).length]);
+  if (sig !== ideiasAssinatura) {
+    ideiasAssinatura = sig;
+    area.innerHTML = blocoIdeias(d);
+    $$('[data-fazer]', area).forEach((b) => { b.onclick = async () => {
+      const i = d.ideias.find((x) => String(x.n) === b.dataset.fazer);
+      const ideia = `${i.titulo}. Gancho: ${i.gancho} Virada: ${i.virada} Momentos visuais: ${i.porQueAnima}.${i.receita ? ` Receita do gancho: ${i.receita}.` : ''}${i.pensaComigo ? ` Pensa comigo: ${i.pensaComigo}.` : ''} (${i.fatoOuLenda}${i.fontes?.length ? `; fontes: ${i.fontes.join(' ')}` : ''})`;
+      try { b.disabled = true; const v = await api('/api/videos', { ideia, titulo: i.titulo, duracao: $('#duracao').value, estilo: $('#estilo').value, voz: $('#voz')?.value }); await api(`/api/videos/${v.id}/ia`, {}); location.hash = `#/v/${v.id}`; }
+      catch (e) { aviso(e.message); b.disabled = false; }
+    }; });
+    const mais = $('[data-mais-ideias]', area);
+    if (mais) mais.onclick = () => $('#pedir-ideias').click();
+  } else if (d?.job?.rodando) atualizarBarra($('[data-job]', area), d.job);
+  return !!(d?.job?.rodando || d?.estado === 'ia_trabalhando');
 }
 
 
@@ -155,7 +327,7 @@ const EFEITOS = [['nenhum', 'Sem efeito'], ['risada', 'Risada no fim'], ['suspir
 const VELOCIDADES = [0.72, 0.76, 0.8, 0.82, 0.86, 0.9, 0.95, 1];
 const tocador = new Audio();
 function tocar(url, botao) {
-  $$('.take.tocando, .montagem.tocando').forEach((b) => b.classList.remove('tocando'));
+  $$('.take.tocando, .montagem.tocando, button.tocando').forEach((b) => b.classList.remove('tocando'));
   if (tocador.src.endsWith(url) && !tocador.paused) { tocador.pause(); return; }
   tocador.src = url; tocador.play();
   botao?.classList.add('tocando');
@@ -284,6 +456,7 @@ function blocoVariantes(v) {
             <div class="opcao-info">
               ${x.recomendada ? '<span class="recomendada">★ recomendada</span>' : ''}
               <p>${esc(x.descricao || '')}</p>
+              ${x.erro ? `<p class="dica" style="color:var(--erro);margin:0">Clipe não gerado: ${esc(x.erro)}. Escolha pela imagem ou peça variantes novas.</p>` : ''}
               <button class="${c.escolhida === x.id ? 'aprovar' : ''}" data-escolher="${x.id}" ${rodando && !x.clipeUrl ? 'disabled' : ''}>${c.escolhida === x.id ? '✓ Escolhida' : 'Usar esta'}</button>
             </div>
           </article>`).join('')}</div>
@@ -319,6 +492,83 @@ function ligarVariantes(id) {
     try { b.disabled = true; await api(`/api/videos/${id}/ajuste-cena`, { cena: sec.dataset.cena, texto: $('[data-ajuste-cena]', sec).value }); aviso('Pedido enviado para a IA', true); } catch (e) { aviso(e.message); b.disabled = false; }
     assinatura = ''; rodarCiclo();
   }; });
+}
+
+
+// ---------- trilha sonora (etapa do vídeo final) ----------
+const NIVEL_PADRAO = { musica: -14, efeitos: -6 }; // dB em relação à voz (igual ao pipeline/trilha.py)
+const dbParaPct = (db) => (db <= -60 ? 0 : Math.round(Math.min(100, 10 ** (db / 20) * 100) / 5) * 5);
+const pctParaDb = (p) => (p <= 0 ? -60 : +(20 * Math.log10(p / 100)).toFixed(1));
+const textoVolume = (p) => (p <= 0 ? 'mudo' : `${p} % da voz`);
+const CLIMAS = [['leve', 'Leve'], ['marcha', 'Marcha'], ['misterio', 'Mistério'], ['nenhuma', 'Sem música']];
+const TIPOS_EFEITO = ['whoosh', 'impacto', 'batida', 'estalo', 'quebra', 'pop', 'ting', 'moeda', 'passos', 'uou', 'aplausos', 'passaros', 'grilos', 'vento', 'agua', 'splash', 'sting', 'motor', 'freio', 'buzina'];
+function blocoTrilha(v) {
+  const a = v.arquivos;
+  const cfg = a.trilha || { musica: { clima: 'leve' } };
+  const m = cfg.musica || {};
+  const rel = a.trilhaRelatorio;
+  const qa = a.qa;
+  const rodando = v.job?.rodando;
+  const manuais = cfg.efeitos || [];
+  const autos = (rel?.efeitos || []).filter((e) => e.auto);
+  const legenda = v.legenda ?? true;
+  return `<div class="bloco trilha-editor">
+    <div class="audio-topo"><div class="bloco-titulo" style="margin:0">Trilha sonora</div>
+      ${!rodando ? '<button class="maquina" data-trilha="refazer">Salvar e refazer a trilha</button>' : ''}</div>
+    <p class="dica" style="margin:6px 0 14px">A voz nunca é alterada: você regula a música e os efeitos em relação a ela. Refazer a trilha leva cerca de 15 s e não renderiza o vídeo de novo.</p>
+    <div class="volumes">
+      ${[['musica', 'Música', cfg.nivelMusica ?? NIVEL_PADRAO.musica], ['efeitos', 'Efeitos', cfg.nivelEfeitos ?? NIVEL_PADRAO.efeitos]].map(([k, n, db]) => `<label class="volume">
+        <span>${n}</span><input type="range" min="0" max="100" step="5" value="${dbParaPct(db)}" data-volume="${k}" ${rodando ? 'disabled' : ''} aria-label="Volume: ${n}">
+        <output data-volume-txt="${k}">${textoVolume(dbParaPct(db))}</output></label>`).join('')}
+    </div>
+    <div class="frase-controles" style="margin:0">
+      <div class="segmentado" role="radiogroup" aria-label="Clima da música">${CLIMAS.map(([k, n]) => `<button class="${(m.clima || 'leve') === k ? 'on' : ''}" data-clima="${k}" ${rodando ? 'disabled' : ''}>${n}</button>`).join('')}</div>
+      <label class="pausa">ritmo <input type="number" min="60" max="160" step="2" value="${m.bpm || 104}" data-trilha-campo="bpm" style="width:76px;padding:6px 8px"> bpm</label>
+      <label class="pausa">para na virada em <input type="number" min="0" step="0.1" value="${m.paraEm ?? ''}" placeholder="—" data-trilha-campo="paraEm" style="width:84px;padding:6px 8px"> s</label>
+    </div>
+    <h3 class="cat-kit">Efeitos <small>${autos.length} automáticos + ${manuais.length} seus</small></h3>
+    <p class="dica" style="margin:0 0 8px">Os automáticos saem das cenas: flash vira whoosh, tremor vira impacto, objeto que aparece vira pop, dinheiro vira moedinha. Acrescente os seus no tempo exato (0 a 3 quadros antes da palavra).</p>
+    <div class="efeitos">
+      ${autos.map((e) => `<span class="efeito auto"><code>${Number(e.t).toFixed(2)}s</code> ${esc(e.tipo)}</span>`).join('')}
+      ${manuais.map((e, i) => `<span class="efeito"><code>${Number(e.t).toFixed(2)}s</code> ${esc(e.tipo)} <button data-tirar="${i}" aria-label="Tirar">✕</button></span>`).join('')}
+    </div>
+    ${!rodando ? `<div class="acoes" style="margin-top:10px"><select data-novo-tipo style="width:auto">${TIPOS_EFEITO.map((t) => `<option>${t}</option>`).join('')}</select>
+      <input type="number" step="0.05" min="0" placeholder="tempo (s)" data-novo-t style="width:120px">
+      <button data-trilha="adicionar">Adicionar efeito</button></div>` : ''}
+    ${rel ? `<div class="uso"><span>música <b>${rel.musicaVsVoz_dB ?? '—'} dB</b> da voz</span><span>efeitos <b>${rel.efeitosVsVoz_dB ?? '—'} dB</b></span><span>final <b>${qa?.lufs ?? '—'} LUFS</b>, pico ${qa?.pico_dBFS ?? '—'} dBFS</span></div>` : ''}
+    ${qa ? `<p class="dica">${qa.problemas?.length ? `⚠️ ${esc(qa.problemas.join('; '))}` : '✓ Checagem: nada congelado, nenhuma tela preta, volume no alvo.'}</p>` : ''}
+    ${a.qaFolha ? `<details style="margin-top:8px"><summary>Folha de quadros (um a cada 2 s)</summary><img src="${a.qaFolha}" alt="" style="width:100%;border-radius:8px;margin-top:8px" data-zoom></details>` : ''}
+    <label style="display:flex;gap:8px;align-items:center;color:var(--tinta);margin-top:16px"><input type="checkbox" data-legenda style="width:auto" ${legenda ? 'checked' : ''} ${rodando ? 'disabled' : ''}> Legenda palavra a palavra <span class="dica" style="margin:0">(mudar exige renderizar de novo)</span></label>
+  </div>`;
+}
+function ligarTrilha(id) {
+  const box = $('.trilha-editor'); if (!box) return;
+  let clima = $('[data-clima].on', box)?.dataset.clima || 'leve';
+  $$('[data-clima]', box).forEach((b) => { b.onclick = () => { clima = b.dataset.clima; $$('[data-clima]', box).forEach((x) => x.classList.toggle('on', x === b)); }; });
+  const coletar = async () => {
+    const v = await api(`/api/videos/${id}`);
+    const efeitos = (v.arquivos.trilha?.efeitos || []);
+    return { nivelMusica: pctParaDb(Number($('[data-volume="musica"]', box).value)), nivelEfeitos: pctParaDb(Number($('[data-volume="efeitos"]', box).value)), musica: { clima, bpm: Number($('[data-trilha-campo="bpm"]', box).value) || 104, paraEm: $('[data-trilha-campo="paraEm"]', box).value === '' ? '' : Number($('[data-trilha-campo="paraEm"]', box).value) }, efeitos };
+  };
+  $$('[data-volume]', box).forEach((r) => { r.oninput = () => { $(`[data-volume-txt="${r.dataset.volume}"]`, box).textContent = textoVolume(Number(r.value)); }; });
+  $$('[data-tirar]', box).forEach((b) => { b.onclick = async () => {
+    const c = await coletar(); c.efeitos.splice(Number(b.dataset.tirar), 1);
+    try { await api(`/api/videos/${id}/trilha-salvar`, c); } catch (e) { aviso(e.message); } assinatura = ''; rodarCiclo();
+  }; });
+  const add = $('[data-trilha="adicionar"]', box);
+  if (add) add.onclick = async () => {
+    const t = Number($('[data-novo-t]', box).value);
+    if (!Number.isFinite(t) || $('[data-novo-t]', box).value === '') { aviso('Diga em que segundo o efeito entra.'); return; }
+    const c = await coletar(); c.efeitos.push({ t, tipo: $('[data-novo-tipo]', box).value });
+    try { await api(`/api/videos/${id}/trilha-salvar`, c); aviso('Efeito adicionado: refaça a trilha para ouvir', true); } catch (e) { aviso(e.message); } assinatura = ''; rodarCiclo();
+  };
+  const refazer = $('[data-trilha="refazer"]', box);
+  if (refazer) refazer.onclick = async () => {
+    try { refazer.disabled = true; await api(`/api/videos/${id}/trilha-salvar`, await coletar()); await api(`/api/videos/${id}/trilha`, {}); aviso('Refazendo a trilha', true); } catch (e) { aviso(e.message); refazer.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  };
+  const leg = $('[data-legenda]', box);
+  if (leg) leg.onchange = async () => { try { await api(`/api/videos/${id}/legenda`, { ativa: leg.checked }); aviso(leg.checked ? 'Legenda ligada: renderize de novo para aplicar' : 'Legenda desligada: renderize de novo para aplicar', true); } catch (e) { aviso(e.message); } };
 }
 
 // ---------- tela: um vídeo ----------
@@ -364,6 +614,34 @@ function blocoTarefa(v) {
   if (j.ok === false) return `<div class="bloco erro"><h2>${esc(NOME_TAREFA[j.tipo] || j.tipo)}: falhou</h2><div class="log">${esc(j.log || '')}</div></div>`;
   return '';
 }
+// ---------- assets que o vídeo precisa ----------
+const SITUACAO_ASSET = { existe: ['pronto', 'Já tem'], pronto: ['pronto', 'Criado'], criando: ['maquina', 'Criando'], escolher: ['vez', 'Escolha na Biblioteca'],
+  improvisar: ['', 'Seguir sem'], falta: ['vez', 'Falta'], erro: ['erro', 'Erro'] };
+function blocoAssets(v) {
+  const a = v.arquivos.assets;
+  if (!a?.itens?.length || !['roteiro', 'narracao', 'cenas'].includes(v.etapa)) return '';
+  const pendentes = a.itens.filter((i) => ['falta', 'erro'].includes(i.situacao)).length;
+  return `<div class="bloco ${pendentes ? 'vez' : ''}" data-assets>
+    <div class="audio-topo"><div class="bloco-titulo" style="margin:0">Assets do vídeo</div>
+      ${pendentes ? `<div class="acoes" style="margin:0"><button class="maquina" data-asset="*" data-asset-acao="auto">IA cria todos na hora</button><button data-asset="*" data-asset-acao="criar">Criar todos com 3 opções</button></div>` : ''}</div>
+    <p class="dica" style="margin:6px 0 12px">O que o roteiro mostra e se já existe na biblioteca. <b>Na hora</b>: a IA cria e já publica a opção recomendada. <b>3 opções</b>: você escolhe na Biblioteca. <b>Seguir sem</b>: a IA representa com o que já existe.</p>
+    <ul class="ajustes">${a.itens.map((i) => { const [cls, nome] = SITUACAO_ASSET[i.situacao] || ['', i.situacao];
+      return `<li><small>${esc(i.tipo)}${i.momento ? ` · ${esc(i.momento)}` : ''}${i.slugFinal ? ` · <code>${esc(i.slugFinal)}</code>` : ''}</small>
+        <div class="audio-topo" style="gap:10px"><div><b>${esc(i.nome)}</b> <span class="selo ${cls}">${i.job?.rodando ? '<i class="pulso"></i>' : ''}${esc(nome)}</span>
+          <p style="margin:4px 0 0">${esc(i.situacao === 'existe' && i.usa ? `usa ${i.usa}` : i.descricao || '')}${i.erro ? ` (${esc(i.erro)})` : ''}</p></div>
+        <div class="acoes" style="margin:0">${['falta', 'erro'].includes(i.situacao) ? `<button class="maquina" data-asset="${esc(i.id)}" data-asset-acao="auto">Na hora</button>
+            <button data-asset="${esc(i.id)}" data-asset-acao="criar">3 opções</button><button data-asset="${esc(i.id)}" data-asset-acao="improvisar">Seguir sem</button>`
+          : i.situacao === 'improvisar' ? `<button data-asset="${esc(i.id)}" data-asset-acao="desfazer">Desfazer</button>`
+          : i.situacao === 'escolher' ? '<button class="vez" onclick="location.hash=\'#/biblioteca\'">Escolher</button>' : ''}</div></div></li>`; }).join('')}</ul></div>`;
+}
+function ligarAssets(id) {
+  $$('[data-asset]').forEach((b) => { b.onclick = async () => {
+    try { b.disabled = true; await api(`/api/videos/${id}/assets`, { id: b.dataset.asset, acao: b.dataset.assetAcao });
+      aviso({ auto: 'A IA está criando o asset', criar: 'Pedido enviado: escolha a opção na Biblioteca', improvisar: 'Segue sem esse asset', desfazer: 'Desfeito' }[b.dataset.assetAcao] || 'Feito', true);
+    } catch (e) { aviso(e.message); b.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  }; });
+}
 function blocoEtapa(v) {
   const a = v.arquivos;
   const rodando = v.job?.rodando;
@@ -375,11 +653,13 @@ function blocoEtapa(v) {
       <div class="acoes"><button class="maquina" data-acao="ia">Pedir para a IA fazer agora</button></div>
       <p class="dica">Ou, no Claude Code: <code>/video ${esc(v.id)}</code></p></div>`;
   }
+  html += blocoAssets(v);
   if (v.etapa === 'roteiro') {
     html += `<div class="bloco"><h2>Sinopse</h2><div class="md">${md(a.sinopse)}</div></div>
       <div class="bloco"><h2>Narração</h2><p class="texto">${esc((a.narracao || '—').replace(/\[(laughter|sigh)\]\s*/g, ''))}</p></div>${marcacaoTabela(a.marcacao)}`;
   } else if (v.etapa === 'narracao' && v.fluxo === 2) {
-    html += blocoAudio(v);
+    html += blocoQuemNarra(v);
+    if (v.voz?.modo !== 'gravacao') html += blocoAudio(v);
   } else if (v.etapa === 'narracao') {
     html += `<div class="bloco"><h2>Narração</h2>${a.audio ? `<audio controls src="${a.audio}"></audio>` : '<p class="vazio">Ainda sendo gerada.</p>'}
       ${a.vozInfo ? `<div class="uso"><span><b>${relogio(a.vozInfo.duracao)}</b> de áudio</span><span><b>${a.vozInfo.frases}</b> frases</span><span>legenda sincronizada em <b>${Math.round(a.vozInfo.coberturaTempos * 100)}%</b> das palavras</span></div>
@@ -402,6 +682,7 @@ function blocoEtapa(v) {
         <div>${a.capa ? `<div class="bloco-titulo">Capa</div><img class="capa" src="${a.capa}" alt="Capa do vídeo">` : ''}</div></div>
       ${a.postagem ? `<details style="margin-top:16px"><summary>Texto da postagem</summary><div class="md" style="font-size:14px;margin-top:8px">${md(a.postagem)}</div></details>` : ''}
       ${v.etapa === 'final' && !rodando && !esperando ? `<div class="acoes"><button data-acao="render">Renderizar de novo</button></div>` : ''}</div>`;
+    if (a.video) html += blocoTrilha(v);
     if (v.etapa === 'agenda') {
       const ag = v.agenda;
       html += `<div class="bloco ${ag ? '' : 'vez'}"><h2>Agenda</h2>
@@ -435,11 +716,14 @@ function lateral(v) {
       <p class="dica">Na assinatura não há cobrança por vídeo: esse valor só mostra quanto do limite do plano foi usado.</p></div>` : ''}`;
 }
 async function telaVideo(id) {
+  if (!VOZES) await carregarVozes();
   const v = await api(`/api/videos/${id}`);
   const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.agenda, (v.usoIA || []).length,
     Object.values(v.portoes).map((p) => (p.ajustes || []).length),
     (v.arquivos.audioFrases?.frases || []).map((f) => [f.id, f.texto, f.energia, f.efeito, f.velocidade, f.pausa, f.escolhido, f.takes.length, f.precisaGravar]), v.arquivos.audioFrases?.montagem?.atual,
-    (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.escolhida, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length])]);
+    (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.escolhida, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length]),
+    JSON.stringify(v.arquivos.trilha), v.arquivos.trilhaRelatorio?.lufsAntes, v.arquivos.qa?.lufs, v.legenda, v.voz?.modo, v.voz?.catalogo, v.arquivos.vozInfo?.geradoEm,
+    (v.arquivos.assets?.itens || []).map((i) => [i.id, i.situacao, i.job?.rodando])]);
   if (sig === assinatura && $('.claquete')) {
     atualizarBarra($('.bloco.maquina [data-job]'), v.job);
     const lista = $('[data-atividade]');
@@ -460,10 +744,13 @@ async function telaVideo(id) {
     ligarAcoes(id);
     ligarAudio(id);
     ligarVariantes(id);
+    ligarTrilha(id);
+    ligarQuemNarra(id);
+    ligarAssets(id);
     if (esperandoMontagem === id && !v.job?.rodando && v.arquivos.audioFrases?.montagem?.atual) { esperandoMontagem = null; tocar(v.arquivos.audio, $('.montagem')); }
   }
   recebidoEm = Date.now();
-  return !!(v.job?.rodando || v.estado === 'ia_trabalhando' || v.estado === 'processando');
+  return !!(v.job?.rodando || v.estado === 'ia_trabalhando' || v.estado === 'processando' || v.arquivos.assets?.itens?.some((i) => i.situacao === 'criando'));
 }
 function ligarAcoes(id) {
   $$('[data-zoom]').forEach((img) => { img.onclick = () => {
@@ -618,6 +905,7 @@ async function rodarCiclo() {
   try {
     if (h.startsWith('/v/')) { if (!ocupado()) ativo = await telaVideo(h.slice(3)); else ativo = true; fila(await api('/api/videos')); }
     else if (h === '/') ativo = await telaVideos();
+    else if (h === '/novo') { ativo = (await atualizarIdeias()) | (await atualizarVozesNovo()); fila(await api('/api/videos')); }
     else if (h === '/biblioteca') { if (!ocupado()) ativo = await telaBiblioteca(); else ativo = true; fila(await api('/api/videos')); }
     else fila(await api('/api/videos'));
   } catch (e) { if (!$('.entra')) app.innerHTML = `<p class="vazio">Não consegui falar com o painel (${esc(e.message)}). Ele está rodando? Abra com <code>iniciar-hub.ps1</code>.</p>`; }
@@ -625,7 +913,7 @@ async function rodarCiclo() {
 }
 async function rotear() {
   clearTimeout(ciclo);
-  assinatura = ''; bibAssinatura = '';
+  assinatura = ''; bibAssinatura = ''; ideiasAssinatura = ''; vozesAssinatura = '';
   const h = location.hash.replace(/^#/, '') || '/';
   const rota = h.startsWith('/v/') ? 'videos' : h.slice(1) || 'videos';
   $$('nav a').forEach((a) => a.classList.toggle('ativo', a.dataset.rota === rota));

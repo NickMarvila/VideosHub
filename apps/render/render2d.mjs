@@ -23,13 +23,19 @@ const pasta = path.resolve(RAIZ, pastaArg);
 const lerJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 
 const CENARIOS = ['rua_dia', 'rua_noite', 'mercado', 'sala', 'estrada'];
+// --cartoon: estilo "Cartoon 3D" (skill cartoon-audio-short): outro storyboard, outra composição e WebGL pelo ANGLE
+const CARTOON = flag('cartoon');
+const COMP = CARTOON ? 'Cartoon3D' : 'Video2D';
+const ARQ_SB = CARTOON ? 'storyboard_cartoon.json' : 'storyboard2d.json';
+const GL = CARTOON ? { chromiumOptions: { gl: 'angle' }, concurrency: 1, timeoutInMilliseconds: 120000 } : {};
+const CENARIOS_CARTOON = ['vila', 'praca', 'campo'];
 const OBJETOS = ['parati', 'dinheiro', 'moeda', 'relogio', 'celular', 'caixa_som', 'skate', 'pneu', 'balao', 'pensamento', 'seta', 'icone', 'placa'];
 const POSES = ['neutro', 'apontando', 'bracos_abertos', 'pensando', 'maos_na_cintura', 'comemorando', 'segurando'];
 const EXPRESSOES = ['neutro', 'feliz', 'surpreso', 'bravo', 'triste', 'duvida'];
 
 function carregar() {
   // --storyboard <arquivo> usa outro storyboard (ex.: uma combinação de variantes) com o áudio da pasta
-  const arq = valor('storyboard') ? path.resolve(RAIZ, valor('storyboard')) : path.join(pasta, 'storyboard2d.json');
+  const arq = valor('storyboard') ? path.resolve(RAIZ, valor('storyboard')) : path.join(pasta, ARQ_SB);
   if (!fs.existsSync(arq)) throw new Error(`Não achei ${path.relative(RAIZ, arq)}.`);
   return completar(lerJSON(arq));
 }
@@ -47,6 +53,15 @@ function completar(sb) {
   // assets da biblioteca + os que vierem no próprio storyboard (opções ainda não publicadas)
   sb.extras = { objetos: { ...EXTRAS.objetos, ...(sb.extras?.objetos || {}) }, cenarios: { ...EXTRAS.cenarios, ...(sb.extras?.cenarios || {}) } };
   const palavras = fs.existsSync(path.join(pasta, 'palavras.json')) ? lerJSON(path.join(pasta, 'palavras.json')) : [];
+  if (CARTOON) { // completa o elenco com a ficha do personagem (campo "cartoon")
+    sb.elenco ||= {};
+    for (const c of sb.cenas || []) for (const a of c.atores || []) if (!sb.elenco[a.id]) {
+      const ficha = path.join(RAIZ, 'personagens', a.id, 'personagem.json');
+      if (fs.existsSync(ficha) && lerJSON(ficha).cartoon) sb.elenco[a.id] = lerJSON(ficha).cartoon;
+    }
+    sb.audio ||= fs.existsSync(path.join(pasta, 'narracao.wav')) ? 'narracao.wav' : undefined;
+    return { sb, palavras };
+  }
   sb.personagens ||= {};
   for (const c of sb.cenas || []) for (const a of c.atores || []) { // completa com a ficha do personagem (rig2d)
     if (!sb.personagens[a.id]) {
@@ -58,7 +73,57 @@ function completar(sb) {
   return { sb, palavras };
 }
 
-function validar({ sb, palavras }) {
+function validar(dados) {
+  return CARTOON ? validarCartoon(dados) : validar2d(dados);
+}
+function validarCartoon({ sb }) {
+  const erros = []; const avisos = [];
+  const voz = fs.existsSync(path.join(pasta, 'voz.json')) ? lerJSON(path.join(pasta, 'voz.json')) : null;
+  if (!(sb.duracao > 0)) erros.push('duracao precisa ser maior que zero');
+  if (voz && sb.duracao < voz.duracao) erros.push(`duracao (${sb.duracao}) menor que o áudio (${voz.duracao})`);
+  let fim = 0;
+  (sb.cenas || []).forEach((c, i) => {
+    const n = `cena ${i + 1}`;
+    if (Math.abs(c.inicio - fim) > 0.05) erros.push(`${n}: começa em ${c.inicio}, mas a anterior termina em ${fim}`);
+    if (c.cenario && !CENARIOS_CARTOON.includes(c.cenario)) erros.push(`${n}: cenário "${c.cenario}" não existe (${CENARIOS_CARTOON.join(', ')})`);
+    if (!c.camera?.length) erros.push(`${n}: sem chaves de câmera`);
+    for (const k of c.camera || []) if (!Array.isArray(k.pos) || !Array.isArray(k.olha)) erros.push(`${n}: chave de câmera sem pos/olha`);
+    if ((c.cenario || 'vila') === 'vila') for (const k of c.camera || []) if (Math.abs(k.pos[2]) > 7.5 && Math.abs(k.pos[1]) < 12) avisos.push(`${n}: câmera em z=${k.pos[2]} fica na calçada/casas; as casas no caminho somem, mas prefira |z| < 7`);
+    const OBJ_C = ['parati', 'caixa_som', 'banco', 'poste', 'cone', 'mesa', 'caixote', 'pneu', 'caminhao', 'metralhadora', 'tanque_de_guerra', 'plantacao_de_trigo','dinheiro', 'moeda', 'relogio', 'celular', 'balao', 'pensamento', 'icone', 'seta'];
+    const ACOES_C = ['parado', 'acena', 'senta', 'cai', 'comemora', 'maos_cabeca', 'abre', 'maos_cintura', 'aponta', 'pensa', 'segura', 'decepcao', 'pulo', 'tremer'];
+    for (const o of c.objetos || []) if (!OBJ_C.includes(o.tipo)) erros.push(`${n}: objeto "${o.tipo}" não existe (${OBJ_C.join(', ')})`);
+    for (const a of c.atores || []) for (const [, ac] of a.acoes || []) if (!ACOES_C.includes(ac)) erros.push(`${n}: ação "${ac}" não existe (${ACOES_C.join(', ')})`);
+    for (const a of c.atores || []) if (!sb.elenco?.[a.id]) erros.push(`${n}: "${a.id}" não está no elenco (nem em personagens/${a.id}/personagem.json → cartoon)`);
+    if ((c.camera || []).length < 2 && c.fim - c.inicio > 2) avisos.push(`${n}: só uma chave de câmera; ela vai só se aproximar devagar`);
+    // enquadramento: o quadro vertical é estreito; confere se cada ator está dentro do quadro no começo, meio e fim
+    const ss = (u) => { const x = Math.min(1, Math.max(0, u)); return x * x * x * (x * (x * 6 - 15) + 10); };
+    const val = (v, t) => { if (typeof v === 'number') return v; if (!Array.isArray(v) || !v.length) return 0; if (t <= v[0][0]) return v[0][1];
+      for (let i = 1; i < v.length; i++) if (t <= v[i][0]) return v[i - 1][1] + (v[i][1] - v[i - 1][1]) * ss((t - v[i - 1][0]) / Math.max(1e-3, v[i][0] - v[i - 1][0])); return v.at(-1)[1]; };
+    const camEm = (t) => { const ks = c.camera || []; let a = ks[0], b = ks[0], u = 0;
+      for (let i = 0; i < ks.length; i++) if (t >= ks[i].t) { a = ks[i]; b = ks[i + 1] || ks[i]; u = b === a ? 0 : (t - a.t) / Math.max(1e-3, b.t - a.t); }
+      u = ss(u); const L = (x, y) => x.map((q, i) => q + (y[i] - q) * u); return { pos: L(a.pos, b.pos), olha: L(a.olha, b.olha), fov: (a.fov ?? 40) + ((b.fov ?? a.fov ?? 40) - (a.fov ?? 40)) * u }; };
+    if (c.camera?.length) for (const a of c.atores || []) for (const [rot, t] of [['começo', c.inicio + 0.15], ['meio', (c.inicio + c.fim) / 2], ['fim', c.fim - 0.15]]) {
+      const k = camEm(t), x = val(a.x, t), z = val(a.z, t);
+      const fx = k.olha[0] - k.pos[0], fz = k.olha[2] - k.pos[2], px = x - k.pos[0], pz = z - k.pos[2];
+      const ang = Math.abs(Math.atan2(fx * pz - fz * px, fx * px + fz * pz)) * 180 / Math.PI;
+      const meia = Math.atan(Math.tan((k.fov / 2) * Math.PI / 180) * 0.5625) * 180 / Math.PI;
+      if (fx * px + fz * pz < 0) avisos.push(`${n}: "${a.id}" está atrás da câmera no ${rot} da cena`);
+      else if (ang > meia) avisos.push(`${n}: "${a.id}" fica fora do quadro no ${rot} da cena (${ang.toFixed(0)}° do centro; o quadro vai até ${meia.toFixed(0)}°)`);
+      else if (ang > meia * 0.8) avisos.push(`${n}: "${a.id}" fica cortado na borda do quadro no ${rot} da cena`);
+    }
+    if (c.fim - c.inicio > 7) avisos.push(`${n}: ${(c.fim - c.inicio).toFixed(1)} s é longa (máx. ~6 s)`);
+    fim = c.fim;
+  });
+  if (sb.cenas?.length && Math.abs(fim - sb.duracao) > 0.05) erros.push(`a última cena termina em ${fim}, mas a duração é ${sb.duracao}`);
+  console.log(`Validação Cartoon 3D de ${path.relative(RAIZ, pasta)}: ${sb.cenas?.length || 0} cenas, ${sb.duracao}s`);
+  for (const a of avisos) console.log(`  ! ${a}`);
+  for (const e of erros) console.log(`  ✗ ${e}`);
+  console.log(erros.length ? `
+${erros.length} erro(s).` : `
+Sem erros (${avisos.length} aviso(s)).`);
+  return erros.length === 0;
+}
+function validar2d({ sb, palavras }) {
   const erros = []; const avisos = [];
   const voz = fs.existsSync(path.join(pasta, 'voz.json')) ? lerJSON(path.join(pasta, 'voz.json')) : null;
   if (!(sb.duracao > 0)) erros.push('duracao precisa ser maior que zero');
@@ -97,7 +162,7 @@ async function preparar(dados) {
   console.log('Preparando o projeto 2D...');
   const serveUrl = await bundle({ entryPoint: path.join(AQUI, 'src', 'index.ts'), publicDir: pub, onProgress: () => {} });
   const inputProps = { storyboard: dados.sb, palavras: dados.palavras };
-  const composition = await selectComposition({ serveUrl, id: 'Video2D', inputProps });
+  const composition = await selectComposition({ serveUrl, id: COMP, inputProps, ...GL });
   return { serveUrl, inputProps, composition };
 }
 
@@ -112,16 +177,16 @@ if (valor('lote')) {
   for (const it of itens) {
     const d = completar(it.storyboard);
     const inputProps = { storyboard: d.sb, palavras: d.palavras };
-    const composition = await selectComposition({ serveUrl: base.serveUrl, id: 'Video2D', inputProps });
+    const composition = await selectComposition({ serveUrl: base.serveUrl, id: COMP, inputProps, ...GL });
     const ultimo = composition.durationInFrames - 1;
     const saida = path.resolve(RAIZ, it.saida);
     fs.mkdirSync(path.dirname(saida), { recursive: true });
     if (it.tipo === 'poster') {
-      await renderStill({ composition, serveUrl: base.serveUrl, inputProps, output: saida, frame: Math.min(ultimo, Math.round(it.t * composition.fps)), scale: 0.4 });
+      await renderStill({ ...GL, composition, serveUrl: base.serveUrl, inputProps, output: saida, frame: Math.min(ultimo, Math.round(it.t * composition.fps)), scale: 0.4 });
     } else {
       const de = Math.min(ultimo, Math.round(it.de * composition.fps));
       const ate = Math.max(de, Math.min(ultimo, Math.round(it.ate * composition.fps) - 1));
-      await renderMedia({ composition, serveUrl: base.serveUrl, inputProps, codec: 'h264', outputLocation: saida, scale: 0.5, crf: 28, frameRange: [de, ate] });
+      await renderMedia({ ...GL, composition, serveUrl: base.serveUrl, inputProps, codec: 'h264', outputLocation: saida, scale: 0.5, crf: 28, frameRange: [de, ate] });
     }
     n++; console.log(`Quadro ${n}/${itens.length}  (${Math.round((n / itens.length) * 100)}%)  ${path.basename(saida)}`);
   }
@@ -139,23 +204,25 @@ const fps = composition.fps;
 
 if (flag('quadros')) {
   const dir = path.join(saidaDir, 'quadros');
-  fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(dir, { recursive: true });
+  for (const f of fs.readdirSync(dir)) if (f.endsWith('.png')) fs.rmSync(path.join(dir, f), { force: true }); // apaga só as imagens (a pasta pode estar aberta)
   const alvos = dados.sb.cenas.flatMap((c, i) => [[`cena${String(i + 1).padStart(2, '0')}_inicio`, c.inicio + (c.fim - c.inicio) * 0.2], [`cena${String(i + 1).padStart(2, '0')}_meio`, c.inicio + (c.fim - c.inicio) * 0.65]]);
   let n = 0;
   for (const [nome, t] of alvos) {
-    await renderStill({ composition, serveUrl, inputProps, output: path.join(dir, `${nome}.png`), frame: Math.min(composition.durationInFrames - 1, Math.round(t * fps)), scale: 0.5 });
+    await renderStill({ ...GL, composition, serveUrl, inputProps, output: path.join(dir, `${nome}.png`), frame: Math.min(composition.durationInFrames - 1, Math.round(t * fps)), scale: 0.5 });
     n++; console.log(`Quadro ${n}/${alvos.length}  (${Math.round((n / alvos.length) * 100)}%)`);
   }
   console.log(`${n} quadros salvos em ${path.relative(RAIZ, dir)}.`);
 } else if (valor('capa')) {
   const t = Number(valor('capa'));
-  await renderStill({ composition, serveUrl, inputProps, output: path.join(saidaDir, 'capa.png'), frame: Math.min(composition.durationInFrames - 1, Math.round(t * fps)) });
+  await renderStill({ ...GL, composition, serveUrl, inputProps, output: path.join(saidaDir, 'capa.png'), frame: Math.min(composition.durationInFrames - 1, Math.round(t * fps)) });
   console.log(`Capa salva em ${path.relative(RAIZ, path.join(saidaDir, 'capa.png'))} (instante ${t}s).`);
 } else {
   const previa = flag('previa');
   const saida = path.join(saidaDir, previa ? 'previa.mp4' : 'video.mp4');
   let ultimo = -1;
   await renderMedia({
+    ...GL,
     composition, serveUrl, inputProps, codec: 'h264', outputLocation: saida, scale: previa ? 0.5 : 1, crf: previa ? 28 : 18,
     onProgress: ({ renderedFrames }) => {
       if (renderedFrames - ultimo >= 30 || renderedFrames === composition.durationInFrames) {

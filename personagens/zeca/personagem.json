@@ -74,5 +74,14 @@
         "beard": true
       }
     }
+  },
+  "cartoon": {
+    "jacket": "#3c6fa8",
+    "pants": "#2d3b57",
+    "boots": "#5a3b26",
+    "hat": "cap",
+    "cap": "#e07b2e",
+    "skin": "#ecd0b6",
+    "build": "stout"
   }
 }

@@ -1,0 +1,59 @@
+{
+  "slug": "emu",
+  "nome": "Emu",
+  "papel": "ave grande que não voa; o bando que venceu o exército",
+  "personalidade": "corre em zigue-zague, aparece em bando, encara metralhadora com os olhos arregalados como se nada fosse",
+  "bordao": "",
+  "rig2d": {
+    "especie": "emu",
+    "pele": "#3A3532",
+    "camisa": "#8A7A68",
+    "calca": "#6B6560",
+    "sapato": "#4F4A46",
+    "olhos": "#F28C28",
+    "chapeu": {
+      "tipo": "nenhum",
+      "cor": "#000000"
+    },
+    "cabelo": "#5E5245",
+    "barba": false,
+    "bigode": false,
+    "detalhe": "nenhum",
+    "pescoco": "#7FA6C9",
+    "corpo": 1,
+    "topete": "liso"
+  },
+  "cartoon": {
+    "species": "emu",
+    "jacket": "#8a7a68",
+    "pants": "#6b6560",
+    "boots": "#4f4a46",
+    "skin": "#3a3532",
+    "hair": "#5e5245",
+    "neck": "#7fa6c9",
+    "eye": "#f28c28",
+    "plump": 1,
+    "tuft": "flat"
+  },
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#7fa6c9",
+      "top": {
+        "color": "#8a7a68"
+      },
+      "bottom": {
+        "color": "#6b6560",
+        "type": "pants"
+      },
+      "shoes": "#4f4a46",
+      "hair": {
+        "style": "short",
+        "color": "#5e5245"
+      }
+    },
+    "obs": "o Kit 3D ainda não tem rig de ave: no 3D puro vira um figurante com as cores do emu. O desenho de verdade está no estilo cartoon-3d (campo cartoon) e no 2D."
+  },
+  "criadoEm": "2026-11-22T15:49:31.787Z",
+  "pedido": "2026-11-22-emu"
+}

@@ -8,7 +8,7 @@ Arquivo de controle: <pasta>/audio/frases.json
 
 Uso:
   python pipeline/audio_frases.py preparar <pasta>          cria frases.json a partir de narracao.txt (se não existir)
-  python pipeline/audio_frases.py gravar <pasta> [ids...]   grava 3 takes das frases sem take na configuração atual
+  python pipeline/audio_frases.py gravar <pasta> [ids...]   1a gravação: 1 take por frase; com ids (regravar): 3 takes novos
   python pipeline/audio_frases.py montar <pasta>            junta os takes escolhidos → narracao.wav + legendas
 """
 import json
@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from voz import gerar_fala  # noqa: E402
+from voz import gerar_fala, aplicar_pronuncia  # noqa: E402
 from narrar_projeto import MARCACAO, alinhar, transcrever  # noqa: E402
 
 VOZ = {"perfil": "2f02b91b", "motor": "omnivoice", "velocidade": 0.82}
@@ -104,7 +104,13 @@ def texto_tts(f):
 
 def config(f, voz):
     vel = round(f.get("velocidade") or voz["velocidade"], 3)
-    return {"texto": texto_tts(f), "vel": round(vel * ENERGIAS.get(f.get("energia", "normal"), ENERGIAS["normal"])["vel"], 3)}
+    return {"texto": texto_tts(f), "vel": round(vel * ENERGIAS.get(f.get("energia", "normal"), ENERGIAS["normal"])["vel"], 3), "voz": voz["perfil"]}
+
+
+def mesmo_take(t, cfg):
+    """o take já existe nesta configuração? (takes antigos, sem 'voz', valem para a voz atual)"""
+    c = t["config"]
+    return c["texto"] == cfg["texto"] and abs(c["vel"] - cfg["vel"]) < 0.001 and c.get("voz", cfg["voz"]) == cfg["voz"]
 
 
 def preparar(pasta):
@@ -143,21 +149,24 @@ def gravar(pasta, ids=None):
     alvo = []
     for f in d["frases"]:
         cfg = config(f, voz)
-        tem = any(t["config"] == cfg for t in f["takes"])
+        tem = any(mesmo_take(t, cfg) for t in f["takes"])
         if (ids and f["id"] in ids) or (not ids and not tem):
             alvo.append((f, cfg))
-    total = len(alvo) * TAKES
+    takes = TAKES if ids else 1  # 1a passada rápida; o criador pede +3 só nas frases que quiser
+    total = len(alvo) * takes
     print(f"{len(alvo)} frase(s) para gravar, {total} takes", flush=True)
     feitos = 0
     for f, cfg in alvo:
         base = len(f["takes"])
         novos = []
-        for k in range(TAKES):
+        for k in range(takes):
             n = base + k + 1
             seed = 1000 + int(f["id"][1:]) * 100 + n
             bruto = pasta / "audio" / "takes" / f"{f['id']}-t{n}.bruto.wav"
             final = pasta / "audio" / "takes" / f"{f['id']}-t{n}.wav"
-            gerar_fala(cfg["texto"], str(bruto), motor=voz["motor"], voz=voz["perfil"], velocidade=cfg["vel"], seed=seed)
+            print(f"gravando frase {f['id']} take {n} ({feitos + 1}/{total})", flush=True)
+            gerar_fala(aplicar_pronuncia(cfg["texto"], voz.get("pronuncia")), str(bruto), motor=voz["motor"], voz=voz["perfil"],
+                       velocidade=cfg["vel"], seed=seed, instrucao=voz.get("instrucao"))
             aparar(bruto, final)
             bruto.unlink(missing_ok=True)
             novos.append({"id": f"{f['id']}-t{n}", "arquivo": f"audio/takes/{final.name}", "seed": seed,

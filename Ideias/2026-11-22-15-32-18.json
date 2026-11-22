@@ -1,0 +1,162 @@
+{
+  "id": "2026-11-22-15-32-18",
+  "tema": "",
+  "duracao": 45,
+  "estilo": "cartoon-3d",
+  "estado": "pronto",
+  "ideias": [
+    {
+      "n": 1,
+      "titulo": "A Onda Doce Que Engoliu Boston",
+      "gancho": "Em mil novecentos e dezenove, uma onda de melaço atravessou uma cidade inteira a mais de cinquenta quilômetros por hora.",
+      "virada": "A empresa jurou que foi uma bomba de anarquistas. O juiz olhou o tanque e concluiu que a bomba era a própria obra.",
+      "porQueAnima": "o tanque gigante rangendo e os rebites estourando como pipoca, a onda marrom varrendo ruas, carroças e trilhos do bonde, os socorristas grudados no melaço que endurece no frio",
+      "fatoOuLenda": "fato documentado (Grande Inundação de Melaço, Boston, 15 de janeiro de 1919; 21 mortos; a altura da onda varia entre os relatos)",
+      "fontes": [
+        "https://www.britannica.com/topic/Great-Molasses-Flood",
+        "https://en.wikipedia.org/wiki/Great_Molasses_Flood",
+        "https://www.nbcnews.com/news/us-news/great-boston-molasses-flood-1919-killed-21-after-2-million-n958326"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 2,
+      "titulo": "O Exército Que Perdeu Para Pássaros",
+      "gancho": "Em mil novecentos e trinta e dois, a Austrália mandou metralhadoras contra um bando de pássaros. E os pássaros venceram.",
+      "virada": "O major voltou dizendo que os emus enfrentavam metralhadora como se fossem tanques de guerra.",
+      "porQueAnima": "o caminhão com a metralhadora quicando na estrada de terra, milhares de emus se espalhando em grupinhos e correndo em zigue-zague, os soldados atirando e acertando só a poeira",
+      "fatoOuLenda": "fato documentado (Guerra dos Emus, Austrália Ocidental, novembro de 1932, comandada pelo major Meredith; os números de aves abatidas variam)",
+      "fontes": [
+        "https://www.britannica.com/topic/Emu-War",
+        "https://www.nationalgeographic.com/history/article/australian-emu-war-history",
+        "https://www.scientificamerican.com/blog/running-ponies/the-great-emu-war-in-which-some-large-flightless-birds-unwittingly-foiled-the-australian-army/"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 3,
+      "titulo": "A Lei Que Mandou o Carro Andar a Pé",
+      "gancho": "Na Inglaterra de mil oitocentos e sessenta e cinco, todo veículo a motor era obrigado a ter um homem andando na frente com uma bandeira vermelha.",
+      "virada": "A lei durou trinta anos. Quando caiu, os motoristas fizeram uma corrida para comemorar.",
+      "porQueAnima": "a máquina a vapor fumegando atrás de um menino a pé com a bandeira, a fila de carroças ultrapassando o motor, e no fim a corrida de carros antigos saindo em disparada pela estrada",
+      "fatoOuLenda": "fato documentado (Locomotive Act de 1865, a 'Red Flag Act': 2 milhas por hora na cidade, um homem 60 jardas à frente; a bandeira caiu em 1878 e a regra do pedestre em 1896; a corrida de Londres a Brighton de 1896 celebrou o fim)",
+      "fontes": [
+        "https://en.wikipedia.org/wiki/Locomotive_Acts",
+        "https://gracesguide.co.uk/1865_Locomotive_Act",
+        "https://en.wikipedia.org/wiki/Red_flag_traffic_laws"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 4,
+      "titulo": "A Torre Que Foi Salva Pela Guerra",
+      "gancho": "A torre mais famosa da Itália começou a entortar quando tinha só três andares. E uma guerra salvou ela de cair.",
+      "virada": "Oitocentos anos depois, para endireitar a torre, os engenheiros não colocaram nada. Tiraram terra.",
+      "porQueAnima": "os pedreiros medievais erguendo os andares e o chão afundando de um lado, a obra parada por quase cem anos com o mato crescendo, e os engenheiros modernos cavando por baixo enquanto a torre volta um pouquinho",
+      "fatoOuLenda": "fato documentado (obra iniciada em 1173, inclinação a partir de cerca de 1178; as guerras com Gênova pararam a obra e deram tempo ao solo; estabilização de 1993 a 2001 com retirada de solo)",
+      "fontes": [
+        "https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean",
+        "https://discovermagazine.com/planet-earth/the-leaning-tower-of-pisa-wasnt-supposed-to-lean",
+        "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 5,
+      "titulo": "O Banho Que Desmascarou um Ourives",
+      "gancho": "Um matemático descobriu que um rei estava sendo roubado enquanto tomava banho.",
+      "virada": "A história só foi escrita duzentos anos depois. E até Galileu disse que, desse jeito, a conta não fecha.",
+      "porQueAnima": "a coroa dourada brilhando no palácio, a banheira transbordando quando ele entra, ele saindo correndo de toalha pela rua gritando 'eureka'",
+      "fatoOuLenda": "diz a lenda (relato de Vitrúvio, escrito cerca de dois séculos depois de Arquimedes; os historiadores duvidam do episódio, mas o princípio do empuxo é dele)",
+      "fontes": [
+        "https://www.scientificamerican.com/article/fact-or-fiction-archimede",
+        "https://exhibits.museogalileo.it/archimedes/section/VitruviusArchimedes.html",
+        "https://math.nyu.edu/Archimedes/Crown/VitruviusOLD.html"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 6,
+      "titulo": "A Corrida Onde Ninguém Pedalou Direito",
+      "gancho": "Na segunda Volta da França da história, os quatro primeiros colocados foram desclassificados.",
+      "virada": "O título foi para o quinto colocado, um garoto de dezenove anos. Quatro meses depois da chegada.",
+      "porQueAnima": "ciclistas de bigode pedalando de noite em estrada de terra, pregos espalhados no caminho, um ciclista escondido entrando num vagão de trem, e o pódio esvaziando um por um",
+      "fatoOuLenda": "fato documentado com detalhe disputado (Tour de France de 1904: Maurice Garin e os três seguintes desclassificados, Henri Cornet declarado campeão; a história do trem é boato, os motivos oficiais nunca foram publicados)",
+      "fontes": [
+        "https://en.wikipedia.org/wiki/1904_Tour_de_France",
+        "https://www.cyclingnews.com/features/cheating-is-nothing-new-in-the-tour",
+        "https://road.cc/content/feature/cheating-tour-de-france-rich-history-302189"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 7,
+      "titulo": "O Navio Que Parou o Mundo",
+      "gancho": "Em dois mil e vinte e um, um navio entalado parou um pedaço do comércio do mundo. E quem tentou soltar foi uma escavadeira sozinha.",
+      "virada": "Depois de seis dias de máquinas e rebocadores, quem soltou o navio de verdade foi a maré.",
+      "porQueAnima": "o navio gigante virando de lado no canal, a escavadeirinha cavando a areia perto do casco enorme, a fila de navios esperando até o horizonte, a maré subindo e os rebocadores puxando",
+      "fatoOuLenda": "fato documentado (Ever Given, Canal de Suez, 23 a 29 de março de 2021; dragas, escavadeiras e catorze rebocadores, com a ajuda da maré alta)",
+      "fontes": [
+        "https://en.wikipedia.org/wiki/2021_Suez_Canal_obstruction",
+        "https://www.pbs.org/newshour/world/giant-container-ship-that-blocked-suez-canal-is-set-free",
+        "https://www.npr.org/2021/03/29/982174644/ever-given-partially-afloat-as-salvage-teams-race-to-reopen-suez-canal"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 8,
+      "titulo": "O Cofrinho Que o Tales Concretou",
+      "gancho": "O Tales pediu para o Zeca concretar o cofrinho dele, para nunca mais conseguir gastar o dinheiro.",
+      "virada": "Um mês depois, o Tales alugou uma britadeira para abrir o cofre. O aluguel custou mais que o dinheiro lá dentro.",
+      "porQueAnima": "o Zeca despejando a betoneira em cima do porquinho, o bloco de concreto gigante na garagem, o Tales tremendo inteiro na britadeira e as moedinhas voando",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "tales",
+        "zeca"
+      ],
+      "modo": "personagem"
+    },
+    {
+      "n": 9,
+      "titulo": "A Promoção Que Lotou a Paratí",
+      "gancho": "O Tales economizou trezentos reais numa promoção. E gastou oitocentos para levar tudo para casa.",
+      "virada": "Em casa, ele descobriu que tinha comprado quarenta pacotes de papel higiênico. E esqueceu o arroz.",
+      "porQueAnima": "o carrinho de supermercado transbordando, a Paratí afundando de tanto peso com o pneu estourando, o guincho rebocando o carro com a pilha de pacotes balançando no teto",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "tales"
+      ],
+      "modo": "personagem"
+    },
+    {
+      "n": 10,
+      "titulo": "O Muro Que o Zeca Fez Torto",
+      "gancho": "O Zeca construiu o muro mais torto da cidade. E virou ponto turístico.",
+      "virada": "A prefeitura pediu para ele fazer outro igual. O Zeca nunca mais conseguiu errar do mesmo jeito.",
+      "porQueAnima": "o Zeca assentando tijolo sem prumo enquanto conversa, o muro se inclinando em curva, turistas fazendo pose segurando o muro, e o segundo muro saindo perfeitamente reto",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem"
+    }
+  ],
+  "criadoEm": "2026-11-22T15:32:18.921Z",
+  "usoIA": {
+    "custoUSD": 0.5802809999999999,
+    "turnos": 16,
+    "segundos": 82,
+    "tokensEntrada": 295442,
+    "tokensSaida": 6624
+  }
+}

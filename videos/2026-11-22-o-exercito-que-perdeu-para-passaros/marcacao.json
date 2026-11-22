@@ -1,0 +1,15 @@
+[
+  { "texto": "Em mil novecentos e trinta e dois, a Austrália mandou o exército para uma guerra contra pássaros.", "energia": "normal", "pausa": 0.4, "efeito": "nenhum" },
+  { "texto": "E perdeu.", "energia": "animada", "pausa": 0.6, "efeito": "risada" },
+  { "texto": "Eram vinte mil emus... comendo o trigo dos fazendeiros.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "O exército mandou um major, dois soldados e duas metralhadoras.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Fácil, né?", "energia": "calma", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Só que os emus se espalhavam em grupinhos... e corriam em zigue-zague.", "energia": "animada", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Então montaram a metralhadora num caminhão.", "energia": "normal", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "Mas a estrada de terra sacudia tanto que ninguém conseguia mirar.", "energia": "animada", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Acertaram mais poeira do que pássaro.", "energia": "animada", "pausa": 0.6, "efeito": "risada" },
+  { "texto": "Quase dez mil balas depois... o exército desistiu.", "energia": "calma", "pausa": 0.5, "efeito": "suspiro" },
+  { "texto": "E sabe o que o major disse?", "energia": "calma", "pausa": 0.8, "efeito": "nenhum" },
+  { "texto": "Que os emus enfrentavam metralhadora... como se fossem tanques de guerra.", "energia": "normal", "pausa": 0.8, "efeito": "nenhum" },
+  { "texto": "E aí, quem ganha a revanche: o exército ou os emus?", "energia": "normal", "pausa": 0, "efeito": "nenhum" }
+]

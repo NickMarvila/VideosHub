@@ -48,5 +48,14 @@
     "barba": false,
     "bigode": true,
     "detalhe": "nenhum"
+  },
+  "cartoon": {
+    "jacket": "#d62828",
+    "pants": "#2b2d42",
+    "boots": "#3b2a1a",
+    "hat": "hair",
+    "hair": "#3b2a1a",
+    "moustache": "#3b2a1a",
+    "skin": "#f5c9a0"
   }
 }

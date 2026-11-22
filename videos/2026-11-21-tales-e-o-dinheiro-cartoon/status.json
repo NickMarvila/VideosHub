@@ -1,0 +1,76 @@
+{
+  "id": "2026-11-21-tales-e-o-dinheiro-cartoon",
+  "titulo": "Tales e o dinheiro (cartoon)",
+  "ideia": "A história do Tales no estilo Cartoon 3D (modelo da skill cartoon-audio-short), para comparar com o 2D e o 3D.",
+  "duracaoAlvo": 45,
+  "estilo": "cartoon-3d",
+  "personagens": [
+    "tales",
+    "zeca"
+  ],
+  "pasta": "videos/2026-11-21-tales-e-o-dinheiro-cartoon",
+  "voz": {
+    "perfil": "2f02b91b",
+    "motor": "omnivoice",
+    "velocidade": 0.82
+  },
+  "capaEm": 24.5,
+  "legenda": false,
+  "etapa": "final",
+  "estado": "aguardando_aprovacao",
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T01:07:35.582Z"
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-22T01:05:24.751839+00:00",
+      "evento": "exemplo do estilo Cartoon 3D (mesma narração)"
+    },
+    {
+      "em": "2026-11-22T01:07:35.582Z",
+      "evento": "cenas aprovadas"
+    },
+    {
+      "em": "2026-11-22T01:07:35.591Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-22T01:09:41.792Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-22T02:51:00.442Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-22T02:55:37.672Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-22T03:08:26.230Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-22T03:10:36.480Z",
+      "evento": "vídeo final pronto"
+    }
+  ],
+  "criadoEm": "2026-11-22T01:05:24.751839+00:00"
+}

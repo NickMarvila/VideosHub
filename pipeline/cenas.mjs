@@ -13,7 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { spawnSync } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -28,6 +28,8 @@ const arqVar = path.join(pasta, 'cenas', 'variantes.json');
 if (!fs.existsSync(arqVar)) { console.error(`Não achei ${rel(arqVar)}.`); process.exit(1); }
 const V = lerJSON(arqVar);
 const eh2D = !path.resolve(pasta).startsWith(path.join(KIT, 'projects'));
+const ehCartoon = !!V.base?.elenco || fs.existsSync(path.join(pasta, 'storyboard_cartoon.json'));
+const CART = ehCartoon ? ['--cartoon'] : [];
 const vozGerada = fs.existsSync(path.join(pasta, 'voz.json')) ? lerJSON(path.join(pasta, 'voz.json')).geradoEm : '';
 
 const varianteDe = (c, id) => c.variantes.find((x) => x.id === id);
@@ -41,7 +43,8 @@ const hash = (c, v) => crypto.createHash('md5').update(JSON.stringify([c.inicio,
 // 3D: cada variante vira um projeto temporário dentro do kit (o motor só abre projetos de lá)
 function projetoKit3D(nome, sb) {
   const dir = path.join(pasta, '_var', nome);
-  const sbRel = { ...sb, audio: sb.audio && `../../${sb.audio}`, palavras: sb.palavras && `../../${sb.palavras}` };
+  // sem áudio: o render do kit trava ao ler o áudio a partir do meio (--de); o trecho da narração é juntado depois
+  const sbRel = { ...sb, audio: undefined, palavras: sb.palavras && `../../${sb.palavras}` };
   gravarJSON(path.join(dir, 'storyboard.json'), sbRel);
   return { dir, projeto: path.relative(KIT, dir).split(path.sep).join('/') };
 }
@@ -60,7 +63,7 @@ function validar() {
     let r;
     if (eh2D) {
       const tmp = path.join(pasta, 'cenas', `_validar_${k}.json`); gravarJSON(tmp, sb);
-      r = rodar('node', ['apps/render/render2d.mjs', rel(pasta), '--validar', '--storyboard', rel(tmp)]);
+      r = rodar('node', ['apps/render/render2d.mjs', rel(pasta), ...CART, '--validar', '--storyboard', rel(tmp)]);
       fs.rmSync(tmp, { force: true });
     } else {
       const { projeto } = projetoKit3D(`_validar_${k}`, sb);
@@ -79,13 +82,16 @@ function validar() {
   return ok;
 }
 
-function midia() {
+async function midia() {
   const pend = [];
   for (const c of V.cenas) for (const v of c.variantes) {
     const h = hash(c, v);
     const clipe = path.join(pasta, 'cenas', 'clipes', `${v.id}.mp4`);
     const poster = path.join(pasta, 'cenas', 'clipes', `${v.id}.png`);
     if (v.hash === h && fs.existsSync(clipe) && fs.existsSync(poster)) continue;
+    // clipe gerado por uma rodada interrompida (arquivo com tamanho real): aproveita
+    const novo = (f) => fs.existsSync(f) && fs.statSync(f).size > 2000; // a IA não muda variantes já existentes: cria ids novos
+    if (!v.hash && novo(clipe) && novo(poster)) { marcar(c, v, h, clipe, poster); continue; }
     pend.push({ c, v, h, clipe, poster });
   }
   console.log(`${pend.length} variante(s) para gerar clipe`);
@@ -98,7 +104,7 @@ function midia() {
         { tipo: 'poster', storyboard: sb, t: c.inicio + (c.fim - c.inicio) * 0.6, saida: rel(poster) }];
     });
     const lote = path.join(pasta, 'cenas', '_lote.json'); gravarJSON(lote, { itens });
-    const r = spawnSync('node', ['apps/render/render2d.mjs', rel(pasta), '--lote', rel(lote)], { cwd: RAIZ, stdio: 'inherit' });
+    const r = spawnSync('node', ['apps/render/render2d.mjs', rel(pasta), ...CART, '--lote', rel(lote)], { cwd: RAIZ, stdio: 'inherit' });
     fs.rmSync(lote, { force: true });
     ok = r.status === 0;
   } else {
@@ -106,31 +112,62 @@ function midia() {
     for (const { c, v, clipe, poster } of pend) {
       const { dir, projeto } = projetoKit3D(v.id, storyboard({ [c.id]: v.id }));
       fs.mkdirSync(path.dirname(clipe), { recursive: true });
-      const a = rodar('node', ['tools/render.mjs', projeto, '--previa', '--de', String(c.inicio), '--ate', String(c.fim), '--saida', clipe], KIT);
-      const b = rodar('node', ['tools/render.mjs', projeto, '--capa', String(+(c.inicio + (c.fim - c.inicio) * 0.6).toFixed(2))], KIT);
+      // limite por clipe: o motor do kit pode travar (ex.: poeira presa a personagem andando)
+      const limite = Math.max(90, (c.fim - c.inicio) * 25) * 1000;
+      const b = await rodarComLimite('node', ['tools/render.mjs', projeto, '--capa', String(+(c.inicio + (c.fim - c.inicio) * 0.6).toFixed(2))], KIT, 90000);
       if (b.ok && fs.existsSync(path.join(dir, 'render', 'capa.png'))) fs.copyFileSync(path.join(dir, 'render', 'capa.png'), poster);
-      if (!a.ok || !b.ok) { console.log(`✗ ${v.id}: ${(a.ok ? b : a).saida.trim().split('\n').slice(-3).join(' ')}`); ok = false; }
+      const mudo = clipe.replace(/\.mp4$/, '.mudo.mp4');
+      let a = await rodarComLimite('node', ['tools/render.mjs', projeto, '--previa', '--de', String(c.inicio), '--ate', String(c.fim), '--saida', mudo], KIT, limite);
+      if (a.ok) { // junta o trecho da narração
+        const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-i', mudo, '-ss', String(c.inicio), '-t', String(c.fim - c.inicio), '-i', path.join(pasta, V.base.audio || 'narracao.wav'),
+          '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', clipe], { encoding: 'utf8' });
+        if (r.status !== 0) a = { ok: false, saida: r.stderr };
+      }
+      fs.rmSync(mudo, { force: true });
+      if (a.ok && b.ok) marcar(c, v, hash(c, v), clipe, poster);
+      else {
+        const motivo = a.estourou ? `o render passou de ${Math.round(limite / 1000)} s e foi interrompido`
+          : (a.ok ? b : a).saida.trim().split('\n').slice(-2).join(' ');
+        console.log(`✗ ${v.id}: ${motivo}`); ok = false;
+        marcar(c, v, null, null, fs.existsSync(poster) ? poster : null, motivo);
+      }
       n++; console.log(`Quadro ${n * 2}/${pend.length * 2}  (${Math.round((n / pend.length) * 100)}%)  ${v.id}`);
     }
   }
-  // marca o que foi gerado (relê o arquivo: o criador pode ter escolhido algo enquanto renderizava)
-  const atual = lerJSON(arqVar);
-  for (const { c, v, h, clipe, poster } of pend) {
-    const alvo = atual.cenas.find((x) => x.id === c.id)?.variantes.find((x) => x.id === v.id);
-    if (alvo && fs.existsSync(clipe) && fs.existsSync(poster)) { alvo.hash = h; alvo.clipe = rel(clipe).replace(rel(pasta) + '/', ''); alvo.poster = rel(poster).replace(rel(pasta) + '/', ''); }
-  }
-  gravarJSON(arqVar, atual);
+  if (eh2D) for (const { c, v, h, clipe, poster } of pend) if (fs.existsSync(clipe) && fs.existsSync(poster)) marcar(c, v, h, clipe, poster);
   return ok;
+}
+// grava na hora o resultado de uma variante (relê o arquivo: o criador pode ter escolhido algo enquanto renderizava)
+function marcar(c, v, h, clipe, poster, erro) {
+  const atual = lerJSON(arqVar);
+  const alvo = atual.cenas.find((x) => x.id === c.id)?.variantes.find((x) => x.id === v.id);
+  if (!alvo) return;
+  const r = (f) => f && rel(f).replace(rel(pasta) + '/', '');
+  if (h) alvo.hash = h; else delete alvo.hash;
+  if (clipe) alvo.clipe = r(clipe); else delete alvo.clipe;
+  if (poster) alvo.poster = r(poster);
+  if (erro) alvo.erro = erro; else delete alvo.erro;
+  gravarJSON(arqVar, atual);
+}
+// roda um comando com tempo máximo; se estourar, encerra a árvore inteira (node + Chrome + ffmpeg)
+function rodarComLimite(bin, args, cwd, ms) {
+  return new Promise((ok) => {
+    const p = spawn(bin, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
+    let saida = ''; let estourou = false;
+    p.stdout.on('data', (d) => { saida += d; }); p.stderr.on('data', (d) => { saida += d; });
+    const t = setTimeout(() => { estourou = true; spawnSync('taskkill', ['/PID', String(p.pid), '/T', '/F']); }, ms);
+    p.on('close', (code) => { clearTimeout(t); ok({ ok: code === 0 && !estourou, estourou, saida }); });
+  });
 }
 
 function montar() {
   const faltam = V.cenas.filter((c) => !varianteDe(c, c.escolhida));
   if (faltam.length) { console.error(`Escolha a variante destas cenas: ${faltam.map((c) => c.id).join(', ')}`); return false; }
   const sb = storyboard();
-  gravarJSON(path.join(pasta, eh2D ? 'storyboard2d.json' : 'storyboard.json'), sb);
+  gravarJSON(path.join(pasta, ehCartoon ? 'storyboard_cartoon.json' : eh2D ? 'storyboard2d.json' : 'storyboard.json'), sb);
   console.log(`Storyboard final montado com ${sb.cenas.length} cenas escolhidas.`);
   return true;
 }
 
-const ok = cmd === 'validar' ? validar() : cmd === 'midia' ? midia() : cmd === 'montar' ? montar() : (console.error('comando desconhecido'), false);
+const ok = cmd === 'validar' ? validar() : cmd === 'midia' ? await midia() : cmd === 'montar' ? montar() : (console.error('comando desconhecido'), false);
 process.exit(ok ? 0 : 1);

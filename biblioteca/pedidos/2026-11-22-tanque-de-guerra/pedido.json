@@ -1,0 +1,43 @@
+{
+  "id": "2026-11-22-tanque-de-guerra",
+  "tipo": "objeto",
+  "nome": "tanque de guerra",
+  "slug": "tanque_de_guerra",
+  "descricao": "Tanque de guerra cartoon verde-oliva, com esteiras e canhão curto, ~2 m",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico arredondado verde-oliva: torre em cúpula, 5 rodas por lado, antena com ponta vermelha, faróis; variantes deserto e inverno"
+    },
+    {
+      "n": 2,
+      "descricao": "Quadradão oliva escuro com camuflagem cáqui, saias laterais, torre angular, freio de boca e galões atrás"
+    },
+    {
+      "n": 3,
+      "descricao": "Gordinho de brinquedo oliva-claro: torre de bola, 3 rodonas amarelas, canhão grosso de boca alargada e bandeirinha branca"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.563Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:45:19.247Z",
+      "custoUSD": 0.6824128,
+      "turnos": 18,
+      "segundos": 154,
+      "tokensEntrada": 496345,
+      "tokensSaida": 14131
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:45:47.814Z"
+}

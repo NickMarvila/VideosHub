@@ -1,14 +1,12 @@
 {
   "slug": "cartoon-3d",
-  "nome": "Cartoon 3D · Bean-Head Story",
+  "nome": "Cartoon 3D · figurinhas num mundo pintado",
   "nota": 5,
-  "motor": "cartoon3d",
-  "descricao": "Personagens 2D flat 'bean-head' em mundo 3D colorido com traços de tinta, texturas pintadas, profundidade de campo, trilha sonora e efeitos sonoros sincronizados.",
+  "motor": "cartoon",
+  "descricao": "O modelo da skill cartoon-audio-short: personagens 2D de cabeça de feijão em uma vila 3D pintada, com contorno de tinta, desfoque de lente, luz de dia ou de fim de tarde e câmera deslizando. Sem legenda; trilha de marcha.",
   "pronto": true,
-  "origem": "vendor/claude-animated-shorts",
-  "legenda": {
-    "cor": "#FFFFFF",
-    "destaque": "#FFD60A",
-    "porVez": 3
+  "legenda": false,
+  "trilha": {
+    "clima": "marcha"
   }
 }

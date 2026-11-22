@@ -90,6 +90,7 @@ Expressões: neutral, happy, laugh, sad, angry, surprised, worried, thinking, sl
 - `rolo_compressor` 1.7×4.4×3.1 m variantes: laranja, azul | params: color="#f2c94c" | rodas giram ao mover: Máquina de compactar asfalto e solo, com dois tambores de aço e cabine aberta
 - `vibroacabadora` 3.4×6×3.2 m variantes: laranja, azul | params: color="#f2c94c": Máquina que espalha o asfalto quente em camada uniforme: caçamba na frente (recebe a massa do caminhão), esteiras e a régua alisadora atrás
 - `espargidor` 2.9×17.3×3.3 m variantes: jorrando, vermelho | params: cab="#f2f2f2", tank="#2f3338", spraying=false | ETAPAS (etapa) | rodas giram ao mover: Caminhão-tanque que espalha o ligante asfáltico líquido (imprimação e pintura de ligação)
+- `caminhao` 2.2×4.6×1.9 m variantes: sem_suporte, areia | params: color="#7b8256", fender="#5f6544", wood="#9a7a52", suporte=true | rodas giram ao mover: Caminhãozinho de carroceria aberta dos anos 1930, verde-oliva desbotado, cabine fechada, capô comprido, para-lamas arredondados e faróis redondos
 
 ### Objetos de rua e obra
 - `cone` 0.4×0.4×0.7 m variantes: amarelo | params: color="#f28c28": Cone laranja com faixa branca e base quadrada
@@ -108,6 +109,10 @@ Expressões: neutral, happy, laugh, sad, angry, surprised, worried, thinking, sl
 - `lixeira` 0.6×0.7×0.9 m variantes: azul, amarela | params: color="#4f9d5a": Lixeira de rua com tampa
 - `caixa_madeira` 0.9×0.9×0.8 m variantes: grande | params: size=0.8: Caixote de madeira com travessas em X
 - `bueiro` 0.9×0.6×0.1 m: Grade de escoamento de água da chuva, ao nível do asfalto junto ao meio-fio
+- `carrinho_de_supermercado` 0.7×1×1.1 m variantes: vazio, poucas | params: metal="#b9c0c6", handle="#c0392b", compras=6 | rodas giram ao mover: Carrinho de metal aramado cinza, alça vermelha escura e quatro rodinhas, já com compras coloridas (cereal, garrafa, leite, maçãs, pão, banana)
+- `metralhadora` 1×1.3×0.9 m variantes: verde, enferrujada | params: color="#3a3f45", magazine="#2a2e33", wood="#8a5a33", tripod="#4b5057": Metralhadora antiga de tripé, cartoon: cano grosso cinza-escuro com aletas de resfriamento, carregador redondo (prato) em cima, coronha de madeira
+- `plantacao_de_trigo` 0.5×0.6×0.9 m variantes: rala, cheia, baixa | params: color="#e3b23c", espiga="#f2c94c", folha="#c9952e", hastes=14, altura=0.8, seed=1: Touceira de trigo dourado maduro: ~14 hastes com espigas cheias, folhas na base
+- `tanque_de_guerra` 1.4×2.1×1.6 m variantes: deserto, inverno | params: color="#6B7A3A", escuro="#4E5A2A", esteira="#2E3034", antena=1 | rodas giram ao mover: Tanque cartoon verde-oliva arredondado: esteiras com 5 rodas por lado, torre em cúpula com escotilha e antena, canhão curto
 
 ### Formas e peças livres (para montar qualquer coisa)
 - `forma` 1×1×1 m variantes: tanque, bola, lampada | params: tipo="caixa", tamanho=[1,1,1], cor="#8a95a3", brilho=false, emissivo=false, apoiada=true: Peça básica para montar qualquer coisa (tanque, bloco, pilar, bola, lâmpada, quadro...)

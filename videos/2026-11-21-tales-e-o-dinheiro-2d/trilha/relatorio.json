@@ -1,0 +1,157 @@
+{
+ "duracao": 39.96,
+ "clima": "marcha",
+ "musicaVsVoz_dB": -6.0,
+ "efeitosVsVoz_dB": -9.69,
+ "picoEfeitosVsVoz": 0.7,
+ "lufsAntes": -12.44,
+ "ganhoFinal_dB": -1.56,
+ "picoFinal_dBTP": -1.45,
+ "efeitos": [
+  {
+   "t": 3.28,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 3.97,
+   "tipo": "moeda",
+   "auto": true
+  },
+  {
+   "t": 4.88,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 5.0,
+   "tipo": "vento",
+   "auto": true
+  },
+  {
+   "t": 5.0,
+   "tipo": "motor",
+   "auto": true
+  },
+  {
+   "t": 8.280000000000001,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 8.870000000000001,
+   "tipo": "moeda",
+   "auto": true
+  },
+  {
+   "t": 10.17,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 11.64,
+   "tipo": "grilos",
+   "auto": true
+  },
+  {
+   "t": 14.14,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 14.67,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 16.169999999999998,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 18.06,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 18.18,
+   "tipo": "vento",
+   "auto": true
+  },
+  {
+   "t": 18.18,
+   "tipo": "motor",
+   "auto": true
+  },
+  {
+   "t": 18.77,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 19.885,
+   "tipo": "freio",
+   "auto": true
+  },
+  {
+   "t": 20.1,
+   "tipo": "impacto",
+   "auto": true
+  },
+  {
+   "t": 20.2,
+   "tipo": "freio",
+   "auto": false
+  },
+  {
+   "t": 21.16,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 23.369999999999997,
+   "tipo": "ting",
+   "auto": true
+  },
+  {
+   "t": 23.4,
+   "tipo": "uou",
+   "auto": false
+  },
+  {
+   "t": 26.32,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 26.44,
+   "tipo": "sting",
+   "auto": true
+  },
+  {
+   "t": 29.27,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 30.38,
+   "tipo": "whoosh",
+   "auto": true
+  },
+  {
+   "t": 30.97,
+   "tipo": "moeda",
+   "auto": true
+  },
+  {
+   "t": 31.369999999999997,
+   "tipo": "moeda",
+   "auto": true
+  },
+  {
+   "t": 34.720000000000006,
+   "tipo": "whoosh",
+   "auto": true
+  }
+ ]
+}

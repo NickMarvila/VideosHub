@@ -1,0 +1,13 @@
+{
+  "provedor": "voicestudio-omnivoice",
+  "audio": "narracao.wav",
+  "duracao": 39.36,
+  "palavras": 95,
+  "frases": 13,
+  "voz": "2f02b91b",
+  "velocidade": 0.82,
+  "coberturaTempos": 0.979,
+  "ouvidoPeloWhisper": "Esse é o Thales, o Thales trabalha numa rede de supermercado e dirige uma Parati, o Thales tem um sério problema com dinheiro, não pode sobrar um dinheirinho que ele já quer gastar, e isso acontece direto, ele passa a semana inteira reclamando que tá sem dinheiro, que a Parati tá sem freio, mas não tem dinheiro pra arrumar, e no dia seguinte, aparece com um smartwatch de mil reais. Esse Thales Não pode sobrar um dinheirinho Que já quer gastar E aí você também conhece um Thales? Marca ele aqui nos comentários",
+  "tempoSintese": 26.8,
+  "geradoEm": "2026-11-21T18:19:14.914730+00:00"
+}

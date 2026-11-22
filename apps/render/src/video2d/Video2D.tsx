@@ -96,7 +96,7 @@ export const Video2D: React.FC<Props2D> = (props) => {
   return (
     <AbsoluteFill style={{ background: "#111" }}>
       {cena && <CenaView cena={cena} props={props} />}
-      <Legenda palavras={palavras} porVez={leg.porVez ?? 3} y={leg.y ?? 1560} cor={leg.cor ?? "#FFFFFF"} destaque={leg.destaque ?? "#FF9F1C"} />
+      {(leg as { ativo?: boolean }).ativo !== false && <Legenda palavras={palavras} porVez={leg.porVez ?? 3} y={leg.y ?? 1560} cor={leg.cor ?? "#FFFFFF"} destaque={leg.destaque ?? "#FF9F1C"} />}
       {sb.audio && <Audio src={staticFile(sb.audio)} />}
     </AbsoluteFill>
   );

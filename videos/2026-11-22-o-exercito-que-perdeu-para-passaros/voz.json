@@ -1,0 +1,13 @@
+{
+  "provedor": "voicestudio-voxcpm2",
+  "audio": "narracao.wav",
+  "duracao": 46.06,
+  "palavras": 112,
+  "frases": 13,
+  "voz": "9d15747e",
+  "velocidade": 1,
+  "modo": "frase-a-frase",
+  "coberturaTempos": 0.92,
+  "ouvidoPeloWhisper": "Em 1932, a Austrália mandou o exército para uma guerra contra pássaros. E perdeu. Eram 20 mil emus, comendo o trigo dos fazendeiros. O exército mandou um major, dois soldados e duas metralhadoras. Fácil, né? Só que os emus se espalhavam em grupinhos e corriam em zigue-zague. Então montaram a metralhadora num caminhão. Mas a estrada de terra sacudia tanto que ninguém conseguia mirar. Acertaram mais poeira do que pássaro. Ai, quase 10 mil balas depois, o exército desistiu. E sabe o que o major disse? Que os emus enfrentavam metralhadora como se fossem tanques de guerra. E aí, quem ganha a revanche? O exército ou os emus?",
+  "geradoEm": "2026-11-22T16:45:07.745699+00:00"
+}

@@ -46,6 +46,8 @@ videos/*/render/
 videos/*/cenas/*.mp4
 videos/*/cenas/*.png
 videos/*/audio/*.wav
+videos/*/cenas/clipes/
+Kit_Video_3d/projects/*/cenas/clipes/
 Kit_Video_3d/projects/*/render/
 biblioteca/miniaturas/
 biblioteca/pedidos/*/opcoes/

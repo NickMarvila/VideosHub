@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-21T20:50:37.663Z",
+  "geradoEm": "2026-11-22T03:01:58.820Z",
   "itens": [
     {
       "tipo": "personagem",
@@ -760,6 +760,18 @@
         "x": 25.2,
         "y": 22,
         "z": 15
+      }
+    },
+    {
+      "tipo": "cenario",
+      "id": "carrinho_de_supermercado",
+      "label": "Carrinho de supermercado",
+      "descricao": "Carrinho de metal aramado cinza, alça vermelha escura e quatro rodinhas, já com compras coloridas (cereal, garrafa, leite, maçãs, pão, banana). 0,55 × 0,95 m, 1,05 m de altura. \"compras\" 0 deixa vazio. Frente para +Z.",
+      "categoria": "objetos",
+      "tamanho": {
+        "x": 0.7,
+        "y": 1.1,
+        "z": 1
       }
     }
   ]

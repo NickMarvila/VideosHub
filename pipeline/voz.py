@@ -13,10 +13,24 @@ import urllib.error
 import urllib.request
 
 API = "http://localhost:3900"
+# VoxCPM2: 10 passos (escolhido de ouvido em 2026-11-22; 30 passos era 2x mais lento sem ganho claro)
+PASSOS_VOXCPM2 = 10
+
+
+def aplicar_pronuncia(texto, mapa=None):
+    """Troca palavras pela grafia que faz a voz pronunciar certo (só no texto falado; a legenda usa o original)."""
+    import re
+    for palavra, falada in (mapa or {}).items():
+        texto = re.sub(r"\b" + re.escape(palavra) + r"\b", falada, texto)
+    return texto
 
 
 def gerar_fala(texto, saida, motor="voxcpm2", voz=None, descricao=None,
                instrucao=None, idioma="pt", seed=None, velocidade=1.0, passos=None, guidance=None, api=API):
+    if motor == "voicebox":  # Voicebox (Qwen CustomVoice/Qwen3-TTS), API própria
+        from voicebox import gerar
+        d, _ = gerar(texto, saida, voz, instruct=instrucao, seed=seed)
+        return d
     corpo = {
         "model": motor,
         "input": texto,
@@ -32,6 +46,8 @@ def gerar_fala(texto, saida, motor="voxcpm2", voz=None, descricao=None,
         corpo["instruct"] = instrucao
     if seed is not None:
         corpo["seed"] = seed
+    if passos is None and motor == "voxcpm2":
+        passos = PASSOS_VOXCPM2
     if passos is not None:
         corpo["num_step"] = passos
     if guidance is not None:
@@ -43,12 +59,20 @@ def gerar_fala(texto, saida, motor="voxcpm2", voz=None, descricao=None,
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    try:
-        with urllib.request.urlopen(req, timeout=600) as r:
-            dados = r.read()
-            tipo = r.headers.get("Content-Type", "")
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"VoiceStudio {e.code}: {e.read().decode('utf-8', 'replace')[:500]}")
+    for tentativa in range(3):  # o sidecar do VoxCPM2 às vezes cai na 1a geração depois de carregar; tenta de novo
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r:
+                dados = r.read()
+                tipo = r.headers.get("Content-Type", "")
+            break
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode('utf-8', 'replace')[:500]
+            if tentativa < 2 and ("sidecar" in msg or e.code >= 500):
+                import time
+                time.sleep(4)
+                req = urllib.request.Request(req.full_url, data=req.data, headers=dict(req.header_items()), method="POST")
+                continue
+            raise RuntimeError(f"VoiceStudio {e.code}: {msg}")
 
     if "json" in tipo or dados[:1] == b"{":
         raise RuntimeError(f"Resposta não é áudio: {dados[:500]!r}")

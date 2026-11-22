@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cinema",
+    "nome": "Narrador de Cinema",
+    "descricao": "Voz normal de narrador de filme: grave, aveludada e muito expressiva (VoxCPM2, pode monetizar).",
+    "motor": "voxcpm2",
+    "perfil": "9d15747e",
+    "velocidade": 1.0,
+    "amostra": "testes/voz/cinema/X2_vox_trailer_s12.wav",
+    "comercial": true,
+    "apresentacaoTexto": "Olá! Eu sou o Narrador de Cinema. Voz grave, aveludada e cheia de emoção, como num grande filme. Se você me escolher, é assim que eu vou contar a sua história."
+  },
+  {
+    "id": "sussurro",
+    "nome": "Sussurro de Trailer",
+    "descricao": "Voz sussurrante de trailer, boa para suspense e momentos íntimos (Voicebox, Qwen CustomVoice). Precisa do Voicebox aberto; é mais lenta.",
+    "motor": "voicebox",
+    "perfil": "67c03004-5e24-4665-aa61-6b61903ac3d6",
+    "instrucao": "Voz de narrador de trailer de cinema: muito grave, profunda, lenta e dramática",
+    "seed": 7,
+    "velocidade": 1.0,
+    "amostra": "testes/voz/cinema/V1_voicebox_unclefu_trailer.wav",
+    "comercial": true,
+    "apresentacaoTexto": "Olá... eu sou o Sussurro de Trailer. Falo baixinho, perto do seu ouvido, para deixar tudo em suspense. Se você me escolher, é assim que eu vou contar a sua história."
+  },
+  {
+    "id": "idoso",
+    "nome": "Contador Idoso Grave",
+    "descricao": "Senhor contador de causos, voz bem grave (OmniVoice, uso não comercial).",
+    "motor": "omnivoice",
+    "perfil": "a0fdcf29",
+    "velocidade": 0.82,
+    "pronuncia": {
+      "Tales": "Tális"
+    },
+    "amostra": "testes/voz/cinema/O3_omni_idoso_muitograve.wav",
+    "comercial": false,
+    "apresentacaoTexto": "Olá! Eu sou o Contador Idoso. Já contei muito causo nessa vida, sempre com calma e com essa voz bem grave. Se você me escolher, é assim que eu vou contar a sua história."
+  },
+  {
+    "id": "grave",
+    "nome": "Contador Grave",
+    "descricao": "Narrador de meia-idade com voz muito grave (OmniVoice, uso não comercial).",
+    "motor": "omnivoice",
+    "perfil": "3baf3c94",
+    "velocidade": 0.82,
+    "pronuncia": {
+      "Tales": "Tális"
+    },
+    "amostra": "testes/voz/cinema/O4_omni_muitograve_s31337.wav",
+    "comercial": false,
+    "apresentacaoTexto": "Olá! Eu sou o Contador Grave. Voz profunda e firme, para histórias que prendem do começo ao fim. Se você me escolher, é assim que eu vou contar a sua história."
+  },
+  {
+    "id": "contador",
+    "nome": "Narrador Contador (atual)",
+    "descricao": "O narrador usado até agora (OmniVoice, uso não comercial).",
+    "motor": "omnivoice",
+    "perfil": "2f02b91b",
+    "velocidade": 0.82,
+    "amostra": "testes/voz/tales/melhores/A3_lento_0.82.wav",
+    "comercial": false,
+    "apresentacaoTexto": "Olá! Eu sou o Narrador Contador, a voz que narrou os vídeos até agora. Se você me escolher, é assim que eu vou contar a sua história."
+  }
+]

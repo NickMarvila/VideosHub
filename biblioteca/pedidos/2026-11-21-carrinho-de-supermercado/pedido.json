@@ -6,7 +6,7 @@
   "descricao": "Carrinho de supermercado de metal, com rodinhas e alça vermelha, pode estar vazio ou com algumas compras.",
   "referencia": null,
   "permissao": false,
-  "estado": "aguardando_escolha",
+  "estado": "concluido",
   "opcoes": [
     {
       "n": 1,
@@ -33,5 +33,7 @@
       "tokensSaida": 18439
     }
   ],
-  "erro": null
+  "erro": null,
+  "escolhida": "2",
+  "publicadoEm": "2026-11-22T00:48:00.441Z"
 }

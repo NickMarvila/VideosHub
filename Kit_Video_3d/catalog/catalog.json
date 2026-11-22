@@ -2420,6 +2420,201 @@
       "update": true,
       "wheels": false,
       "stages": null
+    },
+    {
+      "id": "caminhao",
+      "category": "veiculos",
+      "label": "Caminhão anos 1930",
+      "description": "Caminhãozinho de carroceria aberta dos anos 1930, verde-oliva desbotado, cabine fechada, capô comprido, para-lamas arredondados e faróis redondos. Carroceria de tábuas com um pedestal no meio para prender a metralhadora (topo do pedestal em y 1,45, z -1,0). 1,9 × 4,6 m, 2,0 m de altura. Rodas giram com rollWheels(). Frente para +Z.",
+      "sizeM": {
+        "x": 2.2,
+        "y": 1.9,
+        "z": 4.6
+      },
+      "meshes": 61,
+      "params": {
+        "color": {
+          "default": "#7b8256",
+          "description": "cor da lataria (verde-oliva desbotado)"
+        },
+        "fender": {
+          "default": "#5f6544",
+          "description": "cor dos para-lamas"
+        },
+        "wood": {
+          "default": "#9a7a52",
+          "description": "cor das tábuas da carroceria"
+        },
+        "suporte": {
+          "default": true,
+          "description": "pedestal da metralhadora na carroceria"
+        }
+      },
+      "variants": [
+        "sem_suporte",
+        "areia"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": true,
+      "stages": null
+    },
+    {
+      "id": "carrinho_de_supermercado",
+      "category": "objetos",
+      "label": "Carrinho de supermercado",
+      "description": "Carrinho de metal aramado cinza, alça vermelha escura e quatro rodinhas, já com compras coloridas (cereal, garrafa, leite, maçãs, pão, banana). 0,55 × 0,95 m, 1,05 m de altura. \"compras\" 0 deixa vazio. Frente para +Z.",
+      "sizeM": {
+        "x": 0.7,
+        "y": 1.1,
+        "z": 1
+      },
+      "meshes": 75,
+      "params": {
+        "metal": {
+          "default": "#b9c0c6",
+          "description": "cor do metal"
+        },
+        "handle": {
+          "default": "#c0392b",
+          "description": "cor da alça"
+        },
+        "compras": {
+          "default": 6,
+          "description": "quantidade de compras no cesto (0 a 6)"
+        }
+      },
+      "variants": [
+        "vazio",
+        "poucas"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": true,
+      "stages": null
+    },
+    {
+      "id": "metralhadora",
+      "category": "objetos",
+      "label": "Metralhadora de tripé",
+      "description": "Metralhadora antiga de tripé, cartoon: cano grosso cinza-escuro com aletas de resfriamento, carregador redondo (prato) em cima, coronha de madeira. 1,2 m de comprimento, 0,95 m de altura. Cano aponta para +Z.",
+      "sizeM": {
+        "x": 1,
+        "y": 0.9,
+        "z": 1.3
+      },
+      "meshes": 34,
+      "params": {
+        "color": {
+          "default": "#3a3f45",
+          "description": "metal do cano e do corpo"
+        },
+        "magazine": {
+          "default": "#2a2e33",
+          "description": "carregador redondo"
+        },
+        "wood": {
+          "default": "#8a5a33",
+          "description": "madeira da coronha"
+        },
+        "tripod": {
+          "default": "#4b5057",
+          "description": "tripé"
+        }
+      },
+      "variants": [
+        "verde",
+        "enferrujada"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "plantacao_de_trigo",
+      "category": "objetos",
+      "label": "Touceira de trigo",
+      "description": "Touceira de trigo dourado maduro: ~14 hastes com espigas cheias, folhas na base. ~0,8 m de altura, ~0,5 m de largura. Espalhe várias (seed diferente) para formar a lavoura.",
+      "sizeM": {
+        "x": 0.5,
+        "y": 0.9,
+        "z": 0.6
+      },
+      "meshes": 63,
+      "params": {
+        "color": {
+          "default": "#e3b23c",
+          "description": "cor das hastes"
+        },
+        "espiga": {
+          "default": "#f2c94c",
+          "description": "cor das espigas"
+        },
+        "folha": {
+          "default": "#c9952e",
+          "description": "cor das folhas da base"
+        },
+        "hastes": {
+          "default": 14,
+          "description": "quantidade de hastes (6 a 24)"
+        },
+        "altura": {
+          "default": 0.8,
+          "description": "altura em metros"
+        },
+        "seed": {
+          "default": 1,
+          "description": "semente da forma (mude para cada touceira ficar diferente)"
+        }
+      },
+      "variants": [
+        "rala",
+        "cheia",
+        "baixa"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "tanque_de_guerra",
+      "category": "objetos",
+      "label": "Tanque de guerra",
+      "description": "Tanque cartoon verde-oliva arredondado: esteiras com 5 rodas por lado, torre em cúpula com escotilha e antena, canhão curto. 2,1 m de comprimento, 1,3 m de largura, 1,6 m até a ponta da antena. Canhão para +Z.",
+      "sizeM": {
+        "x": 1.4,
+        "y": 1.6,
+        "z": 2.1
+      },
+      "meshes": 64,
+      "params": {
+        "color": {
+          "default": "#6B7A3A",
+          "description": "cor principal (verde-oliva)"
+        },
+        "escuro": {
+          "default": "#4E5A2A",
+          "description": "cor das sombras e detalhes"
+        },
+        "esteira": {
+          "default": "#2E3034",
+          "description": "cor da esteira"
+        },
+        "antena": {
+          "default": 1,
+          "description": "1 mostra a antena, 0 esconde"
+        }
+      },
+      "variants": [
+        "deserto",
+        "inverno"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": true,
+      "stages": null
     }
   ],
   "expressions": [

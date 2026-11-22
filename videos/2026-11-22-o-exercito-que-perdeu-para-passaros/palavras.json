@@ -1,0 +1,562 @@
+[
+ {
+  "palavra": "Em",
+  "inicio": 0.0,
+  "fim": 0.08
+ },
+ {
+  "palavra": "mil",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "novecentos",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "e",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "trinta",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "e",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "dois,",
+  "inicio": 0.08,
+  "fim": 1.18
+ },
+ {
+  "palavra": "a",
+  "inicio": 1.66,
+  "fim": 2.0
+ },
+ {
+  "palavra": "Austrália",
+  "inicio": 2.0,
+  "fim": 2.48
+ },
+ {
+  "palavra": "mandou",
+  "inicio": 2.48,
+  "fim": 2.76
+ },
+ {
+  "palavra": "o",
+  "inicio": 2.76,
+  "fim": 2.81
+ },
+ {
+  "palavra": "exército",
+  "inicio": 2.8,
+  "fim": 3.26
+ },
+ {
+  "palavra": "para",
+  "inicio": 3.26,
+  "fim": 3.5
+ },
+ {
+  "palavra": "uma",
+  "inicio": 3.5,
+  "fim": 3.68
+ },
+ {
+  "palavra": "guerra",
+  "inicio": 3.68,
+  "fim": 4.0
+ },
+ {
+  "palavra": "contra",
+  "inicio": 4.0,
+  "fim": 4.24
+ },
+ {
+  "palavra": "pássaros.",
+  "inicio": 4.24,
+  "fim": 4.82
+ },
+ {
+  "palavra": "E",
+  "inicio": 4.98,
+  "fim": 5.54
+ },
+ {
+  "palavra": "perdeu.",
+  "inicio": 5.54,
+  "fim": 6.16
+ },
+ {
+  "palavra": "Eram",
+  "inicio": 6.46,
+  "fim": 7.04
+ },
+ {
+  "palavra": "vinte",
+  "inicio": 7.04,
+  "fim": 7.28
+ },
+ {
+  "palavra": "mil",
+  "inicio": 7.28,
+  "fim": 7.58
+ },
+ {
+  "palavra": "emus...",
+  "inicio": 7.58,
+  "fim": 7.9
+ },
+ {
+  "palavra": "comendo",
+  "inicio": 8.06,
+  "fim": 8.8
+ },
+ {
+  "palavra": "o",
+  "inicio": 8.8,
+  "fim": 8.85
+ },
+ {
+  "palavra": "trigo",
+  "inicio": 8.84,
+  "fim": 9.18
+ },
+ {
+  "palavra": "dos",
+  "inicio": 9.18,
+  "fim": 9.3
+ },
+ {
+  "palavra": "fazendeiros.",
+  "inicio": 9.3,
+  "fim": 10.02
+ },
+ {
+  "palavra": "O",
+  "inicio": 10.12,
+  "fim": 10.58
+ },
+ {
+  "palavra": "exército",
+  "inicio": 10.58,
+  "fim": 11.06
+ },
+ {
+  "palavra": "mandou",
+  "inicio": 11.06,
+  "fim": 11.52
+ },
+ {
+  "palavra": "um",
+  "inicio": 11.52,
+  "fim": 11.62
+ },
+ {
+  "palavra": "major,",
+  "inicio": 11.62,
+  "fim": 12.0
+ },
+ {
+  "palavra": "dois",
+  "inicio": 12.08,
+  "fim": 12.44
+ },
+ {
+  "palavra": "soldados",
+  "inicio": 12.44,
+  "fim": 13.0
+ },
+ {
+  "palavra": "e",
+  "inicio": 13.0,
+  "fim": 13.12
+ },
+ {
+  "palavra": "duas",
+  "inicio": 13.12,
+  "fim": 13.32
+ },
+ {
+  "palavra": "metralhadoras.",
+  "inicio": 13.32,
+  "fim": 14.26
+ },
+ {
+  "palavra": "Fácil,",
+  "inicio": 14.5,
+  "fim": 15.08
+ },
+ {
+  "palavra": "né?",
+  "inicio": 15.16,
+  "fim": 15.28
+ },
+ {
+  "palavra": "Só",
+  "inicio": 15.56,
+  "fim": 16.14
+ },
+ {
+  "palavra": "que",
+  "inicio": 16.14,
+  "fim": 16.26
+ },
+ {
+  "palavra": "os",
+  "inicio": 16.26,
+  "fim": 16.36
+ },
+ {
+  "palavra": "emus",
+  "inicio": 16.36,
+  "fim": 16.64
+ },
+ {
+  "palavra": "se",
+  "inicio": 16.64,
+  "fim": 16.74
+ },
+ {
+  "palavra": "espalhavam",
+  "inicio": 16.74,
+  "fim": 17.3
+ },
+ {
+  "palavra": "em",
+  "inicio": 17.3,
+  "fim": 17.44
+ },
+ {
+  "palavra": "grupinhos...",
+  "inicio": 17.44,
+  "fim": 18.0
+ },
+ {
+  "palavra": "e",
+  "inicio": 18.0,
+  "fim": 18.34
+ },
+ {
+  "palavra": "corriam",
+  "inicio": 18.34,
+  "fim": 18.92
+ },
+ {
+  "palavra": "em",
+  "inicio": 18.92,
+  "fim": 19.02
+ },
+ {
+  "palavra": "zigue-zague.",
+  "inicio": 19.02,
+  "fim": 19.26
+ },
+ {
+  "palavra": "Então",
+  "inicio": 19.72,
+  "fim": 20.3
+ },
+ {
+  "palavra": "montaram",
+  "inicio": 20.3,
+  "fim": 20.92
+ },
+ {
+  "palavra": "a",
+  "inicio": 20.92,
+  "fim": 21.02
+ },
+ {
+  "palavra": "metralhadora",
+  "inicio": 21.02,
+  "fim": 21.72
+ },
+ {
+  "palavra": "num",
+  "inicio": 21.72,
+  "fim": 21.94
+ },
+ {
+  "palavra": "caminhão.",
+  "inicio": 21.94,
+  "fim": 22.48
+ },
+ {
+  "palavra": "Mas",
+  "inicio": 22.52,
+  "fim": 22.92
+ },
+ {
+  "palavra": "a",
+  "inicio": 22.92,
+  "fim": 23.08
+ },
+ {
+  "palavra": "estrada",
+  "inicio": 23.08,
+  "fim": 23.5
+ },
+ {
+  "palavra": "de",
+  "inicio": 23.5,
+  "fim": 23.62
+ },
+ {
+  "palavra": "terra",
+  "inicio": 23.62,
+  "fim": 23.88
+ },
+ {
+  "palavra": "sacudia",
+  "inicio": 23.88,
+  "fim": 24.52
+ },
+ {
+  "palavra": "tanto",
+  "inicio": 24.52,
+  "fim": 24.74
+ },
+ {
+  "palavra": "que",
+  "inicio": 24.74,
+  "fim": 25.12
+ },
+ {
+  "palavra": "ninguém",
+  "inicio": 25.12,
+  "fim": 25.34
+ },
+ {
+  "palavra": "conseguia",
+  "inicio": 25.34,
+  "fim": 26.04
+ },
+ {
+  "palavra": "mirar.",
+  "inicio": 26.04,
+  "fim": 26.38
+ },
+ {
+  "palavra": "Acertaram",
+  "inicio": 26.72,
+  "fim": 27.3
+ },
+ {
+  "palavra": "mais",
+  "inicio": 27.3,
+  "fim": 27.5
+ },
+ {
+  "palavra": "poeira",
+  "inicio": 27.5,
+  "fim": 27.9
+ },
+ {
+  "palavra": "do",
+  "inicio": 27.9,
+  "fim": 28.04
+ },
+ {
+  "palavra": "que",
+  "inicio": 28.04,
+  "fim": 28.18
+ },
+ {
+  "palavra": "pássaro.",
+  "inicio": 28.18,
+  "fim": 28.68
+ },
+ {
+  "palavra": "Quase",
+  "inicio": 31.34,
+  "fim": 31.48
+ },
+ {
+  "palavra": "dez",
+  "inicio": 31.48,
+  "fim": 31.76
+ },
+ {
+  "palavra": "mil",
+  "inicio": 31.76,
+  "fim": 32.06
+ },
+ {
+  "palavra": "balas",
+  "inicio": 32.06,
+  "fim": 32.58
+ },
+ {
+  "palavra": "depois...",
+  "inicio": 32.58,
+  "fim": 32.8
+ },
+ {
+  "palavra": "o",
+  "inicio": 32.92,
+  "fim": 33.44
+ },
+ {
+  "palavra": "exército",
+  "inicio": 33.44,
+  "fim": 33.9
+ },
+ {
+  "palavra": "desistiu.",
+  "inicio": 33.9,
+  "fim": 34.62
+ },
+ {
+  "palavra": "E",
+  "inicio": 34.68,
+  "fim": 35.26
+ },
+ {
+  "palavra": "sabe",
+  "inicio": 35.26,
+  "fim": 35.5
+ },
+ {
+  "palavra": "o",
+  "inicio": 35.5,
+  "fim": 35.64
+ },
+ {
+  "palavra": "que",
+  "inicio": 35.64,
+  "fim": 35.69
+ },
+ {
+  "palavra": "o",
+  "inicio": 35.66,
+  "fim": 35.76
+ },
+ {
+  "palavra": "major",
+  "inicio": 35.76,
+  "fim": 35.9
+ },
+ {
+  "palavra": "disse?",
+  "inicio": 35.9,
+  "fim": 36.24
+ },
+ {
+  "palavra": "Que",
+  "inicio": 36.88,
+  "fim": 37.46
+ },
+ {
+  "palavra": "os",
+  "inicio": 37.46,
+  "fim": 37.6
+ },
+ {
+  "palavra": "emus",
+  "inicio": 37.6,
+  "fim": 37.84
+ },
+ {
+  "palavra": "enfrentavam",
+  "inicio": 37.84,
+  "fim": 38.48
+ },
+ {
+  "palavra": "metralhadora...",
+  "inicio": 38.48,
+  "fim": 39.24
+ },
+ {
+  "palavra": "como",
+  "inicio": 39.24,
+  "fim": 39.88
+ },
+ {
+  "palavra": "se",
+  "inicio": 39.88,
+  "fim": 40.1
+ },
+ {
+  "palavra": "fossem",
+  "inicio": 40.1,
+  "fim": 40.54
+ },
+ {
+  "palavra": "tanques",
+  "inicio": 40.54,
+  "fim": 40.96
+ },
+ {
+  "palavra": "de",
+  "inicio": 40.96,
+  "fim": 41.12
+ },
+ {
+  "palavra": "guerra.",
+  "inicio": 41.12,
+  "fim": 41.42
+ },
+ {
+  "palavra": "E",
+  "inicio": 42.23,
+  "fim": 42.52
+ },
+ {
+  "palavra": "aí,",
+  "inicio": 42.52,
+  "fim": 42.78
+ },
+ {
+  "palavra": "quem",
+  "inicio": 42.82,
+  "fim": 43.2
+ },
+ {
+  "palavra": "ganha",
+  "inicio": 43.2,
+  "fim": 43.6
+ },
+ {
+  "palavra": "a",
+  "inicio": 43.6,
+  "fim": 43.65
+ },
+ {
+  "palavra": "revanche:",
+  "inicio": 43.64,
+  "fim": 44.1
+ },
+ {
+  "palavra": "o",
+  "inicio": 44.14,
+  "fim": 44.44
+ },
+ {
+  "palavra": "exército",
+  "inicio": 44.44,
+  "fim": 45.04
+ },
+ {
+  "palavra": "ou",
+  "inicio": 45.04,
+  "fim": 45.4
+ },
+ {
+  "palavra": "os",
+  "inicio": 45.4,
+  "fim": 45.52
+ },
+ {
+  "palavra": "emus?",
+  "inicio": 45.52,
+  "fim": 45.76
+ }
+]

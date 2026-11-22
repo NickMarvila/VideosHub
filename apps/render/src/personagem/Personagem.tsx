@@ -17,12 +17,22 @@ export type Visual = {
   calca: string;
   sapato: string;
   olhos: string;
-  chapeu: { tipo: "bone" | "gorro" | "capacete" | "nenhum"; cor: string };
+  /** aba_virada: chapéu de feltro de aba larga com um lado preso para cima (corFaixa = faixa da copa) */
+  chapeu: { tipo: "bone" | "gorro" | "capacete" | "aba_virada" | "nenhum"; cor: string; corFaixa?: string };
   cabelo?: string;
   barba: boolean;
   bigode?: boolean;
   detalhe?: "cinto_ferramentas" | "lenco" | "nenhum";
   corDetalhe?: string;
+  /** "emu" desenha uma ave grande no lugar do corpo humano: camisa = penas, calca = pernas, sapato = pés,
+   *  pele = bico, olhos = íris, cabelo = topete. Sem o campo, o boneco é o humano de sempre. */
+  especie?: "emu";
+  /** cor do pescoço e da cabeça (emu) */
+  pescoco?: string;
+  /** largura do corpo (emu), 1 = padrão */
+  corpo?: number;
+  /** topete da ave (emu) */
+  topete?: "liso" | "arrepiado" | "nenhum";
 };
 
 type Props = {
@@ -136,9 +146,25 @@ const BocaForma: React.FC<{ boca: Boca; expressao: Expressao }> = ({ boca, expre
   }
 };
 
-const Chapeu: React.FC<{ tipo: Visual["chapeu"]["tipo"]; cor: string }> = ({ tipo, cor }) => {
+const Chapeu: React.FC<{ tipo: Visual["chapeu"]["tipo"]; cor: string; corFaixa?: string }> = ({ tipo, cor, corFaixa }) => {
   if (tipo === "nenhum") return null;
   const sombra = "rgba(0,0,0,0.18)";
+  if (tipo === "aba_virada")
+    return (
+      <g>
+        {/* aba larga (mais curta do lado esquerdo, que fica virado para cima) */}
+        <ellipse cx={196} cy={100} rx={106} ry={13} fill={cor} />
+        <ellipse cx={196} cy={104} rx={106} ry={9} fill={sombra} />
+        {/* copa arredondada com vinco */}
+        <path d="M 120 100 Q 122 28 180 26 Q 238 28 240 100 Z" fill={cor} />
+        <path d="M 168 34 L 180 48 L 192 34" stroke={sombra} strokeWidth={5} fill="none" strokeLinecap="round" />
+        <rect x={120} y={76} width={120} height={18} fill={corFaixa ?? "#5A4A32"} />
+        {/* lado preso para cima, com o broche */}
+        <path d="M 124 102 L 86 98 L 92 36 L 122 58 Z" fill={cor} />
+        <path d="M 124 102 L 86 98 L 88 82 L 122 90 Z" fill={sombra} />
+        <circle cx={106} cy={68} r={8} fill="#D9B24A" />
+      </g>
+    );
   if (tipo === "gorro")
     return (
       <g>
@@ -172,7 +198,114 @@ const BARBA: [number, number][] = [
   [146, 146], [214, 146], [152, 175], [208, 176], [164, 183], [180, 186], [196, 183], [172, 166], [188, 167],
 ];
 
-export const Personagem: React.FC<Props> = ({
+const pts = (l: [number, number][]) => l.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+
+/** Emu: corpo redondo de penas desgrenhadas, pescoço comprido, olhos arregalados e pernas finas (de frente). */
+const Emu: React.FC<Props> = ({
+  visual, boca = "X", expressao = "neutro", pose = "neutro", piscando = false, olhar = 0, respiro = 0,
+  espelhar = false, altura = 900, passo,
+}) => {
+  const anda = passo === undefined ? 0 : Math.sin(passo * Math.PI * 2);
+  const pulinho = passo === undefined ? 0 : Math.abs(Math.cos(passo * Math.PI * 2)) * 8;
+  const k = visual.corpo ?? 1;
+  const cx = 170, cy = 335 - pulinho, rx = 100 * k, ry = 72 * (0.88 + 0.12 * k) * (1 + respiro * 0.012);
+  const hx = 196 + olhar * 6, hy = 108 - pulinho;
+  const sombra = "rgba(0,0,0,0.16)";
+  // franja de penas: pontas alternadas, mais compridas embaixo
+  const franja: [number, number][] = [];
+  for (let i = 0; i < 44; i++) {
+    const t = (i / 44) * Math.PI * 2, s = Math.sin(t), r = i % 2 ? 1 + (s > -0.25 ? 0.16 : 0.06) : 1;
+    franja.push([cx + rx * r * Math.cos(t), cy + ry * r * s]);
+  }
+  const topete = visual.topete ?? "liso";
+  const tufo: [number, number][] = [];
+  if (topete !== "nenhum") {
+    const n = topete === "arrepiado" ? 7 : 9, alto = topete === "arrepiado" ? 30 : 10;
+    for (let i = 0; i <= n * 2; i++) {
+      const a = ((200 + (140 * i) / (n * 2)) * Math.PI) / 180, r = i % 2 ? 34 + alto * (0.75 + 0.25 * Math.sin(i * 2.1)) : 31;
+      tufo.push([hx + r * Math.cos(a), hy - 5 + r * 0.95 * Math.sin(a)]);
+    }
+    tufo.push([hx + 24, hy - 16], [hx, hy - 20], [hx - 24, hy - 16]);
+  }
+  const arregalado = expressao === "surpreso";
+  const fechado = piscando;
+  const falando = boca !== "X" && boca !== "A";
+  const abre = falando ? (boca === "D" || boca === "C" ? 1 : 0.5) : expressao === "surpreso" ? 0.8 : expressao === "feliz" ? 0.4 : 0;
+  const asaCima = pose === "comemorando" || pose === "bracos_abertos";
+  const pescoco = visual.pescoco ?? "#7FA6C9";
+  const brow = expressao === "bravo" ? [6, -4] : expressao === "triste" || expressao === "duvida" ? [-4, 4] : arregalado ? [-8, -8] : null;
+  return (
+    <svg viewBox="0 0 360 540" height={altura} style={{ overflow: "visible", transform: espelhar ? "scaleX(-1)" : undefined }}>
+      <ellipse cx={180} cy={528} rx={74 * k} ry={10} fill="rgba(0,0,0,0.25)" />
+      {/* pernas finas com o tornozelo dobrado e três dedos */}
+      {[-1, 1].map((lado) => {
+        const ox = lado * anda * 14, up = passo === undefined ? 0 : Math.max(0, Math.sin((passo + (lado > 0 ? 0.5 : 0)) * Math.PI * 2)) * 22;
+        const qx = cx + lado * 24, qy = cy + ry * 0.55, px = cx + lado * 30 + ox, py = 512 - up;
+        const jx = (qx + px) / 2 + lado * 10, jy = (qy + py) / 2 + 14 - up * 0.3;
+        return (
+          <g key={lado}>
+            <path d={`M ${qx} ${qy} Q ${jx} ${jy} ${px} ${py}`} stroke={visual.calca} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <circle cx={jx - lado * 2} cy={jy - 4} r={5.5} fill={visual.calca} />
+            {[[-18, 3], [-1, 7], [16, 3]].map(([dx, dy], i) => (
+              <line key={i} x1={px} y1={py} x2={px + dx} y2={py + dy} stroke={visual.sapato} strokeWidth={6} strokeLinecap="round" />
+            ))}
+          </g>
+        );
+      })}
+      {/* pescoço comprido */}
+      <path d={`M ${cx + rx * 0.3} ${cy - ry * 0.5} Q ${hx + 34} ${(cy + hy) / 2 + 6} ${hx} ${hy + 20}`} stroke={pescoco} strokeWidth={24} fill="none" strokeLinecap="round" />
+      {/* asinhas */}
+      {[-1, 1].map((lado) => (
+        <polygon key={lado} fill={visual.camisa} transform={`rotate(${lado * (asaCima ? -55 : 20)} ${cx + lado * rx * 0.86} ${cy - 6})`}
+          points={pts([[cx + lado * rx * 0.86, cy - 16], [cx + lado * (rx * 0.86 + 30), cy], [cx + lado * (rx * 0.86 + 20), cy + 6], [cx + lado * (rx * 0.86 + 26), cy + 16], [cx + lado * rx * 0.86, cy + 14]])} />
+      ))}
+      {/* corpo de penas */}
+      <polygon points={pts(franja)} fill={visual.camisa} />
+      <ellipse cx={cx + rx * 0.18} cy={cy + ry * 0.25} rx={rx * 0.8} ry={ry * 0.7} fill={sombra} />
+      {[0, 1, 2].map((r) => [0, 1, 2, 3].map((c) => {
+        const x = cx + (c - 1.5) * rx * 0.42 + (r % 2) * rx * 0.2, y = cy - ry * 0.4 + r * ry * 0.42;
+        return <path key={`${r}${c}`} d={`M ${x - 10} ${y - 6} L ${x} ${y + 4} L ${x + 10} ${y - 6}`} stroke="rgba(0,0,0,0.22)" strokeWidth={3} fill="none" strokeLinecap="round" />;
+      }))}
+      {/* cabeça e topete */}
+      <ellipse cx={hx} cy={hy} rx={34} ry={31} fill={pescoco} />
+      <ellipse cx={hx + 12} cy={hy + 9} rx={24} ry={20} fill="rgba(0,0,0,0.1)" />
+      {tufo.length > 0 && <polygon points={pts(tufo)} fill={visual.cabelo ?? "#5E5245"} />}
+      {/* olhos laranja arregalados */}
+      {[-1, 1].map((lado) => {
+        const ex = hx + lado * 14, ey = hy - 2, R = arregalado ? 14.5 : 12;
+        if (fechado) return <line key={lado} x1={ex - 9} y1={ey} x2={ex + 9} y2={ey} stroke="#231B18" strokeWidth={4} strokeLinecap="round" />;
+        return (
+          <g key={lado}>
+            <circle cx={ex} cy={ey} r={R} fill="#FFFFFF" />
+            <circle cx={ex + olhar * 3} cy={ey} r={arregalado ? 6 : 7} fill={visual.olhos} />
+            <circle cx={ex + olhar * 3} cy={ey} r={arregalado ? 2.6 : 3.4} fill="#231B18" />
+            {(expressao === "bravo" || expressao === "triste") && <path d={`M ${ex - R} ${ey - 1} A ${R} ${R} 0 0 1 ${ex + R} ${ey - 1} Z`} fill={pescoco} />}
+          </g>
+        );
+      })}
+      {brow && [-1, 1].map((lado) => (
+        <line key={lado} x1={hx + lado * 10} y1={hy - 20 + brow[0]} x2={hx + lado * 26} y2={hy - 20 + brow[1]} stroke="#2E2420" strokeWidth={5} strokeLinecap="round" />
+      ))}
+      {/* bico curto e achatado */}
+      {abre > 0 && (
+        <g>
+          <ellipse cx={hx} cy={hy + 19 + 3 * abre} rx={10} ry={4 + 6 * abre} fill="#3A2420" />
+          <polygon points={pts([[hx - 10, hy + 19 + 8 * abre], [hx + 10, hy + 19 + 8 * abre], [hx, hy + 27 + 9 * abre]])} fill={visual.pele} />
+        </g>
+      )}
+      <polygon points={pts([[hx - 14, hy + 10], [hx + 14, hy + 10], [hx + 9, hy + 18], [hx, hy + 24], [hx - 9, hy + 18]])} fill={visual.pele} />
+      <circle cx={hx - 4} cy={hy + 13} r={1.5} fill="#231B18" />
+      <circle cx={hx + 4} cy={hy + 13} r={1.5} fill="#231B18" />
+    </svg>
+  );
+};
+
+export const Personagem: React.FC<Props> = (props) => {
+  if (props.visual.especie === "emu") return <Emu {...props} />;
+  return <Humano {...props} />;
+};
+
+const Humano: React.FC<Props> = ({
   visual, boca = "X", expressao = "neutro", pose = "neutro", piscando = false, olhar = 0, respiro = 0,
   espelhar = false, altura = 900, passo,
 }) => {
@@ -253,7 +386,7 @@ export const Personagem: React.FC<Props> = ({
         {visual.chapeu.tipo === "nenhum" && visual.cabelo && (
           <path d="M 112 112 Q 110 50 180 46 Q 250 50 248 112 Q 236 84 214 78 Q 190 92 150 80 Q 124 86 112 112 Z" fill={visual.cabelo} />
         )}
-        <Chapeu tipo={visual.chapeu.tipo} cor={visual.chapeu.cor} />
+        <Chapeu tipo={visual.chapeu.tipo} cor={visual.chapeu.cor} corFaixa={visual.chapeu.corFaixa} />
       </g>
       </g>
     </svg>

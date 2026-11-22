@@ -144,7 +144,7 @@ VideosHub/
   - Exemplo: `videos/2026-11-21-tales-e-o-dinheiro-2d`.
 - **Autonomia do criador (fluxo 2, vídeos novos com `"fluxo": 2`):**
   - **Áudio frase por frase:** `pipeline/audio_frases.py`, arquivo `audio/frases.json`.
-    - Cada frase tem energia, pausa, velocidade, efeito e texto, e ganha 3 takes (seeds diferentes, mesmo perfil).
+    - Cada frase tem energia, pausa, velocidade, efeito e texto, ganha 1 take na primeira gravação e +3 takes quando o criador pede (seeds diferentes, mesmo perfil). VoxCPM2 roda com 10 passos (2026-11-22).
     - Os takes antigos ficam guardados. "Ouvir montagem" junta os escolhidos, e a aprovação exige a montagem atualizada.
     - A IA propõe a marcação em `marcacao.json`.
   - **Variantes de cena:** `pipeline/cenas.mjs`, arquivo `cenas/variantes.json`.
@@ -154,7 +154,34 @@ VideosHub/
 - **Biblioteca (aba no painel):** `pipeline/biblioteca.mjs` + a skill `/biblioteca`.
   - Pedidos ficam em `biblioteca/pedidos/<id>/`. A IA gera 3 opções, o painel faz as miniaturas em 2D e 3D, e a escolhida é publicada.
   - Onde cada asset é publicado: personagem em `personagens/<slug>/` (rig2d + kit3d); objeto em `assets2d/objetos/<slug>.svg` + `Kit_Video_3d/assets/scenery/hub/<slug>.js`; cenário em `assets2d/cenarios/<slug>.svg`.
-- **Falta:** auto-post (APIs do YouTube e do Instagram), música e efeitos sonoros, um editor de cortes de cena e testar um motor de voz com emoção real.
+- **Trilha sonora (bloco A, 2026-11-21):** `pipeline/trilha.py` + `pipeline/finalizar.py` (sintetizadores MIT de claude-animated-shorts em `pipeline/som/`).
+  - Música e efeitos a −6 dB da voz (RMS com gate), pico dos efeitos limitado a 0,7× o pico da voz, master em −14 LUFS e −1 dBFS.
+  - A checagem de qualidade procura imagem congelada e tela preta.
+  - Os 3D saem do kit sem áudio (o render do kit trava ao ler áudio com `--de`) e o acabamento põe o áudio.
+- **Modo de operar (bloco B):** a skill `/ideias` gera 10 ideias com fato ou lenda e fontes; o roteiro segue a fórmula da skill; dá para narrar com a própria gravação (`pipeline/voz_propria.py`).
+- **Canal:** "Pensa Comigo" (`config/canal.json`).
+- **Estilo Cartoon 3D (bloco C):** motor de `vendor/claude-animated-shorts` (MIT) em `apps/render/src/cartoon/`.
+  - O `ponte/` é o original, com o `<EffectComposer>` trocado por `../Composer.tsx` montado à mão: o componente React deixava o quadro vazio.
+  - `mundo.ts` monta os cenários vila, praça e campo e posiciona as figurinhas pelo storyboard (`storyboard_cartoon.json`, guia em `apps/render/STORYBOARD_CARTOON.md`).
+  - Render: `render2d.mjs --cartoon` (WebGL pelo ANGLE). O validador avisa quando um personagem fica fora do quadro vertical.
+  - Exemplo: `videos/2026-11-21-tales-e-o-dinheiro-cartoon`, 40 s renderizados em cerca de 2 min.
+- **Voicebox (teste, 2026-11-21):** instalado em `%LOCALAPPDATA%\Voicebox`, com API em :17493 e CUDA.
+  - Precisa abrir com `HF_HUB_OFFLINE=1` (o ambiente isolado quebra o HTTPS dele) e não cabe na GPU junto com o VoiceStudio mais dois modelos.
+  - Qwen CustomVoice com `instruct`: mais expressivo (Ryan e Uncle Fu, variação de tom de 4,3 a 4,5 st), porém mais agudo (185 a 215 Hz) e lento (cerca de 2,5 min para 16 s).
+  - Clone do narrador no Qwen Base: mantém o timbre (155 Hz), mas ignora o `instruct` (saída idêntica).
+  - Licenças Apache e MIT (pode monetizar). Cliente: `pipeline/voicebox.py`. Amostras em `testes/voz/voicebox/`.
+- **Catálogo de vozes (`config/vozes.json`, 2026-11-22):** 5 vozes, escolhidas em "Quem narra" no painel. A primeira é a padrão dos vídeos novos.
+  - **Narrador de Cinema:** VoxCPM2, perfil `9d15747e`, clone da X2; pode monetizar.
+  - **Sussurro de Trailer:** Voicebox Uncle_Fu com instrução de trailer, seed 7; precisa do Voicebox aberto em modo offline.
+  - **Contador Idoso Grave** (`a0fdcf29`) e **Contador Grave** (`3baf3c94`): OmniVoice, com pronúncia `Tales -> Tális`.
+  - **Narrador Contador:** o antigo.
+  - Pronúncia por voz (`pronuncia`): troca a grafia só no texto enviado à voz; a legenda usa o original.
+  - Trocar a voz marca todas as frases para regravar (`config.voz` de cada take).
+  - O `voz.py` tenta de novo quando o sidecar do VoxCPM2 cai na 1ª geração.
+- **Atuação no Cartoon 3D:** poses (comemora, maos_cabeca, abre, maos_cintura, aponta, pensa, segura, decepcao), pulo e tremer, mais a expressão `decepcao`.
+  - O **"Aaai, ai... esse Tales" é decepção resignada, não desespero**: mão na têmpora e cara de decepção. Regra registrada na skill `/video`.
+  - Objetos: 3D (parati, caixa_som, banco, poste, cone, mesa, caixote, pneu) e figurinhas 2D (dinheiro, moeda, relogio, celular, balao, pensamento, icone, seta).
+- **Falta:** auto-post e o editor de cortes de cena.
 
 ## Próximo passo
 

@@ -8,6 +8,8 @@ description: Cria assets novos para a biblioteca do VideosHub (personagens 2D+3D
 O pedido está em `biblioteca/pedidos/<id>/pedido.json`: `tipo` (personagem, objeto ou cenario), `nome`, `slug`, `descricao`, `referencia` (imagem opcional na mesma pasta), `permissao` e `ajustes`.
 Você entrega **3 opções** em `biblioteca/pedidos/<id>/opcoes/1`, `/2` e `/3`. O painel desenha as miniaturas e o criador escolhe uma.
 
+**Pedido vindo de um vídeo:** se o `pedido.json` tiver `video`, leia `videos/<video>/status.json` (a `ideia`) e `estilos/<estilo>/estilo.json` para o asset combinar com a história e a paleta. Com `"auto": true`, o painel publica sozinho a opção recomendada, sem o criador escolher: **sempre** grave `"recomendada": <n>` no `pedido.json`, com a opção mais fiel à descrição (em pedidos `auto`, faça dela a mais caprichada).
+
 ## Regras que valem sempre
 - **Personagem e traço originais.** Nada de personagens, marcas ou logos de terceiros.
 - **Referência:** se houver `referencia`, abra a imagem com Read e crie uma versão **original** no traço do estilo, sem copiar. Se a imagem for de uma pessoa real, só use a aparência dela se `permissao` for `true`; senão, faça um personagem genérico e diga isso no histórico.

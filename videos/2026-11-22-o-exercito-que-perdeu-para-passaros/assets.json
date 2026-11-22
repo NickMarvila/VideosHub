@@ -1,0 +1,90 @@
+{
+  "itens": [
+    {
+      "id": "emu",
+      "nome": "emu",
+      "tipo": "personagem",
+      "descricao": "Ave grande que não voa, ~1,7 m, corpo redondo de penas marrom-acinzentadas desgrenhadas, pescoço longo azulado, olhos laranja arregalados, pernas compridas e finas; cartoon, usada em bando",
+      "momento": "f03 em diante: o bando come o trigo, corre em zigue-zague e vence a guerra",
+      "existe": true,
+      "usa": "emu",
+      "pedido": "2026-11-22-emu",
+      "decisao": "auto"
+    },
+    {
+      "id": "major",
+      "nome": "major Meredith",
+      "tipo": "personagem",
+      "descricao": "Oficial do exército australiano de 1932: farda cáqui, chapéu de aba virada de um lado, bigode, ar confiante que vira cansado",
+      "momento": "f04, f10 a f12: lidera a tropa, desiste e compara os emus a tanques",
+      "existe": true,
+      "usa": "major_meredith",
+      "pedido": "2026-11-22-major-meredith",
+      "decisao": "auto"
+    },
+    {
+      "id": "soldado",
+      "nome": "soldado",
+      "tipo": "personagem",
+      "descricao": "Soldado australiano de 1932 com farda cáqui e chapéu de aba virada, sem bigode; dois deles na tropa",
+      "momento": "f04, f07 a f09: no caminhão, atirando",
+      "existe": true,
+      "usa": "soldado",
+      "pedido": "2026-11-22-soldado",
+      "decisao": "auto"
+    },
+    {
+      "id": "metralhadora",
+      "nome": "metralhadora",
+      "tipo": "objeto",
+      "descricao": "Metralhadora antiga de tripé, cano grosso cinza-escuro com carregador redondo em cima, ~1,2 m, cartoon",
+      "momento": "f04 e f07 a f09",
+      "existe": true,
+      "usa": "metralhadora",
+      "pedido": "2026-11-22-metralhadora",
+      "decisao": "auto"
+    },
+    {
+      "id": "caminhao",
+      "nome": "caminhão",
+      "tipo": "objeto",
+      "descricao": "Caminhãozinho de carroceria aberta dos anos 1930, verde-oliva desbotado, para-lamas arredondados e faróis redondos; a metralhadora vai presa na carroceria",
+      "momento": "f07 e f08: quica na estrada de terra",
+      "existe": true,
+      "usa": "caminhao",
+      "pedido": "2026-11-22-caminhao",
+      "decisao": "auto"
+    },
+    {
+      "id": "trigo",
+      "nome": "plantação de trigo",
+      "tipo": "objeto",
+      "descricao": "Touceiras de trigo dourado, ~0,8 m, para espalhar no campo como lavoura",
+      "momento": "f03: os emus comem o trigo",
+      "existe": true,
+      "usa": "plantacao_de_trigo",
+      "pedido": "2026-11-22-plantacao-de-trigo",
+      "decisao": "auto"
+    },
+    {
+      "id": "tanque",
+      "nome": "tanque de guerra",
+      "tipo": "objeto",
+      "descricao": "Tanque de guerra cartoon verde-oliva, com esteiras e canhão curto, ~2 m",
+      "momento": "f12: os emus como tanques de guerra",
+      "existe": true,
+      "usa": "tanque_de_guerra",
+      "pedido": "2026-11-22-tanque-de-guerra",
+      "decisao": "auto"
+    },
+    {
+      "id": "campo",
+      "nome": "campo da fazenda",
+      "tipo": "cenario",
+      "descricao": "Lavoura no interior da Austrália com trilha de terra e casinha de fazenda",
+      "momento": "todo o vídeo",
+      "existe": true,
+      "usa": "campo"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "soldado",
+  "nome": "Soldado",
+  "papel": "soldado australiano de 1932 na tropa que caça os emus (use dois na cena)",
+  "personalidade": "esforçado, confiante demais e sempre um passo atrás dos emus",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#E8C4A0",
+    "camisa": "#B39A64",
+    "calca": "#9C8655",
+    "sapato": "#5A3B26",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "aba_virada",
+      "cor": "#8A7350",
+      "corFaixa": "#5A4A32"
+    },
+    "cabelo": "#6B4A2B",
+    "barba": false,
+    "bigode": false,
+    "detalhe": "nenhum",
+    "corDetalhe": "#6B4A2B"
+  },
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#e8c4a0",
+      "top": {
+        "color": "#b39a64",
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#9c8655",
+        "type": "pants"
+      },
+      "shoes": "#5a3b26",
+      "hair": {
+        "style": "short",
+        "color": "#6b4a2b"
+      },
+      "hat": {
+        "type": "cap",
+        "color": "#8a7350"
+      },
+      "face": {
+        "mustache": false,
+        "beard": false
+      }
+    }
+  },
+  "cartoon": {
+    "jacket": "#b39a64",
+    "pants": "#9c8655",
+    "boots": "#5a3b26",
+    "hat": "slouch",
+    "cap": "#8a7350",
+    "band": "#5a4a32",
+    "belt": "#6b4a2b",
+    "buttons": "#d9b24a",
+    "rifle": true,
+    "skin": "#e8c4a0"
+  },
+  "criadoEm": "2026-11-22T15:46:16.028Z",
+  "pedido": "2026-11-22-soldado"
+}

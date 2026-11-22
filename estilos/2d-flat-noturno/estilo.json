@@ -1,9 +1,13 @@
 {
   "slug": "2d-flat-noturno",
   "nome": "2D flat · cidade e casa",
-  "nota": 0,
+  "nota": 2,
   "motor": "remotion",
   "descricao": "Personagens 2D flat (rig próprio) em rua de dia ou à noite, mercado, sala e estrada. Legenda branca com a palavra falada em laranja. Renderiza rápido: cerca de 40 s por vídeo.",
   "pronto": true,
-  "exemplo": "videos/2026-11-21-tales-e-o-dinheiro-2d"
+  "exemplo": "videos/2026-11-21-tales-e-o-dinheiro-2d",
+  "legenda": true,
+  "trilha": {
+    "clima": "leve"
+  }
 }

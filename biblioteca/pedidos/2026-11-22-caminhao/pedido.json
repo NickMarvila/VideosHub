@@ -1,0 +1,43 @@
+{
+  "id": "2026-11-22-caminhao",
+  "tipo": "objeto",
+  "nome": "caminhão",
+  "slug": "caminhao",
+  "descricao": "Caminhãozinho de carroceria aberta dos anos 1930, verde-oliva desbotado, para-lamas arredondados e faróis redondos; a metralhadora vai presa na carroceria",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "recomendada": 1,
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: cabine fechada, verde-oliva desbotado, carroceria de tábuas e pedestal da metralhadora no meio (recomendada)."
+    },
+    {
+      "n": 2,
+      "descricao": "Militar: cabine aberta com capota de lona cáqui, oliva mais escuro, estepe na lateral e grade de ripas."
+    },
+    {
+      "n": 3,
+      "descricao": "Cartunesco: baixinho e gordinho, sem teto, oliva bem gasto com ferrugem, sacos de areia e galões na carroceria."
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.483Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:45:40.968Z",
+      "custoUSD": 0.968856,
+      "turnos": 22,
+      "segundos": 176,
+      "tokensEntrada": 931356,
+      "tokensSaida": 15807
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:46:16.405Z"
+}

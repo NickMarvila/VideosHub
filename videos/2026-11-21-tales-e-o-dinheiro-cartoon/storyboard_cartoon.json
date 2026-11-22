@@ -1,0 +1,1342 @@
+{
+ "titulo": "Tales e o dinheiro (cartoon)",
+ "duracao": 39.96,
+ "audio": "narracao.wav",
+ "elenco": {},
+ "legenda": {
+  "ativo": false
+ },
+ "cenas": [
+  {
+   "inicio": 0,
+   "fim": 3.4,
+   "cenario": "vila",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 0,
+     "pos": [
+      0,
+      1.75,
+      2.6
+     ],
+     "olha": [
+      0,
+      1.8,
+      0
+     ],
+     "fov": 38,
+     "roll": 0
+    },
+    {
+     "t": 2.2,
+     "pos": [
+      0.6,
+      1.6,
+      4.6
+     ],
+     "olha": [
+      0,
+      1.4,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 14,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": 0,
+     "z": 0,
+     "expressoes": [
+      [
+       0,
+       "sorriso"
+      ],
+      [
+       1.3,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       0,
+       "parado"
+      ],
+      [
+       0.5,
+       "acena"
+      ],
+      [
+       2.2,
+       "aponta"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": 3.2,
+     "z": -6.5,
+     "giro": 25
+    }
+   ]
+  },
+  {
+   "inicio": 3.4,
+   "fim": 6.22,
+   "cenario": "praca",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 3.4,
+     "pos": [
+      -9,
+      4,
+      12
+     ],
+     "olha": [
+      -4,
+      1.4,
+      1
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 6,
+     "pos": [
+      -4,
+      2.8,
+      9
+     ],
+     "olha": [
+      0,
+      1.4,
+      1
+     ],
+     "fov": 40,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       3.5,
+       -5
+      ],
+      [
+       6.1,
+       0
+      ]
+     ],
+     "z": 1,
+     "expressoes": [
+      [
+       3.4,
+       "assobio"
+      ]
+     ],
+     "acoes": [
+      [
+       3.4,
+       "segura"
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "notas",
+     "de": 3.8,
+     "ate": 6.1,
+     "pos": [
+      -2,
+      2.7,
+      1
+     ],
+     "tamanho": 0.8
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "caixote",
+     "x": [
+      [
+       3.5,
+       -4.45
+      ],
+      [
+       6.1,
+       0.55
+      ]
+     ],
+     "y": 0.75,
+     "z": 1.35,
+     "escala": 0.5
+    },
+    {
+     "tipo": "mesa",
+     "x": -6,
+     "z": -2
+    },
+    {
+     "tipo": "caixote",
+     "x": -6.3,
+     "y": 0.78,
+     "z": -2,
+     "escala": 0.6
+    },
+    {
+     "tipo": "parati",
+     "x": [
+      [
+       4.6,
+       14
+      ],
+      [
+       6.1,
+       4
+      ]
+     ],
+     "z": -3,
+     "movendo": true
+    }
+   ]
+  },
+  {
+   "inicio": 6.22,
+   "fim": 9.6,
+   "cenario": "vila",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 6.22,
+     "pos": [
+      0.4,
+      1.6,
+      4.2
+     ],
+     "olha": [
+      0,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 9.4,
+     "pos": [
+      0.2,
+      1.7,
+      3
+     ],
+     "olha": [
+      0,
+      1.7,
+      0
+     ],
+     "fov": 38,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 12,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": 0,
+     "z": 0,
+     "expressoes": [
+      [
+       6.2,
+       "serio"
+      ],
+      [
+       8,
+       "nervoso"
+      ],
+      [
+       9,
+       "sorrisao"
+      ]
+     ],
+     "olhar": [
+      [
+       6.2,
+       0
+      ],
+      [
+       8.4,
+       0.8
+      ]
+     ],
+     "acoes": [
+      [
+       6.2,
+       "pensa"
+      ],
+      [
+       8.4,
+       "abre"
+      ],
+      [
+       9,
+       "comemora"
+      ]
+     ]
+    },
+    {
+     "id": "zeca",
+     "x": 0.6,
+     "z": -2.8,
+     "expressoes": [
+      [
+       6.2,
+       "neutro"
+      ]
+     ],
+     "acoes": [
+      [
+       8.6,
+       "maos_cintura"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "dinheiro",
+     "x": 0.38,
+     "y": 1.5,
+     "z": 0.3,
+     "escala": 0.45,
+     "aparece": 7.4
+    },
+    {
+     "tipo": "pensamento",
+     "x": -0.5,
+     "y": 2.75,
+     "z": 0.2,
+     "escala": 0.9,
+     "texto": "GASTAR!",
+     "aparece": 8.9
+    }
+   ]
+  },
+  {
+   "inicio": 9.6,
+   "fim": 11.64,
+   "cenario": "vila",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 9.6,
+     "pos": [
+      -1,
+      1.5,
+      5
+     ],
+     "olha": [
+      -2.2,
+      1.3,
+      0.5
+     ],
+     "fov": 42,
+     "roll": 0
+    },
+    {
+     "t": 11.5,
+     "pos": [
+      1.2,
+      1.4,
+      4.5
+     ],
+     "olha": [
+      1.8,
+      1.3,
+      0.5
+     ],
+     "fov": 40,
+     "roll": 3
+    }
+   ],
+   "foco": {
+    "desfoque": 10,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       9.6,
+       -3
+      ],
+      [
+       11.5,
+       2.5
+      ]
+     ],
+     "z": 0.5,
+     "expressoes": [
+      [
+       9.6,
+       "sorrisao"
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "poeira",
+     "de": 9.8,
+     "ate": 11.4,
+     "pos": [
+      -0.5,
+      0.4,
+      0.5
+     ],
+     "tamanho": 1.2
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "dinheiro",
+     "x": [
+      [
+       9.6,
+       -2.6
+      ],
+      [
+       11.5,
+       2.9
+      ]
+     ],
+     "y": [
+      [
+       9.6,
+       1.4
+      ],
+      [
+       10.5,
+       1.9
+      ],
+      [
+       11.5,
+       1.4
+      ]
+     ],
+     "z": 0.6,
+     "escala": 0.4,
+     "giro": [
+      [
+       9.6,
+       0
+      ],
+      [
+       11.5,
+       200
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "inicio": 11.64,
+   "fim": 14.26,
+   "cenario": "vila",
+   "luz": "fim_de_tarde",
+   "camera": [
+    {
+     "t": 11.64,
+     "pos": [
+      -2.5,
+      2,
+      6
+     ],
+     "olha": [
+      -1.6,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 14.1,
+     "pos": [
+      1.4,
+      1.9,
+      6
+     ],
+     "olha": [
+      1.6,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 8,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       11.7,
+       -2
+      ],
+      [
+       14.2,
+       2
+      ]
+     ],
+     "z": 0,
+     "expressoes": [
+      [
+       11.7,
+       "neutro"
+      ]
+     ],
+     "acoes": [
+      [
+       11.7,
+       "segura"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "celular",
+     "x": [
+      [
+       11.7,
+       -1.55
+      ],
+      [
+       14.2,
+       2.45
+      ]
+     ],
+     "y": 1.42,
+     "z": 0.25,
+     "escala": 0.32,
+     "texto": "R$ 0,00"
+    },
+    {
+     "tipo": "poste",
+     "x": -3.5,
+     "z": -3.6
+    }
+   ]
+  },
+  {
+   "inicio": 14.26,
+   "fim": 18.18,
+   "cenario": "vila",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 14.26,
+     "pos": [
+      0.3,
+      1.6,
+      4.4
+     ],
+     "olha": [
+      0.5,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 17.9,
+     "pos": [
+      0.3,
+      1.7,
+      3.4
+     ],
+     "olha": [
+      0.2,
+      1.6,
+      0
+     ],
+     "fov": 38,
+     "roll": -3
+    }
+   ],
+   "foco": {
+    "desfoque": 12,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": 0,
+     "z": 0.3,
+     "expressoes": [
+      [
+       14.3,
+       "serio"
+      ],
+      [
+       16.2,
+       "dor"
+      ]
+     ],
+     "acoes": [
+      [
+       14.3,
+       "abre"
+      ],
+      [
+       16.2,
+       "maos_cabeca"
+      ]
+     ]
+    },
+    {
+     "id": "zeca",
+     "x": 0.8,
+     "z": -2.4,
+     "expressoes": [
+      [
+       14.3,
+       "neutro"
+      ],
+      [
+       16.5,
+       "tonto"
+      ]
+     ],
+     "acoes": [
+      [
+       14.6,
+       "maos_cintura"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "balao",
+     "x": -0.4,
+     "y": 2.95,
+     "z": 0.4,
+     "escala": 1,
+     "texto": "TÔ SEM DINHEIRO!",
+     "aparece": 14.6,
+     "some": 18.1
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "x": 0.45,
+     "y": 2.5,
+     "z": 0.3,
+     "escala": 0.45,
+     "aparece": 16.3
+    }
+   ]
+  },
+  {
+   "inicio": 18.18,
+   "fim": 21.28,
+   "cenario": "campo",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 18.18,
+     "pos": [
+      -6.5,
+      2.4,
+      8
+     ],
+     "olha": [
+      -3,
+      1.2,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 21,
+     "pos": [
+      -1.5,
+      1.8,
+      6
+     ],
+     "olha": [
+      1.2,
+      1.2,
+      0
+     ],
+     "fov": 40,
+     "roll": 4
+    }
+   ],
+   "foco": {
+    "desfoque": 6,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       18.2,
+       -4
+      ],
+      [
+       20.2,
+       1
+      ],
+      [
+       21.2,
+       1.4
+      ]
+     ],
+     "z": 0,
+     "expressoes": [
+      [
+       18.2,
+       "nervoso"
+      ],
+      [
+       20.1,
+       "choque"
+      ]
+     ],
+     "acoes": [
+      [
+       18.2,
+       "parado"
+      ],
+      [
+       19.6,
+       "tremer"
+      ],
+      [
+       20.3,
+       "cai"
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "explosao",
+     "de": 20.1,
+     "ate": 20.8,
+     "pos": [
+      1,
+      1.2,
+      0
+     ],
+     "tamanho": 1.6
+    },
+    {
+     "tipo": "poeira",
+     "de": 20.2,
+     "ate": 21.2,
+     "pos": [
+      1.2,
+      0.4,
+      0.2
+     ],
+     "tamanho": 1.4
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "parati",
+     "x": [
+      [
+       18.6,
+       -14
+      ],
+      [
+       20,
+       -1
+      ],
+      [
+       21.2,
+       14
+      ]
+     ],
+     "z": -2.2,
+     "movendo": true
+    },
+    {
+     "tipo": "icone",
+     "icone": "!",
+     "x": 1,
+     "y": 2.6,
+     "z": 0,
+     "escala": 0.55,
+     "aparece": 19.5
+    },
+    {
+     "tipo": "cone",
+     "x": 3.5,
+     "z": -2.2
+    }
+   ]
+  },
+  {
+   "inicio": 21.28,
+   "fim": 23,
+   "cenario": "vila",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 21.28,
+     "pos": [
+      1.5,
+      1.5,
+      6.5
+     ],
+     "olha": [
+      2,
+      1.4,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 22.9,
+     "pos": [
+      0,
+      1.6,
+      5
+     ],
+     "olha": [
+      0,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 10,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       21.3,
+       2.5
+      ],
+      [
+       22.9,
+       0
+      ]
+     ],
+     "z": 0,
+     "expressoes": [
+      [
+       21.3,
+       "sorriso_fechado"
+      ]
+     ],
+     "acoes": [
+      [
+       21.3,
+       "parado"
+      ],
+      [
+       22.4,
+       "segura"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "inicio": 23,
+   "fim": 26.44,
+   "cenario": "vila",
+   "luz": "dia",
+   "camera": [
+    {
+     "t": 23,
+     "pos": [
+      0,
+      1.75,
+      3.2
+     ],
+     "olha": [
+      0,
+      1.75,
+      0
+     ],
+     "fov": 38,
+     "roll": 0
+    },
+    {
+     "t": 26.2,
+     "pos": [
+      0.2,
+      1.8,
+      2.3
+     ],
+     "olha": [
+      0,
+      1.85,
+      0
+     ],
+     "fov": 36,
+     "roll": 3
+    }
+   ],
+   "foco": {
+    "desfoque": 15,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": 0,
+     "z": 0,
+     "expressoes": [
+      [
+       23,
+       "sorrisao"
+      ],
+      [
+       24.4,
+       "riso"
+      ]
+     ],
+     "acoes": [
+      [
+       23,
+       "segura"
+      ],
+      [
+       24.4,
+       "pulo"
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "estrelas",
+     "de": 23.4,
+     "ate": 26.3,
+     "pos": [
+      0.55,
+      2,
+      0.2
+     ],
+     "tamanho": 0.7
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "relogio",
+     "x": [
+      [
+       23,
+       0.28
+      ],
+      [
+       24.4,
+       0.28
+      ]
+     ],
+     "y": [
+      [
+       23,
+       1.35
+      ],
+      [
+       24.4,
+       1.75
+      ]
+     ],
+     "z": 0.3,
+     "escala": 0.42,
+     "aparece": 23.3,
+     "texto": "R$1000"
+    }
+   ]
+  },
+  {
+   "inicio": 26.44,
+   "fim": 30.5,
+   "cenario": "vila",
+   "luz": "fim_de_tarde",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 26.44,
+     "pos": [
+      1.6,
+      1.6,
+      3.6
+     ],
+     "olha": [
+      1.4,
+      1.6,
+      -1
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 30.2,
+     "pos": [
+      1.5,
+      1.7,
+      2.8
+     ],
+     "olha": [
+      1.4,
+      1.7,
+      -1
+     ],
+     "fov": 38,
+     "roll": -4
+    }
+   ],
+   "foco": {
+    "desfoque": 13,
+    "alvo": "zeca"
+   },
+   "atores": [
+    {
+     "id": "zeca",
+     "x": 1.4,
+     "z": -1,
+     "expressoes": [
+      [
+       26.5,
+       "decepcao"
+      ]
+     ],
+     "acoes": [
+      [
+       26.5,
+       "decepcao"
+      ]
+     ]
+    },
+    {
+     "id": "tales",
+     "x": 1,
+     "z": -6,
+     "expressoes": [
+      [
+       26.5,
+       "riso"
+      ]
+     ],
+     "acoes": [
+      [
+       26.5,
+       "acena"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "pensamento",
+     "x": 1.5,
+     "y": 2.7,
+     "z": -0.8,
+     "escala": 0.85,
+     "texto": "ESSE TALES...",
+     "aparece": 28.7
+    }
+   ]
+  },
+  {
+   "inicio": 30.5,
+   "fim": 34.84,
+   "cenario": "praca",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 30.5,
+     "pos": [
+      -7,
+      3,
+      9
+     ],
+     "olha": [
+      -5,
+      1.4,
+      0.5
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 34.6,
+     "pos": [
+      3,
+      2.5,
+      8
+     ],
+     "olha": [
+      4.5,
+      1.4,
+      0.5
+     ],
+     "fov": 40,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 0
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": [
+      [
+       30.6,
+       -6
+      ],
+      [
+       34.6,
+       5
+      ]
+     ],
+     "z": 0.5,
+     "expressoes": [
+      [
+       30.6,
+       "sorrisao"
+      ]
+     ]
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "poeira",
+     "de": 31,
+     "ate": 34.5,
+     "pos": [
+      -1,
+      0.4,
+      0.5
+     ],
+     "tamanho": 1.4
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "dinheiro",
+     "x": [
+      [
+       30.8,
+       -5
+      ],
+      [
+       34.6,
+       6
+      ]
+     ],
+     "y": [
+      [
+       30.8,
+       1.4
+      ],
+      [
+       32.5,
+       2.6
+      ],
+      [
+       34.6,
+       1.8
+      ]
+     ],
+     "z": 0.2,
+     "escala": 0.5,
+     "giro": [
+      [
+       30.8,
+       0
+      ],
+      [
+       34.6,
+       360
+      ]
+     ],
+     "aparece": 30.8
+    },
+    {
+     "tipo": "moeda",
+     "x": [
+      [
+       31.2,
+       -5.5
+      ],
+      [
+       34.6,
+       5
+      ]
+     ],
+     "y": [
+      [
+       31.2,
+       1
+      ],
+      [
+       33.5,
+       2.2
+      ],
+      [
+       34.6,
+       1.6
+      ]
+     ],
+     "z": 0.9,
+     "escala": 0.35,
+     "aparece": 31.2
+    },
+    {
+     "tipo": "caixa_som",
+     "x": 4.5,
+     "z": -3
+    }
+   ]
+  },
+  {
+   "inicio": 34.84,
+   "fim": 39.96,
+   "cenario": "vila",
+   "luz": "dia",
+   "transicao": "flash",
+   "camera": [
+    {
+     "t": 34.84,
+     "pos": [
+      0.4,
+      1.6,
+      4.4
+     ],
+     "olha": [
+      0,
+      1.5,
+      0
+     ],
+     "fov": 40,
+     "roll": 0
+    },
+    {
+     "t": 39.6,
+     "pos": [
+      0.1,
+      1.7,
+      3
+     ],
+     "olha": [
+      0,
+      1.65,
+      0
+     ],
+     "fov": 38,
+     "roll": 0
+    }
+   ],
+   "foco": {
+    "desfoque": 12,
+    "alvo": "tales"
+   },
+   "atores": [
+    {
+     "id": "tales",
+     "x": 0,
+     "z": 0,
+     "expressoes": [
+      [
+       34.9,
+       "sorriso"
+      ],
+      [
+       37.3,
+       "riso"
+      ]
+     ],
+     "acoes": [
+      [
+       34.9,
+       "aponta"
+      ],
+      [
+       37.3,
+       "acena"
+      ]
+     ]
+    },
+    {
+     "id": "zeca",
+     "x": 0.7,
+     "z": -2.8,
+     "expressoes": [
+      [
+       34.9,
+       "nervoso"
+      ]
+     ],
+     "acoes": [
+      [
+       35.5,
+       "abre"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "x": 0.8,
+     "y": 2.55,
+     "z": 0.2,
+     "escala": 0.5,
+     "aparece": 35
+    }
+   ]
+  }
+ ]
+}

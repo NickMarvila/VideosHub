@@ -1,0 +1,43 @@
+{
+  "id": "2026-11-22-metralhadora",
+  "tipo": "objeto",
+  "nome": "metralhadora",
+  "slug": "metralhadora",
+  "descricao": "Metralhadora antiga de tripé, cano grosso cinza-escuro com carregador redondo em cima, ~1,2 m, cartoon",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássica: cano cinza-escuro com aletas, prato de munição escuro em cima, coronha de madeira e tripé de altura média"
+    },
+    {
+      "n": 2,
+      "descricao": "Pesada: camisa do cano bem grossa, corpo e escudo verde-oliva, prato de latão, punhos duplos e tripé baixo e largo"
+    },
+    {
+      "n": 3,
+      "descricao": "Bem cartoon: cano gordo com boca de sino e anéis de latão, prato enorme vermelho-ferrugem e tripé alto com pés de bolinha"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.454Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:46:06.949Z",
+      "custoUSD": 0.936766,
+      "turnos": 18,
+      "segundos": 202,
+      "tokensEntrada": 525065,
+      "tokensSaida": 21548
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:46:34.642Z"
+}

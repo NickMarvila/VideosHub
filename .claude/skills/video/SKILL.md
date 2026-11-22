@@ -7,6 +7,8 @@ description: Faz a parte da IA de um vídeo do VideosHub (roteiro, cenas ou ajus
 
 O criador pede e aprova pelo **painel** (`node apps/painel/server.mjs`, em http://localhost:4300). Você faz só a parte criativa e devolve para aprovação. Voz, quadros finais e render são feitos pelos botões do painel.
 
+**Canal:** "Pensa Comigo" (identidade em `config/canal.json`). Use o nome nas postagens (`postagem.md`) e nas hashtags fixas, mas **nunca** na narração (nada de "oi pessoal" nem de nome do canal no vídeo).
+
 ## 1. Achar o vídeo
 - Com id: leia `videos/<id>/status.json`.
 - Sem id: procure em `videos/*/status.json` o primeiro com `"estado": "aguardando_ia"`. Se não houver nenhum, diga isso e pare.
@@ -29,12 +31,47 @@ Escreva em `status.pasta`:
 
 Termine com uma pergunta fácil para comentar.
 
+**O "Aaai, ai... esse Tales" é decepção, não desespero.** É o suspiro resignado de quem já conhece o personagem:
+- **Leitura:** energia `calma`, efeito `suspiro` e pausa antes do bordão.
+- **Imagem:**
+  - no Cartoon 3D: pose `decepcao` (mão na testa, cabeça caída) com a expressão `decepcao`;
+  - no 2D: expressão `triste` ou `duvida`, sem pose de desespero;
+  - no 3D do kit: `shake_head` com a expressão `sad`.
+- Nunca use mãos na cabeça, susto ou tremor nesse momento.
+
+**Fórmula do roteiro** (vale para todo vídeo; a ideia pode ter vindo de `/ideias`). Leia `docs/receitas-roteiro.md` uma vez por sessão: lá estão as 9 receitas de gancho, os ganchos internos e o "Pensa comigo".
+1. **Gancho na frase 1, sem introdução,** usando **uma** receita de gancho (G1 a G9, por exemplo "E se… aconteceu de verdade?"), com até 12 palavras. A frase 2 fecha a porta ("Aconteceu. Em mil quinhentos e dezoito."). Não repita a receita dos 2 vídeos anteriores (veja a linha "Receita do gancho" nas `sinopse.md` mais recentes em `videos/`).
+2. **Cenário em 1 ou 2 linhas:** quando, onde e quem, com um detalhe concreto.
+3. **Escalada de 2 a 4 batidas**, cada uma maior que a anterior, com 2 ou 3 ganchos internos ("Só que tinha um problema."). Os outros duvidam ou zombam, e entra **uma** piada de exagero.
+4. **"Pensa comigo" (obrigatório, exatamente 1 por vídeo, entre 40 e 70 % do texto):** a explicação do mecanismo real começa **sempre** com "Pensa comigo", o nome do canal virando bordão. Depois vêm de 1 a 3 frases com uma comparação do dia a dia. Na `marcacao.json`, "Pensa comigo." é uma frase própria, `calma`, com pausa de 0,5 a 0,7. Nas cenas, esse momento tem cara própria: aproxima, alguém aponta e a comparação aparece na tela.
+5. **Virada:** curta e irônica, as **últimas palavras** antes da pergunta final.
+- Em `sinopse.md`, escreva as linhas **"Receita do gancho: G1 · E se… que virou real"** e **"Pensa comigo: {a comparação usada}"**.
+- **Nunca descreva o que a imagem já mostra.** Português falado, frases de 8 a 15 palavras e números por extenso.
+- **Fatos:** se a história for apresentada como real, confira os fatos principais na web (WebSearch) e anote as fontes em `sinopse.md`. Lenda é tratada como lenda ("diz a lenda que...").
+- Se a ideia veio de `/ideias`, use o gancho e a virada dela como ponto de partida.
+
 **Marcação da leitura (vídeos com `"fluxo": 2` no status):** escreva também `marcacao.json` em `status.pasta`. É uma lista com **uma entrada por frase**, na ordem do texto:
 `[{ "texto": "E no dia seguinte?", "energia": "normal", "pausa": 0.55, "efeito": "risada" }, ...]`
 - `energia`: `calma` (confidência, suspense), `normal` ou `animada` (surpresa, exagero, o "pulo" da piada).
 - `pausa`: segundos de silêncio depois da frase, de 0 a 2. Use cerca de 0,3 no fluxo normal, de 0,6 a 1,0 antes da virada ou do bordão, e 0 para emendar frases.
 - `efeito`: `nenhum`, `risada` (no fim da frase, logo depois da piada) ou `suspiro` (antes da frase, como no "Aaai, ai...").
 - O `texto` não leva marcações `[laughter]` nem `[sigh]`: o efeito vai no campo `efeito`. Use de 2 a 4 efeitos por vídeo.
+
+**Assets que o roteiro pede (sempre, em todo estilo):** o vídeo não pode ficar vazio. Liste em `<status.pasta>/assets.json` **cada coisa concreta que a narração mostra** (objeto, personagem, cenário): o "vidro" de que a história fala, o carro, a loja...
+```json
+{ "itens": [
+  { "id": "vidro", "nome": "vidro", "tipo": "objeto", "descricao": "Placa de vidro transparente azulada, com reflexo branco na diagonal, ~1 m", "momento": "f04: o vidro quebra",
+    "existe": false, "usa": null },
+  { "id": "tales", "nome": "Tales", "tipo": "personagem", "descricao": "personagem fixo", "momento": "todo o vídeo", "existe": true, "usa": "tales" } ] }
+```
+- `tipo`: `objeto`, `personagem` ou `cenario`. `id`: minúsculas e `_`.
+- **`existe`/`usa`:** confira de verdade no estilo do vídeo:
+  - **2D e cartoon:** os objetos e cenários nativos de `apps/render/STORYBOARD2D.md` (e `STORYBOARD_CARTOON.md`), mais `assets2d/objetos/*.svg` e `assets2d/cenarios/*.svg`;
+  - **3D:** `Kit_Video_3d/catalog/RESUMO.md` e `Kit_Video_3d/assets/scenery/hub/*.js`;
+  - **personagens:** `personagens/<slug>/`.
+  Se houver algo que represente bem (ex.: `garrafa` para "garrafa de vidro"), marque `existe: true` e o nome em `usa`. Se não houver, `existe: false`: o criador decide no painel se a IA cria na hora, se cria com 3 opções ou se segue sem.
+- `descricao`: uma frase visual, que a /biblioteca vai usar para desenhar (cor, forma, tamanho). Não liste o que é só fala ou ideia abstrata; liste só o que aparece na tela. Coisas que se resolvem com texto ou ícone (`icone`, `placa`, `balao`) não entram.
+- **Ajuste no roteiro:** reescreva a lista, mas **mantenha** os campos `pedido` e `decisao` dos itens que continuam (são o que o criador já decidiu).
 
 **Emoção na voz:** o narrador (OmniVoice) entende as marcações `[laughter]` (risada) e `[sigh]` (suspiro) no meio do texto. Elas não aparecem na legenda. Use de 2 a 4 por vídeo, nos momentos de humor: depois da piada, antes do bordão ("[sigh] Aaai, ai... Esse Tales. [laughter]"). Não use outras marcações.
 
@@ -44,6 +81,12 @@ Termine com uma pergunta fácil para comentar.
 **Vídeos antigos (sem `fluxo`):** esta etapa só chega à IA quando houver um ajuste de narração. Para ajustes de texto, edite `narracao.txt` e devolva para a etapa **roteiro** (`"etapa": "roteiro"`). Assim o criador aprova o texto e o painel gera a voz de novo. Para ajustes de voz (timbre, emoção), não mude nada: explique que isso se escolhe na voz do vídeo e deixe um registro no histórico.
 
 ### cenas
+**Antes de tudo, leia `<status.pasta>/assets.json`** (se existir). Cada item com `existe: true` tem em `usa` o slug que você **deve** usar na cena em que ele aparece:
+- no 2D/cartoon, um objeto da biblioteca vira `tipo` (`{ "tipo": "<slug>", ... }`) e um cenário vira `cenario`;
+- no 3D, o objeto vira a peça `<slug>` do hub.
+
+Se o item tem `pedido` mas ainda não tem `usa`, leia `biblioteca/pedidos/<pedido>/pedido.json`: com `estado: "concluido"`, o slug está em `slug`. Itens com `decisao: "improvisar"` são representados com o que já existe (forma livre, ícone, objeto parecido), **nunca deixados de fora**. Toda frase que mostra algo concreto precisa ter esse algo na cena.
+
 **Vídeos com `"fluxo": 2`: variantes de cena.** Em vez de um storyboard único, escreva `<status.pasta>/cenas/variantes.json`:
 ```json
 { "base": { ...campos gerais do storyboard, sem "cenas" (no 2D: titulo, duracao, audio, legenda, personagens; no 3D: versao, titulo, formato, duracao, audio, palavras, legendas, ambiente) },
@@ -63,6 +106,8 @@ Termine com uma pergunta fácil para comentar.
 **Vídeos antigos (sem `fluxo`):** veja o motor do estilo em `estilos/<status.estilo>/estilo.json` → `motor`:
 - `"remotion"` (2D flat): siga **2D** abaixo.
 - `"kit3d"` (3D low-poly): siga **3D**.
+
+**Cartoon 3D (`motor: cartoon`)**: é o modelo da skill cartoon-audio-short. Leia `apps/render/STORYBOARD_CARTOON.md` uma vez por sessão. É igual ao 2D, mas o arquivo é `storyboard_cartoon.json` (ou o `cena` de cada variante, no fluxo 2), e os comandos levam `--cartoon`: `node apps/render/render2d.mjs <status.pasta> --cartoon --validar` e `... --cartoon --quadros`. Sem legenda. A trilha de marcha para na virada: grave `trilha.json` → `musica.paraEm` no segundo da virada.
 
 **2D (`motor: remotion`)**: leia `apps/render/STORYBOARD2D.md` uma vez por sessão.
 1. Use `frases.json` para alinhar as cenas e escreva `plano-animacao.md`, com uma linha por frase: cenário, quem age, o que se move e o que aparece.

@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-22-soldado",
+  "tipo": "personagem",
+  "nome": "soldado",
+  "slug": "soldado",
+  "descricao": "Soldado australiano de 1932 com farda cáqui e chapéu de aba virada, sem bigode; dois deles na tropa",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: farda cáqui, chapéu de feltro marrom com aba presa e broche, cinto de couro e fuzil"
+    },
+    {
+      "n": 2,
+      "descricao": "Recruta magrelo e ruivo: farda verde-oliva, chapéu claro com faixa vinho e lenço no pescoço"
+    },
+    {
+      "n": 3,
+      "descricao": "Veterano parrudo: cáqui areia de manga curta, chapéu escuro, barba por fazer e cinturão de cartucheiras"
+    }
+  ],
+  "recomendada": 1,
+  "extensaoRig": "chapéu 'aba_virada' (aba larga com um lado preso e faixa corFaixa) no Visual 2D de Personagem.tsx; chapéu 'slouch' (+ campo band) no Outfit do cartoon (toon.ts). Sem o campo, Tales, Zeca e os bonecos cartoon ficam iguais.",
+  "ajustes": [],
+  "criadoEm": "2026-11-22T15:42:42.419Z",
+  "video": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:45:41.595Z",
+      "custoUSD": 1.0213227999999999,
+      "turnos": 34,
+      "segundos": 176,
+      "tokensEntrada": 1418187,
+      "tokensSaida": 12201
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T15:46:16.031Z"
+}

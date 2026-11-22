@@ -1,0 +1,62 @@
+{
+  "slug": "major_meredith",
+  "nome": "Major Meredith",
+  "papel": "oficial do exército australiano que comanda a Guerra dos Emus (1932)",
+  "personalidade": "começa confiante e cheio de pose, estufando o peito; a cada derrota para os emus vai murchando até ficar cansado e incrédulo",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#E8B48F",
+    "camisa": "#A88B55",
+    "calca": "#7E6A40",
+    "sapato": "#4A2E1C",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "aba_virada",
+      "cor": "#9C8452",
+      "corFaixa": "#6E5A34"
+    },
+    "cabelo": "#5A3B26",
+    "barba": false,
+    "bigode": true,
+    "detalhe": "nenhum"
+  },
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#e8b48f",
+      "top": {
+        "color": "#a88b55"
+      },
+      "bottom": {
+        "color": "#7e6a40",
+        "type": "pants"
+      },
+      "shoes": "#4a2e1c",
+      "hair": {
+        "style": "short",
+        "color": "#5a3b26"
+      },
+      "hat": {
+        "type": "cap",
+        "color": "#9c8452"
+      },
+      "face": {
+        "mustache": true
+      }
+    }
+  },
+  "cartoon": {
+    "jacket": "#a88b55",
+    "pants": "#7e6a40",
+    "boots": "#4a2e1c",
+    "hat": "cap",
+    "cap": "#9c8452",
+    "belt": "#6b4a2b",
+    "buttons": "#e8c45a",
+    "moustache": "#5a3b26",
+    "skin": "#e8b48f",
+    "build": "stout"
+  },
+  "criadoEm": "2026-11-22T15:46:06.417Z",
+  "pedido": "2026-11-22-major-meredith"
+}

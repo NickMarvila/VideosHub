@@ -1,0 +1,162 @@
+{
+  "id": "2026-11-22-00-38-00",
+  "tema": "invenções que surgiram por acidente",
+  "duracao": 45,
+  "estilo": "3d-cidade",
+  "estado": "pronto",
+  "ideias": [
+    {
+      "n": 1,
+      "titulo": "O Vidro Que Nasceu Debaixo da Panela",
+      "gancho": "O vidro foi inventado por marinheiros que só queriam fazer o almoço.",
+      "virada": "Os arqueólogos dizem que essa fogueira nunca esquentaria o suficiente. Mas a história pegou fogo do mesmo jeito.",
+      "porQueAnima": "o navio encostando na praia sem pedras para apoiar a panela, os blocos de natrão no fogo, a areia derretendo e escorrendo como um rio brilhante",
+      "fatoOuLenda": "diz a lenda (relato de Plínio, o Velho, na História Natural; os historiadores consideram improvável, o vidro já existia bem antes)",
+      "fontes": [
+        "https://penn.museum/sites/Roman%20Glass/Glassmaking/glassmaking_intro.html",
+        "https://libanswers.cmog.org/faq/143701",
+        "https://link.springer.com/article/10.1007/s12520-016-0447-4"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 2,
+      "titulo": "O Fracassado Que Deixou a Borracha Cair",
+      "gancho": "O pneu do seu carro existe porque um homem falido deixou um pedaço de borracha cair no fogão.",
+      "virada": "Ele deu o nome a um império de pneus. Só que a empresa Goodyear foi fundada por outras pessoas, décadas depois de ele morrer cheio de dívidas.",
+      "porQueAnima": "a borracha comum derretendo no calor e endurecendo no frio, o pedaço voando para a chapa quente, a borracha virando couro em vez de derreter, e um corte para pneus rodando pela cidade",
+      "fatoOuLenda": "fato documentado com detalhe disputado (Charles Goodyear, 1839; o episódio do fogão vem do relato dele, e ele mesmo negava que tenha sido 'só sorte')",
+      "fontes": [
+        "https://corporate.goodyear.com/us/en/about/history/the-charles-goodyear-story.html",
+        "https://www.britannica.com/biography/Charles-Goodyear",
+        "https://lemelson.mit.edu/resources/charles-goodyear"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 3,
+      "titulo": "O Químico Que Esqueceu de Lavar as Mãos",
+      "gancho": "O primeiro adoçante artificial foi descoberto porque um químico jantou sem lavar as mãos.",
+      "virada": "Ele patenteou sozinho e ficou rico. O chefe dele, que dividia o laboratório, nunca perdoou.",
+      "porQueAnima": "o laboratório cheio de frascos fumegando, o pão ficando doce na mordida, ele correndo de volta e lambendo frasco por frasco até achar o certo",
+      "fatoOuLenda": "fato documentado com detalhe disputado (Constantin Fahlberg, Johns Hopkins, 1879; há versões em que ele tinha lavado as mãos, ou em que foi um cigarro que ficou doce)",
+      "fontes": [
+        "https://www.britannica.com/biography/Constantin-Fahlberg",
+        "https://www.acs.org/molecule-of-the-week/archive/s/saccharin.html",
+        "https://www.chemistryviews.org/?p=40579"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 4,
+      "titulo": "O Frasco Que Caiu e Não Espalhou",
+      "gancho": "Um cientista derrubou um frasco de vidro no chão, ele quebrou inteiro e nenhum caco saiu do lugar.",
+      "virada": "Ele guardou o frasco rachado na prateleira e só lembrou dele anos depois, lendo sobre acidentes de carro.",
+      "porQueAnima": "o frasco caindo em câmera lenta, a rachadura em teia sem cacos voando, um carro antigo batendo e o para-brisa segurando inteiro",
+      "fatoOuLenda": "fato documentado (Édouard Bénédictus, 1903; patente em 1909); os detalhes da queda variam entre os relatos",
+      "fontes": [
+        "https://en.wikipedia.org/wiki/Laminated_glass",
+        "https://www.britannica.com/video/186403/invention-safety-glass-Edouard-Benedictus",
+        "https://www.todayifoundout.com/index.php/2011/11/laminated-glass-was-invented-by-accident/"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 5,
+      "titulo": "O Menino Que Esqueceu o Refresco na Varanda",
+      "gancho": "Um menino de onze anos inventou o picolé porque esqueceu o copo de refresco do lado de fora.",
+      "virada": "Ele só patenteou dezoito anos depois. E vendeu os direitos logo em seguida, porque estava sem dinheiro.",
+      "porQueAnima": "o copo com o palitinho esquecido na varanda, a noite congelando a rua e as casas, o menino puxando o palito de manhã com o gelo inteiro grudado",
+      "fatoOuLenda": "fato com data disputada (Frank Epperson; o ano de 1905 vem do próprio relato dele; patente em 1923/1924)",
+      "fontes": [
+        "https://www.npr.org/sections/thesalt/2015/07/22/425294957/how-an-11-year-old-boy-invented-the-popsicle",
+        "https://lemelson.mit.edu/resources/frank-epperson",
+        "https://en.wikipedia.org/wiki/Ice_pop"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 6,
+      "titulo": "A Bagunça Que Salvou Milhões de Vidas",
+      "gancho": "O primeiro antibiótico do mundo nasceu de uma pia de laboratório que ninguém lavou.",
+      "virada": "Ele nem conseguiu purificar o remédio. Desistiu, e outros cientistas terminaram o serviço dez anos depois.",
+      "porQueAnima": "o laboratório bagunçado antes das férias, a placa esquecida com o mofo crescendo, o círculo limpo onde as bactérias morreram",
+      "fatoOuLenda": "fato documentado (Alexander Fleming, setembro de 1928; o remédio foi desenvolvido por Florey e Chain nos anos 1940)",
+      "fontes": [
+        "https://www.pbs.org/newshour/health/the-real-story-behind-the-worlds-first-antibiotic",
+        "https://pubmed.ncbi.nlm.nih.gov/15175995/",
+        "https://www.livescience.com/health/science-history-alexander-fleming-wakes-up-to-funny-mold-in-his-petri-dish-and-accidentally-discovers-the-first-antibiotic-sept-28-1928"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 7,
+      "titulo": "O Chocolate Que Derreteu no Bolso",
+      "gancho": "O micro-ondas foi inventado por um engenheiro de radar que estragou o próprio lanche.",
+      "virada": "O primeiro micro-ondas pesava mais de trezentos quilos e era da altura de uma geladeira. Ninguém tinha cozinha para ele.",
+      "porQueAnima": "a fábrica de radares com a máquina zumbindo, o chocolate derretendo no bolso, o milho de pipoca estourando em volta da máquina, e um aparelho gigante entrando numa cozinha",
+      "fatoOuLenda": "fato documentado (Percy Spencer, Raytheon, 1945; o tipo exato do doce varia entre os relatos)",
+      "fontes": [
+        "https://lemelson.mit.edu/resources/percy-spencer",
+        "https://www.aps.org/publications/apsnews/201510/physicshistory.cfm",
+        "https://www.history.com/news/microwave-oven-invention"
+      ],
+      "personagens": [],
+      "modo": "historia"
+    },
+    {
+      "n": 8,
+      "titulo": "A Fita Milagrosa do Tales",
+      "gancho": "O Tales inventou a cola mais forte do bairro tentando não gastar dinheiro com a porta da Paratí.",
+      "virada": "Ele vendeu tanta cola que comprou um carro zero. A porta do carro novo, ele prende com a cola dele.",
+      "porQueAnima": "a porta da Paratí caindo no estacionamento do supermercado, a mistura de fita, chiclete e café que gruda tudo, a fila de vizinhos comprando e o carro novo chegando",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "tales"
+      ],
+      "modo": "personagem"
+    },
+    {
+      "n": 9,
+      "titulo": "O Cimento Errado do Zeca",
+      "gancho": "O Zeca errou a receita do cimento e fez a parede mais leve da cidade.",
+      "virada": "O engenheiro quis a receita para a obra inteira. O Zeca não lembra o que derrubou na betoneira.",
+      "porQueAnima": "o detergente caindo na betoneira, a massa espumando e transbordando, o Zeca levantando um bloco enorme com uma mão só na frente da obra",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem"
+    },
+    {
+      "n": 10,
+      "titulo": "O Estacionamento Que a Paratí Inventou",
+      "gancho": "O Tales atolou a Paratí na obra do Zeca e acabou inventando o estacionamento do bairro.",
+      "virada": "O Tales cobra a vaga de todo mundo. E é o único que paga, porque a Paratí atolou de novo.",
+      "porQueAnima": "a Paratí afundando na lama da obra, o Zeca jogando brita e tábuas debaixo das rodas, a pista improvisada virando um estacionamento cheio de carros",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "tales",
+        "zeca"
+      ],
+      "modo": "personagem"
+    }
+  ],
+  "criadoEm": "2026-11-22T00:38:00.379Z",
+  "usoIA": {
+    "custoUSD": 0.5532375,
+    "turnos": 13,
+    "segundos": 85,
+    "tokensEntrada": 190668,
+    "tokensSaida": 7914
+  }
+}

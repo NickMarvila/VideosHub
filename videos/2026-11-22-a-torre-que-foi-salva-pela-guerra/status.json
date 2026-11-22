@@ -1,0 +1,49 @@
+{
+  "id": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "titulo": "A Torre Que Foi Salva Pela Guerra",
+  "ideia": "A Torre Que Foi Salva Pela Guerra. Gancho: A torre mais famosa da Itália começou a entortar quando tinha só três andares. E uma guerra salvou ela de cair. Virada: Oitocentos anos depois, para endireitar a torre, os engenheiros não colocaram nada. Tiraram terra. Momentos visuais: os pedreiros medievais erguendo os andares e o chão afundando de um lado, a obra parada por quase cem anos com o mato crescendo, e os engenheiros modernos cavando por baixo enquanto a torre volta um pouquinho. (fato documentado (obra iniciada em 1173, inclinação a partir de cerca de 1178; as guerras com Gênova pararam a obra e deram tempo ao solo; estabilização de 1993 a 2001 com retirada de solo); fontes: https://www.history.com/articles/why-does-the-leaning-tower-of-pisa-lean https://discovermagazine.com/planet-earth/the-leaning-tower-of-pisa-wasnt-supposed-to-lean https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa)",
+  "duracaoAlvo": 45,
+  "estilo": "cartoon-3d",
+  "personagens": [],
+  "pasta": "videos/2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "voz": {
+    "catalogo": "cinema",
+    "nome": "Narrador de Cinema",
+    "perfil": "9d15747e",
+    "motor": "voxcpm2",
+    "velocidade": 1
+  },
+  "etapa": "roteiro",
+  "estado": "ia_trabalhando",
+  "fluxo": 2,
+  "portoes": {
+    "roteiro": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "narracao": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-22T17:17:19.077Z",
+      "evento": "pedido criado no painel"
+    },
+    {
+      "em": "2026-11-22T17:17:19.105Z",
+      "evento": "IA trabalhando"
+    }
+  ],
+  "criadoEm": "2026-11-22T17:17:19.077Z"
+}

@@ -1,0 +1,17 @@
+{
+  "musica": {
+    "clima": "marcha",
+    "bpm": 108,
+    "paraEm": 26.44
+  },
+  "efeitos": [
+    {
+      "t": 20.2,
+      "tipo": "freio"
+    },
+    {
+      "t": 23.4,
+      "tipo": "uou"
+    }
+  ]
+}

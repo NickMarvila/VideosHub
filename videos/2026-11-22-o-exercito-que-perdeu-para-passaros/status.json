@@ -1,0 +1,130 @@
+{
+  "id": "2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "titulo": "O Exército Que Perdeu Para Pássaros",
+  "ideia": "O Exército Que Perdeu Para Pássaros. Gancho: Em mil novecentos e trinta e dois, a Austrália mandou metralhadoras contra um bando de pássaros. E os pássaros venceram. Virada: O major voltou dizendo que os emus enfrentavam metralhadora como se fossem tanques de guerra. Momentos visuais: o caminhão com a metralhadora quicando na estrada de terra, milhares de emus se espalhando em grupinhos e correndo em zigue-zague, os soldados atirando e acertando só a poeira. (fato documentado (Guerra dos Emus, Austrália Ocidental, novembro de 1932, comandada pelo major Meredith; os números de aves abatidas variam); fontes: https://www.britannica.com/topic/Emu-War https://www.nationalgeographic.com/history/article/australian-emu-war-history https://www.scientificamerican.com/blog/running-ponies/the-great-emu-war-in-which-some-large-flightless-birds-unwittingly-foiled-the-australian-army/)",
+  "duracaoAlvo": 45,
+  "estilo": "cartoon-3d",
+  "personagens": [],
+  "pasta": "videos/2026-11-22-o-exercito-que-perdeu-para-passaros",
+  "voz": {
+    "catalogo": "cinema",
+    "nome": "Narrador de Cinema",
+    "perfil": "9d15747e",
+    "motor": "voxcpm2",
+    "velocidade": 1
+  },
+  "etapa": "agenda",
+  "estado": "aguardando_agenda",
+  "capaEm": 41,
+  "fluxo": 2,
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T16:09:14.466Z"
+    },
+    "narracao": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T16:45:16.129Z"
+    },
+    "cenas": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T17:10:32.351Z"
+    },
+    "final": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-22T17:14:11.741Z"
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-22T15:37:35.725Z",
+      "evento": "pedido criado no painel"
+    },
+    {
+      "em": "2026-11-22T15:37:35.784Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T15:45:00.000Z",
+      "evento": "IA: roteiro da Guerra dos Emus (13 frases, ~104 palavras), marcação e 8 assets (7 a criar)"
+    },
+    {
+      "em": "2026-11-22T15:42:42.631Z",
+      "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-22T16:09:14.467Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-22T16:09:14.499Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-22T16:36:54.703Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T16:41:28.064Z",
+      "evento": "regravando 1 frase(s)"
+    },
+    {
+      "em": "2026-11-22T16:42:04.581Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-22T16:45:16.132Z",
+      "evento": "narração aprovada"
+    },
+    {
+      "em": "2026-11-22T16:45:16.161Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T17:30:00.000Z",
+      "evento": "IA: 13 cenas cartoon com 2 variantes cada (emus, major, soldados, caminhão, metralhadora, trigo, tanque), trilha para na virada, postagem e capa em 41 s"
+    },
+    {
+      "em": "2026-11-22T17:10:32.353Z",
+      "evento": "cenas aprovadas"
+    },
+    {
+      "em": "2026-11-22T17:10:32.367Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-22T17:13:08.116Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-22T17:14:11.742Z",
+      "evento": "vídeo final aprovado"
+    }
+  ],
+  "criadoEm": "2026-11-22T15:37:35.725Z",
+  "usoIA": [
+    {
+      "em": "2026-11-22T15:39:31.408Z",
+      "etapa": "roteiro",
+      "custoUSD": 0.6278968,
+      "turnos": 14,
+      "segundos": 114,
+      "tokensEntrada": 467407,
+      "tokensSaida": 10913
+    },
+    {
+      "em": "2026-11-22T16:59:19.901Z",
+      "etapa": "cenas",
+      "custoUSD": 4.2736974,
+      "turnos": 76,
+      "segundos": 841,
+      "tokensEntrada": 5270298,
+      "tokensSaida": 91443
+    }
+  ]
+}
