@@ -1,0 +1,20 @@
+[
+  { "texto": "Uma guerra salvou a torre mais famosa da Itália.", "energia": "animada", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "De cair.", "energia": "normal", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Pisa, mil cento e setenta e oito.", "energia": "calma", "pausa": 0.2, "efeito": "nenhum" },
+  { "texto": "Três andares prontos.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "E a torre já estava afundando de um lado.", "energia": "animada", "pausa": 0.4, "efeito": "nenhum" },
+  { "texto": "Só que aí veio a guerra contra Gênova... e a obra parou.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Por quase cem anos.", "energia": "calma", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "O mato cresceu tanto que achou que a torre era dele.", "energia": "animada", "pausa": 0.4, "efeito": "risada" },
+  { "texto": "Pensa comigo.", "energia": "calma", "pausa": 0.6, "efeito": "nenhum" },
+  { "texto": "O chão de Pisa é barro mole, cheio de água.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "É como uma esponja molhada embaixo de um peso.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Com o tempo, a água sai... e ela fica firme.", "energia": "normal", "pausa": 0.3, "efeito": "nenhum" },
+  { "texto": "Sem essa pausa, a torre teria caído.", "energia": "animada", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Oitocentos anos depois, ela ainda ameaçava cair.", "energia": "normal", "pausa": 0.3, "efeito": "suspiro" },
+  { "texto": "E sabe o que os engenheiros fizeram para endireitar?", "energia": "calma", "pausa": 0.5, "efeito": "nenhum" },
+  { "texto": "Não colocaram nada...", "energia": "calma", "pausa": 0.7, "efeito": "nenhum" },
+  { "texto": "Tiraram terra.", "energia": "animada", "pausa": 0.6, "efeito": "risada" },
+  { "texto": "E você? Preferia a torre reta ou torta?", "energia": "normal", "pausa": 0, "efeito": "nenhum" }
+]

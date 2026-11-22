@@ -18,7 +18,7 @@ export type Visual = {
   sapato: string;
   olhos: string;
   /** aba_virada: chapéu de feltro de aba larga com um lado preso para cima (corFaixa = faixa da copa) */
-  chapeu: { tipo: "bone" | "gorro" | "capacete" | "aba_virada" | "nenhum"; cor: string; corFaixa?: string };
+  chapeu: { tipo: "bone" | "gorro" | "capacete" | "aba_virada" | "nenhum" | "elmo" | "elmo_aba"; cor: string; corFaixa?: string };
   cabelo?: string;
   barba: boolean;
   bigode?: boolean;
@@ -33,6 +33,82 @@ export type Visual = {
   corpo?: number;
   /** topete da ave (emu) */
   topete?: "liso" | "arrepiado" | "nenhum";
+  /** cor de um avental (couro, pano) por cima da camisa, com peitilho, alças e bolso. Sem o campo, nada muda. */
+  avental?: string;
+  /** objeto na mão da frente (direita). Sem o campo, a mão fica vazia. "lanca" = lança em pé, segura pela mão. */
+  segura?: "martelo" | "lanca" | "prancheta";
+  /** colete de obra por cima da camisa: cor do colete e das duas faixas refletivas. Sem o campo, nada muda. */
+  colete?: { cor: string; faixa: string };
+  /** túnica medieval de duas cores por cima da camisa (que vira a cota de malha), descendo sobre as coxas.
+   *  corte: "cruz" (cruz da cor2), "meio" (metade de cada cor) ou "faixa" (faixa horizontal da cor2). Sem o campo, nada muda. */
+  tunica?: { cor: string; cor2: string; corte: "cruz" | "meio" | "faixa" };
+  /** desenha os aros de cota de malha na camisa (no tronco). Sem o campo, nada muda. */
+  malha?: boolean;
+};
+
+/** elmo de ferro (cúpula + aro + rebites); com nariz = protetor de nariz, com aba = chapéu de ferro */
+const Elmo: React.FC<{ cor: string; aba: boolean }> = ({ cor, aba }) => {
+  const sombra = "rgba(0,0,0,0.18)", escuro = "rgba(0,0,0,0.32)";
+  return (
+    <g>
+      {aba && <ellipse cx={180} cy={100} rx={118} ry={16} fill={cor} />}
+      {aba && <ellipse cx={180} cy={104} rx={118} ry={10} fill={sombra} />}
+      <path d="M 108 102 Q 106 34 180 30 Q 254 34 252 102 Z" fill={cor} />
+      <path d="M 180 32 L 180 92" stroke={sombra} strokeWidth={6} strokeLinecap="round" />
+      <rect x={106} y={88} width={148} height={16} rx={5} fill={cor} />
+      <rect x={106} y={98} width={148} height={6} fill={sombra} />
+      {[124, 152, 208, 236].map((x) => <circle key={x} cx={x} cy={96} r={3.5} fill={escuro} />)}
+      {!aba && <path d="M 172 100 L 188 100 L 186 140 Q 180 146 174 140 Z" fill={cor} />}
+      {!aba && <path d="M 182 100 L 188 100 L 186 140 Q 183 143 181 142 Z" fill={sombra} />}
+    </g>
+  );
+};
+
+/** aros de cota de malha num retângulo (x, y, largura, altura) */
+const Malha: React.FC<{ x: number; y: number; w: number; h: number }> = ({ x, y, w, h }) => {
+  const aros: React.ReactNode[] = [];
+  for (let r = 0, yy = y + 6; yy < y + h; r++, yy += 12)
+    for (let xx = x + 6 + (r % 2) * 7; xx < x + w - 2; xx += 14)
+      aros.push(<path key={`${r}-${xx}`} d={`M ${xx - 5} ${yy - 2} Q ${xx} ${yy + 5} ${xx + 5} ${yy - 2}`} stroke="rgba(0,0,0,0.25)" strokeWidth={2.4} fill="none" strokeLinecap="round" />);
+  return <g>{aros}</g>;
+};
+
+/** túnica (peito + aba sobre as coxas), com o recorte da segunda cor */
+const Tunica: React.FC<{ t: NonNullable<Visual["tunica"]> }> = ({ t }) => {
+  const contorno = "M 142 204 L 164 204 L 180 226 L 196 204 L 218 204 L 222 384 Q 180 392 138 384 Z";
+  const id = `tun-${t.cor.slice(1)}-${t.cor2.slice(1)}-${t.corte}`;
+  return (
+    <g>
+      <defs><clipPath id={id}><path d={contorno} /></clipPath></defs>
+      <path d={contorno} fill={t.cor} />
+      <g clipPath={`url(#${id})`}>
+        {t.corte === "meio" && <rect x={180} y={196} width={50} height={200} fill={t.cor2} />}
+        {t.corte === "faixa" && <rect x={130} y={262} width={100} height={26} fill={t.cor2} />}
+        {t.corte === "cruz" && <rect x={170} y={196} width={20} height={200} fill={t.cor2} />}
+        {t.corte === "cruz" && <rect x={130} y={240} width={100} height={20} fill={t.cor2} />}
+        <rect x={130} y={318} width={100} height={12} fill="rgba(0,0,0,0.15)" />
+      </g>
+      <rect x={134} y={316} width={92} height={14} rx={4} fill="#5A3B26" />
+      <rect x={172} y={315} width={16} height={16} rx={3} fill="#C9A23A" />
+    </g>
+  );
+};
+
+/** lança em pé, vertical, passando pela mão (hx, hy) */
+const Lanca: React.FC<{ hx: number; hy: number }> = ({ hx, hy }) => (
+  <g>
+    <rect x={hx - 5} y={hy - 300} width={10} height={Math.min(470, 524 - (hy - 300))} rx={4} fill="#8A5A34" />
+    <rect x={hx - 7} y={hy - 306} width={14} height={14} rx={3} fill="#5A3B26" />
+    <path d={`M ${hx} ${hy - 372} L ${hx + 13} ${hy - 330} L ${hx} ${hy - 304} L ${hx - 13} ${hy - 330} Z`} fill="#C9CCD2" />
+    <path d={`M ${hx} ${hy - 366} L ${hx} ${hy - 310}`} stroke="rgba(0,0,0,0.2)" strokeWidth={3} />
+  </g>
+);
+
+/** posição da mão do braço com ombro em (x, y) e ângulos [ombro, cotovelo] (mesma conta do Braco) */
+const maoDe = (x: number, y: number, [a0, a1]: [number, number]): [number, number] => {
+  const r = Math.PI / 180, SEG = 62;
+  const ex = x - SEG * Math.sin(a0 * r), ey = y + SEG * Math.cos(a0 * r);
+  return [ex - SEG * Math.sin((a0 + a1) * r), ey + SEG * Math.cos((a0 + a1) * r)];
 };
 
 type Props = {
@@ -73,8 +149,38 @@ const SOBRANCELHAS: Record<Expressao, { esq: [number, number]; dir: [number, num
   duvida: { esq: [0, 0], dir: [-12, 8] },
 };
 
-const Braco: React.FC<{ x: number; y: number; angulos: [number, number]; cor: string; pele: string }> = ({
-  x, y, angulos, cor, pele,
+const Martelo: React.FC<{ y: number }> = ({ y }) => (
+  <g>
+    <rect x={-5} y={y - 8} width={10} height={70} rx={4} fill="#8A5A34" />
+    <rect x={-24} y={y + 54} width={48} height={20} rx={4} fill="#7D848C" />
+    <rect x={-24} y={y + 68} width={48} height={6} rx={3} fill="rgba(0,0,0,0.2)" />
+  </g>
+);
+
+/** prancheta presa pela mão (0, y), sempre em pé (giro desfaz a rotação do braço) */
+const Prancheta: React.FC<{ y: number; giro: number }> = ({ y, giro }) => (
+  <g transform={`translate(0 ${y}) rotate(${giro})`}>
+    <rect x={-26} y={-58} width={52} height={70} rx={5} fill="#A8743F" />
+    <rect x={-20} y={-48} width={40} height={54} rx={2} fill="#F4F1EA" />
+    {[-36, -26, -16, -6].map((yy, i) => <rect key={yy} x={-14} y={yy} width={i % 2 ? 20 : 28} height={4} rx={2} fill="#9AA0A6" />)}
+    <rect x={-11} y={-64} width={22} height={14} rx={3} fill="#7D848C" />
+  </g>
+);
+
+const Colete: React.FC<{ c: NonNullable<Visual["colete"]> }> = ({ c }) => (
+  <g>
+    <path d="M 124 206 Q 124 190 140 190 L 160 190 L 174 252 L 174 342 L 124 342 Z" fill={c.cor} />
+    <path d="M 236 206 Q 236 190 220 190 L 200 190 L 186 252 L 186 342 L 236 342 Z" fill={c.cor} />
+    <rect x={124} y={268} width={50} height={12} fill={c.faixa} />
+    <rect x={186} y={268} width={50} height={12} fill={c.faixa} />
+    <rect x={124} y={300} width={50} height={12} fill={c.faixa} />
+    <rect x={186} y={300} width={50} height={12} fill={c.faixa} />
+    <rect x={124} y={330} width={112} height={12} fill="rgba(0,0,0,0.12)" />
+  </g>
+);
+
+const Braco: React.FC<{ x: number; y: number; angulos: [number, number]; cor: string; pele: string; segura?: Visual["segura"] }> = ({
+  x, y, angulos, cor, pele, segura,
 }) => {
   const SEG = 62;
   return (
@@ -82,6 +188,8 @@ const Braco: React.FC<{ x: number; y: number; angulos: [number, number]; cor: st
       <rect x={-12} y={-6} width={24} height={SEG + 10} rx={12} fill={cor} />
       <g transform={`translate(0 ${SEG}) rotate(${angulos[1]})`}>
         <rect x={-11} y={-10} width={22} height={SEG} rx={11} fill={cor} />
+        {segura === "martelo" && <Martelo y={SEG} />}
+        {segura === "prancheta" && <Prancheta y={SEG} giro={-(angulos[0] + angulos[1])} />}
         <circle cx={0} cy={SEG} r={14} fill={pele} />
       </g>
     </g>
@@ -148,6 +256,7 @@ const BocaForma: React.FC<{ boca: Boca; expressao: Expressao }> = ({ boca, expre
 
 const Chapeu: React.FC<{ tipo: Visual["chapeu"]["tipo"]; cor: string; corFaixa?: string }> = ({ tipo, cor, corFaixa }) => {
   if (tipo === "nenhum") return null;
+  if (tipo === "elmo" || tipo === "elmo_aba") return <Elmo cor={cor} aba={tipo === "elmo_aba"} />;
   const sombra = "rgba(0,0,0,0.18)";
   if (tipo === "aba_virada")
     return (
@@ -319,6 +428,7 @@ const Humano: React.FC<Props> = ({
   const falando = boca !== "X" && boca !== "A";
   const cabecaY = falando ? -1.5 : 0;
   const peito = 1 + respiro * 0.012;
+  const angFrente: [number, number] = [p.dir[0] + anda * 12 * (pose === "neutro" ? 1 : 0), p.dir[1]];
 
   return (
     <svg viewBox="0 0 360 540" height={altura} style={{ overflow: "visible", transform: espelhar ? "scaleX(-1)" : undefined }}>
@@ -351,10 +461,24 @@ const Humano: React.FC<Props> = ({
             <rect x={212} y={312} width={5} height={20} fill="#9AA0A6" />
           </g>
         )}
+        {visual.avental && (
+          <g>
+            <path d="M 150 214 L 138 196 M 210 214 L 222 196" stroke={visual.avental} strokeWidth={7} strokeLinecap="round" />
+            <path d="M 150 212 L 210 212 L 212 268 L 230 274 L 232 352 Q 180 360 128 352 L 130 274 L 148 268 Z" fill={visual.avental} />
+            <rect x={128} y={270} width={104} height={8} fill="rgba(0,0,0,0.18)" />
+            <rect x={160} y={292} width={40} height={30} rx={4} fill="rgba(0,0,0,0.16)" />
+          </g>
+        )}
+        {visual.malha && <Malha x={124} y={194} w={112} h={124} />}
+        {visual.tunica && <Tunica t={visual.tunica} />}
+        {visual.colete && <Colete c={visual.colete} />}
       </g>
 
+      {/* lança em pé na mão da frente */}
+      {visual.segura === "lanca" && <Lanca hx={maoDe(232, 204, angFrente)[0]} hy={maoDe(232, 204, angFrente)[1]} />}
+
       {/* braço da frente (direito) */}
-      <Braco x={232} y={204} angulos={[p.dir[0] + anda * 12 * (pose === "neutro" ? 1 : 0), p.dir[1]]} cor={visual.camisa} pele={visual.pele} />
+      <Braco x={232} y={204} angulos={angFrente} cor={visual.camisa} pele={visual.pele} segura={visual.segura} />
 
       {/* cabeça */}
       <g transform={`translate(0 ${cabecaY})`}>

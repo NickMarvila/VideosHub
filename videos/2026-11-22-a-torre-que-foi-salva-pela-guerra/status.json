@@ -14,7 +14,7 @@
     "velocidade": 1
   },
   "etapa": "roteiro",
-  "estado": "ia_trabalhando",
+  "estado": "aguardando_aprovacao",
   "fluxo": 2,
   "portoes": {
     "roteiro": {
@@ -43,7 +43,34 @@
     {
       "em": "2026-11-22T17:17:19.105Z",
       "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-22T17:40:00.000Z",
+      "evento": "IA: roteiro (gancho G3, Pensa comigo da esponja), marcação de 18 frases e lista de 9 assets"
+    },
+    {
+      "em": "2026-11-22T17:57:24.477Z",
+      "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-22T17:58:49.337Z",
+      "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-22T17:59:00.791Z",
+      "evento": "assets: auto (todos)"
     }
   ],
-  "criadoEm": "2026-11-22T17:17:19.077Z"
+  "criadoEm": "2026-11-22T17:17:19.077Z",
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:19:22.031Z",
+      "etapa": "roteiro",
+      "custoUSD": 0.7084759999999999,
+      "turnos": 17,
+      "segundos": 122,
+      "tokensEntrada": 488795,
+      "tokensSaida": 9926
+    }
+  ]
 }

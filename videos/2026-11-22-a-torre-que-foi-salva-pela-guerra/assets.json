@@ -1,0 +1,97 @@
+{
+  "itens": [
+    {
+      "id": "torre_de_pisa",
+      "nome": "Torre de Pisa",
+      "tipo": "objeto",
+      "descricao": "Torre cilíndrica de mármore branco-creme, com arcadas em colunatas em cada andar e sino no topo, inclinada uns 4 graus, ~12 m; que dê para mostrar com 3 andares (obra) e completa",
+      "momento": "todo o vídeo",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-torre-de-pisa-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "pedreiro_medieval",
+      "nome": "pedreiro medieval",
+      "tipo": "personagem",
+      "descricao": "Pedreiro medieval de túnica marrom, avental de couro, gorro de pano e martelo na mão",
+      "momento": "f03-f05: pedreiros erguendo os andares",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-pedreiro-medieval-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "soldado_medieval",
+      "nome": "soldado medieval",
+      "tipo": "personagem",
+      "descricao": "Soldado medieval com elmo de metal, cota de malha cinza, túnica vermelha e branca e lança",
+      "momento": "f06: a guerra contra Gênova para a obra",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-soldado-medieval-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "engenheiro",
+      "nome": "engenheiro moderno",
+      "tipo": "personagem",
+      "descricao": "Engenheiro de capacete amarelo, colete laranja refletivo e prancheta",
+      "momento": "f15-f17: engenheiros cavando por baixo",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-engenheiro-moderno-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "mato",
+      "nome": "mato crescendo",
+      "tipo": "objeto",
+      "descricao": "Touceiras de capim alto subindo em volta da base da torre",
+      "momento": "f07-f08: obra parada, mato tomando conta",
+      "existe": true,
+      "usa": "plantacao_de_trigo"
+    },
+    {
+      "id": "esponja",
+      "nome": "esponja molhada",
+      "tipo": "objeto",
+      "descricao": "Esponja amarela de cozinha encharcada, com gotas de água azul pingando, ~0,5 m na cena",
+      "momento": "f11-f12: Pensa comigo, a comparação",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-esponja-molhada-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "peso",
+      "nome": "peso em cima da esponja",
+      "tipo": "objeto",
+      "descricao": "Bloco pesado em cima da esponja",
+      "momento": "f11-f12",
+      "existe": true,
+      "usa": "caixote"
+    },
+    {
+      "id": "monte_de_terra",
+      "nome": "terra retirada",
+      "tipo": "objeto",
+      "descricao": "Monte de terra marrom com uma pá fincada, ~1 m",
+      "momento": "f17: tiraram terra",
+      "existe": false,
+      "usa": null,
+      "pedido": "2026-11-22-terra-retirada-3",
+      "decisao": "auto"
+    },
+    {
+      "id": "praca_pisa",
+      "nome": "praça de Pisa",
+      "tipo": "cenario",
+      "descricao": "Praça aberta com gramado onde fica a torre",
+      "momento": "todo o vídeo",
+      "existe": true,
+      "usa": "praca"
+    }
+  ]
+}

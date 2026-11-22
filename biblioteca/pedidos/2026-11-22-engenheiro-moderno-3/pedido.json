@@ -1,0 +1,54 @@
+{
+  "id": "2026-11-22-engenheiro-moderno-3",
+  "tipo": "personagem",
+  "nome": "engenheiro moderno",
+  "slug": "engenheiro_moderno",
+  "descricao": "Engenheiro de capacete amarelo, colete laranja refletivo e prancheta",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Engenheiro jovem: capacete amarelo-ouro, colete laranja com faixas prata, camisa azul-clara (a mais fiel, recomendada)"
+    },
+    {
+      "n": 2,
+      "descricao": "Engenheira de rabo de cavalo: capacete amarelo-claro, colete laranja-escuro com faixas amarelo-limão, camisa branca e jeans"
+    },
+    {
+      "n": 3,
+      "descricao": "Engenheiro veterano e mais largo: bigode grisalho, óculos no 3D, colete laranja-avermelhado, camisa cinza e calça cáqui"
+    }
+  ],
+  "recomendada": 1,
+  "extensaoRig": "2D (Personagem.tsx): campo opcional colete {cor, faixa} e segura: \"prancheta\" (fica em pé na mão). Cartoon 3D (toon.ts): hat \"hardhat\" (cor em cap), vest + stripe (colete com gola em V e 2 faixas refletivas) e clipboard (prancheta na mão esquerda de frente, na mão da frente de lado).",
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.747Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:14.336Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:49:26.094Z",
+      "custoUSD": 2.2447524,
+      "turnos": 58,
+      "segundos": 390,
+      "tokensEntrada": 4059010,
+      "tokensSaida": 24768,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:49:41.278Z"
+}

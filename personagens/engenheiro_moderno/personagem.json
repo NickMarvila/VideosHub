@@ -1,0 +1,73 @@
+{
+  "slug": "engenheiro_moderno",
+  "nome": "Engenheiro Moderno",
+  "papel": "engenheiro da estabilização da torre (1993 a 2001): mede, anota e manda tirar terra por baixo",
+  "personalidade": "calmo, metódico e orgulhoso de resolver com pouco: confia mais na prancheta do que no susto",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#E8C4A0",
+    "camisa": "#8DB8E0",
+    "calca": "#3B4A5E",
+    "sapato": "#5A3B26",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "capacete",
+      "cor": "#F2C230"
+    },
+    "cabelo": "#4A3426",
+    "barba": false,
+    "bigode": false,
+    "detalhe": "nenhum",
+    "corDetalhe": "#4A3426",
+    "colete": {
+      "cor": "#F07A1F",
+      "faixa": "#E8ECEF"
+    },
+    "segura": "prancheta"
+  },
+  "kit3d": {
+    "preset": "engenheiro",
+    "overrides": {
+      "skin": "#e8c4a0",
+      "top": {
+        "color": "#f07a1f",
+        "stripe": "#e8ecef",
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#3b4a5e",
+        "type": "pants"
+      },
+      "shoes": "#5a3b26",
+      "hair": {
+        "style": "short",
+        "color": "#4a3426"
+      },
+      "hat": {
+        "type": "hardhat",
+        "color": "#f2c230"
+      },
+      "face": {
+        "glasses": false,
+        "mustache": false,
+        "beard": false
+      },
+      "held": {
+        "L": "clipboard"
+      }
+    }
+  },
+  "cartoon": {
+    "jacket": "#8db8e0",
+    "pants": "#3b4a5e",
+    "boots": "#5a3b26",
+    "skin": "#e8c4a0",
+    "hat": "hardhat",
+    "cap": "#f2c230",
+    "vest": "#f07a1f",
+    "stripe": "#e8ecef",
+    "clipboard": true
+  },
+  "criadoEm": "2026-11-22T18:49:41.277Z",
+  "pedido": "2026-11-22-engenheiro-moderno-3"
+}

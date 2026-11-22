@@ -2494,6 +2494,40 @@
       "stages": null
     },
     {
+      "id": "esponja_molhada",
+      "category": "objetos",
+      "label": "Esponja molhada",
+      "description": "Esponja de cozinha amarela encharcada, com face verde de esfregar, gotas azuis pingando e poça embaixo. 0,5 × 0,32 m.",
+      "sizeM": {
+        "x": 0.6,
+        "y": 0.4,
+        "z": 0.6
+      },
+      "meshes": 11,
+      "params": {
+        "color": {
+          "default": "#f7d046",
+          "description": "cor da espuma"
+        },
+        "scrub": {
+          "default": "#3fa34d",
+          "description": "cor da face de esfregar"
+        },
+        "drops": {
+          "default": 4,
+          "description": "gotas no ar (0 a 6)"
+        }
+      },
+      "variants": [
+        "seca",
+        "rosa"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
       "id": "metralhadora",
       "category": "objetos",
       "label": "Metralhadora de tripé",
@@ -2614,6 +2648,84 @@
       "setProgress": false,
       "update": false,
       "wheels": true,
+      "stages": null
+    },
+    {
+      "id": "terra_retirada",
+      "category": "objetos",
+      "label": "Terra retirada",
+      "description": "Monte de terra marrom recém-cavada com uma pá de cabo de madeira fincada no topo, um pouco inclinada. 1,4 × 1,1 m de base, 1,0 m de altura com a pá. Frente para +Z.",
+      "sizeM": {
+        "x": 1.5,
+        "y": 1.8,
+        "z": 1.2
+      },
+      "meshes": 12,
+      "params": {
+        "color": {
+          "default": "#8a5a36",
+          "description": "cor da terra"
+        },
+        "dark": {
+          "default": "#6b4327",
+          "description": "cor dos torrões"
+        },
+        "pa": {
+          "default": true,
+          "description": "pá fincada no monte"
+        }
+      },
+      "variants": [
+        "sem_pa",
+        "escura"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "torre_de_pisa",
+      "category": "predios",
+      "label": "Torre de Pisa",
+      "description": "Torre cilíndrica de mármore creme com colunatas em arcos em cada andar e sino no topo, inclinada (inclinacao em graus, para +X). ~12 m de altura, 3,6 m de diâmetro. setProgress(p) constrói andar por andar: variante \"obra\" = 3 andares, \"completa\" = torre inteira.",
+      "sizeM": {
+        "x": 4.8,
+        "y": 12,
+        "z": 4.1
+      },
+      "meshes": 321,
+      "params": {
+        "progress": {
+          "default": 1,
+          "description": "etapa 0..1 (3/8 = 3 andares; 1 = completa)"
+        },
+        "inclinacao": {
+          "default": 4,
+          "description": "inclinação em graus (para +X)"
+        },
+        "marmore": {
+          "default": "#f1e8d0",
+          "description": "mármore das colunas e cornijas"
+        },
+        "miolo": {
+          "default": "#d8c9a3",
+          "description": "parede de dentro das galerias"
+        },
+        "sino": {
+          "default": "#b98a3a",
+          "description": "cor do sino"
+        }
+      },
+      "variants": [
+        "obra",
+        "completa",
+        "reta",
+        "quase_reta"
+      ],
+      "setProgress": true,
+      "update": true,
+      "wheels": false,
       "stages": null
     }
   ],

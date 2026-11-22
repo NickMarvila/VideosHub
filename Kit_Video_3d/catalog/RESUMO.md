@@ -60,6 +60,7 @@ Expressões: neutral, happy, laugh, sad, angry, surprised, worried, thinking, sl
 - `loja` 8.4×9.6×4.3 m variantes: padaria, mercado | params: wall="#f0e6d2", awning="#d9473a", sign="#3d6fb6": Loja de rua com vitrine grande, porta de vidro, toldo listrado e letreiro
 - `galpao` 25×15×15.5 m variantes: azul, verde | params: wall="#c9cdd2", roof="#6d7783", door="#d9473a": Galpão industrial de telhado metálico, portão de enrolar, janelas altas e chaminé
 - `ponte_viga` 40.5×14×5.6 m variantes: longa, baixa | params: length=24, height=4.5, river=true: Ponte de concreto sobre um rio: tabuleiro com pista, guarda-corpo, dois pilares com travessa e encontros nas pontas
+- `torre_de_pisa` 4.8×4.1×12 m variantes: obra, completa, reta, quase_reta | params: progress=1, inclinacao=4, marmore="#f1e8d0", miolo="#d8c9a3", sino="#b98a3a" | ETAPAS (etapa) | gira sozinho: Torre cilíndrica de mármore creme com colunatas em arcos em cada andar e sino no topo, inclinada (inclinacao em graus, para +X)
 
 ### Em construção (animáveis)
 - `casa_obra` 6.8×7.9×5 m variantes: fundacao, paredes, madeiramento | params: progress=1, brick="#b8573b", tile="#d2693a" | ETAPAS (etapa): Casa sendo construída: setProgress(p) mostra fundação (0–0.12), pilares (–0.25), paredes de tijolo (–0.55), laje (–0.65), madeiramento (–0.82) e telhas (–1)
@@ -110,9 +111,11 @@ Expressões: neutral, happy, laugh, sad, angry, surprised, worried, thinking, sl
 - `caixa_madeira` 0.9×0.9×0.8 m variantes: grande | params: size=0.8: Caixote de madeira com travessas em X
 - `bueiro` 0.9×0.6×0.1 m: Grade de escoamento de água da chuva, ao nível do asfalto junto ao meio-fio
 - `carrinho_de_supermercado` 0.7×1×1.1 m variantes: vazio, poucas | params: metal="#b9c0c6", handle="#c0392b", compras=6 | rodas giram ao mover: Carrinho de metal aramado cinza, alça vermelha escura e quatro rodinhas, já com compras coloridas (cereal, garrafa, leite, maçãs, pão, banana)
+- `esponja_molhada` 0.6×0.6×0.4 m variantes: seca, rosa | params: color="#f7d046", scrub="#3fa34d", drops=4: Esponja de cozinha amarela encharcada, com face verde de esfregar, gotas azuis pingando e poça embaixo
 - `metralhadora` 1×1.3×0.9 m variantes: verde, enferrujada | params: color="#3a3f45", magazine="#2a2e33", wood="#8a5a33", tripod="#4b5057": Metralhadora antiga de tripé, cartoon: cano grosso cinza-escuro com aletas de resfriamento, carregador redondo (prato) em cima, coronha de madeira
 - `plantacao_de_trigo` 0.5×0.6×0.9 m variantes: rala, cheia, baixa | params: color="#e3b23c", espiga="#f2c94c", folha="#c9952e", hastes=14, altura=0.8, seed=1: Touceira de trigo dourado maduro: ~14 hastes com espigas cheias, folhas na base
 - `tanque_de_guerra` 1.4×2.1×1.6 m variantes: deserto, inverno | params: color="#6B7A3A", escuro="#4E5A2A", esteira="#2E3034", antena=1 | rodas giram ao mover: Tanque cartoon verde-oliva arredondado: esteiras com 5 rodas por lado, torre em cúpula com escotilha e antena, canhão curto
+- `terra_retirada` 1.5×1.2×1.8 m variantes: sem_pa, escura | params: color="#8a5a36", dark="#6b4327", pa=true: Monte de terra marrom recém-cavada com uma pá de cabo de madeira fincada no topo, um pouco inclinada
 
 ### Formas e peças livres (para montar qualquer coisa)
 - `forma` 1×1×1 m variantes: tanque, bola, lampada | params: tipo="caixa", tamanho=[1,1,1], cor="#8a95a3", brilho=false, emissivo=false, apoiada=true: Peça básica para montar qualquer coisa (tanque, bloco, pilar, bola, lâmpada, quadro...)

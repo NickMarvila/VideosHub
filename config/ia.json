@@ -1,0 +1,5 @@
+{
+  "motor": "claude",
+  "trocarSozinho": true,
+  "modeloGemini": "gemini-3.8-flash"
+}

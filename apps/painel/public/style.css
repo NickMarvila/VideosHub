@@ -370,3 +370,11 @@ h3.cat-kit small { font: 500 12px var(--f-tempo); color: var(--tinta-2); margin-
 .volume { display: grid; grid-template-columns: 70px 1fr 100px; gap: 12px; align-items: center; margin: 0; color: var(--tinta); font-weight: 600; }
 .volume input[type=range] { width: 100%; accent-color: var(--pronto); padding: 0; }
 .volume output { font: 600 13px/1 var(--f-titulo, inherit); color: var(--tinta-2); text-align: right; }
+
+/* qual IA trabalha (topo) */
+.ia-seletor { display: flex; align-items: center; gap: 8px; margin-left: auto; font-size: 13px; }
+.ia-seletor .rotulo { font-weight: 700; color: var(--tinta-2); letter-spacing: .04em; }
+.ia-seletor .segmentado button { padding: 5px 12px; font-size: 13px; }
+.ia-seletor .troca { display: flex; align-items: center; gap: 5px; margin: 0; font-weight: 500; color: var(--tinta-2); white-space: nowrap; }
+.ia-seletor .troca input { width: auto; margin: 0; }
+.ia-seletor + .fila { margin-left: 12px; }

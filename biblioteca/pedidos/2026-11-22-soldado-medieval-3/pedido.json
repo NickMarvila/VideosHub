@@ -1,0 +1,54 @@
+{
+  "id": "2026-11-22-soldado-medieval-3",
+  "tipo": "personagem",
+  "nome": "soldado medieval",
+  "slug": "soldado_medieval",
+  "descricao": "Soldado medieval com elmo de metal, cota de malha cinza, túnica vermelha e branca e lança",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "recomendada": 1,
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Elmo com protetor de nariz, túnica vermelha com cruz branca, cota de malha, lança e bigode (a mais fiel)"
+    },
+    {
+      "n": 2,
+      "descricao": "Veterano de pele morena e barba, chapéu de ferro de aba larga e túnica meio vermelha, meio branca"
+    },
+    {
+      "n": 3,
+      "descricao": "Jovem ruivo e mais largo, elmo escuro e túnica branca com faixa vermelha"
+    }
+  ],
+  "extensaoRig": "2D (Personagem.tsx): chapeu 'elmo' e 'elmo_aba', campos opcionais 'tunica' {cor, cor2, corte}, 'malha' e segura 'lanca'. Cartoon (toon.ts): hat 'helm' e 'helm_brim', campos opcionais spear, tabard/tabard2/tabardCut e mail. 3D: o kit não tem elmo nem lança, então usei capacete (hardhat) cinza e a túnica na cor da roupa.",
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.734Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:05.438Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:49:25.870Z",
+      "custoUSD": 2.3183625999999995,
+      "turnos": 63,
+      "segundos": 390,
+      "tokensEntrada": 3999317,
+      "tokensSaida": 30006,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:49:41.238Z"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "pedreiro_medieval",
+  "nome": "Pedreiro Medieval",
+  "papel": "pedreiro que ergue os andares da torre em 1173 e vê o chão afundar de um lado",
+  "personalidade": "trabalhador caprichoso e orgulhoso da obra, que fica cada vez mais desconfiado da torre torta",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#E2B48C",
+    "camisa": "#8B5A2B",
+    "calca": "#5B4A3A",
+    "sapato": "#4A3020",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "gorro",
+      "cor": "#D8C7A0"
+    },
+    "cabelo": "#5A3B26",
+    "barba": true,
+    "bigode": true,
+    "detalhe": "nenhum",
+    "corDetalhe": "#6B4A2B",
+    "avental": "#B07A45",
+    "segura": "martelo"
+  },
+  "kit3d": {
+    "preset": "construtor",
+    "overrides": {
+      "skin": "#e2b48c",
+      "top": {
+        "color": "#8b5a2b",
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#5b4a3a",
+        "type": "pants"
+      },
+      "shoes": "#4a3020",
+      "hair": {
+        "style": "short",
+        "color": "#5a3b26"
+      },
+      "hat": {
+        "type": "cap",
+        "color": "#d8c7a0"
+      },
+      "face": {
+        "mustache": true,
+        "beard": true
+      },
+      "held": {
+        "R": "hammer",
+        "L": "none"
+      }
+    }
+  },
+  "cartoon": {
+    "jacket": "#8b5a2b",
+    "pants": "#5b4a3a",
+    "boots": "#4a3020",
+    "hat": "cap",
+    "cap": "#d8c7a0",
+    "belt": "#b07a45",
+    "buttons": "#b07a45",
+    "moustache": "#5a3b26",
+    "skin": "#e2b48c"
+  },
+  "criadoEm": "2026-11-22T18:46:49.320Z",
+  "pedido": "2026-11-22-pedreiro-medieval-3"
+}

@@ -894,6 +894,20 @@ async function telaAgenda() {
     : '<p class="vazio">Nada agendado. Quando você aprovar um vídeo final, escolha a data aqui.</p>'}</div>`;
 }
 
+// ---------- qual IA trabalha (topo): Claude ou Gemini ----------
+async function seletorIA(d) {
+  const box = $('#ia-seletor'); if (!box) return;
+  d ||= await api('/api/ia').catch(() => null); if (!d) return;
+  const dica = (m) => (m === 'gemini' && !d.disponiveis.gemini ? 'Gemini CLI não instalado' : m === 'gemini' && !d.geminiLogado ? 'O Gemini precisa de uma chave do Google AI Studio (o login pela conta Google foi desligado pelo Google)' : '');
+  box.innerHTML = `<span class="rotulo">IA</span><div class="segmentado">${['claude', 'gemini'].map((m) => `<button class="${d.motor === m ? 'on' : ''}" data-ia="${m}" title="${esc(dica(m) || `Roteiro, cenas, ideias e biblioteca pelo ${m === 'claude' ? 'Claude' : 'Gemini'}`)}" ${d.disponiveis[m] ? '' : 'disabled'}>${m === 'claude' ? 'Claude' : 'Gemini'}${dica(m) && d.disponiveis[m] ? ' ⚠' : ''}</button>`).join('')}</div>
+    <label class="troca" title="Se o limite do plano do Claude acabar no meio de uma tarefa, ela recomeça no Gemini"><input type="checkbox" data-ia-troca ${d.trocarSozinho ? 'checked' : ''}> troca sozinho</label>`;
+  $$('[data-ia]', box).forEach((b) => { b.onclick = async () => {
+    try { const r = await api('/api/ia', { motor: b.dataset.ia }); seletorIA(r); aviso(`Agora a ${b.dataset.ia === 'claude' ? 'IA é o Claude' : 'IA é o Gemini'}${dica(b.dataset.ia) ? `. ${dica(b.dataset.ia)}` : ''}`, !dica(b.dataset.ia)); } catch (e) { aviso(e.message); }
+  }; });
+  $('[data-ia-troca]', box).onchange = async (e) => { try { seletorIA(await api('/api/ia', { trocarSozinho: e.target.checked })); } catch (er) { aviso(er.message); } };
+}
+seletorIA();
+
 // ---------- ciclo de atualização ----------
 function ocupado() { // não redesenha enquanto o criador digita
   return document.activeElement?.matches('textarea, input, select') || Object.keys(pendentes).length > 0 || [...document.querySelectorAll('.opcao-midia video')].some((x) => !x.paused);

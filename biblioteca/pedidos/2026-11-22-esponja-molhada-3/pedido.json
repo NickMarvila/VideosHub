@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-22-esponja-molhada-3",
+  "tipo": "objeto",
+  "nome": "esponja molhada",
+  "slug": "esponja_molhada",
+  "descricao": "Esponja amarela de cozinha encharcada, com gotas de água azul pingando, ~0,5 m na cena",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "recomendada": 1,
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássica: espuma amarela com face verde de esfregar, poros, gotas pingando e poça (recomendada)"
+    },
+    {
+      "n": 2,
+      "descricao": "Espremida: amarelo claro com cintura fina, traços de aperto e chuva de gotas numa poça larga"
+    },
+    {
+      "n": 3,
+      "descricao": "Ondulada: amarelo-mostarda com face azul ondulada e gotas escorrendo pelas laterais"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.761Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:05.577Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:45:00.756Z",
+      "custoUSD": 0.7191544000000001,
+      "turnos": 16,
+      "segundos": 124,
+      "tokensEntrada": 501867,
+      "tokensSaida": 12888,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:45:16.621Z"
+}

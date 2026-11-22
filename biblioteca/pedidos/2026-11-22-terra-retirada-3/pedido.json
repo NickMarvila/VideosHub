@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-22-terra-retirada-3",
+  "tipo": "objeto",
+  "nome": "terra retirada",
+  "slug": "terra_retirada",
+  "descricao": "Monte de terra marrom com uma pá fincada, ~1 m",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Monte marrom clássico com torrões em volta e pá de cabo de madeira e pegador em T, levemente inclinada"
+    },
+    {
+      "n": 2,
+      "descricao": "Terra escura e úmida com pedrinhas cinza e pá de cabo vermelho com pegador em D, fincada reta"
+    },
+    {
+      "n": 3,
+      "descricao": "Monte comprido e baixo de terra arenosa ocre com tufos de mato e pá de bico de cabo amarelo, bem inclinada"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.775Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:05.571Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:45:03.352Z",
+      "custoUSD": 0.7620741999999999,
+      "turnos": 17,
+      "segundos": 127,
+      "tokensEntrada": 602807,
+      "tokensSaida": 11373,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:45:19.102Z"
+}

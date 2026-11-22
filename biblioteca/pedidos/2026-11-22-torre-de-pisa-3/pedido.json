@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-22-torre-de-pisa-3",
+  "tipo": "objeto",
+  "nome": "Torre de Pisa",
+  "slug": "torre_de_pisa",
+  "descricao": "Torre cilíndrica de mármore branco-creme, com arcadas em colunatas em cada andar e sino no topo, inclinada uns 4 graus, ~12 m; que dê para mostrar com 3 andares (obra) e completa",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássica: mármore creme, 14 colunas finas por galeria, campanário com telhadinho e sino de bronze que balança; variantes obra (3 andares) e completa"
+    },
+    {
+      "n": 2,
+      "descricao": "Rechonchuda de desenho animado: larga, faixas cinza-esverdeadas, poucas colunas grossas e cúpula de telha com o sino numa trave"
+    },
+    {
+      "n": 3,
+      "descricao": "Esguia: creme-rosado com arcos de fundo escuro (mais contraste), telhado cônico pontudo e sino dourado"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.711Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:04.633Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:47:38.281Z",
+      "custoUSD": 1.4681794000000004,
+      "turnos": 31,
+      "segundos": 282,
+      "tokensEntrada": 1576810,
+      "tokensSaida": 27498,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:47:53.287Z"
+}

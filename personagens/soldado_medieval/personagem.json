@@ -1,0 +1,74 @@
+{
+  "slug": "soldado_medieval",
+  "nome": "Soldado Medieval",
+  "papel": "soldado de Pisa no século XII, de guarda na obra da torre e depois mandado para a guerra contra Gênova",
+  "personalidade": "sério, orgulhoso da cidade e um pouco desconfiado da torre que entorta",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#E8C4A0",
+    "camisa": "#8E959C",
+    "calca": "#6B4A2B",
+    "sapato": "#4A3222",
+    "olhos": "#231B18",
+    "chapeu": {
+      "tipo": "elmo",
+      "cor": "#9AA3AD"
+    },
+    "cabelo": "#5A3B26",
+    "barba": false,
+    "bigode": true,
+    "detalhe": "nenhum",
+    "corDetalhe": "#5A3B26",
+    "malha": true,
+    "tunica": {
+      "cor": "#C0353A",
+      "cor2": "#F1EFE6",
+      "corte": "cruz"
+    },
+    "segura": "lanca"
+  },
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#e8c4a0",
+      "top": {
+        "color": "#c0353a",
+        "stripe": "#f1efe6",
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#6b4a2b",
+        "type": "pants"
+      },
+      "shoes": "#4a3222",
+      "hair": {
+        "style": "short",
+        "color": "#5a3b26"
+      },
+      "hat": {
+        "type": "hardhat",
+        "color": "#9aa3ad"
+      },
+      "face": {
+        "mustache": true,
+        "beard": false
+      }
+    }
+  },
+  "cartoon": {
+    "jacket": "#8e959c",
+    "pants": "#6b4a2b",
+    "boots": "#4a3222",
+    "hat": "helm",
+    "cap": "#9aa3ad",
+    "mail": true,
+    "tabard": "#c0353a",
+    "tabard2": "#f1efe6",
+    "tabardCut": "cross",
+    "spear": true,
+    "moustache": "#5a3b26",
+    "skin": "#e8c4a0"
+  },
+  "criadoEm": "2026-11-22T18:49:41.236Z",
+  "pedido": "2026-11-22-soldado-medieval-3"
+}

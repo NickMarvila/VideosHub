@@ -1,0 +1,54 @@
+{
+  "id": "2026-11-22-pedreiro-medieval-3",
+  "tipo": "personagem",
+  "nome": "pedreiro medieval",
+  "slug": "pedreiro_medieval",
+  "descricao": "Pedreiro medieval de túnica marrom, avental de couro, gorro de pano e martelo na mão",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Pedreiro clássico: túnica marrom, avental de couro caramelo, gorro de pano bege, barba e bigode castanhos, martelo na mão"
+    },
+    {
+      "n": 2,
+      "descricao": "Mestre pedreiro veterano: corpo largo, túnica marrom-escura, avental de couro escuro, gorro terracota, barba grisalha e cinto de ferramentas"
+    },
+    {
+      "n": 3,
+      "descricao": "Aprendiz jovem e magro: túnica marrom-clara de manga curta, avental de couro médio, gorro verde-oliva, cabelo preto cacheado e sem barba"
+    }
+  ],
+  "recomendada": 1,
+  "extensaoRig": "Personagem.tsx: campos opcionais avental (cor do avental com peitilho, alças e bolso) e segura: \"martelo\" (martelo na mão da frente)",
+  "ajustes": [],
+  "criadoEm": "2026-11-22T17:59:00.723Z",
+  "video": "2026-11-22-a-torre-que-foi-salva-pela-guerra",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-22T17:59:04.832Z",
+      "custoUSD": 0,
+      "turnos": 0,
+      "segundos": 0,
+      "tokensEntrada": 0,
+      "tokensSaida": 0,
+      "motor": "gemini"
+    },
+    {
+      "em": "2026-11-22T18:46:34.858Z",
+      "custoUSD": 0.987217,
+      "turnos": 27,
+      "segundos": 219,
+      "tokensEntrada": 1290921,
+      "tokensSaida": 11259,
+      "motor": "claude"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-22T18:46:49.321Z"
+}

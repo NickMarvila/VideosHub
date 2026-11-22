@@ -3,6 +3,7 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
@@ -162,8 +163,98 @@ function descreverFerramenta(nome, ent = {}) {
   if (nome === 'Skill') return 'Abrindo as instruções do /video';
   return nome;
 }
+// ---------- qual IA trabalha: Claude Code ou Gemini CLI (config/ia.json) ----------
+const ARQ_IA = path.join(RAIZ, 'config', 'ia.json');
+// modeloGemini: na cota grátis do AI Studio o Pro não tem cota e o 'auto' tenta o Pro primeiro; o Flash funciona
+const configIA = () => ({ motor: 'claude', trocarSozinho: true, modeloGemini: 'gemini-3.8-flash', ...(lerJSON(ARQ_IA) || {}) });
+const NOME_IA = { claude: 'Claude', gemini: 'Gemini' };
+// sinais de que o plano acabou (limite de uso/cota), nos dois motores
+const FIM_DO_PLANO = /usage limit|limit reached|hit your limit|rate.?limit|quota|resource.?exhausted|429|limite de uso/i;
+function comandoIA(motor, skill, arg, permitidas) {
+  if (motor === 'gemini') {
+    // o Gemini não tem "/skill": ele lê o SKILL.md da skill e segue
+    const prompt = `Você é a IA do VideosHub e está rodando sem ninguém para responder perguntas. `
+      + `Leia o arquivo .claude/skills/${skill}/SKILL.md e siga as instruções dele à risca para o pedido "/${skill} ${arg}". `
+      + `Onde a skill falar das ferramentas do Claude, use as suas: Read = read_file, Write = write_file, Edit = replace, Glob/Grep = glob/grep_search, `
+      + `WebSearch = google_web_search, WebFetch = web_fetch, Bash = run_shell_command. Não pergunte nada: faça o trabalho até o fim e termine com um resumo de uma linha.`;
+    return ['node', [GEMINI_JS, '-m', configIA().modeloGemini, '-p', prompt, '--output-format', 'stream-json', '--skip-trust', '--approval-mode', 'auto_edit', '--policy', path.join(RAIZ, 'config', 'gemini-politica.toml')]];
+  }
+  return ['claude', ['-p', `/${skill} ${arg}`, '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]];
+}
+// Roda uma skill na IA escolhida. Se o plano do Claude acabar e "trocar sozinho" estiver ligado, refaz no Gemini.
+function rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, motor = configIA().motor) {
+  const job = rodar(alvo, 'ia', [comandoIA(motor, skill, arg, permitidas)], (ok, j) => {
+    const cfg = configIA();
+    const acabou = !ok && FIM_DO_PLANO.test(`${j.resumo || ''}\n${j.log || ''}`);
+    if (acabou && cfg.trocarSozinho && motor === 'claude' && comandoExiste('gemini') && geminiPronto()) {
+      const novo = rodarIA(alvo, skill, arg, permitidas, aoTerminar, chave, unidades, 'gemini');
+      novo.atividade.push({ em: agora(), texto: 'O plano do Claude acabou: recomeçando no Gemini' });
+      return;
+    }
+    if (acabou) j.resumo = j.erroPlano = `O ${motor === 'gemini' ? 'limite diário da chave do Gemini' : 'plano do Claude'} acabou. ${motor === 'claude' ? 'Troque a IA para Gemini no topo do painel e tente de novo.' : 'Ele renova em algumas horas; enquanto isso, volte para o Claude.'}`;
+    if (j.uso) j.uso.motor = motor;
+    aoTerminar?.(ok, j);
+  }, chave, unidades);
+  job.motorIA = motor;
+  return job;
+}
+// o gemini do npm é um .cmd no Windows (o spawn sem shell não roda): chamamos o gemini.js dele pelo node
+const GEMINI_JS = path.join(process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming'), 'npm', 'node_modules', '@google', 'gemini-cli', 'bundle', 'gemini.js');
+// O login pela conta Google (oauth-personal) foi desligado pelo Google para o Gemini CLI em contas pessoais
+// ("migre para o Antigravity"). O que funciona é uma chave de API do Google AI Studio (GEMINI_API_KEY).
+function geminiPronto() {
+  if (process.env.GEMINI_API_KEY) return true;
+  const env = lerTexto(path.join(os.homedir(), '.gemini', '.env')) || '';
+  return /^\s*GEMINI_API_KEY\s*=\s*\S+/m.test(env);
+}
+const _existe = { gemini: fs.existsSync(GEMINI_JS) };
+function comandoExiste(cmd) { // procura o executável no PATH (gemini.cmd no Windows)
+  if (_existe[cmd] !== undefined) return _existe[cmd];
+  const exts = process.platform === 'win32' ? ['.cmd', '.exe', ''] : [''];
+  return (_existe[cmd] = (process.env.PATH || '').split(path.delimiter).some((d) => exts.some((e) => fs.existsSync(path.join(d, cmd + e)))));
+}
+function estadoIA() {
+  const cfg = configIA();
+  return { ...cfg, disponiveis: { claude: comandoExiste('claude'), gemini: comandoExiste('gemini') }, geminiLogado: geminiPronto() };
+}
+function salvarIA({ motor, trocarSozinho }) {
+  const cfg = configIA();
+  if (motor !== undefined) {
+    if (!NOME_IA[motor]) throw new Error('IA desconhecida.');
+    if (motor === 'gemini' && !geminiPronto()) throw new Error('O Gemini ainda não tem a chave do Google AI Studio (GEMINI_API_KEY em ~/.gemini/.env).');
+    cfg.motor = motor;
+  }
+  if (trocarSozinho !== undefined) cfg.trocarSozinho = !!trocarSozinho;
+  gravarJSON(ARQ_IA, cfg);
+  return estadoIA();
+}
+
+// Gemini CLI (stream-json): init, message, tool_use, tool_result, error, result
+const FERRAMENTA_GEMINI = { read_file: 'Read', read_many_files: 'Read', write_file: 'Write', replace: 'Edit', run_shell_command: 'Bash', glob: 'Glob', grep_search: 'Grep', search_file_content: 'Grep', list_directory: 'Glob' };
+function lerEventoGemini(job, ev) {
+  if (ev.type === 'tool_use') {
+    const nome = ev.tool_name || ev.name; const p = ev.parameters || ev.args || {};
+    if (['update_topic', 'write_todos'].includes(nome)) return; // eventos internos do Gemini, não são ação
+    const texto = nome === 'google_web_search' ? `Pesquisando na web: ${String(p.query || '').slice(0, 60)}` : nome === 'web_fetch' ? 'Lendo uma página da web'
+      : FERRAMENTA_GEMINI[nome] ? descreverFerramenta(FERRAMENTA_GEMINI[nome], { file_path: p.file_path || p.absolute_path || p.path, command: p.command || '' }) : nome;
+    job.atividade.push({ em: agora(), texto }); job.atividade = job.atividade.slice(-12);
+  } else if (ev.type === 'message' && ev.role === 'assistant' && typeof ev.content === 'string') {
+    job._texto = ev.delta ? (job._texto || '') + ev.content : ev.content;
+    if (job._texto.trim()) job.resumo = job._texto.trim().slice(-600);
+  } else if (ev.type === 'message' && ev.role === 'user') {
+    job._texto = ''; // começa uma nova resposta
+  } else if (ev.type === 'error') {
+    job.log = (job.log + `\n${ev.message || JSON.stringify(ev)}`).slice(-8000);
+  } else if (ev.type === 'result') {
+    const s = ev.stats || {};
+    job.uso = { custoUSD: 0, turnos: s.tool_calls ?? null, segundos: Math.round((s.duration_ms || 0) / 1000),
+      tokensEntrada: s.input_tokens ?? s.input ?? 0, tokensSaida: s.output_tokens ?? s.output ?? 0 };
+    if (ev.status && ev.status !== 'success') { job.log = (job.log + `\n${JSON.stringify(ev.error || ev.status)}`).slice(-8000); job.resumo = String(ev.error?.message || ev.status).slice(0, 600); }
+  }
+}
 function lerEventoIA(job, linha) {
   let ev; try { ev = JSON.parse(linha); } catch { return; }
+  if (job.motorIA === 'gemini') return lerEventoGemini(job, ev);
   if (ev.type === 'assistant') {
     for (const c of ev.message?.content || []) {
       if (c.type === 'tool_use') job.atividade.push({ em: agora(), texto: descreverFerramenta(c.name, c.input) });
@@ -200,7 +291,7 @@ function fase(job) { // o que está acontecendo agora, em palavras
   if (job.nomes?.[job.passo]) return job.nomes[job.passo];
   if (job.tipo === 'previa') return 'Renderizando a prévia';
   if (job.tipo === 'quadros') return job.passo === 0 ? 'Validando o storyboard' : 'Gerando os quadros das cenas';
-  if (job.tipo === 'ia') return job.atividade.at(-1)?.texto || 'A IA está começando';
+  if (job.tipo === 'ia') return `${NOME_IA[job.motorIA] || 'IA'} · ${job.atividade.at(-1)?.texto || 'começando'}`;
   return job.tipo;
 }
 function situacao(job) { // progresso 0–1, segundos restantes, fase
@@ -354,13 +445,12 @@ const ACOES = {
     return job;
   },
   ia(v) {
-    // Chama o Claude Code em modo não interativo com a skill /video (usa a assinatura do criador).
+    // Chama a IA escolhida (Claude Code ou Gemini CLI) em modo não interativo com a skill /video (usa a assinatura do criador).
     const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'WebSearch', 'WebFetch',
       'Bash(node pipeline/cenas.mjs validar:*)',
       'Bash(node Kit_Video_3d/tools/validar.mjs:*)', 'Bash(node Kit_Video_3d/tools/render.mjs:*)',
       'Bash(node Kit_Video_3d/tools/novo-projeto.mjs:*)', 'Bash(node apps/render/render2d.mjs:*)'];
-    const job = rodar(v, 'ia', [['claude', ['-p', `/video ${v.id}`, '--output-format', 'stream-json', '--verbose',
-      '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]]],
+    const job = rodarIA(v, 'video', v.id, permitidas,
     (ok, j) => {
       const a = lerVideo(v.id);
       if (j.uso) (a.usoIA ||= []).push({ em: agora(), etapa: a.etapa, ...j.uso });
@@ -496,11 +586,11 @@ function pedirIdeias({ tema, duracao, estilo }) {
   const id = `${agora().slice(0, 19).replace(/[:T]/g, '-')}`;
   gravarJSON(path.join(IDEIAS, `${id}.json`), { id, tema: String(tema || '').trim(), duracao: Number(duracao) || 45, estilo: estilo || '3d-cidade', estado: 'ia_trabalhando', ideias: [], criadoEm: agora() });
   const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'WebSearch', 'WebFetch'];
-  rodar({ id: `ideias-${id}`, pasta: 'ideias', logDir: IDEIAS }, 'ia', [['claude', ['-p', `/ideias ${id}`, '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]]],
+  rodarIA({ id: `ideias-${id}`, pasta: 'ideias', logDir: IDEIAS }, 'ideias', id, permitidas,
     (ok, j) => {
       const arq = path.join(IDEIAS, `${id}.json`); const d = lerJSON(arq) || {};
       if (j.uso) d.usoIA = j.uso;
-      if (!d.ideias?.length) { d.estado = 'erro'; d.erro = ok ? 'A IA terminou sem entregar as ideias.' : 'A IA falhou.'; } else d.estado = 'pronto';
+      if (!d.ideias?.length) { d.estado = 'erro'; d.erro = ok ? 'A IA terminou sem entregar as ideias.' : j.erroPlano || 'A IA falhou.'; } else d.estado = 'pronto';
       gravarJSON(arq, d);
     }, 'ia-ideias', 1);
   return ultimasIdeias();
@@ -552,13 +642,13 @@ const jobPedido = (id) => ({ id: `bib-${id}`, pasta: path.relative(RAIZ, dirPedi
 function iaBiblioteca(id) {
   const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'Bash(node pipeline/biblioteca.mjs validar:*)', 'Bash(npx tsc --noEmit -p apps/render:*)'];
   salvarPedido(id, { estado: 'ia_trabalhando' });
-  return rodar(jobPedido(id), 'ia', [['claude', ['-p', `/biblioteca ${id}`, '--output-format', 'stream-json', '--verbose', '--permission-mode', 'acceptEdits', '--allowedTools', ...permitidas]]],
+  return rodarIA(jobPedido(id), 'biblioteca', id, permitidas,
     (ok, j) => {
       const p = lerJSON(path.join(dirPedido(id), 'pedido.json'));
       if (j.uso) (p.usoIA ||= []).push({ em: agora(), ...j.uso });
       gravarJSON(path.join(dirPedido(id), 'pedido.json'), p);
       if (ok && p.estado === 'aguardando_escolha') opcoesBiblioteca(id);
-      else salvarPedido(id, { estado: ok ? 'erro' : 'erro', erro: ok ? 'A IA terminou sem entregar as opções.' : 'A IA falhou. Veja o log.' });
+      else salvarPedido(id, { estado: ok ? 'erro' : 'erro', erro: ok ? 'A IA terminou sem entregar as opções.' : j.erroPlano || 'A IA falhou. Veja o log.' });
     }, 'ia-biblioteca', 1);
 }
 function opcoesBiblioteca(id) {
@@ -803,6 +893,8 @@ const servidor = http.createServer(async (req, res) => {
       if (req.method === 'POST' && p === '/api/videos') return enviar(res, 200, novoVideo(await lerCorpo(req)));
       if (req.method === 'GET' && p === '/api/estilos') return enviar(res, 200, listarEstilos());
       if (req.method === 'GET' && p === '/api/biblioteca') return enviar(res, 200, listarBiblioteca());
+      if (req.method === 'GET' && p === '/api/ia') return enviar(res, 200, estadoIA());
+      if (req.method === 'POST' && p === '/api/ia') return enviar(res, 200, salvarIA(await lerCorpo(req)));
       if (req.method === 'GET' && p === '/api/vozes') return enviar(res, 200, await listarVozes());
       if (req.method === 'POST' && p === '/api/vozes/apresentar') return enviar(res, 200, await apresentarVozes(await lerCorpo(req)));
       if (req.method === 'POST' && p === '/api/motores/abrir') return enviar(res, 200, await abrirMotor((await lerCorpo(req)).motor));

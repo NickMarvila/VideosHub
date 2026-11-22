@@ -24,6 +24,61 @@ export type Outfit = {
    *  skin = bico, hair = topete, neck = pescoço, eye = íris, plump = largura do corpo, tuft = estilo do topete) */
   species?: "emu";
   neck?: string; eye?: string; plump?: number; tuft?: "flat" | "spiky" | "none";
+  /** VideosHub (medieval): hat "helm" (elmo com protetor de nariz) ou "helm_brim" (chapéu de ferro de aba), cor = cap;
+   *  spear = lança no lugar do fuzil; tabard/tabard2/tabardCut = túnica de duas cores sobre o casaco;
+   *  mail = textura de cota de malha no casaco (jacket = cor da malha) */
+  spear?: boolean; tabard?: string; tabard2?: string; tabardCut?: "cross" | "half" | "band"; mail?: boolean;
+  /** VideosHub (obra): hat "hardhat" = capacete de obra (cor = cap); vest = colete por cima do casaco, com
+   *  stripe = faixas refletivas; clipboard = prancheta na mão esquerda (de frente) ou na mão da frente (de lado) */
+  vest?: string; stripe?: string; clipboard?: boolean;
+};
+
+/** colete de obra (dentro do clip do tronco): colete por cima, gola em V mostrando a camisa e duas faixas refletivas */
+const vestDraw = (p: Pen, o: Outfit, tp: P2[], light: number, xV: number, y0: number, y1: number, Ta: number, HH: number, u: number) => {
+  p.gradFill(tp, o.vest!, mul(o.vest!, SH_CLOTH), light);
+  p.poly([[xV - 0.36 * Ta, y0 - 0.2 * HH], [xV + 0.36 * Ta, y0 - 0.2 * HH], [xV, y0 + 0.38 * HH]], mul(o.jacket, [0.95, 0.95, 0.95]), 1.6 * u);
+  const st = o.stripe ?? "#e8ecef", h = y1 - y0;
+  for (const k of [0.56, 0.8]) p.band([[xV - 3 * Ta, y0 + k * h], [xV + 3 * Ta, y0 + k * h]], st, 0.065 * HH, 1.2 * u);
+};
+
+/** prancheta: tábua, folha e presilha, segura pela mão em (hx, hy); thin = vista de lado */
+const clipboardDraw = (p: Pen, hx: number, hy: number, u: number, thin = false) => {
+  if (thin) { p.poly([[hx - 2.5 * u, hy - 30 * u], [hx + 2.5 * u, hy - 30 * u], [hx + 2.5 * u, hy + 8 * u], [hx - 2.5 * u, hy + 8 * u]], "#a8743f", 1.8 * u); p.dot(hx, hy, 5.5 * u); return; }
+  const x0 = hx - 15 * u, x1 = hx + 15 * u, y0 = hy - 34 * u, y1 = hy + 8 * u;
+  p.poly([[x0, y0], [x1, y0], [x1, y1], [x0, y1]], "#a8743f", 2 * u);
+  p.poly([[x0 + 4 * u, y0 + 6 * u], [x1 - 4 * u, y0 + 6 * u], [x1 - 4 * u, y1 - 4 * u], [x0 + 4 * u, y1 - 4 * u]], "#f4f1ea", 1.2 * u);
+  for (let i = 0; i < 4; i++) p.stroke([[x0 + 8 * u, y0 + (13 + i * 6) * u], [x1 - (8 + (i % 2) * 5) * u, y0 + (13 + i * 6) * u]], 1.1 * u, "#8d949c");
+  p.poly([[hx - 7 * u, y0 - 3 * u], [hx + 7 * u, y0 - 3 * u], [hx + 6 * u, y0 + 6 * u], [hx - 6 * u, y0 + 6 * u]], "#9aa3ad", 1.4 * u);
+  p.dot(hx, hy, 5.5 * u);
+};
+
+/** lança: haste de madeira de A (pé) até B, com ponta de ferro em folha */
+const spearDraw = (p: Pen, A: P2, B: P2, u: number) => {
+  const dx = B[0] - A[0], dy = B[1] - A[1], L = Math.hypot(dx, dy), d: P2 = [dx / L, dy / L], n: P2 = [-d[1], d[0]];
+  p.band([A, B], "#8a5a34", 4.2 * u, 1.4 * u, "round");
+  const at = (k: number, w: number): P2 => [B[0] + d[0] * k * u + n[0] * w * u, B[1] + d[1] * k * u + n[1] * w * u];
+  p.poly([at(-2, -3), at(10, -7.5), at(34, 0), at(10, 7.5), at(-2, 3)], "#c9ccd2", 1.8 * u);
+  p.stroke([at(0, 0), at(28, 0)], 1.1 * u);
+  p.band([at(-8, 0), at(-1, 0)], "#5a3b26", 6.5 * u, 1.2 * u); // alvado
+};
+
+/** túnica de duas cores (dentro do clip do tronco): painel central e o recorte (cruz, meio a meio ou faixa) */
+const tabardDraw = (p: Pen, o: Outfit, tcx: number, Ta: number, y0: number, y1: number, u: number) => {
+  const c1 = o.tabard!, c2 = o.tabard2 ?? "#f1efe6", x0 = tcx - 0.7 * Ta, x1 = tcx + 0.7 * Ta;
+  const rect = (a: number, b: number, c: number, d: number, col: string) => p.poly([[a, b], [c, b], [c, d], [a, d]], col, 0);
+  rect(x0, y0, x1, y1, c1);
+  const cut = o.tabardCut ?? "cross", h = y1 - y0;
+  if (cut === "half") rect(tcx, y0, x1, y1, c2);
+  else if (cut === "band") rect(x0, y0 + 0.36 * h, x1, y0 + 0.56 * h, c2);
+  else { rect(tcx - 7 * u, y0, tcx + 7 * u, y1, c2); rect(x0, y0 + 0.3 * h, x1, y0 + 0.3 * h + 14 * u, c2); }
+  p.stroke([[x0, y0], [x0, y1]], 2 * u); p.stroke([[x1, y0], [x1, y1]], 2 * u);
+};
+
+/** aros da cota de malha (dentro de um clip) */
+const mailDraw = (p: Pen, col: string, x0: number, x1: number, y0: number, y1: number, u: number) => {
+  const c = shade(col, 0.72);
+  for (let r = 0, y = y0; y < y1; r++, y += 9 * u)
+    for (let x = x0 + (r % 2) * 5 * u; x < x1; x += 10 * u) p.arc(x, y, 4 * u, 3 * u, 20, 160, 1.3 * u, c);
 };
 type P2 = [number, number];
 
@@ -384,8 +439,8 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
       const [tx, ty] = R([[cx, yb - ht - 6 * u]])[0];
       p.ell(tx, ty, 7 * u, 7 * u, "#2b7a4b", 2.5 * u); // green tuft
     }
-  } else if (o.hat === "cap" || o.hat === "hair") {
-    const cut = crown + (o.hat === "cap" ? 0.3 : 0.42) * HH;
+  } else if (o.hat === "cap" || o.hat === "hair" || o.hat === "hardhat") {
+    const cut = crown + (o.hat === "cap" ? 0.3 : o.hat === "hardhat" ? 0.34 : 0.42) * HH;
     const keep = (x: number, y: number) => y < cut || (side && o.hat === "hair" && x < cx - 6 * u && y < hc + 0.42 * H.b);
     // start the arc at the first kept point after a dropped one, so the kept run is contiguous and the cut closes it
     const n = hp.length, startIdx = Math.max(0, hp.findIndex(([x, y], i) => keep(x, y) && !keep(hp[(i + n - 1) % n][0], hp[(i + n - 1) % n][1])));
@@ -396,9 +451,18 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
       const [x0, y0] = arc[arc.length - 1], [x1, y1] = arc[0];
       for (let i = 1; i < 6; i++) arc.push([x0 + ((x1 - x0) * i) / 6, y0 + ((y1 - y0) * i) / 6 + (i % 2 ? 4 * u : 0)]);
     }
-    const col = o.hat === "cap" ? o.cap! : o.hair!;
+    const col = o.hat === "hair" ? o.hair! : o.cap ?? "#f2c230";
     p.shadedFill(arc, col, mul(col, SH_FELT), light, H.a, 0.35);
+    if (o.hat === "hardhat") { // capacete de obra: friso central e aba em volta
+      const [rx, ry] = R([[cx + (side ? 4 * u : 0), crown]])[0], [qx, qy] = R([[cx + (side ? 4 * u : 0), cut]])[0];
+      p.clip(arc, () => p.band([[rx, ry - 4 * u], [qx, qy]], shade(col, 0.86), 9 * u, 1.2 * u));
+    }
     p.poly(arc, null, ow);
+    if (o.hat === "hardhat") {
+      const deg = (a * 180) / Math.PI, br = shade(col, 0.88);
+      if (side) p.poly(R([[cx - 52 * u, cut - 1 * u], [cx + 62 * u, cut + 1 * u], [cx + 60 * u, cut + 8 * u], [cx - 52 * u, cut + 6 * u]]), br, ow);
+      else { const [px, py] = R([[cx, cut + 1.5 * u]])[0]; p.ell(px, py, 58 * u, 0.055 * HH, br, ow, 0, 360, deg); }
+    }
     if (o.hat === "hair") {
       const s = side ? -1 : facing || 1;
       p.stroke([[cx + s * 10 * u, cut - 30 * u], [cx + s * 2 * u, cut - 12 * u]], 1.2 * u);
@@ -434,6 +498,27 @@ const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, lig
     p.poly(flap, shade(col, 0.95), ow);
     const [fx, fy] = R([[cx + s * 0.47 * W, yb - 0.15 * HH]])[0];
     p.ell(fx, fy, 4.5 * u, 4.5 * u, "#d9b24a", 1.5 * u); // badge on the pinned side
+  } else if (o.hat === "helm" || o.hat === "helm_brim") {
+    // elmo de ferro: cúpula que cobre o alto da cabeça (helm = com protetor de nariz; helm_brim = chapéu de ferro de aba)
+    const col = o.cap ?? "#9aa3ad", deg = (a * 180) / Math.PI, yb = crown + 0.34 * HH, wb = 0.54 * W, ht = 0.41 * HH;
+    if (o.hat === "helm_brim") {
+      const [bx, by] = R([[cx, yb + 1 * u]])[0];
+      p.ell(bx, by, 0.7 * W, 0.08 * HH, shade(col, 0.84), ow, 0, 360, deg);
+    }
+    const dome: P2[] = [];
+    for (let i = 0; i <= 18; i++) { const t = Math.PI - (i / 18) * Math.PI; dome.push([cx + wb * Math.cos(t), yb - ht * Math.pow(Math.sin(t), 0.55)]); }
+    const body = R([...sag(yb, wb).reverse(), ...dome]);
+    p.shadedFill(body, col, mul(col, SH_FELT), light, wb, 0.4);
+    p.clip(body, () => {
+      p.band(R([[cx - wb - 4 * u, yb - 0.04 * HH], [cx + wb + 4 * u, yb - 0.04 * HH]]), shade(col, 0.78), 0.08 * HH, 0.8 * u);
+      if (!side) p.stroke(R([[cx, yb - ht + 2 * u], [cx, yb - 0.1 * HH]]), 2.2 * u, shade(col, 0.7)); // aresta da cúpula
+      for (const k of [-0.75, -0.25, 0.25, 0.75]) { const [rx, ry] = R([[cx + k * wb, yb - 0.04 * HH]])[0]; p.dot(rx, ry, 2 * u, shade(col, 0.55)); } // rebites
+    });
+    p.poly(body, null, ow);
+    if (o.hat === "helm") {
+      const nx = side ? cx + 0.4 * W : cx + 2 * u * facing;
+      p.poly(R([[nx - 5 * u, yb - 2 * u], [nx + 5 * u, yb - 2 * u], [nx + 4 * u, yb + 0.2 * HH], [nx - 4 * u, yb + 0.2 * HH]]), col, 2 * u);
+    }
   } else if (o.hat === "bonnet") {
     const [bx, by] = R([[cx + (side ? 6 * u : 0), crown + 0.16 * HH]])[0];
     p.arc(bx, by, 0.5 * W, 0.2 * HH, 200, 340, 7 * u, BONNET_BRIM);
@@ -644,7 +729,7 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   const sw = mode === "march" || mode === "stroll" ? Math.sin(two * phase) : 0;
   // rifle at the order: butt by the right hip, held by the hanging right hand, muzzle past the crown
   const R0: P2 = [300 + 47 * u, torsoBot + 0.12 * HH], R1: P2 = [300 + 64 * u, crown - 0.32 * HH];
-  const rifle = !!o.rifle && (mode === "march" || mode === "stand" || mode === "stroll");
+  const rifle = (!!o.rifle || !!o.spear) && (mode === "march" || mode === "stand" || mode === "stroll");
   type Arm = { pts: [P2, P2, P2]; front: boolean };
   const arms: Arm[] = [];
   if (mode === "sit") for (const side of [-1, 1]) arms.push({ pts: [sh(side), [tcx + side * (1.1 * T.a + 6 * u), sh(side)[1] + 0.4 * HH], [tcx + side * (1.2 * T.a + 10 * u), torsoBot + 0.04 * HH]], front: false });
@@ -686,7 +771,8 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
   }
   const drawArm = (a: Arm) => { p.stroke(curve(a.pts[0], a.pts[1], a.pts[2]), 5.2 * u, armCol); p.dot(a.pts[2][0], a.pts[2][1], 5.5 * u); };
   // behind the body: rifle, sword, arms
-  if (rifle) {
+  if (rifle && o.spear) spearDraw(p, [R0[0], R0[1] + 0.3 * HH], lerp2(R0, R1, 1.45), u);
+  else if (rifle) {
     p.band([R0, R1], "#7a4b2a", 5 * u, 1.5 * u, "round");
     p.band([lerp2(R0, R1, 0.6), R1], "#8d949c", 2.4 * u, 1.2 * u, "round");
   }
@@ -706,15 +792,29 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
     p.gradFill(sp, o.jacket, mul(o.jacket, SH_CLOTH), light);
     p.inkRing(sp, ow * 0.9, thick);
   } else {
+    if (o.tabard && mode !== "sit") { // aba da túnica caindo sobre as coxas
+      const x0 = tcx - 0.62 * T.a, x1 = tcx + 0.62 * T.a, y0 = torsoBot - 0.1 * HH, y1 = torsoBot + 0.42 * HH;
+      const sk: P2[] = [[x0, y0], [x1, y0], [x1 + 4 * u, y1], [x0 - 4 * u, y1]];
+      p.poly(sk, mul(o.tabard, SH_CLOTH), 0);
+      if ((o.tabardCut ?? "cross") !== "band") p.clip(sk, () => {
+        const c2 = mul(o.tabard2 ?? "#f1efe6", SH_CLOTH);
+        if (o.tabardCut === "half") p.poly([[tcx, y0], [x1 + 6 * u, y0], [x1 + 6 * u, y1], [tcx, y1]], c2, 0);
+        else p.poly([[tcx - 7 * u, y0], [tcx + 7 * u, y0], [tcx + 7 * u, y1], [tcx - 7 * u, y1]], c2, 0);
+      });
+      p.poly(sk, null, ow * 0.8);
+    }
     p.gradFill(tp, o.jacket, mul(o.jacket, SH_CLOTH), light);
     p.clip(tp, () => {
+      if (o.mail) mailDraw(p, o.jacket, tcx - 1.2 * T.a, tcx + 1.2 * T.a, chin - 0.1 * HH, torsoBot, u);
+      if (o.tabard) tabardDraw(p, o, tcx, T.a, chin + 0.08 * HH, torsoBot + 0.1 * HH, u);
+      if (o.vest) vestDraw(p, o, tp, light, tcx, chin, torsoBot, T.a, HH, u);
       if (o.belt) {
         for (const s of [-1, 1]) p.band([[tcx - s * 0.75 * T.a, chin - 0.05 * HH], [tcx + s * 0.8 * T.a, torsoBot - 0.1 * HH]], o.belt!, 5.5 * u, 1.8 * u);
         const xc = tcx + 0.025 * T.a, yc = chin - 0.05 * HH + (torsoBot - 0.1 * HH - (chin - 0.05 * HH)) * (0.75 / 1.55);
         p.poly([[xc - 3.5 * u, yc - 3.5 * u], [xc + 3.5 * u, yc - 3.5 * u], [xc + 3.5 * u, yc + 3.5 * u], [xc - 3.5 * u, yc + 3.5 * u]], "#d9dde0", 1.5 * u);
       }
       if (o.sash) p.band([[tcx - 1.3 * T.a, torsoBot - 0.32 * HH], [tcx + 1.3 * T.a, torsoBot - 0.32 * HH]], o.sash, 0.13 * HH, 1.8 * u);
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < (o.tabard || o.vest ? 0 : 4); i++) {
         const y = chin + 0.12 * HH + i * 0.2 * HH;
         if (o.sash && Math.abs(y - (torsoBot - 0.32 * HH)) < 0.08 * HH) continue;
         p.dot(tcx + 2 * u * facing, y, 2.2 * u + 0.8 * u, INK); p.dot(tcx + 2 * u * facing, y, 2.2 * u, o.buttons ?? shade(o.jacket, 0.7));
@@ -744,6 +844,9 @@ export const bodyFront = (p: Pen, o: Outfit, opts: FrontOpts) => {
     p.poly([[hx - 14 * u, hy + 3 * u], [hx + 14 * u, hy + 3 * u], [hx + 16 * u, hy + 30 * u], [hx - 16 * u, hy + 30 * u]], "#3a3d47", 2.2 * u);
     p.ell(hx, hy + 31 * u, 3.5 * u, 3.5 * u, "#2b7a4b", 1.5 * u);
     p.dot(hx, hy, 5.5 * u);
+  } else if (o.clipboard && mode !== "fall" && arms[0] && !["comemora", "maos_cabeca", "abre", "maos_cintura"].includes(opts.pose ?? "")) {
+    const [hx, hy] = arms[0].pts[2]; // prancheta na mão esquerda
+    clipboardDraw(p, hx, hy, u);
   }
   // ---- head: rotates with the body, plus its own tilt about the chin ----
   const Ah = A + headTilt, [cpx, cpy] = rotAbout([300, chin], rad(A), [300, hipY]);
@@ -839,7 +942,7 @@ export const bodySide = (p: Pen, o: Outfit, opts: SideOpts) => {
     const e: P2 = [S[0] + Math.sin(ang) * aLen * 0.5, S[1] + Math.cos(ang) * aLen * 0.5], a2 = ang + rad(16) * Math.sign(ang || 1);
     return [S, e, [e[0] + Math.sin(a2) * aLen * 0.5, e[1] + Math.cos(a2) * aLen * 0.5]];
   };
-  const rifle = !!o.rifle && (mode === "march" || mode === "stand");
+  const rifle = (!!o.rifle || !!o.spear) && (mode === "march" || mode === "stand");
   const B0: P2 = [tcx + 0.72 * T.a, chin + 0.58 * HH], B1: P2 = [tcx - 0.95 * T.a - 22 * u, crown - 0.4 * HH];
   let near: [P2, P2, P2], far: [P2, P2, P2] | null;
   if (mode === "swing") { near = [S, [S[0] + 12 * u, S[1] - 0.16 * HH], [300 + 6 * u, chin - 0.3 * HH]]; far = [S, [S[0] + 8 * u, S[1] - 0.18 * HH], [300 + 2 * u, chin - 0.36 * HH]]; }
@@ -859,16 +962,21 @@ export const bodySide = (p: Pen, o: Outfit, opts: SideOpts) => {
   if (far) { p.stroke(curve(far[0], far[1], far[2]), 5.2 * u, farArm); p.dot(far[2][0], far[2][1], 5.5 * u); }
   p.gradFill(tp, o.jacket, mul(o.jacket, SH_CLOTH), light);
   p.clip(tp, () => {
+    if (o.mail) mailDraw(p, o.jacket, tcx - 1.2 * T.a, tcx + 1.2 * T.a, chin - 0.1 * HH, torsoBot, u);
+    if (o.tabard) tabardDraw(p, o, tcx + 0.1 * T.a, T.a, chin + 0.08 * HH, torsoBot + 0.1 * HH, u);
+    if (o.vest) vestDraw(p, o, tp, light, tcx + 0.85 * T.a, chin, torsoBot, T.a, HH, u);
     if (o.belt) p.band([[tcx - 0.65 * T.a, chin - 0.05 * HH], [tcx + 0.75 * T.a, torsoBot - 0.1 * HH]], o.belt!, 5.5 * u, 1.8 * u);
     if (o.sash) p.band([[tcx - 1.3 * T.a, torsoBot - 0.32 * HH], [tcx + 1.3 * T.a, torsoBot - 0.32 * HH]], o.sash, 0.13 * HH, 1.8 * u);
-    if (!o.dress) for (let i = 0; i < 3; i++) { const y = chin + 0.16 * HH + i * 0.24 * HH; p.dot(tcx + 0.8 * T.a, y, 3 * u, INK); p.dot(tcx + 0.8 * T.a, y, 2.2 * u, o.buttons ?? shade(o.jacket, 0.7)); }
+    if (!o.dress && !o.tabard && !o.vest) for (let i = 0; i < 3; i++) { const y = chin + 0.16 * HH + i * 0.24 * HH; p.dot(tcx + 0.8 * T.a, y, 3 * u, INK); p.dot(tcx + 0.8 * T.a, y, 2.2 * u, o.buttons ?? shade(o.jacket, 0.7)); }
   });
   p.inkRing(tp, ow, thick);
-  if (rifle) {
+  if (rifle && o.spear) spearDraw(p, lerp2(B1, B0, 1.5), lerp2(B0, B1, 1.25), u);
+  else if (rifle) {
     p.band([B0, B1], "#7a4b2a", 5 * u, 1.5 * u, "round");
     p.band([lerp2(B0, B1, 0.6), B1], "#8d949c", 2.4 * u, 1.2 * u, "round");
   }
   p.stroke(curve(near[0], near[1], near[2]), 5.2 * u, armCol); p.dot(near[2][0], near[2][1], 5.5 * u);
+  if (o.clipboard && (mode === "march" || mode === "stand") && !rifle) clipboardDraw(p, near[2][0], near[2][1], u, true);
   // ---- head ----
   const hx = 300 + 4 * u;
   hatBehind(p, o, H, hx, hc, light, thick, ow, true);
