@@ -1,0 +1,46 @@
+{
+  "id": "2026-11-23-robo-da-ia",
+  "tipo": "personagem",
+  "nome": "robô da IA",
+  "slug": "robo_da_ia",
+  "descricao": "Robozinho simpático branco e azul, cabeça redonda com tela de olhos, óculos de leitura, segurando uma folha, ~1 m",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: casco branco, pernas e painel azuis, tela marinho com olhos ciano, antena de bolinha, óculos redondos de tartaruga"
+    },
+    {
+      "n": 2,
+      "descricao": "Invertido e mais magrinho: casco azul, braços e pernas brancos, tela preta, antena dupla, óculos meia-lua dourados"
+    },
+    {
+      "n": 3,
+      "descricao": "Gordinho sem antena: casco branco puro, juntas grafite, orelhas azul-turquesa, óculos quadrados pretos"
+    }
+  ],
+  "recomendada": 1,
+  "extensaoRig": "Personagem.tsx: especie \"robo\" (cabeça redonda com tela de olhos, tronco de casco, antena bola/dupla/nenhuma, largura por corpo), campo opcional oculos {cor, forma: redondo|meia_lua|quadrado} (também no humano) e segura \"folha\" (folha de papel). No 3D não há robô: é o preset crianca (~1 m) careca de pele branca, cabeça grande, óculos e prancheta no lugar da folha.",
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:39:50.032Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:42:00.799Z",
+      "custoUSD": 0.9683314000000002,
+      "turnos": 31,
+      "segundos": 127,
+      "tokensEntrada": 986503,
+      "tokensSaida": 13791,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:44:56.652Z"
+}

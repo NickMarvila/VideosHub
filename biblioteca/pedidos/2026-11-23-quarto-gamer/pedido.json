@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-23-quarto-gamer",
+  "tipo": "cenario",
+  "nome": "quarto gamer",
+  "slug": "quarto_gamer",
+  "descricao": "Quarto escuro com mesa, cadeira gamer, luz neon roxa e azul nas paredes e pôsteres sem texto",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Parede roxa-escura, faixa neon roxa no alto e azul no rodapé, mesa com 2 monitores e gabinete RGB à esquerda, 3 pôsteres"
+    },
+    {
+      "n": 2,
+      "descricao": "Tons azul-noite, janela com cidade, painéis hexagonais neon, faixa roxa diagonal, mesa branca e cadeira azul à direita"
+    },
+    {
+      "n": 3,
+      "descricao": "Quarto em perspectiva com tubos neon roxo e azul nas quinas, mesa em L com 3 monitores, cadeira rosa e pufe"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:39:50.118Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:41:39.032Z",
+      "custoUSD": 0.5774989999999999,
+      "turnos": 18,
+      "segundos": 105,
+      "tokensEntrada": 521290,
+      "tokensSaida": 11665,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:43:39.493Z"
+}

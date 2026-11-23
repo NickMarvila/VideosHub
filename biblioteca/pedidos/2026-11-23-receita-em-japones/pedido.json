@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-23-receita-em-japones",
+  "tipo": "objeto",
+  "nome": "receita em japonês",
+  "slug": "receita_em_japones",
+  "descricao": "Folha de receita aberta com letras japonesas e desenho de bolo, cantos dobrados, ~0,4 m",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Folha creme com ケーキ no título, letras em colunas verticais, bolo de morango e dois cantos dobrados, num suporte de madeira"
+    },
+    {
+      "n": 2,
+      "descricao": "Papel antigo amarelado, título numa faixa marrom, bolo de chocolate, texto em linhas e carimbo vermelho, num prendedor de metal"
+    },
+    {
+      "n": 3,
+      "descricao": "Folha de caderno azul pautada, fatia de bolo de matcha, título verde e um canto dobrado, numa prancheta inclinada"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:39:50.016Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:45:48.321Z",
+      "custoUSD": 1.6145132000000002,
+      "turnos": 29,
+      "segundos": 353,
+      "tokensEntrada": 1433749,
+      "tokensSaida": 38106,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:46:13.078Z"
+}

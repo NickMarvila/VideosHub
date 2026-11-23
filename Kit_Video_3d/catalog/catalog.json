@@ -2494,6 +2494,44 @@
       "stages": null
     },
     {
+      "id": "console_de_videogame",
+      "category": "objetos",
+      "label": "Console de videogame",
+      "description": "Console genérico preto em pé, sem marca: torre fina de 0,13 × 0,40 × 0,32 m sobre pezinho, faixa de luz verde vertical na frente e controle preto deitado no chão ao lado (+X). Frente para +Z.",
+      "sizeM": {
+        "x": 0.5,
+        "y": 0.4,
+        "z": 0.3
+      },
+      "meshes": 15,
+      "params": {
+        "color": {
+          "default": "#1d1f24",
+          "description": "cor do corpo"
+        },
+        "trim": {
+          "default": "#33363d",
+          "description": "cor do pé, frisos e controle"
+        },
+        "light": {
+          "default": "#39e86b",
+          "description": "cor da luz da frente"
+        },
+        "controle": {
+          "default": true,
+          "description": "mostra o controle ao lado"
+        }
+      },
+      "variants": [
+        "branco",
+        "semControle"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
       "id": "esponja_molhada",
       "category": "objetos",
       "label": "Esponja molhada",
@@ -2559,6 +2597,86 @@
       "variants": [
         "verde",
         "enferrujada"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "pasta_de_arquivos_gigante",
+      "category": "objetos",
+      "label": "Pasta de arquivos gigante",
+      "description": "Pasta amarela de computador, enorme e estufada de papéis, com etiqueta branca \"209 GB\" na frente. 1,5 × 1,2 × 0,5 m.",
+      "sizeM": {
+        "x": 1.6,
+        "y": 1.2,
+        "z": 0.5
+      },
+      "meshes": 40,
+      "params": {
+        "color": {
+          "default": "#f2c94c",
+          "description": "cor da pasta"
+        },
+        "back": {
+          "default": "#dca52c",
+          "description": "cor da aba de trás"
+        },
+        "label": {
+          "default": "#ffffff",
+          "description": "cor da etiqueta"
+        }
+      },
+      "variants": [
+        "azul",
+        "vermelha"
+      ],
+      "setProgress": false,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "pc_gamer",
+      "category": "objetos",
+      "label": "PC gamer neon na mesa",
+      "description": "Setup gamer neon: mesa roxa escura 1,5 m × 0,75 m, gabinete à esquerda com 3 coolers (ciano, magenta, amarelo) e fita de luz, monitor largo de tela escura, teclado com teclas em arco-íris, mouse e fone no suporte. Frente para +Z.",
+      "sizeM": {
+        "x": 1.5,
+        "y": 1.3,
+        "z": 0.7
+      },
+      "meshes": 42,
+      "params": {
+        "mesa": {
+          "default": "#2b2340",
+          "description": "cor da mesa"
+        },
+        "gabinete": {
+          "default": "#18141f",
+          "description": "cor do gabinete e do monitor"
+        },
+        "luz1": {
+          "default": "#22e4ff",
+          "description": "luz do cooler de cima"
+        },
+        "luz2": {
+          "default": "#ff2fd0",
+          "description": "luz do cooler do meio"
+        },
+        "luz3": {
+          "default": "#ffd23d",
+          "description": "luz do cooler de baixo"
+        },
+        "tela": {
+          "default": "#0b0e14",
+          "description": "cor da tela (escura = desligada)"
+        }
+      },
+      "variants": [
+        "ligado",
+        "verde"
       ],
       "setProgress": false,
       "update": false,
@@ -2642,6 +2760,47 @@
         "mostarda"
       ],
       "setProgress": true,
+      "update": false,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "receita_em_japones",
+      "category": "objetos",
+      "label": "Receita em japonês",
+      "description": "Folha de receita creme com \"ケーキ\" no título, letras japonesas em colunas, desenho de bolo de morango e dois cantos dobrados, apoiada num suporte de madeira. 0,3 × 0,42 m.",
+      "sizeM": {
+        "x": 0.3,
+        "y": 0.4,
+        "z": 0.2
+      },
+      "meshes": 136,
+      "params": {
+        "paper": {
+          "default": "#fbf3e1",
+          "description": "cor do papel"
+        },
+        "fold": {
+          "default": "#e6d6b4",
+          "description": "cor dos cantos dobrados"
+        },
+        "ink": {
+          "default": "#3a3f47",
+          "description": "cor das letras"
+        },
+        "accent": {
+          "default": "#d9534f",
+          "description": "cor dos detalhes (sublinhado, bolinhas)"
+        },
+        "stand": {
+          "default": "#a9743f",
+          "description": "cor do suporte"
+        }
+      },
+      "variants": [
+        "azul"
+      ],
+      "setProgress": false,
       "update": false,
       "wheels": false,
       "stages": null
@@ -2759,6 +2918,39 @@
       ],
       "setProgress": true,
       "update": true,
+      "wheels": false,
+      "stages": null
+    },
+    {
+      "id": "virus",
+      "category": "objetos",
+      "label": "Vírus malvado",
+      "description": "Bichinho vírus verde-limão, redondo, com espinhos de haste e bolinha na ponta, sobrancelhas bravas e sorrisão malvado com dentes. Ø ~0,5 m com os espinhos, flutuando a 5 cm do chão, frente para +Z. setProgress(obj, 0..1) faz ele inflar e balançar (risada).",
+      "sizeM": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "meshes": 58,
+      "params": {
+        "color": {
+          "default": "#7ED957",
+          "description": "cor do corpo"
+        },
+        "spike": {
+          "default": "#4FA83D",
+          "description": "cor das hastes"
+        },
+        "tip": {
+          "default": "#C6F25E",
+          "description": "cor das pontas"
+        }
+      },
+      "variants": [
+        "toxico"
+      ],
+      "setProgress": true,
+      "update": false,
       "wheels": false,
       "stages": null
     }

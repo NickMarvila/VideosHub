@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-23-pc-gamer-2",
+  "tipo": "objeto",
+  "nome": "PC gamer",
+  "slug": "pc_gamer",
+  "descricao": "Gabinete de PC com luzes coloridas e monitor com teclado em cima de uma mesa, tela escura",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Setup neon: mesa roxa escura, gabinete à esquerda com 3 coolers (ciano, magenta, amarelo) e fitas de luz, monitor largo de tela escura, teclado arco-íris e fone no suporte"
+    },
+    {
+      "n": 2,
+      "descricao": "Setup vermelho agressivo: mesa grafite com pés de metal, gabinete com faixas diagonais de luz vermelha e laranja, monitor com moldura de luz, teclado vermelho e lata de energético"
+    },
+    {
+      "n": 3,
+      "descricao": "Setup colorido de quarto: mesa verde-azulada, gabinete cubo cinza-claro com um anel laranja grande, monitor com webcam, duas caixinhas de som e plantinha"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:57:54.043Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T17:00:21.321Z",
+      "custoUSD": 1.0615088,
+      "turnos": 25,
+      "segundos": 146,
+      "tokensEntrada": 976440,
+      "tokensSaida": 15551,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T17:00:58.587Z"
+}

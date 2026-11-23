@@ -1,0 +1,32 @@
+{
+  "aplicado": {
+    "gancho": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+    "porta": "E com um arquivo faltando."
+  },
+  "escolhido": 3,
+  "opcoes": [
+    {
+      "n": 1,
+      "receita": "G4 · Número que não cabe",
+      "gancho": "Vazaram duzentos e nove gigas do GTA seis.",
+      "porta": "Menos um arquivo.",
+      "porque": "o número gigante choca e o \"menos um arquivo\" abre o mistério que o vídeo todo paga",
+      "recomendado": true
+    },
+    {
+      "n": 2,
+      "receita": "G8 · Começar pelo fim",
+      "gancho": "No fim dessa história, o GTA seis vazou inteiro... e não liga.",
+      "porta": "",
+      "porque": "entrega o resultado absurdo e deixa o \"como\" e o \"por quê\" como isca"
+    },
+    {
+      "n": 3,
+      "receita": "G5 · Pergunta \"por quê\" com tensão",
+      "gancho": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+      "porta": "E com um arquivo faltando.",
+      "porque": "o contraste jogo mais protegido × vazou na hora prende quem ainda não viu a notícia"
+    }
+  ],
+  "escolhidoPor": "criador"
+}

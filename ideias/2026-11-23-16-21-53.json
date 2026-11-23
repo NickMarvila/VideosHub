@@ -1,0 +1,184 @@
+{
+  "id": "2026-11-23-16-21-53",
+  "tema": "Cyberleek acaba de vazar a build do gta",
+  "duracao": 45,
+  "estilo": "cartoon-3d",
+  "estado": "pronto",
+  "ideias": [
+    {
+      "n": 1,
+      "titulo": "O Vazamento Feito Com Um Controle de TV",
+      "gancho": "Um adolescente vazou o GTA seis. De um quarto de hotel.",
+      "virada": "O maior vazamento dos jogos saiu de um aparelhinho de ligar na TV.",
+      "porQueAnima": "o quarto de hotel com a TV ligada, a pilha de vídeos subindo num fórum, a polícia batendo na porta",
+      "fatoOuLenda": "fato documentado (vazamento de setembro de 2022; hacker do grupo Lapsus$, preso e condenado no Reino Unido em 2023; sem fazer piada do envolvido, só do aparelho)",
+      "fontes": [
+        "https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html",
+        "https://videogameschronicle.com/news/gta-6-hacker-sentenced-to-an-indefinite-hospital-order"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G3 · Fato absurdo seco",
+      "pensaComigo": "é como arrombar o cofre do banco usando o controle remoto do hotel: a ferramenta é boba, o estrago vem de a porta estar mal trancada"
+    },
+    {
+      "n": 2,
+      "titulo": "O Ladrão Convidado Para Uma Entrevista",
+      "gancho": "E se o ladrão do código do seu jogo fosse convidado para trabalhar com você?",
+      "virada": "Ele queria uma vaga. Ganhou dois anos de condicional.",
+      "porQueAnima": "o escritório da empresa sendo invadido pela tela, a armadilha do 'emprego' com um crachá falso, a algema no fim",
+      "fatoOuLenda": "fato documentado (Half-Life 2, 2003, Axel Gembe); os detalhes de como ele foi pego variam entre as fontes (relato disputado nesse ponto)",
+      "fontes": [
+        "https://kotaku.com/that-time-a-german-hacker-leaked-half-life-2s-source-co-1737015166",
+        "https://www.theregister.co.uk/2008/11/14/half_life_sting/",
+        "https://www.engadget.com/2011-02-21-retrospective-follows-the-2003-theft-of-half-life-2s-code.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G1 · E se… que virou real",
+      "pensaComigo": "é como pichar o muro da casa de alguém e depois mandar uma mensagem pedindo o telefone do pintor"
+    },
+    {
+      "n": 3,
+      "titulo": "Setecentos Mil Jogos Enterrados no Deserto",
+      "gancho": "Uma empresa enterrou cerca de setecentos mil jogos no deserto.",
+      "virada": "Trinta anos depois, o lixo virou peça de museu.",
+      "porQueAnima": "os caminhões despejando caixas, o concreto por cima, a escavação com a multidão olhando o primeiro cartucho aparecer",
+      "fatoOuLenda": "fato documentado (Atari, Alamogordo, 1983, escavado em 2014); o número exato varia, e a lenda dizia milhões",
+      "fontes": [
+        "https://news.xbox.com/en-us/2014/04/26/ent-atari-dig/",
+        "https://www.npr.org/sections/thetwo-way/2014/04/26/307178240/e-t-s-home-is-found-trove-of-atari-games-unearthed-at-landfill",
+        "https://archaeology.org/issues/online/collection/new-mexico-atari-dump-site-excavation/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G4 · Número que não cabe",
+      "pensaComigo": "é como uma padaria que faz mais pão do que a cidade come: o problema nunca foi o forno, foi quem ia comprar"
+    },
+    {
+      "n": 4,
+      "titulo": "O Minigame Que Tirou o GTA das Lojas",
+      "gancho": "Como um minigame desligado quase tirou o GTA das prateleiras?",
+      "virada": "Estava desativado. O problema era estar lá.",
+      "porQueAnima": "as caixas voltando em caminhões, o selo de classificação sendo trocado, a pilha de discos sendo trocada nas lojas",
+      "fatoOuLenda": "fato documentado (GTA San Andreas, 2005: classificação mudada para AO, depois restaurada; acordo com a FTC em 2006)",
+      "fontes": [
+        "https://www.esrb.org/blog/esrb-concludes-investigation-into-grand-theft-auto-san-andreas-revokes-m-mature-rating/",
+        "https://www.gamedeveloper.com/game-platforms/ftc-take-two-settle-over-i-gta-i-hot-coffee-mod",
+        "https://www.ftc.gov/node/41999"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G5 · Pergunta \"por quê\" com tensão",
+      "pensaComigo": "é como deixar uma porta trancada no fundo da loja: o cliente não entra, mas o fiscal vê a porta"
+    },
+    {
+      "n": 5,
+      "titulo": "O GTA Nasceu Para Você Ser Polícia",
+      "gancho": "O GTA não nasceu para você ser bandido. Era para ser polícia.",
+      "virada": "Ninguém no escritório queria ser o mocinho.",
+      "porQueAnima": "a perseguição de carros vista de cima, a equipe jogando e todo mundo escolhendo o ladrão, a placa do jogo sendo trocada",
+      "fatoOuLenda": "fato documentado (o jogo começou como Race'n'Chase na DMA Design; relatos dizem que os próprios devs preferiam o papel de criminoso)",
+      "fontes": [
+        "https://www.gamesradar.com/making-of-grand-theft-auto",
+        "https://www.timeextension.com/features/the-making-of-grand-theft-auto-the-start-of-the-370-million-selling-gta-franchise",
+        "https://www.engadget.com/2011/03/22/race-n-chase-original-gta-design-docs-posted/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G6 · Crença errada",
+      "pensaComigo": "é como abrir uma loja de bombeiro e perceber que todo mundo só quer a parte do fogo"
+    },
+    {
+      "n": 6,
+      "titulo": "Um Jogo Que Levou Mais de Uma Década",
+      "gancho": "E se um jogo demorasse mais de dez anos para sair?",
+      "virada": "A espera foi maior que o jogo.",
+      "porQueAnima": "o calendário caindo folha por folha, a equipe sendo trocada, o jogo finalmente chegando e a fila diminuindo",
+      "fatoOuLenda": "fato documentado (Duke Nukem Forever, 1997 a 2011; fontes contam entre treze e quinze anos)",
+      "fontes": [
+        "https://www.wikipedia.org/wiki/Duke_Nukem_Forever",
+        "https://kotaku.com/duke-nukem-forever-from-vaporware-to-software-5630028",
+        "https://www.usgamer.net/articles/gamings-greatest-flops-duke-nukem-forever-retrospective"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G1 · E se… que virou real",
+      "pensaComigo": "é como construir uma casa trocando a planta a cada ano: a obra nunca termina porque o sonho sempre cresce"
+    },
+    {
+      "n": 7,
+      "titulo": "Os Pokémon Que Quase Existiram",
+      "gancho": "E se você jogasse um Pokémon que nunca chegou às lojas?",
+      "virada": "A empresa guardou por vinte anos. A internet abriu em um dia.",
+      "porQueAnima": "monstrinhos esquisitos aparecendo e sumindo, o cartucho velho numa gaveta, a tela de teste piscando",
+      "fatoOuLenda": "fato documentado (builds de Pokémon Gold e Silver do Spaceworld apareceram em 2018 e 2020); parte do que se diz sobre os designs vem de especulação de fãs",
+      "fontes": [
+        "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Gold_and_Silver_Spaceworld_%2797_demo",
+        "https://tcrf.net/Proto:Pokémon_Gold_and_Silver",
+        "https://www.thegamer.com/pokemon-gold-silver-demo-leak-unused-designs-fan-theories-explained/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G2 · E se você…",
+      "pensaComigo": "é como achar o rascunho de um quadro famoso: os mesmos traços, mas com as orelhas no lugar errado"
+    },
+    {
+      "n": 8,
+      "titulo": "O Jogo Que Vazou Pela Placa de Vídeo",
+      "gancho": "Um jogo inteiro vazou por causa de uma placa de vídeo.",
+      "virada": "A culpa nunca foi provada. O jogo, ninguém conseguiu recolher.",
+      "porQueAnima": "a feira de jogos com o demo no palco, o arquivo saindo de uma máquina e se espalhando pelos computadores",
+      "fatoOuLenda": "relato disputado (Doom 3, alfa vazada em 2002; a suspeita sobre a fornecedora da placa nunca foi confirmada)",
+      "fontes": [
+        "https://doomwiki.org/wiki/Doom_3_alpha_version",
+        "https://www.gamestar.de/artikel/doom-3-hintergruende-zur-alpha,1340382.html",
+        "https://www.neowin.net/news/doom-iii-e3-alpha-leaked/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G9 · Comparação impossível",
+      "pensaComigo": "é como emprestar o caderno de rascunho para a vizinha: ela não leu tudo, mas a cópia já circulou no prédio"
+    },
+    {
+      "n": 9,
+      "titulo": "O Tales Que Não Guarda Segredo",
+      "gancho": "Esse é o Tales. Jura que guarda segredo.",
+      "virada": "A promoção era secreta. Agora tem fila até a Paratí.",
+      "porQueAnima": "o Tales cochichando na fila do caixa, o grupo de mensagens explodindo, a fila dobrando o quarteirão",
+      "fatoOuLenda": "ficção",
+      "fontes": [],
+      "personagens": [
+        "tales"
+      ],
+      "modo": "personagem",
+      "receita": "G7 · Contradição do personagem",
+      "pensaComigo": "é como furar o balde só um pouquinho: ele jura que é gota, mas a poça já está na porta do mercado"
+    },
+    {
+      "n": 10,
+      "titulo": "O Zeca e o Jogo Vazado Que Não Era",
+      "gancho": "No fim dessa história, o Zeca tá com o computador pedindo resgate.",
+      "virada": "Baixou de graça. Ia sair bem caro.",
+      "porQueAnima": "o Zeca vibrando com o 'arquivo secreto', a barra de download, a tela vermelha com a contagem regressiva",
+      "fatoOuLenda": "ficção (golpes de falso 'jogo vazado' com vírus são reais, mas o caso do Zeca é inventado)",
+      "fontes": [],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem",
+      "receita": "G8 · Começar pelo fim",
+      "pensaComigo": "é como aceitar uma marmita de graça de estranho na rua: a comida pode até estar ali, mas alguém quer algo em troca"
+    }
+  ],
+  "criadoEm": "2026-11-23T16:21:53.811Z",
+  "usoIA": {
+    "custoUSD": 0.37771,
+    "turnos": 15,
+    "segundos": 83,
+    "tokensEntrada": 273913,
+    "tokensSaida": 9325,
+    "motor": "claude",
+    "modelo": "sonnet"
+  }
+}

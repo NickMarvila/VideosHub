@@ -1,0 +1,55 @@
+{
+  "slug": "hacker_de_capuz",
+  "nome": "Hacker de Capuz",
+  "papel": "vazador anônimo",
+  "personalidade": "Silencioso e misterioso; nunca mostra o rosto, só os olhos ciano brilhando no escuro do capuz.",
+  "bordao": "",
+  "rig2d": {
+    "pele": "#C99A74",
+    "camisa": "#1C1E22",
+    "calca": "#2C3038",
+    "sapato": "#141518",
+    "olhos": "#3CF2FF",
+    "chapeu": {
+      "tipo": "nenhum",
+      "cor": "#000000"
+    },
+    "barba": false,
+    "bigode": false,
+    "detalhe": "nenhum",
+    "capuz": {
+      "cor": "#1C1E22",
+      "sombra": "#0B0C0F",
+      "cordao": "#D8DCE2",
+      "bolso": true
+    }
+  },
+  "kit3d": {
+    "preset": "homem",
+    "overrides": {
+      "skin": "#c99a74",
+      "top": {
+        "color": "#1c1e22",
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#2c3038",
+        "type": "pants"
+      },
+      "shoes": "#141518",
+      "hair": {
+        "style": "short",
+        "color": "#0b0c0f"
+      },
+      "hat": {
+        "type": "cap",
+        "color": "#1c1e22"
+      },
+      "face": {
+        "glasses": true
+      }
+    }
+  },
+  "criadoEm": "2026-11-23T16:44:06.439Z",
+  "pedido": "2026-11-23-hacker-de-capuz"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "2026-11-23-hacker-de-capuz-2",
+  "tipo": "personagem",
+  "nome": "hacker de capuz",
+  "slug": "hacker_encapuzado",
+  "descricao": "Figura anônima de moletom preto com capuz, rosto na sombra só com olhos brilhando, sem logos",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "recomendada": 1,
+  "observacao": "Slug 'hacker_de_capuz' já existe em personagens/ (publicação anterior falhou só na miniatura 3D), então as opções usam 'hacker_encapuzado'. Rig 2D já tinha o campo opcional 'capuz'; nada novo foi acrescentado. No 3D não há capuz no kit: boné + cabelo escuro aproximam a silhueta.",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Moletom preto com cordões claros e bolso canguru, olhos ciano; no 3D o rosto fica escurecido como sombra (a mais fiel)"
+    },
+    {
+      "n": 2,
+      "descricao": "Moletom grafite liso, jeans e tênis branco, olhos verdes de terminal, silhueta magra e óculos no 3D"
+    },
+    {
+      "n": 3,
+      "descricao": "Moletom preto com cordões e faixas vermelhas, calça cargo verde-oliva, olhos vermelhos, corpo mais largo"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:57:54.021Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:58:51.602Z",
+      "custoUSD": 0.6689676,
+      "turnos": 21,
+      "segundos": 56,
+      "tokensEntrada": 648252,
+      "tokensSaida": 5578,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:59:40.076Z"
+}

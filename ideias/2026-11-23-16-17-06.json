@@ -1,0 +1,192 @@
+{
+  "id": "2026-11-23-16-17-06",
+  "tema": "Cyber leek vazou hoje os arquivos do gta 6, executavel",
+  "duracao": 45,
+  "estilo": "cartoon-3d",
+  "estado": "pronto",
+  "ideias": [
+    {
+      "n": 1,
+      "titulo": "O Vazamento Sem o Executável do GTA",
+      "gancho": "Duzentos e nove gigas de GTA seis. Faltou só o executável.",
+      "virada": "Uma porta enorme, e o dono da chave pediu criptomoeda pra abrir.",
+      "porQueAnima": "o download enchendo a barra de gigas, o jogo todo em pastas e a tela preta sem o executável, a chave gigante sendo escondida atrás das costas do hacker",
+      "fatoOuLenda": "relato disputado: o grupo Cyberleek diz ter publicado em 19/11/2026 uma build de cerca de 209 GB sem o executável principal; a autenticidade não foi verificada de forma independente e a Rockstar não comentou",
+      "fontes": [
+        "https://www.videogameschronicle.com/news/cyberleek-claims-to-release-development-build-of-gta-6/",
+        "https://kotaku.com/cyberleek-is-threatening-to-unleash-chaos-again-after-tossing-an-alleged-xbox-build-of-gta-6-onto-the-internet-2000758544",
+        "https://notebookcheck.net/Cyberleek-releases-GTA-6-Xbox-build-making-playable-PC-port-more-realistic.1454770.0.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G4 · Número que não cabe",
+      "pensaComigo": "é como ganhar um carro novo sem a chave: está tudo na garagem, o motor, o banco, o volante, mas ele não anda"
+    },
+    {
+      "n": 2,
+      "titulo": "O Hacker da Fire Stick no Hotel",
+      "gancho": "Um adolescente invadiu a Rockstar com uma Fire Stick.",
+      "virada": "A polícia achou o aparelho ligado na televisão do hotel.",
+      "porQueAnima": "o quarto de hotel simples, a TV virando 'computador', a mensagem pipocando no chat da empresa, a polícia batendo na porta",
+      "fatoOuLenda": "fato documentado (vazamento de cerca de 90 vídeos do GTA 6 em 2022; o autor usou uma Fire Stick num hotel de Bicester, Reino Unido; sentença de internação hospitalar por prazo indeterminado em dezembro de 2023). Os veículos divergem se houve confissão ou decisão do júri, então não afirmar isso. Tratar o caso sem zombar da pessoa.",
+      "fontes": [
+        "https://engadget.com/gta-vi-hacker-leaked-footage-using-a-fire-tv-stick-in-a-budget-uk-hotel-room-121548381.html",
+        "https://www.nme.com/news/grand-theft-auto-6-hacker-attacked-rockstar-games-from-a-travelodge-hotel-3488118",
+        "https://www.theregister.com/2023/12/21/lapsus_teens_sentenced/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G3 · Fato absurdo seco",
+      "pensaComigo": "é como arrombar uma casa usando o controle remoto da sala: o que parece inofensivo também abre porta"
+    },
+    {
+      "n": 3,
+      "titulo": "O Experimento Que Derrubou a Internet",
+      "gancho": "E se um experimento escapasse e travasse a internet?",
+      "virada": "Ele só queria contar quantos computadores existiam. Contou demais.",
+      "porQueAnima": "o programinha se multiplicando de computador em computador, as máquinas ficando lentas e engasgando, o estudante olhando a tela em pânico",
+      "fatoOuLenda": "fato documentado (verme Morris, 1988, estudante da Cornell; regra de se copiar a cada sétima resposta 'já infectado' fez as máquinas serem reinfectadas várias vezes; primeira condenação pela lei americana de fraude computacional). O número 'dez por cento da internet' é estimativa de imprensa, dizer 'cerca de seis mil máquinas'.",
+      "fontes": [
+        "https://wikipedia.com/wiki/Morris_worm",
+        "https://www.pcgamer.com/remembering-the-morris-worm-the-first-internet-felony",
+        "https://www.tomshardware.com/tech-industry/cyber-security/on-this-day-in-1988-the-morris-worm-slithered-out-and-sparked-a-new-era-in-cybersecurity-10-percent-of-the-internet-was-infected-within-24-hours"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G1 · E se… que virou real",
+      "pensaComigo": "é como pedir pra um vizinho 'levanta a mão se você já ouviu o boato', só que ele faz mais cópias mesmo quando o vizinho responde 'sim'"
+    },
+    {
+      "n": 4,
+      "titulo": "O Dia Em Que Roubaram Half-Life Dois",
+      "gancho": "E se roubassem o seu jogo antes de ficar pronto?",
+      "virada": "O código foi parar na internet. O jogo só saiu mais de um ano depois.",
+      "porQueAnima": "o servidor sendo invadido à noite, o chefe acordando e vendo o código na internet, o aviso dele para a comunidade",
+      "fatoOuLenda": "fato documentado (Valve, setembro/outubro de 2003; o hacker alemão Axel Gembe obteve o código; Gabe Newell confirmou publicamente). Datas exatas variam por fonte, dizer 'em dois mil e três'.",
+      "fontes": [
+        "https://kotaku.com/that-time-a-german-hacker-leaked-half-life-2s-source-co-1737015166",
+        "https://www.engadget.com/2011-02-21-retrospective-follows-the-2003-theft-of-half-life-2s-code.html",
+        "https://www.gamesradar.com/half-life-2-hacker-still-remorseful-over-role-in-2003-leak"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G1 · E se… que virou real",
+      "pensaComigo": "é como alguém roubar o rascunho do seu livro e publicar capítulos soltos: o que vaza é a obra pela metade, sem o acabamento"
+    },
+    {
+      "n": 5,
+      "titulo": "O Pen Drive Achado no Estacionamento",
+      "gancho": "E se você achasse um pen drive no chão e plugasse?",
+      "virada": "A fábrica estava isolada da internet. O funcionário abriu a porta pelo lado de dentro.",
+      "porQueAnima": "o pen drive brilhando no chão do estacionamento, o funcionário plugando, as máquinas da fábrica girando fora de controle",
+      "fatoOuLenda": "relato disputado: o Stuxnet (cerca de 2010) atacou a usina de Natanz, no Irã, que não tinha internet; pen drives são citados como caminho provável, mas há evidência de que a entrada foi por empresas contratadas. Dizer 'dizem os relatórios'.",
+      "fontes": [
+        "https://www.kaspersky.com/resource-center/infographics/stuxnet",
+        "https://www.engadget.com/2014/11/13/stuxnet-worm-targeted-companies-first/",
+        "https://www2.cs.arizona.edu/%7ecollberg/Teaching/466-566/2012/Resources/presentations/2012/topic9-final/report.pdf"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G2 · E se você…",
+      "pensaComigo": "é como trancar a casa inteira e deixar o ladrão entrar escondido na mala de um convidado"
+    },
+    {
+      "n": 6,
+      "titulo": "O Jogo Refém de uma Moeda Digital",
+      "gancho": "Um jogo inteiro refém de uma meta de criptomoeda.",
+      "virada": "Pediam uma meta de milhões. Quem pagou foi quem acreditou.",
+      "porQueAnima": "o arquivo trancado num cofre gigante, o gráfico da moeda subindo e despencando, a multidão olhando o cofre",
+      "fatoOuLenda": "relato disputado: reportagens dizem que o grupo Cyberleek ligou a liberação do executável a uma meta de valor de mercado de uma criptomoeda, e que o plano ruiu; comentaristas o acusam de manipular o preço. Nada confirmado em tribunal. Dizer 'segundo reportagens'.",
+      "fontes": [
+        "https://www.ibtimes.co.uk/gta-6-leaker-claims-playable-build-over-200gb-1825890",
+        "https://tech-insider.org/gta-6-cyberleek-cancels-leak-coin-collapse-2026/",
+        "https://www.latintimes.com/gta-6-leak-circus-whats-actually-confirmed-whats-been-distorted-598765"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G9 · Comparação impossível",
+      "pensaComigo": "é como o dono de uma barraca dizer 'só abro o baú quando o meu bilhete de rifa valer mais': o prêmio vira desculpa pra vender bilhete"
+    },
+    {
+      "n": 7,
+      "titulo": "O Tales e o GTA Seis de Graça",
+      "gancho": "Esse é o Tales. Vive sem dinheiro, mas baixou um jogo de sessenta e nove dólares de graça.",
+      "virada": "O jogo era de graça. A fatura do cartão não.",
+      "porQueAnima": "o Tales tomando café com a Paratí na garagem, a barra de download chegando a cem por cento, a tela cheia de janelas estranhas e o extrato do banco zerando",
+      "fatoOuLenda": "ficção (personagem fixo); a base é real: builds falsas do GTA 6 com malware roubador de senhas circularam em torrents, segundo pesquisadores",
+      "fontes": [
+        "https://www.malwarebytes.com/blog/threat-intel/2026/08/fake-gta-6-extended-look-and-demo-sites-deliver-an-infostealer",
+        "https://cybernews.com/security/gta-six-game-build-fake-leak/",
+        "https://securityaffairs.com/?p=197772"
+      ],
+      "personagens": [
+        "tales"
+      ],
+      "modo": "personagem",
+      "receita": "G7 · Contradição do personagem",
+      "pensaComigo": "é como achar um bolo de graça na calçada: se ninguém cobra, quem paga é a sua barriga"
+    },
+    {
+      "n": 8,
+      "titulo": "O Zeca e o Zap Sem Senha",
+      "gancho": "No fim dessa história, o Zeca está sem acesso a tudo. Até ao zap.",
+      "virada": "Ele só queria ver o trailer. Entregou a casa inteira.",
+      "porQueAnima": "o Zeca na obra clicando num link no celular, a tela de login idêntica à verdadeira, as contas dele caindo uma a uma como dominó",
+      "fatoOuLenda": "ficção (personagem fixo); a base é real: sites falsos de 'GTA 6' e logins falsos da Rockstar foram usados para roubar senhas",
+      "fontes": [
+        "https://www.malwarebytes.com/blog/news/2026/08/fake-gta-6-extended-look-and-demo-sites-deliver-an-infostealer",
+        "https://www.secureworld.io/industry-news/gta-leak-crisis-hype-attack-surface"
+      ],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem",
+      "receita": "G8 · Começar pelo fim",
+      "pensaComigo": "é como entregar a chave de casa a um desconhecido porque a porta dele parecia igual à sua"
+    },
+    {
+      "n": 9,
+      "titulo": "A Entrevista de Emprego Que Era Armadilha",
+      "gancho": "Como a Valve atraiu o hacker com uma entrevista de emprego falsa?",
+      "virada": "O hacker foi até a vaga. A vaga era o FBI.",
+      "porQueAnima": "o hacker chegando de terno, a sala de reunião cheia de espelho falso, os agentes surgindo atrás da porta",
+      "fatoOuLenda": "relato com versões diferentes: a Valve e o FBI montaram uma operação para chegar ao autor do roubo de 2003; o hacker admitiu a invasão, mas a Justiça não conseguiu provar quem publicou o código, e a pena foi probation. Detalhes variam por fonte.",
+      "fontes": [
+        "https://kotaku.com/the-great-half-life-2-robbery-5824292",
+        "https://www.escapistmagazine.com/the-valve-sting-tricking-hackers-with-fake-job-interviews/",
+        "https://www.gamesradar.com/half-life-2-hacker-still-remorseful-over-role-in-2003-leak"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G5 · Pergunta por quê com tensão",
+      "pensaComigo": "é como pôr um pote de mel na janela pra descobrir quem anda entrando na cozinha"
+    },
+    {
+      "n": 10,
+      "titulo": "O GTA Falso Que Era Só Espaço Vazio",
+      "gancho": "Nem todo vazamento do GTA seis é do GTA seis.",
+      "virada": "Cento e treze gigas, quase tudo vazio. O resto era um problema.",
+      "porQueAnima": "o arquivo gigante sendo aberto e mostrando só caixas vazias, o vírus saindo de uma caixa, o usuário escancarando a boca",
+      "fatoOuLenda": "fato documentado por pesquisadores e imprensa de tecnologia: uma 'build' de 113 GB circulou como GTA 6 e se mostrou majoritariamente falsa, com código malicioso. Na dúvida, dizer 'segundo analistas'.",
+      "fontes": [
+        "https://www.notebookcheck.net/A-113-GB-GTA-6-build-is-circulating-online-but-it-appears-to-be-fake.1375822.0.html",
+        "https://cybernews.com/security/gta-six-game-build-fake-leak/",
+        "https://www.digit.in/news/gaming/beware-gta-6-cyberleek-build-can-be-malware-stealing-your-sensitive-data-here-is-how-to-stay-safe.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G6 · Crença errada",
+      "pensaComigo": "é como comprar uma caixa de pizza lacrada e só abrir em casa: o peso era o papelão, o recheio era vento"
+    }
+  ],
+  "criadoEm": "2026-11-23T16:17:06.536Z",
+  "usoIA": {
+    "custoUSD": 0.4033922,
+    "turnos": 16,
+    "segundos": 94,
+    "tokensEntrada": 219902,
+    "tokensSaida": 11186,
+    "motor": "claude",
+    "modelo": "sonnet"
+  }
+}

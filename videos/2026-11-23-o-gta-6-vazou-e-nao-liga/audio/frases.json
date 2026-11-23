@@ -1,0 +1,224 @@
+{
+ "voz": {
+  "perfil": "9d15747e",
+  "motor": "voxcpm2",
+  "velocidade": 1,
+  "catalogo": "cinema",
+  "nome": "Narrador de Cinema"
+ },
+ "frases": [
+  {
+   "id": "f01",
+   "texto": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+   "energia": "animada",
+   "pausa": 0.2,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [
+    {
+     "id": "f01-t1",
+     "arquivo": "audio/takes/f01-t1.wav",
+     "seed": 1101,
+     "duracao": 3.214,
+     "config": {
+      "texto": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "leitura": "como marcado",
+     "em": "2026-11-23T17:02:55.098451+00:00"
+    },
+    {
+     "id": "f01-t2",
+     "arquivo": "audio/takes/f01-t2.wav",
+     "seed": 1102,
+     "duracao": 3.82,
+     "config": {
+      "texto": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "leitura": "mais lenta",
+     "em": "2026-11-23T17:06:53.215627+00:00"
+    },
+    {
+     "id": "f01-t3",
+     "arquivo": "audio/takes/f01-t3.wav",
+     "seed": 1103,
+     "duracao": 2.955,
+     "config": {
+      "texto": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+      "vel": 1.08,
+      "voz": "9d15747e"
+     },
+     "leitura": "mais viva",
+     "em": "2026-11-23T17:10:40.653821+00:00"
+    }
+   ],
+   "escolhido": "f01-t1"
+  },
+  {
+   "id": "f02",
+   "texto": "E com um arquivo faltando.",
+   "energia": "normal",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f03",
+   "texto": "O jogo saiu dia dezenove, só para console.",
+   "energia": "normal",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f04",
+   "texto": "No PC... nada.",
+   "energia": "calma",
+   "pausa": 0.5,
+   "efeito": "suspiro",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f05",
+   "texto": "Na mesma semana, o grupo Cyberleek vazou a versão de Xbox inteira.",
+   "energia": "animada",
+   "pausa": 0.3,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f06",
+   "texto": "Só que faltava o executável: o arquivo que liga o jogo.",
+   "energia": "normal",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f07",
+   "texto": "E hoje... ele vazou também.",
+   "energia": "animada",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f08",
+   "texto": "Esse arquivo fala a língua do Xbox... e o PC não entende.",
+   "energia": "normal",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f09",
+   "texto": "Pensa comigo.",
+   "energia": "calma",
+   "pausa": 0.6,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f10",
+   "texto": "É uma receita em japonês: pra cozinhar, alguém tem que traduzir linha por linha.",
+   "energia": "normal",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f11",
+   "texto": "E quem anda fazendo essa tradução pros fãs?",
+   "energia": "normal",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f12",
+   "texto": "A inteligência artificial.",
+   "energia": "animada",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f13",
+   "texto": "Este ano, fãs já levaram um jogo de Switch pro PC assim.",
+   "energia": "normal",
+   "pausa": 0.4,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f14",
+   "texto": "Ninguém confirmou se a versão vazada é verdadeira... e já tem GTA falso com vírus por aí.",
+   "energia": "calma",
+   "pausa": 0.7,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f15",
+   "texto": "Mas se for real...",
+   "energia": "calma",
+   "pausa": 0.5,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f16",
+   "texto": "o PC pode ganhar o GTA seis antes da própria Rockstar.",
+   "energia": "animada",
+   "pausa": 0.6,
+   "efeito": "risada",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  },
+  {
+   "id": "f17",
+   "texto": "Você acha que os fãs conseguem? Sim ou não?",
+   "energia": "normal",
+   "pausa": 0.0,
+   "efeito": "nenhum",
+   "velocidade": 1,
+   "takes": [],
+   "escolhido": null
+  }
+ ],
+ "montagem": {
+  "atual": false
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "robo_da_ia",
+  "nome": "Robô da IA",
+  "papel": "a IA que lê e traduz tudo (assistente curioso do vídeo)",
+  "personalidade": "simpático, prestativo, leva tudo ao pé da letra e lê o papel com muita concentração",
+  "bordao": "",
+  "rig2d": {
+    "especie": "robo",
+    "pele": "#9AA7B8",
+    "camisa": "#F2F5F9",
+    "calca": "#2F80ED",
+    "sapato": "#1F5FB8",
+    "olhos": "#5CE1E6",
+    "cabelo": "#14213D",
+    "chapeu": {
+      "tipo": "nenhum",
+      "cor": "#000000"
+    },
+    "barba": false,
+    "bigode": false,
+    "detalhe": "nenhum",
+    "corDetalhe": "#2F80ED",
+    "antena": "bola",
+    "oculos": {
+      "cor": "#8A5A34",
+      "forma": "redondo"
+    },
+    "segura": "folha"
+  },
+  "kit3d": {
+    "preset": "crianca",
+    "overrides": {
+      "skin": "#f2f5f9",
+      "height": 0.91,
+      "build": 1.15,
+      "headScale": 1.35,
+      "top": {
+        "color": "#2f80ed",
+        "stripe": null,
+        "sleeves": "long"
+      },
+      "bottom": {
+        "color": "#2f80ed",
+        "type": "pants"
+      },
+      "shoes": "#1f5fb8",
+      "hair": {
+        "style": "bald",
+        "color": "#f2f5f9"
+      },
+      "hat": {
+        "type": "none",
+        "color": "#000000"
+      },
+      "face": {
+        "glasses": true
+      },
+      "held": {
+        "R": "clipboard",
+        "L": "none"
+      }
+    }
+  },
+  "criadoEm": "2026-11-23T16:44:56.647Z",
+  "pedido": "2026-11-23-robo-da-ia"
+}

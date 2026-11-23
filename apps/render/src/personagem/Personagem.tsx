@@ -26,17 +26,23 @@ export type Visual = {
   corDetalhe?: string;
   /** "emu" desenha uma ave grande no lugar do corpo humano: camisa = penas, calca = pernas, sapato = pés,
    *  pele = bico, olhos = íris, cabelo = topete. Sem o campo, o boneco é o humano de sempre. */
-  especie?: "emu";
+  especie?: "emu" | "robo";
   /** cor do pescoço e da cabeça (emu) */
   pescoco?: string;
-  /** largura do corpo (emu), 1 = padrão */
+  /** largura do corpo (emu e robo), 1 = padrão */
   corpo?: number;
+  /** "robo": robozinho de cabeça redonda com tela no rosto. camisa = casco (cabeça e tronco), calca = pernas,
+   *  sapato = pés, pele = mãos e juntas, cabelo = fundo da tela, olhos = brilho dos olhos na tela,
+   *  corDetalhe = antena, orelhas e painel do peito. */
+  antena?: "bola" | "dupla" | "nenhuma";
+  /** óculos de leitura: cor da armação e formato. Sem o campo, nada muda. */
+  oculos?: { cor: string; forma: "redondo" | "meia_lua" | "quadrado" };
   /** topete da ave (emu) */
   topete?: "liso" | "arrepiado" | "nenhum";
   /** cor de um avental (couro, pano) por cima da camisa, com peitilho, alças e bolso. Sem o campo, nada muda. */
   avental?: string;
   /** objeto na mão da frente (direita). Sem o campo, a mão fica vazia. "lanca" = lança em pé, segura pela mão. */
-  segura?: "martelo" | "lanca" | "prancheta";
+  segura?: "martelo" | "lanca" | "prancheta" | "folha";
   /** colete de obra por cima da camisa: cor do colete e das duas faixas refletivas. Sem o campo, nada muda. */
   colete?: { cor: string; faixa: string };
   /** túnica medieval de duas cores por cima da camisa (que vira a cota de malha), descendo sobre as coxas.
@@ -44,7 +50,39 @@ export type Visual = {
   tunica?: { cor: string; cor2: string; corte: "cruz" | "meio" | "faixa" };
   /** desenha os aros de cota de malha na camisa (no tronco). Sem o campo, nada muda. */
   malha?: boolean;
+  /** moletom com capuz cobrindo a cabeça: rosto na sombra (cor `sombra`), só os olhos aparecem, brilhando na cor `olhos`.
+   *  Some o cabelo, o chapéu, as sobrancelhas e a boca (ao falar, o brilho pulsa). cordao = cor dos cordões (sem o campo, sem cordões);
+   *  bolso = bolso canguru na barriga. Sem o campo, nada muda. */
+  capuz?: { cor: string; sombra?: string; cordao?: string; bolso?: boolean };
 };
+
+/** capuz por cima da cabeça (centro 180,118): casca, abertura escura e borda */
+const Capuz: React.FC<{ c: NonNullable<Visual["capuz"]> }> = ({ c }) => (
+  <g>
+    <path d="M 102 200 Q 94 118 114 74 Q 140 26 180 24 Q 220 26 246 74 Q 266 118 258 200 Q 220 186 180 190 Q 140 186 102 200 Z" fill={c.cor} />
+    <path d="M 180 26 Q 196 40 198 62" stroke="rgba(0,0,0,0.25)" strokeWidth={5} fill="none" strokeLinecap="round" />
+    <ellipse cx={180} cy={126} rx={58} ry={62} fill="rgba(0,0,0,0.3)" />
+    <ellipse cx={180} cy={128} rx={50} ry={55} fill={c.sombra ?? "#0E1014"} />
+  </g>
+);
+
+/** olhos brilhando dentro do capuz; pálpebra escura para bravo/triste */
+const OlhosBrilho: React.FC<{ cor: string; sombra: string; dx: number; ry: number; expressao: Expressao; pulso: number }> = ({ cor, sombra, dx, ry, expressao, pulso }) => (
+  <g>
+    {[158, 202].map((x, i) => {
+      const cx = x + dx, cy = 124;
+      const tampa = expressao === "bravo" ? (i ? -1 : 1) : expressao === "triste" ? (i ? 1 : -1) : 0;
+      return (
+        <g key={x}>
+          <ellipse cx={cx} cy={cy} rx={13 + pulso} ry={Math.max(3, ry + 5 + pulso)} fill={cor} opacity={0.28} />
+          <ellipse cx={cx} cy={cy} rx={9} ry={ry} fill={cor} />
+          {ry > 3 && <circle cx={cx - 3} cy={cy - 3} r={2.4} fill="#FFFFFF" opacity={0.85} />}
+          {tampa !== 0 && <polygon points={`${cx - 16},${cy - 16} ${cx + 16},${cy - 16} ${cx + 16},${cy - 4 - tampa * 6} ${cx - 16},${cy - 4 + tampa * 6}`} fill={sombra} />}
+        </g>
+      );
+    })}
+  </g>
+);
 
 /** elmo de ferro (cúpula + aro + rebites); com nariz = protetor de nariz, com aba = chapéu de ferro */
 const Elmo: React.FC<{ cor: string; aba: boolean }> = ({ cor, aba }) => {
@@ -167,6 +205,32 @@ const Prancheta: React.FC<{ y: number; giro: number }> = ({ y, giro }) => (
   </g>
 );
 
+/** folha de papel solta presa pela mão (0, y), sempre em pé, com a ponta dobrada e linhas de texto */
+const Folha: React.FC<{ y: number; giro: number }> = ({ y, giro }) => (
+  <g transform={`translate(0 ${y}) rotate(${giro})`}>
+    <path d="M -24 -70 L 14 -70 L 26 -58 L 26 8 L -24 8 Z" fill="#FBFAF5" />
+    <path d="M 14 -70 L 14 -58 L 26 -58 Z" fill="#D9D5CA" />
+    <rect x={-24} y={2} width={50} height={6} fill="rgba(0,0,0,0.08)" />
+    {[-58, -48, -38, -28, -18].map((yy, i) => <rect key={yy} x={-17} y={yy} width={i % 2 ? 24 : 34} height={4} rx={2} fill="#9AA0A6" />)}
+  </g>
+);
+
+/** óculos de leitura com as lentes centradas em (ex, ey) e (dx, ey) */
+const Oculos: React.FC<{ o: NonNullable<Visual["oculos"]>; e: number; d: number; y: number; r: number }> = ({ o, e, d, y, r }) => {
+  const lente = (cx: number) => {
+    if (o.forma === "quadrado") return <rect x={cx - r} y={y - r * 0.8} width={r * 2} height={r * 1.6} rx={r * 0.3} />;
+    if (o.forma === "meia_lua") return <path d={`M ${cx - r} ${y} L ${cx + r} ${y} A ${r} ${r} 0 0 1 ${cx - r} ${y} Z`} />;
+    return <circle cx={cx} cy={y} r={r} />;
+  };
+  return (
+    <g stroke={o.cor} strokeWidth={5} fill="rgba(255,255,255,0.18)" strokeLinejoin="round">
+      {lente(e)}
+      {lente(d)}
+      <path d={`M ${e + r} ${y} Q ${(e + d) / 2} ${y - 7} ${d - r} ${y}`} fill="none" />
+    </g>
+  );
+};
+
 const Colete: React.FC<{ c: NonNullable<Visual["colete"]> }> = ({ c }) => (
   <g>
     <path d="M 124 206 Q 124 190 140 190 L 160 190 L 174 252 L 174 342 L 124 342 Z" fill={c.cor} />
@@ -190,6 +254,7 @@ const Braco: React.FC<{ x: number; y: number; angulos: [number, number]; cor: st
         <rect x={-11} y={-10} width={22} height={SEG} rx={11} fill={cor} />
         {segura === "martelo" && <Martelo y={SEG} />}
         {segura === "prancheta" && <Prancheta y={SEG} giro={-(angulos[0] + angulos[1])} />}
+        {segura === "folha" && <Folha y={SEG} giro={-(angulos[0] + angulos[1])} />}
         <circle cx={0} cy={SEG} r={14} fill={pele} />
       </g>
     </g>
@@ -409,8 +474,102 @@ const Emu: React.FC<Props> = ({
   );
 };
 
+/** Robozinho: cabeça redonda com tela de olhos, tronco de casco, antena e perninhas curtas (de frente). */
+const Robo: React.FC<Props> = ({
+  visual, boca = "X", expressao = "neutro", pose = "neutro", piscando = false, olhar = 0, respiro = 0,
+  espelhar = false, altura = 900, passo,
+}) => {
+  const anda = passo === undefined ? 0 : Math.sin(passo * Math.PI * 2);
+  const pulinho = passo === undefined ? 0 : Math.abs(Math.cos(passo * Math.PI * 2)) * 6;
+  const p = POSES[pose];
+  const k = visual.corpo ?? 1;
+  const casco = visual.camisa, junta = visual.pele, det = visual.corDetalhe ?? "#2F80ED";
+  const tela = visual.cabelo ?? "#14213D", brilho = visual.olhos;
+  const sombra = "rgba(0,0,0,0.14)";
+  const falando = boca !== "X" && boca !== "A";
+  const cabecaY = falando ? -1.5 : 0;
+  const peito = 1 + respiro * 0.012;
+  const ox = 180 - 54 * k, lx = 108 * k; // tronco
+  const ombroE = ox - 2, ombroD = ox + lx + 2;
+  const angFrente: [number, number] = [p.dir[0] + anda * 12 * (pose === "neutro" ? 1 : 0), p.dir[1]];
+  const dx = olhar * 5;
+  // olhos na tela
+  const olho = (cx: number, lado: number) => {
+    const cy = 132;
+    if (piscando) return <rect x={cx - 12} y={cy - 2} width={24} height={5} rx={2.5} fill={brilho} />;
+    if (expressao === "feliz") return <path d={`M ${cx - 12} ${cy + 5} Q ${cx} ${cy - 12} ${cx + 12} ${cy + 5}`} stroke={brilho} strokeWidth={6} fill="none" strokeLinecap="round" />;
+    const r = expressao === "surpreso" ? 15 : expressao === "duvida" && lado > 0 ? 8 : 12;
+    const ry = expressao === "triste" || expressao === "bravo" ? r * 0.7 : r;
+    const inclina = expressao === "bravo" ? lado * 16 : expressao === "triste" ? -lado * 16 : 0;
+    return (
+      <g transform={`rotate(${inclina} ${cx} ${cy})`}>
+        <ellipse cx={cx} cy={cy + (r - ry)} rx={r} ry={ry} fill={brilho} />
+        <circle cx={cx + r * 0.35} cy={cy - r * 0.35 + (r - ry)} r={r * 0.28} fill="rgba(255,255,255,0.75)" />
+      </g>
+    );
+  };
+  const abre = falando ? ({ B: 5, C: 9, D: 13, E: 10, F: 7, G: 5, H: 9 } as Record<string, number>)[boca] ?? 6
+    : expressao === "surpreso" ? 8 : 0;
+  const largBoca = boca === "E" || boca === "F" ? 12 : 20;
+  return (
+    <svg viewBox="0 0 360 540" height={altura} style={{ overflow: "visible", transform: espelhar ? "scaleX(-1)" : undefined }}>
+      <ellipse cx={180} cy={528} rx={70 * k} ry={10} fill="rgba(0,0,0,0.25)" />
+      {/* perninhas */}
+      {[-1, 1].map((lado) => (
+        <g key={lado} transform={`rotate(${lado * anda * 14} ${180 + lado * 26} 380)`}>
+          <rect x={180 + lado * 26 - 13} y={372} width={26} height={120} rx={10} fill={visual.calca} />
+          <rect x={180 + lado * 26 - 15} y={430} width={30} height={10} rx={5} fill={junta} />
+          <path d={`M ${180 + lado * 26 - 28} 520 L ${180 + lado * 26 - 28} 506 Q ${180 + lado * 26} 486 ${180 + lado * 26 + 28} 506 L ${180 + lado * 26 + 28} 520 Z`} fill={visual.sapato} />
+        </g>
+      ))}
+      <g transform={`translate(0 ${-pulinho})`}>
+        {/* braço de trás */}
+        <Braco x={ombroE} y={262} angulos={[p.esq[0] - anda * 12 * (pose === "neutro" ? 1 : 0), p.esq[1]]} cor={casco} pele={junta} />
+        {/* tronco */}
+        <g transform={`translate(180 380) scale(1 ${peito}) translate(-180 -380)`}>
+          <rect x={ox} y={244} width={lx} height={136} rx={30} fill={casco} />
+          <rect x={ox + lx * 0.55} y={252} width={lx * 0.4} height={120} rx={20} fill={sombra} />
+          <rect x={180 - 30} y={280} width={60} height={46} rx={12} fill={det} />
+          <circle cx={168} cy={303} r={7} fill={brilho} />
+          <rect x={182} y={297} width={18} height={5} rx={2.5} fill="rgba(255,255,255,0.7)" />
+          <rect x={182} y={307} width={12} height={5} rx={2.5} fill="rgba(255,255,255,0.7)" />
+          <rect x={ox + 6} y={356} width={lx - 12} height={10} rx={5} fill={sombra} />
+        </g>
+        {/* braço da frente */}
+        <Braco x={ombroD} y={262} angulos={angFrente} cor={casco} pele={junta} segura={visual.segura} />
+        {/* cabeça */}
+        <g transform={`translate(0 ${cabecaY})`}>
+          <rect x={164} y={222} width={32} height={26} rx={6} fill={junta} />
+          {visual.antena !== "nenhuma" && (visual.antena === "dupla" ? [-1, 1] : [0]).map((l) => (
+            <g key={l}>
+              <path d={`M ${180 + l * 34} 52 L ${180 + l * 46} 18`} stroke={junta} strokeWidth={7} strokeLinecap="round" />
+              <circle cx={180 + l * 46} cy={16} r={11} fill={det} />
+            </g>
+          ))}
+          {[-1, 1].map((l) => <rect key={l} x={180 + l * 94 - 12} y={110} width={24} height={46} rx={10} fill={det} />)}
+          <circle cx={180} cy={134} r={90} fill={casco} />
+          <path d="M 236 64 A 90 90 0 0 1 236 204 A 110 110 0 0 0 236 64 Z" fill={sombra} />
+          <rect x={112} y={86} width={136} height={100} rx={44} fill={tela} />
+          <rect x={126} y={94} width={44} height={8} rx={4} fill="rgba(255,255,255,0.16)" />
+          {olho(156 + dx, -1)}
+          {olho(204 + dx, 1)}
+          {abre > 0
+            ? <rect x={180 - largBoca / 2} y={166 - abre / 2} width={largBoca} height={abre} rx={Math.min(abre, largBoca) / 2} fill={brilho} />
+            : expressao === "feliz"
+              ? <path d="M 168 164 Q 180 174 192 164" stroke={brilho} strokeWidth={5} fill="none" strokeLinecap="round" />
+              : expressao === "triste" || expressao === "bravo"
+                ? <path d="M 168 170 Q 180 160 192 170" stroke={brilho} strokeWidth={5} fill="none" strokeLinecap="round" />
+                : <rect x={168} y={164} width={24} height={5} rx={2.5} fill={brilho} />}
+          {visual.oculos && <Oculos o={visual.oculos} e={156 + dx} d={204 + dx} y={134} r={21} />}
+        </g>
+      </g>
+    </svg>
+  );
+};
+
 export const Personagem: React.FC<Props> = (props) => {
   if (props.visual.especie === "emu") return <Emu {...props} />;
+  if (props.visual.especie === "robo") return <Robo {...props} />;
   return <Humano {...props} />;
 };
 
@@ -472,6 +631,18 @@ const Humano: React.FC<Props> = ({
         {visual.malha && <Malha x={124} y={194} w={112} h={124} />}
         {visual.tunica && <Tunica t={visual.tunica} />}
         {visual.colete && <Colete c={visual.colete} />}
+        {visual.capuz && (
+          <g>
+            <path d="M 162 190 L 180 214 L 198 190 Z" fill={visual.capuz.sombra ?? "#0E1014"} />
+            {visual.capuz.bolso && <path d="M 146 266 L 214 266 L 226 316 L 134 316 Z" fill="rgba(0,0,0,0.16)" />}
+            {visual.capuz.cordao && [168, 192].map((x) => (
+              <g key={x}>
+                <line x1={x} y1={196} x2={x - (x < 180 ? 2 : -2)} y2={246} stroke={visual.capuz!.cordao} strokeWidth={4} strokeLinecap="round" />
+                <rect x={x - (x < 180 ? 2 : -2) - 3} y={244} width={6} height={10} rx={2} fill={visual.capuz!.cordao} />
+              </g>
+            ))}
+          </g>
+        )}
       </g>
 
       {/* lança em pé na mão da frente */}
@@ -481,6 +652,13 @@ const Humano: React.FC<Props> = ({
       <Braco x={232} y={204} angulos={angFrente} cor={visual.camisa} pele={visual.pele} segura={visual.segura} />
 
       {/* cabeça */}
+      {visual.capuz ? (
+      <g transform={`translate(0 ${cabecaY})`}>
+        <Capuz c={visual.capuz} />
+        <OlhosBrilho cor={visual.olhos} sombra={visual.capuz.sombra ?? "#0E1014"} dx={dx} ry={piscando ? 1.5 : expressao === "surpreso" ? 12 : 9}
+          expressao={expressao} pulso={falando ? (boca === "D" || boca === "C" ? 4 : 2) : 0} />
+      </g>
+      ) : (
       <g transform={`translate(0 ${cabecaY})`}>
         <rect x={166} y={170} width={28} height={26} fill={visual.pele} />
         <circle cx={180} cy={118} r={68} fill={visual.pele} />
@@ -505,13 +683,16 @@ const Humano: React.FC<Props> = ({
           <BocaForma boca={boca} expressao={expressao} />
         </g>
 
-        {visual.bigode && <path d="M 158 141 Q 170 133 180 139 Q 190 133 202 141 Q 196 149 180 144 Q 164 149 158 141 Z" fill={visual.cabelo ?? "#3B2A1A"} />}
+        {visual.oculos && <Oculos o={visual.oculos} e={156 + dx} d={204 + dx} y={118} r={17} />}
+
+        {visual.bigode &&<path d="M 158 141 Q 170 133 180 139 Q 190 133 202 141 Q 196 149 180 144 Q 164 149 158 141 Z" fill={visual.cabelo ?? "#3B2A1A"} />}
 
         {visual.chapeu.tipo === "nenhum" && visual.cabelo && (
           <path d="M 112 112 Q 110 50 180 46 Q 250 50 248 112 Q 236 84 214 78 Q 190 92 150 80 Q 124 86 112 112 Z" fill={visual.cabelo} />
         )}
         <Chapeu tipo={visual.chapeu.tipo} cor={visual.chapeu.cor} corFaixa={visual.chapeu.corFaixa} />
       </g>
+      )}
       </g>
     </svg>
   );

@@ -1,0 +1,82 @@
+{
+  "id": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "titulo": "O GTA 6 Vazou Inteiro... e o PC Pode Ganhar Antes",
+  "ideia": "vídeo sobre o Cyberleek ter vazado a build do GTA 6 e agora há pouco ter vazado o executável",
+  "duracaoAlvo": 45,
+  "estilo": "cartoon-3d",
+  "personagens": [],
+  "pasta": "videos/2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "voz": {
+    "catalogo": "cinema",
+    "nome": "Narrador de Cinema",
+    "perfil": "9d15747e",
+    "motor": "voxcpm2",
+    "velocidade": 1
+  },
+  "etapa": "narracao",
+  "estado": "processando",
+  "fluxo": 2,
+  "portoes": {
+    "roteiro": {
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-23T16:40:11.234Z"
+    },
+    "narracao": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "cenas": {
+      "aprovado": false,
+      "ajustes": []
+    },
+    "final": {
+      "aprovado": false,
+      "ajustes": []
+    }
+  },
+  "agenda": null,
+  "historico": [
+    {
+      "em": "2026-11-23T16:26:22.000Z",
+      "evento": "pedido criado pelo Claude Code"
+    },
+    {
+      "em": "2026-11-23T16:30:00.000Z",
+      "evento": "IA: roteiro do vazamento do GTA 6 (gancho G4, Pensa comigo da receita em japonês), fatos conferidos, 10 assets listados"
+    },
+    {
+      "em": "2026-11-23T16:45:00.000Z",
+      "evento": "IA: roteiro refeito com o executável vazado hoje e o gancho do port de fãs com IA (Pensa comigo da receita em japonês)"
+    },
+    {
+      "em": "2026-11-23T16:39:03.412Z",
+      "evento": "gancho escolhido: Como o jogo mais esperado do mundo vazou na semana do lançamento? E com um arquivo faltando."
+    },
+    {
+      "em": "2026-11-23T16:39:50.192Z",
+      "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-23T16:40:11.235Z",
+      "evento": "roteiro aprovado"
+    },
+    {
+      "em": "2026-11-23T16:40:11.281Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-23T16:40:16.198Z",
+      "evento": "erro ao gravar"
+    },
+    {
+      "em": "2026-11-23T16:57:54.065Z",
+      "evento": "assets: auto (todos)"
+    },
+    {
+      "em": "2026-11-23T16:58:07.251Z",
+      "evento": "regravando 17 frase(s)"
+    }
+  ],
+  "criadoEm": "2026-11-23T16:26:22.000Z"
+}

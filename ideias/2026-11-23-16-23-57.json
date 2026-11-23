@@ -1,0 +1,179 @@
+{
+  "id": "2026-11-23-16-23-57",
+  "tema": "Cyber leek vazou hoje os arquivos do gta 6, executavel",
+  "duracao": 45,
+  "estilo": "cartoon-3d",
+  "estado": "pronto",
+  "ideias": [
+    {
+      "n": 1,
+      "titulo": "O Jogo Vazado Sem o Botão Ligar",
+      "gancho": "Vazaram o jogo mais esperado do mundo. Menos o que faz ele abrir.",
+      "virada": "Ou seja: o maior vazamento do ano, e ninguém consegue jogar.",
+      "porQueAnima": "a pasta gigante sendo baixada, a fila de gente na frente do computador, o ícone do executável que não aparece",
+      "fatoOuLenda": "relato não confirmado: o grupo Cyberleek alega ter uma versão de desenvolvimento, mas pesquisadores não acharam prova de um jogo jogável (novembro de 2026)",
+      "fontes": [
+        "https://www.tweaktown.com/news/113880/gta-6-leak-claims-explode-as-multiple-cyberleek-full-build-downloads-appear-online/index.html",
+        "https://www.videogameschronicle.com/news/cyberleek-claims-to-release-development-build-of-gta-6/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G3 · Fato absurdo seco",
+      "pensaComigo": "é como receber o carro desmontado em mil caixas, sem a chave: tem todas as peças, mas ninguém sai dirigindo"
+    },
+    {
+      "n": 2,
+      "titulo": "O Adolescente Que Invadiu a Rockstar do Hotel",
+      "gancho": "E se um adolescente invadisse uma gigante dos games usando só a TV do hotel?",
+      "virada": "A polícia o protegia num hotel. Ele escolheu justamente o hotel pra invadir.",
+      "porQueAnima": "o quarto de hotel com a TV ligada num Fire Stick, os vídeos do jogo escapando pela janela, o juiz batendo o martelo",
+      "fatoOuLenda": "fato documentado (Arion Kurtaj, vazamento de 2022, condenado em 2023 a internação em hospital de segurança por prazo indeterminado)",
+      "fontes": [
+        "https://www.bleepingcomputer.com/news/security/lapsus-hacker-behind-gta-6-leak-gets-indefinite-hospital-sentence/amp/",
+        "https://www.techspot.com/news/101310-18-year-old-hacker-behind-gta-vi-leak.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G1 · E se… que virou real",
+      "pensaComigo": "é como arrombar a porta de um banco usando o controle remoto da televisão: a ferramenta é simples, o que conta é achar a fechadura frouxa"
+    },
+    {
+      "n": 3,
+      "titulo": "Cento e Treze Gigas de Puro Vírus",
+      "gancho": "Cento e treze gigas de download. Cinquenta kilobytes de vírus.",
+      "virada": "Ele baixou o jogo de graça. A conta chegou depois, em senha roubada.",
+      "porQueAnima": "a barra de download enchendo devagar, o arquivo gigante se abrindo e mostrando quase só lixo, as senhas voando do computador",
+      "fatoOuLenda": "fato documentado em reportagens: falsos 'vazamentos' de GTA 6 distribuídos como ISOs com malware (dados variam entre veículos, por isso 'cerca de')",
+      "fontes": [
+        "https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/Fake-Leak-Malware-1551945/",
+        "https://tbreak.com/gta-6-malware-fake-leaked-builds/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G9 · Comparação impossível",
+      "pensaComigo": "é como uma caixa enorme de pizza com um escorpião dentro: o tamanho convence, o conteúdo você só vê depois de abrir"
+    },
+    {
+      "n": 4,
+      "titulo": "O Hacker Que Pediu Emprego à Vítima",
+      "gancho": "E se você invadisse uma empresa… e depois pedisse emprego a ela?",
+      "virada": "Ele conseguiu uma entrevista. Só não era de emprego.",
+      "porQueAnima": "o código saindo do computador, o e-mail de desculpas, a entrevista de mentira com agentes disfarçados",
+      "fatoOuLenda": "fato documentado, detalhes variam entre fontes (Axel Gembe, Half-Life 2, 2003/2004; pena de dois anos de liberdade condicional)",
+      "fontes": [
+        "https://kotaku.com/that-time-a-german-hacker-leaked-half-life-2s-source-co-1737015166",
+        "https://www.escapistmagazine.com/the-valve-sting-tricking-hackers-with-fake-job-interviews/",
+        "https://www.guinnessworldrecords.com/world-records/548903-first-person-to-play-half-life-2"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G2 · E se você…",
+      "pensaComigo": "é como entrar escondido na casa do vizinho pra ver a TV e depois bater na porta pedindo para morar lá"
+    },
+    {
+      "n": 5,
+      "titulo": "Quarenta e Três Gigas do Windows no 4chan",
+      "gancho": "O código do Windows XP cabia em quarenta e três gigas. E vazou.",
+      "virada": "Um sistema de vinte anos atrás ainda dava notícia. Antivírus também se aposenta.",
+      "porQueAnima": "um computador antigo com a tela azul, o torrent se espalhando como raios entre milhares de casas, a lupa dos pesquisadores",
+      "fatoOuLenda": "fato documentado (setembro de 2020; código do XP SP1 e Server 2003, considerado autêntico)",
+      "fontes": [
+        "https://www.tomshardware.com/news/working-windows-xp-source-code-posted-to-4chan-update",
+        "https://thehackernews.com/2020/09/windows-xp-source-code.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G4 · Número que não cabe",
+      "pensaComigo": "é como vazar a receita de um bolo: quem viu pode copiar, mas só o dono sabe se a receita original tem erro"
+    },
+    {
+      "n": 6,
+      "titulo": "O Tales e o Download Mais Barato",
+      "gancho": "Esse é o Tales. Vive dizendo que tá sem dinheiro.",
+      "virada": "Ele economizou sessenta reais no jogo. Perdeu a conta do banco.",
+      "porQueAnima": "o Tales empolgado com a barra de progresso, o computador piscando vermelho, o extrato do banco zerando",
+      "fatoOuLenda": "ficção (personagem fixo Tales, inspirado em falsos vazamentos de jogos com malware)",
+      "fontes": [
+        "https://tbreak.com/gta-6-malware-fake-leaked-builds/"
+      ],
+      "personagens": [
+        "tales"
+      ],
+      "modo": "personagem",
+      "receita": "G7 · Contradição do personagem",
+      "pensaComigo": "é como aceitar uma carona de graça de um desconhecido e descobrir no fim que o preço era o seu celular"
+    },
+    {
+      "n": 7,
+      "titulo": "O Zeca e o Spoiler Que Não Acabou",
+      "gancho": "No fim dessa história, o Zeca tá com o celular desligado. Numa festa de amigos.",
+      "virada": "Fugiu do spoiler a semana toda. Quem contou foi o próprio Zeca, dormindo.",
+      "porQueAnima": "o Zeca tapando os ouvidos no mercado, a rua inteira falando do vazamento, o celular na gaveta",
+      "fatoOuLenda": "ficção (personagem fixo Zeca)",
+      "fontes": [],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem",
+      "receita": "G8 · Começar pelo fim",
+      "pensaComigo": "é como tentar não ver o final do filme enquanto todo mundo na fila do cinema comenta em voz alta"
+    },
+    {
+      "n": 8,
+      "titulo": "Você Aprendeu Errado o Que É Vazar",
+      "gancho": "Vazamento de jogo não é jogo pronto. Você aprendeu errado.",
+      "virada": "Sai mais barato esperar o lançamento do que abrir o arquivo errado.",
+      "porQueAnima": "uma montanha de pastas virando um quebra-cabeça sem tampa, o relógio de contagem regressiva do hacker, a tela de erro",
+      "fatoOuLenda": "fato documentado: pesquisadores não acharam prova de build jogável, e arquivos de desenvolvimento não equivalem a um jogo funcional",
+      "fontes": [
+        "https://www.tweaktown.com/news/113880/gta-6-leak-claims-explode-as-multiple-cyberleek-full-build-downloads-appear-online/index.html",
+        "https://tbreak.com/gta-6-malware-fake-leaked-builds/"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G6 · Crença errada",
+      "pensaComigo": "é como ganhar o motor, o volante e as rodas num saco: você tem as peças, mas ainda não tem um carro"
+    },
+    {
+      "n": 9,
+      "titulo": "Por Que o Zeca Clicou no Link?",
+      "gancho": "Por que o Zeca clicou no link 'GTA 6 grátis'… se desconfiou dele?",
+      "virada": "Ele desconfiou do link e clicou mesmo assim. O vírus agradeceu a confiança.",
+      "porQueAnima": "o Zeca olhando o link como um detetive, o dedo no mouse tremendo, o susto da tela inteira piscando",
+      "fatoOuLenda": "ficção (personagem fixo Zeca)",
+      "fontes": [],
+      "personagens": [
+        "zeca"
+      ],
+      "modo": "personagem",
+      "receita": "G5 · Pergunta por quê com tensão",
+      "pensaComigo": "é como achar uma carteira cheia de dinheiro no chão: quanto mais tentador, mais você devia perguntar de quem é a armadilha"
+    },
+    {
+      "n": 10,
+      "titulo": "A Contagem Regressiva do Executável",
+      "gancho": "Como um vazamento inteiro espera… uma moeda subir de valor?",
+      "virada": "O arquivo era de graça. A pressa que não.",
+      "porQueAnima": "o cronômetro gigante na tela, o gráfico da moeda subindo e descendo, a multidão esperando em frente ao computador",
+      "fatoOuLenda": "relato não confirmado: o grupo alega que libera o executável quando o prazo acabar ou se a moeda atingir certo valor; ninguém verificou",
+      "fontes": [
+        "https://www.tweaktown.com/news/113880/gta-6-leak-claims-explode-as-multiple-cyberleek-full-build-downloads-appear-online/index.html",
+        "https://notebookcheck.net/Cyberleek-releases-GTA-6-Xbox-build-making-playable-PC-port-more-realistic.1454770.0.html"
+      ],
+      "personagens": [],
+      "modo": "historia",
+      "receita": "G5 · Pergunta por quê com tensão",
+      "pensaComigo": "é como um vendedor que diz 'só te mostro o produto depois que você comprar': quando alguém marca a pressa, normalmente o relógio é o produto"
+    }
+  ],
+  "criadoEm": "2026-11-23T16:23:57.883Z",
+  "usoIA": {
+    "custoUSD": 0.25864960000000004,
+    "turnos": 10,
+    "segundos": 57,
+    "tokensEntrada": 155225,
+    "tokensSaida": 6984,
+    "motor": "claude",
+    "modelo": "sonnet"
+  }
+}

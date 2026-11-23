@@ -1,0 +1,104 @@
+[
+  {
+    "texto": "Como o jogo mais esperado do mundo vazou na semana do lançamento?",
+    "energia": "animada",
+    "pausa": 0.2,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "E com um arquivo faltando.",
+    "energia": "normal",
+    "pausa": 0.6,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "O jogo saiu dia dezenove, só para console.",
+    "energia": "normal",
+    "pausa": 0.3,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "No PC... nada.",
+    "energia": "calma",
+    "pausa": 0.5,
+    "efeito": "suspiro"
+  },
+  {
+    "texto": "Na mesma semana, o grupo Cyberleek vazou a versão de Xbox inteira.",
+    "energia": "animada",
+    "pausa": 0.3,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Só que faltava o executável: o arquivo que liga o jogo.",
+    "energia": "normal",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "E hoje... ele vazou também.",
+    "energia": "animada",
+    "pausa": 0.6,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Esse arquivo fala a língua do Xbox... e o PC não entende.",
+    "energia": "normal",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Pensa comigo.",
+    "energia": "calma",
+    "pausa": 0.6,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "É uma receita em japonês: pra cozinhar, alguém tem que traduzir linha por linha.",
+    "energia": "normal",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "E quem anda fazendo essa tradução pros fãs?",
+    "energia": "normal",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "A inteligência artificial.",
+    "energia": "animada",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Este ano, fãs já levaram um jogo de Switch pro PC assim.",
+    "energia": "normal",
+    "pausa": 0.4,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Ninguém confirmou se a versão vazada é verdadeira... e já tem GTA falso com vírus por aí.",
+    "energia": "calma",
+    "pausa": 0.7,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "Mas se for real...",
+    "energia": "calma",
+    "pausa": 0.5,
+    "efeito": "nenhum"
+  },
+  {
+    "texto": "o PC pode ganhar o GTA seis antes da própria Rockstar.",
+    "energia": "animada",
+    "pausa": 0.6,
+    "efeito": "risada"
+  },
+  {
+    "texto": "Você acha que os fãs conseguem? Sim ou não?",
+    "energia": "normal",
+    "pausa": 0,
+    "efeito": "nenhum"
+  }
+]

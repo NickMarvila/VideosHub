@@ -1,0 +1,45 @@
+{
+  "id": "2026-11-23-virus",
+  "tipo": "objeto",
+  "nome": "vírus",
+  "slug": "virus",
+  "descricao": "Bichinho verde redondo com espinhos e sorriso malvado, ~0,5 m",
+  "referencia": null,
+  "permissao": false,
+  "estado": "concluido",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Clássico: bola verde-limão com espinhos de haste e bolinha na ponta, sobrancelhas bravas e sorrisão com dentinhos; infla e balança rindo (setProgress)"
+    },
+    {
+      "n": 2,
+      "descricao": "Ouriço: verde-escuro coberto de espinhos pontudos roxos, olhos amarelos de fenda e sorriso torto de caninos; eriça os espinhos"
+    },
+    {
+      "n": 3,
+      "descricao": "Vírus de PC: verde-neon gordinho de pezinhos, 6-8 antenas com LED vermelho, olhos de LED quadrados e dentes quadrados; pula e pisca"
+    }
+  ],
+  "recomendada": 1,
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:39:50.071Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:42:04.145Z",
+      "custoUSD": 0.6541732,
+      "turnos": 18,
+      "segundos": 130,
+      "tokensEntrada": 623487,
+      "tokensSaida": 13040,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": null,
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:45:04.814Z"
+}

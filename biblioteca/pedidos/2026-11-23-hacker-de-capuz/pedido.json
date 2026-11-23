@@ -1,0 +1,46 @@
+{
+  "id": "2026-11-23-hacker-de-capuz",
+  "tipo": "personagem",
+  "nome": "hacker de capuz",
+  "slug": "hacker_de_capuz",
+  "descricao": "Figura anônima de moletom preto com capuz, rosto na sombra só com olhos brilhando, sem logos",
+  "referencia": null,
+  "permissao": false,
+  "estado": "erro",
+  "recomendada": 1,
+  "extensaoRig": "Visual.capuz opcional { cor, sombra?, cordao?, bolso? }: capuz cobrindo a cabeça, rosto na sombra só com os olhos brilhando na cor de 'olhos' (o brilho pulsa ao falar; pálpebra escura em bravo/triste), cordões e bolso canguru opcionais. Sem o campo, o desenho não muda.",
+  "opcoes": [
+    {
+      "n": 1,
+      "descricao": "Moletom preto com cordões claros e bolso canguru, olhos ciano brilhando (a mais fiel à descrição)"
+    },
+    {
+      "n": 2,
+      "descricao": "Moletom grafite liso, jeans e tênis branco, olhos verdes de terminal, silhueta magra"
+    },
+    {
+      "n": 3,
+      "descricao": "Moletom preto profundo com cordões vermelhos, calça cargo verde-oliva, olhos vermelhos, corpo mais largo"
+    }
+  ],
+  "ajustes": [],
+  "criadoEm": "2026-11-23T16:39:49.938Z",
+  "video": "2026-11-23-o-gta-6-vazou-e-nao-liga",
+  "estilo": "cartoon-3d",
+  "auto": true,
+  "usoIA": [
+    {
+      "em": "2026-11-23T16:41:32.616Z",
+      "custoUSD": 0.859271,
+      "turnos": 24,
+      "segundos": 100,
+      "tokensEntrada": 1041231,
+      "tokensSaida": 9862,
+      "motor": "claude",
+      "modelo": "opus"
+    }
+  ],
+  "erro": "Não consegui publicar. Veja o log.",
+  "escolhida": "1",
+  "publicadoEm": "2026-11-23T16:44:06.447Z"
+}
