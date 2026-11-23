@@ -173,6 +173,11 @@ def gravar(pasta, ids=None):
     d = ler(pasta)
     voz = d["voz"]
     (pasta / "audio" / "takes").mkdir(parents=True, exist_ok=True)
+    # os .wav dos takes não vão para o git: em outra máquina o frases.json lista takes que não existem aqui
+    for f in d["frases"]:
+        f["takes"] = [t for t in f["takes"] if (pasta / t["arquivo"]).exists()]
+        if not any(t["id"] == f.get("escolhido") for t in f["takes"]):
+            f["escolhido"] = f["takes"][0]["id"] if f["takes"] else None
     alvo = []
     for f in d["frases"]:
         cfg = config(f, voz)
@@ -219,6 +224,8 @@ def montar(pasta):
         take = next((x for x in f["takes"] if x["id"] == f.get("escolhido")), None) or (f["takes"][-1] if f["takes"] else None)
         if not take:
             raise RuntimeError(f"a frase {f['id']} ainda não tem take gravado")
+        if not (pasta / take["arquivo"]).exists():
+            raise RuntimeError(f"o take {take['id']} da frase {f['id']} não está nesta máquina; grave o áudio de novo")
         ultima = i == len(d["frases"]) - 1
         pausa = 0 if ultima else float(f.get("pausa", 0.35))
         partes.append((pasta / take["arquivo"], pausa))

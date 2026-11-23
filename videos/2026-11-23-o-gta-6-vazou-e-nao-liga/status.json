@@ -14,7 +14,7 @@
     "velocidade": 1
   },
   "etapa": "narracao",
-  "estado": "processando",
+  "estado": "erro",
   "fluxo": 2,
   "portoes": {
     "roteiro": {
@@ -76,6 +76,22 @@
     {
       "em": "2026-11-23T16:58:07.251Z",
       "evento": "regravando 17 frase(s)"
+    },
+    {
+      "em": "2026-11-23T17:14:26.756Z",
+      "evento": "gerando narração"
+    },
+    {
+      "em": "2026-11-23T17:14:31.042Z",
+      "evento": "erro na narração"
+    },
+    {
+      "em": "2026-11-23T17:15:55.181Z",
+      "evento": "regravando 16 frase(s)"
+    },
+    {
+      "em": "2026-11-23T17:24:39.943Z",
+      "evento": "erro ao gravar"
     }
   ],
   "criadoEm": "2026-11-23T16:26:22.000Z"

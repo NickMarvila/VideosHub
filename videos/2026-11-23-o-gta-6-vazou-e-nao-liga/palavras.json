@@ -1,0 +1,742 @@
+[
+ {
+  "palavra": "Como",
+  "inicio": 0.0,
+  "fim": 0.1
+ },
+ {
+  "palavra": "o",
+  "inicio": 0.1,
+  "fim": 0.18
+ },
+ {
+  "palavra": "jogo",
+  "inicio": 0.18,
+  "fim": 0.36
+ },
+ {
+  "palavra": "mais",
+  "inicio": 0.36,
+  "fim": 0.54
+ },
+ {
+  "palavra": "esperado",
+  "inicio": 0.54,
+  "fim": 1.16
+ },
+ {
+  "palavra": "do",
+  "inicio": 1.16,
+  "fim": 1.26
+ },
+ {
+  "palavra": "mundo",
+  "inicio": 1.26,
+  "fim": 1.46
+ },
+ {
+  "palavra": "vazou",
+  "inicio": 1.46,
+  "fim": 1.92
+ },
+ {
+  "palavra": "na",
+  "inicio": 1.92,
+  "fim": 2.02
+ },
+ {
+  "palavra": "semana",
+  "inicio": 2.02,
+  "fim": 2.32
+ },
+ {
+  "palavra": "do",
+  "inicio": 2.32,
+  "fim": 2.54
+ },
+ {
+  "palavra": "lançamento?",
+  "inicio": 2.54,
+  "fim": 3.08
+ },
+ {
+  "palavra": "E",
+  "inicio": 3.18,
+  "fim": 3.42
+ },
+ {
+  "palavra": "com",
+  "inicio": 3.42,
+  "fim": 3.66
+ },
+ {
+  "palavra": "um",
+  "inicio": 3.66,
+  "fim": 3.76
+ },
+ {
+  "palavra": "arquivo",
+  "inicio": 3.76,
+  "fim": 4.2
+ },
+ {
+  "palavra": "faltando.",
+  "inicio": 4.2,
+  "fim": 4.82
+ },
+ {
+  "palavra": "O",
+  "inicio": 5.36,
+  "fim": 5.62
+ },
+ {
+  "palavra": "jogo",
+  "inicio": 5.62,
+  "fim": 5.84
+ },
+ {
+  "palavra": "saiu",
+  "inicio": 5.84,
+  "fim": 6.24
+ },
+ {
+  "palavra": "dia",
+  "inicio": 6.24,
+  "fim": 6.36
+ },
+ {
+  "palavra": "dezenove,",
+  "inicio": 6.36,
+  "fim": 6.74
+ },
+ {
+  "palavra": "só",
+  "inicio": 6.74,
+  "fim": 7.0
+ },
+ {
+  "palavra": "para",
+  "inicio": 7.0,
+  "fim": 7.16
+ },
+ {
+  "palavra": "console.",
+  "inicio": 7.16,
+  "fim": 7.52
+ },
+ {
+  "palavra": "No",
+  "inicio": 8.5,
+  "fim": 8.9
+ },
+ {
+  "palavra": "PC...",
+  "inicio": 8.9,
+  "fim": 9.2
+ },
+ {
+  "palavra": "nada.",
+  "inicio": 9.42,
+  "fim": 9.96
+ },
+ {
+  "palavra": "Na",
+  "inicio": 10.18,
+  "fim": 10.7
+ },
+ {
+  "palavra": "mesma",
+  "inicio": 10.7,
+  "fim": 10.96
+ },
+ {
+  "palavra": "semana,",
+  "inicio": 10.96,
+  "fim": 11.44
+ },
+ {
+  "palavra": "o",
+  "inicio": 11.46,
+  "fim": 11.64
+ },
+ {
+  "palavra": "grupo",
+  "inicio": 11.64,
+  "fim": 11.88
+ },
+ {
+  "palavra": "Cyberleek",
+  "inicio": 11.88,
+  "fim": 12.68
+ },
+ {
+  "palavra": "vazou",
+  "inicio": 12.68,
+  "fim": 13.42
+ },
+ {
+  "palavra": "a",
+  "inicio": 13.42,
+  "fim": 13.48
+ },
+ {
+  "palavra": "versão",
+  "inicio": 13.48,
+  "fim": 13.74
+ },
+ {
+  "palavra": "de",
+  "inicio": 13.74,
+  "fim": 13.94
+ },
+ {
+  "palavra": "Xbox",
+  "inicio": 13.94,
+  "fim": 14.16
+ },
+ {
+  "palavra": "inteira.",
+  "inicio": 14.16,
+  "fim": 15.2
+ },
+ {
+  "palavra": "Só",
+  "inicio": 15.2,
+  "fim": 15.74
+ },
+ {
+  "palavra": "que",
+  "inicio": 15.74,
+  "fim": 15.9
+ },
+ {
+  "palavra": "faltava",
+  "inicio": 15.9,
+  "fim": 16.34
+ },
+ {
+  "palavra": "o",
+  "inicio": 16.34,
+  "fim": 16.44
+ },
+ {
+  "palavra": "executável:",
+  "inicio": 16.44,
+  "fim": 17.12
+ },
+ {
+  "palavra": "o",
+  "inicio": 17.2,
+  "fim": 17.48
+ },
+ {
+  "palavra": "arquivo",
+  "inicio": 17.48,
+  "fim": 18.04
+ },
+ {
+  "palavra": "que",
+  "inicio": 18.04,
+  "fim": 18.22
+ },
+ {
+  "palavra": "liga",
+  "inicio": 18.22,
+  "fim": 18.46
+ },
+ {
+  "palavra": "o",
+  "inicio": 18.46,
+  "fim": 18.56
+ },
+ {
+  "palavra": "jogo.",
+  "inicio": 18.56,
+  "fim": 18.86
+ },
+ {
+  "palavra": "E",
+  "inicio": 19.06,
+  "fim": 19.52
+ },
+ {
+  "palavra": "hoje...",
+  "inicio": 19.52,
+  "fim": 19.88
+ },
+ {
+  "palavra": "ele",
+  "inicio": 20.0,
+  "fim": 20.36
+ },
+ {
+  "palavra": "vazou",
+  "inicio": 20.36,
+  "fim": 20.72
+ },
+ {
+  "palavra": "também.",
+  "inicio": 20.72,
+  "fim": 20.94
+ },
+ {
+  "palavra": "Esse",
+  "inicio": 21.46,
+  "fim": 21.98
+ },
+ {
+  "palavra": "arquivo",
+  "inicio": 21.98,
+  "fim": 22.5
+ },
+ {
+  "palavra": "fala",
+  "inicio": 22.5,
+  "fim": 22.74
+ },
+ {
+  "palavra": "a",
+  "inicio": 22.74,
+  "fim": 22.88
+ },
+ {
+  "palavra": "língua",
+  "inicio": 22.88,
+  "fim": 23.14
+ },
+ {
+  "palavra": "do",
+  "inicio": 23.14,
+  "fim": 23.28
+ },
+ {
+  "palavra": "Xbox...",
+  "inicio": 23.28,
+  "fim": 23.54
+ },
+ {
+  "palavra": "e",
+  "inicio": 23.54,
+  "fim": 24.16
+ },
+ {
+  "palavra": "o",
+  "inicio": 24.16,
+  "fim": 24.4
+ },
+ {
+  "palavra": "PC",
+  "inicio": 24.4,
+  "fim": 24.58
+ },
+ {
+  "palavra": "não",
+  "inicio": 24.58,
+  "fim": 24.86
+ },
+ {
+  "palavra": "entende.",
+  "inicio": 24.86,
+  "fim": 25.4
+ },
+ {
+  "palavra": "Pensa",
+  "inicio": 25.64,
+  "fim": 26.16
+ },
+ {
+  "palavra": "comigo.",
+  "inicio": 26.16,
+  "fim": 26.46
+ },
+ {
+  "palavra": "É",
+  "inicio": 26.46,
+  "fim": 27.28
+ },
+ {
+  "palavra": "uma",
+  "inicio": 27.28,
+  "fim": 27.66
+ },
+ {
+  "palavra": "receita",
+  "inicio": 27.66,
+  "fim": 28.08
+ },
+ {
+  "palavra": "em",
+  "inicio": 28.08,
+  "fim": 28.2
+ },
+ {
+  "palavra": "japonês:",
+  "inicio": 28.2,
+  "fim": 28.8
+ },
+ {
+  "palavra": "pra",
+  "inicio": 28.82,
+  "fim": 29.18
+ },
+ {
+  "palavra": "cozinhar,",
+  "inicio": 29.18,
+  "fim": 29.84
+ },
+ {
+  "palavra": "alguém",
+  "inicio": 29.86,
+  "fim": 30.12
+ },
+ {
+  "palavra": "tem",
+  "inicio": 30.12,
+  "fim": 30.34
+ },
+ {
+  "palavra": "que",
+  "inicio": 30.34,
+  "fim": 30.52
+ },
+ {
+  "palavra": "traduzir",
+  "inicio": 30.52,
+  "fim": 30.98
+ },
+ {
+  "palavra": "linha",
+  "inicio": 30.98,
+  "fim": 31.18
+ },
+ {
+  "palavra": "por",
+  "inicio": 31.18,
+  "fim": 31.44
+ },
+ {
+  "palavra": "linha.",
+  "inicio": 31.44,
+  "fim": 31.68
+ },
+ {
+  "palavra": "E",
+  "inicio": 31.98,
+  "fim": 32.34
+ },
+ {
+  "palavra": "quem",
+  "inicio": 32.34,
+  "fim": 32.52
+ },
+ {
+  "palavra": "anda",
+  "inicio": 32.52,
+  "fim": 32.7
+ },
+ {
+  "palavra": "fazendo",
+  "inicio": 32.7,
+  "fim": 33.0
+ },
+ {
+  "palavra": "essa",
+  "inicio": 33.0,
+  "fim": 33.24
+ },
+ {
+  "palavra": "tradução",
+  "inicio": 33.24,
+  "fim": 33.66
+ },
+ {
+  "palavra": "pros",
+  "inicio": 33.66,
+  "fim": 33.98
+ },
+ {
+  "palavra": "fãs?",
+  "inicio": 33.98,
+  "fim": 34.38
+ },
+ {
+  "palavra": "A",
+  "inicio": 34.5,
+  "fim": 35.0
+ },
+ {
+  "palavra": "inteligência",
+  "inicio": 35.0,
+  "fim": 35.48
+ },
+ {
+  "palavra": "artificial.",
+  "inicio": 35.48,
+  "fim": 35.74
+ },
+ {
+  "palavra": "Este",
+  "inicio": 36.22,
+  "fim": 36.74
+ },
+ {
+  "palavra": "ano,",
+  "inicio": 36.74,
+  "fim": 37.12
+ },
+ {
+  "palavra": "fãs",
+  "inicio": 37.14,
+  "fim": 37.5
+ },
+ {
+  "palavra": "já",
+  "inicio": 37.5,
+  "fim": 37.6
+ },
+ {
+  "palavra": "levaram",
+  "inicio": 37.6,
+  "fim": 38.02
+ },
+ {
+  "palavra": "um",
+  "inicio": 38.02,
+  "fim": 38.08
+ },
+ {
+  "palavra": "jogo",
+  "inicio": 38.08,
+  "fim": 38.32
+ },
+ {
+  "palavra": "de",
+  "inicio": 38.32,
+  "fim": 38.46
+ },
+ {
+  "palavra": "Switch",
+  "inicio": 38.46,
+  "fim": 38.72
+ },
+ {
+  "palavra": "pro",
+  "inicio": 38.72,
+  "fim": 39.0
+ },
+ {
+  "palavra": "PC",
+  "inicio": 39.0,
+  "fim": 39.24
+ },
+ {
+  "palavra": "assim.",
+  "inicio": 39.24,
+  "fim": 39.54
+ },
+ {
+  "palavra": "Ninguém",
+  "inicio": 39.84,
+  "fim": 40.4
+ },
+ {
+  "palavra": "confirmou",
+  "inicio": 40.4,
+  "fim": 41.08
+ },
+ {
+  "palavra": "se",
+  "inicio": 41.08,
+  "fim": 41.18
+ },
+ {
+  "palavra": "a",
+  "inicio": 41.18,
+  "fim": 41.26
+ },
+ {
+  "palavra": "versão",
+  "inicio": 41.26,
+  "fim": 41.52
+ },
+ {
+  "palavra": "vazada",
+  "inicio": 41.52,
+  "fim": 42.06
+ },
+ {
+  "palavra": "é",
+  "inicio": 42.06,
+  "fim": 42.18
+ },
+ {
+  "palavra": "verdadeira...",
+  "inicio": 42.18,
+  "fim": 42.84
+ },
+ {
+  "palavra": "e",
+  "inicio": 42.84,
+  "fim": 43.08
+ },
+ {
+  "palavra": "já",
+  "inicio": 43.08,
+  "fim": 43.3
+ },
+ {
+  "palavra": "tem",
+  "inicio": 43.3,
+  "fim": 43.52
+ },
+ {
+  "palavra": "GTA",
+  "inicio": 43.52,
+  "fim": 43.8
+ },
+ {
+  "palavra": "falso",
+  "inicio": 43.8,
+  "fim": 44.36
+ },
+ {
+  "palavra": "com",
+  "inicio": 44.36,
+  "fim": 44.5
+ },
+ {
+  "palavra": "vírus",
+  "inicio": 44.5,
+  "fim": 44.8
+ },
+ {
+  "palavra": "por",
+  "inicio": 44.8,
+  "fim": 44.98
+ },
+ {
+  "palavra": "aí.",
+  "inicio": 44.98,
+  "fim": 45.18
+ },
+ {
+  "palavra": "Mas",
+  "inicio": 45.64,
+  "fim": 46.2
+ },
+ {
+  "palavra": "se",
+  "inicio": 46.2,
+  "fim": 46.44
+ },
+ {
+  "palavra": "for",
+  "inicio": 46.44,
+  "fim": 46.68
+ },
+ {
+  "palavra": "real...",
+  "inicio": 46.68,
+  "fim": 46.98
+ },
+ {
+  "palavra": "o",
+  "inicio": 47.6,
+  "fim": 48.16
+ },
+ {
+  "palavra": "PC",
+  "inicio": 48.16,
+  "fim": 48.64
+ },
+ {
+  "palavra": "pode",
+  "inicio": 48.64,
+  "fim": 49.38
+ },
+ {
+  "palavra": "ganhar",
+  "inicio": 49.38,
+  "fim": 49.7
+ },
+ {
+  "palavra": "o",
+  "inicio": 49.7,
+  "fim": 49.92
+ },
+ {
+  "palavra": "GTA",
+  "inicio": 49.92,
+  "fim": 50.12
+ },
+ {
+  "palavra": "seis",
+  "inicio": 50.12,
+  "fim": 50.48
+ },
+ {
+  "palavra": "antes",
+  "inicio": 50.48,
+  "fim": 51.08
+ },
+ {
+  "palavra": "da",
+  "inicio": 51.08,
+  "fim": 51.28
+ },
+ {
+  "palavra": "própria",
+  "inicio": 51.28,
+  "fim": 51.74
+ },
+ {
+  "palavra": "Rockstar.",
+  "inicio": 51.74,
+  "fim": 52.36
+ },
+ {
+  "palavra": "Você",
+  "inicio": 53.42,
+  "fim": 53.98
+ },
+ {
+  "palavra": "acha",
+  "inicio": 53.98,
+  "fim": 54.5
+ },
+ {
+  "palavra": "que",
+  "inicio": 54.5,
+  "fim": 54.68
+ },
+ {
+  "palavra": "os",
+  "inicio": 54.68,
+  "fim": 54.78
+ },
+ {
+  "palavra": "fãs",
+  "inicio": 54.78,
+  "fim": 55.18
+ },
+ {
+  "palavra": "conseguem?",
+  "inicio": 55.18,
+  "fim": 55.8
+ },
+ {
+  "palavra": "Sim",
+  "inicio": 55.8,
+  "fim": 56.16
+ },
+ {
+  "palavra": "ou",
+  "inicio": 56.16,
+  "fim": 56.32
+ },
+ {
+  "palavra": "não?",
+  "inicio": 56.32,
+  "fim": 56.5
+ }
+]
