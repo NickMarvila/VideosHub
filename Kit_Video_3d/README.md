@@ -12,7 +12,7 @@ O agente faz o resto: pesquisa, roteiro viral, narração, cenas 3D, legendas, v
 
 **Sempre animado de verdade:** o motor mostra o **processo** (pedra caindo, líquido jorrando, fumaça, água em canos, máquinas e fábricas funcionando, rastro de pavimento, peças girando) sobre um **cenário real** (campo, cidade, floresta, deserto, litoral, indústria ou sala), e o validador **recusa** cenas paradas e fundos de cor sólida. O guia `docs/processos.md` ensina o agente a animar qualquer tema.
 
-**Visual:** céu em degradê, colinas, nuvens, sombra suave e correção de cor; legenda de uma palavra por vez; e, **só quando o vídeo exigir**, setas, ícones (X, V, alerta...), etiquetas com dados e efeito de preto e branco com zoom.
+**Visual:** céu em degradê, colinas, nuvens, sombra suave e correção de cor; legenda de 2 a 3 palavras por vez, com a palavra falada em destaque; e, **só quando o vídeo exigir**, setas, ícones (X, V, alerta...), etiquetas com dados e efeito de preto e branco com zoom.
 
 ## Voz da narração (você escolhe)
 

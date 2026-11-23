@@ -1,12 +1,14 @@
 """Teste do Kokoro (Apache-2.0) em PT-BR via kokoro-onnx.
-Uso: C:/Users/nickm/.venvs/kokoro/Scripts/python pipeline/kokoro_tts.py "texto" saida.wav --voz pm_alex --vel 0.9
+Uso: ~/.venvs/kokoro/Scripts/python pipeline/kokoro_tts.py "texto" saida.wav --voz pm_alex --vel 0.9
 """
 import argparse
+from pathlib import Path
+
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
-MODELO = "C:/Users/nickm/tools/kokoro/kokoro-v1.0.onnx"
-VOZES = "C:/Users/nickm/tools/kokoro/voices-v1.0.bin"
+MODELO = str(Path.home() / "tools" / "kokoro" / "kokoro-v1.0.onnx")
+VOZES = str(Path.home() / "tools" / "kokoro" / "voices-v1.0.bin")
 
 ap = argparse.ArgumentParser()
 ap.add_argument("texto"); ap.add_argument("saida")

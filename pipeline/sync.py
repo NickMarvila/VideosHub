@@ -7,12 +7,13 @@ Uso:
 """
 import argparse
 import json
+import os
 import subprocess
 import urllib.request
 import uuid
 from pathlib import Path
 
-RHUBARB = r"C:\Users\nickm\tools\Rhubarb-Lip-Sync-1.14.0-Windows\rhubarb.exe"
+RHUBARB = os.environ.get("RHUBARB") or str(Path.home() / "tools" / "Rhubarb-Lip-Sync-1.14.0-Windows" / "rhubarb.exe")
 API = "http://localhost:3900"
 
 

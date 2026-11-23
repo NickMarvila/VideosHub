@@ -17,6 +17,8 @@ O criador pede e aprova pelo **painel** (`node apps/painel/server.mjs`, em http:
 - **Biblioteca:** personagens em `personagens/<slug>/personagem.json` (com `rig2d` e `kit3d`), objetos e cenários 2D em `assets2d/`, e peças 3D do hub no catálogo do kit (`Kit_Video_3d/assets/scenery/hub/`). Use o que existe antes de improvisar.
 - Personagens fixos ficam em `personagens/<slug>/personagem.json`. Se a ideia citar um deles (ex.: Tales), use exatamente aquela ficha: roupa, carro, bordão e grafia.
 
+**Legenda (todo vídeo, 2D e 3D):** ligada por padrão, de 2 a 3 palavras na tela por vez, com a palavra falada em destaque. Não desligue nem passe para uma palavra por vez sem um pedido do criador. No 2D é `legenda.porVez: 3`; no 3D é `legendas.palavrasPorBloco: 3` (ou omita o campo).
+
 ## 2. O que fazer em cada etapa (`status.etapa`)
 
 ### roteiro
@@ -139,7 +141,7 @@ Se o item tem `pedido` mas ainda não tem `usa`, leia `biblioteca/pedidos/<pedid
 
 1. Use `frases.json` (gerado pelo painel junto com a voz) para alinhar as cenas.
 2. Escreva `plano-animacao.md`, com uma linha por frase.
-3. Escreva `storyboard.json` com `audio: "narracao.wav"`, `palavras: "palavras.json"` e `duracao` igual à duração em `voz.json` mais cerca de 0,5 s. Fundo e chão vêm do estilo em `estilos/<estilo>/estilo.json` (`kit`). A legenda vai uma palavra por vez, em `corDestaque` do estilo.
+3. Escreva `storyboard.json` com `audio: "narracao.wav"`, `palavras: "palavras.json"` e `duracao` igual à duração em `voz.json` mais cerca de 0,5 s. Fundo e chão vêm do estilo em `estilos/<estilo>/estilo.json` (`kit`). A legenda vai de 2 a 3 palavras por vez (padrão do motor: não ponha `palavrasPorBloco`, ou use 3), com a palavra falada em `corDestaque` do estilo.
 4. Rode `node Kit_Video_3d/tools/validar.mjs projects/<pasta-do-projeto>` até não sobrar nenhum erro.
 5. Rode `node Kit_Video_3d/tools/render.mjs projects/<pasta-do-projeto> --quadros`. Abra os PNGs em `render/quadros/` com Read e confira com a checklist da seção 6 do AGENTE.md. Corrija e repita, no máximo 3 rodadas.
 6. Escreva `postagem.md` seguindo `Kit_Video_3d/docs/postagem.md`.

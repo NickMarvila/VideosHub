@@ -2,17 +2,19 @@
 // Entrada: palavras = [{ palavra, inicio, fim }] (segundos) — gerado por `node tools/voz.mjs gerar`.
 
 export function criarLegendas(container, palavras, cfg = {}) {
-  const porBloco = cfg.palavrasPorBloco ?? 1; // padrão: uma palavra por vez, como nos Shorts de referência
+  const porBloco = cfg.palavrasPorBloco ?? 3; // padrão: blocos de 2 a 3 palavras (quebra antes em pausa ou fim de frase)
   const maiusculas = cfg.maiusculas ?? false; // padrão: frase normal, como nos Shorts de referência
   const fimDeFrase = /[.!?…]+["”')\]]*$/;
 
   const blocos = [];
   let atual = [];
-  for (const w of palavras) {
+  palavras.forEach((w, k) => {
     atual.push(w);
-    const quebra = fimDeFrase.test(w.palavra) || (/[,;:]$/.test(w.palavra) && atual.length >= 2) || atual.length >= porBloco;
+    const prox = palavras[k + 1];
+    const pausa = !prox || prox.inicio - w.fim > 0.25; // respiro na fala: começa um bloco novo
+    const quebra = fimDeFrase.test(w.palavra) || (/[,;:]$/.test(w.palavra) && atual.length >= 2) || pausa || atual.length >= porBloco;
     if (quebra) { blocos.push(atual); atual = []; }
-  }
+  });
   if (atual.length) blocos.push(atual);
 
   const janelas = blocos.map((b, i) => {

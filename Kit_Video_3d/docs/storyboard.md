@@ -24,7 +24,7 @@ Todos os tempos são em **segundos desde o início do vídeo** (não desde o in�
 |---|---|
 | `duracao` | segundos; use a duração do áudio + 0,3 a 1 s de folga (`voz.json` e `frases.json` ajudam) |
 | `audio` / `palavras` | nomes dos arquivos gerados por `node tools/voz.mjs gerar` (ficam na pasta do projeto) |
-| `legendas` | padrão: **uma palavra por vez**, branca com contorno preto, pequena, no terço inferior (como nos Shorts de referência). Opções: `palavrasPorBloco` (1 a 3), `maiusculas` (false), `corDestaque` (cor da palavra falada; padrão branca), `posicaoY` (0.68), `tamanho` (1) |
+| `legendas` | padrão: **2 a 3 palavras por vez** (o bloco fecha antes em pausa da fala ou fim de frase), branca com contorno preto, no terço inferior, com a palavra falada em `corDestaque`. Opções: `palavrasPorBloco` (padrão 3; não diminua sem pedido do criador), `maiusculas` (false), `corDestaque` (cor da palavra falada; padrão branca), `posicaoY` (0.68), `tamanho` (1) |
 | `ambiente.horario` | `dia`, `tarde`, `nublado` |
 | `ambiente.chao` | `grama`, `terra`, `areia`, `concreto`, `asfalto`, `madeira`, `piso` (padrão pelo `fundo`; não existe chão vazio) |
 | `ambiente.clima` | `limpo` (padrão) ou `chuva` (céu escuro, riscos de chuva e menos luz) |
@@ -228,7 +228,7 @@ Os efeitos afetam só o 3D; legendas, textos e elementos continuam normais. Ao f
 
 ### Zonas da tela (vertical 9:16)
 
-O topo (~8%) e a base (~20%) ficam cobertos pela interface do Shorts/Reels/TikTok. Por isso: título 6–14%, destaque 16–24%, pergunta final 10–22%, **legenda em ~68% (uma palavra por vez)**. Não coloque nada importante fora de ~8%–80%.
+O topo (~8%) e a base (~20%) ficam cobertos pela interface do Shorts/Reels/TikTok. Por isso: título 6–14%, destaque 16–24%, pergunta final 10–22%, **legenda em ~68% (2 a 3 palavras por vez)**. Não coloque nada importante fora de ~8%–80%.
 
 ## Ritmo (o que mantém as pessoas assistindo)
 

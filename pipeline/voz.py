@@ -25,6 +25,30 @@ def aplicar_pronuncia(texto, mapa=None):
     return texto
 
 
+NARRADOR = {"2f02b91b": "Narrador Contador"}  # id do perfil no computador original → nome, para achar o perfil recriado
+_perfis = None
+
+
+def resolver_voz(voz, api=API):
+    """Se o perfil `voz` não existe neste VoiceStudio, usa o perfil de mesmo nome (ex.: o narrador recriado)."""
+    global _perfis
+    if not voz or voz not in NARRADOR:
+        return voz
+    if _perfis is None:
+        try:
+            with urllib.request.urlopen(f"{api}/profiles", timeout=30) as r:
+                dados = json.loads(r.read())
+            _perfis = dados if isinstance(dados, list) else dados.get("profiles", [])
+        except Exception:
+            return voz
+    if any(p.get("id") == voz for p in _perfis):
+        return voz
+    for p in _perfis:
+        if p.get("name") == NARRADOR[voz]:
+            return p["id"]
+    return voz
+
+
 def gerar_fala(texto, saida, motor="voxcpm2", voz=None, descricao=None,
                instrucao=None, idioma="pt", seed=None, velocidade=1.0, passos=None, guidance=None, api=API):
     if motor == "voicebox":  # Voicebox (Qwen CustomVoice/Qwen3-TTS), API própria
@@ -39,7 +63,7 @@ def gerar_fala(texto, saida, motor="voxcpm2", voz=None, descricao=None,
         "speed": velocidade,
     }
     if voz:
-        corpo["voice"] = voz
+        corpo["voice"] = resolver_voz(voz, api)
     if descricao:
         corpo["description"] = descricao
     if instrucao:

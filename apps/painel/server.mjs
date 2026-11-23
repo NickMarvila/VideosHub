@@ -13,7 +13,21 @@ const VIDEOS = path.join(RAIZ, 'videos');
 const ESTILOS = path.join(RAIZ, 'estilos');
 const KIT = path.join(RAIZ, 'Kit_Video_3d');
 const PORTA = Number(process.env.PORTA || 4300);
-const FFMPEG_DIR = 'C:\\Users\\nickm\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.1-full_build\\bin';
+// ffmpeg do winget (Gyan.FFmpeg), procurado no perfil de quem roda o painel; FFMPEG_DIR no ambiente tem prioridade
+const acharFfmpeg = () => {
+  if (process.env.FFMPEG_DIR) return process.env.FFMPEG_DIR;
+  const base = path.join(process.env.LOCALAPPDATA || '', 'Microsoft', 'WinGet', 'Packages');
+  try {
+    for (const pac of fs.readdirSync(base).filter((n) => n.startsWith('Gyan.FFmpeg'))) {
+      for (const build of fs.readdirSync(path.join(base, pac))) {
+        const bin = path.join(base, pac, build, 'bin');
+        if (fs.existsSync(path.join(bin, 'ffmpeg.exe'))) return bin;
+      }
+    }
+  } catch {}
+  return '';
+};
+const FFMPEG_DIR = acharFfmpeg();
 const ETAPAS = ['roteiro', 'narracao', 'cenas', 'final'];
 const TIPOS = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.mp4': 'video/mp4',

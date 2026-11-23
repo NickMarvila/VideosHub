@@ -104,11 +104,11 @@ Entrada: **ideia** + **duração** (se não disser, use `duracaoPadraoSegundos`)
 - **Primeira cena:** o título/pergunta do gancho na tela (`titulo`) já no início. **Última cena:** painel `pergunta` com a pergunta de comentário.
 - **Quem fala:** o personagem principal com `talk` + `fala: true` e `viraPara: camera`. Mantenha **o mesmo personagem para o mesmo papel** no vídeo inteiro.
 - **Continuidade:** repita o mesmo objeto (mesmo `asset`, `pos`, `params`) nas cenas seguintes; as cenas são montadas do zero.
-- **Poucos textos:** título/destaque só no gancho, em no máximo 1–2 ideias-chave e na pergunta final. A legenda (uma palavra por vez, pequena, embaixo) já conta a história; o texto na tela nunca a repete.
+- **Poucos textos:** título/destaque só no gancho, em no máximo 1–2 ideias-chave e na pergunta final. A legenda (2 a 3 palavras por vez, embaixo) já conta a história; o texto na tela nunca a repete.
 - **Elementos opcionais (`elementos` e `efeitos`) só quando o vídeo exigir:** `icone x`/`v` para contrastar errado/certo; `seta` para mostrar direção, força ou onde olhar; `etiqueta` para um dado ou rótulo curto; `pretoebranco` (com zoom) em momentos ruins/dramáticos (o problema, o desastre), geralmente junto de um `x` ou `alerta`. Use poucos, longe do rosto e da legenda.
 - **Visual:** `ambiente.clima: "chuva"` para cenas de chuva/enchente; `horario` varia o clima do vídeo; mantenha o mesmo ambiente na maior parte do vídeo.
 - **Câmera `enquadrar`:** `angulo` é contado **a partir da frente do alvo (`giro`)**. Para mostrar um personagem de frente com o cenário atrás, use `giro: 0` e ponha-o na frente da casa (z maior). Câmera dentro de um objeto = tela cinza/escura: sempre confira os quadros.
-- **Zonas da tela:** título 6–14%, destaque 16–24%, pergunta final 10–22%, legenda ~68% (uma palavra por vez). O destaque **acrescenta** informação (rótulo, número, provocação); até ~30 caracteres.
+- **Zonas da tela:** título 6–14%, destaque 16–24%, pergunta final 10–22%, legenda ~68% (2 a 3 palavras por vez). O destaque **acrescenta** informação (rótulo, número, provocação); até ~30 caracteres.
 - **Assets:** use os do catálogo. Se o tema pede algo que não existe (ex.: elevador, metrô), **componha com o que há** e diga ao criador a limitação com honestidade; não invente nomes de asset.
 - **Peso:** evite muitas cópias de assets grandes (prédios) na mesma cena.
 
@@ -116,7 +116,7 @@ Entrada: **ideia** + **duração** (se não disser, use `duracaoPadraoSegundos`)
 
 - [ ] O objeto principal da cena está inteiro e **em foco** (nada cortado, câmera não está dentro de parede).
 - [ ] O personagem que fala está de frente e **visível**; o rosto não é coberto pela legenda.
-- [ ] O texto de título/destaque está dentro da zona e legível; não há dois textos brigando; a legenda (uma palavra) não está tapando o rosto nem um elemento.
+- [ ] O texto de título/destaque está dentro da zona e legível; não há dois textos brigando; a legenda não está tapando o rosto nem um elemento.
 - [ ] Setas/ícones aparecem onde fazem sentido e apontam para o que a frase fala.
 - [ ] Há contraste e variedade entre cenas vizinhas (não são cortes iguais).
 - [ ] A cena mostra **o que a frase fala** naquele momento.
