@@ -4,7 +4,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const app = $('#app');
 const ETAPAS = [['roteiro', 'Roteiro'], ['narracao', 'Narração'], ['cenas', 'Cenas'], ['final', 'Vídeo final'], ['agenda', 'Agenda']];
-const NOME_TAREFA = { vozpropria: 'Preparando a sua gravação', trilha: 'Refazendo a trilha sonora', variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
+const NOME_TAREFA = { pacote: 'Montando a capa e os textos', vozpropria: 'Preparando a sua gravação', trilha: 'Refazendo a trilha sonora', variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
 let ciclo = null;
 let assinatura = '';
 let rotaAtual = '';
@@ -111,6 +111,7 @@ async function telaVideos() {
     assinatura = sig;
     const pend = vs.filter(vezDoCriador).length;
     app.innerHTML = `<div class="entra"><h1>Vídeos</h1>
+      ${(() => { const n = vs.filter((v) => v.estado === 'aguardando_agenda').length; return n ? `<p class="bloco vez" style="padding:12px 16px"><b>${n} ${n === 1 ? 'vídeo pronto' : 'vídeos prontos'} para agendar.</b> Abra cada um e agende nas 3 plataformas (lote da semana).</p>` : ''; })()}
       <p class="sub">${pend ? `${pend} ${pend === 1 ? 'vídeo espera' : 'vídeos esperam'} a sua decisão.` : vs.length ? 'Nada esperando você agora.' : ''}</p>
       ${grupos.length ? grupos.map(([t, l]) => `<div class="secao"><span class="n">${l.length}</span> ${t}</div><div class="grade">${l.map(cartao).join('')}</div>`).join('')
         : '<p class="vazio">Nenhum vídeo ainda. <a href="#/novo">Peça o primeiro</a>: você descreve a ideia e a IA escreve o roteiro.</p>'}</div>`;
@@ -781,6 +782,61 @@ function filme(v) {
   return `<div class="filme" role="list" aria-label="Etapas do vídeo">${quadros}</div>
     ${total > 0 && v.etapa !== 'agenda' ? `<p class="previsao-total">Até o vídeo pronto: ~${duracao(total)} de máquina, sem contar suas aprovações.</p>` : ''}`;
 }
+// ---------- pacote de postagem (agendar à mão em cada plataforma) ----------
+const PLAT = [['youtube', 'YouTube', 'https://studio.youtube.com', 'YouTube Studio → Criar → Enviar vídeo → em "Visibilidade", Programar'],
+  ['instagram', 'Instagram', 'https://business.facebook.com/latest/composer', 'Meta Business Suite → Criar Reel → envie o vídeo e a capa → Programar'],
+  ['tiktok', 'TikTok', 'https://www.tiktok.com/tiktokstudio/upload', 'TikTok Studio (no computador) → Enviar → Capa → Programar (até 10 dias antes)']];
+function blocoPacote(v) {
+  const pk = v.arquivos.pacote, ag = v.agenda || {};
+  if (!pk) return `<div class="bloco vez"><h2>Postar</h2><p>O pacote de postagem (capa e textos) ainda não foi montado.</p>
+    <div class="acoes"><button class="vez" data-pacote>Montar o pacote</button></div></div>`;
+  const quando = ag.quando || v.arquivos.proximoHorario || '';
+  const campo = (p, k, rot, linhas) => `<label>${rot} <button class="mini" data-copiar="${p}.${k}">Copiar</button></label>
+    ${linhas === 1 ? `<input data-texto="${p}.${k}" value="${esc(pk.textos?.[p]?.[k] || '')}">` : `<textarea data-texto="${p}.${k}" rows="${linhas}">${esc(pk.textos?.[p]?.[k] || '')}</textarea>`}`;
+  return `<div class="bloco ${v.estado === 'agendado' ? '' : 'vez'}"><h2>Postar</h2>
+    <div style="display:grid;grid-template-columns:minmax(180px,240px) 1fr;gap:20px;align-items:start">
+      <div>${pk.capa ? `<img class="capa" src="${pk.capa}" alt="Capa com texto">` : '<p class="vazio">Sem capa ainda.</p>'}
+        <div class="acoes" style="flex-direction:column;align-items:stretch">
+          ${pk.final ? `<a class="botao" href="${pk.final}" download="${esc(v.id)}.mp4">Baixar o vídeo</a>` : ''}
+          ${pk.capa ? `<a class="botao" href="${pk.capa}" download="${esc(v.id)}-capa.jpg">Baixar a capa</a>` : ''}</div>
+        <label for="capa-texto">Texto da capa</label><input id="capa-texto" value="${esc(pk.capaTexto || '')}">
+        <label for="capa-em">Instante (s)</label><input id="capa-em" type="number" step="0.1" value="${v.capaEm ?? ''}">
+        <div class="acoes"><button data-pacote>Refazer a capa</button></div></div>
+      <div>
+        <label for="quando">Data e hora (a mesma nas 3)</label><input id="quando" type="datetime-local" value="${esc(quando)}">
+        ${ag.quando ? '' : '<p class="dica">Sugestão: o próximo horário livre (dias de semana às 19h, fim de semana às 11h).</p>'}
+        <div class="acoes"><button class="vez" data-acao="agendar">${ag.quando ? 'Mudar a data' : 'Usar esta data'}</button></div>
+        ${PLAT.map(([p, nome, url, como]) => `<details class="plat-bloco" style="margin-top:12px" ${ag.quando && !ag.feito?.[p] ? 'open' : ''}><summary>
+            <label style="display:inline-flex;gap:8px;margin:0;color:var(--tinta)" onclick="event.stopPropagation()"><input type="checkbox" data-agendei="${p}" style="width:auto" ${ag.feito?.[p] ? 'checked' : ''} ${ag.quando ? '' : 'disabled'}> <b>${nome}</b> ${ag.feito?.[p] ? '· agendado ✓' : ''}</label></summary>
+            <p class="dica">${como}. <a href="${url}" target="_blank" rel="noopener">Abrir</a></p>
+            ${p === 'youtube' ? campo(p, 'titulo', 'Título', 1) + campo(p, 'descricao', 'Descrição', 7) : campo(p, 'legenda', 'Legenda', 6)}
+            ${campo(p, 'comentarioFixado', 'Comentário fixado', 1)}</details>`).join('')}
+        <div class="acoes"><button data-textos-salvar>Salvar os textos editados</button></div>
+        <p class="dica">Marque cada plataforma depois de agendar nela. Com as 3 marcadas, o vídeo vai para "Agendados".</p>
+      </div></div></div>`;
+}
+function ligarPacote(id) {
+  $('[data-pacote]').forEach((b) => { b.onclick = async () => {
+    try { b.disabled = true; await api(`/api/videos/${id}/pacote`, { texto: $('#capa-texto')?.value, capaEm: $('#capa-em')?.value || undefined }); aviso('Montando a capa e os textos', true); }
+    catch (e) { aviso(e.message); b.disabled = false; }
+    assinatura = ''; rodarCiclo();
+  }; });
+  $('[data-copiar]').forEach((b) => { b.onclick = async (e) => {
+    e.preventDefault();
+    const t = $(`[data-texto="${b.dataset.copiar}"]`)?.value || '';
+    try { await navigator.clipboard.writeText(t); aviso('Copiado', true); } catch { aviso('Não deu para copiar'); }
+  }; });
+  $('[data-agendei]').forEach((c) => { c.onchange = async () => {
+    try { await api(`/api/videos/${id}/agendei`, { plataforma: c.dataset.agendei, feito: c.checked }); } catch (e) { aviso(e.message); c.checked = !c.checked; }
+    assinatura = ''; rodarCiclo();
+  }; });
+  const salvar = $('[data-textos-salvar]');
+  if (salvar) salvar.onclick = async () => {
+    const textos = {};
+    for (const el of $('[data-texto]')) { const [p, k] = el.dataset.texto.split('.'); (textos[p] ||= {})[k] = el.value; }
+    try { await api(`/api/videos/${id}/textos`, { textos }); aviso('Textos salvos', true); } catch (e) { aviso(e.message); }
+  };
+}
 function blocoTarefa(v) {
   const j = v.job;
   if (v.orfao) return `<div class="bloco erro"><h2>Tarefa interrompida</h2><p>O painel foi reiniciado no meio da tarefa. Mande fazer de novo.</p>
@@ -880,6 +936,14 @@ function blocoEtapa(v) {
       <div class="acoes"><button class="maquina" data-acao="ia">Pedir para a IA fazer agora</button></div>
       <p class="dica">Ou, no Claude Code: <code>/video ${esc(v.id)}</code></p></div>`;
   }
+  // erro sem tarefa na memória (ex.: o painel foi reiniciado): sem isto o vídeo ficava sem nenhum botão
+  if (v.estado === 'erro' && !rodando && !v.job) {
+    const ult = [...(v.historico || [])].reverse().find((h) => /erro|limite/i.test(h.evento))?.evento || '';
+    const acao = /gravar/.test(ult) ? 'gravar' : /narração/.test(ult) ? 'narrar' : /render/.test(ult) ? 'render' : 'ia';
+    const motivo = v.erroPlano ? 'O limite do plano do Claude acabou no meio da tarefa. Se ele já renovou, é só mandar de novo.' : `A última tarefa falhou (${esc(ult || 'erro')}).`;
+    html += `<div class="bloco erro"><h2>Não terminou</h2><p>${motivo}</p>
+      <div class="acoes"><button class="maquina" data-acao="${acao}">Tentar de novo</button></div></div>`;
+  }
   html += blocoAssets(v);
   if (v.etapa === 'roteiro') {
     html += blocoGanchos(v);
@@ -911,16 +975,7 @@ function blocoEtapa(v) {
       ${a.postagem ? `<details style="margin-top:16px"><summary>Texto da postagem</summary><div class="md" style="font-size:14px;margin-top:8px">${md(a.postagem)}</div></details>` : ''}
       ${v.etapa === 'final' && !rodando && !esperando ? `<div class="acoes"><button data-acao="render">Renderizar de novo</button></div>` : ''}</div>`;
     if (a.video) html += blocoTrilha(v);
-    if (v.etapa === 'agenda') {
-      const ag = v.agenda;
-      html += `<div class="bloco ${ag ? '' : 'vez'}"><h2>Agenda</h2>
-        ${ag ? `<p>Agendado para <b>${esc(new Date(ag.quando).toLocaleString('pt-BR'))}</b> em ${esc(ag.plataformas.join(', '))}.</p>` : ''}
-        <label for="quando">Data e hora</label><input id="quando" type="datetime-local" value="${ag?.quando || ''}">
-        <label>Plataformas</label>
-        <div>${['youtube', 'instagram', 'tiktok'].map((p) => `<label style="display:inline-flex;gap:8px;margin:0 18px 0 0;color:var(--tinta)"><input type="checkbox" value="${p}" class="plat" style="width:auto" ${!ag || ag.plataformas.includes(p) ? 'checked' : ''}> ${p}</label>`).join('')}</div>
-        <div class="acoes"><button class="vez" data-acao="agendar">${ag ? 'Reagendar' : 'Agendar'}</button></div>
-        <p class="dica">A fila guarda os horários. O envio automático para as plataformas ainda precisa das contas conectadas.</p></div>`;
-    }
+    if (v.etapa === 'agenda') html += blocoPacote(v);
   }
   return html;
 }
@@ -963,7 +1018,7 @@ function lateral(v) {
 async function telaVideo(id) {
   if (!VOZES) await carregarVozes();
   const v = await api(`/api/videos/${id}`);
-  const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.arquivos.narracao, JSON.stringify(v.arquivos.ganchos), v.agenda, (v.usoIA || []).length,
+  const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.pacote?.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.arquivos.narracao, JSON.stringify(v.arquivos.ganchos), v.agenda, (v.usoIA || []).length,
     Object.values(v.portoes).map((p) => (p.ajustes || []).length),
     (v.arquivos.audioFrases?.frases || []).map((f) => [f.id, f.texto, f.energia, f.efeito, f.velocidade, f.pausa, f.escolhido, f.takes.length, f.precisaGravar]), v.arquivos.audioFrases?.montagem?.atual,
     (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length]),
@@ -999,6 +1054,7 @@ async function telaVideo(id) {
     ligarQuemNarra(id);
     ligarAssets(id);
     ligarGanchos(id);
+    ligarPacote(id);
     if (esperandoMontagem === id && !v.job?.rodando && v.arquivos.audioFrases?.montagem?.atual) { esperandoMontagem = null; tocar(v.arquivos.audio, $('.montagem')); }
   }
   recebidoEm = Date.now();

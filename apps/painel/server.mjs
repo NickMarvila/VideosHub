@@ -85,6 +85,11 @@ function detalhes(v) {
       qaFolha: existe('render/qa_folha.jpg') ? `${rel('render/qa_folha.jpg')}?v=${versao('render/qa_folha.jpg')}` : null,
       capa: existe('render/capa.png') ? `${rel('render/capa.png')}?v=${versao('render/capa.png')}` : null,
       quadros,
+      pacote: existe('postar/textos.json') ? { textos: lerJSON(path.join(pasta, 'postar', 'textos.json')),
+        capa: existe('postar/capa.jpg') ? `${rel('postar/capa.jpg')}?v=${versao('postar/capa.jpg')}` : null,
+        capaTexto: lerJSON(path.join(pasta, 'postar', 'capa.json'))?.texto ?? '',
+        final: existe('render/final.mp4') ? rel('render/final.mp4') : null } : null,
+      proximoHorario: proximoHorario(v.id),
     },
   };
 }
@@ -184,7 +189,8 @@ const ARQ_IA = path.join(RAIZ, 'config', 'ia.json');
 const configIA = () => ({ motor: 'claude', trocarSozinho: true, modeloGemini: 'gemini-3.8-flash', ...(lerJSON(ARQ_IA) || {}) });
 const NOME_IA = { claude: 'Claude', gemini: 'Gemini' };
 // sinais de que o plano acabou (limite de uso/cota), nos dois motores
-const FIM_DO_PLANO = /usage limit|limit reached|hit your limit|rate.?limit|quota|resource.?exhausted|429|limite de uso/i;
+// (o Claude Code mudou o texto para "You've hit your 5-hour limit"; o código 429/usage_limit_reached do evento final é o sinal mais firme)
+const FIM_DO_PLANO = /usage.?limit|limit.?reached|hit your [\w-]* ?limit|rate.?limit|quota|resource.?exhausted|429|limite de uso/i;
 // ---------- qual modelo do Claude faz cada tarefa (o painel decide sozinho) ----------
 // Sem isso o Claude Code usa o modelo padrão da conta (Opus) em tudo, e uma etapa de cenas chegou a gastar
 // US$ 3,33 do plano. Regra: Sonnet escreve e monta; Haiku faz mudanças pequenas e mecânicas; Opus só desenha
@@ -197,9 +203,11 @@ function modeloPara(skill, v) {
   const etapa = v.etapa;
   const ajustes = v.portoes?.[etapa]?.ajustes || [];
   const abertos = ajustes.filter((a) => !a.resolvido);
-  if (v.estado === 'erro' || v.orfao) return { modelo: 'opus', motivo: 'a tentativa anterior falhou' };
+  if ((v.estado === 'erro' && !v.erroPlano) || v.orfao) return { modelo: 'opus', motivo: 'a tentativa anterior falhou' };
   if (ajustes.length >= 3) return { modelo: 'opus', motivo: `${ajustes.length}º ajuste nesta etapa` };
   if (etapa === 'narracao') return { modelo: 'haiku', motivo: 'ajuste pequeno no texto das frases' };
+  // "pedir outra" numa cena: uma variante nova a partir de um modelo de cena (config/regras-camera.json)
+  if (etapa === 'cenas' && abertos.length && v.fluxo === 2) return { modelo: 'haiku', motivo: 'uma variante nova de cena' };
   if (etapa === 'roteiro' && abertos.length && abertos.every((a) => /^Ganchos:/i.test(a.texto))) return { modelo: 'sonnet', motivo: 'só 3 ganchos novos' };
   return { modelo: 'sonnet', motivo: etapa === 'cenas' ? 'montar as cenas' : etapa === 'roteiro' ? 'escrever o roteiro' : 'ajuste' };
 }
@@ -300,6 +308,8 @@ function lerEventoIA(job, linha) {
       tokensEntrada: (ev.usage?.input_tokens || 0) + (ev.usage?.cache_read_input_tokens || 0) + (ev.usage?.cache_creation_input_tokens || 0),
       tokensSaida: ev.usage?.output_tokens || 0 };
     if (ev.result) job.resumo = String(ev.result).slice(0, 600);
+    // erro da API (limite do plano, sobrecarga): guarda no log para o FIM_DO_PLANO enxergar mesmo se o texto mudar
+    if (ev.is_error && (ev.api_error_status || ev.api_error)) job.log = (job.log + `\nerro da API: ${ev.api_error_status || ''} ${ev.api_error_type || ''} ${ev.api_error || ''}`).slice(-8000);
   }
 }
 
@@ -478,24 +488,36 @@ const ACOES = {
     salvarVideo({ ...v, etapa: 'final', estado: 'processando' }, 'renderizando o vídeo final');
     return job;
   },
+  // pacote de postagem: capa com texto (refaz o quadro se o instante mudou) + textos de cada plataforma, sem IA
+  pacote(v, { texto, capaEm, refazerTextos } = {}) {
+    const passos = [];
+    if (capaEm != null && Number(capaEm) !== Number(v.capaEm)) {
+      salvarVideo({ ...v, capaEm: Number(capaEm) }, `capa no instante ${capaEm} s`);
+      const t = String(Number(capaEm));
+      passos.push(eh2D(v) ? [...R2D(v, '--capa', t), RAIZ, 'Gerando o quadro da capa', 0.7] : ['node', ['tools/render.mjs', projetoKit(v), '--capa', t], KIT, 'Gerando o quadro da capa', 0.7]);
+    }
+    passos.push(['node', ['pipeline/pacote.mjs', v.pasta, ...(texto != null ? ['--texto', texto] : []), ...(refazerTextos ? ['--refazer-textos'] : [])], RAIZ, 'Montando a capa e os textos', 0.3]);
+    return rodar(v, 'pacote', passos, null, 'pacote', 1);
+  },
   ia(v) {
     // Chama a IA escolhida (Claude Code ou Gemini CLI) em modo não interativo com a skill /video (usa a assinatura do criador).
     const permitidas = ['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Skill', 'WebSearch', 'WebFetch',
-      'Bash(node pipeline/cenas.mjs validar:*)',
+      'Bash(node pipeline/cenas.mjs validar:*)', 'PowerShell(node pipeline/cenas.mjs validar:*)', 'PowerShell(node apps/render/render2d.mjs:*)',
       'Bash(node Kit_Video_3d/tools/validar.mjs:*)', 'Bash(node Kit_Video_3d/tools/render.mjs:*)',
       'Bash(node Kit_Video_3d/tools/novo-projeto.mjs:*)', 'Bash(node apps/render/render2d.mjs:*)'];
     const job = rodarIA(v, 'video', v.id, permitidas,
     (ok, j) => {
       const a = lerVideo(v.id);
       if (j.uso) (a.usoIA ||= []).push({ em: agora(), etapa: a.etapa, ...j.uso });
-      if (a.estado === 'ia_trabalhando') salvarVideo({ ...a, estado: ok ? 'aguardando_ia' : 'erro' }, ok ? 'IA terminou sem devolver para aprovação' : 'erro na IA');
+      // erroPlano: falhou porque o limite do plano acabou (não por erro da IA); a nova tentativa não sobe para o Opus
+      if (a.estado === 'ia_trabalhando') salvarVideo({ ...a, estado: ok ? 'aguardando_ia' : 'erro', erroPlano: !ok && !!j.erroPlano }, ok ? 'IA terminou sem devolver para aprovação' : j.erroPlano ? 'o limite do plano acabou' : 'erro na IA');
       else salvarVideo(a);
       if (ok && a.fluxo === 2 && a.etapa === 'cenas' && a.estado === 'aguardando_aprovacao' && variantesPendentes(a) > 0) ACOES.midia(lerVideo(v.id));
       // ajuste de texto no áudio: grava sozinho as frases que a IA mudou (e monta de novo)
       const alteradas = a.fluxo === 2 && a.etapa === 'narracao' ? (audioFrasesDe(a)?.frases || []).filter((f) => f.precisaGravar).map((f) => f.id) : [];
       if (ok && alteradas.length) ACOES.gravar(lerVideo(v.id), alteradas);
     }, chaveIA(v));
-    salvarVideo({ ...v, estado: 'ia_trabalhando' }, 'IA trabalhando');
+    salvarVideo({ ...v, estado: 'ia_trabalhando', erroPlano: false }, 'IA trabalhando');
     return job;
   },
 };
@@ -788,7 +810,7 @@ function aprovar(v) {
   if (etapa === 'narracao') { sincronizarAssets(v); salvarVideo({ ...v, etapa: 'cenas', estado: 'aguardando_ia' }, 'narração aprovada'); ACOES.ia(lerVideo(v.id)); return; }
   if (etapa === 'cenas' && v.fluxo === 2 && variantesDe(v)?.cenas.some((c) => !c.escolhida)) throw new Error('Escolha uma variante em todas as cenas (ou use "Escolher as recomendadas").');
   if (etapa === 'cenas') { salvarVideo(v, 'cenas aprovadas'); ACOES.render(lerVideo(v.id)); return; }
-  if (etapa === 'final') { salvarVideo({ ...v, etapa: 'agenda', estado: 'aguardando_agenda' }, 'vídeo final aprovado'); }
+  if (etapa === 'final') { salvarVideo({ ...v, etapa: 'agenda', estado: 'aguardando_agenda' }, 'vídeo final aprovado'); ACOES.pacote(lerVideo(v.id)); }
 }
 function pedirAjuste(v, texto) {
   if (!texto?.trim()) throw new Error('Escreva o que quer ajustar.');
@@ -932,10 +954,40 @@ function listarEstilos() {
   return fs.readdirSync(ESTILOS).filter((d) => fs.existsSync(path.join(ESTILOS, d, 'estilo.json')))
     .map((d) => lerJSON(path.join(ESTILOS, d, 'estilo.json'))).sort((a, b) => (b.nota || 0) - (a.nota || 0));
 }
-function agendar(v, { quando, plataformas, legenda }) {
+// Agendamento à mão em cada plataforma (YouTube Studio, Meta Business Suite, TikTok Studio): o painel guarda a data
+// e marca o que o criador já agendou; quando as 3 estão marcadas, o vídeo vai para "Agendado".
+const PLATAFORMAS = ['youtube', 'instagram', 'tiktok'];
+function agendar(v, { quando, plataformas }) {
   if (!quando) throw new Error('Escolha data e hora.');
-  v.agenda = { quando, plataformas: plataformas?.length ? plataformas : ['youtube', 'instagram'], legenda: legenda || '', estado: 'na_fila' };
-  salvarVideo({ ...v, etapa: 'agenda', estado: 'agendado' }, `agendado para ${quando}`);
+  const antes = v.agenda || {};
+  v.agenda = { ...antes, quando, plataformas: plataformas?.length ? plataformas : PLATAFORMAS, feito: antes.feito || {} };
+  salvarVideo(estadoAgenda(v), `data de postagem: ${quando}`);
+}
+function agendei(v, { plataforma, feito }) {
+  if (!PLATAFORMAS.includes(plataforma)) throw new Error('Plataforma desconhecida.');
+  if (!v.agenda?.quando) throw new Error('Escolha a data antes.');
+  v.agenda.feito = { ...(v.agenda.feito || {}), [plataforma]: feito ? agora() : null };
+  salvarVideo(estadoAgenda(v), `${plataforma}: ${feito ? 'agendado' : 'desmarcado'}`);
+}
+const estadoAgenda = (v) => {
+  const ag = v.agenda;
+  const tudo = ag?.quando && (ag.plataformas || PLATAFORMAS).every((p) => ag.feito?.[p]);
+  return { ...v, etapa: 'agenda', estado: tudo ? 'agendado' : 'aguardando_agenda' };
+};
+// próximo horário livre: dias de semana às 19h, sábado e domingo às 11h (horário local), sem repetir dia já usado
+function proximoHorario(ignorar) {
+  const usados = new Set(listarVideos().filter((x) => x.id !== ignorar && x.agenda?.quando).map((x) => x.agenda.quando.slice(0, 10)));
+  const d = new Date();
+  for (let i = 0; i < 120; i++) {
+    const dia = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+    const fds = [0, 6].includes(dia.getDay());
+    dia.setHours(fds ? 11 : 19, 0, 0, 0);
+    if (dia.getTime() < Date.now() + 30 * 60e3) continue;
+    const p2 = (n) => String(n).padStart(2, '0');
+    const iso = `${dia.getFullYear()}-${p2(dia.getMonth() + 1)}-${p2(dia.getDate())}T${p2(dia.getHours())}:00`;
+    if (!usados.has(iso.slice(0, 10))) return iso;
+  }
+  return null;
 }
 
 // ---------- HTTP ----------
@@ -1014,6 +1066,9 @@ const servidor = http.createServer(async (req, res) => {
           if (acao === 'aprovar') aprovar(v);
           else if (acao === 'ajuste') pedirAjuste(v, corpo.texto);
           else if (acao === 'agendar') agendar(v, corpo);
+          else if (acao === 'agendei') agendei(v, corpo);
+          else if (acao === 'pacote') ACOES.pacote(v, corpo);
+          else if (acao === 'textos') { const arq = path.join(RAIZ, v.pasta, 'postar', 'textos.json'); gravarJSON(arq, { ...(lerJSON(arq) || {}), ...corpo.textos }); }
           else if (acao === 'voz') {
             let nova = { ...v.voz, ...corpo };
             if (corpo.catalogo) { // voz do catálogo (config/vozes.json)

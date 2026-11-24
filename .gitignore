@@ -67,3 +67,6 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Capa com texto do pacote de postagem (gerada de novo pelo painel)
+videos/*/postar/*.jpg
