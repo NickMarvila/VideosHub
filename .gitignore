@@ -70,3 +70,6 @@ desktop.ini
 
 # Capa com texto do pacote de postagem (gerada de novo pelo painel)
 videos/*/postar/*.jpg
+
+# Credenciais do YouTube (OAuth)
+config/youtube/

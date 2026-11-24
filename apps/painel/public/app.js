@@ -4,7 +4,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const app = $('#app');
 const ETAPAS = [['roteiro', 'Roteiro'], ['narracao', 'Narração'], ['cenas', 'Cenas'], ['final', 'Vídeo final'], ['agenda', 'Agenda']];
-const NOME_TAREFA = { pacote: 'Montando a capa e os textos', vozpropria: 'Preparando a sua gravação', trilha: 'Refazendo a trilha sonora', variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
+const NOME_TAREFA = { youtube: 'Enviando ao YouTube', pacote: 'Montando a capa e os textos', vozpropria: 'Preparando a sua gravação', trilha: 'Refazendo a trilha sonora', variantes: 'Gerando os clipes das cenas', gravar: 'Gravando os takes', montar: 'Montando o áudio', narrar: 'Gerando a narração', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando o vídeo', ia: 'A IA está trabalhando' };
 let ciclo = null;
 let assinatura = '';
 let rotaAtual = '';
@@ -786,6 +786,17 @@ function filme(v) {
 const PLAT = [['youtube', 'YouTube', 'https://studio.youtube.com', 'YouTube Studio → Criar → Enviar vídeo → em "Visibilidade", Programar'],
   ['instagram', 'Instagram', 'https://business.facebook.com/latest/composer', 'Meta Business Suite → Criar Reel → envie o vídeo e a capa → Programar'],
   ['tiktok', 'TikTok', 'https://www.tiktok.com/tiktokstudio/upload', 'TikTok Studio (no computador) → Enviar → Capa → Programar (até 10 dias antes)']];
+// YouTube automático: estado do login (atualizado a cada tela de vídeo)
+let YT = { configurado: false, conectado: false };
+async function carregarYT() { try { YT = await api('/api/youtube'); } catch { /* painel antigo */ } }
+function blocoYouTube(v, pk, ag) {
+  const yt = pk.youtube;
+  if (yt?.videoId) return `<p class="dica" style="color:var(--tinta)">✓ Enviado e agendado para ${esc(new Date(yt.publishAt).toLocaleString('pt-BR'))}: <a href="${esc(yt.url)}" target="_blank" rel="noopener">${esc(yt.url)}</a>${yt.capa ? ' · com capa' : ' · <b>sem capa</b>: ponha no YouTube Studio'}${yt.status?.privacyStatus === 'private' && !yt.status?.publishAt ? ' · <b>o YouTube travou como privado</b> (projeto não verificado)' : ''}</p>`;
+  if (!YT.configurado) return '<p class="dica">Envio automático: falta o arquivo <code>config/youtube/client_secret.json</code> (veja o guia).</p>';
+  if (!YT.conectado) return '<div class="acoes"><a class="botao" href="/api/youtube/conectar" target="_blank" rel="noopener">Conectar YouTube</a></div>';
+  return `<div class="acoes"><button class="vez" data-acao="youtube" ${ag.quando && !v.job?.rodando ? '' : 'disabled'}>Enviar e agendar no YouTube</button>
+    <span class="dica" style="margin:0">${ag.quando ? `publica sozinho em ${esc(new Date(ag.quando).toLocaleString('pt-BR'))}` : 'escolha a data antes'}${YT.canal ? ` · canal ${esc(YT.canal.nome)}` : ''}</span></div>`;
+}
 function blocoPacote(v) {
   const pk = v.arquivos.pacote, ag = v.agenda || {};
   if (!pk) return `<div class="bloco vez"><h2>Postar</h2><p>O pacote de postagem (capa e textos) ainda não foi montado.</p>
@@ -803,12 +814,13 @@ function blocoPacote(v) {
         <label for="capa-em">Instante (s)</label><input id="capa-em" type="number" step="0.1" value="${v.capaEm ?? ''}">
         <div class="acoes"><button data-pacote>Refazer a capa</button></div></div>
       <div>
-        <label for="quando">Data e hora (a mesma nas 3)</label><input id="quando" type="datetime-local" value="${esc(quando)}">
+        <label for="quando">Data e hora (a mesma nas 3)</label><input id="quando" type="datetime-local" value="${esc(quando)}" min="${new Date(Date.now() + 20 * 60e3 - new Date().getTimezoneOffset() * 60e3).toISOString().slice(0, 16)}">
         ${ag.quando ? '' : '<p class="dica">Sugestão: o próximo horário livre (dias de semana às 19h, fim de semana às 11h).</p>'}
         <div class="acoes"><button class="vez" data-acao="agendar">${ag.quando ? 'Mudar a data' : 'Usar esta data'}</button></div>
         ${PLAT.map(([p, nome, url, como]) => `<details class="plat-bloco" style="margin-top:12px" ${ag.quando && !ag.feito?.[p] ? 'open' : ''}><summary>
             <label style="display:inline-flex;gap:8px;margin:0;color:var(--tinta)" onclick="event.stopPropagation()"><input type="checkbox" data-agendei="${p}" style="width:auto" ${ag.feito?.[p] ? 'checked' : ''} ${ag.quando ? '' : 'disabled'}> <b>${nome}</b> ${ag.feito?.[p] ? '· agendado ✓' : ''}</label></summary>
-            <p class="dica">${como}. <a href="${url}" target="_blank" rel="noopener">Abrir</a></p>
+            ${p === 'youtube' ? blocoYouTube(v, pk, ag) : ''}
+            <p class="dica">${p === 'youtube' && YT.conectado ? 'Ou à mão: ' : ''}${como}. <a href="${url}" target="_blank" rel="noopener">Abrir</a></p>
             ${p === 'youtube' ? campo(p, 'titulo', 'Título', 1) + campo(p, 'descricao', 'Descrição', 7) : campo(p, 'legenda', 'Legenda', 6)}
             ${campo(p, 'comentarioFixado', 'Comentário fixado', 1)}</details>`).join('')}
         <div class="acoes"><button data-textos-salvar>Salvar os textos editados</button></div>
@@ -816,24 +828,24 @@ function blocoPacote(v) {
       </div></div></div>`;
 }
 function ligarPacote(id) {
-  $('[data-pacote]').forEach((b) => { b.onclick = async () => {
+  $$('[data-pacote]').forEach((b) => { b.onclick = async () => {
     try { b.disabled = true; await api(`/api/videos/${id}/pacote`, { texto: $('#capa-texto')?.value, capaEm: $('#capa-em')?.value || undefined }); aviso('Montando a capa e os textos', true); }
     catch (e) { aviso(e.message); b.disabled = false; }
     assinatura = ''; rodarCiclo();
   }; });
-  $('[data-copiar]').forEach((b) => { b.onclick = async (e) => {
+  $$('[data-copiar]').forEach((b) => { b.onclick = async (e) => {
     e.preventDefault();
     const t = $(`[data-texto="${b.dataset.copiar}"]`)?.value || '';
     try { await navigator.clipboard.writeText(t); aviso('Copiado', true); } catch { aviso('Não deu para copiar'); }
   }; });
-  $('[data-agendei]').forEach((c) => { c.onchange = async () => {
+  $$('[data-agendei]').forEach((c) => { c.onchange = async () => {
     try { await api(`/api/videos/${id}/agendei`, { plataforma: c.dataset.agendei, feito: c.checked }); } catch (e) { aviso(e.message); c.checked = !c.checked; }
     assinatura = ''; rodarCiclo();
   }; });
   const salvar = $('[data-textos-salvar]');
   if (salvar) salvar.onclick = async () => {
     const textos = {};
-    for (const el of $('[data-texto]')) { const [p, k] = el.dataset.texto.split('.'); (textos[p] ||= {})[k] = el.value; }
+    for (const el of $$('[data-texto]')) { const [p, k] = el.dataset.texto.split('.'); (textos[p] ||= {})[k] = el.value; }
     try { await api(`/api/videos/${id}/textos`, { textos }); aviso('Textos salvos', true); } catch (e) { aviso(e.message); }
   };
 }
@@ -1018,7 +1030,8 @@ function lateral(v) {
 async function telaVideo(id) {
   if (!VOZES) await carregarVozes();
   const v = await api(`/api/videos/${id}`);
-  const sig = JSON.stringify([v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.pacote?.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.arquivos.narracao, JSON.stringify(v.arquivos.ganchos), v.agenda, (v.usoIA || []).length,
+  if (v.etapa === 'agenda') await carregarYT();
+  const sig = JSON.stringify([YT.conectado, v.arquivos.pacote?.youtube?.videoId, v.etapa, v.estado, v.job?.rodando, v.job?.ok, v.job?.tipo, v.orfao, v.arquivos.audio, v.arquivos.video, v.arquivos.capa, v.arquivos.pacote?.capa, v.arquivos.quadros.length, v.arquivos.previa, v.arquivos.sinopse, v.arquivos.narracao, JSON.stringify(v.arquivos.ganchos), v.agenda, (v.usoIA || []).length,
     Object.values(v.portoes).map((p) => (p.ajustes || []).length),
     (v.arquivos.audioFrases?.frases || []).map((f) => [f.id, f.texto, f.energia, f.efeito, f.velocidade, f.pausa, f.escolhido, f.takes.length, f.precisaGravar]), v.arquivos.audioFrases?.montagem?.atual,
     (v.arquivos.variantes?.cenas || []).map((c) => [c.id, c.variantes.map((x) => x.hash || x.id).join(), (c.ajustes || []).length]),
@@ -1072,7 +1085,7 @@ function ligarAcoes(id) {
   };
   $$('[data-acao]').forEach((b) => { b.onclick = async () => {
     const acao = b.dataset.acao;
-    const msgs = { aprovar: 'Aprovado', ajuste: 'Ajuste enviado para a IA', regerarVoz: 'Gerando a voz de novo', agendar: 'Agendado', ia: 'A IA começou', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando', narrar: 'Gerando a narração' };
+    const msgs = { aprovar: 'Aprovado', ajuste: 'Ajuste enviado para a IA', regerarVoz: 'Gerando a voz de novo', agendar: 'Data salva', youtube: 'Enviando ao YouTube', ia: 'A IA começou', quadros: 'Gerando os quadros', previa: 'Gerando a prévia', render: 'Renderizando', narrar: 'Gerando a narração' };
     try {
       b.disabled = true;
       if (acao === 'ajuste') await api(`/api/videos/${id}/ajuste`, { texto: $('#ajuste').value });

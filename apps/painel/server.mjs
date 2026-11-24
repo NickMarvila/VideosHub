@@ -6,6 +6,7 @@ import path from 'node:path';
 import os from 'node:os';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import * as youtube from '../../pipeline/youtube.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const PUBLICO = path.join(RAIZ, 'apps', 'painel', 'public');
@@ -88,7 +89,8 @@ function detalhes(v) {
       pacote: existe('postar/textos.json') ? { textos: lerJSON(path.join(pasta, 'postar', 'textos.json')),
         capa: existe('postar/capa.jpg') ? `${rel('postar/capa.jpg')}?v=${versao('postar/capa.jpg')}` : null,
         capaTexto: lerJSON(path.join(pasta, 'postar', 'capa.json'))?.texto ?? '',
-        final: existe('render/final.mp4') ? rel('render/final.mp4') : null } : null,
+        final: existe('render/final.mp4') ? rel('render/final.mp4') : null,
+        youtube: lerJSON(path.join(pasta, 'postar', 'youtube.json')) } : null,
       proximoHorario: proximoHorario(v.id),
     },
   };
@@ -498,6 +500,18 @@ const ACOES = {
     }
     passos.push(['node', ['pipeline/pacote.mjs', v.pasta, ...(texto != null ? ['--texto', texto] : []), ...(refazerTextos ? ['--refazer-textos'] : [])], RAIZ, 'Montando a capa e os textos', 0.3]);
     return rodar(v, 'pacote', passos, null, 'pacote', 1);
+  },
+  // envia ao YouTube privado com publishAt (o YouTube publica sozinho) e marca a plataforma como agendada
+  youtube(v) {
+    if (!v.agenda?.quando) throw new Error('Escolha a data antes ("Usar esta data").');
+    const quando = new Date(v.agenda.quando).toISOString();
+    return rodar(v, 'youtube', [['node', ['pipeline/youtube.mjs', 'enviar', v.pasta, quando], RAIZ, 'Enviando ao YouTube', 1]], (ok) => {
+      if (!ok) return;
+      const a = lerVideo(v.id);
+      const yt = lerJSON(path.join(RAIZ, a.pasta, 'postar', 'youtube.json'));
+      a.agenda = { ...a.agenda, feito: { ...(a.agenda?.feito || {}), youtube: agora() } };
+      salvarVideo(estadoAgenda(a), `YouTube: enviado e agendado (${yt?.url || ''})`);
+    }, 'youtube', 1);
   },
   ia(v) {
     // Chama a IA escolhida (Claude Code ou Gemini CLI) em modo não interativo com a skill /video (usa a assinatura do criador).
@@ -959,6 +973,8 @@ function listarEstilos() {
 const PLATAFORMAS = ['youtube', 'instagram', 'tiktok'];
 function agendar(v, { quando, plataformas }) {
   if (!quando) throw new Error('Escolha data e hora.');
+  // YouTube e TikTok só agendam com 15 min de antecedência; 20 dá folga para o envio
+  if (new Date(quando).getTime() < Date.now() + 20 * 60e3) throw new Error('Escolha um horário pelo menos 20 minutos à frente (as plataformas não agendam em cima da hora).');
   const antes = v.agenda || {};
   v.agenda = { ...antes, quando, plataformas: plataformas?.length ? plataformas : PLATAFORMAS, feito: antes.feito || {} };
   salvarVideo(estadoAgenda(v), `data de postagem: ${quando}`);
@@ -1028,6 +1044,16 @@ const servidor = http.createServer(async (req, res) => {
       const partes = p.split('/').filter(Boolean); // api, recurso, id, acao
       if (req.method === 'GET' && p === '/api/videos') return enviar(res, 200, listarVideos().map((v) => ({ ...v, temCapa: (() => { try { return Math.round(fs.statSync(path.join(RAIZ, v.pasta, 'render', 'capa.png')).mtimeMs); } catch { return 0; } })(), job: situacao(JOBS.get(v.id)), previsoes: previsoes(v), orfao: ['ia_trabalhando', 'processando'].includes(v.estado) && !JOBS.get(v.id)?.rodando })));
       if (req.method === 'POST' && p === '/api/videos') return enviar(res, 200, novoVideo(await lerCorpo(req)));
+      // YouTube: estado, login OAuth (abre o Google) e volta do login
+      const voltaYT = `http://localhost:${PORTA}/api/youtube/callback`;
+      if (req.method === 'GET' && p === '/api/youtube') return enviar(res, 200, youtube.estado());
+      if (req.method === 'GET' && p === '/api/youtube/conectar') { res.writeHead(302, { Location: youtube.urlLogin(voltaYT) }); return res.end(); }
+      if (req.method === 'GET' && p === '/api/youtube/callback') {
+        const pagina = (msg) => enviar(res, 200, `<!doctype html><meta charset="utf-8"><body style="font-family:sans-serif;padding:40px"><h2>${msg}</h2><p><a href="/">Voltar ao painel</a></p></body>`, 'text/html; charset=utf-8');
+        if (url.searchParams.get('error')) return pagina(`O Google não autorizou: ${url.searchParams.get('error')}`);
+        try { const canal = await youtube.trocarCodigo(url.searchParams.get('code'), voltaYT); return pagina(`YouTube conectado${canal ? `: ${canal.nome}` : ''}. Pode fechar esta aba.`); }
+        catch (e) { return pagina(e.message); }
+      }
       if (req.method === 'GET' && p === '/api/estilos') return enviar(res, 200, listarEstilos());
       if (req.method === 'GET' && p === '/api/biblioteca') return enviar(res, 200, listarBiblioteca());
       if (req.method === 'GET' && p === '/api/ia') return enviar(res, 200, estadoIA());
@@ -1068,6 +1094,7 @@ const servidor = http.createServer(async (req, res) => {
           else if (acao === 'agendar') agendar(v, corpo);
           else if (acao === 'agendei') agendei(v, corpo);
           else if (acao === 'pacote') ACOES.pacote(v, corpo);
+          else if (acao === 'youtube') ACOES.youtube(v);
           else if (acao === 'textos') { const arq = path.join(RAIZ, v.pasta, 'postar', 'textos.json'); gravarJSON(arq, { ...(lerJSON(arq) || {}), ...corpo.textos }); }
           else if (acao === 'voz') {
             let nova = { ...v.voz, ...corpo };
