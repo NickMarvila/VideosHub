@@ -38,7 +38,17 @@
       "aprovadoEm": "2026-11-23T23:39:02.013Z"
     }
   },
-  "agenda": null,
+  "agenda": {
+    "quando": "2026-11-24T00:00",
+    "plataformas": [
+      "youtube",
+      "instagram",
+      "tiktok"
+    ],
+    "feito": {
+      "youtube": "2026-11-24T02:39:13.104Z"
+    }
+  },
   "historico": [
     {
       "em": "2026-11-23T16:26:22.000Z",
@@ -151,6 +161,30 @@
     {
       "em": "2026-11-23T23:39:02.015Z",
       "evento": "vídeo final aprovado"
+    },
+    {
+      "em": "2026-11-24T02:24:39.130Z",
+      "evento": "data de postagem: 2026-11-23T23:27"
+    },
+    {
+      "em": "2026-11-24T02:26:19.339Z",
+      "evento": "youtube: agendado"
+    },
+    {
+      "em": "2026-11-24T02:28:45.862Z",
+      "evento": "youtube: desmarcado (o envio foi recusado: horário em cima da hora)"
+    },
+    {
+      "em": "2026-11-24T02:38:06.596Z",
+      "evento": "data de postagem: 2026-11-24T00:00"
+    },
+    {
+      "em": "2026-11-24T02:38:10.987Z",
+      "evento": "youtube: agendado"
+    },
+    {
+      "em": "2026-11-24T02:39:13.104Z",
+      "evento": "YouTube: enviado e agendado (https://youtube.com/shorts/QxcaJavfio8)"
     }
   ],
   "criadoEm": "2026-11-23T16:26:22.000Z",
