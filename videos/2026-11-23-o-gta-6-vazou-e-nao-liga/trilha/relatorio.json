@@ -1,0 +1,107 @@
+{
+ "duracao": 56.69,
+ "clima": "marcha",
+ "musicaVsVoz_dB": -14.0,
+ "efeitosVsVoz_dB": -9.69,
+ "picoEfeitosVsVoz": 0.7,
+ "lufsAntes": -13.38,
+ "ganhoFinal_dB": -0.62,
+ "picoFinal_dBTP": -1.18,
+ "efeitos": [
+  {
+   "t": 3.47,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 6.569999999999999,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 8.770000000000001,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 12.370000000000001,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 16.57,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 17.369999999999997,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 19.47,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 23.57,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 24.57,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 25.97,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 27.869999999999997,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 32.47,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 38.17,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 40.57,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 43.17,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 45.7,
+   "tipo": "sting",
+   "auto": true
+  },
+  {
+   "t": 48.37,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 50.97,
+   "tipo": "pop",
+   "auto": true
+  },
+  {
+   "t": 54.17,
+   "tipo": "pop",
+   "auto": true
+  }
+ ]
+}

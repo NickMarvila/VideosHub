@@ -1,0 +1,586 @@
+{
+ "titulo": "O GTA 6 Vazou Inteiro... e o PC Pode Ganhar Antes",
+ "duracao": 56.685,
+ "audio": "narracao.wav",
+ "elenco": {},
+ "legenda": {
+  "ativo": true,
+  "porVez": 3
+ },
+ "cenas": [
+  {
+   "cenario": "praca",
+   "momento": "gancho",
+   "luz": "dia",
+   "alvo": "pasta_de_arquivos_gigante",
+   "objetos": [
+    {
+     "tipo": "pasta_de_arquivos_gigante",
+     "escala": 1.4
+    },
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "y": 2.6,
+     "escala": 1,
+     "aparece": 3.5
+    }
+   ],
+   "inicio": 0,
+   "fim": 5.29
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "dia",
+   "alvo": "console_de_videogame",
+   "objetos": [
+    {
+     "tipo": "console_de_videogame",
+     "escala": 2.6
+    },
+    {
+     "tipo": "icone",
+     "icone": "v",
+     "y": 2.2,
+     "aparece": 6.6
+    }
+   ],
+   "inicio": 5.29,
+   "fim": 8.04
+  },
+  {
+   "cenario": "praca",
+   "momento": "medio",
+   "luz": "dia",
+   "alvo": "pc_gamer",
+   "objetos": [
+    {
+     "tipo": "pc_gamer",
+     "escala": 1.2
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "y": 2.4,
+     "aparece": 8.8
+    }
+   ],
+   "inicio": 8.04,
+   "fim": 10.4
+  },
+  {
+   "cenario": "praca",
+   "momento": "medio",
+   "luz": "fim_de_tarde",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "expressoes": [
+      [
+       10.4,
+       "serio"
+      ],
+      [
+       13,
+       "sorriso"
+      ]
+     ],
+     "acoes": [
+      [
+       12.6,
+       "aponta"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "pasta_de_arquivos_gigante",
+     "x": 1.3,
+     "z": -0.3,
+     "aparece": 12.4
+    }
+   ],
+   "inicio": 10.4,
+   "fim": 15.49
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "fim_de_tarde",
+   "alvo": "pasta_de_arquivos_gigante",
+   "objetos": [
+    {
+     "tipo": "pasta_de_arquivos_gigante",
+     "escala": 1.2
+    },
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "y": 2.6,
+     "aparece": 16.6
+    },
+    {
+     "tipo": "balao",
+     "x": 0.9,
+     "y": 2.2,
+     "texto": "FALTA O .EXE",
+     "aparece": 17.4
+    }
+   ],
+   "inicio": 15.49,
+   "fim": 19.24
+  },
+  {
+   "cenario": "praca",
+   "momento": "close",
+   "luz": "fim_de_tarde",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "expressoes": [
+      [
+       19.24,
+       "choque"
+      ],
+      [
+       20.4,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       19.6,
+       "comemora"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "icone",
+     "icone": "!",
+     "x": 0.6,
+     "y": 2.5,
+     "aparece": 19.5
+    }
+   ],
+   "inicio": 19.24,
+   "fim": 21.55
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "dia",
+   "alvo": "console_de_videogame",
+   "objetos": [
+    {
+     "tipo": "console_de_videogame",
+     "x": -0.8,
+     "escala": 2.2
+    },
+    {
+     "tipo": "pc_gamer",
+     "x": 1.2,
+     "z": -0.5,
+     "aparece": 23.6
+    },
+    {
+     "tipo": "icone",
+     "icone": "x",
+     "x": 1.2,
+     "y": 2.5,
+     "aparece": 24.6
+    }
+   ],
+   "inicio": 21.55,
+   "fim": 25.78
+  },
+  {
+   "cenario": "praca",
+   "momento": "pensa_comigo",
+   "luz": "dia",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "expressoes": [
+      [
+       25.78,
+       "neutro"
+      ]
+     ],
+     "acoes": [
+      [
+       25.9,
+       "pensa"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "pensamento",
+     "x": 0.6,
+     "y": 2.7,
+     "texto": "PENSA...",
+     "aparece": 26
+    }
+   ],
+   "inicio": 25.78,
+   "fim": 27.2
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "dia",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "x": -0.8,
+     "expressoes": [
+      [
+       27.2,
+       "neutro"
+      ],
+      [
+       30,
+       "nervoso"
+      ]
+     ],
+     "acoes": [
+      [
+       28.2,
+       "aponta"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "receita_em_japones",
+     "x": 0.9,
+     "z": 0.4,
+     "escala": 3,
+     "aparece": 27.9
+    }
+   ],
+   "inicio": 27.2,
+   "fim": 32.1
+  },
+  {
+   "cenario": "praca",
+   "momento": "medio",
+   "luz": "dia",
+   "alvo": "robo_da_ia",
+   "atores": [
+    {
+     "id": "robo_da_ia",
+     "expressoes": [
+      [
+       32.1,
+       "neutro"
+      ],
+      [
+       35,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       32.6,
+       "pensa"
+      ],
+      [
+       35.1,
+       "acena"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "y": 2.4,
+     "aparece": 32.5,
+     "some": 34.6
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "estrelas",
+     "de": 35,
+     "ate": 36.2,
+     "pos": [
+      0,
+      2.6,
+      0
+     ],
+     "tamanho": 1
+    }
+   ],
+   "inicio": 32.1,
+   "fim": 36.36
+  },
+  {
+   "cenario": "praca",
+   "momento": "medio",
+   "luz": "dia",
+   "alvo": "robo_da_ia",
+   "atores": [
+    {
+     "id": "robo_da_ia",
+     "x": 0,
+     "expressoes": [
+      [
+       36.4,
+       "sorriso"
+      ],
+      [
+       38.5,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       38.2,
+       "segura"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "console_de_videogame",
+     "x": -1.3,
+     "z": -0.5,
+     "escala": 2
+    },
+    {
+     "tipo": "pc_gamer",
+     "x": 1.5,
+     "z": -0.6,
+     "aparece": 38.2,
+     "cor": "#3a7bd5"
+    }
+   ],
+   "inicio": 36.36,
+   "fim": 40
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "fim_de_tarde",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "x": -0.5,
+     "expressoes": [
+      [
+       40,
+       "neutro"
+      ],
+      [
+       43.2,
+       "nervoso"
+      ]
+     ],
+     "acoes": [
+      [
+       40.4,
+       "abre"
+      ],
+      [
+       43.4,
+       "tremer"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "x": -0.5,
+     "y": 2.6,
+     "aparece": 40.6,
+     "some": 42.8
+    },
+    {
+     "tipo": "virus",
+     "x": 1,
+     "y": 1.2,
+     "z": 0.5,
+     "escala": 1.4,
+     "aparece": 43.2
+    }
+   ],
+   "inicio": 40,
+   "fim": 45.7
+  },
+  {
+   "cenario": "praca",
+   "momento": "virada",
+   "luz": "fim_de_tarde",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "expressoes": [
+      [
+       45.7,
+       "sorriso_fechado"
+      ]
+     ],
+     "acoes": [
+      [
+       45.8,
+       "pensa"
+      ]
+     ]
+    }
+   ],
+   "inicio": 45.7,
+   "fim": 47.46
+  },
+  {
+   "cenario": "praca",
+   "momento": "mostrar",
+   "luz": "fim_de_tarde",
+   "alvo": "hacker_encapuzado",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "x": -1,
+     "expressoes": [
+      [
+       47.46,
+       "sorriso"
+      ],
+      [
+       49.5,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       49.5,
+       "comemora"
+      ]
+     ]
+    },
+    {
+     "id": "robo_da_ia",
+     "x": 1.1,
+     "z": 0.5,
+     "escala": 0.85,
+     "expressoes": [
+      [
+       49.5,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       49.8,
+       "pulo"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "pc_gamer",
+     "x": 0,
+     "z": -1.2,
+     "escala": 1.2,
+     "cor": "#3a7bd5",
+     "aparece": 48.4
+    },
+    {
+     "tipo": "balao",
+     "x": 0,
+     "y": 3.1,
+     "z": -0.5,
+     "texto": "ANTES DA ROCKSTAR",
+     "aparece": 51
+    }
+   ],
+   "efeitos": [
+    {
+     "tipo": "estrelas",
+     "de": 49.5,
+     "ate": 51,
+     "pos": [
+      0,
+      2.8,
+      0
+     ],
+     "tamanho": 1.2
+    }
+   ],
+   "inicio": 47.46,
+   "fim": 53.83
+  },
+  {
+   "cenario": "praca",
+   "momento": "medio",
+   "luz": "dia",
+   "alvo": "robo_da_ia",
+   "atores": [
+    {
+     "id": "hacker_encapuzado",
+     "x": -0.9,
+     "z": -0.3,
+     "expressoes": [
+      [
+       53.83,
+       "sorriso"
+      ]
+     ],
+     "acoes": [
+      [
+       53.9,
+       "abre"
+      ]
+     ]
+    },
+    {
+     "id": "robo_da_ia",
+     "x": 0.6,
+     "z": 0.3,
+     "escala": 0.9,
+     "expressoes": [
+      [
+       53.83,
+       "sorrisao"
+      ]
+     ],
+     "acoes": [
+      [
+       54.4,
+       "acena"
+      ]
+     ]
+    }
+   ],
+   "objetos": [
+    {
+     "tipo": "icone",
+     "icone": "?",
+     "y": 2.8,
+     "escala": 1.2,
+     "aparece": 54.2
+    }
+   ],
+   "inicio": 53.83,
+   "fim": 56.685
+  }
+ ]
+}

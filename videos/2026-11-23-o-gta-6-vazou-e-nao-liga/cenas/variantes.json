@@ -1,0 +1,875 @@
+{
+  "base": {
+    "titulo": "O GTA 6 Vazou Inteiro... e o PC Pode Ganhar Antes",
+    "duracao": 56.685,
+    "audio": "narracao.wav",
+    "elenco": {},
+    "legenda": {
+      "ativo": true,
+      "porVez": 3
+    }
+  },
+  "cenas": [
+    {
+      "id": "c01",
+      "inicio": 0,
+      "fim": 5.29,
+      "frases": [
+        "f01",
+        "f02"
+      ],
+      "resumo": "Gancho: a pasta gigante de 209 GB",
+      "variantes": [
+        {
+          "id": "c01-a",
+          "descricao": "Aproximação rápida na pasta de 209 GB; \"?\" aparece em \"arquivo faltando\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "gancho",
+            "luz": "dia",
+            "alvo": "pasta_de_arquivos_gigante",
+            "objetos": [
+              {
+                "tipo": "pasta_de_arquivos_gigante",
+                "escala": 1.4
+              },
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "y": 2.6,
+                "escala": 1,
+                "aparece": 3.5
+              }
+            ]
+          },
+          "hash": "f409d5f97d",
+          "clipe": "cenas/clipes/c01-a.mp4",
+          "poster": "cenas/clipes/c01-a.png"
+        }
+      ],
+      "escolhida": "c01-a",
+      "ajustes": []
+    },
+    {
+      "id": "c02",
+      "inicio": 5.29,
+      "fim": 8.04,
+      "frases": [
+        "f03"
+      ],
+      "resumo": "Lançado só para console",
+      "variantes": [
+        {
+          "id": "c02-a",
+          "descricao": "Zoom out revelando o console com o ícone de check",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "dia",
+            "alvo": "console_de_videogame",
+            "objetos": [
+              {
+                "tipo": "console_de_videogame",
+                "escala": 2.6
+              },
+              {
+                "tipo": "icone",
+                "icone": "v",
+                "y": 2.2,
+                "aparece": 6.6
+              }
+            ]
+          },
+          "hash": "157709ef1d",
+          "clipe": "cenas/clipes/c02-a.mp4",
+          "poster": "cenas/clipes/c02-a.png"
+        }
+      ],
+      "escolhida": "c02-a",
+      "ajustes": []
+    },
+    {
+      "id": "c03",
+      "inicio": 8.04,
+      "fim": 10.4,
+      "frases": [
+        "f04"
+      ],
+      "resumo": "No PC, nada",
+      "variantes": [
+        {
+          "id": "c03-a",
+          "descricao": "Plano médio no PC de tela escura com um X",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "medio",
+            "luz": "dia",
+            "alvo": "pc_gamer",
+            "objetos": [
+              {
+                "tipo": "pc_gamer",
+                "escala": 1.2
+              },
+              {
+                "tipo": "icone",
+                "icone": "x",
+                "y": 2.4,
+                "aparece": 8.8
+              }
+            ]
+          },
+          "hash": "7e7c6983a8",
+          "clipe": "cenas/clipes/c03-a.mp4",
+          "poster": "cenas/clipes/c03-a.png"
+        }
+      ],
+      "escolhida": "c03-a",
+      "ajustes": []
+    },
+    {
+      "id": "c04",
+      "inicio": 10.4,
+      "fim": 15.49,
+      "frases": [
+        "f05"
+      ],
+      "resumo": "Cyberleek vaza a versão de Xbox",
+      "variantes": [
+        {
+          "id": "c04-a",
+          "descricao": "O hacker aponta para a pasta gigante que surge ao lado",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "medio",
+            "luz": "fim_de_tarde",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "expressoes": [
+                  [
+                    10.4,
+                    "serio"
+                  ],
+                  [
+                    13,
+                    "sorriso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    12.6,
+                    "aponta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "pasta_de_arquivos_gigante",
+                "x": 1.3,
+                "z": -0.3,
+                "aparece": 12.4
+              }
+            ]
+          },
+          "hash": "5beb5f37a8",
+          "clipe": "cenas/clipes/c04-a.mp4",
+          "poster": "cenas/clipes/c04-a.png"
+        }
+      ],
+      "escolhida": "c04-a",
+      "ajustes": []
+    },
+    {
+      "id": "c05",
+      "inicio": 15.49,
+      "fim": 19.24,
+      "frases": [
+        "f06"
+      ],
+      "resumo": "Faltava o executável",
+      "variantes": [
+        {
+          "id": "c05-a",
+          "descricao": "Revela a pasta com \"?\" e o balão \"FALTA O .EXE\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "fim_de_tarde",
+            "alvo": "pasta_de_arquivos_gigante",
+            "objetos": [
+              {
+                "tipo": "pasta_de_arquivos_gigante",
+                "escala": 1.2
+              },
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "y": 2.6,
+                "aparece": 16.6
+              },
+              {
+                "tipo": "balao",
+                "x": 0.9,
+                "y": 2.2,
+                "texto": "FALTA O .EXE",
+                "aparece": 17.4
+              }
+            ]
+          },
+          "hash": "bdaa355213",
+          "clipe": "cenas/clipes/c05-a.mp4",
+          "poster": "cenas/clipes/c05-a.png"
+        }
+      ],
+      "escolhida": "c05-a",
+      "ajustes": []
+    },
+    {
+      "id": "c06",
+      "inicio": 19.24,
+      "fim": 21.55,
+      "frases": [
+        "f07"
+      ],
+      "resumo": "Hoje ele vazou também",
+      "variantes": [
+        {
+          "id": "c06-a",
+          "descricao": "Close no hacker: choque e depois sorrisão, com \"!\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "close",
+            "luz": "fim_de_tarde",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "expressoes": [
+                  [
+                    19.24,
+                    "choque"
+                  ],
+                  [
+                    20.4,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    19.6,
+                    "comemora"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "!",
+                "x": 0.6,
+                "y": 2.5,
+                "aparece": 19.5
+              }
+            ]
+          },
+          "hash": "4ab37e165b",
+          "clipe": "cenas/clipes/c06-a.mp4",
+          "poster": "cenas/clipes/c06-a.png"
+        }
+      ],
+      "escolhida": "c06-a",
+      "ajustes": []
+    },
+    {
+      "id": "c07",
+      "inicio": 21.55,
+      "fim": 25.78,
+      "frases": [
+        "f08"
+      ],
+      "resumo": "Língua do Xbox, PC não entende",
+      "variantes": [
+        {
+          "id": "c07-a",
+          "descricao": "Console em primeiro plano, PC revelado com \"X\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "dia",
+            "alvo": "console_de_videogame",
+            "objetos": [
+              {
+                "tipo": "console_de_videogame",
+                "x": -0.8,
+                "escala": 2.2
+              },
+              {
+                "tipo": "pc_gamer",
+                "x": 1.2,
+                "z": -0.5,
+                "aparece": 23.6
+              },
+              {
+                "tipo": "icone",
+                "icone": "x",
+                "x": 1.2,
+                "y": 2.5,
+                "aparece": 24.6
+              }
+            ]
+          },
+          "hash": "831a313f81",
+          "clipe": "cenas/clipes/c07-a.mp4",
+          "poster": "cenas/clipes/c07-a.png"
+        }
+      ],
+      "escolhida": "c07-a",
+      "ajustes": []
+    },
+    {
+      "id": "c08",
+      "inicio": 25.78,
+      "fim": 27.2,
+      "frases": [
+        "f09"
+      ],
+      "resumo": "Pensa comigo",
+      "variantes": [
+        {
+          "id": "c08-a",
+          "descricao": "Zoom in no hacker pensando",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "pensa_comigo",
+            "luz": "dia",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "expressoes": [
+                  [
+                    25.78,
+                    "neutro"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    25.9,
+                    "pensa"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "pensamento",
+                "x": 0.6,
+                "y": 2.7,
+                "texto": "PENSA...",
+                "aparece": 26
+              }
+            ]
+          },
+          "hash": "1eb89df109",
+          "clipe": "cenas/clipes/c08-a.mp4",
+          "poster": "cenas/clipes/c08-a.png"
+        }
+      ],
+      "escolhida": "c08-a",
+      "ajustes": []
+    },
+    {
+      "id": "c09",
+      "inicio": 27.2,
+      "fim": 32.1,
+      "frases": [
+        "f10"
+      ],
+      "resumo": "Receita em japonês",
+      "variantes": [
+        {
+          "id": "c09-a",
+          "descricao": "Receita em japonês surge ao lado do hacker, que aponta",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "dia",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "x": -0.8,
+                "expressoes": [
+                  [
+                    27.2,
+                    "neutro"
+                  ],
+                  [
+                    30,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    28.2,
+                    "aponta"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "receita_em_japones",
+                "x": 0.9,
+                "z": 0.4,
+                "escala": 3,
+                "aparece": 27.9
+              }
+            ]
+          },
+          "hash": "53ba364237",
+          "clipe": "cenas/clipes/c09-a.mp4",
+          "poster": "cenas/clipes/c09-a.png"
+        }
+      ],
+      "escolhida": "c09-a",
+      "ajustes": []
+    },
+    {
+      "id": "c10",
+      "inicio": 32.1,
+      "fim": 36.36,
+      "frases": [
+        "f11",
+        "f12"
+      ],
+      "resumo": "A IA traduz",
+      "variantes": [
+        {
+          "id": "c10-a",
+          "descricao": "Robô em plano médio; \"?\" na pergunta e sorrisão com estrelas em \"inteligência artificial\"",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "medio",
+            "luz": "dia",
+            "alvo": "robo_da_ia",
+            "atores": [
+              {
+                "id": "robo_da_ia",
+                "expressoes": [
+                  [
+                    32.1,
+                    "neutro"
+                  ],
+                  [
+                    35,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    32.6,
+                    "pensa"
+                  ],
+                  [
+                    35.1,
+                    "acena"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "y": 2.4,
+                "aparece": 32.5,
+                "some": 34.6
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "estrelas",
+                "de": 35,
+                "ate": 36.2,
+                "pos": [
+                  0,
+                  2.6,
+                  0
+                ],
+                "tamanho": 1
+              }
+            ]
+          },
+          "hash": "ca0ff6fe12",
+          "clipe": "cenas/clipes/c10-a.mp4",
+          "poster": "cenas/clipes/c10-a.png"
+        }
+      ],
+      "escolhida": "c10-a",
+      "ajustes": []
+    },
+    {
+      "id": "c11",
+      "inicio": 36.36,
+      "fim": 40,
+      "frases": [
+        "f13"
+      ],
+      "resumo": "Fãs já levaram um jogo de Switch pro PC",
+      "variantes": [
+        {
+          "id": "c11-a",
+          "descricao": "Robô com o console e o PC lado a lado",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "medio",
+            "luz": "dia",
+            "alvo": "robo_da_ia",
+            "atores": [
+              {
+                "id": "robo_da_ia",
+                "x": 0,
+                "expressoes": [
+                  [
+                    36.4,
+                    "sorriso"
+                  ],
+                  [
+                    38.5,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    38.2,
+                    "segura"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "console_de_videogame",
+                "x": -1.3,
+                "z": -0.5,
+                "escala": 2
+              },
+              {
+                "tipo": "pc_gamer",
+                "x": 1.5,
+                "z": -0.6,
+                "aparece": 38.2,
+                "cor": "#3a7bd5"
+              }
+            ]
+          },
+          "hash": "cd0515c66b",
+          "clipe": "cenas/clipes/c11-a.mp4",
+          "poster": "cenas/clipes/c11-a.png"
+        }
+      ],
+      "escolhida": "c11-a",
+      "ajustes": []
+    },
+    {
+      "id": "c12",
+      "inicio": 40,
+      "fim": 45.7,
+      "frases": [
+        "f14"
+      ],
+      "resumo": "Sem confirmação e GTA falso com vírus",
+      "variantes": [
+        {
+          "id": "c12-a",
+          "descricao": "Hacker de ombros; vírus verde surge e o \"?\" some",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "fim_de_tarde",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "x": -0.5,
+                "expressoes": [
+                  [
+                    40,
+                    "neutro"
+                  ],
+                  [
+                    43.2,
+                    "nervoso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    40.4,
+                    "abre"
+                  ],
+                  [
+                    43.4,
+                    "tremer"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "x": -0.5,
+                "y": 2.6,
+                "aparece": 40.6,
+                "some": 42.8
+              },
+              {
+                "tipo": "virus",
+                "x": 1,
+                "y": 1.2,
+                "z": 0.5,
+                "escala": 1.4,
+                "aparece": 43.2
+              }
+            ]
+          },
+          "hash": "0a35bcf09f",
+          "clipe": "cenas/clipes/c12-a.mp4",
+          "poster": "cenas/clipes/c12-a.png"
+        }
+      ],
+      "escolhida": "c12-a",
+      "ajustes": []
+    },
+    {
+      "id": "c13",
+      "inicio": 45.7,
+      "fim": 47.46,
+      "frases": [
+        "f15"
+      ],
+      "resumo": "Mas se for real...",
+      "variantes": [
+        {
+          "id": "c13-a",
+          "descricao": "Virada: close seco no hacker, esperançoso",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "virada",
+            "luz": "fim_de_tarde",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "expressoes": [
+                  [
+                    45.7,
+                    "sorriso_fechado"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    45.8,
+                    "pensa"
+                  ]
+                ]
+              }
+            ]
+          },
+          "hash": "59b227a51e",
+          "clipe": "cenas/clipes/c13-a.mp4",
+          "poster": "cenas/clipes/c13-a.png"
+        }
+      ],
+      "escolhida": "c13-a",
+      "ajustes": []
+    },
+    {
+      "id": "c14",
+      "inicio": 47.46,
+      "fim": 53.83,
+      "frases": [
+        "f16"
+      ],
+      "resumo": "O PC pode ganhar antes da Rockstar",
+      "variantes": [
+        {
+          "id": "c14-a",
+          "descricao": "Revela o PC com tela acesa; hacker e robô comemoram",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "mostrar",
+            "luz": "fim_de_tarde",
+            "alvo": "hacker_encapuzado",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "x": -1,
+                "expressoes": [
+                  [
+                    47.46,
+                    "sorriso"
+                  ],
+                  [
+                    49.5,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    49.5,
+                    "comemora"
+                  ]
+                ]
+              },
+              {
+                "id": "robo_da_ia",
+                "x": 1.1,
+                "z": 0.5,
+                "escala": 0.85,
+                "expressoes": [
+                  [
+                    49.5,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    49.8,
+                    "pulo"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "pc_gamer",
+                "x": 0,
+                "z": -1.2,
+                "escala": 1.2,
+                "cor": "#3a7bd5",
+                "aparece": 48.4
+              },
+              {
+                "tipo": "balao",
+                "x": 0,
+                "y": 3.1,
+                "z": -0.5,
+                "texto": "ANTES DA ROCKSTAR",
+                "aparece": 51
+              }
+            ],
+            "efeitos": [
+              {
+                "tipo": "estrelas",
+                "de": 49.5,
+                "ate": 51,
+                "pos": [
+                  0,
+                  2.8,
+                  0
+                ],
+                "tamanho": 1.2
+              }
+            ]
+          },
+          "hash": "2085f03880",
+          "clipe": "cenas/clipes/c14-a.mp4",
+          "poster": "cenas/clipes/c14-a.png"
+        }
+      ],
+      "escolhida": "c14-a",
+      "ajustes": []
+    },
+    {
+      "id": "c15",
+      "inicio": 53.83,
+      "fim": 56.685,
+      "frases": [
+        "f17"
+      ],
+      "resumo": "Pergunta final",
+      "variantes": [
+        {
+          "id": "c15-a",
+          "descricao": "Hacker e robô olham para a câmera com um \"?\" grande",
+          "recomendada": true,
+          "cena": {
+            "cenario": "praca",
+            "momento": "medio",
+            "luz": "dia",
+            "alvo": "robo_da_ia",
+            "atores": [
+              {
+                "id": "hacker_encapuzado",
+                "x": -0.9,
+                "z": -0.3,
+                "expressoes": [
+                  [
+                    53.83,
+                    "sorriso"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    53.9,
+                    "abre"
+                  ]
+                ]
+              },
+              {
+                "id": "robo_da_ia",
+                "x": 0.6,
+                "z": 0.3,
+                "escala": 0.9,
+                "expressoes": [
+                  [
+                    53.83,
+                    "sorrisao"
+                  ]
+                ],
+                "acoes": [
+                  [
+                    54.4,
+                    "acena"
+                  ]
+                ]
+              }
+            ],
+            "objetos": [
+              {
+                "tipo": "icone",
+                "icone": "?",
+                "y": 2.8,
+                "escala": 1.2,
+                "aparece": 54.2
+              }
+            ]
+          },
+          "hash": "7ffd9a18ff",
+          "clipe": "cenas/clipes/c15-a.mp4",
+          "poster": "cenas/clipes/c15-a.png"
+        }
+      ],
+      "escolhida": "c15-a",
+      "ajustes": []
+    }
+  ]
+}

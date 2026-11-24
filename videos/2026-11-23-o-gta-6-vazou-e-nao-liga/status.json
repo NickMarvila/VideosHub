@@ -13,8 +13,8 @@
     "motor": "voxcpm2",
     "velocidade": 1
   },
-  "etapa": "narracao",
-  "estado": "erro",
+  "etapa": "agenda",
+  "estado": "aguardando_agenda",
   "fluxo": 2,
   "portoes": {
     "roteiro": {
@@ -23,16 +23,19 @@
       "aprovadoEm": "2026-11-23T16:40:11.234Z"
     },
     "narracao": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-23T17:32:47.838Z"
     },
     "cenas": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-23T23:33:57.192Z"
     },
     "final": {
-      "aprovado": false,
-      "ajustes": []
+      "aprovado": true,
+      "ajustes": [],
+      "aprovadoEm": "2026-11-23T23:39:02.013Z"
     }
   },
   "agenda": null,
@@ -92,7 +95,100 @@
     {
       "em": "2026-11-23T17:24:39.943Z",
       "evento": "erro ao gravar"
+    },
+    {
+      "em": "2026-11-23T17:32:11.686Z",
+      "evento": "gravando os takes"
+    },
+    {
+      "em": "2026-11-23T17:32:22.148Z",
+      "evento": "takes gravados"
+    },
+    {
+      "em": "2026-11-23T17:32:47.841Z",
+      "evento": "narração aprovada"
+    },
+    {
+      "em": "2026-11-23T17:32:47.855Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-23T17:35:20.676Z",
+      "evento": "erro na IA"
+    },
+    {
+      "em": "2026-11-23T23:09:33.597Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-23T23:10:57.558Z",
+      "evento": "IA terminou sem devolver para aprovação"
+    },
+    {
+      "em": "2026-11-23T23:11:36.055Z",
+      "evento": "IA trabalhando"
+    },
+    {
+      "em": "2026-11-23T23:11:56.451Z",
+      "evento": "IA terminou sem devolver para aprovação"
+    },
+    {
+      "em": "2026-11-23T23:15:07.458Z",
+      "evento": "IA: 15 cenas no método novo (modelos de câmera, 1 variante cada), validadas sem avisos; postagem, capa e trilha prontas"
+    },
+    {
+      "em": "2026-11-23T23:33:57.195Z",
+      "evento": "cenas aprovadas"
+    },
+    {
+      "em": "2026-11-23T23:33:57.207Z",
+      "evento": "renderizando o vídeo final"
+    },
+    {
+      "em": "2026-11-23T23:37:28.988Z",
+      "evento": "vídeo final pronto"
+    },
+    {
+      "em": "2026-11-23T23:39:02.015Z",
+      "evento": "vídeo final aprovado"
     }
   ],
-  "criadoEm": "2026-11-23T16:26:22.000Z"
+  "criadoEm": "2026-11-23T16:26:22.000Z",
+  "usoIA": [
+    {
+      "em": "2026-11-23T17:35:20.676Z",
+      "etapa": "cenas",
+      "custoUSD": 0.6919216000000001,
+      "turnos": 38,
+      "segundos": 151,
+      "tokensEntrada": 1666827,
+      "tokensSaida": 22390,
+      "motor": "claude",
+      "modelo": "sonnet"
+    },
+    {
+      "em": "2026-11-23T23:10:57.558Z",
+      "etapa": "cenas",
+      "custoUSD": 0.416431,
+      "turnos": 19,
+      "segundos": 82,
+      "tokensEntrada": 882085,
+      "tokensSaida": 12223,
+      "motor": "claude",
+      "modelo": "sonnet"
+    },
+    {
+      "em": "2026-11-23T23:11:56.451Z",
+      "etapa": "cenas",
+      "custoUSD": 0.19484890000000002,
+      "turnos": 13,
+      "segundos": 19,
+      "tokensEntrada": 382017,
+      "tokensSaida": 2023,
+      "motor": "claude",
+      "modelo": "sonnet"
+    }
+  ],
+  "erroPlano": false,
+  "capaEm": 51.5
 }

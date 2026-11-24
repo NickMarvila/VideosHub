@@ -6,8 +6,8 @@
       "tipo": "personagem",
       "descricao": "Figura anônima de moletom preto com capuz, rosto na sombra só com olhos brilhando, sem logos",
       "momento": "f05: o grupo vaza a versão; f07: o executável vaza",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "hacker_encapuzado",
       "pedido": "2026-11-23-hacker-de-capuz-2",
       "decisao": "auto"
     },
@@ -17,8 +17,8 @@
       "tipo": "objeto",
       "descricao": "Console genérico preto em pé, retangular, com luz verde na frente e controle ao lado, sem marca, ~0,4 m",
       "momento": "f03: só para console; f08: a língua do Xbox",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "console_de_videogame",
       "pedido": "2026-11-23-console-de-videogame",
       "decisao": "auto"
     },
@@ -28,8 +28,8 @@
       "tipo": "objeto",
       "descricao": "Gabinete de PC com luzes coloridas e monitor com teclado em cima de uma mesa, tela escura",
       "momento": "f04: no PC nada; f08: o PC não entende; f16: o PC ganha o jogo",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "pc_gamer",
       "pedido": "2026-11-23-pc-gamer-2",
       "decisao": "auto"
     },
@@ -39,8 +39,8 @@
       "tipo": "objeto",
       "descricao": "Pasta amarela de computador enorme e estufada, com etiqueta branca '209 GB', ~1,5 m",
       "momento": "f01: duzentos e nove gigas; f05: vazou a versão inteira",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "pasta_de_arquivos_gigante",
       "pedido": "2026-11-23-pasta-de-arquivos-gigante",
       "decisao": "auto"
     },
@@ -50,8 +50,8 @@
       "tipo": "objeto",
       "descricao": "Folha de receita aberta com letras japonesas e desenho de bolo, cantos dobrados, ~0,4 m",
       "momento": "f10: uma receita em japonês",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "receita_em_japones",
       "pedido": "2026-11-23-receita-em-japones",
       "decisao": "auto"
     },
@@ -61,8 +61,8 @@
       "tipo": "personagem",
       "descricao": "Robozinho simpático branco e azul, cabeça redonda com tela de olhos, óculos de leitura, segurando uma folha, ~1 m",
       "momento": "f11-f13: a inteligência artificial traduz",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "robo_da_ia",
       "pedido": "2026-11-23-robo-da-ia",
       "decisao": "auto"
     },
@@ -72,8 +72,8 @@
       "tipo": "objeto",
       "descricao": "Bichinho verde redondo com espinhos e sorriso malvado, ~0,5 m",
       "momento": "f14: GTA falso com vírus",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "virus",
       "pedido": "2026-11-23-virus",
       "decisao": "auto"
     },
@@ -83,8 +83,8 @@
       "tipo": "cenario",
       "descricao": "Quarto escuro com mesa, cadeira gamer, luz neon roxa e azul nas paredes e pôsteres sem texto",
       "momento": "maior parte do vídeo",
-      "existe": false,
-      "usa": null,
+      "existe": true,
+      "usa": "quarto_gamer",
       "pedido": "2026-11-23-quarto-gamer",
       "decisao": "auto"
     }
