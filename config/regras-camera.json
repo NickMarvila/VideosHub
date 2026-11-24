@@ -1,0 +1,74 @@
+{
+  "_leia": "Regras de câmera do Cartoon 3D. A IA escreve só \"momento\" na cena; apps/render/modelos_cartoon.mjs transforma em chaves de câmera. Regra nova: skill /camera (só entra com o ok do criador).",
+  "_chaves": {
+    "cabe": "\"alvo\" = só o alvo precisa caber (o resto pode sair, ex.: close); \"todos\" = tudo precisa caber no fim da cena. O validador usa isso para não avisar à toa.",
+    "quando": "s = segundos desde o início da cena · u = fração da cena (0 a 1) · em = \"revela\" (1º objeto que aparece e não é o alvo), \"fala:N\" (N-ésima fala do diálogo) · mais = segundos somados a em",
+    "mira": "alvo (o que a cena mostra), rosto (rosto do alvo, se for ator), todos (atores e objetos da cena), falante (quem fala no diálogo)",
+    "dist": "1 = enquadra a mira inteira com folga; 0,5 = metade da distância (mais perto); 1,5 = mais longe",
+    "lado": "-1 a 1: desloca a câmera para a esquerda/direita da mira (omitido = alterna por cena)",
+    "alto": "altura extra da câmera, em fração da distância (0,15 = levemente de cima)",
+    "fov e roll": "graus; roll de 3 a 5 dá drama"
+  },
+  "momentos": {
+    "gancho": {
+      "cabe": "alvo",
+      "descricao": "Abertura do vídeo: aproximação rápida até o alvo",
+      "chaves": [{ "s": 0, "mira": "alvo", "dist": 1.7 }, { "s": 0.8, "mira": "alvo", "dist": 1.0, "roll": 3 }],
+      "desfoque": 12
+    },
+    "situa": {
+      "cabe": "todos",
+      "descricao": "Plano geral que mostra onde a história acontece; desliza devagar",
+      "chaves": [{ "s": 0, "mira": "todos", "dist": 1.9, "alto": 0.45 }, { "u": 1, "mira": "todos", "dist": 1.5, "alto": 0.35 }],
+      "desfoque": 0
+    },
+    "medio": {
+      "cabe": "todos",
+      "descricao": "Plano médio com tudo o que está na cena, com leve aproximação (fala comum, ação simples)",
+      "chaves": [{ "s": 0, "mira": "todos", "dist": 1.05 }, { "u": 1, "mira": "todos", "dist": 0.92 }]
+    },
+    "close": {
+      "cabe": "alvo",
+      "descricao": "Close no rosto do ator (reação) ou de perto no objeto",
+      "chaves": [{ "s": 0, "mira": "rosto", "dist": 1.0, "fov": 38 }, { "u": 1, "mira": "rosto", "dist": 0.85, "fov": 38 }],
+      "desfoque": 14
+    },
+    "escalada": {
+      "cabe": "alvo",
+      "descricao": "Batida da escalada: cada batida um pouco mais perto que a anterior (use \"batida\": 1, 2, 3...)",
+      "chaves": [{ "s": 0, "mira": "alvo", "dist": 1.25 }, { "u": 1, "mira": "alvo", "dist": 1.05 }],
+      "distPorBatida": -0.15
+    },
+    "pensa_comigo": {
+      "cabe": "alvo",
+      "descricao": "\"Pensa comigo\": zoom in lento e contínuo no alvo enquanto a explicação começa",
+      "chaves": [{ "s": 0, "mira": "alvo", "dist": 1.1 }, { "u": 1, "mira": "alvo", "dist": 0.55, "fov": 34 }],
+      "desfoque": 12
+    },
+    "mostrar": {
+      "cabe": "todos",
+      "descricao": "Mostrar algo: começa perto do alvo e faz zoom out revelando o que aparece (o objeto com \"aparece\")",
+      "chaves": [{ "s": 0, "mira": "alvo", "dist": 0.6 }, { "em": "revela", "mira": "alvo", "dist": 0.6 }, { "em": "revela", "mais": 1.1, "mira": "todos", "dist": 1.15 }],
+      "desfoque": 10
+    },
+    "virada": {
+      "cabe": "alvo",
+      "descricao": "Virada ou bordão: corte seco para close com uma tremidinha",
+      "chaves": [
+        { "s": 0, "mira": "rosto", "dist": 0.9, "fov": 36, "roll": 4 },
+        { "s": 0.1, "mira": "rosto", "dist": 0.88, "fov": 36, "roll": -3 },
+        { "s": 0.2, "mira": "rosto", "dist": 0.87, "fov": 36, "roll": 3 },
+        { "s": 0.32, "mira": "rosto", "dist": 0.86, "fov": 36, "roll": -2 },
+        { "s": 0.45, "mira": "rosto", "dist": 0.85, "fov": 36, "roll": 3 }
+      ],
+      "desfoque": 15
+    },
+    "dialogo": {
+      "cabe": "alvo",
+      "descricao": "Diálogo entre dois: a câmera alterna para quem fala (use \"falas\": [[t, \"id\"], ...])",
+      "chaves": "alternar",
+      "dist": 0.95,
+      "desfoque": 12
+    }
+  }
+}

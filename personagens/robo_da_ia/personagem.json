@@ -61,6 +61,14 @@
       }
     }
   },
+  "cartoon": {
+    "jacket": "#F2F5F9",
+    "pants": "#2F80ED",
+    "boots": "#1F5FB8",
+    "skin": "#9AA7B8",
+    "hat": "cap",
+    "cap": "#2F80ED"
+  },
   "criadoEm": "2026-11-23T16:44:56.647Z",
   "pedido": "2026-11-23-robo-da-ia"
 }

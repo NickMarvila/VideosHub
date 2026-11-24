@@ -2,7 +2,7 @@
 
 É o visual da skill cartoon-audio-short: personagens 2D com cabeça de feijão e contorno roxo-escuro, como figurinhas, dentro de um mundo 3D pintado com contorno de tinta preta, céu saturado, desfoque de lente e câmera que desliza. O motor vem de github.com/mromidev/claude-animated-shorts (MIT).
 
-**Sem legenda por padrão.** Os tempos estão em segundos desde o início do vídeo, e as distâncias em metros. Um adulto mede cerca de 2,2 m na tela.
+**Com legenda por padrão** (2 a 3 palavras, a falada em destaque, perto do pé da tela): deixe o pé do quadro livre de texto de balão. Para desligar, `"legenda": { "ativo": false }`. Os tempos estão em segundos desde o início do vídeo, e as distâncias em metros. Um adulto mede cerca de 2,2 m na tela.
 
 ```json
 { "duracao": 39.96, "audio": "narracao.wav", "elenco": {},
@@ -29,6 +29,8 @@ Casas e árvores que ficariam entre a câmera e o ponto para onde ela olha **nã
 `luz`: `dia` (padrão, céu azul) ou `fim_de_tarde` (luz dourada baixa, sombras violeta, disco do sol). Use a luz para marcar as batidas da história: dia no normal, fim de tarde no drama ou no declínio. Para mudar a direção do sol, use `solAz` (graus a partir da frente da câmera: 0 = contraluz, 90 = vindo da direita) e `solEl` (altura em graus).
 
 ## Câmera
+**Use `momento` na cena** (`gancho`, `situa`, `medio`, `close`, `escalada`, `pensa_comigo`, `mostrar`, `virada`, `dialogo`; veja `config/regras-camera.json`): o render calcula câmera, foco e posições sozinho, e você só escreve `alvo`, quem aparece e o que faz. O que está abaixo vale para o **modo livre** (cena com `camera` própria) e para entender o enquadramento.
+
 `camera` é uma lista de chaves `{ t, pos, olha, fov, roll }`. Entre uma chave e outra a câmera desliza suave. Depois da última, ela continua se aproximando devagar sozinha, porque **nada fica parado**.
 
 **Quadro vertical é estreito:** a 4 m de distância, com `fov` 40, cabem só cerca de ±0,8 m de largura. Ponha um personagem em primeiro plano e outro mais ao fundo, nunca lado a lado longe.
@@ -63,7 +65,7 @@ Casas e árvores que ficariam entre a câmera e o ponto para onde ela olha **nã
 { "tipo": "relogio", "x": 0.5, "y": 1.6, "z": 0.3, "escala": 0.5, "aparece": 23.4, "texto": "12:00" }
 { "tipo": "balao", "x": -0.6, "y": 2.9, "z": 0, "texto": "TÔ SEM DINHEIRO!", "aparece": 14.6, "some": 18 }
 ```
-- **Peças 3D**, que recebem a tinta, a luz e a sombra: `parati` (a perua prata do Tales; com `movendo` as rodas giram e ela aponta para onde anda), `caixa_som`, `banco`, `poste`, `cone`, `mesa`, `caixote`, `pneu`, `caminhao` (anos 1930, carroceria aberta com metralhadora presa, frente para +x, ~4,4 m; aceita `movendo`; assoalho da carroceria em y ≈ 0,8), `metralhadora` (de tripé, cano para +x), `tanque_de_guerra` (~3 m, canhão para +x), `plantacao_de_trigo` (touceira de ~0,8 m: espalhe várias para fazer a lavoura), `torre_de_pisa` (~12 m de altura, 4 m de largura, tomba para +x; `etapa` de 0 a 1 sobe andar por andar, 3/8 = obra com 3 andares; `inclinacao` em graus, padrão 4; os dois aceitam chaves), `esponja_molhada` (0,5 m, com gotas e poça) e `terra_retirada` (monte de terra de ~1,4 m com a pá fincada). Campos `x`, `z`, `y`, `giro` (graus), `escala` e `cor`.
+- **Peças 3D**, que recebem a tinta, a luz e a sombra: `parati` (a perua prata do Tales; com `movendo` as rodas giram e ela aponta para onde anda), `caixa_som`, `banco`, `poste`, `cone`, `mesa`, `caixote`, `pneu`, `caminhao` (anos 1930, carroceria aberta com metralhadora presa, frente para +x, ~4,4 m; aceita `movendo`; assoalho da carroceria em y ≈ 0,8), `metralhadora` (de tripé, cano para +x), `tanque_de_guerra` (~3 m, canhão para +x), `plantacao_de_trigo` (touceira de ~0,8 m: espalhe várias para fazer a lavoura), `torre_de_pisa` (~12 m de altura, 4 m de largura, tomba para +x; `etapa` de 0 a 1 sobe andar por andar, 3/8 = obra com 3 andares; `inclinacao` em graus, padrão 4; os dois aceitam chaves), `esponja_molhada` (0,5 m, com gotas e poça) `terra_retirada` (monte de terra de ~1,4 m com a pá fincada), `console_de_videogame` (torre preta sem marca com luz verde e controle ao lado, 0,13 × 0,40 m, ~0,5 m de largura com o controle; frente para +z; use `escala` 2 a 3 para aparecer; `cor` = corpo), `pc_gamer` (mesa neon 1,5 × 0,75 m com gabinete de coolers coloridos, monitor largo e teclado arco-íris; frente para +z; `cor` = cor da tela, escura por padrão `#0b0e14`, tela acesa ex.: `#3a7bd5`), `pasta_de_arquivos_gigante` (pasta amarela estufada de papéis com etiqueta "209 GB", 1,5 × 1,2 m; frente para +z; `cor` = cor da pasta), `receita_em_japones` (folha creme com letras japonesas e bolo num suporte de madeira, 0,3 × 0,42 m; frente para +z; use `escala` 3 a 4) e `virus` (bichinho verde com espinhos e sorriso malvado, Ø 0,5 m, flutua; frente para +z; `cor` = corpo). Campos `x`, `z`, `y`, `giro` (graus), `escala` e `cor`.
 - **Ator montado:** `y` (altura dos pés, aceita chaves) põe o ator em cima de algo, como a carroceria; `"andar": false` faz ele deslizar junto com o veículo sem dar passos.
 - **Figurinhas 2D**, que ficam sempre de frente para a câmera: `dinheiro`, `moeda`, `relogio` (smartwatch; `texto` = hora), `celular` (`texto`), `balao` e `pensamento` (`texto` curto, até ~20 letras), `icone` (`icone`: `!`, `?`, `x`, `v`, `$`, `coracao`) e `seta`. O padrão é `y` 2,2 e `escala` 1 (~0,8 m). Perto da mão do ator: `y` ≈ 1,3, `escala` 0,4 a 0,6.
 - `aparece` faz o objeto surgir com um "pop"; `some` o esconde. `x`, `y`, `z` e `giro` aceitam chaves `[t, valor]` (dinheiro voando, carro passando).
@@ -80,5 +82,5 @@ Casas e árvores que ficariam entre a câmera e o ponto para onde ela olha **nã
 ## Comandos (da raiz do VideosHub)
 ```bash
 node apps/render/render2d.mjs videos/<id> --cartoon --validar
-node apps/render/render2d.mjs videos/<id> --cartoon --quadros    # olhe os PNGs com Read
+# a IA não abre imagens: corrija pelo texto do validador
 ```

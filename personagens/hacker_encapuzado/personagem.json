@@ -47,6 +47,14 @@
       }
     }
   },
+  "cartoon": {
+    "jacket": "#17191D",
+    "pants": "#262A31",
+    "boots": "#101114",
+    "skin": "#3a2e28",
+    "hat": "hair",
+    "hair": "#17191D"
+  },
   "criadoEm": "2026-11-23T16:59:40.072Z",
   "pedido": "2026-11-23-hacker-de-capuz-2"
 }

@@ -11,6 +11,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { bundle } from '@remotion/bundler';
 import { renderMedia, renderStill, selectComposition } from '@remotion/renderer';
+import { expandirStoryboard, caixas, REGRAS } from './modelos_cartoon.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -29,6 +30,9 @@ const COMP = CARTOON ? 'Cartoon3D' : 'Video2D';
 const ARQ_SB = CARTOON ? 'storyboard_cartoon.json' : 'storyboard2d.json';
 const GL = CARTOON ? { chromiumOptions: { gl: 'angle' }, concurrency: 1, timeoutInMilliseconds: 120000 } : {};
 const CENARIOS_CARTOON = ['vila', 'praca', 'campo'];
+// objetos do Cartoon: lidos do motor (src/cartoon/objetos.ts), para a lista nunca ficar velha
+const lerLista = (nome) => { const src = fs.readFileSync(path.join(AQUI, 'src', 'cartoon', 'objetos.ts'), 'utf8'); const k = src.indexOf(`export const ${nome} = [`); return JSON.parse(src.slice(src.indexOf('[', k), src.indexOf(']', k) + 1)); };
+const OBJ_CARTOON = CARTOON ? [...lerLista('OBJETOS_3D'), ...lerLista('OBJETOS_2D')] : [];
 const OBJETOS = ['parati', 'dinheiro', 'moeda', 'relogio', 'celular', 'caixa_som', 'skate', 'pneu', 'balao', 'pensamento', 'seta', 'icone', 'placa'];
 const POSES = ['neutro', 'apontando', 'bracos_abertos', 'pensando', 'maos_na_cintura', 'comemorando', 'segurando'];
 const EXPRESSOES = ['neutro', 'feliz', 'surpreso', 'bravo', 'triste', 'duvida'];
@@ -54,6 +58,7 @@ function completar(sb) {
   sb.extras = { objetos: { ...EXTRAS.objetos, ...(sb.extras?.objetos || {}) }, cenarios: { ...EXTRAS.cenarios, ...(sb.extras?.cenarios || {}) } };
   const palavras = fs.existsSync(path.join(pasta, 'palavras.json')) ? lerJSON(path.join(pasta, 'palavras.json')) : [];
   if (CARTOON) { // completa o elenco com a ficha do personagem (campo "cartoon")
+    sb = expandirStoryboard(sb); // "momento" vira câmera, foco e posições (config/regras-camera.json)
     sb.elenco ||= {};
     for (const c of sb.cenas || []) for (const a of c.atores || []) if (!sb.elenco[a.id]) {
       const ficha = path.join(RAIZ, 'personagens', a.id, 'personagem.json');
@@ -89,27 +94,36 @@ function validarCartoon({ sb }) {
     if (!c.camera?.length) erros.push(`${n}: sem chaves de câmera`);
     for (const k of c.camera || []) if (!Array.isArray(k.pos) || !Array.isArray(k.olha)) erros.push(`${n}: chave de câmera sem pos/olha`);
     if ((c.cenario || 'vila') === 'vila') for (const k of c.camera || []) if (Math.abs(k.pos[2]) > 7.5 && Math.abs(k.pos[1]) < 12) avisos.push(`${n}: câmera em z=${k.pos[2]} fica na calçada/casas; as casas no caminho somem, mas prefira |z| < 7`);
-    const OBJ_C = ['parati', 'caixa_som', 'banco', 'poste', 'cone', 'mesa', 'caixote', 'pneu', 'caminhao', 'metralhadora', 'tanque_de_guerra', 'plantacao_de_trigo', 'torre_de_pisa', 'esponja_molhada', 'terra_retirada', 'dinheiro', 'moeda', 'relogio', 'celular', 'balao', 'pensamento', 'icone', 'seta'];
+    const OBJ_C = OBJ_CARTOON;
+    if (c.momento && !REGRAS[c.momento]) erros.push(`${n}: momento "${c.momento}" não existe (${Object.keys(REGRAS).join(', ')})`);
     const ACOES_C = ['parado', 'acena', 'senta', 'cai', 'comemora', 'maos_cabeca', 'abre', 'maos_cintura', 'aponta', 'pensa', 'segura', 'decepcao', 'pulo', 'tremer'];
     for (const o of c.objetos || []) if (!OBJ_C.includes(o.tipo)) erros.push(`${n}: objeto "${o.tipo}" não existe (${OBJ_C.join(', ')})`);
     for (const a of c.atores || []) for (const [, ac] of a.acoes || []) if (!ACOES_C.includes(ac)) erros.push(`${n}: ação "${ac}" não existe (${ACOES_C.join(', ')})`);
     for (const a of c.atores || []) if (!sb.elenco?.[a.id]) erros.push(`${n}: "${a.id}" não está no elenco (nem em personagens/${a.id}/personagem.json → cartoon)`);
     if ((c.camera || []).length < 2 && c.fim - c.inicio > 2) avisos.push(`${n}: só uma chave de câmera; ela vai só se aproximar devagar`);
-    // enquadramento: o quadro vertical é estreito; confere se cada ator está dentro do quadro no começo, meio e fim
     const ss = (u) => { const x = Math.min(1, Math.max(0, u)); return x * x * x * (x * (x * 6 - 15) + 10); };
-    const val = (v, t) => { if (typeof v === 'number') return v; if (!Array.isArray(v) || !v.length) return 0; if (t <= v[0][0]) return v[0][1];
-      for (let i = 1; i < v.length; i++) if (t <= v[i][0]) return v[i - 1][1] + (v[i][1] - v[i - 1][1]) * ss((t - v[i - 1][0]) / Math.max(1e-3, v[i][0] - v[i - 1][0])); return v.at(-1)[1]; };
     const camEm = (t) => { const ks = c.camera || []; let a = ks[0], b = ks[0], u = 0;
       for (let i = 0; i < ks.length; i++) if (t >= ks[i].t) { a = ks[i]; b = ks[i + 1] || ks[i]; u = b === a ? 0 : (t - a.t) / Math.max(1e-3, b.t - a.t); }
       u = ss(u); const L = (x, y) => x.map((q, i) => q + (y[i] - q) * u); return { pos: L(a.pos, b.pos), olha: L(a.olha, b.olha), fov: (a.fov ?? 40) + ((b.fov ?? a.fov ?? 40) - (a.fov ?? 40)) * u }; };
-    if (c.camera?.length) for (const a of c.atores || []) for (const [rot, t] of [['começo', c.inicio + 0.15], ['meio', (c.inicio + c.fim) / 2], ['fim', c.fim - 0.15]]) {
-      const k = camEm(t), x = val(a.x, t), z = val(a.z, t);
-      const fx = k.olha[0] - k.pos[0], fz = k.olha[2] - k.pos[2], px = x - k.pos[0], pz = z - k.pos[2];
-      const ang = Math.abs(Math.atan2(fx * pz - fz * px, fx * px + fz * pz)) * 180 / Math.PI;
-      const meia = Math.atan(Math.tan((k.fov / 2) * Math.PI / 180) * 0.5625) * 180 / Math.PI;
-      if (fx * px + fz * pz < 0) avisos.push(`${n}: "${a.id}" está atrás da câmera no ${rot} da cena`);
-      else if (ang > meia) avisos.push(`${n}: "${a.id}" fica fora do quadro no ${rot} da cena (${ang.toFixed(0)}° do centro; o quadro vai até ${meia.toFixed(0)}°)`);
-      else if (ang > meia * 0.8) avisos.push(`${n}: "${a.id}" fica cortado na borda do quadro no ${rot} da cena`);
+    // enquadramento de tudo (atores e objetos visíveis) no começo, meio e fim; câmera dentro de um objeto
+    if (c.camera?.length) for (const [rot, t] of [['começo', c.inicio + 0.15], ['meio', (c.inicio + c.fim) / 2], ['fim', c.fim - 0.15]]) {
+      const k = camEm(t);
+      const fx = k.olha[0] - k.pos[0], fy = k.olha[1] - k.pos[1], fz = k.olha[2] - k.pos[2];
+      const meiaH = Math.atan(Math.tan((k.fov / 2) * Math.PI / 180) * 0.5625) * 180 / Math.PI, meiaV = k.fov / 2;
+      for (const b of caixas(c, t)) {
+        // cena com momento: o alvo e as figurinhas sempre têm que caber; o resto só quando o momento pede tudo (e só no fim)
+        if (c._cabe && b.id !== c.alvo && !b.figurinha && (c._cabe !== 'todos' || rot !== 'fim')) continue;
+        const [x, y, z] = b.centro, nome = b.ator ? `"${b.id}"` : `objeto "${b.id}"`;
+        const dentro = [0, 1, 2].every((i) => Math.abs(k.pos[i] - b.centro[i]) < [b.w, b.h, b.d][i] / 2 + 0.1);
+        if (dentro && !b.figurinha) { avisos.push(`${n}: a câmera fica dentro de ${nome} no ${rot} da cena`); continue; }
+        const px = x - k.pos[0], py = y - k.pos[1], pz = z - k.pos[2];
+        if (fx * px + fy * py + fz * pz <= 0) { avisos.push(`${n}: ${nome} está atrás da câmera no ${rot} da cena`); continue; }
+        const angH = Math.abs(Math.atan2(fx * pz - fz * px, fx * px + fz * pz)) * 180 / Math.PI;
+        const elev = (a, b2, c2) => Math.atan2(b2, Math.hypot(a, c2)) * 180 / Math.PI;
+        const angV = Math.abs(elev(px, py, pz) - elev(fx, fy, fz));
+        if (angH > meiaH || angV > meiaV) avisos.push(`${n}: ${nome} fica fora do quadro no ${rot} da cena (${angH.toFixed(0)}° do meio na horizontal, até ${meiaH.toFixed(0)}°; ${angV.toFixed(0)}° na vertical, até ${meiaV.toFixed(0)}°)`);
+        else if (angH > meiaH * 0.8 && b.ator) avisos.push(`${n}: ${nome} fica cortado na borda do quadro no ${rot} da cena`);
+      }
     }
     if (c.fim - c.inicio > 7) avisos.push(`${n}: ${(c.fim - c.inicio).toFixed(1)} s é longa (máx. ~6 s)`);
     fim = c.fim;

@@ -78,7 +78,28 @@ function validar() {
     if (c.variantes.filter((v) => v.recomendada).length !== 1) console.log(`! ${c.id}: marque exatamente uma variante como recomendada`);
     const ids = new Set(); for (const v of c.variantes) { if (ids.has(v.id)) { console.log(`✗ ${c.id}: id repetido ${v.id}`); ok = false; } ids.add(v.id); }
   }
+  ok = conferirAssets() && ok;
   console.log(ok ? '\nVariantes OK.' : '\nCorrija os erros acima.');
+  return ok;
+}
+
+// o que a frase cita tem que estar na cena: assets.json → "momento": "f04: ...; f08: ..." e "usa": slug
+function conferirAssets() {
+  const arq = path.join(pasta, 'assets.json');
+  if (!fs.existsSync(arq)) return true;
+  let ok = true;
+  const presentes = (cena) => new Set([cena.cenario, ...(cena.atores || []).map((a) => a.id), ...(cena.objetos || []).map((o) => o.tipo),
+    ...(cena.pecas || []).map((p) => p.asset || p.tipo), ...(cena.personagens || []).map((p) => p.id || p.personagem)].filter(Boolean));
+  for (const item of lerJSON(arq).itens || []) {
+    if (!item.usa || item.decisao === 'improvisar') continue;
+    for (const fr of String(item.momento || '').match(/fd{2,3}/g) || []) {
+      const c = V.cenas.find((x) => x.frases?.includes(fr));
+      if (!c) continue;
+      for (const v of c.variantes) if (!presentes(v.cena).has(item.usa)) {
+        console.log(`✗ ${v.id}: a frase ${fr} mostra "${item.nome}", mas "${item.usa}" não está na cena`); ok = false;
+      }
+    }
+  }
   return ok;
 }
 

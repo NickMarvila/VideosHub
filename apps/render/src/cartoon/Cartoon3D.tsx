@@ -71,7 +71,7 @@ export const Cartoon3D: React.FC<PropsCartoon> = ({ storyboard: sb, palavras }) 
         <Interno sb={sb} idx={idx} />
       </ThreeCanvas>
       {flash > 0 && <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} />}
-      {leg.ativo === true && <Legenda palavras={palavras} porVez={leg.porVez ?? 3} y={leg.y ?? 1560} cor={leg.cor ?? "#FFFFFF"} destaque={leg.destaque ?? "#FFD23F"} />}
+      {leg.ativo !== false && <Legenda palavras={palavras} porVez={leg.porVez ?? 3} y={leg.y ?? 1560} cor={leg.cor ?? "#FFFFFF"} destaque={leg.destaque ?? "#FFD23F"} />}
       {sb.audio && <Audio src={staticFile(sb.audio)} />}
     </AbsoluteFill>
   );

@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { twoTone } from "./ponte/shade";
 import type { Pen } from "./ponte/toon";
 
-export const OBJETOS_3D = ["parati", "caixa_som", "banco", "poste", "cone", "mesa", "caixote", "pneu", "caminhao", "metralhadora", "tanque_de_guerra", "plantacao_de_trigo", "torre_de_pisa", "esponja_molhada", "terra_retirada"] as const;
+export const OBJETOS_3D = ["parati", "caixa_som", "banco", "poste", "cone", "mesa", "caixote", "pneu", "caminhao", "metralhadora", "tanque_de_guerra", "plantacao_de_trigo", "torre_de_pisa", "esponja_molhada", "terra_retirada", "console_de_videogame", "pc_gamer", "pasta_de_arquivos_gigante", "receita_em_japones", "virus"] as const;
 export const OBJETOS_2D = ["dinheiro", "moeda", "relogio", "celular", "balao", "pensamento", "icone", "seta"] as const;
 
 const mats = new Map<string, THREE.Material>();
@@ -44,6 +44,15 @@ const cilB = (g: THREE.Object3D, cor: string, rTopo: number, rBase: number, h: n
 };
 const bola = (g: THREE.Object3D, cor: string, r: number, x: number, y: number, z: number, esc: [number, number, number] = [1, 1, 1]) => {
   const m = new THREE.Mesh(new THREE.SphereGeometry(r, 12, 8), mat(cor)); m.position.set(x, y, z); m.scale.set(...esc); m.castShadow = true; g.add(m); return m;
+};
+
+/** textura de texto (etiqueta da pasta, letras da receita); "\n" separa linhas */
+const etiqueta = (txt: string, tinta = "#1e2227", fundo = "#ffffff", tam = 120) => {
+  const c = document.createElement("canvas"); c.width = 512; c.height = 512 * (txt.includes("\n") ? 1.35 : 0.34);
+  const g = c.getContext("2d")!; g.fillStyle = fundo; g.fillRect(0, 0, c.width, c.height);
+  g.fillStyle = tinta; g.font = `900 ${tam}px "Arial Black", "Yu Gothic", "Meiryo", Arial, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle";
+  const ls = txt.split("\n"); ls.forEach((l, i) => g.fillText(l, 256, (c.height / ls.length) * (i + 0.5)));
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 };
 
 /** Torre de Pisa (porte da peça do kit 3D): 8 andares (base, 6 galerias, campanário), ~12 m, tomba para +x.
@@ -86,6 +95,69 @@ function torreDePisa(g: THREE.Group) {
 export function construir3D(tipo: string, cor?: string): { g: THREE.Group; rodas: THREE.Object3D[]; atualizar?: (etapa: number, inclinacao: number, t: number) => void } {
   const g = new THREE.Group(), rodas: THREE.Object3D[] = [];
   if (tipo === "torre_de_pisa") return { g, rodas, atualizar: torreDePisa(g) };
+  if (tipo === "console_de_videogame") { // torre preta fina com faixa verde e controle (0,13 × 0,40 × 0,32 m), frente para +z
+    const c = cor ?? "#1d1f24";
+    caixa(g, "#33363d", 0.16, 0.025, 0.24, 0, 0, 0); caixa(g, c, 0.13, 0.4, 0.32, 0, 0.025, 0);
+    caixa(g, "#33363d", 0.135, 0.012, 0.3, 0, 0.3, 0); caixa(g, "#39e86b", 0.018, 0.26, 0.012, 0.035, 0.1, 0.161);
+    caixa(g, "#0b0c0e", 0.012, 0.18, 0.008, -0.03, 0.16, 0.161);
+    caixa(g, c, 0.16, 0.035, 0.08, 0.27, 0, 0.06); bola(g, c, 0.04, 0.205, 0.02, 0.09, [1, 0.5, 1.3]); bola(g, c, 0.04, 0.335, 0.02, 0.09, [1, 0.5, 1.3]);
+    return { g, rodas };
+  }
+  if (tipo === "pc_gamer") { // mesa neon 1,5 × 0,72 m com gabinete, monitor e teclado, frente para +z; cor = cor da tela
+    const mesa = "#2b2340", gab = "#18141f", H = 0.75, luz = ["#22e4ff", "#ff2fd0", "#ffd23d"];
+    caixa(g, mesa, 1.5, 0.05, 0.72, 0, H - 0.05, 0);
+    for (const x of [-0.71, 0.71]) caixa(g, mesa, 0.05, H - 0.05, 0.64, x, 0, 0);
+    caixa(g, "#ff2fd0", 1.42, 0.012, 0.012, 0, H - 0.062, 0.355);
+    caixa(g, gab, 0.26, 0.54, 0.46, -0.52, H, -0.04); caixa(g, "#2a2440", 0.22, 0.48, 0.01, -0.52, H + 0.03, 0.192);
+    luz.forEach((l, i) => { const f = cil(g, l, 0.07, 0.014, -0.52, H + 0.43 - i * 0.15, 0.2, true); f.rotation.x = Math.PI / 2; });
+    caixa(g, luz[2], 0.2, 0.01, 0.4, -0.52, H + 0.54, -0.04);
+    caixa(g, gab, 0.3, 0.012, 0.18, 0.1, H, -0.18); caixa(g, gab, 0.05, 0.22, 0.04, 0.1, H + 0.012, -0.21);
+    caixa(g, gab, 0.8, 0.42, 0.04, 0.1, H + 0.18, -0.18); caixa(g, cor ?? "#0b0e14", 0.76, 0.37, 0.01, 0.1, H + 0.2, -0.158);
+    caixa(g, luz[0], 0.7, 0.01, 0.01, 0.1, H + 0.178, -0.156);
+    caixa(g, gab, 0.48, 0.025, 0.16, 0.1, H, 0.14);
+    ["#ff2fd0", "#ffd23d", "#5dff6a", "#22e4ff"].forEach((c, i) => caixa(g, c, 0.44, 0.012, 0.026, 0.1, H + 0.025, 0.09 + i * 0.033));
+    caixa(g, "#120f18", 0.3, 0.004, 0.25, 0.5, H, 0.15); bola(g, gab, 0.04, 0.5, H + 0.02, 0.15, [0.8, 0.45, 1.2]);
+    cilB(g, gab, 0.06, 0.06, 0.012, 0.6, H, -0.2, 12); caixa(g, gab, 0.02, 0.3, 0.02, 0.6, H + 0.012, -0.2); caixa(g, luz[0], 0.2, 0.025, 0.05, 0.6, H + 0.31, -0.2);
+    return { g, rodas };
+  }
+  if (tipo === "pasta_de_arquivos_gigante") { // pasta amarela estufada de papéis com etiqueta "209 GB" (1,5 × 1,2 × 0,5 m), frente para +z
+    const c = cor ?? "#f2c94c", fundo = "#dca52c";
+    caixa(g, fundo, 1.5, 1.12, 0.06, 0, 0, -0.24); caixa(g, fundo, 0.55, 0.16, 0.06, -0.44, 1.06, -0.24);
+    [[-0.42, 0.05, "#ffffff"], [-0.05, -0.04, "#f1f1ea"], [0.3, 0.07, "#ffffff"], [0.5, -0.1, "#e9eef5"]].forEach(([x, rot, cl], i) => {
+      const f = caixa(g, cl as string, 0.5, 1.1, 0.04, x as number, 0.02 + (i % 2) * 0.04, -0.16 + i * 0.07); f.rotation.z = rot as number;
+    });
+    caixa(g, c, 1.5, 0.98, 0.46, 0, 0, 0); caixa(g, fundo, 1.42, 0.035, 0.03, 0, 0.9, 0.225);
+    caixa(g, "#1e2227", 0.68, 0.3, 0.02, 0, 0.39, 0.225); caixa(g, "#ffffff", 0.64, 0.26, 0.02, 0, 0.41, 0.235);
+    const e = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.2), new THREE.MeshBasicMaterial({ map: etiqueta("209 GB") })); e.position.set(0, 0.55, 0.247); g.add(e);
+    return { g, rodas };
+  }
+  if (tipo === "receita_em_japones") { // folha de receita no suporte de madeira (0,3 × 0,42 m), frente para +z
+    const s = new THREE.Group(); s.position.set(0, 0.03, 0.012); s.rotation.x = -0.2; g.add(s);
+    caixa(g, "#a9743f", 0.32, 0.03, 0.15, 0, 0, -0.02);
+    const folha = caixa(s, "#fbf3e1", 0.3, 0.4, 0.006, 0, -0.18, 0); folha.position.y = 0.2;
+    const e = new THREE.Mesh(new THREE.PlaneGeometry(0.28, 0.38), new THREE.MeshBasicMaterial({ map: etiqueta("ケーキ\n作り方\n小麦粉\n砂糖\n卵", "#3a3f47", "#fbf3e1", 34) }));
+    e.position.set(0, 0.2, 0.004); s.add(e);
+    caixa(s, "#e2453c", 0.1, 0.1, 0.004, 0.05, 0.1, 0.0045).scale.set(1, 0.6, 1);
+    return { g, rodas };
+  }
+  if (tipo === "virus") { // bichinho verde com espinhos e sorriso malvado (Ø ~0,5 m), flutua a 5 cm do chão, frente para +z
+    const c = cor ?? "#7ED957", R = 0.19, cy = 0.27 + 0.05;
+    bola(g, c, R, 0, cy, 0);
+    for (let i = 0; i < 26; i++) {
+      const dy = 1 - (2 * (i + 0.5)) / 26, rr = Math.sqrt(1 - dy * dy), ph = i * 2.39996, dx = rr * Math.cos(ph), dz = rr * Math.sin(ph);
+      if ((dz > 0.55 && dy > -0.6 && dy < 0.75) || dy < -0.85) continue;
+      const s = cil(g, "#4FA83D", 0.02, 0.06, dx * (R + 0.02), cy + dy * (R + 0.02), dz * (R + 0.02));
+      s.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), new THREE.Vector3(dx, dy, dz));
+      bola(g, "#C6F25E", 0.028, dx * (R + 0.06), cy + dy * (R + 0.06), dz * (R + 0.06));
+    }
+    for (const sx of [-1, 1]) {
+      bola(g, "#ffffff", 0.042, 0.065 * sx, cy + 0.04, 0.17, [1, 1.1, 0.5]); bola(g, "#1E2227", 0.019, 0.057 * sx, cy + 0.034, 0.19, [1, 1, 0.5]);
+      const b = caixa(g, "#1E2227", 0.075, 0.018, 0.02, 0.065 * sx, cy + 0.085, 0.175); b.rotation.z = -0.45 * sx;
+    }
+    for (let k = -5; k <= 5; k++) bola(g, "#3A1420", 0.02, k * 0.012, cy - 0.05 + 0.0016 * k * k, 0.18, [1, 1, 0.5]);
+    for (const x of [-0.035, 0.035]) caixa(g, "#ffffff", 0.018, 0.02, 0.012, x, cy - 0.07, 0.19);
+    return { g, rodas };
+  }
   if (tipo === "esponja_molhada") { // esponja amarela com face verde, gotas azuis e poça (0,5 × 0,32 m)
     cilB(g, "#7fc3ee", 0.32, 0.32, 0.01, 0, 0, 0, 16);
     caixa(g, cor ?? "#f7d046", 0.5, 0.17, 0.32, 0, 0.01, 0);
